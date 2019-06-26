@@ -2,25 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tars on I&#39;m company</title>
-    <link>http://peng051410.github.io/categories/tars/</link>
+    <link>http://blog.imcompany.cn/categories/tars/</link>
     <description>Recent content in tars on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 09 May 2019 17:34:09 +0800</lastBuildDate>
     
-	<atom:link href="http://peng051410.github.io/categories/tars/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.imcompany.cn/categories/tars/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TARS-打卡第一天</title>
-      <link>http://peng051410.github.io/post/tars-001/</link>
+      <link>http://blog.imcompany.cn/post/tars-001/</link>
       <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/tars-001/</guid>
-      <description>Algorithm LeetCode 第一题
-题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。
-Example 给出nums = [2, 7, 11, 15], 目标数为9，则返回[0, 1]
-题目解答 import java.util.*; public class Solution { public int[] twoSum(int[] nums, int target) { Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); for(int i = 0; i &amp;lt; nums.length; i ++) { int second = target - nums[i]; if(map.containsKey(second)) { return new int[]{map.get(second), i}; } map.put(nums[i], i); } return new int[]{}; } }  相比两次循环的方式，这种处理的时间复杂度为O(n), 空间复杂度也为O(n).</description>
+      <guid>http://blog.imcompany.cn/post/tars-001/</guid>
+      <description>Algorithm LeetCode 第一题 题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。</description>
     </item>
     
   </channel>

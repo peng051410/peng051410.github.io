@@ -2,43 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>alfred on I&#39;m company</title>
-    <link>http://peng051410.github.io/tags/alfred/</link>
+    <link>http://blog.imcompany.cn/tags/alfred/</link>
     <description>Recent content in alfred on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Fri, 21 Sep 2018 10:02:49 +0800</lastBuildDate>
     
-	<atom:link href="http://peng051410.github.io/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.imcompany.cn/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>那些提高效率的Alfred Workflow</title>
-      <link>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
       <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
-      <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
-Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
-Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
-Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
-Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
-Baidu Map 在alfred上使用百度地图。插件地址
-Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
-Calendar 在alfred中显示出当月的日历信息。插件地址
-Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
-Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
-Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
-Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
-Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
-Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
-Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
-插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
-Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
-Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
-Homebrew &amp;amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
-iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
-Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
-Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
+      <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方</description>
     </item>
     
   </channel>

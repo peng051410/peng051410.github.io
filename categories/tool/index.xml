@@ -2,156 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tool on I&#39;m company</title>
-    <link>http://peng051410.github.io/categories/tool/</link>
+    <link>http://blog.imcompany.cn/categories/tool/</link>
     <description>Recent content in tool on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Fri, 08 Mar 2019 07:48:34 +0800</lastBuildDate>
     
-	<atom:link href="http://peng051410.github.io/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>那些高效的Chrome插件</title>
-      <link>http://peng051410.github.io/post/na-xie-gao-xiao-de-chromecha-jian/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
-      <description>1Password extension 密码管理工具1Password的Chrome插件。插件地址
-Auto Refresh 自动刷新网页的插件，支持设置刷新时间间隔。插件地址
-Awesome Autocomplete for GitHub 在浏览器中为Github增强搜索功能。插件地址
-BetterTweetDeck TweetDeck功能增强，如支持表情，只看某人的tweets，插件地址
-Chrono下载管理器 功能全面的chrome下载管理器，满足你的一切需求。插件地址
-Clutter Free - Prevent duplicate tabs 防止打开相同的tab页面。插件地址
-Dualsub 让Youtube同时显示两种语言的字幕。插件地址
-GitHub Hovercard 鼠标Hover时更全面显示Github上个人与仓库的信息。插件地址
-Insight.io for Github 为Github添加类似IDE的功能，高效的代码浏览工具。插件地址
-JSON-handle JSON数据处理插件。插件地址
-JSON Viewer Awesome JSON数据美化，漂亮的不行不行的。插件地址
-Org Capture Org Capture的Chrome插件，支持Capture网页链接与选中文字，配合Emacs使用。插件地址
-MAMA-HD 解决在看视频网站时Mac发热的问题。插件地址
-Proxy SwitchyOmega 网页代理切换，支持定义多种模式。插件地址
-Sourcegraph 在线浏览Github的源码，支持一些语言的语义跳转。插件地址
-Surfingkeys 严重推荐，VIM键盘模拟，自定义程度非常高。插件地址
-Tampermonkey 用户自定义脚本管理器。插件地址
-YAAW for Chrome 使用YAAW处理Chrome的下载请求。插件地址
-二管家 Chrome扩展管理器，快速开启、禁用，模式快速切换，更强大的是可以自定义插件的启用规则，这个很赞。插件地址
-二箱 多个网站的以图搜图插件，能用图说的咱决不打字。插件地址
-沙拉查词-聚合词典划词翻译 更人性化的划词扩展。插件地址
-简悦 - SimpRead 沉浸式阅读首选，支持大多数的网站。插件地址
-Clearly 更好的英文网页浏览选择，带文字朗读功能。插件地址
-Read Aloud 朗读英文文章的更好选择，它只会朗读标题与正文。可以选择朗读语间，音调，速度。插件地址</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
+      <description>1Password extension 密码管理工具1Password的Chrome插件。插件地址 Auto Refresh 自动刷新网页的插件，支持设置刷新时间间隔。插件地址 Awesome Autocomplete for GitHub 在浏览器中为Gi</description>
     </item>
     
     <item>
       <title>那些提高效率的命令行工具</title>
-      <link>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
-      <description>Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址
-bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址
-cowsay 奶牛说： 地址
-coreutils 使用Rust重写的gnuutils。地址
-direnv 环境变量切换，可以指定在进入某一文件夹后的操作，比如输出一条欢迎语句，在退出文件夹后则卸载变量（操作），它的stdlib内置了一些功能来处理环境。 地址
-exa ls、tree的替代者，支持多种显示方式，支持按指定条件排序显示。地址
-duti mac默认软件打开程序配置。再也不用一个手动的点击设置了，可以脚本化。地址
-riggrep 强大的find，查询速度更快，支持匹配结果的字符替换，支持定义输出颜色。地址
-fortune 英文名言集合，可以使用fortunes进行扩展，对中文用户更友好。地址
-fzf 强大的交互式搜索，大大提高效率，官网提供了很多实用的操作目录与git的命令。地址
-goku 改键神器Karabiner的配置管理器，更健康，更人性化。地址
-htop 交互式的top信息显示，支持配色。地址
-imgcat 命令行看图片。可以控制显示的高度、宽度。地址
-jq json内容操作显示。支持分离、过滤、转换元素，判断JSON元素节点是否存在等功能，内置了很多方便的函数。 地址
-jenv JDK版本管理命令行工具，支持全局、当前目录、当前shell的jdk版本指定。还可以指定Java虚拟机指定的JVM参数。支持插件的启用与禁用。地址
-lnav log file navigator，增加的日志查看，可以根据日志级别显示不同颜色的日志信息。支持分页显示。地址
-lolcat 命令、文件内容多彩输出。地址
-m-cli Mac的瑞士军刀，支持各种mac组件(Dock，蓝牙，WIFI，Finder)的操作。地址
-mackup Mac应用配置同步，支持多种存储方式。支持自定义应用的同步配置。主要命令为backup，restore，uninstall。地址
-mas 命令行安装apple store应用。地址
-mycli 命令行中的mysql客户端。地址
-ncdu 增强版本的du，机器空间使用查询，支持扫描结果导出与导入，支持多种排序方式。地址
-Ranger 命令行下的文件管理，强大到没朋友。地址
-pandoc 文档转换，支持非常多的的格式转换。地址
-pyenv pythne版本管理工具。地址
-pyenv-virtualenv pythne虚拟环境管理，管理pyenv配置的环境。地址
-prettyping 增强的ping，图形化显示，可以轻松的看出ping的地址的网络状况。地址
-rtv 命令行中浏览reddit。地址
-s-search 命令行下进行web搜索。地址
-tmux 终端多会话管理器。地址
-tldr 命令快速查询。简单的man。地址</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
+      <description>Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay</description>
     </item>
     
     <item>
       <title>那些提高效率的Alfred Workflow</title>
-      <link>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
       <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
-      <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
-Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
-Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
-Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
-Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
-Baidu Map 在alfred上使用百度地图。插件地址
-Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
-Calendar 在alfred中显示出当月的日历信息。插件地址
-Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
-Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
-Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
-Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
-Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
-Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
-Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
-插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
-Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
-Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
-Homebrew &amp;amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
-iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
-Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
-Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
+      <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方</description>
     </item>
     
     <item>
       <title>那些提高效率的Idea插件</title>
-      <link>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
-      <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
-项目地址 https://github.com/hsz/idea-gitignore
-IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
-项目地址 https://github.com/JetBrains/ideavim
-emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
-项目地址 https://github.com/whunmr/emacsIDEAs
-Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
-项目地址 https://github.com/xylo/intellij-postfix-templates
-Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
-项目地址 https://zeroturnaround.com/software/jrebel/
-CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
-项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
-Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
-Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
-项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
-Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
-插件地址 https://github.com/amolenaar/idea-clock
-Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
-项目地址 https://github.com/gdelmas/IntelliJDashPlugin
-Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
-项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
-RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
-项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
-Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了.</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
+      <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与I</description>
     </item>
     
     <item>
       <title>Idea中vim键的映射</title>
-      <link>http://peng051410.github.io/post/chang-yong-de-ideacha-jian/</link>
+      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/chang-yong-de-ideacha-jian/</guid>
-      <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
-   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &amp;lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/.</description>
+      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
+      <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi</description>
     </item>
     
   </channel>

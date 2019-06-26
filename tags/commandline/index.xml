@@ -2,52 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>commandline on I&#39;m company</title>
-    <link>http://peng051410.github.io/tags/commandline/</link>
+    <link>http://blog.imcompany.cn/tags/commandline/</link>
     <description>Recent content in commandline on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sun, 30 Sep 2018 07:15:55 +0800</lastBuildDate>
     
-	<atom:link href="http://peng051410.github.io/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.imcompany.cn/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>那些提高效率的命令行工具</title>
-      <link>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
-      <description>Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址
-bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址
-cowsay 奶牛说： 地址
-coreutils 使用Rust重写的gnuutils。地址
-direnv 环境变量切换，可以指定在进入某一文件夹后的操作，比如输出一条欢迎语句，在退出文件夹后则卸载变量（操作），它的stdlib内置了一些功能来处理环境。 地址
-exa ls、tree的替代者，支持多种显示方式，支持按指定条件排序显示。地址
-duti mac默认软件打开程序配置。再也不用一个手动的点击设置了，可以脚本化。地址
-riggrep 强大的find，查询速度更快，支持匹配结果的字符替换，支持定义输出颜色。地址
-fortune 英文名言集合，可以使用fortunes进行扩展，对中文用户更友好。地址
-fzf 强大的交互式搜索，大大提高效率，官网提供了很多实用的操作目录与git的命令。地址
-goku 改键神器Karabiner的配置管理器，更健康，更人性化。地址
-htop 交互式的top信息显示，支持配色。地址
-imgcat 命令行看图片。可以控制显示的高度、宽度。地址
-jq json内容操作显示。支持分离、过滤、转换元素，判断JSON元素节点是否存在等功能，内置了很多方便的函数。 地址
-jenv JDK版本管理命令行工具，支持全局、当前目录、当前shell的jdk版本指定。还可以指定Java虚拟机指定的JVM参数。支持插件的启用与禁用。地址
-lnav log file navigator，增加的日志查看，可以根据日志级别显示不同颜色的日志信息。支持分页显示。地址
-lolcat 命令、文件内容多彩输出。地址
-m-cli Mac的瑞士军刀，支持各种mac组件(Dock，蓝牙，WIFI，Finder)的操作。地址
-mackup Mac应用配置同步，支持多种存储方式。支持自定义应用的同步配置。主要命令为backup，restore，uninstall。地址
-mas 命令行安装apple store应用。地址
-mycli 命令行中的mysql客户端。地址
-ncdu 增强版本的du，机器空间使用查询，支持扫描结果导出与导入，支持多种排序方式。地址
-Ranger 命令行下的文件管理，强大到没朋友。地址
-pandoc 文档转换，支持非常多的的格式转换。地址
-pyenv pythne版本管理工具。地址
-pyenv-virtualenv pythne虚拟环境管理，管理pyenv配置的环境。地址
-prettyping 增强的ping，图形化显示，可以轻松的看出ping的地址的网络状况。地址
-rtv 命令行中浏览reddit。地址
-s-search 命令行下进行web搜索。地址
-tmux 终端多会话管理器。地址
-tldr 命令快速查询。简单的man。地址</description>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
+      <description>Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay</description>
     </item>
     
   </channel>

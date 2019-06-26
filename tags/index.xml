@@ -2,138 +2,138 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on I&#39;m company</title>
-    <link>http://peng051410.github.io/tags/</link>
+    <link>http://blog.imcompany.cn/tags/</link>
     <description>Recent content in Tags on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 09 May 2019 17:34:09 +0800</lastBuildDate>
     
-	<atom:link href="http://peng051410.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>apollo</title>
-      <link>http://peng051410.github.io/tags/apollo/</link>
+      <link>http://blog.imcompany.cn/tags/apollo/</link>
       <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/apollo/</guid>
+      <guid>http://blog.imcompany.cn/tags/apollo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tars</title>
-      <link>http://peng051410.github.io/tags/tars/</link>
+      <link>http://blog.imcompany.cn/tags/tars/</link>
       <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/tars/</guid>
+      <guid>http://blog.imcompany.cn/tags/tars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>centos</title>
-      <link>http://peng051410.github.io/tags/centos/</link>
+      <link>http://blog.imcompany.cn/tags/centos/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/centos/</guid>
+      <guid>http://blog.imcompany.cn/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://peng051410.github.io/tags/linux/</link>
+      <link>http://blog.imcompany.cn/tags/linux/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/linux/</guid>
+      <guid>http://blog.imcompany.cn/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chrome</title>
-      <link>http://peng051410.github.io/tags/chrome/</link>
+      <link>http://blog.imcompany.cn/tags/chrome/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/chrome/</guid>
+      <guid>http://blog.imcompany.cn/tags/chrome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bash</title>
-      <link>http://peng051410.github.io/tags/bash/</link>
+      <link>http://blog.imcompany.cn/tags/bash/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/bash/</guid>
+      <guid>http://blog.imcompany.cn/tags/bash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>commandline</title>
-      <link>http://peng051410.github.io/tags/commandline/</link>
+      <link>http://blog.imcompany.cn/tags/commandline/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/commandline/</guid>
+      <guid>http://blog.imcompany.cn/tags/commandline/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zsh</title>
-      <link>http://peng051410.github.io/tags/zsh/</link>
+      <link>http://blog.imcompany.cn/tags/zsh/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/zsh/</guid>
+      <guid>http://blog.imcompany.cn/tags/zsh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>alfred</title>
-      <link>http://peng051410.github.io/tags/alfred/</link>
+      <link>http://blog.imcompany.cn/tags/alfred/</link>
       <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/alfred/</guid>
+      <guid>http://blog.imcompany.cn/tags/alfred/</guid>
       <description></description>
     </item>
     
     <item>
       <title>idea</title>
-      <link>http://peng051410.github.io/tags/idea/</link>
+      <link>http://blog.imcompany.cn/tags/idea/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/idea/</guid>
+      <guid>http://blog.imcompany.cn/tags/idea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plugin</title>
-      <link>http://peng051410.github.io/tags/plugin/</link>
+      <link>http://blog.imcompany.cn/tags/plugin/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/plugin/</guid>
+      <guid>http://blog.imcompany.cn/tags/plugin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>design-pattern</title>
-      <link>http://peng051410.github.io/tags/design-pattern/</link>
+      <link>http://blog.imcompany.cn/tags/design-pattern/</link>
       <pubDate>Mon, 16 Jul 2018 21:08:28 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/design-pattern/</guid>
+      <guid>http://blog.imcompany.cn/tags/design-pattern/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>http://peng051410.github.io/tags/java/</link>
+      <link>http://blog.imcompany.cn/tags/java/</link>
       <pubDate>Mon, 16 Jul 2018 21:08:28 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/java/</guid>
+      <guid>http://blog.imcompany.cn/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>http://peng051410.github.io/tags/vim/</link>
+      <link>http://blog.imcompany.cn/tags/vim/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
       
-      <guid>http://peng051410.github.io/tags/vim/</guid>
+      <guid>http://blog.imcompany.cn/tags/vim/</guid>
       <description></description>
     </item>
     
