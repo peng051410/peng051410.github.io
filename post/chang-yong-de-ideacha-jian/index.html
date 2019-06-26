@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Idea中vim键的映射 - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &amp;lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/." />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/chang-yong-de-ideacha-jian/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Idea中vim键的映射" />
+<meta property="og:description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/chang-yong-de-ideacha-jian/" />
+<meta property="article:published_time" content="2018-05-14T14:48:33&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-26T10:34:22&#43;08:00"/>
+
+<meta itemprop="name" content="Idea中vim键的映射">
+<meta itemprop="description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/.">
+
+
+<meta itemprop="datePublished" content="2018-05-14T14:48:33&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:34:22&#43;08:00" />
+<meta itemprop="wordCount" content="272">
+
+
+
+<meta itemprop="keywords" content="idea,vim," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Idea中vim键的映射"/>
+<meta name="twitter:description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Idea中vim键的映射</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-05-14" class="post-time">
+          2018-05-14
+        </time>
+        <div class="post-category">
+            <a href="http://peng051410.github.io/categories/tool/"> tool </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。</p>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>kj</td>
+<td><Esc></td>
+</tr>
+
+<tr>
+<td>gt</td>
+<td>VimBack</td>
+</tr>
+
+<tr>
+<td>gT</td>
+<td>VimForward</td>
+</tr>
+
+<tr>
+<td>gd</td>
+<td>GotoDeclaration<cr></td>
+</tr>
+
+<tr>
+<td>gf</td>
+<td>GotoTypeDeclaration<cr></td>
+</tr>
+
+<tr>
+<td>gh</td>
+<td>QuickJavaDoc<CR></td>
+</tr>
+
+<tr>
+<td>gs</td>
+<td>GotoSymbol<cr></td>
+</tr>
+
+<tr>
+<td>gi</td>
+<td>GotoImplementation<CR></td>
+</tr>
+
+<tr>
+<td>gu</td>
+<td>FindUsages<CR></td>
+</tr>
+
+<tr>
+<td>gj</td>
+<td>IntroduceVariable<CR></td>
+</tr>
+
+<tr>
+<td>leader w d</td>
+<td>ActivateDatabaseToolWindow</td>
+</tr>
+
+<tr>
+<td>leader &lsquo;</td>
+<td>ActivateTerminalToolWindow</td>
+</tr>
+
+<tr>
+<td>leader w r</td>
+<td>ActivateRedisServersToolWindow</td>
+</tr>
+
+<tr>
+<td>leader w m</td>
+<td>ActivateMavenProjectsToolWindow</td>
+</tr>
+
+<tr>
+<td>leader w a</td>
+<td>HideActiveWindow</td>
+</tr>
+
+<tr>
+<td>leader w w</td>
+<td>HideAllWindows</td>
+</tr>
+
+<tr>
+<td>leader w p</td>
+<td>ActivateProjectToolWindow<CR></td>
+</tr>
+
+<tr>
+<td>leader w s</td>
+<td>ActivateStructureToolWindow<CR></td>
+</tr>
+
+<tr>
+<td>leader w v</td>
+<td>ActivateVersionControlToolWindow<CR></td>
+</tr>
+
+<tr>
+<td>leader w h</td>
+<td><c-w>h  Go to left window</td>
+</tr>
+
+<tr>
+<td>leader w l</td>
+<td><c-w>l  Go to right window</td>
+</tr>
+
+<tr>
+<td>leader w k</td>
+<td><c-w>k  Go to window up</td>
+</tr>
+
+<tr>
+<td>leader w j</td>
+<td><c-w>j  Go to window down</td>
+</tr>
+
+<tr>
+<td>leader w V</td>
+<td><c-w>v  Split Window Vertically</td>
+</tr>
+
+<tr>
+<td>leader w -</td>
+<td><c-w>s  Split Winodw Horizontally</td>
+</tr>
+
+<tr>
+<td>leader w c</td>
+<td><c-w>c  Close current window</td>
+</tr>
+
+<tr>
+<td>leader w o</td>
+<td><c-w>o  Close all window except current</td>
+</tr>
+
+<tr>
+<td>leader <Space></td>
+<td>GotoAction<CR></td>
+</tr>
+
+<tr>
+<td>leader c c</td>
+<td>GotoClass<CR></td>
+</tr>
+
+<tr>
+<td>leader c r</td>
+<td>CopyReference<CR></td>
+</tr>
+
+<tr>
+<td>leader c p</td>
+<td>CopyPaths<CR></td>
+</tr>
+
+<tr>
+<td>leader f f</td>
+<td>GotoFile<CR></td>
+</tr>
+
+<tr>
+<td>leader f d</td>
+<td>DashLauncherAction<CR></td>
+</tr>
+
+<tr>
+<td>leader b b</td>
+<td>RecentFiles<CR></td>
+</tr>
+
+<tr>
+<td>leader b p</td>
+<td>FileStructurePopup<cr></td>
+</tr>
+
+<tr>
+<td>leader b u</td>
+<td>ReopenClosedTab<CR></td>
+</tr>
+
+<tr>
+<td>leader d d</td>
+<td>Debug<CR></td>
+</tr>
+
+<tr>
+<td>leader d D</td>
+<td>DebugClass<CR></td>
+</tr>
+
+<tr>
+<td>leader d j</td>
+<td>JRebel</td>
+</tr>
+
+<tr>
+<td>leader l l</td>
+<td>EvaluateExpression<CR></td>
+</tr>
+
+<tr>
+<td>leader t t</td>
+<td>ToggleLineBreakpoint<CR></td>
+</tr>
+
+<tr>
+<td>leader r r</td>
+<td>Run<CR></td>
+</tr>
+
+<tr>
+<td>leader r R</td>
+<td>RunClass<CR></td>
+</tr>
+
+<tr>
+<td>leader i m</td>
+<td>ImplementMethods<CR></td>
+</tr>
+
+<tr>
+<td>leader e e</td>
+<td>ShowErrorDescription<cr></td>
+</tr>
+
+<tr>
+<td>leader e n</td>
+<td>GotoNextError<cr></td>
+</tr>
+
+<tr>
+<td>leader R</td>
+<td>:source ~/.ideavimrc</td>
+</tr>
+
+<tr>
+<td>leader g s</td>
+<td>Vcs.QuickListPopupAction</td>
+</tr>
+
+<tr>
+<td>leader r p</td>
+<td>ReplaceInPath</td>
+</tr>
+
+<tr>
+<td>zO</td>
+<td>ExpandAllRegions<CR></td>
+</tr>
+
+<tr>
+<td>zo</td>
+<td>ExpandRegion<CR></td>
+</tr>
+
+<tr>
+<td>zc</td>
+<td>CollapseRegion<CR></td>
+</tr>
+
+<tr>
+<td>zC</td>
+<td>CollapseAllRegions<CR></td>
+</tr>
+
+<tr>
+<td>fj</td>
+<td>emacsIDEAs.AceJump<CR></td>
+</tr>
+
+<tr>
+<td>fw</td>
+<td>emacsIDEAs.AceJumpWord<CR></td>
+</tr>
+
+<tr>
+<td>ff</td>
+<td>CommentByLineComment<CR></td>
+</tr>
+
+<tr>
+<td>fb</td>
+<td>CommentByBlockComment<CR></td>
+</tr>
+
+<tr>
+<td>gd</td>
+<td>GotoDeclaration<cr></td>
+</tr>
+
+<tr>
+<td>gf</td>
+<td>GotoTypeDeclaration<cr></td>
+</tr>
+
+<tr>
+<td>gh</td>
+<td>QuickJavaDoc<CR></td>
+</tr>
+
+<tr>
+<td>gs</td>
+<td>GotoSymbol<cr></td>
+</tr>
+
+<tr>
+<td>gi</td>
+<td>GotoImplementation<CR></td>
+</tr>
+
+<tr>
+<td>gu</td>
+<td>FindUsages<CR></td>
+</tr>
+
+<tr>
+<td>gj</td>
+<td>IntroduceVariable<CR></td>
+</tr>
+
+<tr>
+<td>,,</td>
+<td>ReformatCode<CR></td>
+</tr>
+
+<tr>
+<td>,r</td>
+<td>RenameElement<CR>i</td>
+</tr>
+
+<tr>
+<td><c-o></td>
+<td>Back<cr></td>
+</tr>
+
+<tr>
+<td><c-i></td>
+<td>Forward<cr></td>
+</tr>
+
+<tr>
+<td>leader R</td>
+<td>reload ~/.ideavimrc<CR></td>
+</tr>
+
+<tr>
+<td>leader a l</td>
+<td>:actionlist<CR></td>
+</tr>
+
+<tr>
+<td>leader g s</td>
+<td>Vcs.QuickListPopupAction<CR></td>
+</tr>
+
+<tr>
+<td>leader s p</td>
+<td>FindInPath<CR></td>
+</tr>
+
+<tr>
+<td>leader r p</td>
+<td>ReplaceInPath<CR></td>
+</tr>
+
+<tr>
+<td>, c r</td>
+<td>Revert change</td>
+</tr>
+
+<tr>
+<td>, c t</td>
+<td>Close other tab</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/idea/">idea</a>
+          <a href="http://peng051410.github.io/tags/vim/">vim</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">设计模式学习之单例模式</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

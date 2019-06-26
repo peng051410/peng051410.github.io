@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>设计模式学习之代理模式 - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。
+代理模式 我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：
+ 定义一个查询接口，在这里定义一个查询用户收入的方法，如下:  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public interface Search { void queryIncome(String username); }   再定义一个实现该接口的具体业务类：  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public class SearchService implements Search { @Override public void queryIncome(String username) { System.out.println(username &#43; &amp;quot;开始查询&amp;quot;); try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } System." />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="设计模式学习之代理模式" />
+<meta property="og:description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。
+代理模式 我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：
+ 定义一个查询接口，在这里定义一个查询用户收入的方法，如下:  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public interface Search { void queryIncome(String username); }   再定义一个实现该接口的具体业务类：  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public class SearchService implements Search { @Override public void queryIncome(String username) { System.out.println(username &#43; &quot;开始查询&quot;); try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/" />
+<meta property="article:published_time" content="2018-07-16T21:08:28&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-26T10:47:52&#43;08:00"/>
+
+<meta itemprop="name" content="设计模式学习之代理模式">
+<meta itemprop="description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。
+代理模式 我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：
+ 定义一个查询接口，在这里定义一个查询用户收入的方法，如下:  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public interface Search { void queryIncome(String username); }   再定义一个实现该接口的具体业务类：  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public class SearchService implements Search { @Override public void queryIncome(String username) { System.out.println(username &#43; &quot;开始查询&quot;); try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } System.">
+
+
+<meta itemprop="datePublished" content="2018-07-16T21:08:28&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:47:52&#43;08:00" />
+<meta itemprop="wordCount" content="189">
+
+
+
+<meta itemprop="keywords" content="design-pattern,java," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="设计模式学习之代理模式"/>
+<meta name="twitter:description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。
+代理模式 我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：
+ 定义一个查询接口，在这里定义一个查询用户收入的方法，如下:  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public interface Search { void queryIncome(String username); }   再定义一个实现该接口的具体业务类：  package cn.imcompany.proxy; /** * Created by tomyli on 2018/6/28. * Github: https://github.com/peng051410 */ public class SearchService implements Search { @Override public void queryIncome(String username) { System.out.println(username &#43; &quot;开始查询&quot;); try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); } System."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">设计模式学习之代理模式</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-16" class="post-time">
+          2018-07-16
+        </time>
+        <div class="post-category">
+            <a href="http://peng051410.github.io/categories/java/"> java </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="说明">说明</h2>
+
+<p>代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。</p>
+
+<h2 id="代理模式">代理模式</h2>
+
+<p>我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：</p>
+
+<ul>
+<li>定义一个查询接口，在这里定义一个查询用户收入的方法，如下:</li>
+</ul>
+
+<pre><code class="language-java">package cn.imcompany.proxy;
+
+/**
+ * Created by tomyli on 2018/6/28.
+ * Github: https://github.com/peng051410
+ */
+public interface Search {
+
+    void queryIncome(String username);
+}
+</code></pre>
+
+<ul>
+<li>再定义一个实现该接口的具体业务类：</li>
+</ul>
+
+<pre><code class="language-java">package cn.imcompany.proxy;
+
+/**
+ * Created by tomyli on 2018/6/28.
+ * Github: https://github.com/peng051410
+ */
+public class SearchService implements Search {
+
+    @Override
+    public void queryIncome(String username) {
+
+        System.out.println(username + &quot;开始查询&quot;);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(username + &quot;查询完成&quot;);
+    }
+}
+</code></pre>
+
+<p>在上面代码中就实现了查询收入的方法，简单的打印了两行日志。</p>
+
+<ul>
+<li>由于在实现需要对权限进行控制并记录日志，则先把需要用来的权限类与日志类进行定义与实现。实现代码如下:</li>
+</ul>
+
+<pre><code class="language-java">package cn.imcompany.proxy;
+
+/**
+ * Created by tomyli on 2018/6/28.
+ * Github: https://github.com/peng051410
+ */
+public class Auth {
+
+    public boolean valid(String username) {
+
+        return &quot;admin&quot;.equals(username);
+    }
+}
+
+
+public class Logger {
+
+    public void beforeLog(String username) {
+        System.out.println(&quot;开始记录&quot; + username + &quot;查询日志&quot;);
+    }
+
+    public void afterLog(String username) {
+        System.out.println(&quot;结束记录&quot; + username + &quot;查询日志&quot;);
+    }
+}
+</code></pre>
+
+<ul>
+<li>最后来进行代理类的实现，代理类通常也会实现查询接口，这样在调用者看来它与真正的业务类没有什么区别，实现代码如下：</li>
+</ul>
+
+<pre><code class="language-java">package cn.imcompany.proxy;
+
+/**
+ * Created by tomyli on 2018/6/28.
+ * Github: https://github.com/peng051410
+ */
+public class SearchProxy implements Search {
+
+    private Logger logger = new Logger();
+    private Auth auth = new Auth();
+    private Search search = new SearchService();
+
+    @Override
+    public void queryIncome(String username) {
+
+        logger.beforeLog(username);
+        if (auth.valid(username)) {
+            search.queryIncome(username);
+        }
+        logger.afterLog(username);
+    }
+}
+</code></pre>
+
+<p>在上面的代理中，它维护了权限与日志这两个工具类的实例，还维护真正提供查询的业务类实例，在实现的查询收入接口中，先进行进入日志的记录，再验证用户的权限，验证通过则调用真正的业务类来查询收入，最后记录结束的日志，一次调用处理完成。
+上面实现的类图如下：
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/proxy.png" />
+    </div>
+    <a href="/ox-hugo/proxy.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+主要的核心都在代理类中，它对整个的流程进行全面的控制，对真正的业务方法进行了保护，只有满足条件的请求才可以被处理。</p>
+
+<h2 id="总结">总结</h2>
+
+<h3 id="优点">优点</h3>
+
+<ol>
+<li>代理模式使得具体的业务方法在不想过多的暴露自己的情况更好的保护了具体业务，很好的隔离了调用者与被调用者，降低了系统的耦合性。</li>
+<li>对真正业务的修改对调用者是无感知的，它们只需要与代理打交道就可以，符合开闭原则。</li>
+<li>保护代理可以对访问进行细粒度的控制。</li>
+<li>对于虚拟代理可以对于耗费资源的大对象进行一个简单代理，在用户使用再调用时真正的对象已经实例化完毕，给了用户更好的体验。</li>
+</ol>
+
+<h3 id="缺点">缺点</h3>
+
+<ol>
+<li>由于在中间增加了代理，多了一些额外的处理，对于处理速度会有一定的降低。</li>
+</ol>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/design-pattern/">design-pattern</a>
+          <a href="http://peng051410.github.io/tags/java/">java</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">那些提高效率的Idea插件</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/she-ji-mo-shi-xue-xi-zhi-wei-tuo-mo-shi/">
+            <span class="next-text nav-default">设计模式学习之委托模式</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

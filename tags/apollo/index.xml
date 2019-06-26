@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apollo on I&#39;m company</title>
+    <link>http://peng051410.github.io/tags/apollo/</link>
+    <description>Recent content in apollo on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 May 2019 17:34:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://peng051410.github.io/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apollo 配置中心畅游</title>
+      <link>http://peng051410.github.io/post/apollo-config-swim/</link>
+      <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
+      
+      <guid>http://peng051410.github.io/post/apollo-config-swim/</guid>
+      <description>目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置</description>
+    </item>
+    
+  </channel>
+</rss>

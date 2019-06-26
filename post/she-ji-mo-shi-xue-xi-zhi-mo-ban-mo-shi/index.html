@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>设计模式学习之模板模式 - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&amp;gt;验证参数-&amp;gt;验证签名-&amp;gt;验证支付状态（可选）-&amp;gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。
+模板设计模式实现 模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：
+package cn.imcompany.callback; import java.util.Map; /** * Created by tomyli on 2018/6/21. * Github: https://github.com/peng051410 */ public abstract class PayCallback { public abstract Map&amp;lt;String, String&amp;gt; getParam(); public abstract boolean checkParam(Map&amp;lt;String, String&amp;gt; param); public abstract boolean validSign(); /** * 定义了一个钩子方法来让子类控制流程实现 * @return true：强制返回，false：不强制返回 */ public boolean forceReturn() { return false; } public String doService() { Map&amp;lt;String, String&amp;gt; map = getParam(); if (!checkParam(map)) { return &amp;quot;param fail&amp;quot;; } if (!" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/she-ji-mo-shi-xue-xi-zhi-mo-ban-mo-shi/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="设计模式学习之模板模式" />
+<meta property="og:description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&gt;验证参数-&gt;验证签名-&gt;验证支付状态（可选）-&gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。
+模板设计模式实现 模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：
+package cn.imcompany.callback; import java.util.Map; /** * Created by tomyli on 2018/6/21. * Github: https://github.com/peng051410 */ public abstract class PayCallback { public abstract Map&lt;String, String&gt; getParam(); public abstract boolean checkParam(Map&lt;String, String&gt; param); public abstract boolean validSign(); /** * 定义了一个钩子方法来让子类控制流程实现 * @return true：强制返回，false：不强制返回 */ public boolean forceReturn() { return false; } public String doService() { Map&lt;String, String&gt; map = getParam(); if (!checkParam(map)) { return &quot;param fail&quot;; } if (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/she-ji-mo-shi-xue-xi-zhi-mo-ban-mo-shi/" />
+<meta property="article:published_time" content="2018-06-25T21:06:17&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-26T10:59:29&#43;08:00"/>
+
+<meta itemprop="name" content="设计模式学习之模板模式">
+<meta itemprop="description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&gt;验证参数-&gt;验证签名-&gt;验证支付状态（可选）-&gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。
+模板设计模式实现 模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：
+package cn.imcompany.callback; import java.util.Map; /** * Created by tomyli on 2018/6/21. * Github: https://github.com/peng051410 */ public abstract class PayCallback { public abstract Map&lt;String, String&gt; getParam(); public abstract boolean checkParam(Map&lt;String, String&gt; param); public abstract boolean validSign(); /** * 定义了一个钩子方法来让子类控制流程实现 * @return true：强制返回，false：不强制返回 */ public boolean forceReturn() { return false; } public String doService() { Map&lt;String, String&gt; map = getParam(); if (!checkParam(map)) { return &quot;param fail&quot;; } if (!">
+
+
+<meta itemprop="datePublished" content="2018-06-25T21:06:17&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:59:29&#43;08:00" />
+<meta itemprop="wordCount" content="224">
+
+
+
+<meta itemprop="keywords" content="design-pattern,java," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="设计模式学习之模板模式"/>
+<meta name="twitter:description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&gt;验证参数-&gt;验证签名-&gt;验证支付状态（可选）-&gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。
+模板设计模式实现 模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：
+package cn.imcompany.callback; import java.util.Map; /** * Created by tomyli on 2018/6/21. * Github: https://github.com/peng051410 */ public abstract class PayCallback { public abstract Map&lt;String, String&gt; getParam(); public abstract boolean checkParam(Map&lt;String, String&gt; param); public abstract boolean validSign(); /** * 定义了一个钩子方法来让子类控制流程实现 * @return true：强制返回，false：不强制返回 */ public boolean forceReturn() { return false; } public String doService() { Map&lt;String, String&gt; map = getParam(); if (!checkParam(map)) { return &quot;param fail&quot;; } if (!"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">设计模式学习之模板模式</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-06-25" class="post-time">
+          2018-06-25
+        </time>
+        <div class="post-category">
+            <a href="http://peng051410.github.io/categories/java/"> java </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="说明">说明</h2>
+
+<p>在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&gt;验证参数-&gt;验证签名-&gt;验证支付状态（可选）-&gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。</p>
+
+<h2 id="模板设计模式实现">模板设计模式实现</h2>
+
+<p>模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：</p>
+
+<pre><code class="language-java">package cn.imcompany.callback;
+
+import java.util.Map;
+
+/**
+ * Created by tomyli on 2018/6/21.
+ * Github: https://github.com/peng051410
+ */
+public abstract class PayCallback {
+
+    public abstract Map&lt;String, String&gt; getParam();
+
+    public abstract boolean checkParam(Map&lt;String, String&gt; param);
+
+    public abstract boolean validSign();
+
+    /**
+     * 定义了一个钩子方法来让子类控制流程实现
+     * @return true：强制返回，false：不强制返回
+     */
+    public boolean forceReturn() {
+
+        return false;
+    }
+
+    public String doService() {
+
+        Map&lt;String, String&gt; map = getParam();
+        if (!checkParam(map)) {
+            return &quot;param fail&quot;;
+        }
+        if (!validSign()) {
+            return &quot;sign fail&quot;;
+        }
+
+        if (!map.get(&quot;status&quot;).equals(&quot;success&quot;)) {
+            if (forceReturn()) {
+                return &quot;order fail&quot;;
+            }
+        }
+
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+<p>在上面的PayCallback类中声明了getParam(获取参数)，checkParam（验证参数），validSign（验证签名），验证支付状态四个步骤，具体的支付回调类要来实现这里声明的方法即可。下面是一个微信支付的回调类的代码实现：</p>
+
+<pre><code class="language-java">package cn.imcompany.callback;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by tomyli on 2018/6/21.
+ * Github: https://github.com/peng051410
+ */
+public class WechatPayCallback extends PayCallback {
+
+    @Override
+    public Map&lt;String, String&gt; getParam() {
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;status&quot;, &quot;fail&quot;);
+        return map;
+    }
+
+    @Override
+    public boolean checkParam(Map&lt;String, String&gt; param) {
+        return true;
+    }
+
+    @Override
+    public boolean validSign() {
+        return true;
+    }
+
+    @Override
+    public boolean forceReturn() {
+
+        return true;
+    }
+
+}
+</code></pre>
+
+<p>具体的微信回调类实现了PayCallback类声明的抽象方法，它返回的状态是状态失败，在这里面有一个forceReturn方法，可以处理是否在某一个流程进行强制的返回，在微信回调类里面是进行强制返回，下面看一下支付宝的回调类代码：</p>
+
+<pre><code class="language-java">package cn.imcompany.callback;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by tomyli on 2018/6/21.
+ * Github: https://github.com/peng051410
+ */
+public class AliPayCallback extends PayCallback {
+
+    @Override
+    public Map&lt;String, String&gt; getParam() {
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;status&quot;, &quot;success&quot;);
+        return map;
+    }
+
+    @Override
+    public boolean checkParam(Map&lt;String, String&gt; param) {
+        return true;
+    }
+
+    @Override
+    public boolean validSign() {
+        return true;
+    }
+}
+
+</code></pre>
+
+<p>对于支付宝，这里面的状态是成功，证明这一单处理成功，在支付宝回调这个类里面没有重写父类的forceReturn方法，这个方法子类可以根据需要来决定是否需要覆盖。这样父类给了子类可以控制父类流程的方法，这个方法一般叫做钩子方法，是留给子类来进行一些特殊处理的方法。子类实现这个方法就可以间接的控制父类中定义好的流程。比如在这里就可以控制遇到支付状态为失败的订单是否继续进行后续的操作。不进行了说明这一单也正确处理完成，返回给调用方正确的状态就可以了。</p>
+
+<h3 id="模板模式实现的类图">模板模式实现的类图</h3>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/template.png" />
+    </div>
+    <a href="/ox-hugo/template.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h2 id="模板模式总结">模板模式总结</h2>
+
+<ol>
+<li>模板模式定义了一个具体的流程来实现功能，子类只需要实现相应定义的方法就可以达到最终的结果。增加另一种回调类也非常的容易，只需要实现父类的方法就可以了。符合开闭原则。</li>
+<li>父类可以提供子类进行流程控制的方法，这样可以实现子类的反向控制。</li>
+</ol>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/design-pattern/">design-pattern</a>
+          <a href="http://peng051410.github.io/tags/java/">java</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/she-ji-mo-shi-xue-xi-zhi-gua-pei-qi/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">设计模式学习之适配器</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/">
+            <span class="next-text nav-default">设计模式学习之策略模式</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

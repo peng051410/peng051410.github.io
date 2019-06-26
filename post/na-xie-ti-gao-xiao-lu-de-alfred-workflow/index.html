@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>那些提高效率的Alfred Workflow - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
+Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
+Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
+Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
+Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
+Baidu Map 在alfred上使用百度地图。插件地址
+Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
+Calendar 在alfred中显示出当月的日历信息。插件地址
+Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
+Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
+Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
+Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
+Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
+Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
+Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
+插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
+Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
+Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
+Homebrew &amp;amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
+iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
+Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
+Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="那些提高效率的Alfred Workflow" />
+<meta property="og:description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
+Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
+Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
+Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
+Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
+Baidu Map 在alfred上使用百度地图。插件地址
+Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
+Calendar 在alfred中显示出当月的日历信息。插件地址
+Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
+Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
+Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
+Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
+Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
+Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
+Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
+插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
+Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
+Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
+Homebrew &amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
+iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
+Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
+Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/" />
+<meta property="article:published_time" content="2018-09-21T10:02:49&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-26T10:39:08&#43;08:00"/>
+
+<meta itemprop="name" content="那些提高效率的Alfred Workflow">
+<meta itemprop="description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
+Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
+Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
+Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
+Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
+Baidu Map 在alfred上使用百度地图。插件地址
+Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
+Calendar 在alfred中显示出当月的日历信息。插件地址
+Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
+Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
+Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
+Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
+Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
+Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
+Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
+插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
+Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
+Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
+Homebrew &amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
+iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
+Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
+Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。">
+
+
+<meta itemprop="datePublished" content="2018-09-21T10:02:49&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:39:08&#43;08:00" />
+<meta itemprop="wordCount" content="152">
+
+
+
+<meta itemprop="keywords" content="alfred," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些提高效率的Alfred Workflow"/>
+<meta name="twitter:description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。这里有具体的使用方式。
+Alfred Keywords Help 安装的workflow多了，记忆触发的keyword就比较困难，使用Keywords help这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。
+Alfred Maestro 操作Maestro的workflow，可以直接查找macro并执行。插件地址
+Alfred My Mind 快速查询Nikita的githubpage内容的workflow，我在他的文章里面学到了很多。插件地址
+Awesome lists 快速查询Github上awesome列表的workflow，只为发现更多。插件地址，这个也是Nikita的作品。
+Baidu Map 在alfred上使用百度地图。插件地址
+Birthday 在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。插件地址
+Calendar 在alfred中显示出当月的日历信息。插件地址
+Chromes Bookmarks 在aflred中搜索Chrome浏览器的书签，非常的好用。插件地址
+Common Search 国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。插件地址
+Dash 在alfred中进行Dash的搜索，开发者必备。插件地址
+Directory watches 本地目录文件查看，指定目录的搜索，回收站文件显示。
+Emacs Workflow 在alfred中进行emacs的操作，比如打开文件等。插件地址
+Eudic 插件说明 使用欧路词典进行快速翻译。插件地址
+Git Repos 插件说明 搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。插件地址
+插件说明 搜索github上的项目，可以搜索项目，人物等。插件地址
+Google Chrome History 在alfred中快速查看Chrome的浏览历史。插件地址
+Hammerspoon Workflow 在alfred中调用hammerspon脚本的workflow。插件地址
+Homebrew &amp; Cask for Alfred 在alfred中进行mac软件的更新、查看、安装等。插件地址
+iTerm Sessions 在alfre中快速切换iterm中存在的session窗口。插件地址
+Kill Process 在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。插件地址
+Last changed files 显示出当前系统最新修改的文件，对于系统有什么修改一目了然。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">那些提高效率的Alfred Workflow</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-09-21" class="post-time">
+          2018-09-21
+        </time>
+        <div class="post-category">
+            <a href="http://peng051410.github.io/categories/tool/"> tool </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="alfred-browser-toolbox">Alfred Browser Toolbox</h2>
+
+<p>Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。<a href="https://www.alfredforum.com/topic/5166-copymove-to-and-alfred-browser-workflows/">这里</a>有具体的使用方式。</p>
+
+<h2 id="alfred-keywords-help">Alfred Keywords Help</h2>
+
+<p>安装的workflow多了，记忆触发的keyword就比较困难，使用<a href="https://github.com/pochemuto/alfred-help-workflow">Keywords help</a>这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。</p>
+
+<h2 id="alfred-maestro">Alfred Maestro</h2>
+
+<p>操作Maestro的workflow，可以直接查找macro并执行。<a href="https://github.com/iansinnott/alfred-maestro">插件地址</a></p>
+
+<h2 id="alfred-my-mind">Alfred My Mind</h2>
+
+<p>快速查询<a href="https://nikitavoloboev.xyz/">Nikita</a>的githubpage内容的workflow，我在他的文章里面学到了很多。<a href="https://github.com/nikitavoloboev/alfred-my-mind#readme">插件地址</a></p>
+
+<h2 id="awesome-lists">Awesome lists</h2>
+
+<p>快速查询Github上awesome列表的workflow，只为发现更多。<a href="https://github.com/nikitavoloboev/alfred-awesome-lists">插件地址</a>，这个也是Nikita的作品。</p>
+
+<h2 id="baidu-map">Baidu Map</h2>
+
+<p>在alfred上使用百度地图。<a href="https://github.com/wofeiwo/alfred-baidu-map">插件地址</a></p>
+
+<h2 id="birthday">Birthday</h2>
+
+<p>在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。<a href="https://github.com/nikitavoloboev/small-workflows/tree/master/birthday#readme">插件地址</a></p>
+
+<h2 id="calendar">Calendar</h2>
+
+<p>在alfred中显示出当月的日历信息。<a href="https://github.com/owenwater/alfred-cal">插件地址</a></p>
+
+<h2 id="chromes-bookmarks">Chromes Bookmarks</h2>
+
+<p>在aflred中搜索Chrome浏览器的书签，非常的好用。<a href="https://github.com/blainesch/alfred-chrome-bookmarks">插件地址</a></p>
+
+<h2 id="common-search">Common Search</h2>
+
+<p>国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。<a href="https://github.com/MuYunyun/commonSearch">插件地址</a></p>
+
+<h2 id="dash">Dash</h2>
+
+<p>在alfred中进行Dash的搜索，开发者必备。<a href="https://github.com/Kapeli/Dash-Alfred-Workflow">插件地址</a></p>
+
+<h2 id="directory-watches">Directory watches</h2>
+
+<p>本地目录文件查看，指定目录的搜索，回收站文件显示。</p>
+
+<h2 id="emacs-workflow">Emacs Workflow</h2>
+
+<p>在alfred中进行emacs的操作，比如打开文件等。<a href="https://www.alfredforum.com/topic/8444-emacs-workflow/">插件地址</a></p>
+
+<h2 id="eudic">Eudic</h2>
+
+<h3 id="插件说明">插件说明</h3>
+
+<p>使用欧路词典进行快速翻译。<a href="https://github.com/cdpath/eudic_tools">插件地址</a></p>
+
+<h2 id="git-repos">Git Repos</h2>
+
+<h3 id="插件说明-1">插件说明</h3>
+
+<p>搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。<a href="https://github.com/deanishe/alfred-repos">插件地址</a></p>
+
+<h3 id="插件说明-2">插件说明</h3>
+
+<p>搜索github上的项目，可以搜索项目，人物等。<a href="https://github.com/gharlan/alfred-github-workflow">插件地址</a></p>
+
+<h2 id="google-chrome-history">Google Chrome History</h2>
+
+<p>在alfred中快速查看Chrome的浏览历史。<a href="https://github.com/tupton/alfred-chrome-history">插件地址</a></p>
+
+<h2 id="hammerspoon-workflow">Hammerspoon Workflow</h2>
+
+<p>在alfred中调用hammerspon脚本的workflow。<a href="https://www.alfredforum.com/topic/5334-hammerspoon-workflow/">插件地址</a></p>
+
+<h2 id="homebrew-and-cask-for-alfred">Homebrew &amp; Cask for Alfred</h2>
+
+<p>在alfred中进行mac软件的更新、查看、安装等。<a href="https://github.com/fniephaus/alfred-homebrew/">插件地址</a></p>
+
+<h2 id="iterm-sessions">iTerm Sessions</h2>
+
+<p>在alfre中快速切换iterm中存在的session窗口。<a href="https://github.com/madvas/alfred-iterm-sessions">插件地址</a></p>
+
+<h2 id="kill-process">Kill Process</h2>
+
+<p>在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。<a href="https://github.com/nathangreenstein/alfred-process-killer">插件地址</a></p>
+
+<h2 id="last-changed-files">Last changed files</h2>
+
+<p>显示出当前系统最新修改的文件，对于系统有什么修改一目了然。</p>
+
+<h2 id="launcher">Launcher</h2>
+
+<p>应用程序快速启动workflow，结束Karabiner使用。</p>
+
+<h2 id="learn-anything">Learn Anything</h2>
+
+<p>Nivita的Learn Anything，只为学习更多。<a href="https://github.com/nikitavoloboev/alfred-learn-anything">插件地址</a></p>
+
+<h2 id="linux-command">Linux Command</h2>
+
+<p>Linux命令手册，快速查询linux命令。<a href="https://github.com/jaywcjlove/linux-command">插件地址</a></p>
+
+<h2 id="mail-dot-app-search">Mail.app Search</h2>
+
+<p>快速搜索Mail.app中的邮件信息。可以根据邮件名，发送人，主题等进行搜索。<a href="http://www.packal.org/workflow/mailapp-search">插件地址</a></p>
+
+<h2 id="myip">MyIP</h2>
+
+<p>快速的查询本机的ip，包括本地IP与外网IP。</p>
+
+<h2 id="menubar-search">MenuBar Search</h2>
+
+<p>快速查询当前应用的菜单信息，点击进行操作。</p>
+
+<h2 id="nsc">NSC</h2>
+
+<p>各种进制的转换，支持二进制、十进制、十六进制之间的快速转换。<a href="https://github.com/obstschale/NSC">插件地址</a></p>
+
+<h2 id="org-mode-capture">org-mode-capture</h2>
+
+<p>快速插入Org capture，可以快速的记录TODO事件。<a href="https://github.com/alexandergogl/alfred-org-mode-workflow">插件地址</a></p>
+
+<h2 id="packal-search">Packal Search</h2>
+
+<p>Alfred workflow的快速搜索、更新。<a href="https://github.com/deanishe/alfred-packal-search">插件地址</a></p>
+
+<h2 id="recent-documents-apps">Recent Documents / Apps</h2>
+
+<p>显示当前的文档信息，当前的app信息，当前app关联的文档信息。<a href="https://github.com/mpco/Alfred3-workflow-recent-documents">插件地址</a></p>
+
+<h2 id="search-safari-and-chrome-tabs">Search Safari and Chrome Tabs</h2>
+
+<p>搜索Chrome和Safari当前打开的tab页面，支持跳转到选择页面。<a href="http://www.packal.org/workflow/search-safari-and-chrome-tabs">插件地址</a></p>
+
+<h2 id="searchio">Searchio!</h2>
+
+<p>支持google、youtuebe、wiki的fuzzy搜索，支持配置多种语言。<a href="https://github.com/deanishe/alfred-searchio">插件地址</a></p>
+
+<h2 id="ssh-securecrt">SSH SecureCRT</h2>
+
+<p>在alfre快速连接SecureCRT的session。</p>
+
+<h2 id="stackoverflow">StackOverflow</h2>
+
+<p>搜索stackoverflow上的指定问题。<a href="https://github.com/deanishe/alfred-stackoverflow">插件地址(deanishe)</a></p>
+
+<h2 id="swift-window-switcher">Swift Window Switcher</h2>
+
+<p>使用alfred来快速切换应用的窗口，还可以对safari的当前标签进行搜索。<a href="https://github.com/mandrigin/AlfredSwitchWindows">插件地址</a></p>
+
+<h2 id="switchhosts">SwitchHosts!</h2>
+
+<p>在alfred中快速本地host的配置，配合<a href="https://github.com/oldj/SwitchHosts">SwitchHosts</a>来使用。<a href="http://www.packal.org/workflow/switchhosts">插件地址</a></p>
+
+<h2 id="snippetslab">SnippetsLab</h2>
+
+<p>在alfred中快速查看SnippetsLab中的代码片断</p>
+
+<h2 id="tldr">Tldr</h2>
+
+<p>Tldr的alfred版本，快速查询命令。<a href="https://github.com/cs1707/tldr-alfred">插件地址</a></p>
+
+<h2 id="uninstall-with-cleanmymac-x">Uninstall with CleanMyMac X</h2>
+
+<p>使用CleanMyMac来快速卸载软件。<a href="http://www.packal.org/workflow/uninstall-cleanmymac-x">插件地址</a></p>
+
+<h2 id="vagrantup">VagrantUP</h2>
+
+<p>控制vagrant的workflow，可以显示vagrant的环境，根据name，path进行过滤等。<a href="https://github.com/m1keil/alfred-vagrant-workflow">插件地址</a></p>
+
+<h2 id="vmware-control">VMWare Control</h2>
+
+<p>在alfred中控制vmware虚拟机。支持启动、停止、挂起、切换等操作。<a href="http://www.packal.org/workflow/vmware-control">插件地址</a></p>
+
+<h2 id="web-searches">Web Searches</h2>
+
+<p>通用的web搜索，支持reddit，google translate等网站搜索。<a href="https://github.com/nikitavoloboev/alfred-web-searches">插件地址</a></p>
+
+<h2 id="wechat-plugin">WeChat Plugin</h2>
+
+<p>在alfred中进行微信聊天，可以显示聊天记录，超级方便。<a href="https://github.com/TKkk-iOSer/WeChatPlugin-MacOS">插件地址</a></p>
+
+<h2 id="wi-fi">Wi-Fi</h2>
+
+<p>控制Mac的ip开关，新更新的版本增加了重启wifi的功能。<a href="https://github.com/ravelll/wifi-workflow">插件地址</a></p>
+
+<h2 id="youdao-translate">Youdao Translate</h2>
+
+<p>有道词典快速查询翻译，支持中英互译，发音，记录查询历史等功能。<a href="https://github.com/Rouwanzi/AlfredWorkflow_YoudaoTranslate">插件地址</a></p>
+
+<h2 id="zapier-for-alfred">Zapier for Alfred</h2>
+
+<p>在alfred中触发zapier流，目前还在尝试中。<a href="https://github.com/zapier/Zapier-for-Alfred/">插件地址</a></p>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/alfred/">alfred</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">那些提高效率的命令行工具</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/">
+            <span class="next-text nav-default">那些提高效率的Idea插件</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

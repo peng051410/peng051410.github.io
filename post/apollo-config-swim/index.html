@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Apollo 配置中心畅游 - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/apollo-config-swim/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Apollo 配置中心畅游" />
+<meta property="og:description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/apollo-config-swim/" />
+<meta property="article:published_time" content="2019-05-09T17:34:09&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-25T20:46:29&#43;08:00"/>
+
+<meta itemprop="name" content="Apollo 配置中心畅游">
+<meta itemprop="description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置">
+
+
+<meta itemprop="datePublished" content="2019-05-09T17:34:09&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-25T20:46:29&#43;08:00" />
+<meta itemprop="wordCount" content="108">
+
+
+
+<meta itemprop="keywords" content="apollo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apollo 配置中心畅游"/>
+<meta name="twitter:description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Apollo 配置中心畅游</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-05-09" class="post-time">
+          2019-05-09
+        </time>
+        
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="目前市面上的开源产品">目前市面上的开源产品</h2>
+
+<h3 id="disconf"><a href="https://github.com/knightliao/disconf">Disconf</a></h3>
+
+<p>2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。</p>
+
+<h3 id="spring-cloud-config"><a href="https://github.com/spring-cloud/spring-cloud-config">Spring Cloud Config</a></h3>
+
+<p>2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。</p>
+
+<h3 id="apollo"><a href="https://github.com/ctripcorp/apollo">Apollo</a></h3>
+
+<p>2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。</p>
+
+<h3 id="nacos"><a href="https://github.com/alibaba/nacos">Nacos</a></h3>
+
+<p>2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。</p>
+
+<h2 id="为什么选择apollo">为什么选择Apollo</h2>
+
+<h3 id="社区活跃">社区活跃</h3>
+
+<p>刚刚发布了<a href="https://github.com/ctripcorp/apollo/releases/tag/v1.4.0">1.4.0</a>版本，Issue处理速度快</p>
+
+<h3 id="文档齐全">文档齐全</h3>
+
+<p>体验，部署，设计文档都齐全</p>
+
+<h3 id="重要的灰度发布">重要的灰度发布</h3>
+
+<p>想发布一台机器试试水，可以！</p>
+
+<h3 id="开源协议友好">开源协议友好</h3>
+
+<p>Apache 2 license</p>
+
+<h2 id="apollo都有哪些重要功能">Apollo都有哪些重要功能</h2>
+
+<p>以下摘自<a href="https://github.com/ctripcorp/apollo#features">官网说明</a></p>
+
+<h3 id="统一管理不同环境-不同集群的配置">统一管理不同环境、不同集群的配置</h3>
+
+<h3 id="配置修改实时生效-热发布">配置修改实时生效（热发布）</h3>
+
+<h3 id="版本发布管理">版本发布管理</h3>
+
+<p>目前只支持对最近版本的恢复。<a href="https://github.com/ctripcorp/apollo/issues/1642">https://github.com/ctripcorp/apollo/issues/1642</a></p>
+
+<h3 id="灰度发布">灰度发布</h3>
+
+<h3 id="权限管理-发布审核-操作审计">权限管理、发布审核、操作审计</h3>
+
+<p>编辑与发布是两个独立的操作。</p>
+
+<h3 id="客户端配置信息监控">客户端配置信息监控</h3>
+
+<h3 id="提供java和-dot-net原生客户端">提供Java和.Net原生客户端</h3>
+
+<h3 id="提供开放平台api">提供开放平台API</h3>
+
+<p>这样可以通过其它方式来查看配置信息，<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E5%25BC%2580%25E6%2594%25BE%25E5%25B9%25B3%25E5%258F%25B0">平台API说明</a></p>
+
+<h3 id="使用方便的后台配置系统portal">使用方便的后台配置系统Portal</h3>
+
+<h3 id="分布式部署相对较复杂-这是缺点">分布式部署相对较复杂，这是缺点</h3>
+
+<p>外部依赖少，目前依赖Mysql</p>
+
+<h2 id="apollo的组成">Apollo的组成</h2>
+
+<h3 id="apollo长什么样">Apollo长什么样?</h3>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/apollo-home-screenshot.png" />
+    </div>
+    <a href="/ox-hugo/apollo-home-screenshot.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h3 id="apollo整体设计">Apollo整体设计</h3>
+
+<h4 id="总体架构">总体架构</h4>
+
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/apollo-overall-architecture.png" />
+    </div>
+    <a href="/ox-hugo/apollo-overall-architecture.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h4 id="代码结构">代码结构</h4>
+
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/apollo-code-structure.png" />
+    </div>
+    <a href="/ox-hugo/apollo-code-structure.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p><a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E9%2585%258D%25E7%25BD%25AE%25E4%25B8%25AD%25E5%25BF%2583%25E8%25AE%25BE%25E8%25AE%25A1#13-%25E5%2590%2584%25E6%25A8%25A1%25E5%259D%2597%25E6%25A6%2582%25E8%25A6%2581%25E4%25BB%258B%25E7%25BB%258D">各模块概要介绍</a></p>
+
+<h3 id="apollo-config-service">Apollo Config Service</h3>
+
+<p>提供配置获取接口，服务对象为Apollo客户端</p>
+
+<h3 id="apollo-admin-service">Apollo Admin Service</h3>
+
+<p>提供配置管理（修改、发布）接口，服务与Portal</p>
+
+<h3 id="apollo-portal">Apollo Portal</h3>
+
+<p>提供WEB界面供用户管理配置</p>
+
+<h2 id="apollo的重要设计">Apollo的重要设计</h2>
+
+<h3 id="admin-service与config-service的通信方式">Admin Service与Config Service的通信方式</h3>
+
+<p>Apollo使用Mysql实现消息(ReleaseMessage)的处理，消息内容为AppId+Cluster+Namespace，具体的设计思想可以参考<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E9%2585%258D%25E7%25BD%25AE%25E4%25B8%25AD%25E5%25BF%2583%25E8%25AE%25BE%25E8%25AE%25A1#211-%25E5%258F%2591%25E9%2580%2581releasemessage%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%25E6%2596%25B9%25E5%25BC%258F">这里</a></p>
+
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/apollo-release-message-design.png" />
+    </div>
+    <a href="/ox-hugo/apollo-release-message-design.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h3 id="客户端与服务端的通信方式">客户端与服务端的通信方式</h3>
+
+<p>客户端与服务端保持一个长连接(通过Http Long Polling实现)
+<a href="~/github/apollo/doc/images/client-architecture.png">Client Server</a></p>
+
+<h3 id="重要的namespace">重要的Namespace</h3>
+
+<p>Namespace是配置项的集合，类似于一个配置文件的概念，获取的权限分为private与public两种权限。</p>
+
+<h4 id="namespace的类型">Namespace的类型</h4>
+
+<ul>
+<li>私有类型</li>
+<li>公有类型</li>
+<li>关联类型（继承类型）</li>
+</ul>
+
+<h3 id="cluster能用来做什么">Cluster能用来做什么?</h3>
+
+<p>分机房实例，分任务功能实例，比如在一些实例执行job，需要增加-Dapollo.cluster=配置指定集群名</p>
+
+<h2 id="体验部署方式">体验部署方式</h2>
+
+<p>Docker，本地源代码，虚拟机多环境</p>
+
+<h2 id="使用注意事项">使用注意事项</h2>
+
+<ul>
+<li>在主版本有未发布的配置项时，要发布灰度后的全量则需要先把主版本中的配置发布后方可操作</li>
+<li>使用docker运行demo测试时连接不上docker中的服务解决方法：<a href="https://github.com/ctripcorp/apollo/issues/1481#issuecomment-422057411w">https://github.com/ctripcorp/apollo/issues/1481#issuecomment-422057411w</a></li>
+<li>/opt目录要有读写权限，日志文件默认打印在此目录</li>
+<li>Client端要使用本地缓存配置，默认情况下确保/opt/data目录存在</li>
+<li>线上环境配置建议配置在机器上，不建议配置在代码中，与代码解耦</li>
+<li>config与admin service要开放端口8080与8090(默认情况下)，端口可以在项目中的starup.sh中修改</li>
+<li>如果Config Service配置开启了内存缓存数据(config-service.cache.enabled)，要提前考虑数据量的大小，调整服务的内存配置</li>
+<li>在配置单环境(如开发环境)高可用时配置修改点
+
+<ul>
+<li>修改config库的eureka.service.url配置项为多个开发环境的meta server地址</li>
+<li>修改portal的apollo-env.properties文件中的开发环境指定地址</li>
+<li>修改admin与config的连接数据库地址，都连接到开发环境的mysql地址</li>
+</ul></li>
+</ul>
+
+<h2 id="后续待确认问题处理">后续待确认问题处理</h2>
+
+<h3 id="客户端的读取权限">客户端的读取权限</h3>
+
+<p>目前看官方没有对这方面进行处理，维护者已将该功能加为TODO。具体的实现方案看<a href="https://github.com/ctripcorp/apollo/issues/2099#issuecomment-478240713">这里</a></p>
+
+<h3 id="docker的实例获取问题">docker的实例获取问题</h3>
+
+<p>验证的是实例列表获取的是docker实例的ip地址，不同的docker机获取的ip是相同的</p>
+
+
+
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/ox-hugo/apollo-docker-ip.png" />
+    </div>
+    <a href="/ox-hugo/apollo-docker-ip.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<h3 id="本地调试读取配置问题">本地调试读取配置问题</h3>
+
+<p>Apollo的开发模式可以解决这个问题，具体看<a href="https://github.com/ctripcorp/apollo/wiki/Java%25E5%25AE%25A2%25E6%2588%25B7%25E7%25AB%25AF%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597#%25E4%25BA%2594%25E6%259C%25AC%25E5%259C%25B0%25E5%25BC%2580%25E5%258F%2591%25E6%25A8%25A1%25E5%25BC%258F">这里</a></p>
+
+<h3 id="client怎么来修改配置">Client怎么来修改配置</h3>
+
+<p>目前看Apllo-Client包只提供从配置中心获取配置的功能，如果想对配置进行修改，则只能通过OpenApi的方式来实现。</p>
+
+<h3 id="配置指定时间生效">配置指定时间生效</h3>
+
+<p>目前来看需要通过OpenApi实现</p>
+
+<h2 id="参考文档">参考文档</h2>
+
+<blockquote>
+<p><a href="https://github.com/ctripcorp/apollo">https://github.com/ctripcorp/apollo</a></p>
+
+<p><a href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
+
+<p><a href="http://dockone.io/article/8767">http://dockone.io/article/8767</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/apollo/">apollo</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/tars-001/">
+            <span class="next-text nav-default">TARS-打卡第一天</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>那些提高效率的Idea插件 - I&#39;m company</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="tomyli" />
+  <meta name="description" content=".ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
+项目地址 https://github.com/hsz/idea-gitignore
+IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
+项目地址 https://github.com/JetBrains/ideavim
+emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
+项目地址 https://github.com/whunmr/emacsIDEAs
+Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
+项目地址 https://github.com/xylo/intellij-postfix-templates
+Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
+项目地址 https://zeroturnaround.com/software/jrebel/
+CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
+项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
+Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
+Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
+插件地址 https://github.com/amolenaar/idea-clock
+Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
+项目地址 https://github.com/gdelmas/IntelliJDashPlugin
+Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
+项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
+Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了." />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<link rel="canonical" href="http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="那些提高效率的Idea插件" />
+<meta property="og:description" content=".ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
+项目地址 https://github.com/hsz/idea-gitignore
+IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
+项目地址 https://github.com/JetBrains/ideavim
+emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
+项目地址 https://github.com/whunmr/emacsIDEAs
+Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
+项目地址 https://github.com/xylo/intellij-postfix-templates
+Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
+项目地址 https://zeroturnaround.com/software/jrebel/
+CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&gt;camelCaase-&gt;camel_case-&gt;camel-case-&gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
+项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
+Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
+Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
+插件地址 https://github.com/amolenaar/idea-clock
+Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
+项目地址 https://github.com/gdelmas/IntelliJDashPlugin
+Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
+项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
+Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://peng051410.github.io/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/" />
+<meta property="article:published_time" content="2018-09-05T08:12:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-26T10:40:50&#43;08:00"/>
+
+<meta itemprop="name" content="那些提高效率的Idea插件">
+<meta itemprop="description" content=".ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
+项目地址 https://github.com/hsz/idea-gitignore
+IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
+项目地址 https://github.com/JetBrains/ideavim
+emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
+项目地址 https://github.com/whunmr/emacsIDEAs
+Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
+项目地址 https://github.com/xylo/intellij-postfix-templates
+Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
+项目地址 https://zeroturnaround.com/software/jrebel/
+CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&gt;camelCaase-&gt;camel_case-&gt;camel-case-&gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
+项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
+Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
+Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
+插件地址 https://github.com/amolenaar/idea-clock
+Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
+项目地址 https://github.com/gdelmas/IntelliJDashPlugin
+Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
+项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
+Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了.">
+
+
+<meta itemprop="datePublished" content="2018-09-05T08:12:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:40:50&#43;08:00" />
+<meta itemprop="wordCount" content="162">
+
+
+
+<meta itemprop="keywords" content="idea,plugin," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些提高效率的Idea插件"/>
+<meta name="twitter:description" content=".ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
+项目地址 https://github.com/hsz/idea-gitignore
+IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
+项目地址 https://github.com/JetBrains/ideavim
+emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
+项目地址 https://github.com/whunmr/emacsIDEAs
+Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
+项目地址 https://github.com/xylo/intellij-postfix-templates
+Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
+项目地址 https://zeroturnaround.com/software/jrebel/
+CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&gt;camelCaase-&gt;camel_case-&gt;camel-case-&gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
+项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
+Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
+Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
+插件地址 https://github.com/amolenaar/idea-clock
+Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
+项目地址 https://github.com/gdelmas/IntelliJDashPlugin
+Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
+项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
+Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      I&#39;m company
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">那些提高效率的Idea插件</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-09-05" class="post-time">
+          2018-09-05
+        </time>
+        <div class="post-category">
+            <a href="http://peng051410.github.io/categories/tool/"> tool </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h2 id="dot-ignore">.ignore</h2>
+
+<h3 id="插件说明">插件说明</h3>
+
+<p>ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。</p>
+
+<h3 id="项目地址">项目地址</h3>
+
+<p><a href="https://github.com/hsz/idea-gitignore">https://github.com/hsz/idea-gitignore</a></p>
+
+<h2 id="ideavim">IdeaVim</h2>
+
+<h3 id="插件说明-1">插件说明</h3>
+
+<p>在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.</p>
+
+<h3 id="项目地址-1">项目地址</h3>
+
+<p><a href="https://github.com/JetBrains/ideavim">https://github.com/JetBrains/ideavim</a></p>
+
+<h2 id="emacsideas">emacsIDEAs</h2>
+
+<h3 id="插件说明-2">插件说明</h3>
+
+<p>支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.</p>
+
+<h3 id="项目地址-2">项目地址</h3>
+
+<p><a href="https://github.com/whunmr/emacsIDEAs">https://github.com/whunmr/emacsIDEAs</a></p>
+
+<h2 id="custom-postfix-templates">Custom Postfix Templates</h2>
+
+<h3 id="插件说明-3">插件说明</h3>
+
+<p>Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。</p>
+
+<h3 id="项目地址-3">项目地址</h3>
+
+<p><a href="https://github.com/xylo/intellij-postfix-templates">https://github.com/xylo/intellij-postfix-templates</a></p>
+
+<h2 id="jrebel">Jrebel</h2>
+
+<h3 id="插件说明-4">插件说明</h3>
+
+<p>动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。</p>
+
+<h3 id="项目地址-4">项目地址</h3>
+
+<p><a href="https://zeroturnaround.com/software/jrebel/">https://zeroturnaround.com/software/jrebel/</a></p>
+
+<h2 id="camelcase">CamelCase</h2>
+
+<h3 id="插件说明-5">插件说明</h3>
+
+<p>文本驼峰规则快速转换，支持从CamelCase-&gt;camelCaase-&gt;camel_case-&gt;camel-case-&gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.</p>
+
+<h3 id="项目地址-5">项目地址</h3>
+
+<p><a href="https://plugins.jetbrains.com/plugin/7160-camelcase">https://plugins.jetbrains.com/plugin/7160-camelcase</a></p>
+
+<h2 id="codehelper">Codehelper</h2>
+
+<h3 id="插件说明-6">插件说明</h3>
+
+<ul>
+<li>代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少</li>
+<li>生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。</li>
+</ul>
+
+<h3 id="项目地址-6">项目地址</h3>
+
+<p><a href="https://github.com/zhengjunbase/codehelper.generator">https://github.com/zhengjunbase/codehelper.generator</a></p>
+
+<h2 id="translation">Translation</h2>
+
+<h3 id="插件说明-7">插件说明</h3>
+
+<p>Idea中集成翻译功能,目前支持有道和goolge,百度翻译.</p>
+
+<h3 id="项目地址-7">项目地址</h3>
+
+<p><a href="https://github.com/izhangzhihao/intellij-rainbow-brackets">https://github.com/izhangzhihao/intellij-rainbow-brackets</a></p>
+
+<h2 id="clock">Clock</h2>
+
+<h3 id="插件说明-8">插件说明</h3>
+
+<p>当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。</p>
+
+<h3 id="插件地址">插件地址</h3>
+
+<p><a href="https://github.com/amolenaar/idea-clock">https://github.com/amolenaar/idea-clock</a></p>
+
+<h2 id="dash">Dash</h2>
+
+<h3 id="插件说明-9">插件说明</h3>
+
+<p>Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.</p>
+
+<h3 id="项目地址-8">项目地址</h3>
+
+<p><a href="https://github.com/gdelmas/IntelliJDashPlugin">https://github.com/gdelmas/IntelliJDashPlugin</a></p>
+
+<h2 id="rainbow-brackets">Rainbow Brackets</h2>
+
+<h3 id="插件说明-10">插件说明</h3>
+
+<p>让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。</p>
+
+<h3 id="项目地址-9">项目地址</h3>
+
+<p><a href="https://github.com/izhangzhihao/intellij-rainbow-brackets">https://github.com/izhangzhihao/intellij-rainbow-brackets</a></p>
+
+<h2 id="restfultoolkit">RestfulToolkit</h2>
+
+<h3 id="插件说明-11">插件说明</h3>
+
+<p>此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。</p>
+
+<h3 id="项目地址-10">项目地址</h3>
+
+<p><a href="https://plugins.jetbrains.com/plugin/10292-restfultoolkit">https://plugins.jetbrains.com/plugin/10292-restfultoolkit</a></p>
+
+<h2 id="duplicate-lines">Duplicate Lines</h2>
+
+<h3 id="插件说明-12">插件说明</h3>
+
+<p>这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了.</p>
+
+<h3 id="项目地址-11">项目地址</h3>
+
+<p><a href="https://github.com/xusoo/duplicate-lines-intellij-plugin">https://github.com/xusoo/duplicate-lines-intellij-plugin</a></p>
+
+<h2 id="findbugs">FindBugs</h2>
+
+<h3 id="插件说明-13">插件说明</h3>
+
+<p>静态代码bug查找工具,帮程序员在编写时发现一些错误的代码问题,支持200多个分析规则.</p>
+
+<h3 id="项目地址-12">项目地址</h3>
+
+<p><a href="http://andrepdo.github.io/findbugs-idea/">http://andrepdo.github.io/findbugs-idea/</a></p>
+
+<h2 id="gittoolbox">GitToolBox</h2>
+
+<h3 id="插件说明-14">插件说明</h3>
+
+<p>对原有idea中内置的git插件的补充，可以在状态栏显示当前光标所在行的修改者</p>
+
+<h3 id="插件地址-1">插件地址</h3>
+
+<p><a href="https://github.com/zielu/GitToolBox">https://github.com/zielu/GitToolBox</a></p>
+
+<h2 id="hidpi">Hidpi</h2>
+
+<h3 id="插件说明-15">插件说明</h3>
+
+<p>根据idea所在的监控器的分辨率来使用指定的idea配置，比加在分辨率高的显示器使用字号大的配置。</p>
+
+<h3 id="插件地址-2">插件地址</h3>
+
+<p><a href="https://github.com/mskonovalov/intellij-hidpi-profiles">https://github.com/mskonovalov/intellij-hidpi-profiles</a></p>
+
+<h2 id="json-viewer">JSON Viewer</h2>
+
+<h3 id="插件说明-16">插件说明</h3>
+
+<p>在Idea中进行json的格式化与查看工具.</p>
+
+<h3 id="项目地址-13">项目地址</h3>
+
+<p><a href="https://github.com/potterhsu/JsonViewer">https://github.com/potterhsu/JsonViewer</a></p>
+
+<h2 id="json2java4idea">Json2Java4Idea</h2>
+
+<h3 id="插件说明-17">插件说明</h3>
+
+<p>根据Json数据来生成Java类的工具,支持Jackson,Json,Moshi.</p>
+
+<h3 id="项目地址-14">项目地址</h3>
+
+<p><a href="https://github.com/t28hub/json2java4idea">https://github.com/t28hub/json2java4idea</a></p>
+
+<h2 id="liveplugin">LivePlugin</h2>
+
+<h3 id="插件说明-18">插件说明</h3>
+
+<p>在不重启Idea情况下来编写Idea插件,可以编写一些小的功能插件.</p>
+
+<h3 id="项目地址-15">项目地址</h3>
+
+<p><a href="https://github.com/dkandalov/live-plugin">https://github.com/dkandalov/live-plugin</a></p>
+
+<h2 id="lombok">Lombok</h2>
+
+<h3 id="插件说明-19">插件说明</h3>
+
+<p><a href="https://projectlombok.org/">Lombox</a>的Idea插件,使用注释的方式来快速处理getter和setter,当然功能不止这些.</p>
+
+<h3 id="项目地址-16">项目地址</h3>
+
+<p><a href="https://github.com/mplushnikov/lombok-intellij-plugin">https://github.com/mplushnikov/lombok-intellij-plugin</a></p>
+
+<h2 id="missing-in-actions">Missing In Actions</h2>
+
+<p><a href="https://github.com/vsch/MissingInActions">Missing In Actions</a>，增强的action，带来了Idea Action缺少的增强动作，如移动语句自动缩进、剪切历史增强中等功能。</p>
+
+<h2 id="plantuml">PlantUML</h2>
+
+<h3 id="插件说明-20">插件说明</h3>
+
+<p>在Idea中进行uml图的处理.</p>
+
+<h3 id="项目地址-17">项目地址</h3>
+
+<p><a href="https://github.com/esteinberg/plantuml4idea">https://github.com/esteinberg/plantuml4idea</a></p>
+
+<h2 id="pojo-to-json">POJO to JSON</h2>
+
+<h3 id="插件说明-21">插件说明</h3>
+
+<p>Java类型转成JSON,方便用postman或者curl的时候构造JSON body.</p>
+
+<h3 id="项目地址-18">项目地址</h3>
+
+<p><a href="https://plugins.jetbrains.com/plugin/9686-pojo-to-json">https://plugins.jetbrains.com/plugin/9686-pojo-to-json</a></p>
+
+<h2 id="save-actions">Save Actions</h2>
+
+<h3 id="插件说明-22">插件说明</h3>
+
+<p>Idea的保存动作的执行插件,支持在保存后执行一些命令,比如重新导入包,格式化代码,重新整理代码等.</p>
+
+<h3 id="项目地址-19">项目地址</h3>
+
+<p><a href="https://github.com/dubreuia/intellij-plugin-save-actions">https://github.com/dubreuia/intellij-plugin-save-actions</a></p>
+
+<h2 id="spring-assistant">Spring Assistant</h2>
+
+<h3 id="插件说明-23">插件说明</h3>
+
+<p>Springboot配置文件编写助手,在编写些插件会给出一些提示,帮助开发者可以更快速的进行配置.</p>
+
+<h3 id="项目地址-20">项目地址</h3>
+
+<p><a href="https://github.com/1tontech/intellij-spring-assistant">https://github.com/1tontech/intellij-spring-assistant</a></p>
+
+<h2 id="string-mainpulatin">String Mainpulatin</h2>
+
+<h3 id="插件说明-24">插件说明</h3>
+
+<p>String字符操作插件,支持CamelCase插件的功能,另外还支持Encode,Decode,对齐,trim等操作,功能很强大.</p>
+
+<h3 id="项目地址-21">项目地址</h3>
+
+<p><a href="https://github.com/krasa/StringManipulation">https://github.com/krasa/StringManipulation</a></p>
+
+<h2 id="testme">TestMe</h2>
+
+<h3 id="插件说明-25">插件说明</h3>
+
+<p>Junit等测试工具的生成插件,支持Junit4/5,TestNG,Spock等测试框架代码的生成.</p>
+
+<h3 id="项目地址-22">项目地址</h3>
+
+<p><a href="https://github.com/wrdv/testme-idea">https://github.com/wrdv/testme-idea</a></p>
+
+<h2 id="goto-stackoverflow">Goto Stackoverflow</h2>
+
+<p>在idea中选中文本在右键中进行基于stackoverflow网站的google搜索。<a href="https://github.com/gejun123456/IntellijGoToStackOverFlow">https://github.com/gejun123456/IntellijGoToStackOverFlow</a></p>
+
+<h2 id="show-as">Show as</h2>
+
+<p>在调试时,显示一个&rdquo;show as&rdquo;的菜单显示变量值的格式化信息。<a href="https://plugins.jetbrains.com/plugin/7010-show-as--">https://plugins.jetbrains.com/plugin/7010-show-as--</a></p>
+
+<h2 id="branch-in-window-title">Branch in Window Title</h2>
+
+<p>在Idea的window中显示当前git项目的分支名，可以使用window操作软件进行编程自动化。<a href="https://github.com/tom-haines/branch-window-title/">https://github.com/tom-haines/branch-window-title/</a></p>
+
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://peng051410.github.io/tags/idea/">idea</a>
+          <a href="http://peng051410.github.io/tags/plugin/">plugin</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">那些提高效率的Alfred Workflow</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/">
+            <span class="next-text nav-default">设计模式学习之代理模式</span>
+            <span class="prev-text nav-mobile">Next</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+
+
+<a href="http://peng051410.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+       -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

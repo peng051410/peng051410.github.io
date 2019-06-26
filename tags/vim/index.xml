@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on I&#39;m company</title>
+    <link>http://peng051410.github.io/tags/vim/</link>
+    <description>Recent content in vim on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 May 2018 14:48:33 +0800</lastBuildDate>
+    
+	<atom:link href="http://peng051410.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Idea中vim键的映射</title>
+      <link>http://peng051410.github.io/post/chang-yong-de-ideacha-jian/</link>
+      <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
+      
+      <guid>http://peng051410.github.io/post/chang-yong-de-ideacha-jian/</guid>
+      <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &amp;lsquo; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/.</description>
+    </item>
+    
+  </channel>
+</rss>
