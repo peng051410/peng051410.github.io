@@ -6,10 +6,19 @@
     <description>Recent content in Posts on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 May 2019 17:34:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2019 07:04:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apollo Client自定义问题拾遗</title>
+      <link>http://blog.imcompany.cn/post/apollo-client-custom/</link>
+      <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/apollo-client-custom/</guid>
+      <description>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项</description>
+    </item>
     
     <item>
       <title>Apollo 配置中心畅游</title>
