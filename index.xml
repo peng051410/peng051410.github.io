@@ -623,7 +623,7 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 
 &lt;p&gt;TweetDeck功能增强，如支持表情，只看某人的tweets，&lt;a href=&#34;https://better.tw/&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;chrono下载管理器&#34;&gt;Chrono下载管理器&lt;/h2&gt;
+&lt;h2 id=&#34;chrono下载管理器&#34;&gt;&lt;del&gt;Chrono下载管理器&lt;/del&gt;&lt;/h2&gt;
 
 &lt;p&gt;功能全面的chrome下载管理器，满足你的一切需求。&lt;a href=&#34;https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
 
