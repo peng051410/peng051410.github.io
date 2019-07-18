@@ -901,7 +901,11 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 
 &lt;h2 id=&#34;peco&#34;&gt;Peco&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/peco/peco&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;简单的交互式过滤工具。&lt;a href=&#34;https://github.com/peco/peco&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hub&#34;&gt;Hub&lt;/h2&gt;
+
+&lt;p&gt;github官方品，对github的封装，可以更任性的来玩github。&lt;a href=&#34;https://github.com/github/hub&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
