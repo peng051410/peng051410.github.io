@@ -1405,6 +1405,10 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 &lt;h2 id=&#34;branch-in-window-title&#34;&gt;Branch in Window Title&lt;/h2&gt;
 
 &lt;p&gt;在Idea的window中显示当前git项目的分支名，可以使用window操作软件进行编程自动化。&lt;a href=&#34;https://github.com/tom-haines/branch-window-title/&#34;&gt;https://github.com/tom-haines/branch-window-title/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;frame-switcher&#34;&gt;Frame Switcher&lt;/h2&gt;
+
+&lt;p&gt;打开了多个project，找不到哪个项目，来回切换太麻烦，来用Frame Switcher吧。&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&#34;&gt;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
