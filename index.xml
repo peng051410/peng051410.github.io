@@ -562,11 +562,9 @@ firewall-cmd --reload
 &lt;li&gt;&lt;p&gt;移除原来的getty@tty1.service软链接&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;rm /etc/systemd/system/getty.target.wants/getty@tty1.service
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;拷贝getty@.service file 并且命名为 getty@tty1.service&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;拷贝getty@.service file 并且命名为 getty@tty1.service&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -580,11 +578,9 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 [Install]
 ...
 ;Alias=getty@tty1.service
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;在getty.target.wants目录做一下软链接&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -722,6 +718,10 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 &lt;h2 id=&#34;ublock-origin&#34;&gt;uBlock Origin&lt;/h2&gt;
 
 &lt;p&gt;高效的网络请求过滤插件，与广告Say ByeBye，占用系统资源小。&lt;a href=&#34;https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ghosttext&#34;&gt;GhostText&lt;/h2&gt;
+
+&lt;p&gt;使用Emacs或者其它编辑器来编辑浏览器中的TextArea，高效且实时同步。&lt;a href=&#34;https://github.com/GhostText/GhostText&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
@@ -1431,109 +1431,105 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 &lt;p&gt;我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;定义一个查询接口，在这里定义一个查询用户收入的方法，如下:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;定义一个查询接口，在这里定义一个查询用户收入的方法，如下:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.proxy;
 
 /**
- * Created by tomyli on 2018/6/28.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/28.
+* Github: https://github.com/peng051410
+*/
 public interface Search {
 
-    void queryIncome(String username);
+void queryIncome(String username);
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;再定义一个实现该接口的具体业务类：&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;再定义一个实现该接口的具体业务类：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.proxy;
 
 /**
- * Created by tomyli on 2018/6/28.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/28.
+* Github: https://github.com/peng051410
+*/
 public class SearchService implements Search {
 
-    @Override
-    public void queryIncome(String username) {
+@Override
+public void queryIncome(String username) {
 
-        System.out.println(username + &amp;quot;开始查询&amp;quot;);
+    System.out.println(username + &amp;quot;开始查询&amp;quot;);
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(username + &amp;quot;查询完成&amp;quot;);
+    try {
+        Thread.sleep(1000);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
     }
+
+    System.out.println(username + &amp;quot;查询完成&amp;quot;);
 }
-&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;在上面代码中就实现了查询收入的方法，简单的打印了两行日志。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;由于在实现需要对权限进行控制并记录日志，则先把需要用来的权限类与日志类进行定义与实现。实现代码如下:&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;由于在实现需要对权限进行控制并记录日志，则先把需要用来的权限类与日志类进行定义与实现。实现代码如下:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.proxy;
 
 /**
- * Created by tomyli on 2018/6/28.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/28.
+* Github: https://github.com/peng051410
+*/
 public class Auth {
 
-    public boolean valid(String username) {
+public boolean valid(String username) {
 
-        return &amp;quot;admin&amp;quot;.equals(username);
-    }
+    return &amp;quot;admin&amp;quot;.equals(username);
+}
 }
 
 
 public class Logger {
 
-    public void beforeLog(String username) {
-        System.out.println(&amp;quot;开始记录&amp;quot; + username + &amp;quot;查询日志&amp;quot;);
-    }
-
-    public void afterLog(String username) {
-        System.out.println(&amp;quot;结束记录&amp;quot; + username + &amp;quot;查询日志&amp;quot;);
-    }
+public void beforeLog(String username) {
+    System.out.println(&amp;quot;开始记录&amp;quot; + username + &amp;quot;查询日志&amp;quot;);
 }
-&lt;/code&gt;&lt;/pre&gt;
 
-&lt;ul&gt;
-&lt;li&gt;最后来进行代理类的实现，代理类通常也会实现查询接口，这样在调用者看来它与真正的业务类没有什么区别，实现代码如下：&lt;/li&gt;
-&lt;/ul&gt;
+public void afterLog(String username) {
+    System.out.println(&amp;quot;结束记录&amp;quot; + username + &amp;quot;查询日志&amp;quot;);
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最后来进行代理类的实现，代理类通常也会实现查询接口，这样在调用者看来它与真正的业务类没有什么区别，实现代码如下：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.proxy;
 
 /**
- * Created by tomyli on 2018/6/28.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/28.
+* Github: https://github.com/peng051410
+*/
 public class SearchProxy implements Search {
 
-    private Logger logger = new Logger();
-    private Auth auth = new Auth();
-    private Search search = new SearchService();
+private Logger logger = new Logger();
+private Auth auth = new Auth();
+private Search search = new SearchService();
 
-    @Override
-    public void queryIncome(String username) {
+@Override
+public void queryIncome(String username) {
 
-        logger.beforeLog(username);
-        if (auth.valid(username)) {
-            search.queryIncome(username);
-        }
-        logger.afterLog(username);
+    logger.beforeLog(username);
+    if (auth.valid(username)) {
+        search.queryIncome(username);
     }
+    logger.afterLog(username);
 }
-&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;在上面的代理中，它维护了权限与日志这两个工具类的实例，还维护真正提供查询的业务类实例，在实现的查询收入接口中，先进行进入日志的记录，再验证用户的权限，验证通过则调用真正的业务类来查询收入，最后记录结束的日志，一次调用处理完成。
 上面实现的类图如下：
@@ -1993,118 +1989,114 @@ public class StockTest {
 &lt;p&gt;以上的情况在代码上体现为如下形式：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;加密接口&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;加密接口&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.decorator.encrypt;
 
 /**
- * Created by tomyli on 2018/6/25.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/25.
+* Github: https://github.com/peng051410
+*/
 public interface Encryptor {
 
-    void encrypt();
+void encrypt();
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;具体加密类，实现加密处理接口&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;具体加密类，实现加密处理接口&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.decorator.encrypt;
 
 /**
- * Created by tomyli on 2018/6/25.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/25.
+* Github: https://github.com/peng051410
+*/
 public class ConcreteEncryptor implements Encryptor {
 
-    @Override
-    public void encrypt() {
-        System.out.println(&amp;quot;base encrypt!&amp;quot;);
-    }
+@Override
+public void encrypt() {
+    System.out.println(&amp;quot;base encrypt!&amp;quot;);
 }
-&lt;/code&gt;&lt;/pre&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;抽象加密装饰器&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;抽象加密装饰器&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.decorator.encrypt;
 
 /**
- * Created by tomyli on 2018/6/25.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/25.
+* Github: https://github.com/peng051410
+*/
 public abstract class EncryptDecorator implements Encryptor {
 
-    private Encryptor encrypt;
+private Encryptor encrypt;
 
-    public EncryptDecorator(Encryptor encrypt) {
-        this.encrypt = encrypt;
-    }
-
-    @Override
-    public void encrypt() {
-        encrypt.encrypt();
-    }
+public EncryptDecorator(Encryptor encrypt) {
+    this.encrypt = encrypt;
 }
-&lt;/code&gt;&lt;/pre&gt;
+
+@Override
+public void encrypt() {
+    encrypt.encrypt();
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;上面的抽象装饰器实现的加密接口，在这个类中维护加密接口的实体，加密方法直接调用其维护实体的加密方法。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;具体的装饰器实现类&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;具体的装饰器实现类&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.imcompany.decorator.encrypt;
 
 /**
- * Created by tomyli on 2018/6/25.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/25.
+* Github: https://github.com/peng051410
+*/
 public class ModEncryptDecorator extends EncryptDecorator {
 
-    public ModEncryptDecorator(Encryptor encrypt) {
-        super(encrypt);
-    }
+public ModEncryptDecorator(Encryptor encrypt) {
+    super(encrypt);
+}
 
-    @Override
-    public void encrypt() {
-        super.encrypt();
-        modEncrypt();
-    }
+@Override
+public void encrypt() {
+    super.encrypt();
+    modEncrypt();
+}
 
-    public void modEncrypt() {
-        System.out.println(&amp;quot;取模加密！&amp;quot;);
-    }
+public void modEncrypt() {
+    System.out.println(&amp;quot;取模加密！&amp;quot;);
+}
 }
 
 
 package cn.imcompany.decorator.encrypt;
 
 /**
- * Created by tomyli on 2018/6/25.
- * Github: https://github.com/peng051410
- */
+* Created by tomyli on 2018/6/25.
+* Github: https://github.com/peng051410
+*/
 public class ConverseEncryptDecorator extends EncryptDecorator {
 
-    public ConverseEncryptDecorator(Encryptor encrypt) {
-        super(encrypt);
-    }
-
-    @Override
-    public void encrypt() {
-        super.encrypt();
-        converseEncrypt();
-    }
-
-    public void converseEncrypt() {
-        System.out.println(&amp;quot;逆向加密！&amp;quot;);
-    }
+public ConverseEncryptDecorator(Encryptor encrypt) {
+    super(encrypt);
 }
-&lt;/code&gt;&lt;/pre&gt;
+
+@Override
+public void encrypt() {
+    super.encrypt();
+    converseEncrypt();
+}
+
+public void converseEncrypt() {
+    System.out.println(&amp;quot;逆向加密！&amp;quot;);
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;上面的代码定义了两个具体的装饰器实体，在这两个装饰器类中，加密方法中都调用了父类的加密方法，然后调用了自己实现的加密方法，这样在先前加密的基础上又进行了一次加密。达到了双重加密的效果。让我们来进行一下测试:&lt;/p&gt;
 
