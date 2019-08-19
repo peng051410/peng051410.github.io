@@ -722,6 +722,10 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 &lt;h2 id=&#34;ghosttext&#34;&gt;GhostText&lt;/h2&gt;
 
 &lt;p&gt;使用Emacs或者其它编辑器来编辑浏览器中的TextArea，高效且实时同步。&lt;a href=&#34;https://github.com/GhostText/GhostText&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-great-suspender&#34;&gt;The Great Suspender&lt;/h2&gt;
+
+&lt;p&gt;Chrome的标签管理器，对于长期不使用的标签可以使其休眼，减少对Chrome的内存占用，Chrome性能提升利器。&lt;a href=&#34;https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
