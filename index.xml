@@ -1461,7 +1461,7 @@ ExecStart=-/sbin/agetty --autologin root --noclear %I
 
 &lt;p&gt;打开了多个project，找不到哪个项目，来回切换太麻烦，来用Frame Switcher吧。&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&#34;&gt;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;actions-tree&#34;&gt;Actions tree&lt;/h2&gt;
+&lt;h2 id=&#34;actions-tree&#34;&gt;&lt;del&gt;Actions tree&lt;/del&gt;&lt;/h2&gt;
 
 &lt;p&gt;类似Emacs的操作列表树，Ctrl+c 回来了。&lt;a href=&#34;https://gitlab.com/lae/intellij-actions-tree&#34;&gt;https://gitlab.com/lae/intellij-actions-tree&lt;/a&gt;&lt;/p&gt;
 </description>

@@ -3,14 +3,37 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/java/</loc>
     <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/java/</loc>
+    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/java8/</loc>
+    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -21,39 +44,38 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
+    <loc>http://blog.imcompany.cn/tags/lambda/</loc>
     <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/java/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
+    <lastmod>2019-07-01T07:49:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/java/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/java8/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/lambda/</loc>
-    <lastmod>2019-08-24T10:40:51+08:00</lastmod>
-    <priority>0</priority>
+    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
+    <lastmod>2019-07-01T07:49:53+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -64,20 +86,22 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
-    <lastmod>2019-07-01T07:49:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
-    <lastmod>2019-07-01T07:49:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/post/apollo-config-swim/</loc>
     <lastmod>2019-06-25T20:46:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/tars/</loc>
+    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/tars/</loc>
+    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -90,15 +114,10 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/tars/</loc>
-    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/tars/</loc>
-    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
-    <priority>0</priority>
+    <loc>http://blog.imcompany.cn/tags/centos/</loc>
+    <lastmod>2019-06-26T10:31:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -109,27 +128,24 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/centos/</loc>
-    <lastmod>2019-06-26T10:31:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/tags/linux/</loc>
     <lastmod>2019-06-26T10:31:28+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/chrome/</loc>
     <lastmod>2019-08-19T14:20:53+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/tool/</loc>
-    <lastmod>2019-08-19T14:20:53+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -142,19 +158,22 @@
   <url>
     <loc>http://blog.imcompany.cn/tags/bash/</loc>
     <lastmod>2019-07-18T09:25:18+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/commandline/</loc>
     <lastmod>2019-07-18T09:25:18+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/zsh/</loc>
     <lastmod>2019-07-18T09:25:18+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -167,7 +186,8 @@
   <url>
     <loc>http://blog.imcompany.cn/tags/alfred/</loc>
     <lastmod>2019-06-26T10:39:08+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -179,19 +199,21 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/idea/</loc>
-    <lastmod>2019-08-07T17:05:12+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/plugin/</loc>
-    <lastmod>2019-08-07T17:05:12+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</loc>
-    <lastmod>2019-08-07T17:05:12+08:00</lastmod>
+    <lastmod>2019-09-03T17:26:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,7 +221,8 @@
   <url>
     <loc>http://blog.imcompany.cn/tags/design-pattern/</loc>
     <lastmod>2019-06-26T11:05:45+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -282,7 +305,8 @@
   <url>
     <loc>http://blog.imcompany.cn/tags/vim/</loc>
     <lastmod>2019-06-26T10:34:22+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
 </urlset>
