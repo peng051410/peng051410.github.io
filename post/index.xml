@@ -6,10 +6,19 @@
     <description>Recent content in Posts on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Dec 2019 10:45:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 11:15:55 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Maven发布401问题排查</title>
+      <link>http://blog.imcompany.cn/post/maven-deploy-issue/</link>
+      <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
+      <description>日志问题现象 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否配</description>
+    </item>
     
     <item>
       <title>那些有用maven命令</title>
@@ -180,15 +189,6 @@
       
       <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-yuan-xing-mo-shi/</guid>
       <description>特点 原型设计模式就是系统中产生的每一个对象都不相同，通过原型来创建新的对象，原型模式属于创建型模式。 实现方式 一般情况可以通过对象克隆的方式来</description>
-    </item>
-    
-    <item>
-      <title>设计模式学习之单例模式</title>
-      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/</link>
-      <pubDate>Tue, 05 Jun 2018 16:36:08 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/</guid>
-      <description>特点 单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。 饿汉式 饿汉式单例就是在</description>
     </item>
     
   </channel>
