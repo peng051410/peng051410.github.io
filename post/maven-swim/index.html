@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>那些提高效率的命令行工具 - I&#39;m company</title>
+  <title>那些有用maven命令 - I&#39;m company</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="tomyli" />
-  <meta name="description" content="Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay" />
+  <meta name="description" content="查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/." />
 
   <meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.61.0" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/maven-swim/" />
 
 
 
@@ -57,23 +57,23 @@
 
 
 
-<meta property="og:title" content="那些提高效率的命令行工具" />
-<meta property="og:description" content="Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay" />
+<meta property="og:title" content="那些有用maven命令" />
+<meta property="og:description" content="查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/" />
-<meta property="article:published_time" content="2018-09-30T07:15:55+08:00" />
-<meta property="article:modified_time" content="2019-11-30T18:44:32+08:00" />
-<meta itemprop="name" content="那些提高效率的命令行工具">
-<meta itemprop="description" content="Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay">
-<meta itemprop="datePublished" content="2018-09-30T07:15:55&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-30T18:44:32&#43;08:00" />
-<meta itemprop="wordCount" content="1438">
+<meta property="og:url" content="http://blog.imcompany.cn/post/maven-swim/" />
+<meta property="article:published_time" content="2019-12-31T10:45:55+08:00" />
+<meta property="article:modified_time" content="2019-12-31T11:00:51+08:00" />
+<meta itemprop="name" content="那些有用maven命令">
+<meta itemprop="description" content="查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.">
+<meta itemprop="datePublished" content="2019-12-31T10:45:55&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-31T11:00:51&#43;08:00" />
+<meta itemprop="wordCount" content="287">
 
 
 
-<meta itemprop="keywords" content="commandline,bash,zsh," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="那些提高效率的命令行工具"/>
-<meta name="twitter:description" content="Brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay"/>
+<meta itemprop="keywords" content="commandline,maven," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些有用maven命令"/>
+<meta name="twitter:description" content="查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -267,11 +267,11 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">那些提高效率的命令行工具</h1>
+      <h1 class="post-title">那些有用maven命令</h1>
       
       <div class="post-meta">
-        <time datetime="2018-09-30" class="post-time">
-          2018-09-30
+        <time datetime="2019-12-31" class="post-time">
+          2019-12-31
         </time>
         <div class="post-category">
             <a href="http://blog.imcompany.cn/categories/tool/"> tool </a>
@@ -294,54 +294,9 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#brew">Brew</a></li>
-    <li><a href="#bat">bat</a></li>
-    <li><a href="#cowsay">cowsay</a></li>
-    <li><a href="#coreutils">coreutils</a></li>
-    <li><a href="#direnv">direnv</a></li>
-    <li><a href="#exa">exa</a></li>
-    <li><a href="#duti">duti</a></li>
-    <li><a href="#riggrep">riggrep</a></li>
-    <li><a href="#fortune">fortune</a></li>
-    <li><a href="#fzf">fzf</a></li>
-    <li><a href="#goku">goku</a></li>
-    <li><a href="#htop">htop</a></li>
-    <li><a href="#imgcat">imgcat</a></li>
-    <li><a href="#jq">jq</a></li>
-    <li><a href="#jenv">jenv</a></li>
-    <li><a href="#lnav">lnav</a></li>
-    <li><a href="#lolcat">lolcat</a></li>
-    <li><a href="#m-cli">m-cli</a></li>
-    <li><a href="#mackup">mackup</a></li>
-    <li><a href="#mas">mas</a></li>
-    <li><a href="#mycli">mycli</a></li>
-    <li><a href="#ncdu">ncdu</a></li>
-    <li><a href="#ranger">Ranger</a></li>
-    <li><a href="#pandoc">pandoc</a></li>
-    <li><a href="#pyenv">pyenv</a></li>
-    <li><a href="#pyenv-virtualenv">pyenv-virtualenv</a></li>
-    <li><a href="#prettyping">prettyping</a></li>
-    <li><a href="#rtv">rtv</a></li>
-    <li><a href="#s-search">s-search</a></li>
-    <li><a href="#tmux">tmux</a></li>
-    <li><a href="#tldr">tldr</a></li>
-    <li><a href="#terminal-notify">Terminal Notify</a></li>
-    <li><a href="#w3m">w3m</a></li>
-    <li><a href="#wrk">wrk</a></li>
-    <li><a href="#wd">wd</a></li>
-    <li><a href="#youtube-dl">youtube-dl</a></li>
-    <li><a href="#diffoscope">diffoscope</a></li>
-    <li><a href="#speedtest">speedtest</a></li>
-    <li><a href="#modd">modd</a></li>
-    <li><a href="#gron">gron</a></li>
-    <li><a href="#pathpicker">PathPicker</a></li>
-    <li><a href="#peco">Peco</a></li>
-    <li><a href="#hub">Hub</a></li>
-    <li><a href="#zsh-abbrev-alias">zsh-abbrev-alias</a></li>
-    <li><a href="#git-quick-stats">git-quick-stats</a></li>
-    <li><a href="#navi">navi</a></li>
-    <li><a href="#noti">noti</a></li>
-    <li><a href="#buku">buku</a></li>
+    <li><a href="#查看当前有效的settings文件">查看当前有效的settings文件</a></li>
+    <li><a href="#查看settings配置的值">查看Settings配置的值</a></li>
+    <li><a href="#指定发布到其它仓库">指定发布到其它仓库</a></li>
   </ul>
 </nav>
   </div>
@@ -349,103 +304,17 @@
 
     
     <div class="post-content">
-      <h2 id="brew">Brew</h2>
-<p>Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。<a href="https://github.com/Homebrew/brew">地址</a></p>
-<h2 id="bat">bat</h2>
-<p>bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。<a href="https://github.com/sharkdp/bat">地址</a></p>
-<h2 id="cowsay">cowsay</h2>
-<p>奶牛说： <a href="https://github.com/piuccio/cowsay">地址</a></p>
-<h2 id="coreutils">coreutils</h2>
-<p>使用Rust重写的gnuutils。<a href="https://github.com/uutils/coreutils">地址</a></p>
-<h2 id="direnv">direnv</h2>
-<p>环境变量切换，可以指定在进入某一文件夹后的操作，比如输出一条欢迎语句，在退出文件夹后则卸载变量（操作），它的[stdlib](<a href="https://github.com/direnv/direnv/blob/master/stdlib.sh">https://github.com/direnv/direnv/blob/master/stdlib.sh</a></p>
-<p>)内置了一些功能来处理环境。 <a href="https://github.com/direnv/direnv">地址</a></p>
-<h2 id="exa">exa</h2>
-<p>ls、tree的替代者，支持多种显示方式，支持按指定条件排序显示。<a href="https://github.com/ogham/exa">地址</a></p>
-<h2 id="duti">duti</h2>
-<p>mac默认软件打开程序配置。再也不用一个手动的点击设置了，可以脚本化。<a href="https://github.com/moretension/duti">地址</a></p>
-<h2 id="riggrep">riggrep</h2>
-<p>强大的find，查询速度更快，支持匹配结果的字符替换，支持定义输出颜色。<a href="https://github.com/BurntSushi/ripgrep">地址</a></p>
-<h2 id="fortune">fortune</h2>
-<p>英文名言集合，可以使用<a href="https://github.com/ruanyf/fortunes">fortunes</a>进行扩展，对中文用户更友好。<a href="https://www.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html">地址</a></p>
-<h2 id="fzf">fzf</h2>
-<p>强大的交互式搜索，大大提高效率，官网提供了很多实用的操作目录与git的命令。<a href="https://github.com/junegunn/fzf">地址</a></p>
-<h2 id="goku">goku</h2>
-<p>改键神器Karabiner的配置管理器，更健康，更人性化。<a href="https://github.com/yqrashawn/GokuRakuJoudo">地址</a></p>
-<h2 id="htop">htop</h2>
-<p>交互式的top信息显示，支持配色。<a href="https://github.com/hishamhm/htop">地址</a></p>
-<h2 id="imgcat">imgcat</h2>
-<p>命令行看图片。可以控制显示的高度、宽度。<a href="https://github.com/eddieantonio/imgcat">地址</a></p>
-<h2 id="jq">jq</h2>
-<p>json内容操作显示。支持分离、过滤、转换元素，判断JSON元素节点是否存在等功能，内置了很多方便的函数。 <a href="https://github.com/stedolan/jq">地址</a></p>
-<h2 id="jenv">jenv</h2>
-<p>JDK版本管理命令行工具，支持全局、当前目录、当前shell的jdk版本指定。还可以指定Java虚拟机指定的JVM参数。支持插件的启用与禁用。<a href="https://www.jenv.be/">地址</a></p>
-<h2 id="lnav">lnav</h2>
-<p>log file navigator，增加的日志查看，可以根据日志级别显示不同颜色的日志信息。支持分页显示。<a href="https://github.com/tstack/lnav">地址</a></p>
-<h2 id="lolcat">lolcat</h2>
-<p>命令、文件内容多彩输出。<a href="https://github.com/busyloop/lolcat">地址</a></p>
-<h2 id="m-cli">m-cli</h2>
-<p>Mac的瑞士军刀，支持各种mac组件(Dock，蓝牙，WIFI，Finder)的操作。<a href="https://github.com/rgcr/m-cli">地址</a></p>
-<h2 id="mackup">mackup</h2>
-<p>Mac应用配置同步，支持多种存储方式。支持自定义应用的同步配置。主要命令为backup，restore，uninstall。<a href="https://github.com/lra/mackup">地址</a></p>
-<h2 id="mas">mas</h2>
-<p>命令行安装apple store应用。<a href="https://github.com/mas-cli/mas">地址</a></p>
-<h2 id="mycli">mycli</h2>
-<p>命令行中的mysql客户端。<a href="https://github.com/dbcli/mycli">地址</a></p>
-<h2 id="ncdu">ncdu</h2>
-<p>增强版本的du，机器空间使用查询，支持扫描结果导出与导入，支持多种排序方式。<a href="https://dev.yorhel.nl/ncdu">地址</a></p>
-<h2 id="ranger">Ranger</h2>
-<p>命令行下的文件管理，强大到没朋友。<a href="https://github.com/ranger/ranger">地址</a></p>
-<h2 id="pandoc">pandoc</h2>
-<p>文档转换，支持非常多的的格式转换。<a href="https://pandoc.org/">地址</a></p>
-<h2 id="pyenv">pyenv</h2>
-<p>pythne版本管理工具。<a href="https://github.com/pyenv/pyenv">地址</a></p>
-<h2 id="pyenv-virtualenv">pyenv-virtualenv</h2>
-<p>pythne虚拟环境管理，管理pyenv配置的环境。<a href="https://github.com/pyenv/pyenv-virtualenv">地址</a></p>
-<h2 id="prettyping">prettyping</h2>
-<p>增强的ping，图形化显示，可以轻松的看出ping的地址的网络状况。<a href="http://denilson.sa.nom.br/prettyping/">地址</a></p>
-<h2 id="rtv">rtv</h2>
-<p>命令行中浏览reddit。<a href="https://github.com/michael-lazar/rtv">地址</a></p>
-<h2 id="s-search">s-search</h2>
-<p>命令行下进行web搜索。<a href="https://github.com/zquestz/s">地址</a></p>
-<h2 id="tmux">tmux</h2>
-<p>终端多会话管理器。<a href="https://github.com/tmux/tmux">地址</a></p>
-<h2 id="tldr">tldr</h2>
-<p>命令快速查询。简单的man。<a href="https://tldr.sh/">地址</a></p>
-<h2 id="terminal-notify">Terminal Notify</h2>
-<p>命令行操作mac显示通知，支持图标显示与点击后操作（如打开网址，执行命令）等。<a href="https://github.com/julienXX/terminal-notifier">地址</a></p>
-<h2 id="w3m">w3m</h2>
-<p>终端浏览器，操作方便。<a href="http://w3m.sourceforge.net/">地址</a></p>
-<h2 id="wrk">wrk</h2>
-<p>系统性能测试工具。<a href="https://github.com/wg/wrk">地址</a></p>
-<h2 id="wd">wd</h2>
-<p>快速的cd到常用的目录，支持命令增加，查询功能。<a href="https://github.com/mfaerevaag/wd">地址</a></p>
-<h2 id="youtube-dl">youtube-dl</h2>
-<p>youtube视频下载，也支持其它网站的视频下载。支持配置文件配置下载的选项。<a href="https://github.com/rg3/youtube-dl">地址</a></p>
-<h2 id="diffoscope">diffoscope</h2>
-<p>文件，文件夹内容比较。支持比较的文件格式非常丰富。<a href="https://diffoscope.org/">地址</a></p>
-<h2 id="speedtest">speedtest</h2>
-<p>cli 网络测速。<a href="https://github.com/sivel/speedtest-cli">地址</a></p>
-<h2 id="modd">modd</h2>
-<p>文件变更监听响应，在文件变化时执行相应的配置动作。<a href="https://github.com/cortesi/modd">地址</a></p>
-<h2 id="gron">gron</h2>
-<p>将JSON文本转换为离散的赋值语句，以便查找。<a href="https://github.com/tomnomnom/gron">地址</a></p>
-<h2 id="pathpicker">PathPicker</h2>
-<p><a href="https://github.com/facebook/PathPicker">地址</a></p>
-<h2 id="peco">Peco</h2>
-<p>简单的交互式过滤工具。<a href="https://github.com/peco/peco">地址</a></p>
-<h2 id="hub">Hub</h2>
-<p>github官方品，对github的封装，可以更任性的来玩github。<a href="https://github.com/github/hub">地址</a></p>
-<h2 id="zsh-abbrev-alias">zsh-abbrev-alias</h2>
-<p>zsh alias 缩写。<a href="https://github.com/momo-lab/zsh-abbrev-alias">地址</a></p>
-<h2 id="git-quick-stats">git-quick-stats</h2>
-<p>多维度的查看git提交信息。<a href="https://github.com/arzzen/git-quick-stats">地址</a></p>
-<h2 id="navi">navi</h2>
-<p>交互式的快捷键命令行工具，放松心情搞事情。<a href="https://github.com/denisidoro/navi">地址</a></p>
-<h2 id="noti">noti</h2>
-<p>执行任务时间长？不用时时等，执行完后它来通知你。<a href="https://github.com/variadico/noti">地址</a></p>
-<h2 id="buku">buku</h2>
-<p>命令中管理浏览器书签。<a href="https://github.com/jarun/Buku">地址</a></p>
+      <h2 id="查看当前有效的settings文件">查看当前有效的settings文件</h2>
+<p>maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn help:effective-settings
+</code></pre></div><h2 id="查看settings配置的值">查看Settings配置的值</h2>
+<p>以下命令可以查看settings文件中的settings-&gt;servers的配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn -q -Dexpression<span style="color:#f92672">=</span>settings.servers -DforceStdout help:evaluate
+</code></pre></div><p>使用<a href="https://maven.apache.org/plugins/maven-help-plugin/evaluate-mojo.html">help:evaluate</a>可以查看所有的配置信息</p>
+<h2 id="指定发布到其它仓库">指定发布到其它仓库</h2>
+<p>有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mvn -DaltDeploymentRepository<span style="color:#f92672">=</span>id::layout::url
+</code></pre></div><p>具体说明参见<a href="https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html">deploy:deploy</a></p>
 
     </div>
 
@@ -458,7 +327,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-11-30</span>
+    <span class="item-content">2019-12-31</span>
   </p>
   
   <p class="copyright-item">
@@ -474,30 +343,16 @@
     <footer class="post-footer">
       <div class="post-tags">
           <a href="http://blog.imcompany.cn/tags/commandline/">commandline</a>
-          <a href="http://blog.imcompany.cn/tags/bash/">bash</a>
-          <a href="http://blog.imcompany.cn/tags/zsh/">zsh</a>
+          <a href="http://blog.imcompany.cn/tags/maven/">maven</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/na-xie-gao-xiao-de-chromecha-jian/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">那些高效的Chrome插件</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/">
-            <span class="next-text nav-default">那些提高效率的Alfred Workflow</span>
+          <a class="next" href="/post/java8-issue-review/">
+            <span class="next-text nav-default">JAVA8问题处理回顾-持续更新</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

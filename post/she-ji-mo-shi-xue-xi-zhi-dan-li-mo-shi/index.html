@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:49:49+08:00" />
 <meta itemprop="name" content="设计模式学习之单例模式">
 <meta itemprop="description" content="特点 单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。 饿汉式 饿汉式单例就是在">
-
-
 <meta itemprop="datePublished" content="2018-06-05T16:36:08&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:49:49&#43;08:00" />
-<meta itemprop="wordCount" content="2127">
+<meta itemprop="wordCount" content="2123">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之单例模式"/>
 <meta name="twitter:description" content="特点 单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。 饿汉式 饿汉式单例就是在"/>
 
@@ -296,271 +293,209 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#特点">特点</a></li>
-<li><a href="#饿汉式">饿汉式</a></li>
-<li><a href="#懒汉式">懒汉式</a></li>
-<li><a href="#懒汉式-线程安全版本">懒汉式（线程安全版本）</a></li>
-<li><a href="#注册式单例">注册式单例</a></li>
-<li><a href="#静态内部类方式">静态内部类方式</a></li>
-<li><a href="#打破单例之clone方式">打破单例之Clone方式</a>
-<ul>
-<li><a href="#解决clone方式下产生单例不一致的问题">解决clone方式下产生单例不一致的问题</a></li>
-</ul></li>
-<li><a href="#打破单例之反射方式">打破单例之反射方式</a>
-<ul>
-<li><a href="#解决反射产生单例不一致的问题">解决反射产生单例不一致的问题</a></li>
-</ul></li>
-<li><a href="#打破单例之序列化反序列化">打破单例之序列化反序列化</a>
-<ul>
-<li><a href="#解决序列化反序列化产生单例不一致的问题">解决序列化反序列化产生单例不一致的问题</a></li>
-</ul></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#特点">特点</a></li>
+    <li><a href="#饿汉式">饿汉式</a></li>
+    <li><a href="#懒汉式">懒汉式</a></li>
+    <li><a href="#懒汉式-线程安全版本">懒汉式（线程安全版本）</a></li>
+    <li><a href="#注册式单例">注册式单例</a></li>
+    <li><a href="#静态内部类方式">静态内部类方式</a></li>
+    <li><a href="#打破单例之clone方式">打破单例之Clone方式</a>
+      <ul>
+        <li><a href="#解决clone方式下产生单例不一致的问题">解决clone方式下产生单例不一致的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#打破单例之反射方式">打破单例之反射方式</a>
+      <ul>
+        <li><a href="#解决反射产生单例不一致的问题">解决反射产生单例不一致的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#打破单例之序列化反序列化">打破单例之序列化反序列化</a>
+      <ul>
+        <li><a href="#解决序列化反序列化产生单例不一致的问题">解决序列化反序列化产生单例不一致的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="特点">特点</h2>
-
+      <h2 id="特点">特点</h2>
 <p>单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。</p>
-
 <h2 id="饿汉式">饿汉式</h2>
-
 <p>饿汉式单例就是在类定义时就已经将实例进行了初始化，在系统调用时可以直接返回不需要再实例化。示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hungry</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class Hungry {
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Hungry</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
 
-    private Hungry() {
-    }
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Hungry INSTANCE <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Hungry<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    private static final Hungry INSTANCE = new Hungry();
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Hungry <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> INSTANCE<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public static Hungry getInstance() {
-        return INSTANCE;
-    }
-
-}
-</code></pre>
-
-<p>饿汉式的优点是提前进行初始化，线程安全。缺点是在系统未调用的情况下占用了内存空间，是以空间换取时间的样例</p>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><p>饿汉式的优点是提前进行初始化，线程安全。缺点是在系统未调用的情况下占用了内存空间，是以空间换取时间的样例</p>
 <h2 id="懒汉式">懒汉式</h2>
-
 <p>懒汉式就是在使用才对对象实例进行初始化，达到了延迟加载的目的。示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LazyOne</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class LazyOne {
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">LazyOne</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
 
-    private LazyOne() {
-    }
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LazyOne instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
 
-    private static LazyOne instance = null;
-
-    public static LazyOne getInstance() {
-        if (instance == null) {
-            instance = new LazyOne();
-        }
-        return instance;
-    }
-}
-</code></pre>
-
-<p>懒式式优化点使用时实例化，延迟加载。缺点是存在线程安全问题</p>
-
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> LazyOne <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LazyOne<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>懒式式优化点使用时实例化，延迟加载。缺点是存在线程安全问题</p>
 <h2 id="懒汉式-线程安全版本">懒汉式（线程安全版本）</h2>
-
 <p>上面的写法存在线程安全问题，最简单的修改方法是加上synchronized关键字，这样就解决了线程的安全问题。示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LazyTwo</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class LazyTwo {
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">LazyTwo</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
 
-    private LazyTwo() {
-    }
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> LazyTwo instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
 
-    private static LazyTwo instance = null;
-
-    public static synchronized LazyTwo getInstance() {
-        if (instance == null) {
-            instance = new LazyTwo();
-        }
-        return instance;
-    }
-}
-</code></pre>
-
-<p>加了synchronized关键字解决了线程安全问题，但是程序的并发性能下降，因为在同一时间只能有一个线程进行工作。测试生成200万个实例的情况，不带关键字synchronized耗时7ms，而带synchroized的耗时49ms，相差7倍，加大生成实例的个数，这个时间差会更大，这个版本性能的测试代码如下：</p>
-
-<pre><code class="language-java">long start = System.currentTimeMillis();
-int count = 2_000_000;
-for (int i = 0; i &lt; count; i++) {
-    LazyOne.getInstance();
-}
-System.out.println(&quot;LazyOne use: &quot; + (System.currentTimeMillis() - start) + &quot;ms&quot;);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">synchronized</span> LazyTwo <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LazyTwo<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>加了synchronized关键字解决了线程安全问题，但是程序的并发性能下降，因为在同一时间只能有一个线程进行工作。测试生成200万个实例的情况，不带关键字synchronized耗时7ms，而带synchroized的耗时49ms，相差7倍，加大生成实例的个数，这个时间差会更大，这个版本性能的测试代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 2_000_000<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> count<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    LazyOne<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;LazyOne use: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
 
-long start2 = System.currentTimeMillis();
-for (int i = 0; i &lt; count; i++) {
-     LazyTwo.getInstance();
-}
-System.out.println(&quot;LazyTwo use: &quot; + (System.currentTimeMillis() - start2) + &quot;ms&quot;);
-</code></pre>
-
-<h2 id="注册式单例">注册式单例</h2>
-
+<span style="color:#66d9ef">long</span> start2 <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> count<span style="color:#f92672">;</span> i<span style="color:#f92672">+</span><span style="color:#f92672">+</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     LazyTwo<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;LazyTwo use: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">-</span> start2<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;ms&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><h2 id="注册式单例">注册式单例</h2>
 <p>注册式单例是Spring中使用的一种产生单例的方式，主要的思想就是将要产生的单例对象使用一样map进行存储。示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> singletonMaps <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcurrentHashMap<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">private final static Map&lt;String, Object&gt; singletonMaps = new ConcurrentHashMap&lt;&gt;();
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object <span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span>String beanName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-public static Object getBean(String beanName) {
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">null</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> beanName <span style="color:#f92672">|</span><span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>beanName<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;invalid beanName&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-        if (null == beanName || &quot;&quot;.equals(beanName)) {
-                throw new RuntimeException(&quot;invalid beanName&quot;);
-        }
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>singletonMaps<span style="color:#f92672">.</span><span style="color:#a6e22e">containsKey</span><span style="color:#f92672">(</span>beanName<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        if (!singletonMaps.containsKey(beanName)) {
+                <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>singletonMaps<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                                Object o <span style="color:#f92672">=</span> Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span>beanName<span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                                singletonMaps<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>beanName<span style="color:#f92672">,</span> o<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                                <span style="color:#66d9ef">return</span> o<span style="color:#f92672">;</span>
+                        <span style="color:#f92672">}</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> singletonMaps<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>beanName<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
 
-                try {
-                        synchronized (singletonMaps) {
-                                Object o = Class.forName(beanName).newInstance();
-                                singletonMaps.put(beanName, o);
-                                return o;
-                        }
-                } catch (Exception e) {
-                        e.printStackTrace();
-                }
-        }
-        return singletonMaps.get(beanName);
-}
-
-</code></pre>
-
-<p>Spring实际的生成单例bean的处理方式比这复杂很多。</p>
-
+</code></pre></div><p>Spring实际的生成单例bean的处理方式比这复杂很多。</p>
 <h2 id="静态内部类方式">静态内部类方式</h2>
-
 <p>静态内部类就是在一个类的内部又声明了一个类，静态内部类生成单例的代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LazyThree</span>  <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">public class LazyThree  {
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">LazyThree</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
 
-    private LazyThree() {
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> LazyThree <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> InstanceHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">LAZY</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public static LazyThree getInstance() {
-        return InstanceHolder.LAZY;
-    }
-
-    private static class InstanceHolder {
-        private static final LazyThree LAZY = new LazyThree();
-    }
-}
-</code></pre>
-
-<p>在类LazyThree的内部又声明了一个名为InstanceHolder的静态内部类，刚开始外部类初始化时内部类不会进行初始化，这样保留了懒加载的特性，只有在调用getInstance方法时内部类才初始化，JVM虚拟机内部的逻辑保证了在多线程情况静态内部类只给被初始化一次，这样也保证了线程的安全。但是JAVA提供我们程序员太多的方式来进行类的实例化，比如clone，反射，序列化。在这些情况下，我们的单例还是唯一的吗？</p>
-
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceHolder</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> LazyThree LAZY <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LazyThree<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在类LazyThree的内部又声明了一个名为InstanceHolder的静态内部类，刚开始外部类初始化时内部类不会进行初始化，这样保留了懒加载的特性，只有在调用getInstance方法时内部类才初始化，JVM虚拟机内部的逻辑保证了在多线程情况静态内部类只给被初始化一次，这样也保证了线程的安全。但是JAVA提供我们程序员太多的方式来进行类的实例化，比如clone，反射，序列化。在这些情况下，我们的单例还是唯一的吗？</p>
 <h2 id="打破单例之clone方式">打破单例之Clone方式</h2>
-
 <p>在JAVA中所有对象都继承Object对象，实例对象实现Cloneable接口则可以进行clone，示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">clone</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> CloneNotSupportedException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">clone</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>测试代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LazyThree lazyThree <span style="color:#f92672">=</span> LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+LazyThree clone <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>LazyThree<span style="color:#f92672">)</span> lazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">clone</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">@Override
-public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-}
-</code></pre>
-
-<p>测试代码:</p>
-
-<pre><code class="language-java">LazyThree lazyThree = LazyThree.getInstance();
-LazyThree clone = (LazyThree) lazyThree.clone();
-
-System.out.println(lazyThree == clone);  //结果为false
-</code></pre>
-
-<h3 id="解决clone方式下产生单例不一致的问题">解决clone方式下产生单例不一致的问题</h3>
-
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>lazyThree <span style="color:#f92672">=</span><span style="color:#f92672">=</span> clone<span style="color:#f92672">)</span><span style="color:#f92672">;</span>  <span style="color:#75715e">//结果为false
+</span></code></pre></div><h3 id="解决clone方式下产生单例不一致的问题">解决clone方式下产生单例不一致的问题</h3>
 <p>实例了cloneable接口的单例对象生成的实例不相同，此时我们要做的就是重写clone方法，让其使用我们静态内部类生成的单例，示例代码如下：</p>
-
-<pre><code class="language-java">@Override
-public Object clone() throws CloneNotSupportedException {
-        return getInstance();
-}
-</code></pre>
-
-<p>这样我们重写了clone方式，生成的单例就是一样的了</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">clone</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> CloneNotSupportedException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getInstance<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这样我们重写了clone方式，生成的单例就是一样的了</p>
 <h2 id="打破单例之反射方式">打破单例之反射方式</h2>
-
 <p>反射是JAVA的一个利器，利用反射可以实例化对象，调用方法，动态的创建对象，使用反射创建实例的代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Constructor<span style="color:#f92672">&lt;</span>LazyThree<span style="color:#f92672">&gt;</span> constructor <span style="color:#f92672">=</span> LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaredConstructor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+constructor<span style="color:#f92672">.</span><span style="color:#a6e22e">setAccessible</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+LazyThree lazyThreeReflect <span style="color:#f92672">=</span> constructor<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">Constructor&lt;LazyThree&gt; constructor = LazyThree.class.getDeclaredConstructor(null);
-constructor.setAccessible(true);
-LazyThree lazyThreeReflect = constructor.newInstance(null);
-
-LazyThree lazyThree = LazyThree.getInstance();
-System.out.println(lazyThree == lazyThreeReflect);
-</code></pre>
-
-<p>生成的实例不是相同的，虽然我们的类已经把构造方法声明为了private，但是反射依然可以访问的到。</p>
-
+LazyThree lazyThree <span style="color:#f92672">=</span> LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>lazyThree <span style="color:#f92672">=</span><span style="color:#f92672">=</span> lazyThreeReflect<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><p>生成的实例不是相同的，虽然我们的类已经把构造方法声明为了private，但是反射依然可以访问的到。</p>
 <h3 id="解决反射产生单例不一致的问题">解决反射产生单例不一致的问题</h3>
-
 <p>为了防止这种事情的发生，我们需要在构造方法上对类初始化状态进行标识来阻止类的多次初始化。代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> initial <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">private static boolean initial = false;
+<span style="color:#66d9ef">private</span> <span style="color:#a6e22e">LazyThree</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-private LazyThree() {
-
-        synchronized (LazyThree.class) {
-                if (!initial) {
-                        initial = true;
-                } else {
-                        throw new RuntimeException(&quot;单例被侵犯&quot;);
-                }
-        }
-}
-</code></pre>
-
-<p>我们定义的一个静态变量initial来标识类有没有进行了初始化，并且不对外提供对initial变量的get与set方法。这样如实例已经初始化了，再次调用则抛出异常表明类已经被初始化了，这样就防止了使用反射方式来进行类的实例化了。</p>
-
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>initial<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                        initial <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;单例被侵犯&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>我们定义的一个静态变量initial来标识类有没有进行了初始化，并且不对外提供对initial变量的get与set方法。这样如实例已经初始化了，再次调用则抛出异常表明类已经被初始化了，这样就防止了使用反射方式来进行类的实例化了。</p>
 <h2 id="打破单例之序列化反序列化">打破单例之序列化反序列化</h2>
-
 <p>JAVA中的对象是可以持久化到磁盘上的，使用的方式就是序列化与反序列化，主要是使用ObjectInputStream与ObjectOutPutStream来实现。代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">LazyThree lazyThree <span style="color:#f92672">=</span> LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">LazyThree lazyThree = LazyThree.getInstance();
+File file <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>LazyTest<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getPath</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/serializable.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+FileOutputStream fps <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span>file<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+ObjectOutputStream oos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream<span style="color:#f92672">(</span>fps<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+oos<span style="color:#f92672">.</span><span style="color:#a6e22e">writeObject</span><span style="color:#f92672">(</span>lazyThree<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+oos<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+oos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-File file = new File(LazyTest.class.getResource(&quot;&quot;).getPath() + &quot;/serializable.txt&quot;);
-FileOutputStream fps = new FileOutputStream(file);
-ObjectOutputStream oos = new ObjectOutputStream(fps);
-oos.writeObject(lazyThree);
-oos.flush();
-oos.close();
+FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream<span style="color:#f92672">(</span>file<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+ObjectInputStream ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream<span style="color:#f92672">(</span>fis<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+LazyThree lazyThreeSerializable <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>LazyThree<span style="color:#f92672">)</span> ois<span style="color:#f92672">.</span><span style="color:#a6e22e">readObject</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+fis<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+ois<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-FileInputStream fis = new FileInputStream(file);
-ObjectInputStream ois = new ObjectInputStream(fis);
-LazyThree lazyThreeSerializable = (LazyThree) ois.readObject();
-fis.close();
-ois.close();
-
-System.out.println(lazyThree == lazyThreeSerializable);
-</code></pre>
-
-<p>上面代码的结果为false，证明两个对象不相同</p>
-
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>lazyThree <span style="color:#f92672">=</span><span style="color:#f92672">=</span> lazyThreeSerializable<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><p>上面代码的结果为false，证明两个对象不相同</p>
 <h3 id="解决序列化反序列化产生单例不一致的问题">解决序列化反序列化产生单例不一致的问题</h3>
-
 <p>解决的方法要的ObjectInputStream读入对象时来处理，我们需要在类中增加readResolve方法，在这个方法返回我们生成单例的方式。代码如下：</p>
-
-<pre><code class="language-java">private Object readResolve() {
-        return getInstance();
-}
-</code></pre>
-
-<p>这样在读取对象信息时使用我们返回的实体对象就保证了对象的一致性。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> Object <span style="color:#a6e22e">readResolve</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getInstance<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这样在读取对象信息时使用我们返回的实体对象就保证了对象的一致性。
 单例模式的类图如下:
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -574,63 +509,59 @@ System.out.println(lazyThree == lazyThreeSerializable);
   </figure>
 </div>
 </p>
-
 <h2 id="总结">总结</h2>
-
 <p>写一个单例不容易。
 以下是完整的单例方式代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.lazy<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.lazy;
+<span style="color:#f92672">import</span> java.io.Serializable<span style="color:#f92672">;</span>
 
-import java.io.Serializable;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/2.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LazyThree</span> <span style="color:#66d9ef">implements</span> Cloneable<span style="color:#f92672">,</span> Serializable <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/2.
- * Github: https://github.com/peng051410
- */
-public class LazyThree implements Cloneable, Serializable {
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> initial <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
 
-    private static boolean initial = false;
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">LazyThree</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    private LazyThree() {
+        <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>LazyThree<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>initial<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                initial <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;单例被侵犯&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-        synchronized (LazyThree.class) {
-            if (!initial) {
-                initial = true;
-            } else {
-                throw new RuntimeException(&quot;单例被侵犯&quot;);
-            }
-        }
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> LazyThree <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> InstanceHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">LAZY</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public static LazyThree getInstance() {
-        return InstanceHolder.LAZY;
-    }
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstanceHolder</span> <span style="color:#f92672">{</span>
 
-    private static class InstanceHolder {
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> LazyThree LAZY <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LazyThree<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        private static final LazyThree LAZY = new LazyThree();
-    }
+    <span style="color:#66d9ef">private</span> Object <span style="color:#a6e22e">readResolve</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getInstance<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    private Object readResolve() {
-        return getInstance();
-    }
-
-    // public static boolean isInintial() {
-    //     return inintial;
-    // }
-    //
-    // public static void setInintial(boolean inintial) {
-    //     LazyThree.inintial = inintial;
-    // }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return getInstance();
-    }
-}
-</code></pre>
-
+    <span style="color:#75715e">// public static boolean isInintial() {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     return inintial;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// public static void setInintial(boolean inintial) {
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//     LazyThree.inintial = inintial;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// }
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">clone</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> CloneNotSupportedException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> getInstance<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
     </div>
 
     

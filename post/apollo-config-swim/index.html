@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/apollo-config-swim/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-25T20:46:29+08:00" />
 <meta itemprop="name" content="Apollo 配置中心畅游">
 <meta itemprop="description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。 Spring Cloud Config 2">
-
-
 <meta itemprop="datePublished" content="2019-05-09T17:34:09&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-25T20:46:29&#43;08:00" />
 <meta itemprop="wordCount" content="1799">
 
 
 
-<meta itemprop="keywords" content="apollo," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="apollo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Apollo 配置中心畅游"/>
 <meta name="twitter:description" content="目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。 Spring Cloud Config 2"/>
 
@@ -293,151 +290,109 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#目前市面上的开源产品">目前市面上的开源产品</a>
-<ul>
-<li><a href="#disconf"><a href="https://github.com/knightliao/disconf">Disconf</a></a></li>
-<li><a href="#spring-cloud-config"><a href="https://github.com/spring-cloud/spring-cloud-config">Spring Cloud Config</a></a></li>
-<li><a href="#apollo"><a href="https://github.com/ctripcorp/apollo">Apollo</a></a></li>
-<li><a href="#nacos"><a href="https://github.com/alibaba/nacos">Nacos</a></a></li>
-</ul></li>
-<li><a href="#为什么选择apollo">为什么选择Apollo</a>
-<ul>
-<li><a href="#社区活跃">社区活跃</a></li>
-<li><a href="#文档齐全">文档齐全</a></li>
-<li><a href="#重要的灰度发布">重要的灰度发布</a></li>
-<li><a href="#开源协议友好">开源协议友好</a></li>
-</ul></li>
-<li><a href="#apollo都有哪些重要功能">Apollo都有哪些重要功能</a>
-<ul>
-<li><a href="#统一管理不同环境-不同集群的配置">统一管理不同环境、不同集群的配置</a></li>
-<li><a href="#配置修改实时生效-热发布">配置修改实时生效（热发布）</a></li>
-<li><a href="#版本发布管理">版本发布管理</a></li>
-<li><a href="#灰度发布">灰度发布</a></li>
-<li><a href="#权限管理-发布审核-操作审计">权限管理、发布审核、操作审计</a></li>
-<li><a href="#客户端配置信息监控">客户端配置信息监控</a></li>
-<li><a href="#提供java和-dot-net原生客户端">提供Java和.Net原生客户端</a></li>
-<li><a href="#提供开放平台api">提供开放平台API</a></li>
-<li><a href="#使用方便的后台配置系统portal">使用方便的后台配置系统Portal</a></li>
-<li><a href="#分布式部署相对较复杂-这是缺点">分布式部署相对较复杂，这是缺点</a></li>
-</ul></li>
-<li><a href="#apollo的组成">Apollo的组成</a>
-<ul>
-<li><a href="#apollo长什么样">Apollo长什么样?</a></li>
-<li><a href="#apollo整体设计">Apollo整体设计</a>
-<ul>
-<li><a href="#总体架构">总体架构</a></li>
-<li><a href="#代码结构">代码结构</a></li>
-</ul></li>
-<li><a href="#apollo-config-service">Apollo Config Service</a></li>
-<li><a href="#apollo-admin-service">Apollo Admin Service</a></li>
-<li><a href="#apollo-portal">Apollo Portal</a></li>
-</ul></li>
-<li><a href="#apollo的重要设计">Apollo的重要设计</a>
-<ul>
-<li><a href="#admin-service与config-service的通信方式">Admin Service与Config Service的通信方式</a></li>
-<li><a href="#客户端与服务端的通信方式">客户端与服务端的通信方式</a></li>
-<li><a href="#重要的namespace">重要的Namespace</a>
-<ul>
-<li><a href="#namespace的类型">Namespace的类型</a></li>
-</ul></li>
-<li><a href="#cluster能用来做什么">Cluster能用来做什么?</a></li>
-</ul></li>
-<li><a href="#体验部署方式">体验部署方式</a></li>
-<li><a href="#使用注意事项">使用注意事项</a></li>
-<li><a href="#后续待确认问题处理">后续待确认问题处理</a>
-<ul>
-<li><a href="#客户端的读取权限">客户端的读取权限</a></li>
-<li><a href="#docker的实例获取问题">docker的实例获取问题</a></li>
-<li><a href="#本地调试读取配置问题">本地调试读取配置问题</a></li>
-<li><a href="#client怎么来修改配置">Client怎么来修改配置</a></li>
-<li><a href="#配置指定时间生效">配置指定时间生效</a></li>
-</ul></li>
-<li><a href="#参考文档">参考文档</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#目前市面上的开源产品">目前市面上的开源产品</a>
+      <ul>
+        <li><a href="#disconf">Disconf</a></li>
+        <li><a href="#spring-cloud-config">Spring Cloud Config</a></li>
+        <li><a href="#apollo">Apollo</a></li>
+        <li><a href="#nacos">Nacos</a></li>
+      </ul>
+    </li>
+    <li><a href="#为什么选择apollo">为什么选择Apollo</a>
+      <ul>
+        <li><a href="#社区活跃">社区活跃</a></li>
+        <li><a href="#文档齐全">文档齐全</a></li>
+        <li><a href="#重要的灰度发布">重要的灰度发布</a></li>
+        <li><a href="#开源协议友好">开源协议友好</a></li>
+      </ul>
+    </li>
+    <li><a href="#apollo都有哪些重要功能">Apollo都有哪些重要功能</a>
+      <ul>
+        <li><a href="#统一管理不同环境-不同集群的配置">统一管理不同环境、不同集群的配置</a></li>
+        <li><a href="#配置修改实时生效-热发布">配置修改实时生效（热发布）</a></li>
+        <li><a href="#版本发布管理">版本发布管理</a></li>
+        <li><a href="#灰度发布">灰度发布</a></li>
+        <li><a href="#权限管理-发布审核-操作审计">权限管理、发布审核、操作审计</a></li>
+        <li><a href="#客户端配置信息监控">客户端配置信息监控</a></li>
+        <li><a href="#提供java和-dot-net原生客户端">提供Java和.Net原生客户端</a></li>
+        <li><a href="#提供开放平台api">提供开放平台API</a></li>
+        <li><a href="#使用方便的后台配置系统portal">使用方便的后台配置系统Portal</a></li>
+        <li><a href="#分布式部署相对较复杂-这是缺点">分布式部署相对较复杂，这是缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#apollo的组成">Apollo的组成</a>
+      <ul>
+        <li><a href="#apollo长什么样">Apollo长什么样?</a></li>
+        <li><a href="#apollo整体设计">Apollo整体设计</a></li>
+        <li><a href="#apollo-config-service">Apollo Config Service</a></li>
+        <li><a href="#apollo-admin-service">Apollo Admin Service</a></li>
+        <li><a href="#apollo-portal">Apollo Portal</a></li>
+      </ul>
+    </li>
+    <li><a href="#apollo的重要设计">Apollo的重要设计</a>
+      <ul>
+        <li><a href="#admin-service与config-service的通信方式">Admin Service与Config Service的通信方式</a></li>
+        <li><a href="#客户端与服务端的通信方式">客户端与服务端的通信方式</a></li>
+        <li><a href="#重要的namespace">重要的Namespace</a></li>
+        <li><a href="#cluster能用来做什么">Cluster能用来做什么?</a></li>
+      </ul>
+    </li>
+    <li><a href="#体验部署方式">体验部署方式</a></li>
+    <li><a href="#使用注意事项">使用注意事项</a></li>
+    <li><a href="#后续待确认问题处理">后续待确认问题处理</a>
+      <ul>
+        <li><a href="#客户端的读取权限">客户端的读取权限</a></li>
+        <li><a href="#docker的实例获取问题">docker的实例获取问题</a></li>
+        <li><a href="#本地调试读取配置问题">本地调试读取配置问题</a></li>
+        <li><a href="#client怎么来修改配置">Client怎么来修改配置</a></li>
+        <li><a href="#配置指定时间生效">配置指定时间生效</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文档">参考文档</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="目前市面上的开源产品">目前市面上的开源产品</h2>
-
+      <h2 id="目前市面上的开源产品">目前市面上的开源产品</h2>
 <h3 id="disconf"><a href="https://github.com/knightliao/disconf">Disconf</a></h3>
-
 <p>2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。</p>
-
 <h3 id="spring-cloud-config"><a href="https://github.com/spring-cloud/spring-cloud-config">Spring Cloud Config</a></h3>
-
 <p>2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。</p>
-
 <h3 id="apollo"><a href="https://github.com/ctripcorp/apollo">Apollo</a></h3>
-
 <p>2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。</p>
-
 <h3 id="nacos"><a href="https://github.com/alibaba/nacos">Nacos</a></h3>
-
 <p>2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。</p>
-
 <h2 id="为什么选择apollo">为什么选择Apollo</h2>
-
 <h3 id="社区活跃">社区活跃</h3>
-
 <p>刚刚发布了<a href="https://github.com/ctripcorp/apollo/releases/tag/v1.4.0">1.4.0</a>版本，Issue处理速度快</p>
-
 <h3 id="文档齐全">文档齐全</h3>
-
 <p>体验，部署，设计文档都齐全</p>
-
 <h3 id="重要的灰度发布">重要的灰度发布</h3>
-
 <p>想发布一台机器试试水，可以！</p>
-
 <h3 id="开源协议友好">开源协议友好</h3>
-
 <p>Apache 2 license</p>
-
 <h2 id="apollo都有哪些重要功能">Apollo都有哪些重要功能</h2>
-
 <p>以下摘自<a href="https://github.com/ctripcorp/apollo#features">官网说明</a></p>
-
 <h3 id="统一管理不同环境-不同集群的配置">统一管理不同环境、不同集群的配置</h3>
-
 <h3 id="配置修改实时生效-热发布">配置修改实时生效（热发布）</h3>
-
 <h3 id="版本发布管理">版本发布管理</h3>
-
 <p>目前只支持对最近版本的恢复。<a href="https://github.com/ctripcorp/apollo/issues/1642">https://github.com/ctripcorp/apollo/issues/1642</a></p>
-
 <h3 id="灰度发布">灰度发布</h3>
-
 <h3 id="权限管理-发布审核-操作审计">权限管理、发布审核、操作审计</h3>
-
 <p>编辑与发布是两个独立的操作。</p>
-
 <h3 id="客户端配置信息监控">客户端配置信息监控</h3>
-
 <h3 id="提供java和-dot-net原生客户端">提供Java和.Net原生客户端</h3>
-
 <h3 id="提供开放平台api">提供开放平台API</h3>
-
 <p>这样可以通过其它方式来查看配置信息，<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E5%25BC%2580%25E6%2594%25BE%25E5%25B9%25B3%25E5%258F%25B0">平台API说明</a></p>
-
 <h3 id="使用方便的后台配置系统portal">使用方便的后台配置系统Portal</h3>
-
 <h3 id="分布式部署相对较复杂-这是缺点">分布式部署相对较复杂，这是缺点</h3>
-
 <p>外部依赖少，目前依赖Mysql</p>
-
 <h2 id="apollo的组成">Apollo的组成</h2>
-
 <h3 id="apollo长什么样">Apollo长什么样?</h3>
-
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -450,11 +405,8 @@
   </figure>
 </div>
 
-
 <h3 id="apollo整体设计">Apollo整体设计</h3>
-
 <h4 id="总体架构">总体架构</h4>
-
 
 
 <div class="box">
@@ -467,9 +419,7 @@
   </figure>
 </div>
 
-
 <h4 id="代码结构">代码结构</h4>
-
 
 
 <div class="box">
@@ -482,27 +432,16 @@
   </figure>
 </div>
 
-
 <p><a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E9%2585%258D%25E7%25BD%25AE%25E4%25B8%25AD%25E5%25BF%2583%25E8%25AE%25BE%25E8%25AE%25A1#13-%25E5%2590%2584%25E6%25A8%25A1%25E5%259D%2597%25E6%25A6%2582%25E8%25A6%2581%25E4%25BB%258B%25E7%25BB%258D">各模块概要介绍</a></p>
-
 <h3 id="apollo-config-service">Apollo Config Service</h3>
-
 <p>提供配置获取接口，服务对象为Apollo客户端</p>
-
 <h3 id="apollo-admin-service">Apollo Admin Service</h3>
-
 <p>提供配置管理（修改、发布）接口，服务与Portal</p>
-
 <h3 id="apollo-portal">Apollo Portal</h3>
-
 <p>提供WEB界面供用户管理配置</p>
-
 <h2 id="apollo的重要设计">Apollo的重要设计</h2>
-
 <h3 id="admin-service与config-service的通信方式">Admin Service与Config Service的通信方式</h3>
-
 <p>Apollo使用Mysql实现消息(ReleaseMessage)的处理，消息内容为AppId+Cluster+Namespace，具体的设计思想可以参考<a href="https://github.com/ctripcorp/apollo/wiki/Apollo%25E9%2585%258D%25E7%25BD%25AE%25E4%25B8%25AD%25E5%25BF%2583%25E8%25AE%25BE%25E8%25AE%25A1#211-%25E5%258F%2591%25E9%2580%2581releasemessage%25E7%259A%2584%25E5%25AE%259E%25E7%258E%25B0%25E6%2596%25B9%25E5%25BC%258F">这里</a></p>
-
 
 
 <div class="box">
@@ -515,34 +454,22 @@
   </figure>
 </div>
 
-
 <h3 id="客户端与服务端的通信方式">客户端与服务端的通信方式</h3>
-
 <p>客户端与服务端保持一个长连接(通过Http Long Polling实现)
 <a href="~/github/apollo/doc/images/client-architecture.png">Client Server</a></p>
-
 <h3 id="重要的namespace">重要的Namespace</h3>
-
 <p>Namespace是配置项的集合，类似于一个配置文件的概念，获取的权限分为private与public两种权限。</p>
-
 <h4 id="namespace的类型">Namespace的类型</h4>
-
 <ul>
 <li>私有类型</li>
 <li>公有类型</li>
 <li>关联类型（继承类型）</li>
 </ul>
-
 <h3 id="cluster能用来做什么">Cluster能用来做什么?</h3>
-
 <p>分机房实例，分任务功能实例，比如在一些实例执行job，需要增加-Dapollo.cluster=配置指定集群名</p>
-
 <h2 id="体验部署方式">体验部署方式</h2>
-
 <p>Docker，本地源代码，虚拟机多环境</p>
-
 <h2 id="使用注意事项">使用注意事项</h2>
-
 <ul>
 <li>在主版本有未发布的配置项时，要发布灰度后的全量则需要先把主版本中的配置发布后方可操作</li>
 <li>使用docker运行demo测试时连接不上docker中的服务解决方法：<a href="https://github.com/ctripcorp/apollo/issues/1481#issuecomment-422057411w">https://github.com/ctripcorp/apollo/issues/1481#issuecomment-422057411w</a></li>
@@ -552,24 +479,18 @@
 <li>config与admin service要开放端口8080与8090(默认情况下)，端口可以在项目中的starup.sh中修改</li>
 <li>如果Config Service配置开启了内存缓存数据(config-service.cache.enabled)，要提前考虑数据量的大小，调整服务的内存配置</li>
 <li>在配置单环境(如开发环境)高可用时配置修改点
-
 <ul>
 <li>修改config库的eureka.service.url配置项为多个开发环境的meta server地址</li>
 <li>修改portal的apollo-env.properties文件中的开发环境指定地址</li>
 <li>修改admin与config的连接数据库地址，都连接到开发环境的mysql地址</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="后续待确认问题处理">后续待确认问题处理</h2>
-
 <h3 id="客户端的读取权限">客户端的读取权限</h3>
-
 <p>目前看官方没有对这方面进行处理，维护者已将该功能加为TODO。具体的实现方案看<a href="https://github.com/ctripcorp/apollo/issues/2099#issuecomment-478240713">这里</a></p>
-
 <h3 id="docker的实例获取问题">docker的实例获取问题</h3>
-
 <p>验证的是实例列表获取的是docker实例的ip地址，不同的docker机获取的ip是相同的</p>
-
 
 
 <div class="box">
@@ -582,26 +503,16 @@
   </figure>
 </div>
 
-
 <h3 id="本地调试读取配置问题">本地调试读取配置问题</h3>
-
 <p>Apollo的开发模式可以解决这个问题，具体看<a href="https://github.com/ctripcorp/apollo/wiki/Java%25E5%25AE%25A2%25E6%2588%25B7%25E7%25AB%25AF%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597#%25E4%25BA%2594%25E6%259C%25AC%25E5%259C%25B0%25E5%25BC%2580%25E5%258F%2591%25E6%25A8%25A1%25E5%25BC%258F">这里</a></p>
-
 <h3 id="client怎么来修改配置">Client怎么来修改配置</h3>
-
 <p>目前看Apllo-Client包只提供从配置中心获取配置的功能，如果想对配置进行修改，则只能通过OpenApi的方式来实现。</p>
-
 <h3 id="配置指定时间生效">配置指定时间生效</h3>
-
 <p>目前来看需要通过OpenApi实现</p>
-
 <h2 id="参考文档">参考文档</h2>
-
 <blockquote>
 <p><a href="https://github.com/ctripcorp/apollo">https://github.com/ctripcorp/apollo</a></p>
-
 <p><a href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
-
 <p><a href="http://dockone.io/article/8767">http://dockone.io/article/8767</a></p>
 </blockquote>
 

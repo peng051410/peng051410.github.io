@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/maven/</link>
+    <description>Recent content in maven on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 31 Dec 2019 10:45:55 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.imcompany.cn/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>那些有用maven命令</title>
+      <link>http://blog.imcompany.cn/post/maven-swim/</link>
+      <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
+      <description>查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.</description>
+    </item>
+    
+  </channel>
+</rss>

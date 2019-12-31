@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-mo-ban-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:59:29+08:00" />
 <meta itemprop="name" content="设计模式学习之模板模式">
 <meta itemprop="description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就">
-
-
 <meta itemprop="datePublished" content="2018-06-25T21:06:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:59:29&#43;08:00" />
 <meta itemprop="wordCount" content="1114">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之模板模式"/>
 <meta name="twitter:description" content="说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就"/>
 
@@ -296,155 +293,137 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#模板设计模式实现">模板设计模式实现</a>
-<ul>
-<li><a href="#模板模式实现的类图">模板模式实现的类图</a></li>
-</ul></li>
-<li><a href="#模板模式总结">模板模式总结</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#模板设计模式实现">模板设计模式实现</a>
+      <ul>
+        <li><a href="#模板模式实现的类图">模板模式实现的类图</a></li>
+      </ul>
+    </li>
+    <li><a href="#模板模式总结">模板模式总结</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就是获取参数-&gt;验证参数-&gt;验证签名-&gt;验证支付状态（可选）-&gt;订单状态为成功增加用户的充值金额。具体的过程由于不同的支付方式不同而处理的不同。这种需求可以使用模板的模板模式来实现。</p>
-
 <h2 id="模板设计模式实现">模板设计模式实现</h2>
-
 <p>模板模式就是由一个类来声明整个处理流程的步骤，具体的实现由各个实现类来进行实现。处理的流程不变，变是就是里面具体的实现。针对上面的支付回调，可以声明一个抽象类来声明具体的流程方法，代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.callback<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.callback;
+<span style="color:#f92672">import</span> java.util.Map<span style="color:#f92672">;</span>
 
-import java.util.Map;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/21.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PayCallback</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/21.
- * Github: https://github.com/peng051410
- */
-public abstract class PayCallback {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getParam</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public abstract Map&lt;String, String&gt; getParam();
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">checkParam</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> param<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public abstract boolean checkParam(Map&lt;String, String&gt; param);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">validSign</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public abstract boolean validSign();
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * 定义了一个钩子方法来让子类控制流程实现
+</span><span style="color:#75715e">     * @return true：强制返回，false：不强制返回
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">forceReturn</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    /**
-     * 定义了一个钩子方法来让子类控制流程实现
-     * @return true：强制返回，false：不强制返回
-     */
-    public boolean forceReturn() {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-        return false;
-    }
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">doService</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    public String doService() {
+        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> getParam<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>checkParam<span style="color:#f92672">(</span>map<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;param fail&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>validSign<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;sign fail&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-        Map&lt;String, String&gt; map = getParam();
-        if (!checkParam(map)) {
-            return &quot;param fail&quot;;
-        }
-        if (!validSign()) {
-            return &quot;sign fail&quot;;
-        }
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#f92672">!</span>map<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;success&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>forceReturn<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;order fail&#34;</span><span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
 
-        if (!map.get(&quot;status&quot;).equals(&quot;success&quot;)) {
-            if (forceReturn()) {
-                return &quot;order fail&quot;;
-            }
-        }
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;success&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面的PayCallback类中声明了getParam(获取参数)，checkParam（验证参数），validSign（验证签名），验证支付状态四个步骤，具体的支付回调类要来实现这里声明的方法即可。下面是一个微信支付的回调类的代码实现：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.callback<span style="color:#f92672">;</span>
 
-        return &quot;success&quot;;
-    }
-}
-</code></pre>
+<span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Map<span style="color:#f92672">;</span>
 
-<p>在上面的PayCallback类中声明了getParam(获取参数)，checkParam（验证参数），validSign（验证签名），验证支付状态四个步骤，具体的支付回调类要来实现这里声明的方法即可。下面是一个微信支付的回调类的代码实现：</p>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/21.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WechatPayCallback</span> <span style="color:#66d9ef">extends</span> PayCallback <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">package cn.imcompany.callback;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getParam</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;fail&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-import java.util.HashMap;
-import java.util.Map;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">checkParam</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-/**
- * Created by tomyli on 2018/6/21.
- * Github: https://github.com/peng051410
- */
-public class WechatPayCallback extends PayCallback {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">validSign</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public Map&lt;String, String&gt; getParam() {
-        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;status&quot;, &quot;fail&quot;);
-        return map;
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">forceReturn</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    @Override
-    public boolean checkParam(Map&lt;String, String&gt; param) {
-        return true;
-    }
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public boolean validSign() {
-        return true;
-    }
+<span style="color:#f92672">}</span>
+</code></pre></div><p>具体的微信回调类实现了PayCallback类声明的抽象方法，它返回的状态是状态失败，在这里面有一个forceReturn方法，可以处理是否在某一个流程进行强制的返回，在微信回调类里面是进行强制返回，下面看一下支付宝的回调类代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.callback<span style="color:#f92672">;</span>
 
-    @Override
-    public boolean forceReturn() {
+<span style="color:#f92672">import</span> java.util.HashMap<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Map<span style="color:#f92672">;</span>
 
-        return true;
-    }
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/21.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AliPayCallback</span> <span style="color:#66d9ef">extends</span> PayCallback <span style="color:#f92672">{</span>
 
-}
-</code></pre>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getParam</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;status&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;success&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> map<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<p>具体的微信回调类实现了PayCallback类声明的抽象方法，它返回的状态是状态失败，在这里面有一个forceReturn方法，可以处理是否在某一个流程进行强制的返回，在微信回调类里面是进行强制返回，下面看一下支付宝的回调类代码：</p>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">checkParam</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<pre><code class="language-java">package cn.imcompany.callback;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">validSign</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Created by tomyli on 2018/6/21.
- * Github: https://github.com/peng051410
- */
-public class AliPayCallback extends PayCallback {
-
-    @Override
-    public Map&lt;String, String&gt; getParam() {
-        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
-        map.put(&quot;status&quot;, &quot;success&quot;);
-        return map;
-    }
-
-    @Override
-    public boolean checkParam(Map&lt;String, String&gt; param) {
-        return true;
-    }
-
-    @Override
-    public boolean validSign() {
-        return true;
-    }
-}
-
-</code></pre>
-
-<p>对于支付宝，这里面的状态是成功，证明这一单处理成功，在支付宝回调这个类里面没有重写父类的forceReturn方法，这个方法子类可以根据需要来决定是否需要覆盖。这样父类给了子类可以控制父类流程的方法，这个方法一般叫做钩子方法，是留给子类来进行一些特殊处理的方法。子类实现这个方法就可以间接的控制父类中定义好的流程。比如在这里就可以控制遇到支付状态为失败的订单是否继续进行后续的操作。不进行了说明这一单也正确处理完成，返回给调用方正确的状态就可以了。</p>
-
+</code></pre></div><p>对于支付宝，这里面的状态是成功，证明这一单处理成功，在支付宝回调这个类里面没有重写父类的forceReturn方法，这个方法子类可以根据需要来决定是否需要覆盖。这样父类给了子类可以控制父类流程的方法，这个方法一般叫做钩子方法，是留给子类来进行一些特殊处理的方法。子类实现这个方法就可以间接的控制父类中定义好的流程。比如在这里就可以控制遇到支付状态为失败的订单是否继续进行后续的操作。不进行了说明这一单也正确处理完成，返回给调用方正确的状态就可以了。</p>
 <h3 id="模板模式实现的类图">模板模式实现的类图</h3>
-
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
 <div class="box">
@@ -457,9 +436,7 @@ public class AliPayCallback extends PayCallback {
   </figure>
 </div>
 
-
 <h2 id="模板模式总结">模板模式总结</h2>
-
 <ol>
 <li>模板模式定义了一个具体的流程来实现功能，子类只需要实现相应定义的方法就可以达到最终的结果。增加另一种回调类也非常的容易，只需要实现父类的方法就可以了。符合开闭原则。</li>
 <li>父类可以提供子类进行流程控制的方法，这样可以实现子类的反向控制。</li>

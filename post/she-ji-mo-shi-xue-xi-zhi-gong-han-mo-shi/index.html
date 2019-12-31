@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gong-han-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:52:09+08:00" />
 <meta itemprop="name" content="设计模式学习之工厂模式">
 <meta itemprop="description" content="说明 工厂设计模式是23种设计模式中使用频率非常高的，属于创建型模式。主要特点是实现了实体创建与使用的分离，达到了解耦的目的。工厂设计模式一般">
-
-
 <meta itemprop="datePublished" content="2018-06-12T21:33:40&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:52:09&#43;08:00" />
-<meta itemprop="wordCount" content="2105">
+<meta itemprop="wordCount" content="2089">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之工厂模式"/>
 <meta name="twitter:description" content="说明 工厂设计模式是23种设计模式中使用频率非常高的，属于创建型模式。主要特点是实现了实体创建与使用的分离，达到了解耦的目的。工厂设计模式一般"/>
 
@@ -296,336 +293,273 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#前提准备">前提准备</a></li>
-<li><a href="#简单工厂">简单工厂</a>
-<ul>
-<li><a href="#简单工厂生产啤酒">简单工厂生产啤酒</a></li>
-<li><a href="#简单工厂总结">简单工厂总结</a>
-<ul>
-<li><a href="#优点">优点：</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#工厂方法">工厂方法</a>
-<ul>
-<li><a href="#工厂方法生产啤酒">工厂方法生产啤酒</a></li>
-<li><a href="#工厂方法总结">工厂方法总结</a>
-<ul>
-<li><a href="#优点-1">优点</a></li>
-<li><a href="#缺点-1">缺点</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#抽象工厂">抽象工厂</a>
-<ul>
-<li><a href="#抽象工厂生产啤酒">抽象工厂生产啤酒</a></li>
-<li><a href="#抽象工厂总结">抽象工厂总结</a>
-<ul>
-<li><a href="#优点-2">优点</a></li>
-<li><a href="#缺点-2">缺点</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#工厂方法与抽象工厂对比">工厂方法与抽象工厂对比</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#前提准备">前提准备</a></li>
+    <li><a href="#简单工厂">简单工厂</a>
+      <ul>
+        <li><a href="#简单工厂生产啤酒">简单工厂生产啤酒</a></li>
+        <li><a href="#简单工厂总结">简单工厂总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#工厂方法">工厂方法</a>
+      <ul>
+        <li><a href="#工厂方法生产啤酒">工厂方法生产啤酒</a></li>
+        <li><a href="#工厂方法总结">工厂方法总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#抽象工厂">抽象工厂</a>
+      <ul>
+        <li><a href="#抽象工厂生产啤酒">抽象工厂生产啤酒</a></li>
+        <li><a href="#抽象工厂总结">抽象工厂总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#工厂方法与抽象工厂对比">工厂方法与抽象工厂对比</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>工厂设计模式是23种设计模式中使用频率非常高的，属于创建型模式。主要特点是实现了实体创建与使用的分离，达到了解耦的目的。工厂设计模式一般分为简单工厂、工厂方法、抽象工厂。</p>
-
 <h2 id="前提准备">前提准备</h2>
-
 <p>4年一界世界杯即将到来，啤酒厂商又要大嫌一笔。我们先准备好要生产的啤酒实体。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/27.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Beer</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/5/27.
- * Github: https://github.com/peng051410
- */
-public interface Beer {
+    String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
 
-    String getName();
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JinShiBai</span> <span style="color:#66d9ef">implements</span> Beer <span style="color:#f92672">{</span>
 
-public class JinShiBai implements Beer {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;金士百&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public String getName() {
-        return &quot;金士百&quot;;
-    }
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QingDao</span> <span style="color:#66d9ef">implements</span> Beer <span style="color:#f92672">{</span>
 
-public class QingDao implements Beer {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;青岛&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public String getName() {
-        return &quot;青岛&quot;;
-    }
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaiWei</span> <span style="color:#66d9ef">implements</span> Beer <span style="color:#f92672">{</span>
 
-public class BaiWei implements Beer {
-
-    @Override
-    public String getName() {
-        return &quot;百威&quot;;
-    }
-}
-</code></pre>
-
-<p>在上面定义三种啤酒，它们都由抽象类Beer继承而来。下面使用简单工厂来给消费者提供啤酒。</p>
-
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;百威&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面定义三种啤酒，它们都由抽象类Beer继承而来。下面使用简单工厂来给消费者提供啤酒。</p>
 <h2 id="简单工厂">简单工厂</h2>
-
 <p>消费者需要不同品类的啤酒，使用简单工厂来实现，代码如下：</p>
-
 <h3 id="简单工厂生产啤酒">简单工厂生产啤酒</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.simple<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.simple;
+<span style="color:#f92672">import</span> cn.imcompany.BaiWei<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.Beer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.JinShiBai<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.QingDao<span style="color:#f92672">;</span>
 
-import cn.imcompany.BaiWei;
-import cn.imcompany.Beer;
-import cn.imcompany.JinShiBai;
-import cn.imcompany.QingDao;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 一个工厂什么都生产,根据传入的参数来返回不同的产品
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SimpleFactory</span> <span style="color:#f92672">{</span>
 
-/**
- * 一个工厂什么都生产,根据传入的参数来返回不同的产品
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public class SimpleFactory {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Beer <span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;青岛&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> QingDao<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;百威&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BaiWei<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;金士百&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> JinShiBai<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;没有这种啤酒&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    public static Beer getBeer(String name) {
-        if (&quot;青岛&quot;.equals(name)) {
-            return new QingDao();
-        } else if (&quot;百威&quot;.equals(name)) {
-            return new BaiWei();
-        } else if (&quot;金士百&quot;.equals(name)) {
-            return new JinShiBai();
-        } else {
-            System.out.println(&quot;没有这种啤酒&quot;);
-            return null;
-        }
-    }
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面的代码简单工厂会根据传入的啤酒名称来生产出不同的啤酒。下面来测试一下这个简单工厂</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.simple<span style="color:#f92672">;</span>
 
-}
-</code></pre>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SimpleFactoryTest</span> <span style="color:#f92672">{</span>
 
-<p>在上面的代码简单工厂会根据传入的啤酒名称来生产出不同的啤酒。下面来测试一下这个简单工厂</p>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>SimpleFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;青岛&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<pre><code class="language-java">package cn.imcompany.simple;
-
-/**
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public class SimpleFactoryTest {
-
-    public static void main(String[] args) {
-        System.out.println(SimpleFactory.getBeer(&quot;青岛&quot;));
-    }
-
-}
-</code></pre>
-
-<p>现在消费者可以喝到青岛牌子的啤酒了。简单工厂实现实体创建与使用的分离。由于简单工厂一般都会提供静态的获取实体的方法，所以它还会被称为静态工厂。</p>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><p>现在消费者可以喝到青岛牌子的啤酒了。简单工厂实现实体创建与使用的分离。由于简单工厂一般都会提供静态的获取实体的方法，所以它还会被称为静态工厂。</p>
 <h3 id="简单工厂总结">简单工厂总结</h3>
-
 <h4 id="优点">优点：</h4>
-
 <ol>
 <li>简单工厂的实现非常简单，把原本由Beer来处理的创建工作给抽离出来，根据传入的参数来进行实体的创建。</li>
 <li>实体的创建完全交给简单工厂来处理，实体什么时候创建对使用者是无感知的。</li>
 </ol>
-
 <h4 id="缺点">缺点</h4>
-
 <ol>
 <li>如果要新增一款啤酒，则要修改工厂类，违反了设计模式中对扩展开放，对修改关闭的原则。</li>
 <li>使用需要记住要使用产品名称，如果传入错误则不会得到正确的结果。</li>
 </ol>
-
 <h2 id="工厂方法">工厂方法</h2>
-
 <h3 id="工厂方法生产啤酒">工厂方法生产啤酒</h3>
-
 <p>为了解决简单工厂中的问题，我们引入工厂方法，使用工厂方法，则每一款啤酒对应的都会由一个特定的工厂来进行生产，这些工厂统一都继承自一个抽象的工厂，由这个抽象的工厂来定义要生产的产品规范。示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 定义获取的功能，具体由实现类（具体的啤酒厂）来实现，做到创建与使用隔离
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FunctionFactory</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">/**
- * 定义获取的功能，具体由实现类（具体的啤酒厂）来实现，做到创建与使用隔离
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public abstract class FunctionFactory {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> Beer <span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public abstract Beer getBeer();
+<span style="color:#f92672">}</span>
 
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaiWeiFactory</span> <span style="color:#66d9ef">extends</span> BeerFactory <span style="color:#f92672">{</span>
 
-public class BaiWeiFactory extends BeerFactory {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BaiWei<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public Beer getBeer() {
-        return new BaiWei();
-    }
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JinShiBaiFactory</span> <span style="color:#66d9ef">extends</span> BeerFactory <span style="color:#f92672">{</span>
 
-public class JinShiBaiFactory extends BeerFactory {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> JinShiBai<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public Beer getBeer() {
-        return new JinShiBai();
-    }
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">QinDaoFactory</span> <span style="color:#66d9ef">extends</span> BeerFactory <span style="color:#f92672">{</span>
 
-public class QinDaoFactory extends BeerFactory {
-
-    @Override
-    public Beer getBeer() {
-        return new QingDao();
-    }
-}
-</code></pre>
-
-<p>上面的代码展示了各种啤酒由不同工厂来生产的情况，每个工厂都继承自BeerFactory这个抽象类，它只定义了生产啤酒这个抽象方法，具体生产什么牌子的啤酒由各个具体工厂来处理。这样在用户使用时就可以指定要哪一家工厂生产的酒就可以了。
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> QingDao<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>上面的代码展示了各种啤酒由不同工厂来生产的情况，每个工厂都继承自BeerFactory这个抽象类，它只定义了生产啤酒这个抽象方法，具体生产什么牌子的啤酒由各个具体工厂来处理。这样在用户使用时就可以指定要哪一家工厂生产的酒就可以了。
 下面来测试这种工厂生产的啤酒。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.function<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.function;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FunctionFactoryTest</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public class FunctionFactoryTest {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        BeerFactory jinShiBaiFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JinShiBaiFactory<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>jinShiBaiFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getBeer</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public static void main(String[] args) {
-        BeerFactory jinShiBaiFactory = new JinShiBaiFactory();
-        System.out.println(jinShiBaiFactory.getBeer());
-    }
-
-}
-</code></pre>
-
-<p>上面的代码指定了要用金士百工厂生产的啤酒，实例指向的永远是抽象工厂，这就是所谓的多态，这样我们可以面向抽象来进行编程，而不是面对具体的实现。灵活性与扩展性大大的增加了。</p>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><p>上面的代码指定了要用金士百工厂生产的啤酒，实例指向的永远是抽象工厂，这就是所谓的多态，这样我们可以面向抽象来进行编程，而不是面对具体的实现。灵活性与扩展性大大的增加了。</p>
 <h3 id="工厂方法总结">工厂方法总结</h3>
-
-<h4 id="优点-1">优点</h4>
-
+<h4 id="优点">优点</h4>
 <ol>
 <li>使用者不用记住产品的名称了，只要知道要使用哪家的工厂生产的产品就可以了。</li>
 <li>如果再增加一种啤酒，可以直接增加一个工厂来进行生产，不用修改现有工厂的实现，实现了开闭原则。</li>
 </ol>
-
-<h4 id="缺点-1">缺点</h4>
-
+<h4 id="缺点">缺点</h4>
 <ol>
 <li>类的数目增加了很多，会产生类的膨胀。</li>
 <li>增加一种产品不仅要增加具体的产品类，还要为之提供一个具体的工厂，复杂度增加。</li>
 </ol>
-
 <h2 id="抽象工厂">抽象工厂</h2>
-
 <p>为了解决工厂方法中系统复杂的情况，我们引入抽象工厂，由抽象工厂来定义所要生产的啤酒类型，再由具体的工厂来对这些啤酒进行生产。由于生产的产品都有相似的特征，可以理解为生产一个产品族。</p>
-
 <h3 id="抽象工厂生产啤酒">抽象工厂生产啤酒</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.abs<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.abs;
+<span style="color:#f92672">import</span> cn.imcompany.Beer<span style="color:#f92672">;</span>
 
-import cn.imcompany.Beer;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AbstractBeerFactory</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public interface AbstractBeerFactory {
+    Beer <span style="color:#a6e22e">getQingDao</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    Beer getQingDao();
+    Beer <span style="color:#a6e22e">getBaiWei</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    Beer getBaiWei();
+    Beer <span style="color:#a6e22e">getJinShiBai</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    Beer getJinShiBai();
+<span style="color:#f92672">}</span>
 
-}
+<span style="color:#f92672">package</span> cn.imcompany.abs<span style="color:#f92672">;</span>
 
-package cn.imcompany.abs;
+<span style="color:#f92672">import</span> cn.imcompany.BaiWei<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.Beer<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.JinShiBai<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> cn.imcompany.QingDao<span style="color:#f92672">;</span>
 
-import cn.imcompany.BaiWei;
-import cn.imcompany.Beer;
-import cn.imcompany.JinShiBai;
-import cn.imcompany.QingDao;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConcreteBeerFactory</span> <span style="color:#66d9ef">implements</span> AbstractBeerFactory <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public class ConcreteBeerFactory implements AbstractBeerFactory {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getQingDao</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> QingDao<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public Beer getQingDao() {
-        return new QingDao();
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getBaiWei</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BaiWei<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public Beer getBaiWei() {
-        return new BaiWei();
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Beer <span style="color:#a6e22e">getJinShiBai</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> JinShiBai<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public Beer getJinShiBai() {
-        return new JinShiBai();
-    }
-}
+</code></pre></div><p>这次把生产的三种啤酒都定义在一个抽象工厂中，再由一个具体的工厂来实现所要生产啤酒的功能。我们来测试一下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.abs<span style="color:#f92672">;</span>
 
-</code></pre>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/5/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AbstractFactoryTest</span> <span style="color:#f92672">{</span>
 
-<p>这次把生产的三种啤酒都定义在一个抽象工厂中，再由一个具体的工厂来实现所要生产啤酒的功能。我们来测试一下</p>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">package cn.imcompany.abs;
+        AbstractBeerFactory beerFactory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcreteBeerFactory<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>beerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getBaiWei</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-/**
- * Created by tomyli on 2018/5/28.
- * Github: https://github.com/peng051410
- */
-public class AbstractFactoryTest {
-
-    public static void main(String[] args) {
-
-        AbstractBeerFactory beerFactory = new ConcreteBeerFactory();
-        System.out.println(beerFactory.getBaiWei());
-    }
-
-}
-</code></pre>
-
-<p>在测试类中实例化一个具体的工厂，然后调用工厂中生产具体酒的方法就可以得到正确的商品，使用者无须记住多个工厂，只要一个工厂就可以满足需要。</p>
-
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在测试类中实例化一个具体的工厂，然后调用工厂中生产具体酒的方法就可以得到正确的商品，使用者无须记住多个工厂，只要一个工厂就可以满足需要。</p>
 <h3 id="抽象工厂总结">抽象工厂总结</h3>
-
-<h4 id="优点-2">优点</h4>
-
+<h4 id="优点">优点</h4>
 <ol>
 <li>类的数量精简了，当需要一个产品族来进行操作时，它可以保证客户端使用了同一产品族中的对象</li>
 <li>当需要新增加一种产品族时（换其它工厂来生产），无须修改系统，直接新建一个具体的工厂就可以实现。</li>
 </ol>
-
-<h4 id="缺点-2">缺点</h4>
-
+<h4 id="缺点">缺点</h4>
 <ol>
 <li>当需要增加新的产品类型时，需要修改最高的抽象工厂，这样具体的实现工厂也要进行修改，不符合开闭原则。</li>
 </ol>
-
 <p>啤酒工厂的类图：
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -639,9 +573,7 @@ public class AbstractFactoryTest {
   </figure>
 </div>
 </p>
-
 <h2 id="工厂方法与抽象工厂对比">工厂方法与抽象工厂对比</h2>
-
 <p>上面说的工厂方法与抽象工厂理解时有些困难，它们主要的不同点就是工厂方法适合生产产品结构相同的单种产品，而抽象工厂适合生产多种产品结构的产品，如白酒，这是另一个产品结构，这种情况使用抽象工厂更恰当。</p>
 
     </div>

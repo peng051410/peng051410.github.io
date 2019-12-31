@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:47:52+08:00" />
 <meta itemprop="name" content="设计模式学习之代理模式">
 <meta itemprop="description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的">
-
-
 <meta itemprop="datePublished" content="2018-07-16T21:08:28&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:47:52&#43;08:00" />
-<meta itemprop="wordCount" content="1307">
+<meta itemprop="wordCount" content="1295">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之代理模式"/>
 <meta name="twitter:description" content="说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的"/>
 
@@ -296,136 +293,119 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#代理模式">代理模式</a></li>
-<li><a href="#总结">总结</a>
-<ul>
-<li><a href="#优点">优点</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#代理模式">代理模式</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的业务进行调用，而是与一个与真正业务对象有着相同功能声明的代理来进行处理，但是最终的处理还是由真正的业务类来进行（决定），比如房产中介，他们会帮助找房者根据条件来对可选房屋进行筛选，但是最终订与不订的权利还是由找房者来决定。常见的代理有保护代理、虚拟代理、远程代理。</p>
-
 <h2 id="代理模式">代理模式</h2>
-
 <p>我们常用的后台系统一般会根据用户权限的不同对用户展示不同的业务菜单，拥有高权限的人会展示相对多的菜单进行操作，在这个过程中还要记录用户的操作日志，用户点了什么，执行了什么操作都需要进行记录，达到有据可查。在这个业务场景下，就可以使用代理模式进行实现。代理对象会持有一个真正业务对象的实例，在代理对象中还引用日志服务与权限服务，所有的请求都经过这个代理类来进行，这样就可以根据操作的用户的状态来进行相应的处理了。具体的代码实现如下：</p>
-
 <ul>
-<li><p>定义一个查询接口，在这里定义一个查询用户收入的方法，如下:</p>
-
-<pre><code class="language-java">package cn.imcompany.proxy;
-
-/**
-* Created by tomyli on 2018/6/28.
-* Github: https://github.com/peng051410
-*/
-public interface Search {
-
-void queryIncome(String username);
-}
-</code></pre></li>
-
-<li><p>再定义一个实现该接口的具体业务类：</p>
-
-<pre><code class="language-java">package cn.imcompany.proxy;
-
-/**
-* Created by tomyli on 2018/6/28.
-* Github: https://github.com/peng051410
-*/
-public class SearchService implements Search {
-
-@Override
-public void queryIncome(String username) {
-
-    System.out.println(username + &quot;开始查询&quot;);
-
-    try {
-        Thread.sleep(1000);
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }
-
-    System.out.println(username + &quot;查询完成&quot;);
-}
-}
-</code></pre></li>
+<li>定义一个查询接口，在这里定义一个查询用户收入的方法，如下:</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.proxy<span style="color:#f92672">;</span>
 
-<p>在上面代码中就实现了查询收入的方法，简单的打印了两行日志。</p>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Search</span> <span style="color:#f92672">{</span>
 
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">queryIncome</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>再定义一个实现该接口的具体业务类：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.proxy<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SearchService</span> <span style="color:#66d9ef">implements</span> Search <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">queryIncome</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;开始查询&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            Thread<span style="color:#f92672">.</span><span style="color:#a6e22e">sleep</span><span style="color:#f92672">(</span>1000<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;查询完成&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面代码中就实现了查询收入的方法，简单的打印了两行日志。</p>
 <ul>
-<li><p>由于在实现需要对权限进行控制并记录日志，则先把需要用来的权限类与日志类进行定义与实现。实现代码如下:</p>
-
-<pre><code class="language-java">package cn.imcompany.proxy;
-
-/**
-* Created by tomyli on 2018/6/28.
-* Github: https://github.com/peng051410
-*/
-public class Auth {
-
-public boolean valid(String username) {
-
-    return &quot;admin&quot;.equals(username);
-}
-}
-
-
-public class Logger {
-
-public void beforeLog(String username) {
-    System.out.println(&quot;开始记录&quot; + username + &quot;查询日志&quot;);
-}
-
-public void afterLog(String username) {
-    System.out.println(&quot;结束记录&quot; + username + &quot;查询日志&quot;);
-}
-}
-</code></pre></li>
-
-<li><p>最后来进行代理类的实现，代理类通常也会实现查询接口，这样在调用者看来它与真正的业务类没有什么区别，实现代码如下：</p>
-
-<pre><code class="language-java">package cn.imcompany.proxy;
-
-/**
-* Created by tomyli on 2018/6/28.
-* Github: https://github.com/peng051410
-*/
-public class SearchProxy implements Search {
-
-private Logger logger = new Logger();
-private Auth auth = new Auth();
-private Search search = new SearchService();
-
-@Override
-public void queryIncome(String username) {
-
-    logger.beforeLog(username);
-    if (auth.valid(username)) {
-        search.queryIncome(username);
-    }
-    logger.afterLog(username);
-}
-}
-</code></pre></li>
+<li>由于在实现需要对权限进行控制并记录日志，则先把需要用来的权限类与日志类进行定义与实现。实现代码如下:</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.proxy<span style="color:#f92672">;</span>
 
-<p>在上面的代理中，它维护了权限与日志这两个工具类的实例，还维护真正提供查询的业务类实例，在实现的查询收入接口中，先进行进入日志的记录，再验证用户的权限，验证通过则调用真正的业务类来查询收入，最后记录结束的日志，一次调用处理完成。
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Auth</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">valid</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>username<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logger</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">beforeLog</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;开始记录&#34;</span> <span style="color:#f92672">+</span> username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;查询日志&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">afterLog</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;结束记录&#34;</span> <span style="color:#f92672">+</span> username <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;查询日志&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>最后来进行代理类的实现，代理类通常也会实现查询接口，这样在调用者看来它与真正的业务类没有什么区别，实现代码如下：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.proxy<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/28.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SearchProxy</span> <span style="color:#66d9ef">implements</span> Search <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> Logger logger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Logger<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Auth auth <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Auth<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Search search <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SearchService<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">queryIncome</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        logger<span style="color:#f92672">.</span><span style="color:#a6e22e">beforeLog</span><span style="color:#f92672">(</span>username<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>auth<span style="color:#f92672">.</span><span style="color:#a6e22e">valid</span><span style="color:#f92672">(</span>username<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            search<span style="color:#f92672">.</span><span style="color:#a6e22e">queryIncome</span><span style="color:#f92672">(</span>username<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        logger<span style="color:#f92672">.</span><span style="color:#a6e22e">afterLog</span><span style="color:#f92672">(</span>username<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面的代理中，它维护了权限与日志这两个工具类的实例，还维护真正提供查询的业务类实例，在实现的查询收入接口中，先进行进入日志的记录，再验证用户的权限，验证通过则调用真正的业务类来查询收入，最后记录结束的日志，一次调用处理完成。
 上面实现的类图如下：
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -440,20 +420,15 @@ public void queryIncome(String username) {
 </div>
 
 主要的核心都在代理类中，它对整个的流程进行全面的控制，对真正的业务方法进行了保护，只有满足条件的请求才可以被处理。</p>
-
 <h2 id="总结">总结</h2>
-
 <h3 id="优点">优点</h3>
-
 <ol>
 <li>代理模式使得具体的业务方法在不想过多的暴露自己的情况更好的保护了具体业务，很好的隔离了调用者与被调用者，降低了系统的耦合性。</li>
 <li>对真正业务的修改对调用者是无感知的，它们只需要与代理打交道就可以，符合开闭原则。</li>
 <li>保护代理可以对访问进行细粒度的控制。</li>
 <li>对于虚拟代理可以对于耗费资源的大对象进行一个简单代理，在用户使用再调用时真正的对象已经实例化完毕，给了用户更好的体验。</li>
 </ol>
-
 <h3 id="缺点">缺点</h3>
-
 <ol>
 <li>由于在中间增加了代理，多了一些额外的处理，对于处理速度会有一定的降低。</li>
 </ol>

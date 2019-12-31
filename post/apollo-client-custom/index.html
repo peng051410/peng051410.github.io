@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/apollo-client-custom/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-07-01T07:49:53+08:00" />
 <meta itemprop="name" content="Apollo Client自定义问题拾遗">
 <meta itemprop="description" content="由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项">
-
-
 <meta itemprop="datePublished" content="2019-07-01T07:04:09&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-01T07:49:53&#43;08:00" />
 <meta itemprop="wordCount" content="916">
 
 
 
-<meta itemprop="keywords" content="apollo," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="apollo," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Apollo Client自定义问题拾遗"/>
 <meta name="twitter:description" content="由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项"/>
 
@@ -296,52 +293,38 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#接入步骤">接入步骤</a>
-<ul>
-<li><a href="#新建maven项目">新建maven项目</a></li>
-<li><a href="#增加项目依赖">增加项目依赖</a></li>
-<li><a href="#自定义metaserver">自定义MetaServer</a></li>
-<li><a href="#maven打包client">Maven打包Client</a></li>
-<li><a href="#项目中使用client">项目中使用Client</a></li>
-<li><a href="#后续操作">后续操作</a></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#接入步骤">接入步骤</a>
+      <ul>
+        <li><a href="#新建maven项目">新建maven项目</a></li>
+        <li><a href="#增加项目依赖">增加项目依赖</a></li>
+        <li><a href="#自定义metaserver">自定义MetaServer</a></li>
+        <li><a href="#maven打包client">Maven打包Client</a></li>
+        <li><a href="#项目中使用client">项目中使用Client</a></li>
+        <li><a href="#后续操作">后续操作</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p><strong>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据<a href="https://github.com/ctripcorp/apollo/wiki/Java%25E5%25AE%25A2%25E6%2588%25B7%25E7%25AB%25AF%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597#1221-%25E8%2587%25AA%25E5%25AE%259A%25E4%25B9%2589apollo-meta-server%25E5%259C%25B0%25E5%259D%2580%25E5%25AE%259A%25E4%25BD%258D%25E9%2580%25BB%25E8%25BE%2591">官方说明</a>，需要自定义Client来完成</strong></p>
-
+      <p><strong>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据<a href="https://github.com/ctripcorp/apollo/wiki/Java%25E5%25AE%25A2%25E6%2588%25B7%25E7%25AB%25AF%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597#1221-%25E8%2587%25AA%25E5%25AE%259A%25E4%25B9%2589apollo-meta-server%25E5%259C%25B0%25E5%259D%2580%25E5%25AE%259A%25E4%25BD%258D%25E9%2580%25BB%25E8%25BE%2591">官方说明</a>，需要自定义Client来完成</strong></p>
 <h2 id="接入步骤">接入步骤</h2>
-
 <h3 id="新建maven项目">新建maven项目</h3>
-
 <p>在Idea中新建maven项目，基于quickstart构建</p>
-
 <h3 id="增加项目依赖">增加项目依赖</h3>
-
 <p>官方说明的建议在新的client中依赖Apollo官方的client，再根据业务进行扩展，所以maven依赖apollo-client，公司项目的网络访问需要通过L5来进行，所以还要依赖L5的jar，目前这个jar包没有maven坐标，只能以lib方式引入</p>
-
 <h3 id="自定义metaserver">自定义MetaServer</h3>
-
 <p>关键的部分，自定义满足公司网络条件的MetaServer，Apollo官网说明是实现MetaServerProvider且Order值小的Providor被使用，按照说明进行实现</p>
-
 <h3 id="maven打包client">Maven打包Client</h3>
-
 <p>执行
 <strong>mvn clean install</strong>
 进行打包，解压jar包发现就只有一个Providor的实现类，这样jar运行有问题。需要把新Client所有的依赖都打进jar包，在网上找了半天，需要在POM中增加maven的plugin的配置，如下：</p>
-
-<pre><code class="language-nxml">&lt;!-- 打包所有的maven依赖到jar包 --&gt;
+<pre><code class="language-nxml" data-lang="nxml">&lt;!-- 打包所有的maven依赖到jar包 --&gt;
 &lt;plugin&gt;
     &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
     &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
@@ -362,9 +345,7 @@
         &lt;/execution&gt;
     &lt;/executions&gt;
 &lt;/plugin&gt;
-</code></pre>
-
-<pre><code class="language-nxml">&lt;!-- 添加依赖的非maven jar包 --&gt;
+</code></pre><pre><code class="language-nxml" data-lang="nxml">&lt;!-- 添加依赖的非maven jar包 --&gt;
 &lt;plugin&gt;
     &lt;groupId&gt;com.googlecode.addjars-maven-plugin&lt;/groupId&gt;
     &lt;artifactId&gt;addjars-maven-plugin&lt;/artifactId&gt;
@@ -384,20 +365,12 @@
         &lt;/execution&gt;
     &lt;/executions&gt;
 &lt;/plugin&gt;
-</code></pre>
-
-<p>由于项目中使用了maven依赖与非maven依赖，所以上述的两个插件都要使用。增加了上面两个插件后再运行打包命令查看生成的jar就发现所有的依赖都在jar中了。</p>
-
+</code></pre><p>由于项目中使用了maven依赖与非maven依赖，所以上述的两个插件都要使用。增加了上面两个插件后再运行打包命令查看生成的jar就发现所有的依赖都在jar中了。</p>
 <h3 id="项目中使用client">项目中使用Client</h3>
-
 <p>选择一个项目在测试环境进行配置调试，自定义的Meta Server一直没有生效，所以查找<a href="https://github.com/ctripcorp/apollo/issues/1472">官方文档</a>，由于自定义Providor是通过<a href="https://blog.csdn.net/comkingfly/article/details/7645245?utm_source=tuicool&amp;utm_medium=referral">SPI</a>方式实现的，所以正确的实现方式是新建resource文件夹，指定MetaServerProvider的真正实现类的带包名类才可以，哎，找了我好久。</p>
-
 <h3 id="后续操作">后续操作</h3>
-
 <p>后续会把client上传到内部maven仓库，完善配置API，使业务方可以零配置来使用配置中心。</p>
-
 <h3 id="总结">总结</h3>
-
 <ul>
 <li>Maven的打包机制还是不清晰，处理打包问题费了很多时间，要好好重新学习一下</li>
 <li>Apollo的官方文档还需要再仔细阅读，有问题多查issue，因为可能有人已经遇到了</li>

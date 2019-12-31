@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-wei-tuo-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T11:01:09+08:00" />
 <meta itemprop="name" content="设计模式学习之委托模式">
 <meta itemprop="description" content="说明 委托模式不属于23种设计模式中，但是它在Spring框架中使用的很频繁，Spring的作用在Java的开发是非常大，所以需要学习一下委托">
-
-
 <meta itemprop="datePublished" content="2018-07-07T18:53:57&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T11:01:09&#43;08:00" />
 <meta itemprop="wordCount" content="1040">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之委托模式"/>
 <meta name="twitter:description" content="说明 委托模式不属于23种设计模式中，但是它在Spring框架中使用的很频繁，Spring的作用在Java的开发是非常大，所以需要学习一下委托"/>
 
@@ -296,187 +293,164 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#委托模式">委托模式</a></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#委托模式">委托模式</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>委托模式不属于23种设计模式中，但是它在Spring框架中使用的很频繁，Spring的作用在Java的开发是非常大，所以需要学习一下委托模式。委托模式是指两个对象都有相同的方法与功能，比如A、B两个对象都有相同的方法，但是有调用A的method方法，A不会自己来处理而是直接调用了B的同名方法，由两个对象参与同一个请求，接受请求的对象将委托给另一个对象来处理。</p>
-
 <h2 id="委托模式">委托模式</h2>
-
 <p>在一般的公司中，都会分为老板、项目经理、开发人员结构，老板负责制定决策，分配给项目经理后，他不会自己来完成，而是把需要的功能进行分解，交给擅长的开发人员进行实现。虽然项目经理也可以完成，但是是他把这些事情委托给了多个开发人员来做，加快了完成任务的速度。就以这个需求来说，使用委托模式来进行实现:</p>
-
 <p>定义抽象的人类接口：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.delegate<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.delegate;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/27.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Member</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/27.
- * Github: https://github.com/peng051410
- */
-public interface Member {
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    void showName();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    void showSkill();
-
-    void doWork();
-}
-</code></pre>
-
-<p>上面代码中定义了抽象的人类接口，显示这个人的名字，拥有的技能，工作的状态情况，接下来实现需求中的每个人。</p>
-
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>上面代码中定义了抽象的人类接口，显示这个人的名字，拥有的技能，工作的状态情况，接下来实现需求中的每个人。</p>
 <p>定义老板(BOSS):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.delegate<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.delegate;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/27.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Boss</span> <span style="color:#66d9ef">implements</span> Member <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/27.
- * Github: https://github.com/peng051410
- */
-public class Boss implements Member {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i am boss&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public void showName() {
-        System.out.println(&quot;i am boss&quot;);
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;send commend&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public void showSkill() {
-        System.out.println(&quot;send commend&quot;);
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public void doWork() {
-    }
-}
+</code></pre></div><p>定义项目经理和员工:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.delegate<span style="color:#f92672">;</span>
 
-</code></pre>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/27.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Leader</span> <span style="color:#66d9ef">implements</span> Member <span style="color:#f92672">{</span>
 
-<p>定义项目经理和员工:</p>
+    <span style="color:#66d9ef">private</span> Member developerA<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Member developerB<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.delegate;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setDeveloperA</span><span style="color:#f92672">(</span>Member developerA<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">developerA</span> <span style="color:#f92672">=</span> developerA<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-/**
- * Created by tomyli on 2018/6/27.
- * Github: https://github.com/peng051410
- */
-public class Leader implements Member {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setDeveloperB</span><span style="color:#f92672">(</span>Member developerB<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">developerB</span> <span style="color:#f92672">=</span> developerB<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    private Member developerA;
-    private Member developerB;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i am leader&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public void setDeveloperA(Member developerA) {
-        this.developerA = developerA;
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    public void setDeveloperB(Member developerB) {
-        this.developerB = developerB;
-    }
+        showName<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i want to select member to doWork&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public void showName() {
-        System.out.println(&quot;i am leader&quot;);
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+        showSkill<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        developerA<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        developerB<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public void showSkill() {
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeveloperA</span> <span style="color:#66d9ef">implements</span> Member <span style="color:#f92672">{</span>
 
-        showName();
-        System.out.println(&quot;i want to select member to doWork&quot;);
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i am developer a&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public void doWork(){
-        showSkill();
-        developerA.doWork();
-        developerB.doWork();
-    }
-}
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        showName<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i can do login function&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-public class DeveloperA implements Member {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        showSkill<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start work login&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    @Override
-    public void showName() {
-        System.out.println(&quot;i am developer a&quot;);
-    }
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeveloperB</span> <span style="color:#66d9ef">implements</span> Member <span style="color:#f92672">{</span>
 
-    @Override
-    public void showSkill() {
-        showName();
-        System.out.println(&quot;i can do login function&quot;);
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i am developer b&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public void doWork() {
-        showSkill();
-        System.out.println(&quot;start work login&quot;);
-    }
-}
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        showName<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;i can do pay function&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-public class DeveloperB implements Member {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        showSkill<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;start do pay&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在上面代码中，定义一个项目经理与两个开发，在项目经理中维护(管理)着对两个开发的引用。这样在项目经理的doWork中其实是调用开发者A与开发者B的doWork来都完成工作。接下来测试一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.delegate<span style="color:#f92672">;</span>
 
-    @Override
-    public void showName() {
-        System.out.println(&quot;i am developer b&quot;);
-    }
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/27.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WorkTest</span> <span style="color:#f92672">{</span>
 
-    @Override
-    public void showSkill() {
-        showName();
-        System.out.println(&quot;i can do pay function&quot;);
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    public void doWork() {
-        showSkill();
-        System.out.println(&quot;start do pay&quot;);
-    }
-}
-</code></pre>
+        Boss boss <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Boss<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        boss<span style="color:#f92672">.</span><span style="color:#a6e22e">showName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        boss<span style="color:#f92672">.</span><span style="color:#a6e22e">showSkill</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<p>在上面代码中，定义一个项目经理与两个开发，在项目经理中维护(管理)着对两个开发的引用。这样在项目经理的doWork中其实是调用开发者A与开发者B的doWork来都完成工作。接下来测试一下：</p>
+        Leader leader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Leader<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        Member memberA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DeveloperA<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        Member memberB <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DeveloperB<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.delegate;
+        leader<span style="color:#f92672">.</span><span style="color:#a6e22e">setDeveloperA</span><span style="color:#f92672">(</span>memberA<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        leader<span style="color:#f92672">.</span><span style="color:#a6e22e">setDeveloperB</span><span style="color:#f92672">(</span>memberB<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-/**
- * Created by tomyli on 2018/6/27.
- * Github: https://github.com/peng051410
- */
-public class WorkTest {
+        leader<span style="color:#f92672">.</span><span style="color:#a6e22e">doWork</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public static void main(String[] args) {
-
-        Boss boss = new Boss();
-        boss.showName();
-        boss.showSkill();
-
-        Leader leader = new Leader();
-        Member memberA = new DeveloperA();
-        Member memberB = new DeveloperB();
-
-        leader.setDeveloperA(memberA);
-        leader.setDeveloperB(memberB);
-
-        leader.doWork();
-
-    }
-}
-</code></pre>
-
-<p>BOSS下发了一个工作，由项目经理选择要真正来工作的人，最后调用了项目经理的doWork方法来实现需求，其实是DeveloperA与DeveloperB在真正的工作，对于BOSS而言，他不在乎谁在工作，他只要结果，结果导向嘛。。。苦了我们这帮程序员。</p>
-
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>BOSS下发了一个工作，由项目经理选择要真正来工作的人，最后调用了项目经理的doWork方法来实现需求，其实是DeveloperA与DeveloperB在真正的工作，对于BOSS而言，他不在乎谁在工作，他只要结果，结果导向嘛。。。苦了我们这帮程序员。</p>
 <p>整体的类图结构:
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -490,9 +464,7 @@ public class WorkTest {
   </figure>
 </div>
 </p>
-
 <h2 id="总结">总结</h2>
-
 <ol>
 <li>委托模式定义了实现功能的窗口，对于具体的实现由谁实现对于调用者是无感知的，对外提供方换了内部的实现对于调用方无影响。最大限度的实现了解耦</li>
 <li>委托方的功能简单通用，可以在绝大情况下通用，在框架中使用非常适合，可以实现分层解耦</li>

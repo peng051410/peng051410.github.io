@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/centos7-install-issue-collect/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:31:28+08:00" />
 <meta itemprop="name" content="Centos7 install issue collect">
 <meta itemprop="description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m">
-
-
 <meta itemprop="datePublished" content="2019-05-06T13:00:55&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:31:28&#43;08:00" />
 <meta itemprop="wordCount" content="1491">
 
 
 
-<meta itemprop="keywords" content="linux,centos," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,centos," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7 install issue collect"/>
 <meta name="twitter:description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m"/>
 
@@ -293,128 +290,89 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#解决centos7-yum-could-not-retrieve-mirrorlist错误">解决Centos7 yum could not retrieve mirrorlist错误</a></li>
-<li><a href="#配置静态ip">配置静态ip</a></li>
-<li><a href="#centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</a>
-<ul>
-<li><a href="#centos7安装vmware-tools">Centos7安装VMware Tools</a></li>
-</ul></li>
-<li><a href="#安装jdk8">安装Jdk8</a></li>
-<li><a href="#安装mysql">安装mysql</a></li>
-<li><a href="#修改mysql的root密码">修改mysql的root密码</a></li>
-<li><a href="#开放3306端口">开放3306端口</a></li>
-<li><a href="#安装oh-my-bash">安装oh-my-bash</a></li>
-<li><a href="#centos自动登录">Centos自动登录</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#解决centos7-yum-could-not-retrieve-mirrorlist错误">解决Centos7 yum could not retrieve mirrorlist错误</a></li>
+    <li><a href="#配置静态ip">配置静态ip</a></li>
+    <li><a href="#centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</a>
+      <ul>
+        <li><a href="#centos7安装vmware-tools">Centos7安装VMware Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装jdk8">安装Jdk8</a></li>
+    <li><a href="#安装mysql">安装mysql</a></li>
+    <li><a href="#修改mysql的root密码">修改mysql的root密码</a></li>
+    <li><a href="#开放3306端口">开放3306端口</a></li>
+    <li><a href="#安装oh-my-bash">安装oh-my-bash</a></li>
+    <li><a href="#centos自动登录">Centos自动登录</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<p><strong>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。</strong></p>
-
+      <p><strong>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。</strong></p>
 <h2 id="解决centos7-yum-could-not-retrieve-mirrorlist错误">解决Centos7 yum could not retrieve mirrorlist错误</h2>
-
 <p>刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考<a href="https://my.oschina.net/u/2456768/blog/3011881">https://my.oschina.net/u/2456768/blog/3011881</a></p>
-
 <h2 id="配置静态ip">配置静态ip</h2>
-
 <p>安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：</p>
-
-<pre><code class="language-shell">IPADDR=192.168.116.101
-NETMASK=255.255.255.0
-GATEWAY=192.168.116.2
-DNS1=192.168.116.2
-</code></pre>
-
-<p>这个参考了<a href="https://blog.csdn.net/zhishengqianjun/article/details/77046796">https://blog.csdn.net/zhishengqianjun/article/details/77046796</a></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">IPADDR<span style="color:#f92672">=</span>192.168.116.101
+NETMASK<span style="color:#f92672">=</span>255.255.255.0
+GATEWAY<span style="color:#f92672">=</span>192.168.116.2
+DNS1<span style="color:#f92672">=</span>192.168.116.2
+</code></pre></div><p>这个参考了<a href="https://blog.csdn.net/zhishengqianjun/article/details/77046796">https://blog.csdn.net/zhishengqianjun/article/details/77046796</a></p>
 <h2 id="centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</h2>
-
 <p>由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用</p>
-
-<pre><code class="language-shell">ip a
-</code></pre>
-
-<p>来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考<a href="https://blog.csdn.net/inslow/article/details/54177191">https://blog.csdn.net/inslow/article/details/54177191</a></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ip a
+</code></pre></div><p>来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考<a href="https://blog.csdn.net/inslow/article/details/54177191">https://blog.csdn.net/inslow/article/details/54177191</a></p>
 <h3 id="centos7安装vmware-tools">Centos7安装VMware Tools</h3>
-
 <p>想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考<a href="https://blog.csdn.net/WarnerWu/article/details/73718901">https://blog.csdn.net/WarnerWu/article/details/73718901</a> 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了</p>
-
 <h2 id="安装jdk8">安装Jdk8</h2>
-
 <p>一句命令搞定：</p>
-
-<pre><code class="language-shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
-</code></pre>
-
-<h2 id="安装mysql">安装mysql</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+</code></pre></div><h2 id="安装mysql">安装mysql</h2>
 <p>使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了<a href="https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/">https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/</a></p>
-
 <h2 id="修改mysql的root密码">修改mysql的root密码</h2>
-
 <p>安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了<a href="https://blog.csdn.net/kuluzs/article/details/51924086">https://blog.csdn.net/kuluzs/article/details/51924086</a></p>
-
 <h2 id="开放3306端口">开放3306端口</h2>
-
 <p>为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：</p>
-
-<pre><code class="language-shell">systemctl start firewalld
-firewall-cmd --zone=public --add-port=3306/tcp --permanent
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl start firewalld
+firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>3306/tcp --permanent
 firewall-cmd --reload
-</code></pre>
-
-<p>这个参考了<a href="https://www.jianshu.com/p/225a853350d9">https://www.jianshu.com/p/225a853350d9</a></p>
-
+</code></pre></div><p>这个参考了<a href="https://www.jianshu.com/p/225a853350d9">https://www.jianshu.com/p/225a853350d9</a></p>
 <h2 id="安装oh-my-bash">安装oh-my-bash</h2>
-
 <p>由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。<a href="https://github.com/ohmybash/oh-my-bash">https://github.com/ohmybash/oh-my-bash</a></p>
-
 <h2 id="centos自动登录">Centos自动登录</h2>
-
 <p>安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：</p>
-
 <ul>
-<li><p>移除原来的getty@tty1.service软链接</p>
-
-<pre><code class="language-shell">rm /etc/systemd/system/getty.target.wants/getty@tty1.service
-</code></pre></li>
-
-<li><p>拷贝getty@.service file 并且命名为 getty@tty1.service</p>
-
-<pre><code class="language-shell">cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
-</code></pre></li>
-
-<li><p>编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上</p>
-
-<pre><code class="language-shell">[Service]
+<li>
+<p>移除原来的getty@tty1.service软链接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+</code></pre></div></li>
+<li>
+<p>拷贝getty@.service file 并且命名为 <a href="mailto:getty@tty1.service">getty@tty1.service</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+</code></pre></div></li>
+<li>
+<p>编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
 ...
-ExecStart=-/sbin/agetty --autologin root --noclear %I
+ExecStart<span style="color:#f92672">=</span>-/sbin/agetty --autologin root --noclear %I
 ...
-[Install]
+<span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
 ...
-;Alias=getty@tty1.service
-</code></pre></li>
-
-<li><p>在getty.target.wants目录做一下软链接</p>
-
-<pre><code class="language-shell">ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
-</code></pre></li>
-
-<li><p>重启，Done!</p></li>
+;Alias<span style="color:#f92672">=</span>getty@tty1.service
+</code></pre></div></li>
+<li>
+<p>在getty.target.wants目录做一下软链接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+</code></pre></div></li>
+<li>
+<p>重启，Done!</p>
+</li>
 </ul>
-
 <p><strong>以上参考<a href="https://www.centos.org/forums/viewtopic.php?t=48288">https://www.centos.org/forums/viewtopic.php?t=48288</a>
-  说明一下，网上一些修改gdm的方法试了没有作用。</strong></p>
+说明一下，网上一些修改gdm的方法试了没有作用。</strong></p>
 
     </div>
 

@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:57:33+08:00" />
 <meta itemprop="name" content="设计模式学习之观察者">
 <meta itemprop="description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出">
-
-
 <meta itemprop="datePublished" content="2018-07-04T20:31:41&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:57:33&#43;08:00" />
 <meta itemprop="wordCount" content="1126">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之观察者"/>
 <meta name="twitter:description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出"/>
 
@@ -296,180 +293,156 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#观察者模式">观察者模式</a></li>
-<li><a href="#总结">总结</a>
-<ul>
-<li><a href="#优点">优点</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#观察者模式">观察者模式</a></li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出相应的处理动作。在观察者中分为目标对象（被观察者）、观察者。观察者模式是一种对象行为模式。</p>
-
 <h2 id="观察者模式">观察者模式</h2>
-
 <p>现在很多人都购买股票，在市面上有很多的股票软件供广大股民使用。股票软件一般会在用户关注的股票有变动时发送消息来通知股民。在这里，某一支股票就是目标对象，广大股民与股票软件就是观察者，他们根据股票的行情变化来做出相应买入或者卖出操作。这一需求可以使用观察者模式进行实现。代码如下：</p>
-
 <p>先来定义一个抽象的购买股票的股民们，他们有喜有悲的心情:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.observer.stock<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.observer.stock;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/23.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Buyer</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/23.
- * Github: https://github.com/peng051410
- */
-public interface Buyer {
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    void setName(String name);
+    String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    String getName();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">happy</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    void happy();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sad</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    void sad();
+<span style="color:#f92672">}</span>
+</code></pre></div><p>再来定义具体的股民行为实现类：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.observer.stock<span style="color:#f92672">;</span>
 
-}
-</code></pre>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/23.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConcrectBuyer</span> <span style="color:#66d9ef">implements</span> Buyer <span style="color:#f92672">{</span>
 
-<p>再来定义具体的股民行为实现类：</p>
+    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.observer.stock;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-/**
- * Created by tomyli on 2018/6/23.
- * Github: https://github.com/peng051410
- */
-public class ConcrectBuyer implements Buyer {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    private String name;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">happy</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:happy&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sad</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;:sad&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>具体的股民实现了喜与悲的方法，这样观察者已经准备就绪。下面来定义股票软件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.observer.stock<span style="color:#f92672">;</span>
 
-    @Override
-    public String getName() {
-        return name;
-    }
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/23.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">StockSoft</span> <span style="color:#f92672">{</span>
 
-    @Override
-    public void happy() {
-        System.out.println(this.getName() + &quot;:happy&quot;);
-    }
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goUp</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    @Override
-    public void sad() {
-        System.out.println(this.getName() + &quot;:sad&quot;);
-    }
-}
-</code></pre>
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goDown</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>上面定义了一个抽象的股票软件，它有两个方法，一个股票上涨，一个是股票下跌。接下来实现具体的股票软件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.observer.stock<span style="color:#f92672">;</span>
 
-<p>具体的股民实现了喜与悲的方法，这样观察者已经准备就绪。下面来定义股票软件：</p>
+<span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.observer.stock;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/23.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConcreteStockSoft</span> <span style="color:#66d9ef">implements</span> StockSoft <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/23.
- * Github: https://github.com/peng051410
- */
-public interface StockSoft {
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Buyer<span style="color:#f92672">&gt;</span> buyerList<span style="color:#f92672">;</span>
 
-    void goUp();
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ConcreteStockSoft</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">buyerList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    void goDown();
-}
-</code></pre>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">join</span><span style="color:#f92672">(</span>Buyer buyer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        buyerList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>buyer<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<p>上面定义了一个抽象的股票软件，它有两个方法，一个股票上涨，一个是股票下跌。接下来实现具体的股票软件</p>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">quit</span><span style="color:#f92672">(</span>Buyer buyer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        buyerList<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>buyer<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<pre><code class="language-java">package cn.imcompany.observer.stock;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goUp</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        buyerList<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>Buyer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>happy<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-import java.util.ArrayList;
-import java.util.List;
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">goDown</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        buyerList<span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>Buyer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sad<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这是一个具体的股票软件，它持有一个购买指定股票的股民列表，还有股民加入与退出的方法，实现了股票上涨时的方法，在上涨时会通知股民，调用股民的happy方法，在股票下跌时调用股民的sad方法。接着做一下测试:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.observer.stock<span style="color:#f92672">;</span>
 
-/**
- * Created by tomyli on 2018/6/23.
- * Github: https://github.com/peng051410
- */
-public class ConcreteStockSoft implements StockSoft {
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/23.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StockTest</span> <span style="color:#f92672">{</span>
 
-    private List&lt;Buyer&gt; buyerList;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    public ConcreteStockSoft() {
-        this.buyerList = new ArrayList&lt;&gt;();
-    }
+        ConcreteStockSoft niuStock <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcreteStockSoft<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public void join(Buyer buyer) {
-        buyerList.add(buyer);
-    }
+        ConcrectBuyer buyer1<span style="color:#f92672">,</span> buyer2<span style="color:#f92672">,</span> buyer3<span style="color:#f92672">;</span>
+        buyer1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcrectBuyer<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        buyer1<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;buyer1&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        buyer2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcrectBuyer<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        buyer2<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;buyer2&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        buyer3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcrectBuyer<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        buyer3<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;buyer3&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    public void quit(Buyer buyer) {
-        buyerList.remove(buyer);
-    }
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">join</span><span style="color:#f92672">(</span>buyer1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">join</span><span style="color:#f92672">(</span>buyer2<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">join</span><span style="color:#f92672">(</span>buyer3<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    @Override
-    public void goUp() {
-        buyerList.forEach(Buyer::happy);
-    }
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">goUp</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    @Override
-    public void goDown() {
-        buyerList.forEach(Buyer::sad);
-    }
-}
-</code></pre>
-
-<p>这是一个具体的股票软件，它持有一个购买指定股票的股民列表，还有股民加入与退出的方法，实现了股票上涨时的方法，在上涨时会通知股民，调用股民的happy方法，在股票下跌时调用股民的sad方法。接着做一下测试:</p>
-
-<pre><code class="language-java">package cn.imcompany.observer.stock;
-
-/**
- * Created by tomyli on 2018/6/23.
- * Github: https://github.com/peng051410
- */
-public class StockTest {
-
-    public static void main(String[] args) {
-
-        ConcreteStockSoft niuStock = new ConcreteStockSoft();
-
-        ConcrectBuyer buyer1, buyer2, buyer3;
-        buyer1 = new ConcrectBuyer();
-        buyer1.setName(&quot;buyer1&quot;);
-        buyer2 = new ConcrectBuyer();
-        buyer2.setName(&quot;buyer2&quot;);
-        buyer3 = new ConcrectBuyer();
-        buyer3.setName(&quot;buyer3&quot;);
-
-        niuStock.join(buyer1);
-        niuStock.join(buyer2);
-        niuStock.join(buyer3);
-
-        niuStock.goUp();
-
-        niuStock.quit(buyer1);
-        niuStock.goDown();
-    }
-}
-</code></pre>
-
-<p>在测试类中定义了三位购买股票的股民，股票软件把他们加入到维护的股民列表中，这时股票软件发现股票涨了，就调用goUp方法通知了列表中购买股票的股民们。接着股民1选择了卖出股票，则他在软件的维护列表中被移除，这时股票软件发现股票跌了，此时再一次通知持有股票的股民们，这时股民1已经收不到任何的通知，因为他已经不股票软件的通知列表中，此时只股民2与股民3在那悲伤中&hellip;</p>
-
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">quit</span><span style="color:#f92672">(</span>buyer1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        niuStock<span style="color:#f92672">.</span><span style="color:#a6e22e">goDown</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在测试类中定义了三位购买股票的股民，股票软件把他们加入到维护的股民列表中，这时股票软件发现股票涨了，就调用goUp方法通知了列表中购买股票的股民们。接着股民1选择了卖出股票，则他在软件的维护列表中被移除，这时股票软件发现股票跌了，此时再一次通知持有股票的股民们，这时股民1已经收不到任何的通知，因为他已经不股票软件的通知列表中，此时只股民2与股民3在那悲伤中&hellip;</p>
 <p>实现的观察者模式的类图：
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -484,18 +457,13 @@ public class StockTest {
 </div>
 
 表面上看股票软件与股民没有任何关系，但是在具体股票软件中维护了股民的列表(buyList)，这样可以在软件发现有变化时调用股民的方法来进行通知。</p>
-
 <h2 id="总结">总结</h2>
-
 <h3 id="优点">优点</h3>
-
 <ol>
 <li>观察者模式在观察者与目标对象之间建立了抽象的耦合，目标对象要维护观察者列表，而无须关心具体的观察者。可以更好的进行抽象。</li>
 <li>对目标对象增加观察者无须修改原代码，只需要调用现有的方法就可以，符合开闭原则。</li>
 </ol>
-
 <h3 id="缺点">缺点</h3>
-
 <ol>
 <li>在观察者很多的时候，目标对象发生变化时会消耗很长的时间来通知观察者。</li>
 </ol>

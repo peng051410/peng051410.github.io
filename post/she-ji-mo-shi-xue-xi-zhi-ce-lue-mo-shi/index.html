@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.61.0" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/" />
@@ -51,7 +51,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.ec807d8b802a40889537c26e014f733206312ea440d42e1f0dabed80918de1ac.css" integrity="sha256-7IB9i4AqQIiVN8JuAU9zMgYxLqRA1C4fDavtgJGN4aw=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.8f79d8a79759be52d6a258d038d9a8459e3c5269effa82fa45e34697f6916ad1.css" integrity="sha256-j3nYp5dZvlLWoljQONmoRZ48Umnv&#43;oL6ReNGl/aRatE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -65,16 +65,13 @@
 <meta property="article:modified_time" content="2019-06-26T10:45:22+08:00" />
 <meta itemprop="name" content="设计模式学习之策略模式">
 <meta itemprop="description" content="说明 策略模式是设计模式中使用频率很高的模式，主要的就是实现对行为的包装，达到结果的方式有多种，使用者可以选择任何一个方式来得到想要结果，在增">
-
-
 <meta itemprop="datePublished" content="2018-06-20T07:04:56&#43;08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:45:22&#43;08:00" />
 <meta itemprop="wordCount" content="794">
 
 
 
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之策略模式"/>
 <meta name="twitter:description" content="说明 策略模式是设计模式中使用频率很高的模式，主要的就是实现对行为的包装，达到结果的方式有多种，使用者可以选择任何一个方式来得到想要结果，在增"/>
 
@@ -296,131 +293,109 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#说明">说明</a></li>
-<li><a href="#策略模式实现">策略模式实现</a></li>
-<li><a href="#策略设计模式总结">策略设计模式总结</a>
-<ul>
-<li><a href="#优点">优点</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#策略模式实现">策略模式实现</a></li>
+    <li><a href="#策略设计模式总结">策略设计模式总结</a>
+      <ul>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h2 id="说明">说明</h2>
-
+      <h2 id="说明">说明</h2>
 <p>策略模式是设计模式中使用频率很高的模式，主要的就是实现对行为的包装，达到结果的方式有多种，使用者可以选择任何一个方式来得到想要结果，在增加新的方式时更加的方便与灵活。它是为了适应算法的灵活性而产生的。</p>
-
 <h2 id="策略模式实现">策略模式实现</h2>
-
 <p>以常用的购物为例，一般情况下购物分为浏览商品，下单，支付。在支付时消费者可以选择多种不同的支付方式，如支付宝、微信、京东支付、银联支付等。在支付中流程就可以使用到策略模式，网站为用户提供了这些支付方式可供选择，用户只需要选择自己喜欢的支付方式来进行充值就可以得到商品了。在一般情况下都会定义一个抽象类来定义支付的一些行为，如金额，商品简介等信息。实现的抽象类如以下定义：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.pay<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">package cn.imcompany.pay;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/20.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Payment</span> <span style="color:#f92672">{</span>
 
-/**
- * Created by tomyli on 2018/6/20.
- * Github: https://github.com/peng051410
- */
-public interface Payment {
+    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">pay</span><span style="color:#f92672">(</span>String param<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    boolean pay(String param);
+<span style="color:#f92672">}</span>
+</code></pre></div><p>这样就定义了支付方式的行为，剩下的就由不同的支付方式来进行实现，比如支付宝支付、微信支付，示例代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.pay<span style="color:#f92672">;</span>
 
-}
-</code></pre>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/20.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AliPay</span> <span style="color:#66d9ef">implements</span> Payment <span style="color:#f92672">{</span>
 
-<p>这样就定义了支付方式的行为，剩下的就由不同的支付方式来进行实现，比如支付宝支付、微信支付，示例代码如下：</p>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">pay</span><span style="color:#f92672">(</span>String param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">package cn.imcompany.pay;
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AliPay&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-/**
- * Created by tomyli on 2018/6/20.
- * Github: https://github.com/peng051410
- */
-public class AliPay implements Payment {
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WechatPay</span> <span style="color:#66d9ef">implements</span> Payment <span style="color:#f92672">{</span>
 
-    @Override
-    public boolean pay(String param) {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">pay</span><span style="color:#f92672">(</span>String param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-        System.out.println(&quot;AliPay&quot;);
-        return true;
-    }
-}
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;WechatPay&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>要是再增加一种支付方式则可以实现Payment接口进行实现就可以了，一般情况下会有一个维护支付方式的常量类，由它来维护可用的支付方式。这个常量类的简化代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.pay<span style="color:#f92672">;</span>
 
-public class WechatPay implements Payment {
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/20.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> PayType <span style="color:#f92672">{</span>
 
-    @Override
-    public boolean pay(String param) {
+    ALI_PAY<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AliPay<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span>
+    WECHAT_PAY<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> WechatPay<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span>
+    JD_PAY<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> JdPay<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span>
+    UNICOME_PAY<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> UnicomePay<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">,</span>
+    <span style="color:#f92672">;</span>
 
-        System.out.println(&quot;WechatPay&quot;);
-        return true;
-    }
-}
-</code></pre>
+    <span style="color:#66d9ef">private</span> Payment payment<span style="color:#f92672">;</span>
 
-<p>要是再增加一种支付方式则可以实现Payment接口进行实现就可以了，一般情况下会有一个维护支付方式的常量类，由它来维护可用的支付方式。这个常量类的简化代码如下：</p>
+    PayType<span style="color:#f92672">(</span>Payment payment<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">payment</span> <span style="color:#f92672">=</span> payment<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-<pre><code class="language-java">package cn.imcompany.pay;
+    <span style="color:#66d9ef">public</span> Payment <span style="color:#a6e22e">getPayment</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> payment<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>在常量类可以获取要支付的具体支付方式来进行支付。接下来进行一下测试：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> cn.imcompany.pay<span style="color:#f92672">;</span>
 
-/**
- * Created by tomyli on 2018/6/20.
- * Github: https://github.com/peng051410
- */
-public enum PayType {
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Created by tomyli on 2018/6/20.
+</span><span style="color:#75715e"> * Github: https://github.com/peng051410
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PayTest</span> <span style="color:#f92672">{</span>
 
-    ALI_PAY(new AliPay()),
-    WECHAT_PAY(new WechatPay()),
-    JD_PAY(new JdPay()),
-    UNICOME_PAY(new UnicomePay()),
-    ;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[</span><span style="color:#f92672">]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    private Payment payment;
+        PayType<span style="color:#f92672">.</span><span style="color:#a6e22e">ALI_PAY</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getPayment</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pay</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;123&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 
-    PayType(Payment payment) {
-        this.payment = payment;
-    }
+        PayType<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>PayType<span style="color:#f92672">.</span><span style="color:#a6e22e">WECHAT_PAY</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getPayment</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pay</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;325&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    public Payment getPayment() {
-        return payment;
-    }
-}
-</code></pre>
-
-<p>在常量类可以获取要支付的具体支付方式来进行支付。接下来进行一下测试：</p>
-
-<pre><code class="language-java">package cn.imcompany.pay;
-
-/**
- * Created by tomyli on 2018/6/20.
- * Github: https://github.com/peng051410
- */
-public class PayTest {
-
-    public static void main(String[] args) {
-
-        PayType.ALI_PAY.getPayment().pay(&quot;123&quot;);
-
-        PayType.valueOf(PayType.WECHAT_PAY.toString()).getPayment().pay(&quot;325&quot;);
-    }
-
-}
-</code></pre>
-
-<p>上面的测试会输出</p>
-
-<pre><code class="language-java">AliPay
+<span style="color:#f92672">}</span>
+</code></pre></div><p>上面的测试会输出</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">AliPay
 WechatPay
-</code></pre>
-
-<p>这样一个简单的策略模式就实现了。
+</code></pre></div><p>这样一个简单的策略模式就实现了。
 策略模式的类图如下:
 
 <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
@@ -434,21 +409,15 @@ WechatPay
   </figure>
 </div>
 </p>
-
 <h2 id="策略设计模式总结">策略设计模式总结</h2>
-
 <p>策略模式是一种行为类型的设计模式，它封装了不同的行为，给使用者提供几种选择来实现结果。</p>
-
 <h3 id="优点">优点</h3>
-
 <ol>
 <li>再增加新的支付方式只需要增加实现类即可，不需要修改现在支付方式的实现逻辑。符合开闭原则。</li>
 <li>在选择行为时避免了很多的if-else的判断。使代码更加清晰。</li>
 <li>策略模式提供了统一的管理行为的方式。</li>
 </ol>
-
 <h3 id="缺点">缺点</h3>
-
 <ol>
 <li>无法一起使用多个策略类。</li>
 </ol>
