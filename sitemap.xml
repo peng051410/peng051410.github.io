@@ -2,15 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/post/2020-tars-001/</loc>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2020-01-03T15:06:36+08:00</lastmod>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2020-01-03T15:06:36+08:00</lastmod>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/tars/</loc>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/tars/</loc>
+    <lastmod>2020-01-08T20:17:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -25,20 +60,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/maven-deploy-issue/</loc>
     <lastmod>2019-12-31T12:17:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2020-01-03T15:06:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2020-01-03T15:06:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -65,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/java/</loc>
+    <loc>http://blog.imcompany.cn/tags/java/</loc>
     <lastmod>2019-09-29T11:26:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/java/</loc>
+    <loc>http://blog.imcompany.cn/categories/java/</loc>
     <lastmod>2019-09-29T11:26:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -100,14 +121,14 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
+    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
     <lastmod>2019-07-01T07:49:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
+    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
     <lastmod>2019-07-01T07:49:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -123,20 +144,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/apollo-config-swim/</loc>
     <lastmod>2019-06-25T20:46:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/tars/</loc>
-    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/tars/</loc>
-    <lastmod>2019-06-26T11:06:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
