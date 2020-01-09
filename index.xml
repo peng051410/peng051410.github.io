@@ -1085,8 +1085,10 @@ ExecStart&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;-/sbin/agetty -
 &lt;p&gt;在Idea的window中显示当前git项目的分支名，可以使用window操作软件进行编程自动化。&lt;a href=&#34;https://github.com/tom-haines/branch-window-title/&#34;&gt;https://github.com/tom-haines/branch-window-title/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;frame-switcher&#34;&gt;Frame Switcher&lt;/h2&gt;
 &lt;p&gt;打开了多个project，找不到哪个项目，来回切换太麻烦，来用Frame Switcher吧。&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&#34;&gt;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;actions-tree&#34;&gt;&lt;del&gt;Actions tree&lt;/del&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;&#34;&gt;&lt;del&gt;Actions tree&lt;/del&gt;&lt;/h2&gt;
 &lt;p&gt;类似Emacs的操作列表树，Ctrl+c 回来了。&lt;a href=&#34;https://gitlab.com/lae/intellij-actions-tree&#34;&gt;https://gitlab.com/lae/intellij-actions-tree&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gitlab-project&#34;&gt;Gitlab Project&lt;/h2&gt;
+&lt;p&gt;Gitlab工程插件，支持Checkout, PR等操作。&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7975-gitlab-projects/&#34;&gt;https://plugins.jetbrains.com/plugin/7975-gitlab-projects/&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
