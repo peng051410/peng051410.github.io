@@ -5,7 +5,8 @@
     <link>http://blog.imcompany.cn/tags/idea/</link>
     <description>Recent content in idea on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <managingEditor>peng051410@126.com (Tomyli)</managingEditor>
+    <webMaster>peng051410@126.com (Tomyli)</webMaster>
     <lastBuildDate>Wed, 05 Sep 2018 08:12:23 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/idea/index.xml" rel="self" type="application/rss+xml" />
@@ -15,18 +16,42 @@
       <title>那些提高效率的Idea插件</title>
       <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
-      
+      <author>peng051410@126.com (Tomyli)</author>
       <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
-      <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与I</description>
+      <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。
+项目地址 https://github.com/hsz/idea-gitignore
+IdeaVim 插件说明 在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.
+项目地址 https://github.com/JetBrains/ideavim
+emacsIDEAs 插件说明 支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.
+项目地址 https://github.com/whunmr/emacsIDEAs
+Custom Postfix Templates 插件说明 Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。
+项目地址 https://github.com/xylo/intellij-postfix-templates
+Jrebel 插件说明 动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。
+项目地址 https://zeroturnaround.com/software/jrebel/
+CamelCase 插件说明 文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.
+项目地址 https://plugins.jetbrains.com/plugin/7160-camelcase
+Codehelper 插件说明  代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少 生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。  项目地址 https://github.com/zhengjunbase/codehelper.generator
+Translation 插件说明 Idea中集成翻译功能,目前支持有道和goolge,百度翻译.
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+Clock 插件说明 当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。
+插件地址 https://github.com/amolenaar/idea-clock
+Dash 插件说明 Dash是一个mac上的开发文档查询工具,Idea Dash这个插件使得开发者可以直接通过快捷键来调用Dash工具进行文档的查询.目前这个插件提供了对Dash,Velocity,Zeald三种工具的支持.
+项目地址 https://github.com/gdelmas/IntelliJDashPlugin
+Rainbow Brackets 插件说明 让Idea的括号更好看，对于对应的括号(标签)会显示相同的颜色，特别对于编写html时的标签对应，一眼就可以看出来标签是不是对应出现的。
+项目地址 https://github.com/izhangzhihao/intellij-rainbow-brackets
+RestfulToolkit 插件说明 此项目可以快速查询Springmvc项目中Controller的Mapping定义，即根据url来跳转方法定义，在原有Idea的按类、按文件、按方法名查找功能上增添新的查找功能。非常好用。
+项目地址 https://plugins.jetbrains.com/plugin/10292-restfultoolkit
+Duplicate Lines 插件说明 这是一个快速复制行内容的插件,Idea默认也是支持复制行的操作,当你选中了括号中的文字时再想进行复制编辑时这个插件就可以发挥作用了,它会复制行的内容,并将光标置于被复制行时选中的字符上,这样就可以接着进行复制后的修改操作了.</description>
     </item>
     
     <item>
       <title>Idea中vim键的映射</title>
       <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
-      
+      <author>peng051410@126.com (Tomyli)</author>
       <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
-      <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi</description>
+      <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。
+   Key Description     kj    gt VimBack   gT VimForward   gd GotoDeclaration   gf GotoTypeDeclaration   gh QuickJavaDoc   gs GotoSymbol   gi GotoImplementation   gu FindUsages   gj IntroduceVariable   leader w d ActivateDatabaseToolWindow   leader &#39; ActivateTerminalToolWindow   leader w r ActivateRedisServersToolWindow   leader w m ActivateMavenProjectsToolWindow   leader w a HideActiveWindow   leader w w HideAllWindows   leader w p ActivateProjectToolWindow   leader w s ActivateStructureToolWindow   leader w v ActivateVersionControlToolWindow   leader w h h Go to left window   leader w l l Go to right window   leader w k k Go to window up   leader w j j Go to window down   leader w V v Split Window Vertically   leader w - s Split Winodw Horizontally   leader w c c Close current window   leader w o o Close all window except current   leader  GotoAction   leader c c GotoClass   leader c r CopyReference   leader c p CopyPaths   leader f f GotoFile   leader f d DashLauncherAction   leader b b RecentFiles   leader b p FileStructurePopup   leader b u ReopenClosedTab   leader d d Debug   leader d D DebugClass   leader d j JRebel   leader l l EvaluateExpression   leader t t ToggleLineBreakpoint   leader r r Run   leader r R RunClass   leader i m ImplementMethods   leader e e ShowErrorDescription   leader e n GotoNextError   leader R :source ~/.</description>
     </item>
     
   </channel>

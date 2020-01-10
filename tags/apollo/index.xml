@@ -5,7 +5,8 @@
     <link>http://blog.imcompany.cn/tags/apollo/</link>
     <description>Recent content in apollo on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <managingEditor>peng051410@126.com (Tomyli)</managingEditor>
+    <webMaster>peng051410@126.com (Tomyli)</webMaster>
     <lastBuildDate>Mon, 01 Jul 2019 07:04:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
@@ -15,18 +16,43 @@
       <title>Apollo Client自定义问题拾遗</title>
       <link>http://blog.imcompany.cn/post/apollo-client-custom/</link>
       <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
-      
+      <author>peng051410@126.com (Tomyli)</author>
       <guid>http://blog.imcompany.cn/post/apollo-client-custom/</guid>
-      <description>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项</description>
+      <description>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成
+接入步骤 新建maven项目 在Idea中新建maven项目，基于quickstart构建
+增加项目依赖 官方说明的建议在新的client中依赖Apollo官方的client，再根据业务进行扩展，所以maven依赖apollo-client，公司项目的网络访问需要通过L5来进行，所以还要依赖L5的jar，目前这个jar包没有maven坐标，只能以lib方式引入
+自定义MetaServer 关键的部分，自定义满足公司网络条件的MetaServer，Apollo官网说明是实现MetaServerProvider且Order值小的Providor被使用，按照说明进行实现
+Maven打包Client 执行 mvn clean install 进行打包，解压jar包发现就只有一个Providor的实现类，这样jar运行有问题。需要把新Client所有的依赖都打进jar包，在网上找了半天，需要在POM中增加maven的plugin的配置，如下：
+&amp;lt;!-- 打包所有的maven依赖到jar包 --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.2.1&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;artifactSet&amp;gt; &amp;lt;excludes&amp;gt; &amp;lt;exclude&amp;gt;junit:junit&amp;lt;/exclude&amp;gt; &amp;lt;/excludes&amp;gt; &amp;lt;/artifactSet&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;!-- 添加依赖的非maven jar包 --&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;com.googlecode.addjars-maven-plugin&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;addjars-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.5&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;add-jars&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;resource&amp;gt; &amp;lt;directory&amp;gt;${basedir}/lib&amp;lt;/directory&amp;gt; &amp;lt;/resource&amp;gt; &amp;lt;/resources&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; 由于项目中使用了maven依赖与非maven依赖，所以上述的两个插件都要使用。增加了上面两个插件后再运行打包命令查看生成的jar就发现所有的依赖都在jar中了。
+项目中使用Client 选择一个项目在测试环境进行配置调试，自定义的Meta Server一直没有生效，所以查找官方文档，由于自定义Providor是通过SPI方式实现的，所以正确的实现方式是新建resource文件夹，指定MetaServerProvider的真正实现类的带包名类才可以，哎，找了我好久。
+后续操作 后续会把client上传到内部maven仓库，完善配置API，使业务方可以零配置来使用配置中心。
+总结  Maven的打包机制还是不清晰，处理打包问题费了很多时间，要好好重新学习一下 Apollo的官方文档还需要再仔细阅读，有问题多查issue，因为可能有人已经遇到了 多读读源码，真正的体会大牛的软件设计思想  </description>
     </item>
     
     <item>
       <title>Apollo 配置中心畅游</title>
       <link>http://blog.imcompany.cn/post/apollo-config-swim/</link>
       <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
-      
+      <author>peng051410@126.com (Tomyli)</author>
       <guid>http://blog.imcompany.cn/post/apollo-config-swim/</guid>
-      <description>目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。 Spring Cloud Config 2</description>
+      <description>目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。
+Spring Cloud Config 2014年9月开源，Spring Cloud生态组件，与Spring Cloud体系无缝整合。
+Apollo 2016年5月，携程框架部开源的配置管理中心，具备规范的权限、流程治理等特性。
+Nacos 2018年6月，阿里开源的配置中心，可以做DNS和RPC的服务发现。
+为什么选择Apollo 社区活跃 刚刚发布了1.4.0版本，Issue处理速度快
+文档齐全 体验，部署，设计文档都齐全
+重要的灰度发布 想发布一台机器试试水，可以！
+开源协议友好 Apache 2 license
+Apollo都有哪些重要功能 以下摘自官网说明
+统一管理不同环境、不同集群的配置 配置修改实时生效（热发布） 版本发布管理 目前只支持对最近版本的恢复。https://github.com/ctripcorp/apollo/issues/1642
+灰度发布 权限管理、发布审核、操作审计 编辑与发布是两个独立的操作。
+客户端配置信息监控 提供Java和.Net原生客户端 提供开放平台API 这样可以通过其它方式来查看配置信息，平台API说明
+使用方便的后台配置系统Portal 分布式部署相对较复杂，这是缺点 外部依赖少，目前依赖Mysql
+Apollo的组成 Apollo长什么样?     Apollo整体设计 总体架构     代码结构     各模块概要介绍
+Apollo Config Service 提供配置获取接口，服务对象为Apollo客户端
+Apollo Admin Service 提供配置管理（修改、发布）接口，服务与Portal
+Apollo Portal 提供WEB界面供用户管理配置
+Apollo的重要设计 Admin Service与Config Service的通信方式 Apollo使用Mysql实现消息(ReleaseMessage)的处理，消息内容为AppId+Cluster+Namespace，具体的设计思想可以参考这里</description>
     </item>
     
   </channel>

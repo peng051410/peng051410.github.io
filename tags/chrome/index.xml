@@ -5,7 +5,8 @@
     <link>http://blog.imcompany.cn/tags/chrome/</link>
     <description>Recent content in chrome on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <managingEditor>peng051410@126.com (Tomyli)</managingEditor>
+    <webMaster>peng051410@126.com (Tomyli)</webMaster>
     <lastBuildDate>Fri, 08 Mar 2019 07:48:34 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
@@ -15,9 +16,32 @@
       <title>那些高效的Chrome插件</title>
       <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
-      
+      <author>peng051410@126.com (Tomyli)</author>
       <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
-      <description>1Password extension 密码管理工具1Password的Chrome插件。插件地址 Auto Refresh 自动刷新网页的插件，支持设置刷新时间间隔。插件地址 Awesome Autocomplete for GitHub 在浏览器中为Gi</description>
+      <description>1Password extension 密码管理工具1Password的Chrome插件。插件地址
+Auto Refresh 自动刷新网页的插件，支持设置刷新时间间隔。插件地址
+Awesome Autocomplete for GitHub 在浏览器中为Github增强搜索功能。插件地址
+BetterTweetDeck TweetDeck功能增强，如支持表情，只看某人的tweets，插件地址
+Chrono下载管理器 功能全面的chrome下载管理器，满足你的一切需求。插件地址
+Clutter Free - Prevent duplicate tabs 防止打开相同的tab页面。插件地址
+Dualsub 让Youtube同时显示两种语言的字幕。插件地址
+GitHub Hovercard 鼠标Hover时更全面显示Github上个人与仓库的信息。插件地址
+Insight.io for Github 为Github添加类似IDE的功能，高效的代码浏览工具。插件地址
+JSON-handle JSON数据处理插件。插件地址
+JSON Viewer Awesome JSON数据美化，漂亮的不行不行的。插件地址
+Org Capture Org Capture的Chrome插件，支持Capture网页链接与选中文字，配合Emacs使用。插件地址
+MAMA-HD 解决在看视频网站时Mac发热的问题。插件地址
+Proxy SwitchyOmega 网页代理切换，支持定义多种模式。插件地址
+Sourcegraph 在线浏览Github的源码，支持一些语言的语义跳转。插件地址
+Surfingkeys 严重推荐，VIM键盘模拟，自定义程度非常高。插件地址
+Tampermonkey 用户自定义脚本管理器。插件地址
+YAAW for Chrome 使用YAAW处理Chrome的下载请求。插件地址
+二管家 Chrome扩展管理器，快速开启、禁用，模式快速切换，更强大的是可以自定义插件的启用规则，这个很赞。插件地址
+二箱 多个网站的以图搜图插件，能用图说的咱决不打字。插件地址
+沙拉查词-聚合词典划词翻译 更人性化的划词扩展。插件地址
+简悦 - SimpRead 沉浸式阅读首选，支持大多数的网站。插件地址
+Clearly 更好的英文网页浏览选择，带文字朗读功能。插件地址
+Read Aloud 朗读英文文章的更好选择，它只会朗读标题与正文。可以选择朗读语间，音调，速度。插件地址</description>
     </item>
     
   </channel>
