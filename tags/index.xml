@@ -5,8 +5,7 @@
     <link>http://blog.imcompany.cn/tags/</link>
     <description>Recent content in Tags on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>peng051410@126.com (Tomyli)</managingEditor>
-    <webMaster>peng051410@126.com (Tomyli)</webMaster>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 08 Jan 2020 18:54:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +15,7 @@
       <title>arts</title>
       <link>http://blog.imcompany.cn/tags/arts/</link>
       <pubDate>Wed, 08 Jan 2020 18:54:09 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/arts/</guid>
       <description></description>
     </item>
@@ -25,7 +24,7 @@
       <title>java</title>
       <link>http://blog.imcompany.cn/tags/java/</link>
       <pubDate>Wed, 08 Jan 2020 18:54:09 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/java/</guid>
       <description></description>
     </item>
@@ -34,7 +33,7 @@
       <title>leetcode</title>
       <link>http://blog.imcompany.cn/tags/leetcode/</link>
       <pubDate>Wed, 08 Jan 2020 18:54:09 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/leetcode/</guid>
       <description></description>
     </item>
@@ -43,7 +42,7 @@
       <title>maven</title>
       <link>http://blog.imcompany.cn/tags/maven/</link>
       <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/maven/</guid>
       <description></description>
     </item>
@@ -52,7 +51,7 @@
       <title>commandline</title>
       <link>http://blog.imcompany.cn/tags/commandline/</link>
       <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/commandline/</guid>
       <description></description>
     </item>
@@ -61,7 +60,7 @@
       <title>java8</title>
       <link>http://blog.imcompany.cn/tags/java8/</link>
       <pubDate>Sat, 24 Aug 2019 10:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/java8/</guid>
       <description></description>
     </item>
@@ -70,7 +69,7 @@
       <title>lambda</title>
       <link>http://blog.imcompany.cn/tags/lambda/</link>
       <pubDate>Sat, 24 Aug 2019 10:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/lambda/</guid>
       <description></description>
     </item>
@@ -79,7 +78,7 @@
       <title>apollo</title>
       <link>http://blog.imcompany.cn/tags/apollo/</link>
       <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/apollo/</guid>
       <description></description>
     </item>
@@ -88,7 +87,7 @@
       <title>centos</title>
       <link>http://blog.imcompany.cn/tags/centos/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/centos/</guid>
       <description></description>
     </item>
@@ -97,7 +96,7 @@
       <title>linux</title>
       <link>http://blog.imcompany.cn/tags/linux/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/linux/</guid>
       <description></description>
     </item>
@@ -106,7 +105,7 @@
       <title>chrome</title>
       <link>http://blog.imcompany.cn/tags/chrome/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/chrome/</guid>
       <description></description>
     </item>
@@ -115,7 +114,7 @@
       <title>bash</title>
       <link>http://blog.imcompany.cn/tags/bash/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/bash/</guid>
       <description></description>
     </item>
@@ -124,7 +123,7 @@
       <title>zsh</title>
       <link>http://blog.imcompany.cn/tags/zsh/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/zsh/</guid>
       <description></description>
     </item>
@@ -133,7 +132,7 @@
       <title>alfred</title>
       <link>http://blog.imcompany.cn/tags/alfred/</link>
       <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/alfred/</guid>
       <description></description>
     </item>
@@ -142,7 +141,7 @@
       <title>idea</title>
       <link>http://blog.imcompany.cn/tags/idea/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/idea/</guid>
       <description></description>
     </item>
@@ -151,7 +150,7 @@
       <title>plugin</title>
       <link>http://blog.imcompany.cn/tags/plugin/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/plugin/</guid>
       <description></description>
     </item>
@@ -160,7 +159,7 @@
       <title>design-pattern</title>
       <link>http://blog.imcompany.cn/tags/design-pattern/</link>
       <pubDate>Mon, 16 Jul 2018 21:08:28 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/design-pattern/</guid>
       <description></description>
     </item>
@@ -169,7 +168,7 @@
       <title>vim</title>
       <link>http://blog.imcompany.cn/tags/vim/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/tags/vim/</guid>
       <description></description>
     </item>

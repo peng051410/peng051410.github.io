@@ -5,8 +5,7 @@
     <link>http://blog.imcompany.cn/tags/maven/</link>
     <description>Recent content in maven on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>peng051410@126.com (Tomyli)</managingEditor>
-    <webMaster>peng051410@126.com (Tomyli)</webMaster>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 31 Dec 2019 11:15:55 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/maven/index.xml" rel="self" type="application/rss+xml" />
@@ -16,25 +15,18 @@
       <title>Maven发布401问题排查</title>
       <link>http://blog.imcompany.cn/post/maven-deploy-issue/</link>
       <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
-      <description>日志问题现象 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证
-排查步骤 settings文件是否配置了发布的用户名与密码，且用户有deploy的权限 &amp;lt;servers&amp;gt; &amp;lt;server&amp;gt; &amp;lt;id&amp;gt;myid&amp;lt;/id&amp;gt; &amp;lt;username&amp;gt;myuser&amp;lt;/username&amp;gt; &amp;lt;password&amp;gt;mypasswd&amp;lt;/password&amp;gt; &amp;lt;/server&amp;gt; &amp;lt;/servers&amp;gt; 查看deploy插件的版本  如果是2.X的版本,可以使用以下命令进行发布  mvn -DaltDeploymentRepository=company::default::http://test.compnay.local/nexus/repository/maven-snapshots clean package deploy  如果是3.X的版本，则需要按3.X版本进行指定发布  mvn deploy:deploy-file -Dfile=xxx-1.0.0-SNAPSHOT.jar -Durl=http://test.local/nexus/content/repositories/snapshots -DrepositoryId=test-snapshot Deploy 3.0.0-M1的发布bug 如果配置的deploy的插件为3.0.0-M1，则可参考3.0.0-M1 401 bug 进行修改，具体就是指定depoly版本为2.8，根据插件作者的回复感觉就是3.0.0-M1与altDeploymentRepository参数不能一起用</description>
+      <description>日志问题现象 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否配</description>
     </item>
     
     <item>
       <title>那些有用maven命令</title>
       <link>http://blog.imcompany.cn/post/maven-swim/</link>
       <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
-      <author>peng051410@126.com (Tomyli)</author>
+      
       <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
-      <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息
-mvn help:system 查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用
-mvn help:effective-settings 查看Settings配置的值 以下命令可以查看settings文件中的settings-&amp;gt;servers的配置
-mvn -q -Dexpression=settings.servers -DforceStdout help:evaluate 使用help:evaluate可以查看所有的配置信息
-指定发布到其它仓库 Deploy插件2.X版本发布 有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现
-mvn -DaltDeploymentRepository=id::layout::url 具体说明参见deploy:deploy
-Deploy插件3.0.0-M1版本发布 /data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId=com.qqreader -Dfile=./target/$(/data/mvn/bin/mvn -q -Dexpression=project.build.finalName -DforceStdout help:evaluate).jar -Durl=http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId=snapshot-id </description>
+      <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 mvn help:system 查看当前有效的settings文件 m</description>
     </item>
     
   </channel>
