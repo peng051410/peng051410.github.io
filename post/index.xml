@@ -6,10 +6,19 @@
     <description>Recent content in Posts on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 08 Jan 2020 18:54:09 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 19:04:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-ARTS-打卡第二天</title>
+      <link>http://blog.imcompany.cn/post/2020-arts-002/</link>
+      <pubDate>Thu, 16 Jan 2020 19:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2020-arts-002/</guid>
+      <description>Algorithm 题目描述 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 Example 输入123-&amp;gt;true 输入-123</description>
+    </item>
     
     <item>
       <title>2020-ARTS-打卡第一天</title>
@@ -180,15 +189,6 @@
       
       <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/</guid>
       <description>说明 策略模式是设计模式中使用频率很高的模式，主要的就是实现对行为的包装，达到结果的方式有多种，使用者可以选择任何一个方式来得到想要结果，在增</description>
-    </item>
-    
-    <item>
-      <title>设计模式学习之工厂模式</title>
-      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gong-han-mo-shi/</link>
-      <pubDate>Tue, 12 Jun 2018 21:33:40 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gong-han-mo-shi/</guid>
-      <description>说明 工厂设计模式是23种设计模式中使用频率非常高的，属于创建型模式。主要特点是实现了实体创建与使用的分离，达到了解耦的目的。工厂设计模式一般</description>
     </item>
     
   </channel>

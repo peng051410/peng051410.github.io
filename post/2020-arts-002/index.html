@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>归档 - I&#39;m company</title>
+  <title>2020-ARTS-打卡第二天 - I&#39;m company</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="tomyli" />
-  <meta name="description" content="Everyone is a company." />
+  <meta name="description" content="Algorithm 题目描述 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 Example 输入123-&amp;gt;true 输入-123" />
+
   <meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.61.0" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/" />
-<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="I&#39;m company" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-002/" />
+
 
 
 
@@ -58,15 +59,23 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Everyone is a company." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/" />
-<meta property="og:updated_time" content="2020-01-16T19:04:09+08:00" />
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Everyone is a company."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Everyone is a company."/>
+<meta property="og:title" content="2020-ARTS-打卡第二天" />
+<meta property="og:description" content="Algorithm 题目描述 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 Example 输入123-&gt;true 输入-123" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-002/" />
+<meta property="article:published_time" content="2020-01-16T19:04:09+08:00" />
+<meta property="article:modified_time" content="2020-01-17T10:14:54+08:00" />
+<meta itemprop="name" content="2020-ARTS-打卡第二天">
+<meta itemprop="description" content="Algorithm 题目描述 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 Example 输入123-&gt;true 输入-123">
+<meta itemprop="datePublished" content="2020-01-16T19:04:09&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-17T10:14:54&#43;08:00" />
+<meta itemprop="wordCount" content="1465">
+
+
+
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020-ARTS-打卡第二天"/>
+<meta name="twitter:description" content="Algorithm 题目描述 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。 Example 输入123-&gt;true 输入-123"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -218,7 +227,7 @@
 
       </li>
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -265,184 +274,215 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">2020-ARTS-打卡第二天</h1>
+      
+      <div class="post-meta">
+        <time datetime="2020-01-16" class="post-time">
+          2020-01-16
+        </time>
+        <div class="post-category">
+            <a href="http://blog.imcompany.cn/categories/arts/"> arts </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#题目描述">题目描述</a></li>
+        <li><a href="#题目解答">题目解答</a></li>
+      </ul>
+    </li>
+    <li><a href="#review">Review</a>
+      <ul>
+        <li><a href="#null的含义">NULL的含义</a></li>
+        <li><a href="#java8的optional可以解决null问题吗">JAVA8的Optional可以解决NULL问题吗？</a></li>
+        <li><a href="#示例1中if--null--return-null">示例1中if(null) return null</a></li>
+        <li><a href="#示例2中converter-dot-encode">示例2中Converter.encode()</a></li>
+        <li><a href="#示例3的mapper-dot-getid">示例3的Mapper.getId()</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#最后的最后">最后的最后</a></li>
+      </ul>
+    </li>
+    <li><a href="#tip">Tip</a>
+      <ul>
+        <li><a href="#mac设置不生成此文件">Mac设置不生成此文件</a></li>
+        <li><a href="#find命令自行处理">find命令自行处理</a></li>
+        <li><a href="#m-cli工具加强处理">m-cli工具加强处理</a></li>
+      </ul>
+    </li>
+    <li><a href="#share">Share</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <h2 id="algorithm">Algorithm</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<h4 id="example">Example</h4>
+<p>输入123-&gt;true
+输入-123-&gt;false
+输入12-&gt;true</p>
+<h3 id="题目解答">题目解答</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution2</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isPalindrome</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>x <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>x <span style="color:#f92672">%</span> 10 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> 0 <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> x <span style="color:#f92672">!</span><span style="color:#f92672">=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">int</span> reverseNumber <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>x <span style="color:#f92672">&gt;</span> reverseNumber<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            reverseNumber <span style="color:#f92672">=</span> reverseNumber <span style="color:#f92672">*</span> 10 <span style="color:#f92672">+</span> x <span style="color:#f92672">%</span> 10<span style="color:#f92672">;</span>
+            x <span style="color:#f92672">/</span><span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> reverseNumber <span style="color:#f92672">=</span><span style="color:#f92672">=</span> x <span style="color:#f92672">|</span><span style="color:#f92672">|</span> x <span style="color:#f92672">=</span><span style="color:#f92672">=</span> reverseNumber <span style="color:#f92672">/</span> 10<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>最简单暴力的方法是把int转换成String进行处理，String反转一半再与后续的进行比较，对于溢出的数字一定不是回文字。此方法则可以更快速的解决问题，关键是怎么找到当前数字的一半位置，可以使用当前数字pop与反转数字的push相比较，当push后的值大于pop后的值则说明到达了数字长度的一半了，对于奇数位的数字则可以使用reverseNumber/10来判断，因为中间的单个字默认就是回文字。此算法的时间复杂度为O(log(n))，空间复杂度为O(1)。</p>
+<h2 id="review">Review</h2>
+<p><a href="https://blog.jetbrains.com/idea/2017/08/code-smells-null/">code-small-null</a>
+本文是Idea的作者的代码味道系列的第一篇。这个系列特点是重构的理论与实践结合。对于JAVA程序员来说，对于NULL是再熟悉不过了，作者通过实践<a href="https://github.com/mongodb/morphia/">Morphia project</a> 来演示处理NULL的情况。具体有几下几种情况：</p>
+<h3 id="null的含义">NULL的含义</h3>
+<ol>
+<li>值从未被初始化</li>
+<li>值是无效的</li>
+<li>值是不需要的</li>
+<li>值不存在</li>
+<li>出现了其它的严重问题，应该出现的值没有出现</li>
+<li>其它的情况等等</li>
+</ol>
+<h3 id="java8的optional可以解决null问题吗">JAVA8的Optional可以解决NULL问题吗？</h3>
+<p>其实Optional只能解决上面提到的第4点，即值不存在。比如在一个请求DB查询的情况，如果查询的东西不存在，则使用Optional可以更好的表示结果。</p>
+<h3 id="示例1中if--null--return-null">示例1中if(null) return null</h3>
+<p>这种情况判断要处理的值为null，又返回了null，其实这种情况可以前置null的检查，在统一入口进行处理。如果在一个基础库中确认要处理的入参不可以为null可以使用Idea的@NotNull注解来进行标识，这样Idea在进行编译时会对整个调用链进行检查。如果重构后不想用注解了，则可以在代码入版本库前删除注解。这里面Idea的inspection功能很强大，它可以根据要检查的名字来显示里面的问题，并提供处理方案。</p>
+<h3 id="示例2中converter-dot-encode">示例2中Converter.encode()</h3>
+<p>此方法功能为编码，此时return null不友好，如果没有返回的话就可以使用Optional.empty()来处理。</p>
+<h3 id="示例3的mapper-dot-getid">示例3的Mapper.getId()</h3>
+<p>这里面有多个地方返回null，尤其是在catch异常中也返回了null，这样使得返回的语义有歧义，这时使用optional是不能解决问题的，只有抛出明确的异常信息才是明智的处理方式。不要为了不报错而不报错。</p>
+<h3 id="总结">总结</h3>
+<p>作者认为NULL会代表不同的情况，主要的问题是NULL不能表示出了什么问题，造成它的情况有很多。可能的解决方案为：</p>
+<ol>
+<li>Optional当方法要表示不存在时</li>
+<li>@NotNull/@Nullable注解显示标明来让Ide来辅助进行检查</li>
+<li>异常处理，当遇到异常时可以抛出一个有明确信息的异常会更友好</li>
+<li>对于字段级别的null值如果可以表示其含义则可以进行使用</li>
+</ol>
+<h3 id="最后的最后">最后的最后</h3>
+<p>完整的重构是需要充足的单元测试做支撑</p>
+<h2 id="tip">Tip</h2>
+<p>今天分享一下Mac下处理.DS_Store文件的三板斧</p>
+<h3 id="mac设置不生成此文件">Mac设置不生成此文件</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+</code></pre></div><h3 id="find命令自行处理">find命令自行处理</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find . -type f -name <span style="color:#e6db74">&#34;.DS_Store&#34;</span> -delete
+</code></pre></div><h3 id="m-cli工具加强处理">m-cli工具加强处理</h3>
+<p>使用<a href="https://github.com/rgcr/m-cli">m-cli</a>工具</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">m dir delete dsfiles
+m dir delete dsfiles /path
+</code></pre></div><h2 id="share">Share</h2>
+<p>今天分享medium上的一篇对比20年前后软件开发的变化的文章。主要讲述了20年前的理论模型在20年后得到实践应用，JAVA在这20年间依旧平稳给力，并行与异步在当下成为许多语言标配。<a href="https://medium.com/@ssg/how-is-computer-programming-different-today-than-20-years-ago-9d0154d1b6ce">How is computer programming different today than 20 years ago?</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-01-17
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">看客官的爱好了</a></span>
+  </p>
+</div>
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://blog.imcompany.cn/tags/arts/">arts</a>
+          <a href="http://blog.imcompany.cn/tags/java/">java</a>
+          <a href="http://blog.imcompany.cn/tags/leetcode/">leetcode</a>
           
-<section id="archive" class="archive">
-    <div class="archive-title">
-      <span class="archive-post-counter">
-          共计 24 篇文章
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2020</h2>
-      </div>
+        </div>
 
-    <div class="archive-post">
-      <time datetime="2020-01-16" class="archive-post-time">
-        2020-01-16
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2020-arts-002/" class="archive-post-link">
-          2020-ARTS-打卡第二天
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2020-01-08" class="archive-post-time">
-        2020-01-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2020-arts-001/" class="archive-post-link">
-          2020-ARTS-打卡第一天
-        </a>
-      </span>
-    </div>
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2019</h2>
-      </div>
-
-    <div class="archive-post">
-      <time datetime="2019-12-31" class="archive-post-time">
-        2019-12-31
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/maven-deploy-issue/" class="archive-post-link">
-          Maven发布401问题排查
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-12-31" class="archive-post-time">
-        2019-12-31
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/maven-swim/" class="archive-post-link">
-          那些有用maven命令
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-08-24" class="archive-post-time">
-        2019-08-24
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/java8-issue-review/" class="archive-post-link">
-          JAVA8问题处理回顾-持续更新
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-07-01" class="archive-post-time">
-        2019-07-01
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/apollo-client-custom/" class="archive-post-link">
-          Apollo Client自定义问题拾遗
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-05-09" class="archive-post-time">
-        2019-05-09
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/arts-001/" class="archive-post-link">
-          ARTS-打卡第一天
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-05-09" class="archive-post-time">
-        2019-05-09
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/apollo-config-swim/" class="archive-post-link">
-          Apollo 配置中心畅游
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-05-06" class="archive-post-time">
-        2019-05-06
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/centos7-install-issue-collect/" class="archive-post-link">
-          Centos7 install issue collect
-        </a>
-      </span>
-    </div>
-    
-
-    <div class="archive-post">
-      <time datetime="2019-03-08" class="archive-post-time">
-        2019-03-08
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/na-xie-gao-xiao-de-chromecha-jian/" class="archive-post-link">
-          那些高效的Chrome插件
-        </a>
-      </span>
-    </div></section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
       
-      <li  class="active" >
-        <a href="/post/">1</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/post/page/3/">3</a>
-      </li>
-      
-    </ul>
-  </nav>
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2020-arts-001/">
+            <span class="next-text nav-default">2020-ARTS-打卡第一天</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
 
+  
+  
 
+  
 
+  
+  
 
+  
+
+  
+
+  
+
+    
+
+  
 
         </div>
       </div>
