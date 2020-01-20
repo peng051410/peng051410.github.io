@@ -5,7 +5,7 @@
     <link>http://blog.imcompany.cn/categories/tool/</link>
     <description>Recent content in tool on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en</language>
     <lastBuildDate>Tue, 31 Dec 2019 11:15:55 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
-      <description>日志问题现象 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否配</description>
+      <description>日志问题现象 1 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
-      <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 mvn help:system 查看当前有效的settings文件 m</description>
+      <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件</description>
     </item>
     
     <item>
