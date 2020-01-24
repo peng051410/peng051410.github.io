@@ -6,10 +6,19 @@
     <description>Recent content in arts on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jan 2020 19:04:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2020 16:04:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/arts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-ARTS-打卡第三天</title>
+      <link>http://blog.imcompany.cn/post/2020-arts-003/</link>
+      <pubDate>Fri, 24 Jan 2020 16:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2020-arts-003/</guid>
+      <description>Algorithm 题目描述 反转一个单链表。 Example 输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL 输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL 题目解答 迭代解法 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution3 { public ListNode reverseList(ListNode head) { ListNode prev = null; ListNode current = head; while (current != null) { ListNode tempNode = current.next; current.next =</description>
+    </item>
     
     <item>
       <title>2020-ARTS-打卡第二天</title>
