@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mumu on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/mumu/</link>
+    <description>Recent content in mumu on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Feb 2020 16:04:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.imcompany.cn/tags/mumu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac上使用网易Mumu模拟器踩坑指北</title>
+      <link>http://blog.imcompany.cn/post/mumu-android-issue/</link>
+      <pubDate>Tue, 11 Feb 2020 16:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/mumu-android-issue/</guid>
+      <description>前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB</description>
+    </item>
+    
+  </channel>
+</rss>

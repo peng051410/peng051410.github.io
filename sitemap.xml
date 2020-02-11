@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/tags/android/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/charles/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/charles/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/mumu-android-issue/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/mumu/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2020-02-11T16:59:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/post/2020-arts-005/</loc>
     <lastmod>2020-02-09T19:42:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,20 +86,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2020-02-09T19:42:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2020-02-09T19:42:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/tags/java/</loc>
     <lastmod>2020-02-09T19:42:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -45,20 +94,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/leetcode/</loc>
-    <lastmod>2020-02-09T19:42:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2020-02-09T19:42:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
     <lastmod>2020-02-09T19:42:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

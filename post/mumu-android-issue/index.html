@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mac上使用网易Mumu模拟器踩坑指北 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.63.1 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/mumu-android-issue/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Mac上使用网易Mumu模拟器踩坑指北" />
+<meta property="og:description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/mumu-android-issue/" />
+<meta property="article:published_time" content="2020-02-11T16:04:09+08:00" />
+<meta property="article:modified_time" content="2020-02-11T16:59:03+08:00" />
+<meta itemprop="name" content="Mac上使用网易Mumu模拟器踩坑指北">
+<meta itemprop="description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB">
+<meta itemprop="datePublished" content="2020-02-11T16:04:09&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-11T16:59:03&#43;08:00" />
+<meta itemprop="wordCount" content="560">
+
+
+
+<meta itemprop="keywords" content="mumu,charles,android," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac上使用网易Mumu模拟器踩坑指北"/>
+<meta name="twitter:description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Mac上使用网易Mumu模拟器踩坑指北</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-02-11 </span>
+        <div class="post-category">
+            <a href="/categories/charles/"> charles </a>
+            </div>
+          <span class="more-meta"> 约 560 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#替代者">替代者</a></li>
+    <li><a href="#配置charles抓包">配置Charles抓包</a>
+      <ul>
+        <li><a href="#ssl代理配置问题">SSL代理配置问题</a></li>
+        <li><a href="#ssl证书安装问题">SSL证书安装问题</a></li>
+        <li><a href="#多开问题">多开问题</a></li>
+        <li><a href="#软件窗口问题">软件窗口问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualBox也不兼容。</p>
+<h2 id="替代者">替代者</h2>
+<p><a href="https://mumu.163.com/">网易MuMu模拟器</a>
+号称非常快，主要是Mac版本有更新。其它的都不行。</p>
+<h2 id="配置charles抓包">配置Charles抓包</h2>
+<p>以为找到了一个非常好的模拟器，没想到配置Charles抓包时遇到很多问题（我这使用的是Mumu版本是1.9.1）</p>
+<h3 id="ssl代理配置问题">SSL代理配置问题</h3>
+<p>正常情况下的代码只需要配置ip和端口就可以，但是发现配置保存后，不能进行输入，修改成无代理就又可以了，后来各种找发现还得在配置中不使用代理中要配置10.0.2.2这个ip，好像是模拟器内部要用这个地址。
+<img src="/ox-hugo/mumu-net-config.png" alt=""></p>
+<h3 id="ssl证书安装问题">SSL证书安装问题</h3>
+<p>配置好代码ip后，要下载Charles的证书并安装，这时要配置模拟器的解锁密码，如果遇到输入正确密码后不能安装的问题，则可以考虑重新配置一下密码，大于6位的吧</p>
+<h3 id="多开问题">多开问题</h3>
+<p>对于Nox player可以进行真正意义的完全多开（模拟器环境隔离），Mumu只是实现了简单的多开，不能使用不同版本的app，目测只是一个镜像。但是好在能使用了，希望后续开发团队可以支持。</p>
+<h3 id="软件窗口问题">软件窗口问题</h3>
+<p>如果在Mac使用窗口操作工具对Mumu进行操作，则可能一下子就找不到应用了，只能重启，正确的使用方式是使用Mumu菜单中的窗口下的拼贴功能，使用起来还不错。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-02-11
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mumu/">mumu</a>
+          <a href="/tags/charles/">charles</a>
+          <a href="/tags/android/">android</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-arts-005/">
+            <span class="next-text nav-default">2020-ARTS-打卡第五天</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">tomyli</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
