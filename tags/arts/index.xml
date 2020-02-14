@@ -6,10 +6,19 @@
     <description>Recent content in arts on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Feb 2020 11:04:09 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Feb 2020 19:04:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/arts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-ARTS-打卡第六天</title>
+      <link>http://blog.imcompany.cn/post/2020-arts-006/</link>
+      <pubDate>Thu, 13 Feb 2020 19:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2020-arts-006/</guid>
+      <description>Algorithm 题目描述 设计你的循环队列实现，支持入队，出队，获取队首元素，获取队尾元素 题目解答 采用数组可以实现，由于要达到循环效果，主要要考虑队头与队尾</description>
+    </item>
     
     <item>
       <title>2020-ARTS-打卡第五天</title>
