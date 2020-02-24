@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/arts/</loc>
-    <lastmod>2020-02-22T15:56:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/categories/arts/</loc>
     <lastmod>2020-02-22T15:56:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,15 +16,22 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
+    <loc>http://blog.imcompany.cn/tags/arts/</loc>
     <lastmod>2020-02-22T15:56:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2020-02-22T15:56:33+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -52,14 +52,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2020-02-22T15:56:33+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2020-02-22T15:56:33+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/charles/</loc>
+    <loc>http://blog.imcompany.cn/tags/charles/</loc>
     <lastmod>2020-02-11T16:59:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/charles/</loc>
+    <loc>http://blog.imcompany.cn/categories/charles/</loc>
     <lastmod>2020-02-11T16:59:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -157,7 +157,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/tool/</loc>
-    <lastmod>2020-01-09T10:26:04+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
+    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
     <lastmod>2019-07-01T07:49:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/apollo/</loc>
+    <loc>http://blog.imcompany.cn/categories/apollo/</loc>
     <lastmod>2019-07-01T07:49:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -262,14 +262,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/chrome/</loc>
-    <lastmod>2019-08-19T14:20:53+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</loc>
-    <lastmod>2019-08-19T14:20:53+08:00</lastmod>
+    <lastmod>2020-02-24T17:07:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
