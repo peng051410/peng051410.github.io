@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 14:30:09 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 14:00:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-ARTS-打卡第八天</title>
+      <link>http://blog.imcompany.cn/post/2020-arts-008/</link>
+      <pubDate>Sat, 29 Feb 2020 14:00:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2020-arts-008/</guid>
+      <description>Algorithm 题目描述 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。 Example 输入: [3,2,1,5,6,4] 和 k = 2</description>
+    </item>
     
     <item>
       <title>2020-ARTS-打卡第七天</title>
