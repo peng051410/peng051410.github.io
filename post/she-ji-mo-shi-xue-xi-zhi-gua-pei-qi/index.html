@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gua-pei-qi/" />
@@ -174,11 +174,11 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ThirdLogin</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">wechatLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">wechatLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">);</span>
 
-    <span class="kt">void</span> <span class="nf">qqLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">qqLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">);</span>
 
-    <span class="kt">void</span> <span class="nf">sinaLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">sinaLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -232,29 +232,29 @@
 
     <span class="kd">private</span> <span class="n">LoginService</span> <span class="n">loginService</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">ThirdLoginAdapter</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">loginService</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LoginService</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">ThirdLoginAdapter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">loginService</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LoginService</span><span class="o">();</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">wechatLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;微信获取用户信息&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;微信获取用户信息&#34;</span><span class="o">);</span>
+        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">qqLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;qq获取用户信息&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;qq获取用户信息&#34;</span><span class="o">);</span>
+        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sinaLogin</span><span class="o">(</span><span class="n">String</span> <span class="n">accessToken</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;微博获取用户信息&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;微博获取用户信息&#34;</span><span class="o">);</span>
+        <span class="n">loginService</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="n">accessToken</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -293,15 +293,15 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IMemberService</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">getMember</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">getMember</span><span class="o">();</span>
 
-    <span class="kt">boolean</span> <span class="nf">isGirl</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="nf">isGirl</span><span class="o">();</span>
 
-    <span class="kt">boolean</span> <span class="nf">isBoy</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="nf">isBoy</span><span class="o">();</span>
 
-    <span class="kt">boolean</span> <span class="nf">isVip</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="nf">isVip</span><span class="o">();</span>
 
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -347,22 +347,22 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractMemberService</span> <span class="kd">implements</span> <span class="n">IMemberService</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">();</span>
 
-    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">getMember</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">getMember</span><span class="o">();</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isGirl</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isGirl</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoy</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBoy</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVip</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVip</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
     <span class="o">}</span>
 
@@ -402,13 +402,13 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberService</span> <span class="kd">extends</span> <span class="n">AbstractMemberService</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;saveMember&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">saveMember</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;saveMember&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getMember</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getMember&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getMember</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;getMember&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 

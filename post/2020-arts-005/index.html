@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-005/" />
@@ -198,22 +198,22 @@
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BracketMatching</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isValid</span> <span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">=</span><span class="o">=</span> <span class="n">s</span> <span class="o">|</span><span class="o">|</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">(</span><span class="o">)</span> <span class="o">%</span> <span class="n">2</span> <span class="o">!</span><span class="o">=</span> <span class="n">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">s</span> <span class="o">||</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">%</span> <span class="n">2</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 
-        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Character</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;)&#39;</span><span class="o">,</span> <span class="sc">&#39;(&#39;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;}&#39;</span><span class="o">,</span> <span class="sc">&#39;{&#39;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;]&#39;</span><span class="o">,</span> <span class="sc">&#39;[&#39;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Character</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;)&#39;</span><span class="o">,</span> <span class="sc">&#39;(&#39;</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;}&#39;</span><span class="o">,</span> <span class="sc">&#39;{&#39;</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="sc">&#39;]&#39;</span><span class="o">,</span> <span class="sc">&#39;[&#39;</span><span class="o">);</span>
 
-        <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="o">!</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">c</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">c</span><span class="o">)</span><span class="o">;</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">empty</span><span class="o">(</span><span class="o">)</span> <span class="o">|</span><span class="o">|</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">!</span><span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">c</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">stack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="na">empty</span><span class="o">()</span> <span class="o">||</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">!=</span> <span class="n">stack</span><span class="o">.</span><span class="na">pop</span><span class="o">())</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
             <span class="o">}</span>
         <span class="o">}</span>
-        <span class="k">return</span> <span class="n">stack</span><span class="o">.</span><span class="na">empty</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">stack</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
     <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>

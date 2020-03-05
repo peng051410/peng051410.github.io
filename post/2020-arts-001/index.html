@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-001/" />
@@ -193,16 +193,16 @@
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution1</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="nf">reverseNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">reverseNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
 
         <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">num</span> <span class="o">!</span><span class="o">=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
 
             <span class="kt">int</span> <span class="n">pod</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="n">10</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">|</span><span class="o">|</span> <span class="o">(</span><span class="n">res</span> <span class="o">=</span><span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;</span><span class="o">&amp;</span> <span class="n">pod</span> <span class="o">&gt;</span> <span class="n">7</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&gt;</span> <span class="n">7</span><span class="o">))</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
             <span class="o">}</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&lt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">|</span><span class="o">|</span> <span class="o">(</span><span class="n">res</span> <span class="o">=</span><span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;</span><span class="o">&amp;</span> <span class="n">pod</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">8</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&lt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">8</span><span class="o">))</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
             <span class="o">}</span>
             <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">10</span> <span class="o">+</span> <span class="n">pod</span><span class="o">;</span>
@@ -276,13 +276,13 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">#copy file to target fuzzy</span>
 <span class="c1">#c file1</span>
-c<span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-    cp -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;</span><span class="s2">s|~|</span><span class="nv">$HOME</span><span class="s2">|</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+c<span class="o">()</span> <span class="o">{</span>
+    cp -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
 <span class="o">}</span>
 <span class="c1">#mv file to target fuzzy</span>
 <span class="c1">#vv file2</span>
-vv<span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-    mv -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;</span><span class="s2">s|~|</span><span class="nv">$HOME</span><span class="s2">|</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+vv<span class="o">()</span> <span class="o">{</span>
+    mv -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/" />
@@ -175,7 +175,7 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Payment</span> <span class="o">{</span>
 
-    <span class="kt">boolean</span> <span class="nf">pay</span><span class="o">(</span><span class="n">String</span> <span class="n">param</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="nf">pay</span><span class="o">(</span><span class="n">String</span> <span class="n">param</span><span class="o">);</span>
 
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -221,7 +221,7 @@
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">pay</span><span class="o">(</span><span class="n">String</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;AliPay&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;AliPay&#34;</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -231,7 +231,7 @@
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">pay</span><span class="o">(</span><span class="n">String</span> <span class="n">param</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;WechatPay&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;WechatPay&#34;</span><span class="o">);</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -274,10 +274,10 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">enum</span> <span class="n">PayType</span> <span class="o">{</span>
 
-    <span class="n">ALI_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">AliPay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">,</span>
-    <span class="n">WECHAT_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">WechatPay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">,</span>
-    <span class="n">JD_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">JdPay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">,</span>
-    <span class="n">UNICOME_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">UnicomePay</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">,</span>
+    <span class="n">ALI_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">AliPay</span><span class="o">()),</span>
+    <span class="n">WECHAT_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">WechatPay</span><span class="o">()),</span>
+    <span class="n">JD_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">JdPay</span><span class="o">()),</span>
+    <span class="n">UNICOME_PAY</span><span class="o">(</span><span class="k">new</span> <span class="n">UnicomePay</span><span class="o">()),</span>
     <span class="o">;</span>
 
     <span class="kd">private</span> <span class="n">Payment</span> <span class="n">payment</span><span class="o">;</span>
@@ -286,7 +286,7 @@
         <span class="k">this</span><span class="o">.</span><span class="na">payment</span> <span class="o">=</span> <span class="n">payment</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="n">Payment</span> <span class="nf">getPayment</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Payment</span> <span class="nf">getPayment</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">payment</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -321,11 +321,11 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PayTest</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">PayType</span><span class="o">.</span><span class="na">ALI_PAY</span><span class="o">.</span><span class="na">getPayment</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="s">&#34;123&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">PayType</span><span class="o">.</span><span class="na">ALI_PAY</span><span class="o">.</span><span class="na">getPayment</span><span class="o">().</span><span class="na">pay</span><span class="o">(</span><span class="s">&#34;123&#34;</span><span class="o">);</span>
 
-        <span class="n">PayType</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">PayType</span><span class="o">.</span><span class="na">WECHAT_PAY</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">getPayment</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">pay</span><span class="o">(</span><span class="s">&#34;325&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">PayType</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">PayType</span><span class="o">.</span><span class="na">WECHAT_PAY</span><span class="o">.</span><span class="na">toString</span><span class="o">()).</span><span class="na">getPayment</span><span class="o">().</span><span class="na">pay</span><span class="o">(</span><span class="s">&#34;325&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
 <span class="o">}</span>

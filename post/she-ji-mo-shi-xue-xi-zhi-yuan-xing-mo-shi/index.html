@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-yuan-xing-mo-shi/" />
@@ -188,8 +188,8 @@
     <span class="kd">public</span> <span class="kt">double</span> <span class="n">weight</span><span class="o">;</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">CloneNotSupportedException</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">clone</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">CloneNotSupportedException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -211,16 +211,16 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-    <span class="n">Apple</span> <span class="n">apple</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Apple</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Apple</span> <span class="n">apple</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Apple</span><span class="o">();</span>
     <span class="n">apple</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&#34;apple&#34;</span><span class="o">;</span>
     <span class="n">apple</span><span class="o">.</span><span class="na">weight</span> <span class="o">=</span> <span class="n">2</span><span class="o">.</span><span class="na">23</span><span class="o">;</span>
 
     <span class="k">try</span> <span class="o">{</span>
-        <span class="n">Apple</span> <span class="n">clone</span> <span class="o">=</span> <span class="o">(</span><span class="n">Apple</span><span class="o">)</span><span class="n">apple</span><span class="o">.</span><span class="na">clone</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span> <span class="o">=</span><span class="o">=</span> <span class="n">apple</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Apple</span> <span class="n">clone</span> <span class="o">=</span> <span class="o">(</span><span class="n">Apple</span><span class="o">)</span><span class="n">apple</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span> <span class="o">==</span> <span class="n">apple</span><span class="o">);</span>
     <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -248,8 +248,8 @@
     <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Stone</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">;</span> <span class="c1">//新增加的对象
 </span><span class="c1"></span>
     <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">CloneNotSupportedException</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">clone</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="n">Object</span> <span class="nf">clone</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">CloneNotSupportedException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -264,10 +264,10 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-    <span class="n">Apple</span> <span class="n">clone</span> <span class="o">=</span> <span class="o">(</span><span class="n">Apple</span><span class="o">)</span><span class="n">apple</span><span class="o">.</span><span class="na">clone</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span> <span class="o">=</span><span class="o">=</span> <span class="n">apple</span><span class="o">)</span><span class="o">;</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span><span class="o">.</span><span class="na">list</span> <span class="o">=</span><span class="o">=</span> <span class="n">apple</span><span class="o">.</span><span class="na">list</span><span class="o">)</span><span class="o">;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">Apple</span> <span class="n">clone</span> <span class="o">=</span> <span class="o">(</span><span class="n">Apple</span><span class="o">)</span><span class="n">apple</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span> <span class="o">==</span> <span class="n">apple</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">clone</span><span class="o">.</span><span class="na">list</span> <span class="o">==</span> <span class="n">apple</span><span class="o">.</span><span class="na">list</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -308,16 +308,16 @@
 
 <span class="kd">public</span> <span class="n">Tire</span> <span class="n">tire</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="n">Car</span> <span class="nf">deepCopy</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="n">Car</span> <span class="nf">deepCopy</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
-<span class="n">ByteArrayOutputStream</span> <span class="n">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-<span class="n">ObjectOutputStream</span> <span class="n">oos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectOutputStream</span><span class="o">(</span><span class="n">baos</span><span class="o">)</span><span class="o">;</span>
-<span class="n">oos</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="k">this</span><span class="o">)</span><span class="o">;</span>
+<span class="n">ByteArrayOutputStream</span> <span class="n">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">();</span>
+<span class="n">ObjectOutputStream</span> <span class="n">oos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectOutputStream</span><span class="o">(</span><span class="n">baos</span><span class="o">);</span>
+<span class="n">oos</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
 
-<span class="n">ByteArrayInputStream</span> <span class="n">bais</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">baos</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
-<span class="n">ObjectInputStream</span> <span class="n">ois</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="n">bais</span><span class="o">)</span><span class="o">;</span>
-<span class="n">Car</span> <span class="n">copy</span> <span class="o">=</span> <span class="o">(</span><span class="n">Car</span><span class="o">)</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-<span class="n">copy</span><span class="o">.</span><span class="na">birthday</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="n">ByteArrayInputStream</span> <span class="n">bais</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">baos</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">());</span>
+<span class="n">ObjectInputStream</span> <span class="n">ois</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="n">bais</span><span class="o">);</span>
+<span class="n">Car</span> <span class="n">copy</span> <span class="o">=</span> <span class="o">(</span><span class="n">Car</span><span class="o">)</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+<span class="n">copy</span><span class="o">.</span><span class="na">birthday</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
 <span class="k">return</span> <span class="n">copy</span><span class="o">;</span>
 
 <span class="o">}</span>

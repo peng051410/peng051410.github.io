@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/" />
@@ -184,7 +184,7 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptor</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -217,8 +217,8 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteEncryptor</span> <span class="kd">implements</span> <span class="n">Encryptor</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;base encrypt!&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;base encrypt!&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -264,8 +264,8 @@
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">encrypt</span><span class="o">.</span><span class="na">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">encrypt</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -333,17 +333,17 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ModEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
 
     <span class="kd">public</span> <span class="nf">ModEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">)</span><span class="o">;</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">modEncrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+        <span class="n">modEncrypt</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modEncrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;取模加密！&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modEncrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;取模加密！&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
@@ -357,17 +357,17 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConverseEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
 
     <span class="kd">public</span> <span class="nf">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">)</span><span class="o">;</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">converseEncrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+        <span class="n">converseEncrypt</span><span class="o">();</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">converseEncrypt</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;逆向加密！&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">converseEncrypt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;逆向加密！&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -405,16 +405,16 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">EncryptDecoratorTest</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">Encryptor</span> <span class="n">encryptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteEncryptor</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Encryptor</span> <span class="n">encryptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteEncryptor</span><span class="o">();</span>
         <span class="c1">//进行一次简单加密
-</span><span class="c1"></span>        <span class="n">Encryptor</span> <span class="n">encryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleEncryptDecorator</span><span class="o">(</span><span class="n">encryptor</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">encryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+</span><span class="c1"></span>        <span class="n">Encryptor</span> <span class="n">encryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleEncryptDecorator</span><span class="o">(</span><span class="n">encryptor</span><span class="o">);</span>
+        <span class="n">encryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
 
         <span class="c1">//对上一次加密进行二次加密（反转加密）
-</span><span class="c1"></span>        <span class="n">ConverseEncryptDecorator</span> <span class="n">converseEncryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">encryptDecorator</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">converseEncryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+</span><span class="c1"></span>        <span class="n">ConverseEncryptDecorator</span> <span class="n">converseEncryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">encryptDecorator</span><span class="o">);</span>
+        <span class="n">converseEncryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>

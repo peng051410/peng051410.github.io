@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/" />
@@ -177,7 +177,7 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Search</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">queryIncome</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">queryIncome</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -221,15 +221,15 @@
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">queryIncome</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span> <span class="o">+</span> <span class="s">&#34;开始查询&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span> <span class="o">+</span> <span class="s">&#34;开始查询&#34;</span><span class="o">);</span>
 
         <span class="k">try</span> <span class="o">{</span>
-            <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
 
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询完成&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询完成&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -277,7 +277,7 @@
 
     <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">valid</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="k">return</span> <span class="s">&#34;admin&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">username</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="s">&#34;admin&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
@@ -285,11 +285,11 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Logger</span> <span class="o">{</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">beforeLog</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;开始记录&#34;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询日志&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;开始记录&#34;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询日志&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterLog</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;结束记录&#34;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询日志&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;结束记录&#34;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s">&#34;查询日志&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -331,18 +331,18 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SearchProxy</span> <span class="kd">implements</span> <span class="n">Search</span> <span class="o">{</span>
 
-    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Auth</span> <span class="n">auth</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Auth</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Search</span> <span class="n">search</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SearchService</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Logger</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="n">Auth</span> <span class="n">auth</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Auth</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="n">Search</span> <span class="n">search</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SearchService</span><span class="o">();</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">queryIncome</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">logger</span><span class="o">.</span><span class="na">beforeLog</span><span class="o">(</span><span class="n">username</span><span class="o">)</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">auth</span><span class="o">.</span><span class="na">valid</span><span class="o">(</span><span class="n">username</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">search</span><span class="o">.</span><span class="na">queryIncome</span><span class="o">(</span><span class="n">username</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">beforeLog</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">auth</span><span class="o">.</span><span class="na">valid</span><span class="o">(</span><span class="n">username</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">search</span><span class="o">.</span><span class="na">queryIncome</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
         <span class="o">}</span>
-        <span class="n">logger</span><span class="o">.</span><span class="na">afterLog</span><span class="o">(</span><span class="n">username</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="na">afterLog</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/" />
@@ -182,13 +182,13 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Buyer</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
 
-    <span class="n">String</span> <span class="nf">getName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">happy</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">happy</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">sad</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">sad</span><span class="o">();</span>
 
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -244,18 +244,18 @@
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">happy</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;:happy&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">happy</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:happy&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sad</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">(</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;:sad&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sad</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:sad&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -285,9 +285,9 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StockSoft</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">goUp</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">goUp</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">goDown</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">goDown</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -344,26 +344,26 @@
 
     <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Buyer</span><span class="o">&gt;</span> <span class="n">buyerList</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="nf">ConcreteStockSoft</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">buyerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">ConcreteStockSoft</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">buyerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">buyer</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">buyerList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">quit</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">buyer</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">buyerList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goUp</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">:</span><span class="o">:</span><span class="n">happy</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">happy</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goDown</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">:</span><span class="o">:</span><span class="n">sad</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">sad</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -411,26 +411,26 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">StockTest</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">ConcreteStockSoft</span> <span class="n">niuStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteStockSoft</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">ConcreteStockSoft</span> <span class="n">niuStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteStockSoft</span><span class="o">();</span>
 
         <span class="n">ConcrectBuyer</span> <span class="n">buyer1</span><span class="o">,</span> <span class="n">buyer2</span><span class="o">,</span> <span class="n">buyer3</span><span class="o">;</span>
-        <span class="n">buyer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">buyer1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer1&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">buyer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">buyer2</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer2&#34;</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">buyer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">buyer3</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer3&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">buyer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+        <span class="n">buyer1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer1&#34;</span><span class="o">);</span>
+        <span class="n">buyer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+        <span class="n">buyer2</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer2&#34;</span><span class="o">);</span>
+        <span class="n">buyer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+        <span class="n">buyer3</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer3&#34;</span><span class="o">);</span>
 
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer1</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer2</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer3</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer2</span><span class="o">);</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer3</span><span class="o">);</span>
 
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">goUp</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">goUp</span><span class="o">();</span>
 
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">quit</span><span class="o">(</span><span class="n">buyer1</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">goDown</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">quit</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
+        <span class="n">niuStock</span><span class="o">.</span><span class="na">goDown</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-006/" />
@@ -219,56 +219,56 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyCircurlarQueue</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="n">queue</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">queue</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">headIndex</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span><span class="o">;</span>
 
     <span class="kd">public</span> <span class="nf">MyCircurlarQueue</span><span class="o">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">capacity</span><span class="o">]</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">capacity</span><span class="o">];</span>
     <span class="o">}</span>
 
     <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">inQueue</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">isFull</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isFull</span><span class="o">())</span> <span class="o">{</span>
             <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
         <span class="o">}</span>
 
-        <span class="n">queue</span><span class="o">[</span><span class="o">(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">count</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
-        <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="n">queue</span><span class="o">[(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">count</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">1</span><span class="o">;</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">deQueue</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">deQueue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
             <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
         <span class="o">}</span>
 
         <span class="n">headIndex</span> <span class="o">=</span> <span class="o">(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="n">count</span> <span class="o">-</span><span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="n">count</span> <span class="o">-=</span> <span class="n">1</span><span class="o">;</span>
         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">First</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">First</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
             <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
         <span class="o">}</span>
 
-        <span class="k">return</span> <span class="n">queue</span><span class="o">[</span><span class="o">(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">]</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">queue</span><span class="o">[(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">Rear</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">Rear</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">())</span> <span class="o">{</span>
             <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
         <span class="o">}</span>
 
-        <span class="k">return</span> <span class="n">queue</span><span class="o">[</span><span class="o">(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">count</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">]</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">queue</span><span class="o">[(</span><span class="n">headIndex</span> <span class="o">+</span> <span class="n">count</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">%</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">count</span> <span class="o">=</span><span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="n">0</span><span class="o">;</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isFull</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">count</span> <span class="o">=</span><span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isFull</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="n">queue</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>

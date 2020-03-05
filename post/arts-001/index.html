@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/arts-001/" />
@@ -187,16 +187,16 @@
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="nf">twoSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
-            <span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">second</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="o">{</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">second</span><span class="o">)</span><span class="o">,</span> <span class="n">i</span><span class="o">}</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">twoSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">second</span><span class="o">))</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">second</span><span class="o">),</span> <span class="n">i</span><span class="o">};</span>
             <span class="o">}</span>
-            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">i</span><span class="o">);</span>
         <span class="o">}</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="o">{</span><span class="o">}</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{};</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>

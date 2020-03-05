@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-wei-tuo-mo-shi/" />
@@ -174,11 +174,11 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Member</span> <span class="o">{</span>
 
-    <span class="kt">void</span> <span class="nf">showName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">showName</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">();</span>
 
-    <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kt">void</span> <span class="nf">doWork</span><span class="o">();</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -220,17 +220,17 @@
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Boss</span> <span class="kd">implements</span> <span class="n">Member</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am boss&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am boss&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;send commend&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;send commend&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">()</span> <span class="o">{</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
@@ -336,59 +336,59 @@
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am leader&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am leader&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">()</span> <span class="o">{</span>
 
-        <span class="n">showName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i want to select member to doWork&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">showName</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i want to select member to doWork&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
-        <span class="n">showSkill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">developerA</span><span class="o">.</span><span class="na">doWork</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">developerB</span><span class="o">.</span><span class="na">doWork</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(){</span>
+        <span class="n">showSkill</span><span class="o">();</span>
+        <span class="n">developerA</span><span class="o">.</span><span class="na">doWork</span><span class="o">();</span>
+        <span class="n">developerB</span><span class="o">.</span><span class="na">doWork</span><span class="o">();</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DeveloperA</span> <span class="kd">implements</span> <span class="n">Member</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am developer a&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am developer a&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">showName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i can do login function&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">showName</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i can do login function&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">showSkill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;start work login&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">showSkill</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;start work login&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DeveloperB</span> <span class="kd">implements</span> <span class="n">Member</span> <span class="o">{</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am developer b&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i am developer b&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">showName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i can do pay function&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showSkill</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">showName</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;i can do pay function&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">showSkill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;start do pay&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doWork</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">showSkill</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;start do pay&#34;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
@@ -431,20 +431,20 @@
 </span><span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">WorkTest</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="n">Boss</span> <span class="n">boss</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Boss</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">boss</span><span class="o">.</span><span class="na">showName</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">boss</span><span class="o">.</span><span class="na">showSkill</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Boss</span> <span class="n">boss</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Boss</span><span class="o">();</span>
+        <span class="n">boss</span><span class="o">.</span><span class="na">showName</span><span class="o">();</span>
+        <span class="n">boss</span><span class="o">.</span><span class="na">showSkill</span><span class="o">();</span>
 
-        <span class="n">Leader</span> <span class="n">leader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Leader</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">Member</span> <span class="n">memberA</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeveloperA</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">Member</span> <span class="n">memberB</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeveloperB</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Leader</span> <span class="n">leader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Leader</span><span class="o">();</span>
+        <span class="n">Member</span> <span class="n">memberA</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeveloperA</span><span class="o">();</span>
+        <span class="n">Member</span> <span class="n">memberB</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeveloperB</span><span class="o">();</span>
 
-        <span class="n">leader</span><span class="o">.</span><span class="na">setDeveloperA</span><span class="o">(</span><span class="n">memberA</span><span class="o">)</span><span class="o">;</span>
-        <span class="n">leader</span><span class="o">.</span><span class="na">setDeveloperB</span><span class="o">(</span><span class="n">memberB</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">leader</span><span class="o">.</span><span class="na">setDeveloperA</span><span class="o">(</span><span class="n">memberA</span><span class="o">);</span>
+        <span class="n">leader</span><span class="o">.</span><span class="na">setDeveloperB</span><span class="o">(</span><span class="n">memberB</span><span class="o">);</span>
 
-        <span class="n">leader</span><span class="o">.</span><span class="na">doWork</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">leader</span><span class="o">.</span><span class="na">doWork</span><span class="o">();</span>
 
     <span class="o">}</span>
 <span class="o">}</span>

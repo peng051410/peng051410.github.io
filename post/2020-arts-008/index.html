@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1 with theme even" />
+<meta name="generator" content="Hugo 0.65.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-008/" />
@@ -210,40 +210,40 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KthMax</span> <span class="o">{</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findKthLargest</span><span class="o">(</span><span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findKthLargest</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
 
         <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">)</span> <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
 
         <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">p</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">q</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">p</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
 
-        <span class="k">while</span> <span class="o">(</span><span class="n">k</span> <span class="o">!</span><span class="o">=</span> <span class="n">q</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">k</span> <span class="o">!=</span> <span class="n">q</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="n">q</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">q</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">q</span> <span class="o">+</span> <span class="n">1</span><span class="o">,</span> <span class="n">r</span><span class="o">)</span><span class="o">;</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="n">partition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">q</span> <span class="o">+</span> <span class="n">1</span><span class="o">,</span> <span class="n">r</span><span class="o">);</span>
             <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                <span class="n">q</span> <span class="o">=</span> <span class="n">pyrtition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">q</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span><span class="o">;</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="n">pyrtition</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">q</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">}</span>
 
-        <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">q</span><span class="o">]</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">q</span><span class="o">];</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">partition</span><span class="o">(</span><span class="kt">int</span><span class="o">[</span><span class="o">]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">partition</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">p</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
 
-        <span class="kt">int</span> <span class="n">povit</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">povit</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
         <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">;</span> <span class="n">j</span><span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">r</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">povit</span><span class="o">)</span> <span class="o">{</span>
-                <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">;</span>
-                <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="o">;</span>
+                <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
                 <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
-                <span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="o">;</span>
+                <span class="n">i</span><span class="o">++;</span>
             <span class="o">}</span>
         <span class="o">}</span>
 
-        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">;</span>
-        <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">];</span>
         <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
         <span class="k">return</span> <span class="n">i</span><span class="o">;</span>
     <span class="o">}</span>
