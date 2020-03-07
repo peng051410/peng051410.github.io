@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Sat, 29 Feb 2020 14:00:09 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 14:40:09 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.imcompany.cn/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020-ARTS-打卡第九天</title>
+      <link>http://blog.imcompany.cn/post/2020-arts-009/</link>
+      <pubDate>Sat, 07 Mar 2020 14:40:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2020-arts-009/</guid>
+      <description>Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &amp;ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的</description>
+    </item>
     
     <item>
       <title>2020-ARTS-打卡第八天</title>

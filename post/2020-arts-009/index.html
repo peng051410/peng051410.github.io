@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>2020-ARTS-打卡第九天 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &amp;ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.66.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-009/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="2020-ARTS-打卡第九天" />
+<meta property="og:description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-009/" />
+<meta property="article:published_time" content="2020-03-07T14:40:09+08:00" />
+<meta property="article:modified_time" content="2020-03-07T16:11:01+08:00" />
+<meta itemprop="name" content="2020-ARTS-打卡第九天">
+<meta itemprop="description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的">
+<meta itemprop="datePublished" content="2020-03-07T14:40:09&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-07T16:11:01&#43;08:00" />
+<meta itemprop="wordCount" content="1899">
+
+
+
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020-ARTS-打卡第九天"/>
+<meta name="twitter:description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">2020-ARTS-打卡第九天</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-07 </span>
+        <div class="post-category">
+            <a href="/categories/arts/"> arts </a>
+            </div>
+          <span class="more-meta"> 约 1899 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#题目一">题目一</a></li>
+        <li><a href="#题目二">题目二</a></li>
+      </ul>
+    </li>
+    <li><a href="#review">Review</a>
+      <ul>
+        <li><a href="#代码审查的最佳实践">代码审查的最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#tip">Tip</a></li>
+    <li><a href="#share">Share</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="algorithm">Algorithm</h2>
+<h3 id="题目一">题目一</h3>
+<h4 id="题目描述">题目描述</h4>
+<p>使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。<a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">232 用栈实现队列</a></p>
+<h4 id="题目解答">题目解答</h4>
+<p>由于队列是FIFO，而栈是FILO，要想使用栈来实现队列，则可以使用两个栈来达到目的，即负负到正，核心点就是pop()和peek()方法的处理上，在调用pop()与peek()方法时都在要从outStack中来操作，如果outStack不为空，则直接进行操作，否则要把inStack中的元素添加到outStack中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Stack</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">MyQueue</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inputStack</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outStack</span><span class="o">;</span>
+
+    <span class="cm">/** Initialize your data structure here. */</span>
+    <span class="kd">public</span> <span class="nf">MyQueue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">inputStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+        <span class="n">outStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Push element x to the back of queue. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">inputStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Removes the element from in front of queue and returns that element. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Get the front element. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">peek</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Returns whether the queue is empty. */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="k">return</span> <span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>时间复杂度：push O(1), pop O(n), peek O(n)</p>
+<h3 id="题目二">题目二</h3>
+<h4 id="题目描述">题目描述</h4>
+<p>使用队列实现栈的push(), pop(), top(), empty()操作，只能使用队列的基本操作&ndash; 也就是 push to back, peek/pop from front, size, 和 is empty。<a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">225 用队列实现栈</a></p>
+<h4 id="题目解答">题目解答</h4>
+<p>与上题相反，要用队列实现栈，也是使用了两个队列的方法，在操作中保存住栈的头元素，当要进行pop时，则要把inQueue中的n-1个元素push到outQueue中，再将inQueue与outQueue进行交换，最后pop出的都是outQueue（因为outQueue中只剩下最后一个元素了，outQueue就是先前的inQueue）中的元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="o">;</span>
+
+<span class="c1">//leetcode submit region begin(Prohibit modification and deletion)
+</span><span class="c1"></span><span class="kd">class</span> <span class="nc">MyStack</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inQueue</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outQueue</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">top</span><span class="o">;</span>
+
+    <span class="cm">/** Initialize your data structure here. */</span>
+    <span class="kd">public</span> <span class="nf">MyStack</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">inQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">outQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Push element x onto stack. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">outQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">inQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Removes the element on top of the stack and returns that element. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">outQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+                <span class="n">inQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+                <span class="n">outQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="cm">/** Get the top element. */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">top</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">top</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Returns whether the stack is empty. */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>时间复杂度：push O(1), pop O(n), top O(1)</p>
+<h2 id="review">Review</h2>
+<p><a href="https://thenewstack.io/linkedin-code-review/">LinkedIn的代码Review</a>讲述LinkedIn公司如何进行高效代码审查的。LinedIn的内部审查的方式：</p>
+<ol>
+<li>代码审查是强制的，生产上线前的代码都要经过团队成员进行审查，公司使用统一的代码审查工具，这给跨团队审查带来便利</li>
+<li>代码审查帮公司形成了一种健康的反馈文化，员工把代码审查作为专业成长的机会</li>
+</ol>
+<h3 id="代码审查的最佳实践">代码审查的最佳实践</h3>
+<h4 id="代码提交要有详细的说明">代码提交要有详细的说明</h4>
+<p>每个代码提交都要有关于修改或者设计的说明（动机），这样有利于审查者快速了解提交的目的，还提高了提交代码的文档质量。</p>
+<h4 id="代码审查者要给出积极的反馈">代码审查者要给出积极的反馈</h4>
+<p>代码审查者不仅要关注代码中的问题，对于实现的好的代码也要给于充分的肯定与表扬，并要给出具体的说明。这样形成了正向反馈。</p>
+<h4 id="代码审查者的反馈要做到简单清晰">代码审查者的反馈要做到简单清晰</h4>
+<p>代码审查者要对有问题的代码标识清晰的反馈说明，做有目的性的说明，这样可以明确团队的价值观。</p>
+<h4 id="肯定每一位提交者的劳动">肯定每一位提交者的劳动</h4>
+<p>对于一些不好的代码提交，审查者也要对提交者的努力给予肯定。努力工作是要得到肯定的，因为这样会让人有价值感。</p>
+<h4 id="正视审查反馈">正视审查反馈</h4>
+<p>对于审查反馈提交人员也要确定哪些是有用，哪些是无用的，如果无用，那就把注释删除掉。</p>
+<h4 id="提交的代码要明确说明测试情况">提交的代码要明确说明测试情况</h4>
+<p>在写提交说明时，测试的情况说明是强制的，对于软件开发来说，测试输出的同步非常重要。</p>
+<h4 id="代码样式与格式应该由自动化工具完成">代码样式与格式应该由自动化工具完成</h4>
+<p>审查只针对代码实现，对于样式与格式应在早期规定好，不要在这上面浪费时间。</p>
+<h4 id="代码审查是工作的一部分">代码审查是工作的一部分</h4>
+<p>享受它，重视它，对于提高自我与团队意义非凡。</p>
+<h2 id="tip">Tip</h2>
+<p>在命令行中一般都使用zsh做为默认shell，它提供了一种History操作的好的体验方式，即可以输入命令前缀，使用up-line-or-search或者down-line-or-search来进行针对该命令的历史补全，例如输入mvn 后，使用此命令可以补全输入历史指定mvn开头的命令了。以下配置将命令分别绑定在arrow up与arrow down键下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">bindkey <span class="s1">&#39;^[[A&#39;</span> up-line-or-search
+bindkey <span class="s1">&#39;^[[B&#39;</span> down-line-or-search
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="share">Share</h2>
+<p><a href="https://www.gkogan.co/blog/simple-systems/">Simple Systems Have Less Downtime</a>简单的系统拥有更少的停机时间。作者以一个前造船工程师和现在创业公司的营销顾问来说明简单系统的重要性，作者把软件开发与世界上最大的集装箱船运行来进行说明简单系统的好处，并解释说明了为什么简单系统会减少停机时间。因为简单的系统可以熟练使用，便于故障的排除，还有更多的替代方案。作者还用一个真实的创业故事来进行阐述说明。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-03-07
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arts/">arts</a>
+          <a href="/tags/java/">java</a>
+          <a href="/tags/leetcode/">leetcode</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-arts-008/">
+            <span class="next-text nav-default">2020-ARTS-打卡第八天</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
