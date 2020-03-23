@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>2020-ARTS-打卡第十一天 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Algorithm 题目 题目描述 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.67.1 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-011/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="2020-ARTS-打卡第十一天" />
+<meta property="og:description" content="Algorithm 题目 题目描述 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-011/" />
+<meta property="article:published_time" content="2020-03-23T09:49:04+08:00" />
+<meta property="article:modified_time" content="2020-03-23T09:49:04+08:00" />
+<meta itemprop="name" content="2020-ARTS-打卡第十一天">
+<meta itemprop="description" content="Algorithm 题目 题目描述 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每">
+<meta itemprop="dateModified" content="2020-03-23T09:49:04&#43;08:00" />
+<meta itemprop="wordCount" content="1313">
+
+
+
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020-ARTS-打卡第十一天"/>
+<meta name="twitter:description" content="Algorithm 题目 题目描述 给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">2020-ARTS-打卡第十一天</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-23 </span>
+        <div class="post-category">
+            <a href="/categories/arts/"> arts </a>
+            </div>
+          <span class="more-meta"> 约 1313 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#题目">题目</a></li>
+      </ul>
+    </li>
+    <li><a href="#review">Review</a>
+      <ul>
+        <li><a href="#一致性hash算法是什么">一致性Hash算法是什么？</a></li>
+        <li><a href="#一致性hash是怎么实现的">一致性Hash是怎么实现的？</a></li>
+        <li><a href="#为什么要使用一致性hash">为什么要使用一致性Hash？</a></li>
+        <li><a href="#一致性hash的注意点">一致性Hash的注意点</a></li>
+        <li><a href="#一致性hash的时间复杂度">一致性Hash的时间复杂度</a></li>
+        <li><a href="#更多示例说明">更多示例说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#tip">Tip</a></li>
+    <li><a href="#share">Share</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="algorithm">Algorithm</h2>
+<h3 id="题目">题目</h3>
+<h4 id="题目描述">题目描述</h4>
+<p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。返回滑动窗口中的最大值。 <a href="https://leetcode-cn.com/problems/sliding-window-maximum/">239 sliding-window-maximum</a></p>
+<h4 id="题目解答">题目解答</h4>
+<p>一般与滑动窗口有关的问题都可以使用双端队列来处理。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.ArrayDeque</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MaxSlidingWindow</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">ArrayDeque</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">window</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">slidingWindowMax</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>
+        <span class="o">}</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">&amp;&amp;</span> <span class="n">window</span><span class="o">.</span><span class="na">getFirst</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">window</span><span class="o">.</span><span class="na">pollFirst</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="k">while</span><span class="o">(!</span><span class="n">window</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">window</span><span class="o">.</span><span class="na">getLast</span><span class="o">()]</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+                <span class="n">window</span><span class="o">.</span><span class="na">pollLast</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="n">window</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">k</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">window</span><span class="o">.</span><span class="na">getFirst</span><span class="o">()]);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">i</span><span class="o">-&gt;</span><span class="n">i</span><span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="review">Review</h2>
+<p><a href="https://en.wikipedia.org/wiki/Consistent_hashing">Consistent_hashing</a>一致性Hash算法。</p>
+<h3 id="一致性hash算法是什么">一致性Hash算法是什么？</h3>
+<p>一致性Hash算法是一种特殊的Hash算法，当需要对Hash表进行重新映射调整大小时，平均情况下只需要处理(nums_keys/nums_slots)个key。一致性Hash算法的主要思想是将每个缓存与一个或者多个散列值关联起来，其中间隔边界是通过计算每个缓存标识符的散列来确定的。如果移除了缓存，其间隔将由相邻间隔的缓存接管，而其余的缓存保持不变。</p>
+<h3 id="一致性hash是怎么实现的">一致性Hash是怎么实现的？</h3>
+<p>一致Hash是基于将每个对象映射到一个圆上的一个点，系统将个可用的存储映射到同一个圆上的许多伪随机点。</p>
+<h4 id="查找操作">查找操作</h4>
+<p>当进行查找时，系统会找到该物体的键在圆圈上的位置，然后绕着圆圈顺时针走，直到掉进它遇到的第一个存储桶中。</p>
+<h4 id="删除操作">删除操作</h4>
+<p>如果有存储变得不可用，它映射到的点将被删除，这样被删除存储的key会被映射到顺时针的下个节点，这样只有这个新的被映射的存储桶（一般这个桶会有多个虚拟的节点）需要重新分配，而其它的存储桶则不需要进行改变。</p>
+<h4 id="增加存储">增加存储</h4>
+<p>增加存储桶时，就把先两桶之间的存储进行分隔，这样将新桶点与前一桶点之间元素映射到新桶，这些新映射的点在查询时不会被 老的桶点查到。</p>
+<h3 id="为什么要使用一致性hash">为什么要使用一致性Hash？</h3>
+<p>在运行缓存的机器集合时，一般情况下会对机器号进行Hash进行映射。但是在对机器进行修改（增加，删除）时，整个集群的存储都要进行重新Hash，这样会使整个缓存失效，大量流量进入DB层，造成雪崩。为了避免出现这种情况，需要使用一致性Hash。因为在修改时一致性Hash只会使一部分存储失效。还有一种处理方式，就是扩容冗余算法，再对新的N未取到值再对老的M进行Hash取值。</p>
+<h3 id="一致性hash的注意点">一致性Hash的注意点</h3>
+<p>一般在使用一致性Hash时会根据实际存储点来映射出多个虚拟节点，这样可以保证节点数据的均衡性。</p>
+<h3 id="一致性hash的时间复杂度">一致性Hash的时间复杂度</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>经典Hash</th>
+<th>一致性Hash</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>添加一个节点</td>
+<td>O(K)</td>
+<td>O(K/N + log(N))</td>
+</tr>
+<tr>
+<td>移除一个节点</td>
+<td>O(K)</td>
+<td>O(K/N + log(N))</td>
+</tr>
+<tr>
+<td>添加一个Key</td>
+<td>O(1)</td>
+<td>O(log(N))</td>
+</tr>
+<tr>
+<td>删除一个Key</td>
+<td>O(1)</td>
+<td>O(log(N))</td>
+</tr>
+</tbody>
+</table>
+<p>由于要使用二分查找法来找到下一下节点，所以时间复杂度为O(log(N))</p>
+<h3 id="更多示例说明">更多示例说明</h3>
+<p>这里只列出了JAVA语言的示例说明，参见<a href="https://web.archive.org/web/20120605030524/http://weblogs.java.net/blog/tomwhite/archive/2007/11/consistent_hash.html">这里</a></p>
+<h2 id="tip">Tip</h2>
+<p>Idea的条件断点调试很好用，尤其是在要调试的系统有多个后台子线程运行时，可以过滤掉这些后台运行线程而只专注关心业务线程了。<a href="https://www.jetbrains.com/help/idea/using-breakpoints.html#">BreakPoints</a></p>
+<h2 id="share">Share</h2>
+<p><a href="https://github.com/luruke/browser-2020">luruke/browser-2020</a>，2020年，浏览器都可以用来做什么。这是一个github仓库，这个仓库给了一个列表，展示了浏览器那些不为人知的特性，如付款申请，网络分享，离线浏览，运行VR，使蓝牙和系统剪切板等。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-03-23
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arts/">arts</a>
+          <a href="/tags/java/">java</a>
+          <a href="/tags/leetcode/">leetcode</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-arts-010/">
+            <span class="next-text nav-default">2020-ARTS-打卡第十天</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
