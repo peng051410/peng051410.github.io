@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>2020-ARTS-打卡第十二天 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Algorithm 题目 题目描述 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。242 valid anagram 题目解答 可以使用先排序后判断的方法来实现，这样的时间" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-012/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="2020-ARTS-打卡第十二天" />
+<meta property="og:description" content="Algorithm 题目 题目描述 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。242 valid anagram 题目解答 可以使用先排序后判断的方法来实现，这样的时间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-012/" />
+<meta property="article:published_time" content="2020-03-30T13:23:29+08:00" />
+<meta property="article:modified_time" content="2020-03-30T13:23:29+08:00" />
+<meta itemprop="name" content="2020-ARTS-打卡第十二天">
+<meta itemprop="description" content="Algorithm 题目 题目描述 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。242 valid anagram 题目解答 可以使用先排序后判断的方法来实现，这样的时间">
+<meta itemprop="dateModified" content="2020-03-30T13:23:29&#43;08:00" />
+<meta itemprop="wordCount" content="888">
+
+
+
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020-ARTS-打卡第十二天"/>
+<meta name="twitter:description" content="Algorithm 题目 题目描述 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。242 valid anagram 题目解答 可以使用先排序后判断的方法来实现，这样的时间"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">2020-ARTS-打卡第十二天</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-30 </span>
+        <div class="post-category">
+            <a href="/categories/arts/"> arts </a>
+            </div>
+          <span class="more-meta"> 约 888 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#题目">题目</a></li>
+      </ul>
+    </li>
+    <li><a href="#review">Review</a>
+      <ul>
+        <li><a href="#">!$</a></li>
+        <li><a href="#">!!</a></li>
+        <li><a href="#alt-dot-或者esc-dot">Alt+. 或者Esc .</a></li>
+        <li><a href="#old-new">^old^new</a></li>
+        <li><a href="#file-dot-txt">&gt; file.txt</a></li>
+        <li><a href="#man-ascii">man ascii</a></li>
+        <li><a href="#tail-f-path-to-file-dot-log-sed-finished-success-q">tail -f <em>path/to/file.log | sed &lsquo;/^Finished: SUCCESS$</em> q&rsquo;</a></li>
+        <li><a href="#curl-ifconfig-dot-me">curl ifconfig.me</a></li>
+        <li><a href="#vim-scp-username-host-path-to-somefile">vim scp://username@host//path/to/somefile</a></li>
+        <li><a href="#python-m-simplehttpserver">python -m SimpleHTTPServer</a></li>
+      </ul>
+    </li>
+    <li><a href="#tip">Tip</a></li>
+    <li><a href="#share">Share</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="algorithm">Algorithm</h2>
+<h3 id="题目">题目</h3>
+<h4 id="题目描述">题目描述</h4>
+<p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。<a href="https://leetcode-cn.com/problems/valid-anagram/">242 valid anagram</a></p>
+<h4 id="题目解答">题目解答</h4>
+<p>可以使用先排序后判断的方法来实现，这样的时间复杂度为O(nlog(n))。更好的方法是借助Hash表来实现，可以达到O(n)的时间复杂度。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ValidAnagram</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAnagram</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="n">String</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">s</span> <span class="o">||</span> <span class="kc">null</span> <span class="o">==</span> <span class="n">t</span> <span class="o">||</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">!=</span> <span class="n">t</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="kd">final</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">chars</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">chars</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="kt">char</span> <span class="n">key</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span> <span class="o">+</span> <span class="n">1</span><span class="o">);</span>
+            <span class="kd">final</span> <span class="kt">char</span> <span class="n">key1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key1</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">key1</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">0</span> <span class="o">!=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="review">Review</h2>
+<p><a href="https://coolshell.cn/articles/8619.html">你可能不知道的SHELL</a>CoolShell左耳朵耗子2012年的关于强大Shell的文章，里面列出了很多有用的命令，看完后收获颇丰。针对实际使用场景，列出我认为暂时可以直接使用的一些操作命令。</p>
+<h3 id="">!$</h3>
+<p>上一条命令的最后一个参数</p>
+<h3 id="">!!</h3>
+<p>重新执行上一条命令，类似的!curl可以执行上次最近一次的curl命令。现在的情况是使用fzf/c+r等工具来实现，但是对于服务器上未安装这些命令，这种原生支持的命令就非常有用了。</p>
+<h3 id="alt-dot-或者esc-dot">Alt+. 或者Esc .</h3>
+<p>把上次的命令参数重复显示出来，目前看使用Alt+.较多。</p>
+<h3 id="old-new">^old^new</h3>
+<p>这个命令是替换上一条执行语句的字符或者字符串，对于长的拼写错误有很大帮助。</p>
+<h3 id="file-dot-txt">&gt; file.txt</h3>
+<p>创建一个文件并可输入内容，比touch快。</p>
+<h3 id="man-ascii">man ascii</h3>
+<p>不用google查询了，本地就有的，真的是有事没事请找man。</p>
+<h3 id="tail-f-path-to-file-dot-log-sed-finished-success-q">tail -f <em>path/to/file.log | sed &lsquo;/^Finished: SUCCESS$</em> q&rsquo;</h3>
+<p>当file.log出现Finished: SUCCESS就退出，用于实时过滤日志是否出现某条记录。</p>
+<h3 id="curl-ifconfig-dot-me">curl ifconfig.me</h3>
+<p>当机器在内网时，可以使用此命令来查看外网信息。</p>
+<h3 id="vim-scp-username-host-path-to-somefile">vim scp://username@host//path/to/somefile</h3>
+<p>vim对远程文件进行编辑</p>
+<h3 id="python-m-simplehttpserver">python -m SimpleHTTPServer</h3>
+<p>一句话实现对当前目录的Http服务，直接使用localhost:8000来进行访问了，这个确实厉害，相见恨晚。</p>
+<p>真正的操作了一下，才体会到命令行的强大，要好好学习了。</p>
+<h2 id="tip">Tip</h2>
+<p>使用Surfingkeys时，也可以设置kj为进入到normal模式。具体配置为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vimrc" data-lang="vimrc"><span class="nx">imap</span><span class="p">(</span><span class="s1">&#39;kj&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;Esc&gt;&#39;</span><span class="p">)</span>;<span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="share">Share</h2>
+<p><a href="https://www.popularmechanics.com/technology/g24668233/best-inventions/">过去66年的66个发明创造</a>文章中显示了近66年每一年中改变人类的最有意义发明，主要体现在医疗与工业领域。操作系统，特斯拉，无人机，登月车，蓝牙，万维网，地图，虚拟现实，3D打印，当然还有伟大的Iphone。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-03-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arts/">arts</a>
+          <a href="/tags/java/">java</a>
+          <a href="/tags/leetcode/">leetcode</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-arts-011/">
+            <span class="next-text nav-default">2020-ARTS-打卡第十一天</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
