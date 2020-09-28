@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.71.1 with theme even" />
+<meta name="generator" content="Hugo 0.74.3 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/maven-deploy-issue/" />
@@ -46,13 +46,14 @@
 <meta property="article:modified_time" content="2019-12-31T12:17:30+08:00" />
 <meta itemprop="name" content="Maven发布401问题排查">
 <meta itemprop="description" content="日志问题现象 1 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否">
-<meta itemprop="datePublished" content="2019-12-31T11:15:55&#43;08:00" />
-<meta itemprop="dateModified" content="2019-12-31T12:17:30&#43;08:00" />
+<meta itemprop="datePublished" content="2019-12-31T11:15:55+08:00" />
+<meta itemprop="dateModified" content="2019-12-31T12:17:30+08:00" />
 <meta itemprop="wordCount" content="311">
 
 
 
-<meta itemprop="keywords" content="maven," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="maven," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Maven发布401问题排查"/>
 <meta name="twitter:description" content="日志问题现象 1 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否"/>
 
