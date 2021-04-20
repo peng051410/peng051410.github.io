@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JAVA中获取调用栈帧的最优方式 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/java-stackwalker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JAVA中获取调用栈帧的最优方式" />
+<meta property="og:description" content="前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/java-stackwalker/" />
+<meta property="article:published_time" content="2021-04-20T19:30:23+08:00" />
+<meta property="article:modified_time" content="2021-04-20T21:33:22+08:00" />
+<meta itemprop="name" content="JAVA中获取调用栈帧的最优方式">
+<meta itemprop="description" content="前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方">
+<meta itemprop="datePublished" content="2021-04-20T19:30:23+08:00" />
+<meta itemprop="dateModified" content="2021-04-20T21:33:22+08:00" />
+<meta itemprop="wordCount" content="1150">
+
+
+
+<meta itemprop="keywords" content="idea,plugin," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JAVA中获取调用栈帧的最优方式"/>
+<meta name="twitter:description" content="前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JAVA中获取调用栈帧的最优方式</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-04-20 </span>
+        <div class="post-category">
+            <a href="/categories/tool/"> tool </a>
+            </div>
+          <span class="more-meta"> 约 1150 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#解决方案">解决方案</a>
+      <ul>
+        <li><a href="#java9之前">JAVA9之前</a></li>
+        <li><a href="#java9中的stackwalker">JAVA9中的StackWalker</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>一般情况下，在程序有异常信息时可以打印出整个调用堆栈信息，但是现在需要的是正常调用下来获取到当前方法的调用帧。</p>
+<h3 id="java9之前">JAVA9之前</h3>
+<h4 id="thread-dot-dumpstack">Thread.dumpStack()</h4>
+<p>这个可以打印出当前的堆栈错误信息，本质上是new一个Exception，调用了printStackTrace()方法，但是这个方法只建议用于调试。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StackTraceExample1</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">one</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">one</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">two</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">two</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">three</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">three</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="na">dumpStack</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行后输出如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Exception</span><span class="o">:</span> <span class="n">Stack</span> <span class="n">trace</span>
+    <span class="n">at</span> <span class="n">java</span><span class="o">.</span><span class="na">base</span><span class="o">/</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Thread</span><span class="o">.</span><span class="na">dumpStack</span><span class="o">(</span><span class="n">Thread</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">1379</span><span class="o">)</span>
+    <span class="n">at</span> <span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample1</span><span class="o">.</span><span class="na">three</span><span class="o">(</span><span class="n">StackTraceExample1</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">25</span><span class="o">)</span>
+    <span class="n">at</span> <span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample1</span><span class="o">.</span><span class="na">two</span><span class="o">(</span><span class="n">StackTraceExample1</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">21</span><span class="o">)</span>
+    <span class="n">at</span> <span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample1</span><span class="o">.</span><span class="na">one</span><span class="o">(</span><span class="n">StackTraceExample1</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">17</span><span class="o">)</span>
+    <span class="n">at</span> <span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample1</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">StackTraceExample1</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">13</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>直接以异常的方式显示出来了。</p>
+<h4 id="thread-dot-currentthread-dot-getstacktrace">Thread.currentThread().getStackTrace()</h4>
+<p>获取当前线程的调用堆栈信息，返回为StackTraceElement的数组，追踪源码，查看实现也是new了一个Exception，只不过调用了getStackTrace()方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StackTraceExample2</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">one</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">one</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">two</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">two</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">three</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">three</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="n">StackTraceElement</span><span class="o">[]</span> <span class="n">stackTraceElements</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getStackTrace</span><span class="o">();</span>
+        <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">stackTraceElements</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行后的输出如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">base</span><span class="o">/</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Thread</span><span class="o">.</span><span class="na">getStackTrace</span><span class="o">(</span><span class="n">Thread</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">1598</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample2</span><span class="o">.</span><span class="na">three</span><span class="o">(</span><span class="n">StackTraceExample2</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">28</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample2</span><span class="o">.</span><span class="na">two</span><span class="o">(</span><span class="n">StackTraceExample2</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">23</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample2</span><span class="o">.</span><span class="na">one</span><span class="o">(</span><span class="n">StackTraceExample2</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">19</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample2</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">StackTraceExample2</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">15</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>完整的打印出了调用栈信息，但是如果只是想要获取一部分关注的堆栈或者想丢弃不需要的信息处理起来是比较麻烦的。</p>
+<h3 id="java9中的stackwalker">JAVA9中的StackWalker</h3>
+<p>为了更方便的获取（按需获取)调用堆栈信息，充分的融合JAVA8的流（延迟访问）处理方式，JAVA9中引入了StackWalker。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StackTraceExample3</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">one</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">one</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">two</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">two</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">three</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">three</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="n">StackWalker</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">StackWalker</span><span class="o">.</span><span class="na">Option</span><span class="o">.</span><span class="na">SHOW_REFLECT_FRAMES</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">walk</span><span class="o">(</span><span class="n">sf</span> <span class="o">-&gt;</span> <span class="n">sf</span><span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">()))</span>
+                <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出结果为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample3</span><span class="o">.</span><span class="na">three</span><span class="o">(</span><span class="n">StackTraceExample3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">29</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample3</span><span class="o">.</span><span class="na">two</span><span class="o">(</span><span class="n">StackTraceExample3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">23</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample3</span><span class="o">.</span><span class="na">one</span><span class="o">(</span><span class="n">StackTraceExample3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">19</span><span class="o">)</span>
+<span class="n">cn</span><span class="o">.</span><span class="na">imcompany</span><span class="o">.</span><span class="na">stack</span><span class="o">.</span><span class="na">StackTraceExample3</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">StackTraceExample3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="n">15</span><span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在获取完StackWalker的实例后，可以调用walk方法来对StackFrame进行过滤，所有的堆栈信息都在StackFrame中维护。</p>
+<h4 id="stackwalker中的options">StackWalker中的Options</h4>
+<p>在获取实例时可以指定一个或者多个Options，StackWalker中提供了三种Option，分别是：</p>
+<ol>
+<li>RETAIN_CLASS_REFERENCE，保留Class对象，配置了该Option支持StackWalker#getCallerClass()方法</li>
+<li>SHOW_REFLECT_FRAMES，显示所有的反射调用Frame，在只配置此选项下，调用StackWalker#getCallerClass()方法会抛出UnsupportedOperationException</li>
+<li>SHOW_HIDDEN_FRAMES，显示所有隐藏的Frame，它是SHOW_REFLECT_FRAME父集，所以也会显示出所有反射调用Frame，在只配置此选项下，调用StackWalker#getCallerClass()方法会抛出UnsupportedOperationException</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-04-20
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/idea/">idea</a>
+          <a href="/tags/plugin/">plugin</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020-arts-014/">
+            <span class="next-text nav-default">2020-ARTS-打卡第十四天</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
