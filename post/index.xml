@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 20 Apr 2021 19:30:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 16:04:09 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让好代码生生不息-更好的处理NULL</title>
+      <link>http://blog.imcompany.cn/post/best-code1/</link>
+      <pubDate>Sat, 17 Jul 2021 16:04:09 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/best-code1/</guid>
+      <description>什么是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug中，Nu</description>
+    </item>
+    
     <item>
       <title>JAVA中获取调用栈帧的最优方式</title>
       <link>http://blog.imcompany.cn/post/java-stackwalker/</link>
@@ -15,15 +24,6 @@
       
       <guid>http://blog.imcompany.cn/post/java-stackwalker/</guid>
       <description>前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方</description>
-    </item>
-    
-    <item>
-      <title>让好代码生生不息-更好的处理NULL</title>
-      <link>http://blog.imcompany.cn/post/best-code1/</link>
-      <pubDate>Fri, 17 Jul 2020 16:04:09 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/best-code1/</guid>
-      <description>什么是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug中，Nu</description>
     </item>
     
     <item>
