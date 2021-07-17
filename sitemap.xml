@@ -3,14 +3,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2021-04-21T14:56:22+08:00</lastmod>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2021-04-21T14:56:22+08:00</lastmod>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,14 +38,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2021-04-21T14:56:22+08:00</lastmod>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2021-04-21T14:56:22+08:00</lastmod>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -53,6 +53,34 @@
   <url>
     <loc>http://blog.imcompany.cn/categories/tool/</loc>
     <lastmod>2021-04-21T14:56:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/code/</loc>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/java/</loc>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/java/</loc>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/best-code1/</loc>
+    <lastmod>2021-07-17T16:37:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +101,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/arts/</loc>
-    <lastmod>2020-04-20T09:12:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/java/</loc>
     <lastmod>2020-04-20T09:12:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -242,13 +263,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/maven-swim/</loc>
     <lastmod>2020-01-03T15:06:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/java/</loc>
-    <lastmod>2019-09-29T11:26:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
