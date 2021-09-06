@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>让好代码生生不息-更好的使用String - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/best-code-string/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="让好代码生生不息-更好的使用String" />
+<meta property="og:description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/best-code-string/" />
+<meta property="article:published_time" content="2021-08-23T14:04:09+08:00" />
+<meta property="article:modified_time" content="2021-09-06T11:25:02+08:00" />
+<meta itemprop="name" content="让好代码生生不息-更好的使用String">
+<meta itemprop="description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str">
+<meta itemprop="datePublished" content="2021-08-23T14:04:09+08:00" />
+<meta itemprop="dateModified" content="2021-09-06T11:25:02+08:00" />
+<meta itemprop="wordCount" content="1309">
+
+
+
+<meta itemprop="keywords" content="java,code," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="让好代码生生不息-更好的使用String"/>
+<meta name="twitter:description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">让好代码生生不息-更好的使用String</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-08-23 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+          <span class="more-meta"> 约 1309 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#开发中常用的string操作">开发中常用的String操作</a>
+      <ul>
+        <li><a href="#string-dot-format">String.format</a></li>
+        <li><a href="#apache-commons-utils-stringutils">Apache commons utils-StringUtils</a></li>
+        <li><a href="#stringutils中有用的方法">StringUtils中有用的方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="开发中常用的string操作">开发中常用的String操作</h2>
+<p>开发中经常用到的操作有：</p>
+<ol>
+<li>格式化/日志格式化</li>
+<li>字符串判断</li>
+<li>字符串处理，常见的如处理字符串的第一个/最后一个字符</li>
+</ol>
+<h3 id="string-dot-format">String.format</h3>
+<p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format()</a>是一个格式化的方法，使用%为前缀来表示要格式化的内容占位，一般的使用方法为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但是当要格式化的占位符与参数个数不同时会发生什么呢？</p>
+<h4 id="占位符个数与参数个数相同">占位符个数与参数个数相同</h4>
+<p>如上代码，可以正常进行输出: test result is success</p>
+<h4 id="占位符个数少于参数个数">占位符个数少于参数个数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以正常打印，输出结果为: test result is success</p>
+<h4 id="占位符个数多于参数个数">占位符个数多于参数个数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s %s %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>抛出了异常java.util.MissingFormatArgumentException: Format specifier &lsquo;%s&rsquo;</p>
+<h4 id="问题总结">问题总结</h4>
+<p>为什么占位符数少于参数个数可以正常执行，而多于参数个数却报了异常？看JAVADOC发现，如果占位符个数少于参数个数，则多余的参数被忽略，如果多于参数个数，则在进行解析时会判断待处理占位符位置与参数个数，主要代码逻辑如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">args</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">lasto</span> <span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">MissingFormatArgumentException</span><span class="o">(</span><span class="n">fs</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>所以在使用String.format方法 <code>切记</code> 要参数个数多于待解析占位符的个数，这种问题常因为Copy操作后，处理了部分参数而忘记对应处理占位符</p>
+<ul>
+<li>
+<p>替换方案</p>
+<ol>
+<li>目前看到很多的老代码打印日志时大都使用String.format()，可以改成slf4j的{}</li>
+<li>还可以使用Apache common utils中的StringUtils.joinWith()或者Google guava的Joiner连接器</li>
+</ol>
+</li>
+</ul>
+<h3 id="apache-commons-utils-stringutils">Apache commons utils-StringUtils</h3>
+<p>在StringUtils中有一个<a href="https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html#isNumeric-java.lang.CharSequence-">isNumeric</a>方法，用来判断字符串是不是数字，那下面的代码会返回什么呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNumeric</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-dot-0之前stringutils">3.0之前StringUtils</h4>
+<p><a href="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/org/apache/commons/lang/StringUtils.html#isNumeric(java.lang.String)">StringUtils.isNumeric(&quot;&quot;)</a> 返回true，有点慌，空串怎么被认为是数字呢？看下代码实现就明白了，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">str</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">))</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>代码中只判断了null，对空串直接就返回ture了</p>
+<h4 id="3-dot-0之后stringutils">3.0之后StringUtils</h4>
+<p><a href="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/org/apache/commons/lang/StringUtils.html#isNumeric(java.lang.String)">StringUtils.isNumeric(&quot;&quot;)</a> 返回flase了，这才符合正常的使用逻辑，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="kd">final</span> <span class="n">CharSequence</span> <span class="n">cs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="n">cs</span><span class="o">))</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">cs</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>由代码可以看出当参数为空串时直接调用isEmpty方法返回false。在工具类使用时还是要使用最新的版本，多关注版本的优化项，多看源码，否则你以为的真的不一定是你以为的。</p>
+<h4 id="扩展一下">扩展一下</h4>
+<p>还有其它的办法可以判断一个字符串是数字了吗？</p>
+<ul>
+<li>
+<p>NumberUtils.isParsable(String)</p>
+<p>NumberUtils中提供了<a href="https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/math/NumberUtils.html#isParsable-java.lang.String-">isParsable</a>方法，用于判断字符串是否可以进行数字转换</p>
+</li>
+<li>
+<p>NumberUtils.isCreatable(String)</p>
+<p>NumberUtils中提供了<a href="https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/math/NumberUtils.html#isCreatable-java.lang.String-">isCreatable</a>方法，用于判断字符串是否是一个有效的数字，比isParsable方法判断的范围更大</p>
+</li>
+</ul>
+<h3 id="stringutils中有用的方法">StringUtils中有用的方法</h3>
+<p>在开发中，常会取字符串首或尾字符进行判断，比如对尾号进行灰度，那么可以用到以下方法</p>
+<h4 id="取字符串前n个字符">取字符串前N个字符</h4>
+<p>StringUtils.left(final String str, final int len)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;ab&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="取字符串后n个字符">取字符串后N个字符</h4>
+<p>StringUtils.right(final String str, final int len)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;bc&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="对字符串尾部的操作符进行删除">对字符串尾部的操作符进行删除</h4>
+<p>想删除字符串的尾字符(回车符)，可以使用StringUtils.chop(final String str)方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">)</span>           <span class="o">=</span> <span class="s">&#34;&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
+<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">)</span>        <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-09-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          <a href="/tags/code/">code</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/best-code1/">
+            <span class="next-text nav-default">让好代码生生不息-更好的对待NULL</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

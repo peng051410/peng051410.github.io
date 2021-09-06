@@ -3,56 +3,63 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/code/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/java/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/java/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/best-code-string/</loc>
+    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/best-code1/</loc>
-    <lastmod>2021-07-17T16:41:00+08:00</lastmod>
+    <lastmod>2021-07-23T10:12:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
