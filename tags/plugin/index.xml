@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 20 Apr 2021 19:30:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 20:12:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些提高效率MAC软件(全程免费)</title>
+      <link>http://blog.imcompany.cn/post/mac-soft/</link>
+      <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/mac-soft/</guid>
+      <description>NTFS 支持MAC电脑读取NTFS格式文件 eul 监控MAC运行状态的工具 uPic 文件与图片云端上传工具 Sequel-Ace MAC上数据库管理工具，支持Mysql与MariaD</description>
+    </item>
+    
     <item>
       <title>JAVA中获取调用栈帧的最优方式</title>
       <link>http://blog.imcompany.cn/post/java-stackwalker/</link>
