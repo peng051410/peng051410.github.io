@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>记一次SpringWebflux框架下堆外OOM排查经历 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/springwebflux-leak-bug/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="记一次SpringWebflux框架下堆外OOM排查经历" />
+<meta property="og:description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/springwebflux-leak-bug/" />
+<meta property="article:published_time" content="2022-03-31T20:12:23+08:00" />
+<meta property="article:modified_time" content="2022-04-01T19:03:44+08:00" />
+<meta itemprop="name" content="记一次SpringWebflux框架下堆外OOM排查经历">
+<meta itemprop="description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33">
+<meta itemprop="datePublished" content="2022-03-31T20:12:23+08:00" />
+<meta itemprop="dateModified" content="2022-04-01T19:03:44+08:00" />
+<meta itemprop="wordCount" content="2223">
+
+
+
+<meta itemprop="keywords" content="spring,bug," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="记一次SpringWebflux框架下堆外OOM排查经历"/>
+<meta name="twitter:description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">记一次SpringWebflux框架下堆外OOM排查经历</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-31 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+          <span class="more-meta"> 约 2223 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#症状">症状</a>
+      <ul>
+        <li><a href="#jdk版本">JDK版本</a></li>
+        <li><a href="#jvm配置">JVM配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#线上复现">线上复现</a></li>
+    <li><a href="#本地复现">本地复现</a>
+      <ul>
+        <li><a href="#配置验证使用的jvm参数">配置验证使用的JVM参数</a></li>
+        <li><a href="#发送请求查看日志">发送请求查看日志</a></li>
+      </ul>
+    </li>
+    <li><a href="#增加监控-双管齐下">增加监控（双管齐下）</a>
+      <ul>
+        <li><a href="#堆外监控代码上报">堆外监控代码上报</a></li>
+        <li><a href="#接入premethues监控">接入Premethues监控</a></li>
+        <li><a href="#先看看监控">先看看监控</a></li>
+      </ul>
+    </li>
+    <li><a href="#尝试解决-却都未解决">尝试解决，却都未解决</a>
+      <ul>
+        <li><a href="#升级springboot版本">升级springboot版本</a></li>
+        <li><a href="#让netty使用堆内存">让Netty使用堆内存</a></li>
+        <li><a href="#redis的问题">Redis的问题？</a></li>
+        <li><a href="#其它无效尝试">其它无效尝试</a></li>
+      </ul>
+    </li>
+    <li><a href="#最终解决-代码问题">最终解决，代码问题</a>
+      <ul>
+        <li><a href="#进行修正">进行修正</a></li>
+      </ul>
+    </li>
+    <li><a href="#排查问题中产生的疑问">排查问题中产生的疑问</a></li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="症状">症状</h2>
+<p>生产环境业务页面打不开，看错误日志是 <strong>OutOfDirectMemoryError</strong> (OOM)了，详情报错信息如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">2022-03-21 06:00:00.541 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>tafprx-asyrecv_9<span class="o">]</span> ERROR r.c.p.Operators - <span class="o">[</span>error,314<span class="o">]</span> - Operator called default onErrorDropped
+java.lang.OutOfMemoryError: Direct buffer memory
+        at java.base/java.nio.Bits.reserveMemory<span class="o">(</span>Bits.java:175<span class="o">)</span>
+        at java.base/java.nio.DirectByteBuffer.&lt;init&gt;<span class="o">(</span>DirectByteBuffer.java:118<span class="o">)</span>
+        at java.base/java.nio.ByteBuffer.allocateDirect<span class="o">(</span>ByteBuffer.java:317<span class="o">)</span>
+        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.allocateDirect<span class="o">(</span>PoolArena.java:632<span class="o">)</span>
+        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.newChunk<span class="o">(</span>PoolArena.java:607<span class="o">)</span>
+        at io.netty.buffer.PoolArena.allocateNormal<span class="o">(</span>PoolArena.java:202<span class="o">)</span>
+        at io.netty.buffer.PoolArena.tcacheAllocateSmall<span class="o">(</span>PoolArena.java:172<span class="o">)</span>
+        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:134<span class="o">)</span>
+        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:126<span class="o">)</span>
+        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:395<span class="o">)</span>
+        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:187<span class="o">)</span>
+        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:178<span class="o">)</span>
+        at io.netty.buffer.AbstractByteBufAllocator.buffer<span class="o">(</span>AbstractByteBufAllocator.java:115<span class="o">)</span>
+        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:71<span class="o">)</span>
+        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:39<span class="o">)</span>
+        at org.springframework.http.codec.json.AbstractJackson2Encoder.encodeValue<span class="o">(</span>AbstractJackson2Encoder.java:236<span class="o">)</span>
+        at org.springframework.http.codec.json.AbstractJackson2Encoder.lambda<span class="nv">$encode$0</span><span class="o">(</span>AbstractJackson2Encoder.java:150<span class="o">)</span>
+        at reactor.core.publisher.FluxMapFuseable<span class="nv">$MapFuseableSubscriber</span>.onNext<span class="o">(</span>FluxMapFuseable.java:113<span class="o">)</span>
+        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+        at reactor.core.publisher.MonoCompletionStage.lambda<span class="nv">$subscribe$0</span><span class="o">(</span>MonoCompletionStage.java:82<span class="o">)</span>
+        at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete<span class="o">(</span>CompletableFuture.java:859<span class="o">)</span>
+        at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage<span class="o">(</span>CompletableFuture.java:883<span class="o">)</span>
+        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:2251<span class="o">)</span>
+        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:143<span class="o">)</span>
+        at reactor.core.publisher.MonoCompletionStage.subscribe<span class="o">(</span>MonoCompletionStage.java:57<span class="o">)</span>
+        at reactor.core.publisher.InternalMonoOperator.subscribe<span class="o">(</span>InternalMonoOperator.java:64<span class="o">)</span>
+        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:157<span class="o">)</span>
+        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapInner</span>.onNext<span class="o">(</span>MonoFlatMap.java:249<span class="o">)</span>
+        at reactor.core.publisher.FluxOnErrorResume<span class="nv">$ResumeSubscriber</span>.onNext<span class="o">(</span>FluxOnErrorResume.java:79<span class="o">)</span>
+        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
+        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
+        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.complete<span class="o">(</span>MonoIgnoreThen.java:284<span class="o">)</span>
+        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.onNext<span class="o">(</span>MonoIgnoreThen.java:187<span class="o">)</span>
+        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:151<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>根据报错的堆栈，找到 <strong>AbstractJackson2Encoder:236</strong> 行，调试发现框架使用的buffer在最后都进行了释放，看着没问题。</p>
+<h3 id="jdk版本">JDK版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">openjdk version <span class="s2">&#34;11.0.4&#34;</span> 2019-07-16 LTS
+OpenJDK Runtime Environment Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS<span class="o">)</span>
+OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS, mixed mode<span class="o">)</span>Bluff@2015
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="jvm配置">JVM配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">-Dspring.profiles.active<span class="o">=</span>prod -Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span> <span class="se">\
+</span><span class="se"></span>-Xms6G -Xmx6G -XX:MaxDirectMemorySize<span class="o">=</span>6G -XX:+HeapDumpOnOutOfMemoryError <span class="se">\
+</span><span class="se"></span>-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="线上复现">线上复现</h2>
+<p>堆外内存OOM还是第一次遇到，有点无从查起。想着先在线上看一下堆外内存的使用情况，在JVM中增加以下配置:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">-XX:NativeMemoryTracking<span class="o">=</span>detail
+</code></pre></td></tr></table>
+</div>
+</div><p>满心欢喜上机器上执行查看堆外内存的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">jcmd <span class="m">933</span> VM.native_memory
+</code></pre></td></tr></table>
+</div>
+</div><p>被现实当头一棒，没有权限获取内存使用信息，后来查了一下堆外内存由操作系统直接管理，要查看需要有root权限，此路不通。</p>
+<figure>
+    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-native-memory-not-work.png"/> 
+</figure>
+
+<h2 id="本地复现">本地复现</h2>
+<p>线上不行，只能本地进行复现了。项目使用的是SpringWebflux，通信框架使用的Netty，错误信息也描述的很详细，Netty喊着内存不够了。本地复现主要是控制堆外内存配置的小一点，方便问题出现。</p>
+<h3 id="配置验证使用的jvm参数">配置验证使用的JVM参数</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">-DSpring.profiles.active<span class="o">=</span>dev
+-Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span>
+-Dlogback.path<span class="o">=</span>/tmp
+-XX:NativeMemoryTracking<span class="o">=</span>detail
+-Xms1G
+-Xmx1G
+-XX:MaxDirectMemorySize<span class="o">=</span>10m
+-Dio.netty.maxDirectMemory<span class="o">=</span><span class="m">204800</span> //给netty的内存小一点
+--add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED
+-Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
+-XX:+HeapDumpOnOutOfMemoryError
+-Dio.netty.leakDetection.level<span class="o">=</span>advanced
+-XX:+UnlockExperimentalVMOptions
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="发送请求查看日志">发送请求查看日志</h3>
+<p>内存增加，在响应结束后内存并未减少，起初是使用 <strong>130k</strong> ，并发请求后，直接到 <strong>198k</strong> ，然后OOM了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">2022-03-30 20:10:29.320 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:133120b,130k, max:204800
+
+io.netty.util.internal.OutOfDirectMemoryError: failed to allocate <span class="m">2048</span> byte<span class="o">(</span>s<span class="o">)</span> of direct memory <span class="o">(</span>used: 202816, max: 204800<span class="o">)</span>
+    at io.netty.util.internal.PlatformDependent.incrementMemoryCounter<span class="o">(</span>PlatformDependent.java:802<span class="o">)</span>
+    at io.netty.util.internal.PlatformDependent.allocateDirectNoCleaner<span class="o">(</span>PlatformDependent.java:731<span class="o">)</span>
+    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.allocateDirect<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:30<span class="o">)</span>
+    at io.netty.buffer.UnpooledDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledDirectByteBuf.java:64<span class="o">)</span>
+    at io.netty.buffer.UnpooledUnsafeDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeDirectByteBuf.java:41<span class="o">)</span>
+    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:25<span class="o">)</span>
+    at io.netty.buffer.UnsafeByteBufUtil.newUnsafeDirectByteBuf<span class="o">(</span>UnsafeByteBufUtil.java:632<span class="o">)</span>
+    at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:397<span class="o">)</span>
+    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:188<span class="o">)</span>
+    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:179<span class="o">)</span>
+    at io.netty.channel.unix.PreferredDirectByteBufAllocator.ioBuffer<span class="o">(</span>PreferredDirectByteBufAllocator.java:53<span class="o">)</span>
+    at io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator<span class="nv">$MaxMessageHandle</span>.allocate<span class="o">(</span>DefaultMaxMessagesRecvByteBufAllocator.java:120<span class="o">)</span>
+    at io.netty.channel.kqueue.KQueueRecvByteAllocatorHandle.allocate<span class="o">(</span>KQueueRecvByteAllocatorHandle.java:63<span class="o">)</span>
+    at io.netty.channel.kqueue.AbstractKQueueStreamChannel<span class="nv">$KQueueStreamUnsafe</span>.readReady<span class="o">(</span>AbstractKQueueStreamChannel.java:529<span class="o">)</span>
+    at io.netty.channel.kqueue.AbstractKQueueChannel<span class="nv">$AbstractKQueueUnsafe</span>.readEOF<span class="o">(</span>AbstractKQueueChannel.java:485<span class="o">)</span>
+    at io.netty.channel.kqueue.KQueueEventLoop.processReady<span class="o">(</span>KQueueEventLoop.java:213<span class="o">)</span>
+    at io.netty.channel.kqueue.KQueueEventLoop.run<span class="o">(</span>KQueueEventLoop.java:289<span class="o">)</span>
+    at io.netty.util.concurrent.SingleThreadEventExecutor<span class="nv">$4</span>.run<span class="o">(</span>SingleThreadEventExecutor.java:986<span class="o">)</span>
+    at io.netty.util.internal.ThreadExecutorMap<span class="nv">$2</span>.run<span class="o">(</span>ThreadExecutorMap.java:74<span class="o">)</span>
+    at io.netty.util.concurrent.FastThreadLocalRunnable.run<span class="o">(</span>FastThreadLocalRunnable.java:30<span class="o">)</span>
+    at java.base/java.lang.Thread.run<span class="o">(</span>Thread.java:834<span class="o">)</span>
+2022-03-30 20:09:09.813 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:202816b,198k, max:204800
+</code></pre></td></tr></table>
+</div>
+</div><p>难道netty真的没有进行回收？</p>
+<h2 id="增加监控-双管齐下">增加监控（双管齐下）</h2>
+<p>明确有问题，考虑先把监控加到线上，这样可以及时发现问题并做相应（重启？哈哈）处理。</p>
+<h3 id="堆外监控代码上报">堆外监控代码上报</h3>
+<p>主要是获取到Netty中 <strong>PlatformDependent</strong> 类的 <strong>DIRECT_MEMORY_COUNTER</strong> 字段，这个字段记录了当前Netty使用的内存信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">public DirectMemReporter<span class="o">()</span> <span class="o">{</span>
+
+    Field <span class="nv">field</span> <span class="o">=</span> ReflectionUtils.findField<span class="o">(</span>PlatformDependent.class, <span class="s2">&#34;DIRECT_MEMORY_COUNTER&#34;</span><span class="o">)</span><span class="p">;</span>
+    assert field !<span class="o">=</span> null<span class="p">;</span>
+    field.setAccessible<span class="o">(</span><span class="nb">true</span><span class="o">)</span><span class="p">;</span>
+    try <span class="o">{</span>
+        <span class="nv">directMem</span> <span class="o">=</span> <span class="o">((</span>AtomicLong<span class="o">)</span> field.get<span class="o">(</span>PlatformDependent.class<span class="o">))</span><span class="p">;</span>
+    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
+        log.error<span class="o">(</span><span class="s2">&#34;got PlatformDependent.class DIRECT_MEMORY_COUNTER error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+private void doReport<span class="o">()</span> <span class="o">{</span>
+    try <span class="o">{</span>
+        long <span class="nv">size</span> <span class="o">=</span> directMem.get<span class="o">()</span><span class="p">;</span>
+        log.info<span class="o">(</span><span class="s2">&#34;{} size:{}b,{}k, max:{}&#34;</span>, BUSINESS_KEY, size, <span class="o">(</span>int<span class="o">)</span> <span class="o">(</span>size / _1k<span class="o">)</span>,
+                 PlatformDependent.maxDirectMemory<span class="o">())</span><span class="p">;</span>
+    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
+        log.error<span class="o">(</span><span class="s2">&#34;doReport error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="接入premethues监控">接入Premethues监控</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">bindTo</span><span class="o">(</span><span class="kd">final</span> <span class="n">MeterRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedDirectMemory</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;direct&#34;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
+
+    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedHeapMemory</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;heap&#34;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="k">new</span> <span class="n">NettyPooledAllocatorMetrics</span><span class="o">(</span><span class="n">PooledByteBufAllocator</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">.</span><span class="na">metric</span><span class="o">()).</span><span class="na">bindTo</span><span class="o">(</span><span class="n">prometheusRegistry</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="先看看监控">先看看监控</h3>
+<p>看监控信息，涨的还挺有节奏，这个和业务量有关，如果量再大问题就出现的更频繁了。
+<figure>
+    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-monitor-with-direct-bug.png"/> 
+</figure>
+</p>
+<h2 id="尝试解决-却都未解决">尝试解决，却都未解决</h2>
+<h3 id="升级springboot版本">升级springboot版本</h3>
+<p>第一想到的升级版本，没有升级解决不了的，说整就整，springboot版本从2.5.2升级到2.6.3，测试后问题依旧。</p>
+<h3 id="让netty使用堆内存">让Netty使用堆内存</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">-Dio.netty.noPreferDirect<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>线上配置上线一台机器后，内存还在涨，无回收迹象（不是说使用的弱引用吗，GC也干不掉?）。</p>
+<h3 id="redis的问题">Redis的问题？</h3>
+<p>项目使用的是 <strong>Lettuce</strong> ，正常应该使用全异步方式进行代码编写，但是由于项目前期时间有限，且对异步编程认识有限，未敢尝试，现在心想着就都重新写成异步的方式吧。改造完成后，内存增加依旧，不过代码看起来更顺畅了。</p>
+<h3 id="其它无效尝试">其它无效尝试</h3>
+<h4 id="尝试使用netty-pooled分配">尝试使用netty pooled分配</h4>
+<p>不行，不能使用 <strong>NettyCustomer</strong> ，还得看一下如何自定义，得深入Spring。</p>
+<h4 id="是filter的问题-自定义filter的方式不对">是Filter的问题？自定义Filter的方式不对？</h4>
+<p>参照<a href="https://www.amitph.com/spring-webflux-filters/">Spring WebFlux Filters with Controllers and Functional Routers</a>看了一下，Fiter处理的没问题。</p>
+<h4 id="netty启动报错">netty启动报错</h4>
+<p>netty启动时报 <strong>direct buffer constructor: unavailable</strong> ，是因为JDK9之后分模块的问题，参照<a href="https://russxia.com/2021/02/23/JDK%E4%BB%8E8%E5%8D%87%E7%BA%A7%E5%88%B011%E6%97%B6Netty%E6%8A%A5%E9%94%99/">JDK从8升级到11时Netty报错</a>增加模块权限即可，不影响Netty使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">--add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="最终解决-代码问题">最终解决，代码问题</h2>
+<p>经过上述尝试后，开始梳理代码发现了问题所在。下面是一段操作web响应内容的 <strong>Fiter</strong> 类代码，主要功能是抽取返回值加上通用登录字段信息最终返回，dataBuffer在被抽取后没有被释放，导致内存泄漏。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
+            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
+                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
+                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">setUserCookie</span><span class="o">();</span>
+                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
+            <span class="o">})</span>
+            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
+                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
+                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
+
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}));</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="进行修正">进行修正</h3>
+<p>最终定位代码问题，长叹一声，改！增加 <strong>DataBufferUtils.release(dataBuffer)</strong> 方法对内存进行释放。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
+            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
+                <span class="n">DataBufferUtils</span><span class="o">.</span><span class="na">release</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>  <span class="c1">//增加的内存释放代码
+</span><span class="c1"></span>                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
+                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">setUserCookie</span><span class="o">();</span>
+                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
+            <span class="o">})</span>
+            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
+                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
+                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
+
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}));</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="问题修复一天后的监控">问题修复一天后的监控</h4>
+<p>经过一天的观察，内存使用保持在1个G左右，问题解决，长出一口气。
+<figure>
+    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LINt9P.png"/> 
+</figure>
+</p>
+<h2 id="排查问题中产生的疑问">排查问题中产生的疑问</h2>
+<p>在排查过程中有一些疑问未解，在此记录一下:</p>
+<ol>
+<li>Netty配置使用堆内存，有内存泄漏，在JVM Full GC时会不会回收掉?</li>
+<li>默认lettuce使用是异步操作，为什么使用同步的redisTemplate也可以呢？</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>此次排查耗时一周多，费心费力，中间还是走了一些弯路的，还好学习到很多，也深深意识到自己基础知识的不足，主要还是对netty、reactor和springwebflux认识有限，后续要深入学习一下。</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://stackoverflow.com/questions/62383057/outofdirectmemoryerror-using-spring-data-redis-with-lettuce-in-a-multi-threading">multithreading - OutOfDirectMemoryError using Spring-Data-Redis with Lettuce in a multi-threading context - Stack Overflow</a></p>
+<p><a href="http://rainbowhorse.site/%E5%91%BD%E4%B8%ADSpringCloudGateway%E7%BB%84%E4%BB%B6BUG/#%E6%8A%A5%E9%94%99%E8%AF%A6%E6%83%85">命中 SpringCloudGateway 组件 BUG | 彩虹马的博客</a></p>
+<p><a href="https://tech.meituan.com/2018/10/18/netty-direct-memory-screening.html">Netty堆外内存泄露排查盛宴 - 美团技术团队</a></p>
+<p><a href="https://blog.csdn.net/liyantianmin/article/details/86380859">netty堆外内存监控_colie_li的博客-CSDN博客_netty内存监控</a></p>
+<p><a href="https://russxia.com/2021/02/23/JDK%E4%BB%8E8%E5%8D%87%E7%BA%A7%E5%88%B011%E6%97%B6Netty%E6%8A%A5%E9%94%99/">JDK从8升级到11时Netty报错 - 身处寒夜，把握星光。</a></p>
+<p><a href="https://www.amitph.com/spring-webflux-filters/">Spring WebFlux Filters with Controllers and Functional Routers - amitph</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-04-01
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/bug/">bug</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/mac-soft/">
+            <span class="next-text nav-default">那些提高效率MAC软件(全程免费)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
