@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on I&#39;m company</title>
-    <link>http://blog.imcompany.cn/tags/linux/</link>
+    <link>http://blog.imcompany.cn/categories/linux/</link>
     <description>Recent content in linux on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 06 Apr 2022 18:53:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Apr 2022 18:53:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux代码结构学习</title>
       <link>http://blog.imcompany.cn/post/linux-source/</link>
@@ -15,15 +15,6 @@
       
       <guid>http://blog.imcompany.cn/post/linux-source/</guid>
       <description>Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源</description>
-    </item>
-    
-    <item>
-      <title>Centos7 install issue collect</title>
-      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
-      <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
-      <description>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m</description>
     </item>
     
   </channel>

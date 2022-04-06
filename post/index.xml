@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 20:12:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Apr 2022 18:53:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux代码结构学习</title>
+      <link>http://blog.imcompany.cn/post/linux-source/</link>
+      <pubDate>Wed, 06 Apr 2022 18:53:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-source/</guid>
+      <description>Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源</description>
+    </item>
+    
     <item>
       <title>记一次SpringWebflux框架下堆外OOM排查经历</title>
       <link>http://blog.imcompany.cn/post/springwebflux-leak-bug/</link>
