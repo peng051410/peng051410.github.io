@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-003/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="2020-ARTS-打卡第三天" />
 <meta property="og:description" content="Algorithm 题目描述 反转一个单链表。 Example 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL 题目解答 迭代解法 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution3 { public ListNode reverseList(ListNode head) { ListNode prev = null; ListNode current = head; while (current != null) { ListNode tempNode = current.next; current.next =" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-003/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-003/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-01-24T16:04:09+08:00" />
 <meta property="article:modified_time" content="2020-01-24T17:50:28+08:00" />
+
 <meta itemprop="name" content="2020-ARTS-打卡第三天">
-<meta itemprop="description" content="Algorithm 题目描述 反转一个单链表。 Example 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL 题目解答 迭代解法 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution3 { public ListNode reverseList(ListNode head) { ListNode prev = null; ListNode current = head; while (current != null) { ListNode tempNode = current.next; current.next =">
-<meta itemprop="datePublished" content="2020-01-24T16:04:09+08:00" />
+<meta itemprop="description" content="Algorithm 题目描述 反转一个单链表。 Example 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL 题目解答 迭代解法 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution3 { public ListNode reverseList(ListNode head) { ListNode prev = null; ListNode current = head; while (current != null) { ListNode tempNode = current.next; current.next ="><meta itemprop="datePublished" content="2020-01-24T16:04:09+08:00" />
 <meta itemprop="dateModified" content="2020-01-24T17:50:28+08:00" />
 <meta itemprop="wordCount" content="1540">
-
-
-
-<meta itemprop="keywords" content="arts,java,leetcode," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2020-ARTS-打卡第三天"/>
 <meta name="twitter:description" content="Algorithm 题目描述 反转一个单链表。 Example 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL 题目解答 迭代解法 1 2 3 4 5 6 7 8 9 10 11 12 13 class Solution3 { public ListNode reverseList(ListNode head) { ListNode prev = null; ListNode current = head; while (current != null) { ListNode tempNode = current.next; current.next ="/>
 
@@ -168,7 +164,7 @@
 <h4 id="迭代解法">迭代解法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -183,26 +179,26 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution3</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">reverseList</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ListNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="n">ListNode</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
-        <span class="k">while</span> <span class="o">(</span><span class="n">current</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">ListNode</span> <span class="n">tempNode</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-            <span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">;</span>
-            <span class="n">prev</span> <span class="o">=</span> <span class="n">current</span><span class="o">;</span>
-            <span class="n">current</span> <span class="o">=</span> <span class="n">tempNode</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">prev</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution3</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">reverseList</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ListNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ListNode</span> <span class="n">current</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="o">(</span><span class="n">current</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ListNode</span> <span class="n">tempNode</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">current</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">prev</span> <span class="o">=</span> <span class="n">current</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">current</span> <span class="o">=</span> <span class="n">tempNode</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">prev</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>第一次搞链表的题，还真是给难住了。此题的核心就是当前节点的指针要指向前一个节点，处理过程中还要考虑节点的丢失问题，所以要有一个变量保存当前节点的前一个节点，还要有一个变量来保存当前节点的下一个节点，方便后续的指针前移。此解法的时间复杂度为O(n)，因其不需要额外的空间，所以空间复杂度为O(1)。</p>
 <h4 id="递归解法">递归解法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -216,19 +212,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution3</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">reverseList2</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">node</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">node</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">node</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="n">ListNode</span> <span class="n">current</span> <span class="o">=</span> <span class="n">reverseList2</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
-        <span class="n">node</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">node</span><span class="o">;</span>
-        <span class="n">node</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">return</span> <span class="n">current</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution3</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ListNode</span> <span class="nf">reverseList2</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">node</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">node</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">node</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ListNode</span> <span class="n">current</span> <span class="o">=</span> <span class="n">reverseList2</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">node</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">node</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">node</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">current</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此解的核心在于当有一部分是反转时，后续的反转问题，对于node.next.next = node这句，使用A-&gt;B两个节点进行示例，A.next为B，A.next.next为B.next，A.next.next = A为B.next = A，这样就实现了A与B两个节点的反转。这个递归看着还是有点懵，多看看就好了。</p>
 <h2 id="review">Review</h2>
@@ -237,7 +233,7 @@
 <h3 id="坏味道的代码">坏味道的代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -249,17 +245,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">MappedField</span> <span class="nf">getMappedField</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">storedName</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">MappedField</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">persistenceFields</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">n</span> <span class="o">:</span> <span class="n">mf</span><span class="o">.</span><span class="na">getLoadNames</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">storedName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="n">mf</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">MappedField</span> <span class="nf">getMappedField</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">storedName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">MappedField</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">persistenceFields</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">n</span> <span class="o">:</span> <span class="n">mf</span><span class="o">.</span><span class="na">getLoadNames</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">storedName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">mf</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这个代码里面有两个for和一个if嵌套，这个代码主要逻辑就是在persistenceFields中查找与storedName的MappedField。</p>
 <h3 id="使用java8来重写">使用JAVA8来重写</h3>
@@ -268,7 +264,7 @@
 <p>作者把代码中的第二个for与if抽取出来，形成一个方法，叫做hasName，这个方法就是用来告诉调用者mf中有没有与传入的名相同的名字。这时的代码变成了：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -278,15 +274,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">MappedField</span> <span class="nf">getMappedField</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">storedName</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">MappedField</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">persistenceFields</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">hasName</span><span class="o">(</span><span class="n">storedName</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">mf</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">MappedField</span> <span class="nf">getMappedField</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">storedName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kd">final</span> <span class="n">MappedField</span> <span class="n">mf</span> <span class="o">:</span> <span class="n">persistenceFields</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">hasName</span><span class="o">(</span><span class="n">storedName</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">mf</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>下一步就是把hasName方法移动MappedField（这里面使用F6就可以进行方法的移动，太神奇了）类中。这样封装后调用者就不必关心MappedField是怎么存储名字的了，封装的优点体现出来了。</p>
 <h3 id="额外的处理步骤">额外的处理步骤</h3>
@@ -303,11 +299,11 @@
 <p>mac中把man命令输出到Preview应用中来查看，比如我要查看rsync命令是怎么使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">man -t rsync <span class="p">|</span> open -f -a Preview.app
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">man -t rsync <span class="p">|</span> open -f -a Preview.app
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>

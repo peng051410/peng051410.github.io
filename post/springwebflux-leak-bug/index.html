@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/springwebflux-leak-bug/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="记一次SpringWebflux框架下堆外OOM排查经历" />
 <meta property="og:description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/springwebflux-leak-bug/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/springwebflux-leak-bug/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-03-31T20:12:23+08:00" />
-<meta property="article:modified_time" content="2022-04-01T19:46:48+08:00" />
+<meta property="article:modified_time" content="2022-04-13T18:44:50+08:00" />
+
 <meta itemprop="name" content="记一次SpringWebflux框架下堆外OOM排查经历">
-<meta itemprop="description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33">
-<meta itemprop="datePublished" content="2022-03-31T20:12:23+08:00" />
-<meta itemprop="dateModified" content="2022-04-01T19:46:48+08:00" />
+<meta itemprop="description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33"><meta itemprop="datePublished" content="2022-03-31T20:12:23+08:00" />
+<meta itemprop="dateModified" content="2022-04-13T18:44:50+08:00" />
 <meta itemprop="wordCount" content="2223">
-
-
-
-<meta itemprop="keywords" content="spring,netty,bug," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="spring,netty,bug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="记一次SpringWebflux框架下堆外OOM排查经历"/>
 <meta name="twitter:description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33"/>
 
@@ -181,7 +177,7 @@
 <p>生产环境业务页面打不开，看错误日志是 <strong>OutOfDirectMemoryError</strong> (OOM)了，详情报错信息如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -221,95 +217,94 @@
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">2022-03-21 06:00:00.541 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>tafprx-asyrecv_9<span class="o">]</span> ERROR r.c.p.Operators - <span class="o">[</span>error,314<span class="o">]</span> - Operator called default onErrorDropped
-java.lang.OutOfMemoryError: Direct buffer memory
-        at java.base/java.nio.Bits.reserveMemory<span class="o">(</span>Bits.java:175<span class="o">)</span>
-        at java.base/java.nio.DirectByteBuffer.&lt;init&gt;<span class="o">(</span>DirectByteBuffer.java:118<span class="o">)</span>
-        at java.base/java.nio.ByteBuffer.allocateDirect<span class="o">(</span>ByteBuffer.java:317<span class="o">)</span>
-        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.allocateDirect<span class="o">(</span>PoolArena.java:632<span class="o">)</span>
-        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.newChunk<span class="o">(</span>PoolArena.java:607<span class="o">)</span>
-        at io.netty.buffer.PoolArena.allocateNormal<span class="o">(</span>PoolArena.java:202<span class="o">)</span>
-        at io.netty.buffer.PoolArena.tcacheAllocateSmall<span class="o">(</span>PoolArena.java:172<span class="o">)</span>
-        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:134<span class="o">)</span>
-        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:126<span class="o">)</span>
-        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:395<span class="o">)</span>
-        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:187<span class="o">)</span>
-        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:178<span class="o">)</span>
-        at io.netty.buffer.AbstractByteBufAllocator.buffer<span class="o">(</span>AbstractByteBufAllocator.java:115<span class="o">)</span>
-        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:71<span class="o">)</span>
-        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:39<span class="o">)</span>
-        at org.springframework.http.codec.json.AbstractJackson2Encoder.encodeValue<span class="o">(</span>AbstractJackson2Encoder.java:236<span class="o">)</span>
-        at org.springframework.http.codec.json.AbstractJackson2Encoder.lambda<span class="nv">$encode$0</span><span class="o">(</span>AbstractJackson2Encoder.java:150<span class="o">)</span>
-        at reactor.core.publisher.FluxMapFuseable<span class="nv">$MapFuseableSubscriber</span>.onNext<span class="o">(</span>FluxMapFuseable.java:113<span class="o">)</span>
-        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
-        at reactor.core.publisher.MonoCompletionStage.lambda<span class="nv">$subscribe$0</span><span class="o">(</span>MonoCompletionStage.java:82<span class="o">)</span>
-        at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete<span class="o">(</span>CompletableFuture.java:859<span class="o">)</span>
-        at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage<span class="o">(</span>CompletableFuture.java:883<span class="o">)</span>
-        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:2251<span class="o">)</span>
-        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:143<span class="o">)</span>
-        at reactor.core.publisher.MonoCompletionStage.subscribe<span class="o">(</span>MonoCompletionStage.java:57<span class="o">)</span>
-        at reactor.core.publisher.InternalMonoOperator.subscribe<span class="o">(</span>InternalMonoOperator.java:64<span class="o">)</span>
-        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:157<span class="o">)</span>
-        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
-        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapInner</span>.onNext<span class="o">(</span>MonoFlatMap.java:249<span class="o">)</span>
-        at reactor.core.publisher.FluxOnErrorResume<span class="nv">$ResumeSubscriber</span>.onNext<span class="o">(</span>FluxOnErrorResume.java:79<span class="o">)</span>
-        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
-        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
-        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.complete<span class="o">(</span>MonoIgnoreThen.java:284<span class="o">)</span>
-        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.onNext<span class="o">(</span>MonoIgnoreThen.java:187<span class="o">)</span>
-        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
-        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:151<span class="o">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">2022-03-21 06:00:00.541 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>tafprx-asyrecv_9<span class="o">]</span> ERROR r.c.p.Operators - <span class="o">[</span>error,314<span class="o">]</span> - Operator called default onErrorDropped
+</span></span><span class="line"><span class="cl">java.lang.OutOfMemoryError: Direct buffer memory
+</span></span><span class="line"><span class="cl">        at java.base/java.nio.Bits.reserveMemory<span class="o">(</span>Bits.java:175<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.nio.DirectByteBuffer.&lt;init&gt;<span class="o">(</span>DirectByteBuffer.java:118<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.nio.ByteBuffer.allocateDirect<span class="o">(</span>ByteBuffer.java:317<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.allocateDirect<span class="o">(</span>PoolArena.java:632<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena<span class="nv">$DirectArena</span>.newChunk<span class="o">(</span>PoolArena.java:607<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena.allocateNormal<span class="o">(</span>PoolArena.java:202<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena.tcacheAllocateSmall<span class="o">(</span>PoolArena.java:172<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:134<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PoolArena.allocate<span class="o">(</span>PoolArena.java:126<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:395<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:187<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:178<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at io.netty.buffer.AbstractByteBufAllocator.buffer<span class="o">(</span>AbstractByteBufAllocator.java:115<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:71<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer<span class="o">(</span>NettyDataBufferFactory.java:39<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.springframework.http.codec.json.AbstractJackson2Encoder.encodeValue<span class="o">(</span>AbstractJackson2Encoder.java:236<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at org.springframework.http.codec.json.AbstractJackson2Encoder.lambda<span class="nv">$encode$0</span><span class="o">(</span>AbstractJackson2Encoder.java:150<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.FluxMapFuseable<span class="nv">$MapFuseableSubscriber</span>.onNext<span class="o">(</span>FluxMapFuseable.java:113<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoCompletionStage.lambda<span class="nv">$subscribe$0</span><span class="o">(</span>MonoCompletionStage.java:82<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete<span class="o">(</span>CompletableFuture.java:859<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage<span class="o">(</span>CompletableFuture.java:883<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:2251<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at java.base/java.util.concurrent.CompletableFuture.whenComplete<span class="o">(</span>CompletableFuture.java:143<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoCompletionStage.subscribe<span class="o">(</span>MonoCompletionStage.java:57<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.InternalMonoOperator.subscribe<span class="o">(</span>InternalMonoOperator.java:64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:157<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapInner</span>.onNext<span class="o">(</span>MonoFlatMap.java:249<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.FluxOnErrorResume<span class="nv">$ResumeSubscriber</span>.onNext<span class="o">(</span>FluxOnErrorResume.java:79<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.FluxPeek<span class="nv">$PeekSubscriber</span>.onNext<span class="o">(</span>FluxPeek.java:199<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.complete<span class="o">(</span>MonoIgnoreThen.java:284<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoIgnoreThen<span class="nv">$ThenIgnoreMain</span>.onNext<span class="o">(</span>MonoIgnoreThen.java:187<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.Operators<span class="nv">$MonoSubscriber</span>.complete<span class="o">(</span>Operators.java:1815<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        at reactor.core.publisher.MonoFlatMap<span class="nv">$FlatMapMain</span>.onNext<span class="o">(</span>MonoFlatMap.java:151<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>根据报错的堆栈，找到 <strong>AbstractJackson2Encoder:236</strong> 行，调试发现框架使用的buffer在最后都进行了释放，看着没问题。</p>
 <h3 id="jdk版本">JDK版本</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">openjdk version <span class="s2">&#34;11.0.4&#34;</span> 2019-07-16 LTS
-OpenJDK Runtime Environment Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS<span class="o">)</span>
-OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS, mixed mode<span class="o">)</span>Bluff@2015
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">openjdk version <span class="s2">&#34;11.0.4&#34;</span> 2019-07-16 LTS
+</span></span><span class="line"><span class="cl">OpenJDK Runtime Environment Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS<span class="o">)</span>
+</span></span><span class="line"><span class="cl">OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0.4+11-LTS, mixed mode<span class="o">)</span>Bluff@2015
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="jvm配置">JVM配置</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">-Dspring.profiles.active<span class="o">=</span>prod -Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span> <span class="se">\
-</span><span class="se"></span>-Xms6G -Xmx6G -XX:MaxDirectMemorySize<span class="o">=</span>6G -XX:+HeapDumpOnOutOfMemoryError <span class="se">\
-</span><span class="se"></span>-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-Dspring.profiles.active<span class="o">=</span>prod -Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-Xms6G -Xmx6G -XX:MaxDirectMemorySize<span class="o">=</span>6G -XX:+HeapDumpOnOutOfMemoryError <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-XX:+UnlockExperimentalVMOptions -XX:+UseZGC
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="线上复现">线上复现</h2>
 <p>堆外内存OOM还是第一次遇到，有点无从查起。想着先在线上看一下堆外内存的使用情况，在JVM中增加以下配置:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">-XX:NativeMemoryTracking<span class="o">=</span>detail
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-XX:NativeMemoryTracking<span class="o">=</span>detail
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>满心欢喜上机器上执行查看堆外内存的命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">jcmd <span class="m">933</span> VM.native_memory
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">jcmd <span class="m">933</span> VM.native_memory
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>被现实当头一棒，没有权限获取内存使用信息，后来查了一下堆外内存由操作系统直接管理，要查看需要有root权限，此路不通。</p>
-<figure>
-    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-native-memory-not-work.png"/> 
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-native-memory-not-work.png"/>
 </figure>
 
 <h2 id="本地复现">本地复现</h2>
@@ -317,7 +312,7 @@ OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0
 <h3 id="配置验证使用的jvm参数">配置验证使用的JVM参数</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -332,26 +327,26 @@ OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">-DSpring.profiles.active<span class="o">=</span>dev
--Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span>
--Dlogback.path<span class="o">=</span>/tmp
--XX:NativeMemoryTracking<span class="o">=</span>detail
--Xms1G
--Xmx1G
--XX:MaxDirectMemorySize<span class="o">=</span>10m
--Dio.netty.maxDirectMemory<span class="o">=</span><span class="m">204800</span> //给netty的内存小一点
---add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED
--Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
--XX:+HeapDumpOnOutOfMemoryError
--Dio.netty.leakDetection.level<span class="o">=</span>advanced
--XX:+UnlockExperimentalVMOptions
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-DSpring.profiles.active<span class="o">=</span>dev
+</span></span><span class="line"><span class="cl">-Dreactor.netty.http.server.accessLogEnabled<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">-Dlogback.path<span class="o">=</span>/tmp
+</span></span><span class="line"><span class="cl">-XX:NativeMemoryTracking<span class="o">=</span>detail
+</span></span><span class="line"><span class="cl">-Xms1G
+</span></span><span class="line"><span class="cl">-Xmx1G
+</span></span><span class="line"><span class="cl">-XX:MaxDirectMemorySize<span class="o">=</span>10m
+</span></span><span class="line"><span class="cl">-Dio.netty.maxDirectMemory<span class="o">=</span><span class="m">204800</span> //给netty的内存小一点
+</span></span><span class="line"><span class="cl">--add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED
+</span></span><span class="line"><span class="cl">-Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl">-XX:+HeapDumpOnOutOfMemoryError
+</span></span><span class="line"><span class="cl">-Dio.netty.leakDetection.level<span class="o">=</span>advanced
+</span></span><span class="line"><span class="cl">-XX:+UnlockExperimentalVMOptions
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="发送请求查看日志">发送请求查看日志</h3>
 <p>内存增加，在响应结束后内存并未减少，起初是使用 <strong>130k</strong> ，并发请求后，直接到 <strong>198k</strong> ，然后OOM了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -378,32 +373,32 @@ OpenJDK 64-Bit Server VM Corretto-11.0.4.11.1 <span class="o">(</span>build 11.0
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">2022-03-30 20:10:29.320 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:133120b,130k, max:204800
-
-io.netty.util.internal.OutOfDirectMemoryError: failed to allocate <span class="m">2048</span> byte<span class="o">(</span>s<span class="o">)</span> of direct memory <span class="o">(</span>used: 202816, max: 204800<span class="o">)</span>
-    at io.netty.util.internal.PlatformDependent.incrementMemoryCounter<span class="o">(</span>PlatformDependent.java:802<span class="o">)</span>
-    at io.netty.util.internal.PlatformDependent.allocateDirectNoCleaner<span class="o">(</span>PlatformDependent.java:731<span class="o">)</span>
-    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.allocateDirect<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:30<span class="o">)</span>
-    at io.netty.buffer.UnpooledDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledDirectByteBuf.java:64<span class="o">)</span>
-    at io.netty.buffer.UnpooledUnsafeDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeDirectByteBuf.java:41<span class="o">)</span>
-    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:25<span class="o">)</span>
-    at io.netty.buffer.UnsafeByteBufUtil.newUnsafeDirectByteBuf<span class="o">(</span>UnsafeByteBufUtil.java:632<span class="o">)</span>
-    at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:397<span class="o">)</span>
-    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:188<span class="o">)</span>
-    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:179<span class="o">)</span>
-    at io.netty.channel.unix.PreferredDirectByteBufAllocator.ioBuffer<span class="o">(</span>PreferredDirectByteBufAllocator.java:53<span class="o">)</span>
-    at io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator<span class="nv">$MaxMessageHandle</span>.allocate<span class="o">(</span>DefaultMaxMessagesRecvByteBufAllocator.java:120<span class="o">)</span>
-    at io.netty.channel.kqueue.KQueueRecvByteAllocatorHandle.allocate<span class="o">(</span>KQueueRecvByteAllocatorHandle.java:63<span class="o">)</span>
-    at io.netty.channel.kqueue.AbstractKQueueStreamChannel<span class="nv">$KQueueStreamUnsafe</span>.readReady<span class="o">(</span>AbstractKQueueStreamChannel.java:529<span class="o">)</span>
-    at io.netty.channel.kqueue.AbstractKQueueChannel<span class="nv">$AbstractKQueueUnsafe</span>.readEOF<span class="o">(</span>AbstractKQueueChannel.java:485<span class="o">)</span>
-    at io.netty.channel.kqueue.KQueueEventLoop.processReady<span class="o">(</span>KQueueEventLoop.java:213<span class="o">)</span>
-    at io.netty.channel.kqueue.KQueueEventLoop.run<span class="o">(</span>KQueueEventLoop.java:289<span class="o">)</span>
-    at io.netty.util.concurrent.SingleThreadEventExecutor<span class="nv">$4</span>.run<span class="o">(</span>SingleThreadEventExecutor.java:986<span class="o">)</span>
-    at io.netty.util.internal.ThreadExecutorMap<span class="nv">$2</span>.run<span class="o">(</span>ThreadExecutorMap.java:74<span class="o">)</span>
-    at io.netty.util.concurrent.FastThreadLocalRunnable.run<span class="o">(</span>FastThreadLocalRunnable.java:30<span class="o">)</span>
-    at java.base/java.lang.Thread.run<span class="o">(</span>Thread.java:834<span class="o">)</span>
-2022-03-30 20:09:09.813 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:202816b,198k, max:204800
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">2022-03-30 20:10:29.320 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:133120b,130k, max:204800
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">io.netty.util.internal.OutOfDirectMemoryError: failed to allocate <span class="m">2048</span> byte<span class="o">(</span>s<span class="o">)</span> of direct memory <span class="o">(</span>used: 202816, max: 204800<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.util.internal.PlatformDependent.incrementMemoryCounter<span class="o">(</span>PlatformDependent.java:802<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.util.internal.PlatformDependent.allocateDirectNoCleaner<span class="o">(</span>PlatformDependent.java:731<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.allocateDirect<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:30<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.UnpooledDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledDirectByteBuf.java:64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.UnpooledUnsafeDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeDirectByteBuf.java:41<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf.&lt;init&gt;<span class="o">(</span>UnpooledUnsafeNoCleanerDirectByteBuf.java:25<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.UnsafeByteBufUtil.newUnsafeDirectByteBuf<span class="o">(</span>UnsafeByteBufUtil.java:632<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer<span class="o">(</span>PooledByteBufAllocator.java:397<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:188<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.buffer.AbstractByteBufAllocator.directBuffer<span class="o">(</span>AbstractByteBufAllocator.java:179<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.unix.PreferredDirectByteBufAllocator.ioBuffer<span class="o">(</span>PreferredDirectByteBufAllocator.java:53<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator<span class="nv">$MaxMessageHandle</span>.allocate<span class="o">(</span>DefaultMaxMessagesRecvByteBufAllocator.java:120<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.kqueue.KQueueRecvByteAllocatorHandle.allocate<span class="o">(</span>KQueueRecvByteAllocatorHandle.java:63<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.kqueue.AbstractKQueueStreamChannel<span class="nv">$KQueueStreamUnsafe</span>.readReady<span class="o">(</span>AbstractKQueueStreamChannel.java:529<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.kqueue.AbstractKQueueChannel<span class="nv">$AbstractKQueueUnsafe</span>.readEOF<span class="o">(</span>AbstractKQueueChannel.java:485<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.kqueue.KQueueEventLoop.processReady<span class="o">(</span>KQueueEventLoop.java:213<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.channel.kqueue.KQueueEventLoop.run<span class="o">(</span>KQueueEventLoop.java:289<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.util.concurrent.SingleThreadEventExecutor<span class="nv">$4</span>.run<span class="o">(</span>SingleThreadEventExecutor.java:986<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.util.internal.ThreadExecutorMap<span class="nv">$2</span>.run<span class="o">(</span>ThreadExecutorMap.java:74<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at io.netty.util.concurrent.FastThreadLocalRunnable.run<span class="o">(</span>FastThreadLocalRunnable.java:30<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    at java.base/java.lang.Thread.run<span class="o">(</span>Thread.java:834<span class="o">)</span>
+</span></span><span class="line"><span class="cl">2022-03-30 20:09:09.813 <span class="o">[</span>,<span class="o">]</span> <span class="o">[</span>pool-4-thread-1<span class="o">]</span> INFO  c.y.c.r.DirectMemReporter - <span class="o">[</span>doReport,51<span class="o">]</span> - netty_direct_memory size:202816b,198k, max:204800
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>难道netty真的没有进行回收？</p>
 <h2 id="增加监控-双管齐下">增加监控（双管齐下）</h2>
@@ -412,7 +407,7 @@ io.netty.util.internal.OutOfDirectMemoryError: failed to allocate <span class="m
 <p>主要是获取到Netty中 <strong>PlatformDependent</strong> 类的 <strong>DIRECT_MEMORY_COUNTER</strong> 字段，这个字段记录了当前Netty使用的内存信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -435,33 +430,33 @@ io.netty.util.internal.OutOfDirectMemoryError: failed to allocate <span class="m
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">public DirectMemReporter<span class="o">()</span> <span class="o">{</span>
-
-    Field <span class="nv">field</span> <span class="o">=</span> ReflectionUtils.findField<span class="o">(</span>PlatformDependent.class, <span class="s2">&#34;DIRECT_MEMORY_COUNTER&#34;</span><span class="o">)</span><span class="p">;</span>
-    assert field !<span class="o">=</span> null<span class="p">;</span>
-    field.setAccessible<span class="o">(</span><span class="nb">true</span><span class="o">)</span><span class="p">;</span>
-    try <span class="o">{</span>
-        <span class="nv">directMem</span> <span class="o">=</span> <span class="o">((</span>AtomicLong<span class="o">)</span> field.get<span class="o">(</span>PlatformDependent.class<span class="o">))</span><span class="p">;</span>
-    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
-        log.error<span class="o">(</span><span class="s2">&#34;got PlatformDependent.class DIRECT_MEMORY_COUNTER error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-private void doReport<span class="o">()</span> <span class="o">{</span>
-    try <span class="o">{</span>
-        long <span class="nv">size</span> <span class="o">=</span> directMem.get<span class="o">()</span><span class="p">;</span>
-        log.info<span class="o">(</span><span class="s2">&#34;{} size:{}b,{}k, max:{}&#34;</span>, BUSINESS_KEY, size, <span class="o">(</span>int<span class="o">)</span> <span class="o">(</span>size / _1k<span class="o">)</span>,
-                 PlatformDependent.maxDirectMemory<span class="o">())</span><span class="p">;</span>
-    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
-        log.error<span class="o">(</span><span class="s2">&#34;doReport error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">public DirectMemReporter<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Field <span class="nv">field</span> <span class="o">=</span> ReflectionUtils.findField<span class="o">(</span>PlatformDependent.class, <span class="s2">&#34;DIRECT_MEMORY_COUNTER&#34;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    assert field !<span class="o">=</span> null<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    field.setAccessible<span class="o">(</span><span class="nb">true</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    try <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">directMem</span> <span class="o">=</span> <span class="o">((</span>AtomicLong<span class="o">)</span> field.get<span class="o">(</span>PlatformDependent.class<span class="o">))</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        log.error<span class="o">(</span><span class="s2">&#34;got PlatformDependent.class DIRECT_MEMORY_COUNTER error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">private void doReport<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    try <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        long <span class="nv">size</span> <span class="o">=</span> directMem.get<span class="o">()</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        log.info<span class="o">(</span><span class="s2">&#34;{} size:{}b,{}k, max:{}&#34;</span>, BUSINESS_KEY, size, <span class="o">(</span>int<span class="o">)</span> <span class="o">(</span>size / _1k<span class="o">)</span>,
+</span></span><span class="line"><span class="cl">                 PlatformDependent.maxDirectMemory<span class="o">())</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> catch <span class="o">(</span>Exception e<span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        log.error<span class="o">(</span><span class="s2">&#34;doReport error&#34;</span>, e<span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="接入premethues监控">接入Premethues监控</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -478,40 +473,37 @@ private void doReport<span class="o">()</span> <span class="o">{</span>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">bindTo</span><span class="o">(</span><span class="kd">final</span> <span class="n">MeterRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
-
-    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedDirectMemory</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;direct&#34;</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
-
-    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedHeapMemory</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;heap&#34;</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
-<span class="o">}</span>
-
-<span class="k">new</span> <span class="n">NettyPooledAllocatorMetrics</span><span class="o">(</span><span class="n">PooledByteBufAllocator</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">.</span><span class="na">metric</span><span class="o">()).</span><span class="na">bindTo</span><span class="o">(</span><span class="n">prometheusRegistry</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">bindTo</span><span class="o">(</span><span class="kd">final</span> <span class="n">MeterRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedDirectMemory</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;direct&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Gauge</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="s">&#34;netty.pooled.used.memory&#34;</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">metric</span><span class="o">,</span> <span class="n">PooledByteBufAllocatorMetric</span><span class="o">::</span><span class="n">usedHeapMemory</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">tags</span><span class="o">(</span><span class="s">&#34;type&#34;</span><span class="o">,</span> <span class="s">&#34;heap&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">&#34;The used memory&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">baseUnit</span><span class="o">(</span><span class="n">BYTES_UNIT</span><span class="o">).</span><span class="na">register</span><span class="o">(</span><span class="n">registry</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">new</span> <span class="n">NettyPooledAllocatorMetrics</span><span class="o">(</span><span class="n">PooledByteBufAllocator</span><span class="o">.</span><span class="na">DEFAULT</span><span class="o">.</span><span class="na">metric</span><span class="o">()).</span><span class="na">bindTo</span><span class="o">(</span><span class="n">prometheusRegistry</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="先看看监控">先看看监控</h3>
 <p>看监控信息，涨的还挺有节奏，这个和业务量有关，如果量再大问题就出现的更频繁了。
-<figure>
-    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-monitor-with-direct-bug.png"/> 
-</figure>
-</p>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/netty-monitor-with-direct-bug.png" alt=""></p>
 <h2 id="尝试解决-却都未解决">尝试解决，却都未解决</h2>
 <h3 id="升级springboot版本">升级springboot版本</h3>
 <p>第一想到的升级版本，没有升级解决不了的，说整就整，springboot版本从2.5.2升级到2.6.3，测试后问题依旧。</p>
 <h3 id="让netty使用堆内存">让Netty使用堆内存</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">-Dio.netty.noPreferDirect<span class="o">=</span><span class="nb">true</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-Dio.netty.noPreferDirect<span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>线上配置上线一台机器后，内存还在涨，无回收迹象（不是说使用的弱引用吗，GC也干不掉?）。</p>
 <h3 id="redis的问题">Redis的问题？</h3>
@@ -525,17 +517,17 @@ private void doReport<span class="o">()</span> <span class="o">{</span>
 <p>netty启动时报 <strong>direct buffer constructor: unavailable</strong> ，是因为JDK9之后分模块的问题，参照<a href="https://russxia.com/2021/02/23/JDK%E4%BB%8E8%E5%8D%87%E7%BA%A7%E5%88%B011%E6%97%B6Netty%E6%8A%A5%E9%94%99/">JDK从8升级到11时Netty报错</a>增加模块权限即可，不影响Netty使用。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">--add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">--add-opens java.base/jdk.internal.misc<span class="o">=</span>ALL-UNNAMED -Dio.netty.tryReflectionSetAccessible<span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="最终解决-代码问题">最终解决，代码问题</h2>
 <p>经过上述尝试后，开始梳理代码发现了问题所在。下面是一段操作web响应内容的 <strong>Fiter</strong> 类代码，主要功能是抽取返回值加上通用登录字段信息最终返回，dataBuffer在被抽取后没有被释放，导致内存泄漏。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -566,42 +558,42 @@ private void doReport<span class="o">()</span> <span class="o">{</span>
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
-
-    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
-    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
-            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
-                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
-                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
-                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
-                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
-                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
-                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="n">setUserCookie</span><span class="o">();</span>
-                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
-            <span class="o">})</span>
-            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
-                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
-                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
-
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-                <span class="o">}</span>
-            <span class="o">}));</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setUserCookie</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">})</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}));</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="进行修正">进行修正</h3>
 <p>最终定位代码问题，长叹一声，改！增加 <strong>DataBufferUtils.release(dataBuffer)</strong> 方法对内存进行释放。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -633,44 +625,41 @@ private void doReport<span class="o">()</span> <span class="o">{</span>
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
-
-    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
-    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
-            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
-                <span class="n">DataBufferUtils</span><span class="o">.</span><span class="na">release</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>  <span class="c1">//增加的内存释放代码
-</span><span class="c1"></span>                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
-                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
-                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
-                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
-                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
-                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="n">setUserCookie</span><span class="o">();</span>
-                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
-            <span class="o">})</span>
-            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
-                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
-                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
-
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
-                <span class="o">}</span>
-            <span class="o">}));</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">Mono</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">writeWith</span><span class="o">(</span><span class="n">Publisher</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">body</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">final</span> <span class="n">Flux</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">DataBuffer</span><span class="o">&gt;</span> <span class="n">buffer</span> <span class="o">=</span> <span class="n">Flux</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">body</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">writeWith</span><span class="o">(</span><span class="n">buffer</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">DataBufferUtils</span><span class="o">.</span><span class="na">release</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>  <span class="c1">//增加的内存释放代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setUserCookie</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">})</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">doOnNext</span><span class="o">(</span><span class="n">dataBuffer</span> <span class="o">-&gt;</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kd">final</span> <span class="n">RLog</span> <span class="n">rlog</span> <span class="o">=</span> <span class="n">buildRlog</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">rlog</span><span class="o">.</span><span class="na">setResp</span><span class="o">(</span><span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">logService</span><span class="o">.</span><span class="na">accessLog</span><span class="o">(</span><span class="n">rlog</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">&#34;record access log error&#34;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}));</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="问题修复一天后的监控">问题修复一天后的监控</h4>
 <p>经过一天的观察，内存使用保持在1个G左右，问题解决，长出一口气。
-<figure>
-    <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LINt9P.png"/> 
-</figure>
-</p>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LINt9P.png" alt=""></p>
 <h2 id="排查问题中产生的疑问">排查问题中产生的疑问</h2>
 <p>在排查过程中有一些疑问未解，在此记录一下:</p>
 <ol>
@@ -697,7 +686,7 @@ private void doReport<span class="o">()</span> <span class="o">{</span>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-04-01
+        2022-04-13
         
     </span>
   </p>

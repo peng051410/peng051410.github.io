@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-009/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="2020-ARTS-打卡第九天" />
 <meta property="og:description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-009/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-009/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-07T14:40:09+08:00" />
 <meta property="article:modified_time" content="2020-03-07T16:11:01+08:00" />
+
 <meta itemprop="name" content="2020-ARTS-打卡第九天">
-<meta itemprop="description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的">
-<meta itemprop="datePublished" content="2020-03-07T14:40:09+08:00" />
+<meta itemprop="description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的"><meta itemprop="datePublished" content="2020-03-07T14:40:09+08:00" />
 <meta itemprop="dateModified" content="2020-03-07T16:11:01+08:00" />
 <meta itemprop="wordCount" content="1899">
-
-
-
-<meta itemprop="keywords" content="arts,java,leetcode," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2020-ARTS-打卡第九天"/>
 <meta name="twitter:description" content="Algorithm 题目一 题目描述 使用栈实现队列的操作：push(), peek(), pop(), empty()操作，只能使用标准的栈操作 &ndash; 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的"/>
 
@@ -162,7 +158,7 @@
 <p>由于队列是FIFO，而栈是FILO，要想使用栈来实现队列，则可以使用两个栈来达到目的，即负负到正，核心点就是pop()和peek()方法的处理上，在调用pop()与peek()方法时都在要从outStack中来操作，如果outStack不为空，则直接进行操作，否则要把inStack中的元素添加到outStack中。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -219,62 +215,62 @@
 </span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Stack</span><span class="o">;</span>
-
-<span class="kd">class</span> <span class="nc">MyQueue</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inputStack</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outStack</span><span class="o">;</span>
-
-    <span class="cm">/** Initialize your data structure here. */</span>
-    <span class="kd">public</span> <span class="nf">MyQueue</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">inputStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
-        <span class="n">outStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Push element x to the back of queue. */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">inputStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Removes the element from in front of queue and returns that element. */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
-                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Get the front element. */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">peek</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
-                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Returns whether the queue is empty. */</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="k">return</span> <span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Stack</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">MyQueue</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inputStack</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outStack</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Initialize your data structure here. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">MyQueue</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outStack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Push element x to the back of queue. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inputStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Removes the element from in front of queue and returns that element. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Get the front element. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">peek</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="o">(!</span><span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outStack</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">inputStack</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">outStack</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Returns whether the queue is empty. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">inputStack</span><span class="o">.</span><span class="na">empty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outStack</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>时间复杂度：push O(1), pop O(n), peek O(n)</p>
 <h3 id="题目二">题目二</h3>
@@ -284,7 +280,7 @@
 <p>与上题相反，要用队列实现栈，也是使用了两个队列的方法，在操作中保存住栈的头元素，当要进行pop时，则要把inQueue中的n-1个元素push到outQueue中，再将inQueue与outQueue进行交换，最后pop出的都是outQueue（因为outQueue中只剩下最后一个元素了，outQueue就是先前的inQueue）中的元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -350,71 +346,71 @@
 </span><span class="lnt">64
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="o">;</span>
-
-<span class="c1">//leetcode submit region begin(Prohibit modification and deletion)
-</span><span class="c1"></span><span class="kd">class</span> <span class="nc">MyStack</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inQueue</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outQueue</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">top</span><span class="o">;</span>
-
-    <span class="cm">/** Initialize your data structure here. */</span>
-    <span class="kd">public</span> <span class="nf">MyStack</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">inQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
-        <span class="n">outQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Push element x onto stack. */</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">top</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">outQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">inQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Removes the element on top of the stack and returns that element. */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">while</span> <span class="o">(</span><span class="n">outQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">top</span> <span class="o">=</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-                <span class="n">inQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="k">while</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">top</span> <span class="o">=</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-                <span class="n">outQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
-        <span class="o">}</span>
-
-    <span class="o">}</span>
-
-    <span class="cm">/** Get the top element. */</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">top</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="k">return</span> <span class="n">top</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="cm">/** Returns whether the stack is empty. */</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Queue</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//leetcode submit region begin(Prohibit modification and deletion)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">class</span> <span class="nc">MyStack</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">inQueue</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">outQueue</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">top</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Initialize your data structure here. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">MyStack</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">outQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Push element x onto stack. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">top</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Removes the element on top of the stack and returns that element. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="o">(</span><span class="n">outQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">top</span> <span class="o">=</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">inQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="o">(</span><span class="n">inQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">top</span> <span class="o">=</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">outQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Get the top element. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">top</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">empty</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">top</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/** Returns whether the stack is empty. */</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">empty</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">inQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">outQueue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>时间复杂度：push O(1), pop O(n), top O(1)</p>
 <h2 id="review">Review</h2>
@@ -444,13 +440,13 @@
 <p>在命令行中一般都使用zsh做为默认shell，它提供了一种History操作的好的体验方式，即可以输入命令前缀，使用up-line-or-search或者down-line-or-search来进行针对该命令的历史补全，例如输入mvn 后，使用此命令可以补全输入历史指定mvn开头的命令了。以下配置将命令分别绑定在arrow up与arrow down键下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">bindkey <span class="s1">&#39;^[[A&#39;</span> up-line-or-search
-bindkey <span class="s1">&#39;^[[B&#39;</span> down-line-or-search
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bindkey <span class="s1">&#39;^[[A&#39;</span> up-line-or-search
+</span></span><span class="line"><span class="cl">bindkey <span class="s1">&#39;^[[B&#39;</span> down-line-or-search
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="share">Share</h2>
 <p><a href="https://www.gkogan.co/blog/simple-systems/">Simple Systems Have Less Downtime</a>简单的系统拥有更少的停机时间。作者以一个前造船工程师和现在创业公司的营销顾问来说明简单系统的重要性，作者把软件开发与世界上最大的集装箱船运行来进行说明简单系统的好处，并解释说明了为什么简单系统会减少停机时间。因为简单的系统可以熟练使用，便于故障的排除，还有更多的替代方案。作者还用一个真实的创业故事来进行阐述说明。</p>

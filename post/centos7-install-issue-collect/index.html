@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/centos7-install-issue-collect/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="Centos7 install issue collect" />
 <meta property="og:description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/centos7-install-issue-collect/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/centos7-install-issue-collect/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-05-06T13:00:55+08:00" />
 <meta property="article:modified_time" content="2019-06-26T10:31:28+08:00" />
+
 <meta itemprop="name" content="Centos7 install issue collect">
-<meta itemprop="description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m">
-<meta itemprop="datePublished" content="2019-05-06T13:00:55+08:00" />
+<meta itemprop="description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m"><meta itemprop="datePublished" content="2019-05-06T13:00:55+08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:31:28+08:00" />
 <meta itemprop="wordCount" content="1510">
-
-
-
-<meta itemprop="keywords" content="linux,centos," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,centos," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7 install issue collect"/>
 <meta name="twitter:description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m"/>
 
@@ -159,28 +155,28 @@
 <p>安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">IPADDR</span><span class="o">=</span>192.168.116.101
-<span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0
-<span class="nv">GATEWAY</span><span class="o">=</span>192.168.116.2
-<span class="nv">DNS1</span><span class="o">=</span>192.168.116.2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">IPADDR</span><span class="o">=</span>192.168.116.101
+</span></span><span class="line"><span class="cl"><span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0
+</span></span><span class="line"><span class="cl"><span class="nv">GATEWAY</span><span class="o">=</span>192.168.116.2
+</span></span><span class="line"><span class="cl"><span class="nv">DNS1</span><span class="o">=</span>192.168.116.2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这个参考了<a href="https://blog.csdn.net/zhishengqianjun/article/details/77046796">https://blog.csdn.net/zhishengqianjun/article/details/77046796</a></p>
 <h2 id="centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</h2>
 <p>由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">ip a
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ip a
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考<a href="https://blog.csdn.net/inslow/article/details/54177191">https://blog.csdn.net/inslow/article/details/54177191</a></p>
 <h3 id="centos7安装vmware-tools">Centos7安装VMware Tools</h3>
@@ -189,11 +185,11 @@
 <p>一句命令搞定：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="安装mysql">安装mysql</h2>
 <p>使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了<a href="https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/">https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/</a></p>
@@ -203,15 +199,15 @@
 <p>为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl start firewalld
-firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>3306/tcp --permanent
-firewall-cmd --reload
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl start firewalld
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>3306/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这个参考了<a href="https://www.jianshu.com/p/225a853350d9">https://www.jianshu.com/p/225a853350d9</a></p>
 <h2 id="安装oh-my-bash">安装oh-my-bash</h2>
@@ -223,29 +219,29 @@ firewall-cmd --reload
 <p>移除原来的getty@tty1.service软链接</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">rm /etc/systemd/system/getty.target.wants/getty@tty1.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>拷贝getty@.service file 并且命名为 <a href="mailto:getty@tty1.service">getty@tty1.service</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -254,25 +250,25 @@ firewall-cmd --reload
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>Service<span class="o">]</span>
-...
-<span class="nv">ExecStart</span><span class="o">=</span>-/sbin/agetty --autologin root --noclear %I
-...
-<span class="o">[</span>Install<span class="o">]</span>
-...
-<span class="p">;</span><span class="nv">Alias</span><span class="o">=</span>getty@tty1.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>-/sbin/agetty --autologin root --noclear %I
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="p">;</span><span class="nv">Alias</span><span class="o">=</span>getty@tty1.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>在getty.target.wants目录做一下软链接</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>

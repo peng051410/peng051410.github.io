@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/best-code1/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="让好代码生生不息-更好的对待NULL" />
 <meta property="og:description" content="什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/best-code1/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/best-code1/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-17T16:04:09+08:00" />
 <meta property="article:modified_time" content="2021-07-23T10:12:35+08:00" />
+
 <meta itemprop="name" content="让好代码生生不息-更好的对待NULL">
-<meta itemprop="description" content="什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug">
-<meta itemprop="datePublished" content="2021-07-17T16:04:09+08:00" />
+<meta itemprop="description" content="什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug"><meta itemprop="datePublished" content="2021-07-17T16:04:09+08:00" />
 <meta itemprop="dateModified" content="2021-07-23T10:12:35+08:00" />
 <meta itemprop="wordCount" content="1019">
-
-
-
-<meta itemprop="keywords" content="java,code," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="java,code," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="让好代码生生不息-更好的对待NULL"/>
 <meta name="twitter:description" content="什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug"/>
 
@@ -197,32 +193,32 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">rpcClient</span><span class="o">.</span><span class="na">getFromRpcList</span><span class="o">();</span>
-<span class="k">if</span><span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">values</span><span class="o">))</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="n">values</span>
-        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="n">rpcClient</span><span class="o">.</span><span class="na">getFromRpcList</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">values</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">values</span>
+</span></span><span class="line"><span class="cl">        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol>
 <li>使用emptyIfNull方法</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">return</span> <span class="n">CollectionUtils</span><span class="o">.</span><span class="na">emptyIfNull</span><span class="o">(</span><span class="n">rpcClient</span><span class="o">.</span><span class="na">getFromRpcList</span><span class="o">())</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">return</span> <span class="n">CollectionUtils</span><span class="o">.</span><span class="na">emptyIfNull</span><span class="o">(</span><span class="n">rpcClient</span><span class="o">.</span><span class="na">getFromRpcList</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样保证了代码编写的连贯性，爽！</p>
 <!-- raw HTML omitted -->

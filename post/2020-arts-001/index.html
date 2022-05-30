@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-001/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="2020-ARTS-打卡第一天" />
 <meta property="og:description" content="Algorithm 题目描述 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Example 输入123-&gt;321 输入-123-&gt;-321 输入1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-001/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-001/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-01-08T18:54:09+08:00" />
 <meta property="article:modified_time" content="2020-01-08T20:28:10+08:00" />
+
 <meta itemprop="name" content="2020-ARTS-打卡第一天">
-<meta itemprop="description" content="Algorithm 题目描述 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Example 输入123-&gt;321 输入-123-&gt;-321 输入1">
-<meta itemprop="datePublished" content="2020-01-08T18:54:09+08:00" />
+<meta itemprop="description" content="Algorithm 题目描述 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Example 输入123-&gt;321 输入-123-&gt;-321 输入1"><meta itemprop="datePublished" content="2020-01-08T18:54:09+08:00" />
 <meta itemprop="dateModified" content="2020-01-08T20:28:10+08:00" />
 <meta itemprop="wordCount" content="766">
-
-
-
-<meta itemprop="keywords" content="arts,java,leetcode," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="arts,java,leetcode," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2020-ARTS-打卡第一天"/>
 <meta name="twitter:description" content="Algorithm 题目描述 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。 Example 输入123-&gt;321 输入-123-&gt;-321 输入1"/>
 
@@ -168,7 +164,7 @@
 <h3 id="题目解答">题目解答</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -191,28 +187,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution1</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">reverseNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
-
-            <span class="kt">int</span> <span class="n">pod</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="n">10</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&gt;</span> <span class="n">7</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
-            <span class="o">}</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&lt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">8</span><span class="o">))</span> <span class="o">{</span>
-                <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
-            <span class="o">}</span>
-            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">10</span> <span class="o">+</span> <span class="n">pod</span><span class="o">;</span>
-            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">10</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution1</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">reverseNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">pod</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="n">10</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&gt;</span> <span class="n">7</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">res</span> <span class="o">&lt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">||</span> <span class="o">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span> <span class="o">/</span> <span class="n">10</span> <span class="o">&amp;&amp;</span> <span class="n">pod</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">8</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">10</span> <span class="o">+</span> <span class="n">pod</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">10</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此题主要考察对栈的使用，如果不使用其它辅助类，则要考虑Int的整数溢出问题。时间复杂度O(log(n))，空间复杂度为O(1)</p>
 <h2 id="review">Review</h2>
@@ -221,41 +217,41 @@
 <p>如果在项目中构建时，修改了Java代码，则可以跳过对js的编译，主要使用-pl参数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn clean install -DskipTests -pl <span class="s1">&#39;!m7,!m8,!m18&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn clean install -DskipTests -pl <span class="s1">&#39;!m7,!m8,!m18&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="如果可能-开启并行构建">如果可能，开启并行构建</h3>
 <p>当代的计算机都是多核CPU，如果项目允许，可以开启Maven的并行构建来加速构建，主要使用-T 1C参数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn -T 1C clean install -nsu -DskipTests -pl <span class="s1">&#39;!m7,!m8,!m18,!m11,!m24&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn -T 1C clean install -nsu -DskipTests -pl <span class="s1">&#39;!m7,!m8,!m18,!m11,!m24&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="只对新的修改进行构建">只对新的修改进行构建</h3>
 <p>可以指定进行构建的文件来加速构建，主要使用-pl参数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn clean install -DskipTests -nsu -pl <span class="s1">&#39;m7&#39;</span> -amd -T 1C
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn clean install -DskipTests -nsu -pl <span class="s1">&#39;m7&#39;</span> -amd -T 1C
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="只进行编译">只进行编译</h3>
 <p>如果本地开发不需要进行打包安装操作，则可以只执行Compile命令，去除不必要的执行步骤</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mvn clean -nsu compiler:compile compiler:testCompiler -T 1C
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn clean -nsu compiler:compile compiler:testCompiler -T 1C
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="对大项目进行拆分">对大项目进行拆分</h3>
 <p>拆分后就可以进行指定工程的编译了</p>
@@ -263,7 +259,7 @@
 <p>使用<a href="https://github.com/mfaerevaag/wd">wd</a>与<a href="https://github.com/junegunn/fzf">fzf</a>实现对文件的快速移动与复制</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -275,17 +271,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">#copy file to target fuzzy</span>
-<span class="c1">#c file1</span>
-c<span class="o">()</span> <span class="o">{</span>
-    cp -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-<span class="c1">#mv file to target fuzzy</span>
-<span class="c1">#vv file2</span>
-vv<span class="o">()</span> <span class="o">{</span>
-    mv -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1">#copy file to target fuzzy</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#c file1</span>
+</span></span><span class="line"><span class="cl">c<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    cp -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#mv file to target fuzzy</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#vv file2</span>
+</span></span><span class="line"><span class="cl">vv<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    mv -v <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="k">$(</span>awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> ~/.warprc <span class="p">|</span> fzf <span class="p">|</span> sed <span class="s2">&#34;s|~|</span><span class="nv">$HOME</span><span class="s2">|&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="share">Share</h2>
 <p>今天分享一篇JAVA基础的文章，讲述了开发中对Map进行合并的几种方式。由于JAVA8的加持，操作方式更加多样，如Map.merge()，Stream.concat()，Stream.of()，以及使用第三方的<a href="https://github.com/amaembo/streamex">StreamEx</a>来实现。<a href="http://feedproxy.google.com/~r/Baeldung/~3/rkHNYXEB134/java-merge-maps">Java-merge-maps</a></p>

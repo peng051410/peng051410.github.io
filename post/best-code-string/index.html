@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/best-code-string/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="让好代码生生不息-更好的使用String" />
 <meta property="og:description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/best-code-string/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/best-code-string/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-08-23T14:04:09+08:00" />
 <meta property="article:modified_time" content="2021-09-06T11:25:02+08:00" />
+
 <meta itemprop="name" content="让好代码生生不息-更好的使用String">
-<meta itemprop="description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str">
-<meta itemprop="datePublished" content="2021-08-23T14:04:09+08:00" />
+<meta itemprop="description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str"><meta itemprop="datePublished" content="2021-08-23T14:04:09+08:00" />
 <meta itemprop="dateModified" content="2021-09-06T11:25:02+08:00" />
-<meta itemprop="wordCount" content="1309">
-
-
-
-<meta itemprop="keywords" content="java,code," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1308">
+<meta itemprop="keywords" content="java,code," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="让好代码生生不息-更好的使用String"/>
 <meta name="twitter:description" content="开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str"/>
 
@@ -125,7 +121,7 @@
         <div class="post-category">
             <a href="/categories/java/"> java </a>
             </div>
-          <span class="more-meta"> 约 1309 字 </span>
+          <span class="more-meta"> 约 1308 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -159,11 +155,11 @@
 <p><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)">String.format()</a>是一个格式化的方法，使用%为前缀来表示要格式化的内容占位，一般的使用方法为：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>但是当要格式化的占位符与参数个数不同时会发生什么呢？</p>
 <h4 id="占位符个数与参数个数相同">占位符个数与参数个数相同</h4>
@@ -171,34 +167,34 @@
 <h4 id="占位符个数少于参数个数">占位符个数少于参数个数</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以正常打印，输出结果为: test result is success</p>
 <h4 id="占位符个数多于参数个数">占位符个数多于参数个数</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s %s %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;test result is %s %s %s&#34;</span><span class="o">,</span> <span class="s">&#34;success&#34;</span><span class="o">,</span> <span class="s">&#34;other&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>抛出了异常java.util.MissingFormatArgumentException: Format specifier &lsquo;%s&rsquo;</p>
 <h4 id="问题总结">问题总结</h4>
 <p>为什么占位符数少于参数个数可以正常执行，而多于参数个数却报了异常？看JAVADOC发现，如果占位符个数少于参数个数，则多余的参数被忽略，如果多于参数个数，则在进行解析时会判断待处理占位符位置与参数个数，主要代码逻辑如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="k">if</span> <span class="o">(</span><span class="n">args</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">lasto</span> <span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="n">MissingFormatArgumentException</span><span class="o">(</span><span class="n">fs</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">(</span><span class="n">args</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">lasto</span> <span class="o">&gt;</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="n">MissingFormatArgumentException</span><span class="o">(</span><span class="n">fs</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>所以在使用String.format方法 <code>切记</code> 要参数个数多于待解析占位符的个数，这种问题常因为Copy操作后，处理了部分参数而忘记对应处理占位符</p>
 <ul>
@@ -214,17 +210,17 @@
 <p>在StringUtils中有一个<a href="https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html#isNumeric-java.lang.CharSequence-">isNumeric</a>方法，用来判断字符串是不是数字，那下面的代码会返回什么呢？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNumeric</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNumeric</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3-dot-0之前stringutils">3.0之前StringUtils</h4>
 <p><a href="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/org/apache/commons/lang/StringUtils.html#isNumeric(java.lang.String)">StringUtils.isNumeric(&quot;&quot;)</a> 返回true，有点慌，空串怎么被认为是数字呢？看下代码实现就明白了，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -238,26 +234,26 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">str</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">))</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">str</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">))</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>代码中只判断了null，对空串直接就返回ture了</p>
 <h4 id="3-dot-0之后stringutils">3.0之后StringUtils</h4>
 <p><a href="https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/org/apache/commons/lang/StringUtils.html#isNumeric(java.lang.String)">StringUtils.isNumeric(&quot;&quot;)</a> 返回flase了，这才符合正常的使用逻辑，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -269,23 +265,21 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="kd">final</span> <span class="n">CharSequence</span> <span class="n">cs</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="n">cs</span><span class="o">))</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">final</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
-    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(!</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">cs</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="kd">final</span> <span class="n">CharSequence</span> <span class="n">cs</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">(</span><span class="n">isEmpty</span><span class="o">(</span><span class="n">cs</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">final</span> <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sz</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">cs</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>由代码可以看出当参数为空串时直接调用isEmpty方法返回false。在工具类使用时还是要使用最新的版本，多关注版本的优化项，多看源码，否则你以为的真的不一定是你以为的。</p>
 <h4 id="扩展一下">扩展一下</h4>
@@ -306,45 +300,45 @@
 <p>StringUtils.left(final String str, final int len)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;ab&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;ab&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">left</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="取字符串后n个字符">取字符串后N个字符</h4>
 <p>StringUtils.right(final String str, final int len)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;bc&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">0</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;bc&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="s">&#34;abc&#34;</span><span class="o">,</span> <span class="n">4</span><span class="o">)</span>   <span class="o">=</span> <span class="s">&#34;abc&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="对字符串尾部的操作符进行删除">对字符串尾部的操作符进行删除</h4>
 <p>想删除字符串的尾字符(回车符)，可以使用StringUtils.chop(final String str)方法</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">)</span>           <span class="o">=</span> <span class="s">&#34;&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
-<span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">)</span>        <span class="o">=</span> <span class="s">&#34;&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">)</span>           <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\n&#34;</span><span class="o">)</span>          <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">StringUtils</span><span class="o">.</span><span class="na">chop</span><span class="o">(</span><span class="s">&#34;\r\n&#34;</span><span class="o">)</span>        <span class="o">=</span> <span class="s">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>

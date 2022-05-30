@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="设计模式学习之观察者" />
 <meta property="og:description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-07-04T20:31:41+08:00" />
 <meta property="article:modified_time" content="2019-06-26T10:57:33+08:00" />
+
 <meta itemprop="name" content="设计模式学习之观察者">
-<meta itemprop="description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出">
-<meta itemprop="datePublished" content="2018-07-04T20:31:41+08:00" />
+<meta itemprop="description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出"><meta itemprop="datePublished" content="2018-07-04T20:31:41+08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:57:33+08:00" />
 <meta itemprop="wordCount" content="1250">
-
-
-
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之观察者"/>
 <meta name="twitter:description" content="说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出"/>
 
@@ -156,7 +152,7 @@
 <p>先来定义一个抽象的购买股票的股民们，他们有喜有悲的心情:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -175,29 +171,29 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/23.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Buyer</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
-
-    <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
-
-    <span class="kt">void</span> <span class="nf">happy</span><span class="o">();</span>
-
-    <span class="kt">void</span> <span class="nf">sad</span><span class="o">();</span>
-
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/23.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Buyer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">String</span> <span class="nf">getName</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">happy</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">sad</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>再来定义具体的股民行为实现类：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -229,42 +225,42 @@
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/23.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcrectBuyer</span> <span class="kd">implements</span> <span class="n">Buyer</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">happy</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:happy&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sad</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:sad&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/23.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcrectBuyer</span> <span class="kd">implements</span> <span class="n">Buyer</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">happy</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:happy&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sad</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&#34;:sad&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>具体的股民实现了喜与悲的方法，这样观察者已经准备就绪。下面来定义股票软件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -278,24 +274,24 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/23.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StockSoft</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">goUp</span><span class="o">();</span>
-
-    <span class="kt">void</span> <span class="nf">goDown</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/23.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StockSoft</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">goUp</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">goDown</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面定义了一个抽象的股票软件，它有两个方法，一个股票上涨，一个是股票下跌。接下来实现具体的股票软件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -332,47 +328,47 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/23.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteStockSoft</span> <span class="kd">implements</span> <span class="n">StockSoft</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Buyer</span><span class="o">&gt;</span> <span class="n">buyerList</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">ConcreteStockSoft</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">buyerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">quit</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goUp</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">happy</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goDown</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">sad</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/23.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteStockSoft</span> <span class="kd">implements</span> <span class="n">StockSoft</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Buyer</span><span class="o">&gt;</span> <span class="n">buyerList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ConcreteStockSoft</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">buyerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">join</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyerList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">quit</span><span class="o">(</span><span class="n">Buyer</span> <span class="n">buyer</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyerList</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">buyer</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goUp</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">happy</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">goDown</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyerList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">Buyer</span><span class="o">::</span><span class="n">sad</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这是一个具体的股票软件，它持有一个购买指定股票的股民列表，还有股民加入与退出的方法，实现了股票上涨时的方法，在上涨时会通知股民，调用股民的happy方法，在股票下跌时调用股民的sad方法。接着做一下测试:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -404,42 +400,41 @@
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/23.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">StockTest</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">ConcreteStockSoft</span> <span class="n">niuStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteStockSoft</span><span class="o">();</span>
-
-        <span class="n">ConcrectBuyer</span> <span class="n">buyer1</span><span class="o">,</span> <span class="n">buyer2</span><span class="o">,</span> <span class="n">buyer3</span><span class="o">;</span>
-        <span class="n">buyer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
-        <span class="n">buyer1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer1&#34;</span><span class="o">);</span>
-        <span class="n">buyer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
-        <span class="n">buyer2</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer2&#34;</span><span class="o">);</span>
-        <span class="n">buyer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
-        <span class="n">buyer3</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer3&#34;</span><span class="o">);</span>
-
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer2</span><span class="o">);</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer3</span><span class="o">);</span>
-
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">goUp</span><span class="o">();</span>
-
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">quit</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
-        <span class="n">niuStock</span><span class="o">.</span><span class="na">goDown</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.observer.stock</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/23.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StockTest</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ConcreteStockSoft</span> <span class="n">niuStock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteStockSoft</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ConcrectBuyer</span> <span class="n">buyer1</span><span class="o">,</span> <span class="n">buyer2</span><span class="o">,</span> <span class="n">buyer3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer1</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer1&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer2</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcrectBuyer</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buyer3</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;buyer3&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="n">buyer3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">goUp</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">quit</span><span class="o">(</span><span class="n">buyer1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">niuStock</span><span class="o">.</span><span class="na">goDown</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在测试类中定义了三位购买股票的股民，股票软件把他们加入到维护的股民列表中，这时股票软件发现股票涨了，就调用goUp方法通知了列表中购买股票的股民们。接着股民1选择了卖出股票，则他在软件的维护列表中被移除，这时股票软件发现股票跌了，此时再一次通知持有股票的股民们，这时股民1已经收不到任何的通知，因为他已经不股票软件的通知列表中，此时只股民2与股民3在那悲伤中&hellip;</p>
 <p>实现的观察者模式的类图：
-<figure>
-    <img src="/ox-hugo/observer.png"/> 
+<figure><img src="/ox-hugo/observer.png"/>
 </figure>
 
 表面上看股票软件与股民没有任何关系，但是在具体股票软件中维护了股民的列表(buyList)，这样可以在软件发现有变化时调用股民的方法来进行通知。</p>

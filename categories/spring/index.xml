@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/spring/</link>
+    <description>Recent content in spring on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Tue, 24 May 2022 17:37:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Springwebflux源码学习-服务启动流程</title>
+      <link>http://blog.imcompany.cn/post/springwebflux-start/</link>
+      <pubDate>Tue, 24 May 2022 17:37:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/springwebflux-start/</guid>
+      <description>学习目标 理解WebFlux核心组件HttpHandler、WebHandler的创建过程 理解DispatcherHandler如何映射请求u</description>
+    </item>
+    
+  </channel>
+</rss>

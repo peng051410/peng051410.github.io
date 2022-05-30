@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/" />
@@ -41,19 +41,15 @@
 <meta property="og:title" content="设计模式学习之装饰器" />
 <meta property="og:description" content="说明 装饰器设计模式是使用比较频繁的设计模式，它在不改变原物体的情况对原物体实现了功能的增加，原物体还是一个可单独使用的个体。在JAVA的类库" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-07-02T20:09:14+08:00" />
 <meta property="article:modified_time" content="2019-06-26T11:05:45+08:00" />
+
 <meta itemprop="name" content="设计模式学习之装饰器">
-<meta itemprop="description" content="说明 装饰器设计模式是使用比较频繁的设计模式，它在不改变原物体的情况对原物体实现了功能的增加，原物体还是一个可单独使用的个体。在JAVA的类库">
-<meta itemprop="datePublished" content="2018-07-02T20:09:14+08:00" />
+<meta itemprop="description" content="说明 装饰器设计模式是使用比较频繁的设计模式，它在不改变原物体的情况对原物体实现了功能的增加，原物体还是一个可单独使用的个体。在JAVA的类库"><meta itemprop="datePublished" content="2018-07-02T20:09:14+08:00" />
 <meta itemprop="dateModified" content="2019-06-26T11:05:45+08:00" />
 <meta itemprop="wordCount" content="1317">
-
-
-
-<meta itemprop="keywords" content="design-pattern,java," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="design-pattern,java," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="设计模式学习之装饰器"/>
 <meta name="twitter:description" content="说明 装饰器设计模式是使用比较频繁的设计模式，它在不改变原物体的情况对原物体实现了功能的增加，原物体还是一个可单独使用的个体。在JAVA的类库"/>
 
@@ -165,7 +161,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -177,24 +173,24 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptor</span> <span class="o">{</span>
-
-    <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">();</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Encryptor</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>具体加密类，实现加密处理接口</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -209,27 +205,27 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteEncryptor</span> <span class="kd">implements</span> <span class="n">Encryptor</span> <span class="o">{</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;base encrypt!&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConcreteEncryptor</span> <span class="kd">implements</span> <span class="n">Encryptor</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;base encrypt!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抽象加密装饰器</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -250,26 +246,26 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">EncryptDecorator</span> <span class="kd">implements</span> <span class="n">Encryptor</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">EncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">encrypt</span> <span class="o">=</span> <span class="n">encrypt</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">encrypt</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">EncryptDecorator</span> <span class="kd">implements</span> <span class="n">Encryptor</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">EncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">encrypt</span> <span class="o">=</span> <span class="n">encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">encrypt</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面的抽象装饰器实现的加密接口，在这个类中维护加密接口的实体，加密方法直接调用其维护实体的加密方法。</p>
 <ul>
@@ -277,7 +273,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -325,58 +321,58 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ModEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="nf">ModEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
-        <span class="n">modEncrypt</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modEncrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;取模加密！&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-
-<span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConverseEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="nf">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
-        <span class="n">converseEncrypt</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">converseEncrypt</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;逆向加密！&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ModEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ModEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">modEncrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">modEncrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;取模加密！&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConverseEncryptDecorator</span> <span class="kd">extends</span> <span class="n">EncryptDecorator</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">Encryptor</span> <span class="n">encrypt</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">encrypt</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">encrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">converseEncrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">converseEncrypt</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;逆向加密！&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面的代码定义了两个具体的装饰器实体，在这两个装饰器类中，加密方法中都调用了父类的加密方法，然后调用了自己实现的加密方法，这样在先前加密的基础上又进行了一次加密。达到了双重加密的效果。让我们来进行一下测试:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -398,32 +394,31 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
-
-<span class="cm">/**
-</span><span class="cm"> * Created by tomyli on 2018/6/25.
-</span><span class="cm"> * Github: https://github.com/peng051410
-</span><span class="cm"> */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EncryptDecoratorTest</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">Encryptor</span> <span class="n">encryptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteEncryptor</span><span class="o">();</span>
-        <span class="c1">//进行一次简单加密
-</span><span class="c1"></span>        <span class="n">Encryptor</span> <span class="n">encryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleEncryptDecorator</span><span class="o">(</span><span class="n">encryptor</span><span class="o">);</span>
-        <span class="n">encryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
-
-        <span class="c1">//对上一次加密进行二次加密（反转加密）
-</span><span class="c1"></span>        <span class="n">ConverseEncryptDecorator</span> <span class="n">converseEncryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">encryptDecorator</span><span class="o">);</span>
-        <span class="n">converseEncryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">cn.imcompany.decorator.encrypt</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by tomyli on 2018/6/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Github: https://github.com/peng051410
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EncryptDecoratorTest</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Encryptor</span> <span class="n">encryptor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcreteEncryptor</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//进行一次简单加密
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Encryptor</span> <span class="n">encryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleEncryptDecorator</span><span class="o">(</span><span class="n">encryptor</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">encryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//对上一次加密进行二次加密（反转加密）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ConverseEncryptDecorator</span> <span class="n">converseEncryptDecorator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConverseEncryptDecorator</span><span class="o">(</span><span class="n">encryptDecorator</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">converseEncryptDecorator</span><span class="o">.</span><span class="na">encrypt</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在测试中先进行了一次简单的加密，又在第一次加密的基础上进行了二次加密，如果再想使用第三次加密，直接把二次加密的对象引用传入即可。这样可以形成很多种组合，可以满足很多加密的需求。
 上面的加密类的类图如下：
-<figure>
-    <img src="/ox-hugo/decorator.png"/> 
+<figure><img src="/ox-hugo/decorator.png"/>
 </figure>
 </p>
 <h2 id="总结">总结</h2>
