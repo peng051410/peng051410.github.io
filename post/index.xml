@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 24 May 2022 17:37:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jun 2022 11:04:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring的RedisTemplate如何与Lettuce进行交互的</title>
+      <link>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</link>
+      <pubDate>Wed, 01 Jun 2022 11:04:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</guid>
+      <description>问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate</description>
+    </item>
+    
     <item>
       <title>Springwebflux源码学习-服务启动流程</title>
       <link>http://blog.imcompany.cn/post/springwebflux-start/</link>

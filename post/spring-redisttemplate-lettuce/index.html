@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring的RedisTemplate如何与Lettuce进行交互的 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring的RedisTemplate如何与Lettuce进行交互的" />
+<meta property="og:description" content="问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-01T11:04:00+08:00" />
+<meta property="article:modified_time" content="2022-06-06T16:21:49+08:00" />
+
+<meta itemprop="name" content="Spring的RedisTemplate如何与Lettuce进行交互的">
+<meta itemprop="description" content="问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate"><meta itemprop="datePublished" content="2022-06-01T11:04:00+08:00" />
+<meta itemprop="dateModified" content="2022-06-06T16:21:49+08:00" />
+<meta itemprop="wordCount" content="809">
+<meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring的RedisTemplate如何与Lettuce进行交互的"/>
+<meta name="twitter:description" content="问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring的RedisTemplate如何与Lettuce进行交互的</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-06-01 </span>
+        
+          <span class="more-meta"> 约 809 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题">问题</a></li>
+    <li><a href="#答案">答案</a></li>
+    <li><a href="#追根溯源">追根溯源</a>
+      <ul>
+        <li><a href="#redis交互流程">Redis交互流程</a></li>
+        <li><a href="#源码追踪">源码追踪</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="问题">问题</h2>
+<p>SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 <strong>RedisTemplate</strong> 与 <strong>ReactiveRedisTemplate</strong> ，正常情况下，异步编程要使用 <strong>ReactiveRedisTemplate</strong> ，那么可以在项目中使用 <strong>RedisTemplate</strong> 进行redis的操作吗？为什么？</p>
+<h2 id="答案">答案</h2>
+<p>可以使用 <strong>RedisTemplate</strong> 在异步代码中进行操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Autowried</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">StringRedisTemplate</span> <span class="n">redisTemplate</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">redisTemplate</span><span class="o">.</span><span class="na">opsForValue</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="追根溯源">追根溯源</h2>
+<p>先来明确一下应用与Redis的交互流程</p>
+<h3 id="redis交互流程">Redis交互流程</h3>
+<ol>
+<li>获取连接</li>
+<li>执行命令</li>
+<li>返回结果</li>
+</ol>
+<h3 id="源码追踪">源码追踪</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">redisTemplate</span><span class="o">.</span><span class="na">opsForValue</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以下以redis的get命令为例进行解析，get方法是通过 <strong>RedisTemplate</strong> 的 <strong>ValueOperations</strong> 属性进行处理的，因为 <strong>ValueOperations</strong> 是一个接口，要从其实现类 <strong>DefaultValueOperations</strong> 的get方法进行解析，直接上图</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RedisGet.png"
+         alt="Figure 1: 整体流程图"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 1: <!-- raw HTML omitted -->整体流程图</p>
+        </figcaption>
+</figure>
+
+<h4 id="关键点解析">关键点解析</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>第1-5步只是为了获取Redis连接</p>
+<p>getConnection是为了获取具体的底层redis命令，项目使用Lettuce且为String操作，此处获取的连接为 <strong>LettuceStringCommands</strong></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>第6步是命令执行触发点</p>
+<p>它调用了执行DefaultValueOperations.execute(ValueDeserializingRedisCallback)方法调用时方法参数ValueDeserializingRedisCallback的实现方法inRedis，由此转入到真正的命令执行阶段</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>第9步获取API</p>
+<p>LettuceConnection获取的是通过调用StatefulConnection.async()方法获取的异步API</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>第12步进行返回处理</p>
+<p>LettuceConnection的doInvoke方法进行了LettuceInvoker的返回处理，在里面看到的是调用了feture.get()方法使用等待的方式来实现了异步转同步的调用</p>
+</li>
+</ul>
+<h4 id="获取连接阶段与执行命令阶段图示">获取连接阶段与执行命令阶段图示</h4>
+<p>更近一步，可以把 <strong>获取连接阶段</strong> 与 <strong>执行命令阶段</strong> 分开来，看图更加清晰</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RedisGet-connection.png"
+         alt="Figure 2: 获取连接"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 2: <!-- raw HTML omitted -->获取连接</p>
+        </figcaption>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RedisGet-run-.png"
+         alt="Figure 3: 命令执行"/><figcaption>
+            <p><!-- raw HTML omitted -->Figure 3: <!-- raw HTML omitted -->命令执行</p>
+        </figcaption>
+</figure>
+
+<h2 id="总结">总结</h2>
+<p>在Springwebflux项目中可以使用RedisTemplate进行对Redis API的同步调用，其内部实现是future.get()方法</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-06-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tags/">tags</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/springwebflux-start/">
+            <span class="next-text nav-default">Springwebflux源码学习-服务启动流程</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
