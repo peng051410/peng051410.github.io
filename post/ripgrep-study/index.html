@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>用Riggrep进行快速搜索 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/ripgrep-study/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="用Riggrep进行快速搜索" />
+<meta property="og:description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/ripgrep-study/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-08-30T20:01:00+08:00" />
+<meta property="article:modified_time" content="2022-08-31T19:57:56+08:00" />
+
+<meta itemprop="name" content="用Riggrep进行快速搜索">
+<meta itemprop="description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使"><meta itemprop="datePublished" content="2022-08-30T20:01:00+08:00" />
+<meta itemprop="dateModified" content="2022-08-31T19:57:56+08:00" />
+<meta itemprop="wordCount" content="1523">
+<meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用Riggrep进行快速搜索"/>
+<meta name="twitter:description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">用Riggrep进行快速搜索</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-08-30 </span>
+        
+          <span class="more-meta"> 约 1523 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#为什么要学习riggrep">为什么要学习riggrep?</a>
+      <ul>
+        <li><a href="#riggrep快">Riggrep快</a></li>
+        <li><a href="#riggrep聪明">Riggrep聪明</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#使用说明">使用说明</a></li>
+    <li><a href="#基本使用">基本使用</a></li>
+    <li><a href="#只打印路径不打印匹配的内容">只打印路径不打印匹配的内容</a></li>
+    <li><a href="#搜索结果进行排序">搜索结果进行排序</a></li>
+    <li><a href="#搜索不包含指定内容">搜索不包含指定内容</a></li>
+    <li><a href="#搜索包含指定表达式的内容">搜索包含指定表达式的内容</a>
+      <ul>
+        <li><a href="#搜索表达式-b--var-let-const--b-说明">搜索表达式 \b(var|let|const)\b 说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#固定string搜索">固定String搜索</a></li>
+    <li><a href="#按指定文件类型搜索">按指定文件类型搜索</a>
+      <ul>
+        <li><a href="#在指定文件类型搜索">在指定文件类型搜索</a></li>
+        <li><a href="#排除指定文件类型搜索">排除指定文件类型搜索</a></li>
+        <li><a href="#rg支持的文件类型">rg支持的文件类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#只搜索指定文件格式的内容">只搜索指定文件格式的内容</a>
+      <ul>
+        <li><a href="#排除搜索指定文件类型">排除搜索指定文件类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#查询并替换">查询并替换</a>
+      <ul>
+        <li><a href="#替换后验证一下">替换后验证一下</a></li>
+      </ul>
+    </li>
+    <li><a href="#输出样式">输出样式</a></li>
+    <li><a href="#替换查询并保存修改到文件">替换查询并保存修改到文件</a>
+      <ul>
+        <li><a href="#再验证一下">再验证一下</a></li>
+        <li><a href="#还原对文件的修改">还原对文件的修改</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="为什么要学习riggrep">为什么要学习riggrep?</h2>
+<h3 id="riggrep快">Riggrep快</h3>
+<p>天下武功，唯快不破</p>
+<h3 id="riggrep聪明">Riggrep聪明</h3>
+<p>默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件</p>
+<h2 id="安装">安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install ripgrep
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="使用说明">使用说明</h2>
+<p>样例所有操作使用 <strong><a href="https://github.com/peng051410/study-sample">study-sample</a></strong> 仓库，里面是常用语言的入门学习资源，操作文档结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tree ~/github/study-sample
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- LearnBash.sh
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- LearnJava.java
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- README.md
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- commonlisp.lisp
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learn-emacs-lisp.el
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learn.nix
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learnc.c
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learnclojure.clj
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learngo.go
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learnlua.lua
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learnpython.py
+</span></span><span class="line"><span class="cl"><span class="p">|</span>-- learnrust.rs
+</span></span><span class="line"><span class="cl"><span class="sb">`</span>-- markdown.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">0</span> directories, <span class="m">13</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="基本使用">基本使用</h2>
+<p>遍历查询 <strong>~/github/study-sample/</strong> 下所有包含 <strong>TODO say hello</strong> 字符串的结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询到的结果以 <strong>文件</strong> 维度进行展示，使用 <strong>分号</strong> 进行分割，分号前为文件路径，分号后为查询匹配到的内容</p>
+<h2 id="只打印路径不打印匹配的内容">只打印路径不打印匹配的内容</h2>
+<p>如果只关注匹配的文件不关注内容，可以使用 <strong>&ndash;files-with-match</strong> 选项，短选项为 <strong>-l</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -l <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述结果只显示了匹配的文件路径，不再包含内容</p>
+<h2 id="搜索结果进行排序">搜索结果进行排序</h2>
+<p>为了性能考虑，rg默认搜索结果是无序的，如果想让结果有序，可增加 <strong>&ndash;sort path</strong> 选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -l <span class="s1">&#39;TODO say hello&#39;</span> --sort path ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述输出将结果按字母进行排序</p>
+<h2 id="搜索不包含指定内容">搜索不包含指定内容</h2>
+<p>如果想查询不包含指定内容的文件，可以使用 <strong>&ndash;files-without-match</strong> 选项，此选项无缩写选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg --files-without-match <span class="s1">&#39;TODO say hello&#39;</span> --sort path ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/README.md
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn.nix
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learngo.go
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnlua.lua
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnpython.py
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/markdown.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上结果正好与上一项的搜索结果相反</p>
+<h2 id="搜索包含指定表达式的内容">搜索包含指定表达式的内容</h2>
+<p>rg查询默认支持按表达式进行搜索，如想搜索所有不包含var或者let或者const内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg --files-without-match <span class="s2">&#34;\b(var|let|const)\b&#34;</span> --sort path ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/README.md
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnlua.lua
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为什么没有JAVA文件，因为java在10以后已经支持 <strong>var</strong> 关键字了</p>
+<h3 id="搜索表达式-b--var-let-const--b-说明">搜索表达式 \b(var|let|const)\b 说明</h3>
+<ol>
+<li>\b 表示匹配一个单词</li>
+<li>| 表示或者</li>
+</ol>
+<h2 id="固定string搜索">固定String搜索</h2>
+<p>默认rg使用正则表达式模式进行搜索，如果想搜索所有带 <strong>? a</strong> 的文件，直接进行 <strong>rg &ldquo;? a&rdquo;</strong> 会报错，正确的做法是使用 <strong>-F</strong> 选项，指定rg使用固定字符串方式搜索</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -F <span class="s2">&#34;? a&#34;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn.nix:  <span class="o">({</span> <span class="nv">a</span> <span class="o">=</span> 1<span class="p">;</span> <span class="nv">b</span> <span class="o">=</span> 2<span class="p">;</span> <span class="o">}</span> ? a<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="按指定文件类型搜索">按指定文件类型搜索</h2>
+<h3 id="在指定文件类型搜索">在指定文件类型搜索</h3>
+<p>如果只想搜索指定类型下的内容，则可以使用 <strong>-t filetype</strong> 选项，如只想搜索java类型文件下的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -tjava <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="排除指定文件类型搜索">排除指定文件类型搜索</h3>
+<p>如果想搜索非指定类型下的内容，则可以使用 <strong>-T filetype</strong> 选项，如排除搜索java文件下的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -Tjava <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="rg支持的文件类型">rg支持的文件类型</h3>
+<p>rg支持的文件类型可以通过 <strong>rg &ndash;type-list</strong> 进行获取，如查询java类型的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg --type-list <span class="p">|</span> grep java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">java: *.java, *.jsp, *.jspx, *.properties
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于 <strong>-tjava</strong> 类型, 它是会匹配到 <strong>.java, .jsp, .jspx, .properties</strong> 文件的</p>
+<h2 id="只搜索指定文件格式的内容">只搜索指定文件格式的内容</h2>
+<p>按类型搜索的范围有点大，如果只想在 <strong>.java</strong> 结尾的文件中进行搜索，可以使用 <strong>glob</strong> 模式，指定 <strong>-g</strong> 选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="排除搜索指定文件类型">排除搜索指定文件类型</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="查询并替换">查询并替换</h2>
+<p>rg不仅支持查找，还支持替换，使用 <strong>&ndash;replace</strong> 选项，短选项为 <strong>-r</strong>, 比如把 <strong>TODO say hello</strong> 替换成 <strong>DONE say hello</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/ -r <span class="s1">&#39;DONE say hello&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// DONE say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="替换后验证一下">替换后验证一下</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还是可以查询到 <strong>TODO say hello</strong> , 这是因为rg只会对 <strong>输出的结果进行替换，不会去修改原文件</strong></p>
+<h2 id="输出样式">输出样式</h2>
+<p>rg支持输出样式配置，可以直接使用 <strong>-p</strong> 选项, <strong>-p</strong> 是 <strong>&ndash;color always &ndash;heading &ndash;line-number</strong> 选项集合的缩写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/ -p
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs
+</span></span><span class="line"><span class="cl">15:// TODO say hello
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
+</span></span><span class="line"><span class="cl">9:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
+</span></span><span class="line"><span class="cl">8:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c
+</span></span><span class="line"><span class="cl">11:/* TODO say hello */
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
+</span></span><span class="line"><span class="cl">63:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
+</span></span><span class="line"><span class="cl">7:# TODO say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上就显示了行号与标题，还可以在支持色彩的终端显示不同颜色</p>
+<h2 id="替换查询并保存修改到文件">替换查询并保存修改到文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -l -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/ <span class="p">|</span> xargs sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/TODO/DONE/g&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"></code></pre></td></tr></table>
+</div>
+</div><h3 id="再验证一下">再验证一下</h3>
+<p>执行以下查询，没有结果返回，因为已经把 <strong>TODO</strong> 替换成 <strong>DONE</strong> 了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;TODO say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"></code></pre></td></tr></table>
+</div>
+</div><p>那查询一下 <strong>DONE say hello</strong> 是会有结果输出的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rg -g <span class="s2">&#34;!*.java&#34;</span> <span class="s1">&#39;DONE say hello&#39;</span> ~/github/study-sample/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// DONE say hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="还原对文件的修改">还原对文件的修改</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> ~/github/study-sample/
+</span></span><span class="line"><span class="cl">git restore .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"></code></pre></td></tr></table>
+</div>
+</div><h2 id="参考">参考</h2>
+<blockquote>
+<p><a href="https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#common-options">https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#common-options</a></p>
+<p><a href="https://mariusschulz.com/blog/fast-searching-with-ripgrep">Fast Searching with ripgrep — Marius Schulz</a></p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-08-31
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tags/">tags</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spring-redisttemplate-lettuce/">
+            <span class="next-text nav-default">Spring的RedisTemplate如何与Lettuce进行交互的</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
