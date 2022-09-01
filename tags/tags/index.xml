@@ -7,16 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 30 Aug 2022 20:01:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>用Riggrep进行快速搜索</title>
-      <link>http://blog.imcompany.cn/post/ripgrep-study/</link>
-      <pubDate>Tue, 30 Aug 2022 20:01:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/ripgrep-study/</guid>
-      <description>为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使</description>
-    </item>
-    
+    <lastBuildDate>Wed, 01 Jun 2022 11:04:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring的RedisTemplate如何与Lettuce进行交互的</title>
       <link>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</link>
