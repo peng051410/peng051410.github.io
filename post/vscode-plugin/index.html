@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>那些高效的VSCode插件 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.95.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/vscode-plugin/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="那些高效的VSCode插件" />
+<meta property="og:description" content="必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/vscode-plugin/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-09-05T17:45:00+08:00" />
+<meta property="article:modified_time" content="2022-09-05T19:09:06+08:00" />
+
+<meta itemprop="name" content="那些高效的VSCode插件">
+<meta itemprop="description" content="必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指"><meta itemprop="datePublished" content="2022-09-05T17:45:00+08:00" />
+<meta itemprop="dateModified" content="2022-09-05T19:09:06+08:00" />
+<meta itemprop="wordCount" content="667">
+<meta itemprop="keywords" content="vscode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些高效的VSCode插件"/>
+<meta name="twitter:description" content="必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">那些高效的VSCode插件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-09-05 </span>
+        
+          <span class="more-meta"> 约 667 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#必备">必备</a>
+      <ul>
+        <li><a href="#angelo-breuer-dot-clock"><a href="https://marketplace.visualstudio.com/items?itemName=angelo-breuer.clock">angelo-breuer.clock</a></a></li>
+        <li><a href="#chadalen-dot-vscode-jetbrains-icon-theme"><a href="https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme">chadalen.vscode-jetbrains-icon-theme</a></a></li>
+        <li><a href="#codezombiech-dot-gitignore"><a href="https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore">codezombiech.gitignore</a></a></li>
+        <li><a href="#wmaurer-dot-change-case"><a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case">wmaurer.change-case</a></a></li>
+        <li><a href="#lucax88x-dot-codeacejumper"><a href="https://marketplace.visualstudio.com/items?itemName=lucax88x.codeacejumper">lucax88x.codeacejumper</a></a></li>
+        <li><a href="#ntbbloodbath-dot-doom-one"><a href="https://marketplace.visualstudio.com/items?itemName=NTBBloodbath.doom-one">NTBBloodbath.doom-one</a></a></li>
+        <li><a href="#geeebe-dot-duplicate"><a href="https://marketplace.visualstudio.com/items?itemName=geeebe.duplicate">geeebe.duplicate</a></a></li>
+        <li><a href="#kahole-dot-magit"><a href="https://marketplace.visualstudio.com/items?itemName=kahole.magit">kahole.magit</a></a></li>
+        <li><a href="#usernamehw-dot-errorlens"><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">usernamehw.errorlens</a></a></li>
+        <li><a href="#zerodind-dot-familiar-java-themes"><a href="https://marketplace.visualstudio.com/items?itemName=zerodind.familiar-java-themes">zerodind.familiar-java-themes</a></a></li>
+        <li><a href="#vsls-contrib-dot-gistfs"><a href="https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs">vsls-contrib.gistfs</a></a></li>
+        <li><a href="#qezhu-dot-gitlink"><a href="https://marketplace.visualstudio.com/items?itemName=qezhu.gitlink">qezhu.gitlink</a></a></li>
+        <li><a href="#trixnz-dot-go-to-method"><a href="https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method">trixnz.go-to-method</a></a></li>
+        <li><a href="#redguardtoo-dot-matchit"><a href="https://marketplace.visualstudio.com/items?itemName=redguardtoo.matchit">redguardtoo.matchit</a></a></li>
+        <li><a href="#yutengjing-dot-open-in-external-app"><a href="https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app">YuTengjing.open-in-external-app</a></a></li>
+        <li><a href="#tootone-dot-org-mode"><a href="https://marketplace.visualstudio.com/items?itemName=tootone.org-mode">tootone.org-mode</a></a></li>
+        <li><a href="#mushan-dot-vscode-paste-image"><a href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image">mushan.vscode-paste-image</a></a></li>
+        <li><a href="#shan-dot-code-settings-sync"><a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Shan.code-settings-sync</a></a></li>
+        <li><a href="#mybells-dot-someone-github-stars"><a href="https://marketplace.visualstudio.com/items?itemName=mybells.someone-github-stars">mybells.someone-github-stars</a></a></li>
+        <li><a href="#tabnine-dot-tabnine-vscode"><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></a></li>
+        <li><a href="#vscodevim-dot-vim"><a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">vscodevim.vim</a></a></li>
+        <li><a href="#vspacecode-dot-whichkey"><a href="https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey">VSpaceCode.whichkey</a></a></li>
+        <li><a href="#huren-dot-youdao-translator"><a href="https://marketplace.visualstudio.com/items?itemName=huren.youdao-translator">huren.youdao-translator</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#开发语言">开发语言</a>
+      <ul>
+        <li><a href="#rust">Rust</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#idleberg-dot-applescript"><a href="https://marketplace.visualstudio.com/items?itemName=idleberg.applescript">idleberg.applescript</a></a></li>
+        <li><a href="#redhat-dot-fabric8-analytics"><a href="https://marketplace.visualstudio.com/items?itemName=redhat.fabric8-analytics">redhat.fabric8-analytics</a></a></li>
+        <li><a href="#ms-azuretools-dot-vscode-docker"><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></a></li>
+        <li><a href="#editorconfig-dot-editorconfig"><a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">EditorConfig.EditorConfig</a></a></li>
+        <li><a href="#golang-dot-go"><a href="https://marketplace.visualstudio.com/items?itemName=golang.go">golang.go</a></a></li>
+        <li><a href="#jebbs-dot-plantuml"><a href="https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml">jebbs.plantuml</a></a></li>
+        <li><a href="#ying-dot-jsbox"><a href="https://marketplace.visualstudio.com/items?itemName=Ying.jsbox">Ying.jsbox</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="必备">必备</h2>
+<h3 id="angelo-breuer-dot-clock"><a href="https://marketplace.visualstudio.com/items?itemName=angelo-breuer.clock">angelo-breuer.clock</a></h3>
+<p>在状态栏增加时间显示</p>
+<h3 id="chadalen-dot-vscode-jetbrains-icon-theme"><a href="https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme">chadalen.vscode-jetbrains-icon-theme</a></h3>
+<p>类JetBrains的文件图标</p>
+<h3 id="codezombiech-dot-gitignore"><a href="https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore">codezombiech.gitignore</a></h3>
+<p>.ignore文件支持</p>
+<h3 id="wmaurer-dot-change-case"><a href="https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case">wmaurer.change-case</a></h3>
+<p>快速切换选择单词的格式，支持驼峰，大小写等</p>
+<h3 id="lucax88x-dot-codeacejumper"><a href="https://marketplace.visualstudio.com/items?itemName=lucax88x.codeacejumper">lucax88x.codeacejumper</a></h3>
+<p>快速跳转到指定字符</p>
+<h3 id="ntbbloodbath-dot-doom-one"><a href="https://marketplace.visualstudio.com/items?itemName=NTBBloodbath.doom-one">NTBBloodbath.doom-one</a></h3>
+<p>类Emacs doom-one主题</p>
+<h3 id="geeebe-dot-duplicate"><a href="https://marketplace.visualstudio.com/items?itemName=geeebe.duplicate">geeebe.duplicate</a></h3>
+<p>复制当前光标中的行，VSCode默认行为增强</p>
+<h3 id="kahole-dot-magit"><a href="https://marketplace.visualstudio.com/items?itemName=kahole.magit">kahole.magit</a></h3>
+<p>类Emacs magit支持</p>
+<h3 id="usernamehw-dot-errorlens"><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">usernamehw.errorlens</a></h3>
+<p>VSCode错误提示增强</p>
+<h3 id="zerodind-dot-familiar-java-themes"><a href="https://marketplace.visualstudio.com/items?itemName=zerodind.familiar-java-themes">zerodind.familiar-java-themes</a></h3>
+<p>类Idea主题</p>
+<h3 id="vsls-contrib-dot-gistfs"><a href="https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs">vsls-contrib.gistfs</a></h3>
+<p>Github gist快速查看与编辑</p>
+<h3 id="qezhu-dot-gitlink"><a href="https://marketplace.visualstudio.com/items?itemName=qezhu.gitlink">qezhu.gitlink</a></h3>
+<p>复制当前文件的仓库地址</p>
+<h3 id="trixnz-dot-go-to-method"><a href="https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method">trixnz.go-to-method</a></h3>
+<p>跳转到指定方法，不包换其它Symbol信息</p>
+<h3 id="redguardtoo-dot-matchit"><a href="https://marketplace.visualstudio.com/items?itemName=redguardtoo.matchit">redguardtoo.matchit</a></h3>
+<p>Tag匹配，在代码结构中快速跳转</p>
+<h3 id="yutengjing-dot-open-in-external-app"><a href="https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app">YuTengjing.open-in-external-app</a></h3>
+<p>使用外部应用打开当前文件</p>
+<h3 id="tootone-dot-org-mode"><a href="https://marketplace.visualstudio.com/items?itemName=tootone.org-mode">tootone.org-mode</a></h3>
+<p>Emacs org-mode局部支持</p>
+<h3 id="mushan-dot-vscode-paste-image"><a href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image">mushan.vscode-paste-image</a></h3>
+<p>粘贴图片到Markdown</p>
+<h3 id="shan-dot-code-settings-sync"><a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync">Shan.code-settings-sync</a></h3>
+<p>VSCode配置多终端同步</p>
+<h3 id="mybells-dot-someone-github-stars"><a href="https://marketplace.visualstudio.com/items?itemName=mybells.someone-github-stars">mybells.someone-github-stars</a></h3>
+<p>获取指定Githuber的Star并写入到Markdown</p>
+<h3 id="tabnine-dot-tabnine-vscode"><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></h3>
+<p>TabNine AI代码完成</p>
+<h3 id="vscodevim-dot-vim"><a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim">vscodevim.vim</a></h3>
+<p>在VSCode中使用VIM</p>
+<h3 id="vspacecode-dot-whichkey"><a href="https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey">VSpaceCode.whichkey</a></h3>
+<p>VSCode按键修改与提示</p>
+<h3 id="huren-dot-youdao-translator"><a href="https://marketplace.visualstudio.com/items?itemName=huren.youdao-translator">huren.youdao-translator</a></h3>
+<p>有道翻译</p>
+<h2 id="开发语言">开发语言</h2>
+<h3 id="rust">Rust</h3>
+<h4 id="bungcip-dot-better-toml"><a href="https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml">bungcip.better-toml</a></h4>
+<p>TOML文件语法支持</p>
+<h4 id="serayuzgur-dot-crates"><a href="https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates">serayuzgur.crates</a></h4>
+<p>Rust crate依赖管理</p>
+<h4 id="dustypomerleau-dot-rust-syntax"><a href="https://marketplace.visualstudio.com/items?itemName=dustypomerleau.rust-syntax">dustypomerleau.rust-syntax</a></h4>
+<p>Rust语法支持</p>
+<h4 id="hdevalke-dot-rust-test-lens"><a href="https://marketplace.visualstudio.com/items?itemName=hdevalke.rust-test-lens">hdevalke.rust-test-lens</a></h4>
+<p>Rust代码增加快速操作(启动、调试)按钮</p>
+<h4 id="rust-lang-dot-rust-analyzer"><a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer">rust-lang.rust-analyzer</a></h4>
+<p>Rust代码完成与编译</p>
+<h4 id="vadimcn-dot-vscode-lldb"><a href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">vadimcn.vscode-lldb</a></h4>
+<p>LLDB语言调试，支持C++和Rust</p>
+<h3 id="java">Java</h3>
+<h4 id="vscjava-dot-vscode-java-debug"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug">vscjava.vscode-java-debug</a></h4>
+<p>Java Debug支持</p>
+<h4 id="vscjava-dot-vscode-java-pack"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack">vscjava.vscode-java-pack</a></h4>
+<p>JAVA开发包</p>
+<h4 id="redhat-dot-java"><a href="https://marketplace.visualstudio.com/items?itemName=redhat.java">redhat.java</a></h4>
+<p>JAVA语言JDT支持</p>
+<h4 id="gabrielbb-dot-vscode-lombok"><a href="https://marketplace.visualstudio.com/items?itemName=GabrielBB.vscode-lombok">GabrielBB.vscode-lombok</a></h4>
+<p>JAVA注解Lombok支持</p>
+<h4 id="vscjava-dot-vscode-maven"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven">vscjava.vscode-maven</a></h4>
+<p>JAVA Maven支持</p>
+<h4 id="vscjava-dot-vscode-java-dependency"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency">vscjava.vscode-java-dependency</a></h4>
+<p>Java项目管理</p>
+<h4 id="vscjava-dot-vscode-spring-boot-dashboard"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard">vscjava.vscode-spring-boot-dashboard</a></h4>
+<p>SpringBoot支持</p>
+<h4 id="pivotal-dot-vscode-boot-dev-pack"><a href="https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack">Pivotal.vscode-boot-dev-pack</a></h4>
+<p>SpringBoot开发包</p>
+<h4 id="pivotal-dot-vscode-spring-boot"><a href="https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-spring-boot">Pivotal.vscode-spring-boot</a></h4>
+<p>SpringBoot工具集，支持SpringMvc url查询与跳转</p>
+<h4 id="vscjava-dot-vscode-spring-initializr"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr">vscjava.vscode-spring-initializr</a></h4>
+<p>Spring项目初始化工具</p>
+<h4 id="vscjava-dot-vscode-java-test"><a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test">vscjava.vscode-java-test</a></h4>
+<p>JAVA单元测试支持</p>
+<h3 id="idleberg-dot-applescript"><a href="https://marketplace.visualstudio.com/items?itemName=idleberg.applescript">idleberg.applescript</a></h3>
+<p>Applescript语言支持</p>
+<h3 id="redhat-dot-fabric8-analytics"><a href="https://marketplace.visualstudio.com/items?itemName=redhat.fabric8-analytics">redhat.fabric8-analytics</a></h3>
+<p>依赖分析，支持Maven，Npm，Go，Python</p>
+<h3 id="ms-azuretools-dot-vscode-docker"><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></h3>
+<p>Docker支持</p>
+<h3 id="editorconfig-dot-editorconfig"><a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">EditorConfig.EditorConfig</a></h3>
+<p>多开发工具配置统一</p>
+<h3 id="golang-dot-go"><a href="https://marketplace.visualstudio.com/items?itemName=golang.go">golang.go</a></h3>
+<p>GO语言支持</p>
+<h3 id="jebbs-dot-plantuml"><a href="https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml">jebbs.plantuml</a></h3>
+<p>PlantUML支持</p>
+<h3 id="ying-dot-jsbox"><a href="https://marketplace.visualstudio.com/items?itemName=Ying.jsbox">Ying.jsbox</a></h3>
+<p>JSBox开发支持</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-09-05
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/vscode/">vscode</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/ripgrep-study/">
+            <span class="next-text nav-default">用Riggrep进行快速搜索</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/hougemeiga" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">京ICP备17037246号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
