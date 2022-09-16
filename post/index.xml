@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Mon, 05 Sep 2022 17:45:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Sep 2022 15:22:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apollo不更新配置了？</title>
+      <link>http://blog.imcompany.cn/post/apollo-work-issue/</link>
+      <pubDate>Fri, 16 Sep 2022 15:22:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/apollo-work-issue/</guid>
+      <description>问题描述 近期改造服务调用，需要使用Apollo配置进行灵活切换，上线后发现有些机器配置生效，有些配置未生效，开发小伙伴反馈此问题发生有一段时</description>
+    </item>
+    
     <item>
       <title>那些高效的VSCode插件</title>
       <link>http://blog.imcompany.cn/post/vscode-plugin/</link>

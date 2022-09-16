@@ -43,12 +43,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/ripgrep-study/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-08-30T20:01:00+08:00" />
-<meta property="article:modified_time" content="2022-09-01T10:14:02+08:00" />
+<meta property="article:modified_time" content="2022-09-07T11:56:28+08:00" />
 
 <meta itemprop="name" content="用Riggrep进行快速搜索">
 <meta itemprop="description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使"><meta itemprop="datePublished" content="2022-08-30T20:01:00+08:00" />
-<meta itemprop="dateModified" content="2022-09-01T10:14:02+08:00" />
-<meta itemprop="wordCount" content="1523">
+<meta itemprop="dateModified" content="2022-09-07T11:56:28+08:00" />
+<meta itemprop="wordCount" content="1525">
 <meta itemprop="keywords" content="commandline," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用Riggrep进行快速搜索"/>
 <meta name="twitter:description" content="为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使"/>
@@ -119,7 +119,7 @@
       <div class="post-meta">
         <span class="post-time"> 2022-08-30 </span>
         
-          <span class="more-meta"> 约 1523 字 </span>
+          <span class="more-meta"> 约 1525 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -261,13 +261,13 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>查询到的结果以 <strong>文件</strong> 维度进行展示，使用 <strong>分号</strong> 进行分割，分号前为文件路径，分号后为查询匹配到的内容</p>
@@ -292,13 +292,13 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnJava.java
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上述结果只显示了匹配的文件路径，不再包含内容</p>
@@ -445,11 +445,11 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
 </span></span></code></pre></td></tr></table>
 </div>
@@ -509,11 +509,11 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
 </span></span></code></pre></td></tr></table>
 </div>
@@ -537,11 +537,11 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# DONE say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> DONE say hello
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> DONE say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# DONE say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// DONE say hello
 </span></span></code></pre></td></tr></table>
 </div>
@@ -564,12 +564,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>还是可以查询到 <strong>TODO say hello</strong> , 这是因为rg只会对 <strong>输出的结果进行替换，不会去修改原文件</strong></p>
@@ -604,17 +604,17 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
-</span></span><span class="line"><span class="cl">63:<span class="p">;;</span> TODO say hello
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj
 </span></span><span class="line"><span class="cl">9:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
-</span></span><span class="line"><span class="cl">8:<span class="p">;;</span> TODO say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el
+</span></span><span class="line"><span class="cl">63:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c
 </span></span><span class="line"><span class="cl">11:/* TODO say hello */
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp
+</span></span><span class="line"><span class="cl">8:<span class="p">;;</span> TODO say hello
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh
 </span></span><span class="line"><span class="cl">7:# TODO say hello
@@ -675,9 +675,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/Users/tomyli/github/study-sample/LearnBash.sh:# DONE say hello
-</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnclojure.clj:<span class="p">;;</span> DONE say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learn-emacs-lisp.el:<span class="p">;;</span> DONE say hello
+</span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnc.c:/* DONE say hello */
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/commonlisp.lisp:<span class="p">;;</span> DONE say hello
 </span></span><span class="line"><span class="cl">/Users/tomyli/github/study-sample/learnrust.rs:// DONE say hello
 </span></span></code></pre></td></tr></table>
@@ -703,6 +703,8 @@
 <blockquote>
 <p><a href="https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#common-options">https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#common-options</a></p>
 <p><a href="https://mariusschulz.com/blog/fast-searching-with-ripgrep">Fast Searching with ripgrep — Marius Schulz</a></p>
+<p>Hello123568999</p>
+<p>87878</p>
 </blockquote>
 
     </div>
@@ -715,7 +717,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-09-01
+        2022-09-07
         
     </span>
   </p>
