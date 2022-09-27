@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 16 Sep 2022 15:22:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 15:03:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org-anki, Org与Anki的完美结合</title>
+      <link>http://blog.imcompany.cn/post/tools-org-anki/</link>
+      <pubDate>Tue, 27 Sep 2022 15:03:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/tools-org-anki/</guid>
+      <description>Org-anki Org-anki是一个同步Org中note到Anki的Emacs包，它的实现非常简单灵活，文档书写体验好 安装 1 2 (use-package org-anki :commands (org-anki-sync-entry org-anki-sync-all)) 支持的note 基</description>
+    </item>
+    
     <item>
       <title>Apollo不更新配置了？</title>
       <link>http://blog.imcompany.cn/post/apollo-work-issue/</link>
