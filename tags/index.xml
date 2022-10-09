@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 27 Sep 2022 15:03:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>emacs</title>
       <link>http://blog.imcompany.cn/tags/emacs/</link>
-      <pubDate>Tue, 27 Sep 2022 15:03:00 +0800</pubDate>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/emacs/</guid>
       <description></description>
@@ -20,9 +20,18 @@
     <item>
       <title>org</title>
       <link>http://blog.imcompany.cn/tags/org/</link>
-      <pubDate>Tue, 27 Sep 2022 15:03:00 +0800</pubDate>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/org/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>org-babel</title>
+      <link>http://blog.imcompany.cn/tags/org-babel/</link>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/org-babel/</guid>
       <description></description>
     </item>
     

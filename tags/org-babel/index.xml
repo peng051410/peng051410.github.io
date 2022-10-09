@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>org-babel on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/org-babel/</link>
+    <description>Recent content in org-babel on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/org-babel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org-babel学习记录</title>
+      <link>http://blog.imcompany.cn/post/org-babel-study/</link>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/org-babel-study/</guid>
+      <description>基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var</description>
+    </item>
+    
+  </channel>
+</rss>

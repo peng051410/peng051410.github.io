@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 27 Sep 2022 15:03:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org-babel学习记录</title>
+      <link>http://blog.imcompany.cn/post/org-babel-study/</link>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/org-babel-study/</guid>
+      <description>基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var</description>
+    </item>
+    
     <item>
       <title>Org-anki, Org与Anki的完美结合</title>
       <link>http://blog.imcompany.cn/post/tools-org-anki/</link>

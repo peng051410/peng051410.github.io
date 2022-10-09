@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>那些有用maven命令 - I&#39;m company</title>
+  <title>Org-babel学习记录 - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.95.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/maven-swim/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/org-babel-study/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,20 +38,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="那些有用maven命令" />
-<meta property="og:description" content="查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件" />
+<meta property="og:title" content="Org-babel学习记录" />
+<meta property="og:description" content="基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/maven-swim/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-31T10:45:55+08:00" />
-<meta property="article:modified_time" content="2020-01-03T15:06:36+08:00" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/org-babel-study/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-09-28T15:12:00+08:00" />
+<meta property="article:modified_time" content="2022-09-28T16:17:36+08:00" />
 
-<meta itemprop="name" content="那些有用maven命令">
-<meta itemprop="description" content="查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件"><meta itemprop="datePublished" content="2019-12-31T10:45:55+08:00" />
-<meta itemprop="dateModified" content="2020-01-03T15:06:36+08:00" />
-<meta itemprop="wordCount" content="389">
-<meta itemprop="keywords" content="commandline,maven," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="那些有用maven命令"/>
-<meta name="twitter:description" content="查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件"/>
+<meta itemprop="name" content="Org-babel学习记录">
+<meta itemprop="description" content="基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var"><meta itemprop="datePublished" content="2022-09-28T15:12:00+08:00" />
+<meta itemprop="dateModified" content="2022-09-28T16:17:36+08:00" />
+<meta itemprop="wordCount" content="111">
+<meta itemprop="keywords" content="org,emacs,org-babel," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Org-babel学习记录"/>
+<meta name="twitter:description" content="基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -114,14 +114,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">那些有用maven命令</h1>
+      <h1 class="post-title">Org-babel学习记录</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-12-31 </span>
-        <div class="post-category">
-            <a href="/categories/tool/"> tool </a>
-            </div>
-          <span class="more-meta"> 约 389 字 </span>
+        <span class="post-time"> 2022-09-28 </span>
+        
+          <span class="more-meta"> 约 111 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -132,13 +130,18 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#查看当前系统的配置信息">查看当前系统的配置信息</a></li>
-    <li><a href="#查看当前有效的settings文件">查看当前有效的settings文件</a></li>
-    <li><a href="#查看settings配置的值">查看Settings配置的值</a></li>
-    <li><a href="#指定发布到其它仓库">指定发布到其它仓库</a>
+    <li><a href="#基础">基础</a>
       <ul>
-        <li><a href="#deploy插件2-dot-x版本发布">Deploy插件2.X版本发布</a></li>
-        <li><a href="#deploy插件3-dot-0-dot-0-m1版本发布">Deploy插件3.0.0-M1版本发布</a></li>
+        <li><a href="#匿名代码段">匿名代码段</a></li>
+        <li><a href="#命名的代码块">命名的代码块</a></li>
+        <li><a href="#定义参数">定义参数</a></li>
+        <li><a href="#header">Header</a></li>
+        <li><a href="#内联代码段">内联代码段</a></li>
+      </ul>
+    </li>
+    <li><a href="#常用命令">常用命令</a>
+      <ul>
+        <li><a href="#org-babel-execute-buffer">org-babel-execute-buffer</a></li>
       </ul>
     </li>
   </ul>
@@ -146,59 +149,21 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="查看当前系统的配置信息">查看当前系统的配置信息</h2>
-<p>排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn help:system
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="查看当前有效的settings文件">查看当前有效的settings文件</h2>
-<p>maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn help:effective-settings
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="查看settings配置的值">查看Settings配置的值</h2>
-<p>以下命令可以查看settings文件中的settings-&gt;servers的配置</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn -q -Dexpression<span class="o">=</span>settings.servers -DforceStdout help:evaluate
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>使用<a href="https://maven.apache.org/plugins/maven-help-plugin/evaluate-mojo.html">help:evaluate</a>可以查看所有的配置信息</p>
-<h2 id="指定发布到其它仓库">指定发布到其它仓库</h2>
-<h3 id="deploy插件2-dot-x版本发布">Deploy插件2.X版本发布</h3>
-<p>有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn -DaltDeploymentRepository<span class="o">=</span>id::layout::url
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>具体说明参见<a href="https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html">deploy:deploy</a></p>
-<h3 id="deploy插件3-dot-0-dot-0-m1版本发布">Deploy插件3.0.0-M1版本发布</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId<span class="o">=</span>com.qqreader -Dfile<span class="o">=</span>./target/<span class="k">$(</span>/data/mvn/bin/mvn -q -Dexpression<span class="o">=</span>project.build.finalName -DforceStdout help:evaluate<span class="k">)</span>.jar -Durl<span class="o">=</span>http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId<span class="o">=</span>snapshot-id
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+      <h2 id="基础">基础</h2>
+<h3 id="匿名代码段">匿名代码段</h3>
+<h3 id="命名的代码块">命名的代码块</h3>
+<p>命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配</p>
+<h3 id="定义参数">定义参数</h3>
+<p>参数变量根据对应语言表现方式不同
+:var x=0</p>
+<h3 id="header">Header</h3>
+<p>header多行书写便于阅读</p>
+<h3 id="内联代码段">内联代码段</h3>
+<p><code>4</code></p>
+<h2 id="常用命令">常用命令</h2>
+<h3 id="org-babel-execute-buffer">org-babel-execute-buffer</h3>
+<p>执行buffer的所有代码段</p>
+
     </div>
 
     <div class="post-copyright">
@@ -209,7 +174,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-01-03
+        2022-09-28
         
     </span>
   </p>
@@ -221,17 +186,14 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/commandline/">commandline</a>
-          <a href="/tags/maven/">maven</a>
+          <a href="/tags/org/">org</a>
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/org-babel/">org-babel</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/maven-deploy-issue/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Maven发布401问题排查</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/java8-issue-review/">
-            <span class="next-text nav-default">JAVA8问题处理回顾-持续更新</span>
+        
+        <a class="next" href="/post/tools-org-anki/">
+            <span class="next-text nav-default">Org-anki, Org与Anki的完美结合</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
