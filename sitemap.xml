@@ -10,7 +10,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2022-10-09T17:54:16+08:00</lastmod>
+    <lastmod>2022-10-21T10:52:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,14 +38,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2022-10-09T17:54:16+08:00</lastmod>
+    <lastmod>2022-10-21T10:52:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2022-10-09T17:54:16+08:00</lastmod>
+    <lastmod>2022-10-21T10:52:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,14 +73,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/vscode/</loc>
-    <lastmod>2022-09-05T19:09:06+08:00</lastmod>
+    <lastmod>2022-10-21T10:52:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/vscode-plugin/</loc>
-    <lastmod>2022-09-05T19:09:06+08:00</lastmod>
+    <lastmod>2022-10-21T10:52:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
