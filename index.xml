@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 12:01:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java枚举学习</title>
+      <link>http://blog.imcompany.cn/post/java-enum/</link>
+      <pubDate>Wed, 23 Nov 2022 12:01:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/java-enum/</guid>
+      <description>枚举 枚举是指包含指定个数特定类型的实例类，所有枚举类默认都继承 java.lang.Enum ，枚举类是可序列化、可比较的 1 2 3 4 5 6 7 8 public enum Person { MAN, WOMAN; } public static void main(String[] args) { System.out.println(Person.MAN); } 1</description>
+    </item>
+    
     <item>
       <title>Org-babel学习记录</title>
       <link>http://blog.imcompany.cn/post/org-babel-study/</link>
