@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 06 Apr 2022 18:53:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Dec 2022 11:29:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux-man</title>
+      <link>http://blog.imcompany.cn/post/linux-man/</link>
+      <pubDate>Thu, 08 Dec 2022 11:29:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-man/</guid>
+      <description>功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命</description>
+    </item>
+    
     <item>
       <title>Linux代码结构学习</title>
       <link>http://blog.imcompany.cn/post/linux-source/</link>

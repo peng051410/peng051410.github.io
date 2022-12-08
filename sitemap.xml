@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2022-11-24T10:49:59+08:00</lastmod>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/linux/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/linux/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/linux-man/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2022-12-08T19:41:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -17,20 +59,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/java-enum/</loc>
-    <lastmod>2022-11-24T10:49:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2022-11-24T10:49:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
     <lastmod>2022-11-24T10:49:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -128,13 +156,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2022-05-30T20:10:14+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/categories/java/</loc>
     <lastmod>2022-05-30T20:10:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -172,20 +193,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/maven-case/</loc>
     <lastmod>2022-04-08T17:57:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/linux/</loc>
-    <lastmod>2022-04-06T19:50:43+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/linux/</loc>
-    <lastmod>2022-04-06T19:50:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
