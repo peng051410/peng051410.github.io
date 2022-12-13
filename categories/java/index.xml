@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 24 May 2022 17:37:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2022 19:14:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JAVA中如何判断对象与类的关系之-instanceOf, Class.isInstance, Class.isAssignableFrom</title>
+      <link>http://blog.imcompany.cn/post/java-check-object-class/</link>
+      <pubDate>Mon, 12 Dec 2022 19:14:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/java-check-object-class/</guid>
+      <description>前言 在开发中，常常会碰到检查JAVA对象是不是指定类型的情况，在JAVA中提供了以下几种方法实现此类需求: instanceOf Class.isInstance() Class.isAssignbleFrom() 今天对此三种实现进行具体学习</description>
+    </item>
+    
     <item>
       <title>Springwebflux源码学习-服务启动流程</title>
       <link>http://blog.imcompany.cn/post/springwebflux-start/</link>

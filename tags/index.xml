@@ -7,22 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 08 Dec 2022 11:29:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2022 19:14:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linux</title>
-      <link>http://blog.imcompany.cn/tags/linux/</link>
-      <pubDate>Thu, 08 Dec 2022 11:29:00 +0800</pubDate>
+      <title>class-check</title>
+      <link>http://blog.imcompany.cn/tags/class-check/</link>
+      <pubDate>Mon, 12 Dec 2022 19:14:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/tags/linux/</guid>
+      <guid>http://blog.imcompany.cn/tags/class-check/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
       <link>http://blog.imcompany.cn/tags/java/</link>
-      <pubDate>Wed, 23 Nov 2022 12:01:00 +0800</pubDate>
+      <pubDate>Mon, 12 Dec 2022 19:14:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://blog.imcompany.cn/tags/linux/</link>
+      <pubDate>Thu, 08 Dec 2022 11:29:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/linux/</guid>
       <description></description>
     </item>
     
