@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 01 Jul 2019 07:04:09 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/apollo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apollo Client自定义问题拾遗</title>
-      <link>http://blog.imcompany.cn/post/apollo-client-custom/</link>
+      <link>http://blog.imcompany.cn/2019/07/apollo-client%E8%87%AA%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98%E6%8B%BE%E9%81%97/</link>
       <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/apollo-client-custom/</guid>
+      <guid>http://blog.imcompany.cn/2019/07/apollo-client%E8%87%AA%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98%E6%8B%BE%E9%81%97/</guid>
       <description>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项</description>
     </item>
     

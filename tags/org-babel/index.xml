@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/org-babel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org-babel学习记录</title>
-      <link>http://blog.imcompany.cn/post/org-babel-study/</link>
+      <link>http://blog.imcompany.cn/2022/09/org-babel%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/org-babel-study/</guid>
+      <guid>http://blog.imcompany.cn/2022/09/org-babel%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
       <description>基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var</description>
     </item>
     

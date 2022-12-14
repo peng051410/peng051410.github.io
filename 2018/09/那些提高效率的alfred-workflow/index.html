@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>那些提高效率的Alfred Workflow - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84alfred-workflow/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="那些提高效率的Alfred Workflow" />
+<meta property="og:description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84alfred-workflow/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-09-21T10:02:49+08:00" />
+<meta property="article:modified_time" content="2020-09-28T18:02:42+08:00" />
+<meta itemprop="name" content="那些提高效率的Alfred Workflow">
+<meta itemprop="description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方"><meta itemprop="datePublished" content="2018-09-21T10:02:49+08:00" />
+<meta itemprop="dateModified" content="2020-09-28T18:02:42+08:00" />
+<meta itemprop="wordCount" content="1847">
+<meta itemprop="keywords" content="alfred," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些提高效率的Alfred Workflow"/>
+<meta name="twitter:description" content="Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">那些提高效率的Alfred Workflow</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-21 </span>
+        <div class="post-category">
+            <a href="/categories/tool/"> tool </a>
+            </div>
+          <span class="more-meta"> 约 1847 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#alfred-browser-toolbox">Alfred Browser Toolbox</a></li>
+    <li><a href="#alfred-keywords-help">Alfred Keywords Help</a></li>
+    <li><a href="#alfred-maestro">Alfred Maestro</a></li>
+    <li><a href="#alfred-my-mind">Alfred My Mind</a></li>
+    <li><a href="#awesome-lists">Awesome lists</a></li>
+    <li><a href="#baidu-map">Baidu Map</a></li>
+    <li><a href="#birthday">Birthday</a></li>
+    <li><a href="#calendar">Calendar</a></li>
+    <li><a href="#chromes-bookmarks">Chromes Bookmarks</a></li>
+    <li><a href="#common-search">Common Search</a></li>
+    <li><a href="#dash">Dash</a></li>
+    <li><a href="#directory-watches">Directory watches</a></li>
+    <li><a href="#emacs-workflow">Emacs Workflow</a></li>
+    <li><a href="#eudic">Eudic</a></li>
+    <li><a href="#git-repos">Git Repos</a></li>
+    <li><a href="#alfred-github-workflow">Alfred github workflow</a></li>
+    <li><a href="#google-chrome-history">Google Chrome History</a></li>
+    <li><a href="#hammerspoon-workflow">Hammerspoon Workflow</a></li>
+    <li><a href="#homebrew-and-cask-for-alfred">Homebrew &amp; Cask for Alfred</a></li>
+    <li><a href="#iterm-sessions">iTerm Sessions</a></li>
+    <li><a href="#kill-process">Kill Process</a></li>
+    <li><a href="#last-changed-files">Last changed files</a></li>
+    <li><a href="#launcher">Launcher</a></li>
+    <li><a href="#learn-anything">Learn Anything</a></li>
+    <li><a href="#linux-command">Linux Command</a></li>
+    <li><a href="#mail-dot-app-search">Mail.app Search</a></li>
+    <li><a href="#myip">MyIP</a></li>
+    <li><a href="#menubar-search">MenuBar Search</a></li>
+    <li><a href="#nsc">NSC</a></li>
+    <li><a href="#org-mode-capture">org-mode-capture</a></li>
+    <li><a href="#packal-search">Packal Search</a></li>
+    <li><a href="#recent-documents-apps">Recent Documents / Apps</a></li>
+    <li><a href="#search-safari-and-chrome-tabs">Search Safari and Chrome Tabs</a></li>
+    <li><a href="#searchio">Searchio!</a></li>
+    <li><a href="#ssh-securecrt">SSH SecureCRT</a></li>
+    <li><a href="#stackoverflow">StackOverflow</a></li>
+    <li><a href="#swift-window-switcher">Swift Window Switcher</a></li>
+    <li><a href="#switchhosts">SwitchHosts!</a></li>
+    <li><a href="#snippetslab">SnippetsLab</a></li>
+    <li><a href="#tldr">Tldr</a></li>
+    <li><a href="#uninstall-with-cleanmymac-x">Uninstall with CleanMyMac X</a></li>
+    <li><a href="#vagrantup">VagrantUP</a></li>
+    <li><a href="#vmware-control">VMWare Control</a></li>
+    <li><a href="#web-searches">Web Searches</a></li>
+    <li><a href="#wechat-plugin">WeChat Plugin</a></li>
+    <li><a href="#wi-fi">Wi-Fi</a></li>
+    <li><a href="#youdao-translate">Youdao Translate</a></li>
+    <li><a href="#zapier-for-alfred">Zapier for Alfred</a></li>
+    <li><a href="#alfred-github-stats">Alfred github stats</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="alfred-browser-toolbox">Alfred Browser Toolbox</h2>
+<p>Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。<a href="https://www.alfredforum.com/topic/5166-copymove-to-and-alfred-browser-workflows/">这里</a>有具体的使用方式。</p>
+<h2 id="alfred-keywords-help">Alfred Keywords Help</h2>
+<p>安装的workflow多了，记忆触发的keyword就比较困难，使用<a href="https://github.com/pochemuto/alfred-help-workflow">Keywords help</a>这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。</p>
+<h2 id="alfred-maestro">Alfred Maestro</h2>
+<p>操作Maestro的workflow，可以直接查找macro并执行。<a href="https://github.com/iansinnott/alfred-maestro">插件地址</a></p>
+<h2 id="alfred-my-mind">Alfred My Mind</h2>
+<p>快速查询<a href="https://nikitavoloboev.xyz/">Nikita</a>的githubpage内容的workflow，我在他的文章里面学到了很多。<a href="https://github.com/nikitavoloboev/alfred-my-mind#readme">插件地址</a></p>
+<h2 id="awesome-lists">Awesome lists</h2>
+<p>快速查询Github上awesome列表的workflow，只为发现更多。<a href="https://github.com/nikitavoloboev/alfred-awesome-lists">插件地址</a>，这个也是Nikita的作品。</p>
+<h2 id="baidu-map">Baidu Map</h2>
+<p>在alfred上使用百度地图。<a href="https://github.com/wofeiwo/alfred-baidu-map">插件地址</a></p>
+<h2 id="birthday">Birthday</h2>
+<p>在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。<a href="https://github.com/nikitavoloboev/small-workflows/tree/master/birthday#readme">插件地址</a></p>
+<h2 id="calendar">Calendar</h2>
+<p>在alfred中显示出当月的日历信息。<a href="https://github.com/owenwater/alfred-cal">插件地址</a></p>
+<h2 id="chromes-bookmarks">Chromes Bookmarks</h2>
+<p>在aflred中搜索Chrome浏览器的书签，非常的好用。<a href="https://github.com/blainesch/alfred-chrome-bookmarks">插件地址</a></p>
+<h2 id="common-search">Common Search</h2>
+<p>国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。<a href="https://github.com/MuYunyun/commonSearch">插件地址</a></p>
+<h2 id="dash">Dash</h2>
+<p>在alfred中进行Dash的搜索，开发者必备。<a href="https://github.com/Kapeli/Dash-Alfred-Workflow">插件地址</a></p>
+<h2 id="directory-watches">Directory watches</h2>
+<p>本地目录文件查看，指定目录的搜索，回收站文件显示。</p>
+<h2 id="emacs-workflow">Emacs Workflow</h2>
+<p>在alfred中进行emacs的操作，比如打开文件等。<a href="https://www.alfredforum.com/topic/8444-emacs-workflow/">插件地址</a></p>
+<h2 id="eudic">Eudic</h2>
+<p>使用欧路词典进行快速翻译。<a href="https://github.com/cdpath/eudic_tools">插件地址</a></p>
+<h2 id="git-repos">Git Repos</h2>
+<p>搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。<a href="https://github.com/deanishe/alfred-repos">插件地址</a></p>
+<h2 id="alfred-github-workflow">Alfred github workflow</h2>
+<p>搜索github上的项目，可以搜索项目，人物等。<a href="https://github.com/gharlan/alfred-github-workflow">插件地址</a></p>
+<h2 id="google-chrome-history">Google Chrome History</h2>
+<p>在alfred中快速查看Chrome的浏览历史。<a href="https://github.com/tupton/alfred-chrome-history">插件地址</a></p>
+<h2 id="hammerspoon-workflow">Hammerspoon Workflow</h2>
+<p>在alfred中调用hammerspon脚本的workflow。<a href="https://www.alfredforum.com/topic/5334-hammerspoon-workflow/">插件地址</a></p>
+<h2 id="homebrew-and-cask-for-alfred">Homebrew &amp; Cask for Alfred</h2>
+<p>在alfred中进行mac软件的更新、查看、安装等。<a href="https://github.com/fniephaus/alfred-homebrew/">插件地址</a></p>
+<h2 id="iterm-sessions">iTerm Sessions</h2>
+<p>在alfre中快速切换iterm中存在的session窗口。<a href="https://github.com/madvas/alfred-iterm-sessions">插件地址</a></p>
+<h2 id="kill-process">Kill Process</h2>
+<p>在alfred中kill进程，有时候程序假死，使用这个很方便，不用再在苹果的菜单栏中点击好几下来操作了。<a href="https://github.com/nathangreenstein/alfred-process-killer">插件地址</a></p>
+<h2 id="last-changed-files">Last changed files</h2>
+<p>显示出当前系统最新修改的文件，对于系统有什么修改一目了然。</p>
+<h2 id="launcher">Launcher</h2>
+<p>应用程序快速启动workflow，结束Karabiner使用。</p>
+<h2 id="learn-anything">Learn Anything</h2>
+<p>Nivita的Learn Anything，只为学习更多。<a href="https://github.com/nikitavoloboev/alfred-learn-anything">插件地址</a></p>
+<h2 id="linux-command">Linux Command</h2>
+<p>Linux命令手册，快速查询linux命令。<a href="https://github.com/jaywcjlove/linux-command">插件地址</a></p>
+<h2 id="mail-dot-app-search">Mail.app Search</h2>
+<p>快速搜索Mail.app中的邮件信息。可以根据邮件名，发送人，主题等进行搜索。<a href="http://www.packal.org/workflow/mailapp-search">插件地址</a></p>
+<h2 id="myip">MyIP</h2>
+<p>快速的查询本机的ip，包括本地IP与外网IP。</p>
+<h2 id="menubar-search">MenuBar Search</h2>
+<p>快速查询当前应用的菜单信息，点击进行操作。</p>
+<h2 id="nsc">NSC</h2>
+<p>各种进制的转换，支持二进制、十进制、十六进制之间的快速转换。<a href="https://github.com/obstschale/NSC">插件地址</a></p>
+<h2 id="org-mode-capture">org-mode-capture</h2>
+<p>快速插入Org capture，可以快速的记录TODO事件。<a href="https://github.com/alexandergogl/alfred-org-mode-workflow">插件地址</a></p>
+<h2 id="packal-search">Packal Search</h2>
+<p>Alfred workflow的快速搜索、更新。<a href="https://github.com/deanishe/alfred-packal-search">插件地址</a></p>
+<h2 id="recent-documents-apps">Recent Documents / Apps</h2>
+<p>显示当前的文档信息，当前的app信息，当前app关联的文档信息。<a href="https://github.com/mpco/Alfred3-workflow-recent-documents">插件地址</a></p>
+<h2 id="search-safari-and-chrome-tabs">Search Safari and Chrome Tabs</h2>
+<p>搜索Chrome和Safari当前打开的tab页面，支持跳转到选择页面。<a href="http://www.packal.org/workflow/search-safari-and-chrome-tabs">插件地址</a></p>
+<h2 id="searchio">Searchio!</h2>
+<p>支持google、youtuebe、wiki的fuzzy搜索，支持配置多种语言。<a href="https://github.com/deanishe/alfred-searchio">插件地址</a></p>
+<h2 id="ssh-securecrt">SSH SecureCRT</h2>
+<p>在alfre快速连接SecureCRT的session。</p>
+<h2 id="stackoverflow">StackOverflow</h2>
+<p>搜索stackoverflow上的指定问题。<a href="https://github.com/deanishe/alfred-stackoverflow">插件地址(deanishe)</a></p>
+<h2 id="swift-window-switcher">Swift Window Switcher</h2>
+<p>使用alfred来快速切换应用的窗口，还可以对safari的当前标签进行搜索。<a href="https://github.com/mandrigin/AlfredSwitchWindows">插件地址</a></p>
+<h2 id="switchhosts">SwitchHosts!</h2>
+<p>在alfred中快速本地host的配置，配合<a href="https://github.com/oldj/SwitchHosts">SwitchHosts</a>来使用。<a href="http://www.packal.org/workflow/switchhosts">插件地址</a></p>
+<h2 id="snippetslab">SnippetsLab</h2>
+<p>在alfred中快速查看SnippetsLab中的代码片断</p>
+<h2 id="tldr">Tldr</h2>
+<p>Tldr的alfred版本，快速查询命令。<a href="https://github.com/cs1707/tldr-alfred">插件地址</a></p>
+<h2 id="uninstall-with-cleanmymac-x">Uninstall with CleanMyMac X</h2>
+<p>使用CleanMyMac来快速卸载软件。<a href="http://www.packal.org/workflow/uninstall-cleanmymac-x">插件地址</a></p>
+<h2 id="vagrantup">VagrantUP</h2>
+<p>控制vagrant的workflow，可以显示vagrant的环境，根据name，path进行过滤等。<a href="https://github.com/m1keil/alfred-vagrant-workflow">插件地址</a></p>
+<h2 id="vmware-control">VMWare Control</h2>
+<p>在alfred中控制vmware虚拟机。支持启动、停止、挂起、切换等操作。<a href="http://www.packal.org/workflow/vmware-control">插件地址</a></p>
+<h2 id="web-searches">Web Searches</h2>
+<p>通用的web搜索，支持reddit，google translate等网站搜索。<a href="https://github.com/nikitavoloboev/alfred-web-searches">插件地址</a></p>
+<h2 id="wechat-plugin">WeChat Plugin</h2>
+<p>在alfred中进行微信聊天，可以显示聊天记录，超级方便。<a href="https://github.com/TKkk-iOSer/WeChatPlugin-MacOS">插件地址</a></p>
+<h2 id="wi-fi">Wi-Fi</h2>
+<p>控制Mac的ip开关，新更新的版本增加了重启wifi的功能。<a href="https://github.com/ravelll/wifi-workflow">插件地址</a></p>
+<h2 id="youdao-translate">Youdao Translate</h2>
+<p>有道词典快速查询翻译，支持中英互译，发音，记录查询历史等功能。<a href="https://github.com/Rouwanzi/AlfredWorkflow_YoudaoTranslate">插件地址</a></p>
+<h2 id="zapier-for-alfred">Zapier for Alfred</h2>
+<p>在alfred中触发zapier流，目前还在尝试中。<a href="https://github.com/zapier/Zapier-for-Alfred/">插件地址</a></p>
+<h2 id="alfred-github-stats">Alfred github stats</h2>
+<p>github star查询管理。<a href="https://github.com/stroebjo/alfred-github-stars">插件地址</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-09-28
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/alfred/">alfred</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">那些提高效率的命令行工具</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84idea%E6%8F%92%E4%BB%B6/">
+            <span class="next-text nav-default">那些提高效率的Idea插件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

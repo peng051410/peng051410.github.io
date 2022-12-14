@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on I&#39;m company</title>
     <link>http://blog.imcompany.cn/home/</link>
     <description>Recent content in Homes on I&#39;m company</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 May 2019 17:34:09 +0800</lastBuildDate>
-    
-	<atom:link href="http://blog.imcompany.cn/home/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Wed, 14 Dec 2022 11:20:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/home/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Apollo 配置中心畅游 </title>
-      <link>http://blog.imcompany.cn/home/apollo-config-swim/</link>
-      <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
+      <title>Contact</title>
+      <link>http://blog.imcompany.cn/home/contact/</link>
+      <pubDate>Wed, 14 Dec 2022 11:20:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/home/apollo-config-swim/</guid>
-      <description>目前市面上的开源产品 Disconf Spring Cloud Config Apollo Nacos 为什么选择Apollo 社区活跃 文档齐全 重要的灰度发布 开源协议友好 Apollo都有哪些重要功能 统一管理不同环境</description>
+      <guid>http://blog.imcompany.cn/home/contact/</guid>
+      <description>Hello</description>
     </item>
     
   </channel>

@@ -10,28 +10,28 @@
     <lastBuildDate>Tue, 30 Aug 2022 20:01:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用Riggrep进行快速搜索</title>
-      <link>http://blog.imcompany.cn/post/ripgrep-study/</link>
+      <link>http://blog.imcompany.cn/2022/08/%E7%94%A8riggrep%E8%BF%9B%E8%A1%8C%E5%BF%AB%E9%80%9F%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Tue, 30 Aug 2022 20:01:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/ripgrep-study/</guid>
+      <guid>http://blog.imcompany.cn/2022/08/%E7%94%A8riggrep%E8%BF%9B%E8%A1%8C%E5%BF%AB%E9%80%9F%E6%90%9C%E7%B4%A2/</guid>
       <description>为什么要学习riggrep? Riggrep快 天下武功，唯快不破 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件 安装 1 brew install ripgrep 使</description>
     </item>
     
     <item>
       <title>那些有用maven命令</title>
-      <link>http://blog.imcompany.cn/post/maven-swim/</link>
+      <link>http://blog.imcompany.cn/2019/12/%E9%82%A3%E4%BA%9B%E6%9C%89%E7%94%A8maven%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
+      <guid>http://blog.imcompany.cn/2019/12/%E9%82%A3%E4%BA%9B%E6%9C%89%E7%94%A8maven%E5%91%BD%E4%BB%A4/</guid>
       <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件</description>
     </item>
     
     <item>
       <title>那些提高效率的命令行工具</title>
-      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
+      <link>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
+      <guid>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</guid>
       <description>brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay</description>
     </item>
     

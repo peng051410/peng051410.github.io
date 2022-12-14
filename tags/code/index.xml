@@ -10,19 +10,19 @@
     <lastBuildDate>Mon, 23 Aug 2021 14:04:09 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>让好代码生生不息-更好的使用String</title>
-      <link>http://blog.imcompany.cn/post/best-code-string/</link>
+      <link>http://blog.imcompany.cn/2021/08/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8string/</link>
       <pubDate>Mon, 23 Aug 2021 14:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/best-code-string/</guid>
+      <guid>http://blog.imcompany.cn/2021/08/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8string/</guid>
       <description>开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str</description>
     </item>
     
     <item>
       <title>让好代码生生不息-更好的对待NULL</title>
-      <link>http://blog.imcompany.cn/post/best-code1/</link>
+      <link>http://blog.imcompany.cn/2021/07/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%AF%B9%E5%BE%85null/</link>
       <pubDate>Sat, 17 Jul 2021 16:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/best-code1/</guid>
+      <guid>http://blog.imcompany.cn/2021/07/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%AF%B9%E5%BE%85null/</guid>
       <description>什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug</description>
     </item>
     

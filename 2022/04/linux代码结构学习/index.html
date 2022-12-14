@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux代码结构学习 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2022/04/linux%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux代码结构学习" />
+<meta property="og:description" content="Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2022/04/linux%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-06T18:53:00+08:00" />
+<meta property="article:modified_time" content="2022-04-06T19:50:43+08:00" />
+<meta itemprop="name" content="Linux代码结构学习">
+<meta itemprop="description" content="Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源"><meta itemprop="datePublished" content="2022-04-06T18:53:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-06T19:50:43+08:00" />
+<meta itemprop="wordCount" content="868">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux代码结构学习"/>
+<meta name="twitter:description" content="Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux代码结构学习</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-04-06 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 868 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux代码结构">Linux代码结构</a></li>
+    <li><a href="#代码主要文件解析">代码主要文件解析</a>
+      <ul>
+        <li><a href="#makefile">Makefile</a></li>
+        <li><a href="#documentation">Documentation/</a></li>
+        <li><a href="#arch">arch/</a></li>
+        <li><a href="#crypto">crypto/</a></li>
+        <li><a href="#drivers">drivers/</a></li>
+        <li><a href="#fs">fs/</a></li>
+        <li><a href="#include">include/</a></li>
+        <li><a href="#init">init/</a></li>
+        <li><a href="#ipc">ipc/</a></li>
+        <li><a href="#kernel">kernel/</a></li>
+        <li><a href="#lib">lib/</a></li>
+        <li><a href="#mm">mm/</a></li>
+        <li><a href="#net">net/</a></li>
+        <li><a href="#scripts">scripts/</a></li>
+        <li><a href="#security">security/</a></li>
+        <li><a href="#sound">sound/</a></li>
+        <li><a href="#usr">usr/</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="linux代码结构">Linux代码结构</h2>
+<p>准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13)</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6Xc7mE.png"/>
+</figure>
+
+<h2 id="代码主要文件解析">代码主要文件解析</h2>
+<h3 id="makefile">Makefile</h3>
+<p>这是整个源码的Makefile，里面定义了一系列的变量和规则，比如默认的gcc编译flag。</p>
+<h3 id="documentation">Documentation/</h3>
+<p>项目文档，里面包含了很多关于配置内核、与ramdisk运行等有用的信息。这里面没有不同配置项的帮助信息，这些信息可以在相关子目录的 <strong>Kconfig</strong> 文件中查看。</p>
+<h3 id="arch">arch/</h3>
+<p>体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 <strong>arch/x86</strong> 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编例程等信息。</p>
+<h3 id="crypto">crypto/</h3>
+<p>内核使用的加密API代码。</p>
+<h3 id="drivers">drivers/</h3>
+<p>所有设备相关的信息都在这个目录下。包括视频设备，网卡设备，低级别的SCSI设备。比如网络设备一般是在 <strong>drivers/net</strong> 目录下。</p>
+<h3 id="fs">fs/</h3>
+<p>通用的文件系统与其它类型的文件系统代码都在这里。现在的操作系统的根文件系统一般为ext4格式，它的代码在 <strong>fs/ext4</strong> 下</p>
+<h3 id="include">include/</h3>
+<p>所有.c文件中包含的头文件都定义在这个目录下。</p>
+<h3 id="init">init/</h3>
+<p>这个目录包含了内核启动的入口文件 <strong>main.c</strong> ，版本信息文件 <strong>version.c</strong> 和早期用户空间相关的代码，早期空间代码提供内核出现时的功能，它不需要在内核中进行运行。</p>
+<h3 id="ipc">ipc/</h3>
+<p>进程间通信相关代码，包含共享内存，信号量等信息。</p>
+<h3 id="kernel">kernel/</h3>
+<p>内核级别代码，上层的系统调用代码在这里，还有关于 <strong>printk()</strong> 代码，调度，信号量处理的代码。</p>
+<h3 id="lib">lib/</h3>
+<p>内核所有使用的库都在这里。常见的字符串运算，调试库，命令行解析代码等。</p>
+<h3 id="mm">mm/</h3>
+<p>高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 <strong>arch/<!-- raw HTML omitted -->/mm</strong> )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。</p>
+<h3 id="net">net/</h3>
+<p>高级别的网络代码。与低级别的网络进行发包与收包交互。*net/core* 中包含其它网络协议使用的核心代码。net子目录就是特定的网络协议实现。</p>
+<h3 id="scripts">scripts/</h3>
+<p>这里面包含构建内核的脚本文件。</p>
+<h3 id="security">security/</h3>
+<p>不同Linux的安全模型代码。</p>
+<h3 id="sound">sound/</h3>
+<p>声卡及相关代码在这里。</p>
+<h3 id="usr">usr/</h3>
+<p>该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-04-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2022/04/%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84maven%E9%97%AE%E9%A2%98%E8%A7%A3%E6%83%91/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">开发中会遇到的Maven问题解惑</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2022/03/%E8%AE%B0%E4%B8%80%E6%AC%A1springwebflux%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%A0%86%E5%A4%96oom%E6%8E%92%E6%9F%A5%E7%BB%8F%E5%8E%86/">
+            <span class="next-text nav-default">记一次SpringWebflux框架下堆外OOM排查经历</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

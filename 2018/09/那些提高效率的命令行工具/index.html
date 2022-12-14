@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>那些提高效率的命令行工具 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="那些提高效率的命令行工具" />
+<meta property="og:description" content="brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-09-30T07:15:55+08:00" />
+<meta property="article:modified_time" content="2021-02-04T10:53:40+08:00" />
+<meta itemprop="name" content="那些提高效率的命令行工具">
+<meta itemprop="description" content="brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay"><meta itemprop="datePublished" content="2018-09-30T07:15:55+08:00" />
+<meta itemprop="dateModified" content="2021-02-04T10:53:40+08:00" />
+<meta itemprop="wordCount" content="1604">
+<meta itemprop="keywords" content="commandline,bash,zsh," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="那些提高效率的命令行工具"/>
+<meta name="twitter:description" content="brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">那些提高效率的命令行工具</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-30 </span>
+        <div class="post-category">
+            <a href="/categories/tool/"> tool </a>
+            </div>
+          <span class="more-meta"> 约 1604 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#brew">brew</a></li>
+    <li><a href="#bat">bat</a></li>
+    <li><a href="#cowsay">cowsay</a></li>
+    <li><a href="#coreutils">coreutils</a></li>
+    <li><a href="#direnv">direnv</a></li>
+    <li><a href="#exa">exa</a></li>
+    <li><a href="#duti">duti</a></li>
+    <li><a href="#riggrep">riggrep</a></li>
+    <li><a href="#fortune">fortune</a></li>
+    <li><a href="#fzf">fzf</a></li>
+    <li><a href="#goku">goku</a></li>
+    <li><a href="#htop">htop</a></li>
+    <li><a href="#imgcat">imgcat</a></li>
+    <li><a href="#jq">jq</a></li>
+    <li><a href="#jenv">jenv</a></li>
+    <li><a href="#lnav">lnav</a></li>
+    <li><a href="#lolcat">lolcat</a></li>
+    <li><a href="#m-cli">m-cli</a></li>
+    <li><a href="#mackup">mackup</a></li>
+    <li><a href="#mas">mas</a></li>
+    <li><a href="#mycli">mycli</a></li>
+    <li><a href="#ncdu">ncdu</a></li>
+    <li><a href="#ranger">Ranger</a></li>
+    <li><a href="#pandoc">pandoc</a></li>
+    <li><a href="#pyenv">pyenv</a></li>
+    <li><a href="#pyenv-virtualenv">pyenv-virtualenv</a></li>
+    <li><a href="#prettyping">prettyping</a></li>
+    <li><a href="#rtv">rtv</a></li>
+    <li><a href="#s-search">s-search</a></li>
+    <li><a href="#tmux">tmux</a></li>
+    <li><a href="#tldr">tldr</a></li>
+    <li><a href="#terminal-notify">Terminal Notify</a></li>
+    <li><a href="#w3m">w3m</a></li>
+    <li><a href="#wrk">wrk</a></li>
+    <li><a href="#wd">wd</a></li>
+    <li><a href="#youtube-dl">youtube-dl</a></li>
+    <li><a href="#diffoscope">diffoscope</a></li>
+    <li><a href="#speedtest">speedtest</a></li>
+    <li><a href="#modd">modd</a></li>
+    <li><a href="#gron">gron</a></li>
+    <li><a href="#pathpicker">PathPicker</a></li>
+    <li><a href="#peco">Peco</a></li>
+    <li><a href="#hub">hub</a></li>
+    <li><a href="#zsh-abbrev-alias">zsh-abbrev-alias</a></li>
+    <li><a href="#git-quick-stats">git-quick-stats</a></li>
+    <li><a href="#navi">navi</a></li>
+    <li><a href="#noti">noti</a></li>
+    <li><a href="#buku">buku</a></li>
+    <li><a href="#tree">Tree</a></li>
+    <li><a href="#multitail">multitail</a></li>
+    <li><a href="#rip">rip</a></li>
+    <li><a href="#jpegoptim">jpegoptim</a></li>
+    <li><a href="#optipng">optipng</a></li>
+    <li><a href="#scrcpy">scrcpy</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="brew">brew</h2>
+<p>Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。<a href="https://github.com/Homebrew/brew">地址</a></p>
+<h2 id="bat">bat</h2>
+<p>bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。<a href="https://github.com/sharkdp/bat">地址</a></p>
+<h2 id="cowsay">cowsay</h2>
+<p>奶牛说： <a href="https://github.com/piuccio/cowsay">地址</a></p>
+<h2 id="coreutils">coreutils</h2>
+<p>使用Rust重写的gnuutils。<a href="https://github.com/uutils/coreutils">地址</a></p>
+<h2 id="direnv">direnv</h2>
+<p>环境变量切换，可以指定在进入某一文件夹后的操作，比如输出一条欢迎语句，在退出文件夹后则卸载变量（操作），它的<a href="https://github.com/direnv/direnv/blob/master/stdlib.sh%0A%0A">stdlib</a>内置了一些功能来处理环境。 <a href="https://github.com/direnv/direnv">地址</a></p>
+<h2 id="exa">exa</h2>
+<p>ls、tree的替代者，支持多种显示方式，支持按指定条件排序显示。<a href="https://github.com/ogham/exa">地址</a></p>
+<h2 id="duti">duti</h2>
+<p>mac默认软件打开程序配置。再也不用一个手动的点击设置了，可以脚本化。<a href="https://github.com/moretension/duti">地址</a></p>
+<h2 id="riggrep">riggrep</h2>
+<p>强大的find，查询速度更快，支持匹配结果的字符替换，支持定义输出颜色。<a href="https://github.com/BurntSushi/ripgrep">地址</a></p>
+<h2 id="fortune">fortune</h2>
+<p>英文名言集合，可以使用<a href="https://github.com/ruanyf/fortunes">fortunes</a>进行扩展，对中文用户更友好。<a href="https://www.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html">地址</a></p>
+<h2 id="fzf">fzf</h2>
+<p>强大的交互式搜索，大大提高效率，官网提供了很多实用的操作目录与git的命令。<a href="https://github.com/junegunn/fzf">地址</a></p>
+<h2 id="goku">goku</h2>
+<p>改键神器Karabiner的配置管理器，更健康，更人性化。<a href="https://github.com/yqrashawn/GokuRakuJoudo">地址</a></p>
+<h2 id="htop">htop</h2>
+<p>交互式的top信息显示，支持配色。<a href="https://github.com/hishamhm/htop">地址</a></p>
+<h2 id="imgcat">imgcat</h2>
+<p>命令行看图片。可以控制显示的高度、宽度。<a href="https://github.com/eddieantonio/imgcat">地址</a></p>
+<h2 id="jq">jq</h2>
+<p>json内容操作显示。支持分离、过滤、转换元素，判断JSON元素节点是否存在等功能，内置了很多方便的函数。 <a href="https://github.com/stedolan/jq">地址</a></p>
+<h2 id="jenv">jenv</h2>
+<p>JDK版本管理命令行工具，支持全局、当前目录、当前shell的jdk版本指定。还可以指定Java虚拟机指定的JVM参数。支持插件的启用与禁用。<a href="https://www.jenv.be/">地址</a></p>
+<h2 id="lnav">lnav</h2>
+<p>log file navigator，增加的日志查看，可以根据日志级别显示不同颜色的日志信息。支持分页显示。<a href="https://github.com/tstack/lnav">地址</a></p>
+<h2 id="lolcat">lolcat</h2>
+<p>命令、文件内容多彩输出。<a href="https://github.com/busyloop/lolcat">地址</a></p>
+<h2 id="m-cli">m-cli</h2>
+<p>Mac的瑞士军刀，支持各种mac组件(Dock，蓝牙，WIFI，Finder)的操作。<a href="https://github.com/rgcr/m-cli">地址</a></p>
+<h2 id="mackup">mackup</h2>
+<p>Mac应用配置同步，支持多种存储方式。支持自定义应用的同步配置。主要命令为backup，restore，uninstall。<a href="https://github.com/lra/mackup">地址</a></p>
+<h2 id="mas">mas</h2>
+<p>命令行安装apple store应用。<a href="https://github.com/mas-cli/mas">地址</a></p>
+<h2 id="mycli">mycli</h2>
+<p>命令行中的mysql客户端。<a href="https://github.com/dbcli/mycli">地址</a></p>
+<h2 id="ncdu">ncdu</h2>
+<p>增强版本的du，机器空间使用查询，支持扫描结果导出与导入，支持多种排序方式。<a href="https://dev.yorhel.nl/ncdu">地址</a></p>
+<h2 id="ranger">Ranger</h2>
+<p>命令行下的文件管理，强大到没朋友。<a href="https://github.com/ranger/ranger">地址</a></p>
+<h2 id="pandoc">pandoc</h2>
+<p>文档转换，支持非常多的的格式转换。<a href="https://pandoc.org/">地址</a></p>
+<h2 id="pyenv">pyenv</h2>
+<p>pythne版本管理工具。<a href="https://github.com/pyenv/pyenv">地址</a></p>
+<h2 id="pyenv-virtualenv">pyenv-virtualenv</h2>
+<p>pythne虚拟环境管理，管理pyenv配置的环境。<a href="https://github.com/pyenv/pyenv-virtualenv">地址</a></p>
+<h2 id="prettyping">prettyping</h2>
+<p>增强的ping，图形化显示，可以轻松的看出ping的地址的网络状况。<a href="http://denilson.sa.nom.br/prettyping/">地址</a></p>
+<h2 id="rtv">rtv</h2>
+<p>命令行中浏览reddit。<a href="https://github.com/michael-lazar/rtv">地址</a></p>
+<h2 id="s-search">s-search</h2>
+<p>命令行下进行web搜索。<a href="https://github.com/zquestz/s">地址</a></p>
+<h2 id="tmux">tmux</h2>
+<p>终端多会话管理器。<a href="https://github.com/tmux/tmux">地址</a></p>
+<h2 id="tldr">tldr</h2>
+<p>命令快速查询。简单的man。<a href="https://tldr.sh/">地址</a></p>
+<h2 id="terminal-notify">Terminal Notify</h2>
+<p>命令行操作mac显示通知，支持图标显示与点击后操作（如打开网址，执行命令）等。<a href="https://github.com/julienXX/terminal-notifier">地址</a></p>
+<h2 id="w3m">w3m</h2>
+<p>终端浏览器，操作方便。<a href="http://w3m.sourceforge.net/">地址</a></p>
+<h2 id="wrk">wrk</h2>
+<p>系统性能测试工具。<a href="https://github.com/wg/wrk">地址</a></p>
+<h2 id="wd">wd</h2>
+<p>快速的cd到常用的目录，支持命令增加，查询功能。<a href="https://github.com/mfaerevaag/wd">地址</a></p>
+<h2 id="youtube-dl">youtube-dl</h2>
+<p>youtube视频下载，也支持其它网站的视频下载。支持配置文件配置下载的选项。<a href="https://github.com/rg3/youtube-dl">地址</a></p>
+<h2 id="diffoscope">diffoscope</h2>
+<p>文件，文件夹内容比较。支持比较的文件格式非常丰富。<a href="https://diffoscope.org/">地址</a></p>
+<h2 id="speedtest">speedtest</h2>
+<p>cli 网络测速。<a href="https://github.com/sivel/speedtest-cli">地址</a></p>
+<h2 id="modd">modd</h2>
+<p>文件变更监听响应，在文件变化时执行相应的配置动作。<a href="https://github.com/cortesi/modd">地址</a></p>
+<h2 id="gron">gron</h2>
+<p>将JSON文本转换为离散的赋值语句，以便查找。<a href="https://github.com/tomnomnom/gron">地址</a></p>
+<h2 id="pathpicker">PathPicker</h2>
+<p><a href="https://github.com/facebook/PathPicker">地址</a></p>
+<h2 id="peco">Peco</h2>
+<p>简单的交互式过滤工具。<a href="https://github.com/peco/peco">地址</a></p>
+<h2 id="hub">hub</h2>
+<p>github官方品，对github的封装，可以更任性的来玩github。<a href="https://github.com/github/hub">地址</a></p>
+<h2 id="zsh-abbrev-alias">zsh-abbrev-alias</h2>
+<p>zsh alias 缩写。<a href="https://github.com/momo-lab/zsh-abbrev-alias">地址</a></p>
+<h2 id="git-quick-stats">git-quick-stats</h2>
+<p>多维度的查看git提交信息。<a href="https://github.com/arzzen/git-quick-stats">地址</a></p>
+<h2 id="navi">navi</h2>
+<p>交互式的快捷键命令行工具，放松心情搞事情。<a href="https://github.com/denisidoro/navi">地址</a></p>
+<h2 id="noti">noti</h2>
+<p>执行任务时间长？不用时时等，执行完后它来通知你。<a href="https://github.com/variadico/noti">地址</a></p>
+<h2 id="buku">buku</h2>
+<p>命令中管理浏览器书签。<a href="https://github.com/jarun/Buku">地址</a></p>
+<h2 id="tree">Tree</h2>
+<p>打印文件夹结构到文件中展示，带颜色。<a href="http://mama.indstate.edu/users/ice/tree/">地址</a></p>
+<h2 id="multitail">multitail</h2>
+<p>同时监控多个文档，类似tail操作的命令，在对多个日志文件进行监控时很有用，比如在开发中的微服务，一个请求会涉及好多个子服务，调试时可以使用这个命令来同时监控多个日志文件，而不用一个一个的tail了。而且还支持log过滤，合并操作。<a href="http://www.vanheusden.com/multitail/">地址</a></p>
+<h2 id="rip">rip</h2>
+<p>懒人的rm，带后悔药那种。<a href="https://github.com/nivekuil/rip">地址</a></p>
+<h2 id="jpegoptim">jpegoptim</h2>
+<p>jpg图片快速压缩，可以指定压缩的尺寸。<a href="https://github.com/tjko/jpegoptim">地址</a></p>
+<h2 id="optipng">optipng</h2>
+<p>png图片快速压缩。<a href="http://optipng.sourceforge.net/">地址</a></p>
+<h2 id="scrcpy">scrcpy</h2>
+<p>通过电脑操作android手机，支持USB、TCP/IP。<a href="https://github.com/Genymobile/scrcpy">地址</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-02-04
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/commandline/">commandline</a>
+          <a href="/tags/bash/">bash</a>
+          <a href="/tags/zsh/">zsh</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2019/03/%E9%82%A3%E4%BA%9B%E9%AB%98%E6%95%88%E7%9A%84chrome%E6%8F%92%E4%BB%B6/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">那些高效的Chrome插件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84alfred-workflow/">
+            <span class="next-text nav-default">那些提高效率的Alfred Workflow</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

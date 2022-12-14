@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ARTS-打卡第一天 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Algorithm LeetCode 第一题 题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2019/05/arts-%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ARTS-打卡第一天" />
+<meta property="og:description" content="Algorithm LeetCode 第一题 题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2019/05/arts-%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-05-09T17:34:09+08:00" />
+<meta property="article:modified_time" content="2020-01-08T20:28:19+08:00" />
+<meta itemprop="name" content="ARTS-打卡第一天">
+<meta itemprop="description" content="Algorithm LeetCode 第一题 题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。"><meta itemprop="datePublished" content="2019-05-09T17:34:09+08:00" />
+<meta itemprop="dateModified" content="2020-01-08T20:28:19+08:00" />
+<meta itemprop="wordCount" content="1285">
+<meta itemprop="keywords" content="arts," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ARTS-打卡第一天"/>
+<meta name="twitter:description" content="Algorithm LeetCode 第一题 题目描述 给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ARTS-打卡第一天</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-09 </span>
+        <div class="post-category">
+            <a href="/categories/arts/"> arts </a>
+            </div>
+          <span class="more-meta"> 约 1285 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#algorithm">Algorithm</a>
+      <ul>
+        <li><a href="#题目描述">题目描述</a></li>
+        <li><a href="#题目解答">题目解答</a></li>
+      </ul>
+    </li>
+    <li><a href="#review">Review</a>
+      <ul>
+        <li><a href="#设计与开发">设计与开发</a></li>
+        <li><a href="#配置管理">配置管理</a></li>
+        <li><a href="#发布管理">发布管理</a></li>
+        <li><a href="#可观察性">可观察性</a></li>
+        <li><a href="#安全和保护">安全和保护</a></li>
+        <li><a href="#容量计划">容量计划</a></li>
+      </ul>
+    </li>
+    <li><a href="#tip">Tip</a></li>
+    <li><a href="#share">Share</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="algorithm">Algorithm</h2>
+<p>LeetCode 第一题</p>
+<h3 id="题目描述">题目描述</h3>
+<p>给一个int数组，返回数组中两个数字相加的和是目标 数的下标。可以假设每个输入只有一个解决方案，并且不能使用同一个元素两次。</p>
+<h4 id="example">Example</h4>
+<p><code>给出nums = [2, 7, 11, 15], 目标数为9，则返回[0, 1]</code></p>
+<h3 id="题目解答">题目解答</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">twoSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">second</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">second</span><span class="o">),</span> <span class="n">i</span><span class="o">};</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">i</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{};</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>相比两次循环的方式，这种处理的时间复杂度为O(n), 空间复杂度也为O(n).</p>
+<h2 id="review">Review</h2>
+<p><a href="https://medium.com/google-cloud/production-guideline-9d5d10c8f1e">Google Cloud Production Guideline</a>，本文主要是针对Google的Colud平台事故进行了线上发布的总结指导（检查列表）。详细如下：</p>
+<h3 id="设计与开发">设计与开发</h3>
+<ul>
+<li>有可再生的构建系统，构建系统不能被外部的服务访问并且不能被一个外部的系统中断</li>
+<li>记录服务所信赖外部服务的可用性期望</li>
+<li>通过不信赖单个全局资源来避免单点故障，当资源不可用时，资源复制或者设置适当的回退（例如硬编码值）。</li>
+</ul>
+<h3 id="配置管理">配置管理</h3>
+<ul>
+<li>静态的，小的和非加密配置可以是命令行标识。使用配置传送服务来完成其它任务</li>
+<li>在配置系统不可用时，动态系统需要有一个可合理回退</li>
+<li>开发环境的配置不应该从生产环境继承。这样可能导致从开发环境访问生产服务，并可能导致隐私问题和数据泄漏。</li>
+<li>记录可以动态配置的内容，并且说明当服务传送服务不可达时的回退行为</li>
+</ul>
+<h3 id="发布管理">发布管理</h3>
+<ul>
+<li>记录关于发布过程的所有明细。记录发布如何影响SLOs（比如由于缓存丢失导致的临时更高延迟）</li>
+<li>记录服务的金丝雀发布过程</li>
+<li>有一个金丝雀的分析计划，如果可能的话，设置机制支持自动化恢复金丝雀的机制</li>
+<li>确保回退使用相同的操作来持续使用</li>
+</ul>
+<h3 id="可观察性">可观察性</h3>
+<ul>
+<li>确保从二进制文件中收集并导出SLOs所需的度量集合</li>
+<li>确保客户端与服务端的可观察性数据是分开的。这个在生产环境调试时很重要</li>
+<li>调整报警以减少工作量，例如删除日常事件触发的报警</li>
+<li>总是传递入参的跟踪上下文，这样对于系统调试有很大的帮助</li>
+</ul>
+<h3 id="安全和保护">安全和保护</h3>
+<ul>
+<li>保证所有的外部请求都已加密</li>
+<li>使用项目来完全隔离资源</li>
+<li>在项目中使用网络来隔离VM实例组</li>
+<li>使用云VPN来进行远程连接</li>
+<li>记录与监听用户的数据访问，确保所有用户的数据访问是被记录与审查的</li>
+<li>确保调试节点是被ACL限制的</li>
+<li>处理用户的输入，为用户输入设置有效负载大小限制</li>
+<li>确保服务可以有选择的阻塞每个用户的传入流量。这允许在不影响其它用户的情况下阻止滥用行为</li>
+<li>避免外部节点引发大量的内部扩张</li>
+</ul>
+<h3 id="容量计划">容量计划</h3>
+<ul>
+<li>记录服务的负载。例如用户数,入口流量，入口信息量</li>
+<li>记录服务的资源请求，例如可用的VM实例数，硬件如GPUs和TPUs</li>
+<li>记录资源的约束：资源类型，范围等等</li>
+<li>记录创建新资源的配额限制</li>
+<li>在可能的情况下进行性能回归的负载测试</li>
+</ul>
+<h2 id="tip">Tip</h2>
+<p>在Emacs的Dired中进行快速的写操作(批量修改文件名等)，操作步骤：</p>
+<ul>
+<li>M-x dired</li>
+<li>C-x C-q (开启dired buffer的只读模式)</li>
+<li>M-x query-replace (执行查找并替换)</li>
+<li>C-c C-c (保存修改)</li>
+</ul>
+<p>搞定，批量重命名文件就是这么简单.</p>
+<h2 id="share">Share</h2>
+<p>今天分享一篇通俗易懂方式来讲解多线程的文章，在文章中作者说明了进程与线程的区别，单核CPU下的多任务方式（假多任务），多核CPU下的多任务方式（真正的并发）,也讲述了在多线程情况下产生的问题，如数据竞争与竞态条件，以及编写多线程时保证程序正确的方法，如同步，原子操作，数据不可变等等。<a href="https://www.internalpointers.com/post/gentle-introduction-multithreading">A gentle introduction to multithreading</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-01-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/arts/">arts</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2019/05/apollo-%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E7%95%85%E6%B8%B8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Apollo 配置中心畅游</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2019/05/centos7-install-issue-collect/">
+            <span class="next-text nav-default">Centos7 install issue collect</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

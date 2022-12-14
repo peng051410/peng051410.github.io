@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Centos7 install issue collect - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Centos7 install issue collect" />
+<meta property="og:description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-05-06T13:00:55+08:00" />
+<meta property="article:modified_time" content="2019-06-26T10:31:28+08:00" />
+<meta itemprop="name" content="Centos7 install issue collect">
+<meta itemprop="description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m"><meta itemprop="datePublished" content="2019-05-06T13:00:55+08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:31:28+08:00" />
+<meta itemprop="wordCount" content="1510">
+<meta itemprop="keywords" content="linux,centos," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Centos7 install issue collect"/>
+<meta name="twitter:description" content="由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Centos7 install issue collect</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-05-06 </span>
+        
+          <span class="more-meta"> 约 1510 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#解决centos7-yum-could-not-retrieve-mirrorlist错误">解决Centos7 yum could not retrieve mirrorlist错误</a></li>
+    <li><a href="#配置静态ip">配置静态ip</a></li>
+    <li><a href="#centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</a>
+      <ul>
+        <li><a href="#centos7安装vmware-tools">Centos7安装VMware Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装jdk8">安装Jdk8</a></li>
+    <li><a href="#安装mysql">安装mysql</a></li>
+    <li><a href="#修改mysql的root密码">修改mysql的root密码</a></li>
+    <li><a href="#开放3306端口">开放3306端口</a></li>
+    <li><a href="#安装oh-my-bash">安装oh-my-bash</a></li>
+    <li><a href="#centos自动登录">Centos自动登录</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p><strong>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。</strong></p>
+<h2 id="解决centos7-yum-could-not-retrieve-mirrorlist错误">解决Centos7 yum could not retrieve mirrorlist错误</h2>
+<p>刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考<a href="https://my.oschina.net/u/2456768/blog/3011881">https://my.oschina.net/u/2456768/blog/3011881</a></p>
+<h2 id="配置静态ip">配置静态ip</h2>
+<p>安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">IPADDR</span><span class="o">=</span>192.168.116.101
+</span></span><span class="line"><span class="cl"><span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0
+</span></span><span class="line"><span class="cl"><span class="nv">GATEWAY</span><span class="o">=</span>192.168.116.2
+</span></span><span class="line"><span class="cl"><span class="nv">DNS1</span><span class="o">=</span>192.168.116.2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个参考了<a href="https://blog.csdn.net/zhishengqianjun/article/details/77046796">https://blog.csdn.net/zhishengqianjun/article/details/77046796</a></p>
+<h2 id="centos7安装后配置国内仓库源">Centos7安装后配置国内仓库源</h2>
+<p>由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ip a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考<a href="https://blog.csdn.net/inslow/article/details/54177191">https://blog.csdn.net/inslow/article/details/54177191</a></p>
+<h3 id="centos7安装vmware-tools">Centos7安装VMware Tools</h3>
+<p>想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考<a href="https://blog.csdn.net/WarnerWu/article/details/73718901">https://blog.csdn.net/WarnerWu/article/details/73718901</a> 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了</p>
+<h2 id="安装jdk8">安装Jdk8</h2>
+<p>一句命令搞定：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装mysql">安装mysql</h2>
+<p>使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了<a href="https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/">https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/</a></p>
+<h2 id="修改mysql的root密码">修改mysql的root密码</h2>
+<p>安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了<a href="https://blog.csdn.net/kuluzs/article/details/51924086">https://blog.csdn.net/kuluzs/article/details/51924086</a></p>
+<h2 id="开放3306端口">开放3306端口</h2>
+<p>为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl start firewalld
+</span></span><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>3306/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个参考了<a href="https://www.jianshu.com/p/225a853350d9">https://www.jianshu.com/p/225a853350d9</a></p>
+<h2 id="安装oh-my-bash">安装oh-my-bash</h2>
+<p>由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。<a href="https://github.com/ohmybash/oh-my-bash">https://github.com/ohmybash/oh-my-bash</a></p>
+<h2 id="centos自动登录">Centos自动登录</h2>
+<p>安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：</p>
+<ul>
+<li>
+<p>移除原来的getty@tty1.service软链接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>拷贝getty@.service file 并且命名为 <a href="mailto:getty@tty1.service">getty@tty1.service</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>-/sbin/agetty --autologin root --noclear %I
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="p">;</span><span class="nv">Alias</span><span class="o">=</span>getty@tty1.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在getty.target.wants目录做一下软链接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启，Done!</p>
+</li>
+</ul>
+<p><strong>以上参考<a href="https://www.centos.org/forums/viewtopic.php?t=48288">https://www.centos.org/forums/viewtopic.php?t=48288</a>
+说明一下，网上一些修改gdm的方法试了没有作用。</strong></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-06-26
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/centos/">centos</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2019/05/arts-%E6%89%93%E5%8D%A1%E7%AC%AC%E4%B8%80%E5%A4%A9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ARTS-打卡第一天</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2019/03/%E9%82%A3%E4%BA%9B%E9%AB%98%E6%95%88%E7%9A%84chrome%E6%8F%92%E4%BB%B6/">
+            <span class="next-text nav-default">那些高效的Chrome插件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

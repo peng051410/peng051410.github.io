@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 06 May 2019 13:00:55 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Centos7 install issue collect</title>
-      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
+      <link>http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
+      <guid>http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/</guid>
       <description>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m</description>
     </item>
     

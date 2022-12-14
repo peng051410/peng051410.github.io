@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>开发中会遇到的Maven问题解惑 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="多模块系统版本控制问题 在开发想保持项目下的所有子模块版本一致，可以使用${rversion}变量 配置父pom 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;groupId&amp;gt;cn.imcompany&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;big-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${revision}&amp;lt;/version&amp;gt; &amp;lt;packaging&amp;gt;pom&amp;lt;/packaging&amp;gt;" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2022/04/%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84maven%E9%97%AE%E9%A2%98%E8%A7%A3%E6%83%91/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="开发中会遇到的Maven问题解惑" />
+<meta property="og:description" content="多模块系统版本控制问题 在开发想保持项目下的所有子模块版本一致，可以使用${rversion}变量 配置父pom 1 2 3 4 5 6 7 8 9 10 11 12 &lt;groupId&gt;cn.imcompany&lt;/groupId&gt; &lt;artifactId&gt;big-parent&lt;/artifactId&gt; &lt;version&gt;${revision}&lt;/version&gt; &lt;packaging&gt;pom&lt;/packaging&gt;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2022/04/%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84maven%E9%97%AE%E9%A2%98%E8%A7%A3%E6%83%91/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-07T19:30:00+08:00" />
+<meta property="article:modified_time" content="2022-04-08T17:57:05+08:00" />
+<meta itemprop="name" content="开发中会遇到的Maven问题解惑">
+<meta itemprop="description" content="多模块系统版本控制问题 在开发想保持项目下的所有子模块版本一致，可以使用${rversion}变量 配置父pom 1 2 3 4 5 6 7 8 9 10 11 12 &lt;groupId&gt;cn.imcompany&lt;/groupId&gt; &lt;artifactId&gt;big-parent&lt;/artifactId&gt; &lt;version&gt;${revision}&lt;/version&gt; &lt;packaging&gt;pom&lt;/packaging&gt;"><meta itemprop="datePublished" content="2022-04-07T19:30:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-08T17:57:05+08:00" />
+<meta itemprop="wordCount" content="308">
+<meta itemprop="keywords" content="maven," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="开发中会遇到的Maven问题解惑"/>
+<meta name="twitter:description" content="多模块系统版本控制问题 在开发想保持项目下的所有子模块版本一致，可以使用${rversion}变量 配置父pom 1 2 3 4 5 6 7 8 9 10 11 12 &lt;groupId&gt;cn.imcompany&lt;/groupId&gt; &lt;artifactId&gt;big-parent&lt;/artifactId&gt; &lt;version&gt;${revision}&lt;/version&gt; &lt;packaging&gt;pom&lt;/packaging&gt;"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">开发中会遇到的Maven问题解惑</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-04-07 </span>
+        <div class="post-category">
+            <a href="/categories/maven/"> maven </a>
+            </div>
+          <span class="more-meta"> 约 308 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#多模块系统版本控制问题">多模块系统版本控制问题</a>
+      <ul>
+        <li><a href="#配置父pom">配置父pom</a></li>
+        <li><a href="#子模块配置">子模块配置</a></li>
+        <li><a href="#修改版本方式">修改版本方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用revision后deploy操作不显示正确版本问题">使用revision后Deploy操作不显示正确版本问题</a></li>
+    <li><a href="#配置指定项目不发布到远程仓库">配置指定项目不发布到远程仓库</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="多模块系统版本控制问题">多模块系统版本控制问题</h2>
+<p>在开发想保持项目下的所有子模块版本一致，可以使用${rversion}变量</p>
+<h3 id="配置父pom">配置父pom</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;groupId&gt;</span>cn.imcompany<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;artifactId&gt;</span>big-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;version&gt;</span>${revision}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;modules&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;module&gt;</span>big-web<span class="nt">&lt;/module&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/modules&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;revision&gt;</span>1.0.0<span class="nt">&lt;/revision&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="子模块配置">子模块配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;parent&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;groupId&gt;</span>cn.imcompany<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;artifactId&gt;</span>big-parent<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;version&gt;</span>${revision}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/parent&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;artifactId&gt;</span>big-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改版本方式">修改版本方式</h3>
+<ol>
+<li>直接修改revision变量的值</li>
+<li>使用 <strong>mvn clean package -Drevision=1.1.0</strong> 进行配置</li>
+</ol>
+<h2 id="使用revision后deploy操作不显示正确版本问题">使用revision后Deploy操作不显示正确版本问题</h2>
+<p>需要配合 <a href="https://www.mojohaus.org/flatten-maven-plugin/">Flatten Maven Plugin</a> 即可解决，父pom中需要增加以下配置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>flatten-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>1.2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;updatePomFile&gt;</span>true<span class="nt">&lt;/updatePomFile&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;executions&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;execution&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;id&gt;</span>flatten<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;phase&gt;</span>process-resources<span class="nt">&lt;/phase&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;goals&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;goal&gt;</span>flatten<span class="nt">&lt;/goal&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/goals&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/execution&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;execution&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;id&gt;</span>flatten.clean<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;phase&gt;</span>clean<span class="nt">&lt;/phase&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;goals&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;goal&gt;</span>clean<span class="nt">&lt;/goal&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/goals&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/execution&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/executions&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置指定项目不发布到远程仓库">配置指定项目不发布到远程仓库</h2>
+<p>在新版本的deploy插件已经支持配置，配置skip变量即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>maven-deploy-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>3.0.0-M2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;skip&gt;</span>true<span class="nt">&lt;/skip&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/plugin&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="reference">Reference</h2>
+<p><a href="https://blog.soebes.de/blog/2017/04/02/maven-pom-files-without-a-version-in-it/">Maven: POM files without a version in it? - SoftwareEntwicklung Beratung Schulung</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-04-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/maven/">maven</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2022/05/springwebflux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Springwebflux源码学习-服务启动流程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2022/04/linux%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/">
+            <span class="next-text nav-default">Linux代码结构学习</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

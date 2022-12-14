@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Idea中vim键的映射 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Idea中vim键的映射" />
+<meta property="og:description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-05-14T14:48:33+08:00" />
+<meta property="article:modified_time" content="2019-06-26T10:34:22+08:00" />
+<meta itemprop="name" content="Idea中vim键的映射">
+<meta itemprop="description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi"><meta itemprop="datePublished" content="2018-05-14T14:48:33+08:00" />
+<meta itemprop="dateModified" content="2019-06-26T10:34:22+08:00" />
+<meta itemprop="wordCount" content="369">
+<meta itemprop="keywords" content="idea,vim," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Idea中vim键的映射"/>
+<meta name="twitter:description" content="Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Idea中vim键的映射</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-05-14 </span>
+        <div class="post-category">
+            <a href="/categories/tool/"> tool </a>
+            </div>
+          <span class="more-meta"> 约 369 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kj</td>
+<td><!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gt</td>
+<td>VimBack</td>
+</tr>
+<tr>
+<td>gT</td>
+<td>VimForward</td>
+</tr>
+<tr>
+<td>gd</td>
+<td>GotoDeclaration<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gf</td>
+<td>GotoTypeDeclaration<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gh</td>
+<td>QuickJavaDoc<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gs</td>
+<td>GotoSymbol<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gi</td>
+<td>GotoImplementation<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gu</td>
+<td>FindUsages<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gj</td>
+<td>IntroduceVariable<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader w d</td>
+<td>ActivateDatabaseToolWindow</td>
+</tr>
+<tr>
+<td>leader '</td>
+<td>ActivateTerminalToolWindow</td>
+</tr>
+<tr>
+<td>leader w r</td>
+<td>ActivateRedisServersToolWindow</td>
+</tr>
+<tr>
+<td>leader w m</td>
+<td>ActivateMavenProjectsToolWindow</td>
+</tr>
+<tr>
+<td>leader w a</td>
+<td>HideActiveWindow</td>
+</tr>
+<tr>
+<td>leader w w</td>
+<td>HideAllWindows</td>
+</tr>
+<tr>
+<td>leader w p</td>
+<td>ActivateProjectToolWindow<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader w s</td>
+<td>ActivateStructureToolWindow<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader w v</td>
+<td>ActivateVersionControlToolWindow<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader w h</td>
+<td><!-- raw HTML omitted -->h  Go to left window</td>
+</tr>
+<tr>
+<td>leader w l</td>
+<td><!-- raw HTML omitted -->l  Go to right window</td>
+</tr>
+<tr>
+<td>leader w k</td>
+<td><!-- raw HTML omitted -->k  Go to window up</td>
+</tr>
+<tr>
+<td>leader w j</td>
+<td><!-- raw HTML omitted -->j  Go to window down</td>
+</tr>
+<tr>
+<td>leader w V</td>
+<td><!-- raw HTML omitted -->v  Split Window Vertically</td>
+</tr>
+<tr>
+<td>leader w -</td>
+<td><!-- raw HTML omitted -->s  Split Winodw Horizontally</td>
+</tr>
+<tr>
+<td>leader w c</td>
+<td><!-- raw HTML omitted -->c  Close current window</td>
+</tr>
+<tr>
+<td>leader w o</td>
+<td><!-- raw HTML omitted -->o  Close all window except current</td>
+</tr>
+<tr>
+<td>leader <!-- raw HTML omitted --></td>
+<td>GotoAction<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader c c</td>
+<td>GotoClass<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader c r</td>
+<td>CopyReference<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader c p</td>
+<td>CopyPaths<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader f f</td>
+<td>GotoFile<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader f d</td>
+<td>DashLauncherAction<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader b b</td>
+<td>RecentFiles<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader b p</td>
+<td>FileStructurePopup<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader b u</td>
+<td>ReopenClosedTab<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader d d</td>
+<td>Debug<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader d D</td>
+<td>DebugClass<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader d j</td>
+<td>JRebel</td>
+</tr>
+<tr>
+<td>leader l l</td>
+<td>EvaluateExpression<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader t t</td>
+<td>ToggleLineBreakpoint<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader r r</td>
+<td>Run<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader r R</td>
+<td>RunClass<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader i m</td>
+<td>ImplementMethods<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader e e</td>
+<td>ShowErrorDescription<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader e n</td>
+<td>GotoNextError<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader R</td>
+<td>:source ~/.ideavimrc</td>
+</tr>
+<tr>
+<td>leader g s</td>
+<td>Vcs.QuickListPopupAction</td>
+</tr>
+<tr>
+<td>leader r p</td>
+<td>ReplaceInPath</td>
+</tr>
+<tr>
+<td>zO</td>
+<td>ExpandAllRegions<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>zo</td>
+<td>ExpandRegion<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>zc</td>
+<td>CollapseRegion<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>zC</td>
+<td>CollapseAllRegions<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>fj</td>
+<td>emacsIDEAs.AceJump<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>fw</td>
+<td>emacsIDEAs.AceJumpWord<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>ff</td>
+<td>CommentByLineComment<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>fb</td>
+<td>CommentByBlockComment<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gd</td>
+<td>GotoDeclaration<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gf</td>
+<td>GotoTypeDeclaration<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gh</td>
+<td>QuickJavaDoc<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gs</td>
+<td>GotoSymbol<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gi</td>
+<td>GotoImplementation<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gu</td>
+<td>FindUsages<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>gj</td>
+<td>IntroduceVariable<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>,,</td>
+<td>ReformatCode<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>,r</td>
+<td>RenameElement<!-- raw HTML omitted -->i</td>
+</tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>Back<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td>Forward<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader R</td>
+<td>reload ~/.ideavimrc<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader a l</td>
+<td>:actionlist<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader g s</td>
+<td>Vcs.QuickListPopupAction<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader s p</td>
+<td>FindInPath<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>leader r p</td>
+<td>ReplaceInPath<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>, c r</td>
+<td>Revert change</td>
+</tr>
+<tr>
+<td>, c t</td>
+<td>Close other tab</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-06-26
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/idea/">idea</a>
+          <a href="/tags/vim/">vim</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">设计模式学习之单例模式</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
