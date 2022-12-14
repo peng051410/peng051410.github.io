@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-14T16:23:00+08:00" />
-<meta property="article:modified_time" content="2022-12-14T18:08:34+08:00" />
+<meta property="article:modified_time" content="2022-12-14T18:50:13+08:00" />
 <meta itemprop="name" content="如何使用Java JDK17版本OpenJ9 JVM">
 <meta itemprop="description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资"><meta itemprop="datePublished" content="2022-12-14T16:23:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-14T18:08:34+08:00" />
-<meta itemprop="wordCount" content="609">
+<meta itemprop="dateModified" content="2022-12-14T18:50:13+08:00" />
+<meta itemprop="wordCount" content="597">
 <meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何使用Java JDK17版本OpenJ9 JVM"/>
 <meta name="twitter:description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资"/>
@@ -137,7 +137,7 @@
       <div class="post-meta">
         <span class="post-time"> 2022-12-14 </span>
         
-          <span class="more-meta"> 约 609 字 </span>
+          <span class="more-meta"> 约 597 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,7 +150,7 @@
   <ul>
     <li><a href="#前言">前言</a></li>
     <li><a href="#使用adoptopenjdk-openjdk-安装">使用adoptopenjdk/openjdk/安装</a></li>
-    <li><a href="#adoptopenjdk不在了">AdoptOpenJdk不在了</a></li>
+    <li><a href="#adoptopenjdk不维护了">AdoptOpenJdk不维护了</a></li>
     <li><a href="#temurin中不包含openj9-jvm">Temurin中不包含OpenJ9 JVM</a></li>
     <li><a href="#使用ibm维护的jdk">使用IBM维护的JDK</a></li>
     <li><a href="#ref">REF</a>
@@ -182,10 +182,10 @@
 </figure>
 
 <p>报错了，没有找到，为什么？明明JDK已经到19版本了，openjdk的17版本却没有更新?</p>
-<h2 id="adoptopenjdk不在了">AdoptOpenJdk不在了</h2>
+<h2 id="adoptopenjdk不维护了">AdoptOpenJdk不维护了</h2>
 <p>查了半天的google，又上 AdoptOpenJDK 的<a href="https://github.com/AdoptOpenJDK/homebrew-openjdk">brew</a>源上看，找到了问题所在
 <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/TawO63.png" alt=""></p>
-<p>根据官方brew源仓库的说明，*AdoptOpenJdk* 在2021-08-01 后不再更新了，所有版本都迁移到了Eclipse 基金会维护的JAVA生态顶级项目 <a href="https://projects.eclipse.org/projects/adoptium">Eclipse Adoptium</a></p>
+<p>根据官方brew源仓库的说明， <strong>AdoptOpenJdk</strong> 在2021-08-01 后不再更新了，所有版本都迁移到了Eclipse 基金会维护的JAVA生态顶级项目 <a href="https://projects.eclipse.org/projects/adoptium">Eclipse Adoptium</a></p>
 <h2 id="temurin中不包含openj9-jvm">Temurin中不包含OpenJ9 JVM</h2>
 <p>Eclipse Adoptium维护的JDK版本，通过 <strong>temurin</strong> 命令进行安装</p>
 <div class="highlight"><div class="chroma">
@@ -196,8 +196,10 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew search temurin
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/AN1wNl.png" alt="">
-没有看到带OpenJ9名称的版本，查询<a href="https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/">temurin官方博客</a>中发现目前的 <strong>temurin</strong> 中暂时不包含OpenJ9版本，需要到 IBM 官网进行安装</p>
+</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/AN1wNl.png"/>
+</figure>
+
+<p>没有看到带OpenJ9名称的版本，查询<a href="https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/">temurin官方博客</a>中发现目前的 <strong>temurin</strong> 中暂时不包含OpenJ9版本，需要到 IBM 官网进行安装</p>
 <h2 id="使用ibm维护的jdk">使用IBM维护的JDK</h2>
 <p>最后从<a href="https://developer.ibm.com/languages/java/semeru-runtimes/">IBM的网站</a>上找到了OpenJ9，IBM的JDK版本在brew中使用 <strong>semeru</strong> 命令</p>
 <div class="highlight"><div class="chroma">
