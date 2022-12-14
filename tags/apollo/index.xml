@@ -10,28 +10,28 @@
     <lastBuildDate>Fri, 16 Sep 2022 15:22:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/apollo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apollo不更新配置了？</title>
-      <link>http://blog.imcompany.cn/2022/09/apollo%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%85%8D%E7%BD%AE%E4%BA%86/</link>
+      <link>http://blog.imcompany.cn/post/apollo-work-issue/</link>
       <pubDate>Fri, 16 Sep 2022 15:22:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/09/apollo%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%85%8D%E7%BD%AE%E4%BA%86/</guid>
+      <guid>http://blog.imcompany.cn/post/apollo-work-issue/</guid>
       <description>问题描述 近期改造服务调用，需要使用Apollo配置进行灵活切换，上线后发现有些机器配置生效，有些配置未生效，开发小伙伴反馈此问题发生有一段时</description>
     </item>
     
     <item>
       <title>Apollo Client自定义问题拾遗</title>
-      <link>http://blog.imcompany.cn/2019/07/apollo-client%E8%87%AA%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98%E6%8B%BE%E9%81%97/</link>
+      <link>http://blog.imcompany.cn/post/apollo-client-custom/</link>
       <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/07/apollo-client%E8%87%AA%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98%E6%8B%BE%E9%81%97/</guid>
+      <guid>http://blog.imcompany.cn/post/apollo-client-custom/</guid>
       <description>由于公司很多服务要接入Apollo配置中心，并且对于项目的接入有网络要求，根据官方说明，需要自定义Client来完成 接入步骤 新建maven项</description>
     </item>
     
     <item>
       <title>Apollo 配置中心畅游</title>
-      <link>http://blog.imcompany.cn/2019/05/apollo-%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E7%95%85%E6%B8%B8/</link>
+      <link>http://blog.imcompany.cn/post/apollo-config-swim/</link>
       <pubDate>Thu, 09 May 2019 17:34:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/05/apollo-%E9%85%8D%E7%BD%AE%E4%B8%AD%E5%BF%83%E7%95%85%E6%B8%B8/</guid>
+      <guid>http://blog.imcompany.cn/post/apollo-config-swim/</guid>
       <description>目前市面上的开源产品 Disconf 2014年7月百度开源的配置管理中心，同样具备配置的管理能力，目前已经不维护了，最近的一次代码提交是两年前了。 Spring Cloud Config 2</description>
     </item>
     

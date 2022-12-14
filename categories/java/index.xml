@@ -10,145 +10,145 @@
     <lastBuildDate>Mon, 12 Dec 2022 19:14:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JAVA中如何判断对象与类的关系之-instanceOf, Class.isInstance, Class.isAssignableFrom</title>
-      <link>http://blog.imcompany.cn/2022/12/java%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B9%8B-instanceof-class.isinstance-class.isassignablefrom/</link>
+      <link>http://blog.imcompany.cn/post/java-check-object-class/</link>
       <pubDate>Mon, 12 Dec 2022 19:14:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/12/java%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB%E4%B9%8B-instanceof-class.isinstance-class.isassignablefrom/</guid>
+      <guid>http://blog.imcompany.cn/post/java-check-object-class/</guid>
       <description>前言 在开发中，常常会碰到检查JAVA对象是不是指定类型的情况，在JAVA中提供了以下几种方法实现此类需求: instanceOf Class.isInstance() Class.isAssignbleFrom() 今天对此三种实现进行具体学习</description>
     </item>
     
     <item>
       <title>Springwebflux源码学习-服务启动流程</title>
-      <link>http://blog.imcompany.cn/2022/05/springwebflux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <link>http://blog.imcompany.cn/post/springwebflux-start/</link>
       <pubDate>Tue, 24 May 2022 17:37:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/05/springwebflux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <guid>http://blog.imcompany.cn/post/springwebflux-start/</guid>
       <description>学习目标 理解WebFlux核心组件HttpHandler、WebHandler的创建过程 理解DispatcherHandler如何映射请求u</description>
     </item>
     
     <item>
       <title>记一次SpringWebflux框架下堆外OOM排查经历</title>
-      <link>http://blog.imcompany.cn/2022/03/%E8%AE%B0%E4%B8%80%E6%AC%A1springwebflux%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%A0%86%E5%A4%96oom%E6%8E%92%E6%9F%A5%E7%BB%8F%E5%8E%86/</link>
+      <link>http://blog.imcompany.cn/post/springwebflux-leak-bug/</link>
       <pubDate>Thu, 31 Mar 2022 20:12:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/03/%E8%AE%B0%E4%B8%80%E6%AC%A1springwebflux%E6%A1%86%E6%9E%B6%E4%B8%8B%E5%A0%86%E5%A4%96oom%E6%8E%92%E6%9F%A5%E7%BB%8F%E5%8E%86/</guid>
+      <guid>http://blog.imcompany.cn/post/springwebflux-leak-bug/</guid>
       <description>症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33</description>
     </item>
     
     <item>
       <title>让好代码生生不息-更好的使用String</title>
-      <link>http://blog.imcompany.cn/2021/08/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8string/</link>
+      <link>http://blog.imcompany.cn/post/best-code-string/</link>
       <pubDate>Mon, 23 Aug 2021 14:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/08/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8string/</guid>
+      <guid>http://blog.imcompany.cn/post/best-code-string/</guid>
       <description>开发中常用的String操作 开发中经常用到的操作有： 格式化/日志格式化 字符串判断 字符串处理，常见的如处理字符串的第一个/最后一个字符 String.format Str</description>
     </item>
     
     <item>
       <title>让好代码生生不息-更好的对待NULL</title>
-      <link>http://blog.imcompany.cn/2021/07/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%AF%B9%E5%BE%85null/</link>
+      <link>http://blog.imcompany.cn/post/best-code1/</link>
       <pubDate>Sat, 17 Jul 2021 16:04:09 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/07/%E8%AE%A9%E5%A5%BD%E4%BB%A3%E7%A0%81%E7%94%9F%E7%94%9F%E4%B8%8D%E6%81%AF-%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%AF%B9%E5%BE%85null/</guid>
+      <guid>http://blog.imcompany.cn/post/best-code1/</guid>
       <description>什么样的代码是好代码 易读的代码，行云流水的代码 JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug</description>
     </item>
     
     <item>
       <title>JAVA8问题处理回顾-持续更新</title>
-      <link>http://blog.imcompany.cn/2019/08/java8%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E5%9B%9E%E9%A1%BE-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</link>
+      <link>http://blog.imcompany.cn/post/java8-issue-review/</link>
       <pubDate>Sat, 24 Aug 2019 10:15:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/08/java8%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E5%9B%9E%E9%A1%BE-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</guid>
+      <guid>http://blog.imcompany.cn/post/java8-issue-review/</guid>
       <description>金额累加问题 使用Reduce进行累加操作，参考这里 1 2 3 List&amp;lt;BigDecimal&amp;gt; bdList = new ArrayList&amp;lt;&amp;gt;(); //populate list BigDecimal result = bdList.stream().reduce(BigDecimal.ZERO, BigDecimal::add); 查找集合的最后一个元素 JAVA8的Stream只提供了Fin</description>
     </item>
     
     <item>
       <title>设计模式学习之代理模式</title>
-      <link>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/</link>
       <pubDate>Mon, 16 Jul 2018 21:08:28 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dai-li-mo-shi/</guid>
       <description>说明 代理模式是设计模式中使用频率非常的高的模式，像日常生活中的房产中介、外卖平台都属于代理。代理模式就是在访问真正的业务之时不会直接与真正的</description>
     </item>
     
     <item>
       <title>设计模式学习之委托模式</title>
-      <link>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%A7%94%E6%89%98%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-wei-tuo-mo-shi/</link>
       <pubDate>Sat, 07 Jul 2018 18:53:57 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%A7%94%E6%89%98%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-wei-tuo-mo-shi/</guid>
       <description>说明 委托模式不属于23种设计模式中，但是它在Spring框架中使用的很频繁，Spring的作用在Java的开发是非常大，所以需要学习一下委托</description>
     </item>
     
     <item>
       <title>设计模式学习之观察者</title>
-      <link>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/</link>
       <pubDate>Wed, 04 Jul 2018 20:31:41 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-guan-cha-zhe/</guid>
       <description>说明 观察者模式在日常开发中使用频率也是非常高的，它建立了对象与对象之间的关系，一个对象的行为改变会通知到另一个对象，被通知的对象根据通知做出</description>
     </item>
     
     <item>
       <title>设计模式学习之装饰器</title>
-      <link>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/</link>
       <pubDate>Mon, 02 Jul 2018 20:09:14 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%A3%85%E9%A5%B0%E5%99%A8/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-zhuang-shi-qi/</guid>
       <description>说明 装饰器设计模式是使用比较频繁的设计模式，它在不改变原物体的情况对原物体实现了功能的增加，原物体还是一个可单独使用的个体。在JAVA的类库</description>
     </item>
     
     <item>
       <title>设计模式学习之适配器</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gua-pei-qi/</link>
       <pubDate>Tue, 26 Jun 2018 21:30:17 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gua-pei-qi/</guid>
       <description>说明 在前面的文章中介绍了一些关于支付相关的功能，现在转向登录，在早些时期的系统登录就是用户使用用户名与密码进行注册，注册成功后就可以进行登录</description>
     </item>
     
     <item>
       <title>设计模式学习之模板模式</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-mo-ban-mo-shi/</link>
       <pubDate>Mon, 25 Jun 2018 21:06:17 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-mo-ban-mo-shi/</guid>
       <description>说明 在一般实现处理用户支付订单时，通常都会在一个单独的回调项目中来处理用户的支付方式回调。一般情况下，回调的处理过程都是相似的，大体的步骤就</description>
     </item>
     
     <item>
       <title>设计模式学习之策略模式</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/</link>
       <pubDate>Wed, 20 Jun 2018 07:04:56 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-ce-lue-mo-shi/</guid>
       <description>说明 策略模式是设计模式中使用频率很高的模式，主要的就是实现对行为的包装，达到结果的方式有多种，使用者可以选择任何一个方式来得到想要结果，在增</description>
     </item>
     
     <item>
       <title>设计模式学习之工厂模式</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gong-han-mo-shi/</link>
       <pubDate>Tue, 12 Jun 2018 21:33:40 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-gong-han-mo-shi/</guid>
       <description>说明 工厂设计模式是23种设计模式中使用频率非常高的，属于创建型模式。主要特点是实现了实体创建与使用的分离，达到了解耦的目的。工厂设计模式一般</description>
     </item>
     
     <item>
       <title>设计模式学习之原型模式</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-yuan-xing-mo-shi/</link>
       <pubDate>Sat, 09 Jun 2018 17:12:41 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-yuan-xing-mo-shi/</guid>
       <description>特点 原型设计模式就是系统中产生的每一个对象都不相同，通过原型来创建新的对象，原型模式属于创建型模式。 实现方式 一般情况可以通过对象克隆的方式来</description>
     </item>
     
     <item>
       <title>设计模式学习之单例模式</title>
-      <link>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/</link>
       <pubDate>Tue, 05 Jun 2018 16:36:08 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/</guid>
       <description>特点 单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。 饿汉式 饿汉式单例就是在</description>
     </item>
     

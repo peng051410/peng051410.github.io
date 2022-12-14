@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 14 May 2018 14:48:33 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Idea中vim键的映射</title>
-      <link>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</link>
+      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</guid>
+      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
       <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi</description>
     </item>
     

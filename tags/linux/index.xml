@@ -10,28 +10,28 @@
     <lastBuildDate>Thu, 08 Dec 2022 11:29:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux-man</title>
-      <link>http://blog.imcompany.cn/2022/12/linux-man/</link>
+      <link>http://blog.imcompany.cn/post/linux-man/</link>
       <pubDate>Thu, 08 Dec 2022 11:29:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/12/linux-man/</guid>
+      <guid>http://blog.imcompany.cn/post/linux-man/</guid>
       <description>功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命</description>
     </item>
     
     <item>
       <title>Linux代码结构学习</title>
-      <link>http://blog.imcompany.cn/2022/04/linux%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/</link>
+      <link>http://blog.imcompany.cn/post/linux-source/</link>
       <pubDate>Wed, 06 Apr 2022 18:53:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/04/linux%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://blog.imcompany.cn/post/linux-source/</guid>
       <description>Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13) 代码主要文件解析 Makefile 这是整个源</description>
     </item>
     
     <item>
       <title>Centos7 install issue collect</title>
-      <link>http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/</link>
+      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
       <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/05/centos7-install-issue-collect/</guid>
+      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
       <description>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。 解决Centos7 yum could not retrieve m</description>
     </item>
     

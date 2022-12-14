@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.95.0 with theme even" />
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/springwebflux-leak-bug/" />
@@ -45,7 +45,6 @@
 <meta property="og:url" content="http://blog.imcompany.cn/post/springwebflux-leak-bug/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-03-31T20:12:23+08:00" />
 <meta property="article:modified_time" content="2022-04-13T18:44:50+08:00" />
-
 <meta itemprop="name" content="记一次SpringWebflux框架下堆外OOM排查经历">
 <meta itemprop="description" content="症状 生产环境业务页面打不开，看错误日志是 OutOfDirectMemoryError (OOM)了，详情报错信息如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33"><meta itemprop="datePublished" content="2022-03-31T20:12:23+08:00" />
 <meta itemprop="dateModified" content="2022-04-13T18:44:50+08:00" />
@@ -586,11 +585,11 @@
 </span></span><span class="line"><span class="cl">                <span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">extractResponse</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">                <span class="o">}</span>
 </span></span><span class="line"><span class="cl">                <span class="n">setUserCookie</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
@@ -654,11 +653,11 @@
 </span></span><span class="line"><span class="cl">                <span class="n">DataBufferUtils</span><span class="o">.</span><span class="na">release</span><span class="o">(</span><span class="n">dataBuffer</span><span class="o">);</span>  <span class="c1">//增加的内存释放代码
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">response</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;{&#34;</span><span class="o">))</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="n">1</span> <span class="o">:</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">isLogin</span> <span class="o">=</span> <span class="n">UserUtil</span><span class="o">.</span><span class="na">isLogin</span><span class="o">(</span><span class="n">appRequest</span><span class="o">.</span><span class="na">getUin</span><span class="o">())</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">loginPrefix</span> <span class="o">=</span> <span class="s">&#34;{\&#34;isLogin\&#34;:&#34;</span> <span class="o">+</span> <span class="n">isLogin</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">result</span> <span class="o">=</span> <span class="n">loginPrefix</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">HttpHeaders</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">getDelegate</span><span class="o">().</span><span class="na">getHeaders</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">headers</span><span class="o">.</span><span class="na">setContentLength</span><span class="o">(</span><span class="n">headers</span><span class="o">.</span><span class="na">getContentLength</span><span class="o">()</span> <span class="o">+</span> <span class="n">loginPrefix</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">                <span class="o">}</span>
 </span></span><span class="line"><span class="cl">                <span class="n">setUserCookie</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">Mono</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="n">exchange</span><span class="o">.</span><span class="na">getResponse</span><span class="o">().</span><span class="na">bufferFactory</span><span class="o">().</span><span class="na">wrap</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">)));</span>
@@ -821,14 +820,14 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 
 
 
-<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 

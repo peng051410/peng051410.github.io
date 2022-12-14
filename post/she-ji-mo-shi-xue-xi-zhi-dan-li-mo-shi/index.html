@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.95.0 with theme even" />
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/" />
@@ -45,7 +45,6 @@
 <meta property="og:url" content="http://blog.imcompany.cn/post/she-ji-mo-shi-xue-xi-zhi-dan-li-mo-shi/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-06-05T16:36:08+08:00" />
 <meta property="article:modified_time" content="2019-06-26T10:49:49+08:00" />
-
 <meta itemprop="name" content="设计模式学习之单例模式">
 <meta itemprop="description" content="特点 单例模式就是确保在系统中只在一个实例提供功能。单例有好几种写法，主要有饿汉式、懒汉式、静态方法内部类、注册式单例。 饿汉式 饿汉式单例就是在"><meta itemprop="datePublished" content="2018-06-05T16:36:08+08:00" />
 <meta itemprop="dateModified" content="2019-06-26T10:49:49+08:00" />
@@ -305,15 +304,15 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">2_000_000</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">2_000_000</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">LazyOne</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;LazyOne use: &#34;</span> <span class="o">+</span> <span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()</span> <span class="o">-</span> <span class="n">start</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;ms&#34;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">start2</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">     <span class="n">LazyTwo</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;LazyTwo use: &#34;</span> <span class="o">+</span> <span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()</span> <span class="o">-</span> <span class="n">start2</span><span class="o">)</span> <span class="o">+</span> <span class="s">&#34;ms&#34;</span><span class="o">);</span>
@@ -802,14 +801,14 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 
 
 
-<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 

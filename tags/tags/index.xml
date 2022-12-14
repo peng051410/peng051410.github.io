@@ -10,19 +10,19 @@
     <lastBuildDate>Wed, 01 Jun 2022 11:04:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring的RedisTemplate如何与Lettuce进行交互的</title>
-      <link>http://blog.imcompany.cn/2022/06/spring%E7%9A%84redistemplate%E5%A6%82%E4%BD%95%E4%B8%8Elettuce%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E7%9A%84/</link>
+      <link>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</link>
       <pubDate>Wed, 01 Jun 2022 11:04:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/06/spring%E7%9A%84redistemplate%E5%A6%82%E4%BD%95%E4%B8%8Elettuce%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92%E7%9A%84/</guid>
+      <guid>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</guid>
       <description>问题 SpringWebFlux项目，使用的Redis客户端是Lettuce(基于异步)，在Spring中封装了两种操作Redis的模板 RedisTemplate 与 ReactiveRedisTemplate</description>
     </item>
     
     <item>
       <title>Springwebflux源码学习-服务启动流程</title>
-      <link>http://blog.imcompany.cn/2022/05/springwebflux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</link>
+      <link>http://blog.imcompany.cn/post/springwebflux-start/</link>
       <pubDate>Tue, 24 May 2022 17:37:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/05/springwebflux%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0-%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/</guid>
+      <guid>http://blog.imcompany.cn/post/springwebflux-start/</guid>
       <description>学习目标 理解WebFlux核心组件HttpHandler、WebHandler的创建过程 理解DispatcherHandler如何映射请求u</description>
     </item>
     

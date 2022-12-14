@@ -10,37 +10,37 @@
     <lastBuildDate>Mon, 25 Oct 2021 20:12:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/idea/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些提高效率MAC软件(全程免费)</title>
-      <link>http://blog.imcompany.cn/2021/10/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87mac%E8%BD%AF%E4%BB%B6%E5%85%A8%E7%A8%8B%E5%85%8D%E8%B4%B9/</link>
+      <link>http://blog.imcompany.cn/post/mac-soft/</link>
       <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/10/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87mac%E8%BD%AF%E4%BB%B6%E5%85%A8%E7%A8%8B%E5%85%8D%E8%B4%B9/</guid>
+      <guid>http://blog.imcompany.cn/post/mac-soft/</guid>
       <description>NTFS 支持MAC电脑读取NTFS格式文件 eul 监控MAC运行状态的工具 uPic 文件与图片云端上传工具 Sequel-Ace MAC上数据库管理工具，支持Mysql与MariaD</description>
     </item>
     
     <item>
       <title>JAVA中获取调用栈帧的最优方式</title>
-      <link>http://blog.imcompany.cn/2021/04/java%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%B0%83%E7%94%A8%E6%A0%88%E5%B8%A7%E7%9A%84%E6%9C%80%E4%BC%98%E6%96%B9%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/java-stackwalker/</link>
       <pubDate>Tue, 20 Apr 2021 19:30:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/04/java%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%B0%83%E7%94%A8%E6%A0%88%E5%B8%A7%E7%9A%84%E6%9C%80%E4%BC%98%E6%96%B9%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/java-stackwalker/</guid>
       <description>前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方</description>
     </item>
     
     <item>
       <title>那些提高效率的Idea插件</title>
-      <link>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84idea%E6%8F%92%E4%BB%B6/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84idea%E6%8F%92%E4%BB%B6/</guid>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
       <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与I</description>
     </item>
     
     <item>
       <title>Idea中vim键的映射</title>
-      <link>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</link>
+      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</guid>
+      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
       <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi</description>
     </item>
     

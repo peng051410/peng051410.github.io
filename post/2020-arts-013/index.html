@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.95.0 with theme even" />
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
 <link rel="canonical" href="http://blog.imcompany.cn/post/2020-arts-013/" />
@@ -45,7 +45,6 @@
 <meta property="og:url" content="http://blog.imcompany.cn/post/2020-arts-013/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2020-04-08T21:45:56+08:00" />
-
 <meta itemprop="name" content="2020-ARTS-打卡第十三天">
 <meta itemprop="description" content="Algorithm 题目 题目描述 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a &#43; b &#43; c = 0 ？请你找出所有满足条件且不重复的三元">
 <meta itemprop="dateModified" content="2020-04-08T21:45:56+08:00" />
@@ -235,32 +234,32 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">nums</span> <span class="o">||</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">nums</span> <span class="o">||</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">        <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">            <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">1</span><span class="o">])</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                <span class="k">continue</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">            <span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">R</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">L</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">R</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="o">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span><span class="o">]</span> <span class="o">+</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span><span class="o">];</span>
-</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span><span class="o">],</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span><span class="o">]));</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">while</span> <span class="o">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span> <span class="o">+</span> <span class="n">1</span><span class="o">])</span> <span class="n">L</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">while</span> <span class="o">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span> <span class="o">-</span> <span class="n">1</span><span class="o">])</span> <span class="n">R</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">while</span> <span class="o">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span> <span class="n">L</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">while</span> <span class="o">(</span><span class="n">L</span> <span class="o">&lt;</span> <span class="n">R</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span><span class="o">]</span> <span class="o">==</span> <span class="n">nums</span><span class="o">[</span><span class="n">R</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="n">R</span><span class="o">--;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">L</span><span class="o">++;</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">R</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">&lt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">L</span><span class="o">++;</span>
 </span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">                    <span class="n">R</span><span class="o">--;</span>
@@ -483,14 +482,14 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
 
 
 
-<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 

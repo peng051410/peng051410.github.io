@@ -10,19 +10,19 @@
     <lastBuildDate>Wed, 28 Sep 2022 15:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org-babel学习记录</title>
-      <link>http://blog.imcompany.cn/2022/09/org-babel%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <link>http://blog.imcompany.cn/post/org-babel-study/</link>
       <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/09/org-babel%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <guid>http://blog.imcompany.cn/post/org-babel-study/</guid>
       <description>基础 匿名代码段 命名的代码块 命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配 定义参数 参数变量根据对应语言表现方式不同 :var</description>
     </item>
     
     <item>
       <title>Org-anki, Org与Anki的完美结合</title>
-      <link>http://blog.imcompany.cn/2022/09/org-anki-org%E4%B8%8Eanki%E7%9A%84%E5%AE%8C%E7%BE%8E%E7%BB%93%E5%90%88/</link>
+      <link>http://blog.imcompany.cn/post/tools-org-anki/</link>
       <pubDate>Tue, 27 Sep 2022 15:03:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2022/09/org-anki-org%E4%B8%8Eanki%E7%9A%84%E5%AE%8C%E7%BE%8E%E7%BB%93%E5%90%88/</guid>
+      <guid>http://blog.imcompany.cn/post/tools-org-anki/</guid>
       <description>Org-anki Org-anki是一个同步Org中note到Anki的Emacs包，它的实现非常简单灵活，文档书写体验好 安装 1 2 (use-package org-anki :commands (org-anki-sync-entry org-anki-sync-all)) 支持的note 基</description>
     </item>
     

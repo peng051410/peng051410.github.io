@@ -10,82 +10,82 @@
     <lastBuildDate>Mon, 25 Oct 2021 20:12:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些提高效率MAC软件(全程免费)</title>
-      <link>http://blog.imcompany.cn/2021/10/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87mac%E8%BD%AF%E4%BB%B6%E5%85%A8%E7%A8%8B%E5%85%8D%E8%B4%B9/</link>
+      <link>http://blog.imcompany.cn/post/mac-soft/</link>
       <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/10/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87mac%E8%BD%AF%E4%BB%B6%E5%85%A8%E7%A8%8B%E5%85%8D%E8%B4%B9/</guid>
+      <guid>http://blog.imcompany.cn/post/mac-soft/</guid>
       <description>NTFS 支持MAC电脑读取NTFS格式文件 eul 监控MAC运行状态的工具 uPic 文件与图片云端上传工具 Sequel-Ace MAC上数据库管理工具，支持Mysql与MariaD</description>
     </item>
     
     <item>
       <title>JAVA中获取调用栈帧的最优方式</title>
-      <link>http://blog.imcompany.cn/2021/04/java%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%B0%83%E7%94%A8%E6%A0%88%E5%B8%A7%E7%9A%84%E6%9C%80%E4%BC%98%E6%96%B9%E5%BC%8F/</link>
+      <link>http://blog.imcompany.cn/post/java-stackwalker/</link>
       <pubDate>Tue, 20 Apr 2021 19:30:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2021/04/java%E4%B8%AD%E8%8E%B7%E5%8F%96%E8%B0%83%E7%94%A8%E6%A0%88%E5%B8%A7%E7%9A%84%E6%9C%80%E4%BC%98%E6%96%B9%E5%BC%8F/</guid>
+      <guid>http://blog.imcompany.cn/post/java-stackwalker/</guid>
       <description>前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。 解决方</description>
     </item>
     
     <item>
       <title>Maven发布401问题排查</title>
-      <link>http://blog.imcompany.cn/2019/12/maven%E5%8F%91%E5%B8%83401%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</link>
+      <link>http://blog.imcompany.cn/post/maven-deploy-issue/</link>
       <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/12/maven%E5%8F%91%E5%B8%83401%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5/</guid>
+      <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
       <description>日志问题现象 1 Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized 根据提示，401未授权，表面来看就是发布的权限未认证 排查步骤 settings文件是否</description>
     </item>
     
     <item>
       <title>那些有用maven命令</title>
-      <link>http://blog.imcompany.cn/2019/12/%E9%82%A3%E4%BA%9B%E6%9C%89%E7%94%A8maven%E5%91%BD%E4%BB%A4/</link>
+      <link>http://blog.imcompany.cn/post/maven-swim/</link>
       <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/12/%E9%82%A3%E4%BA%9B%E6%9C%89%E7%94%A8maven%E5%91%BD%E4%BB%A4/</guid>
+      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
       <description>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息 1 mvn help:system 查看当前有效的settings文件</description>
     </item>
     
     <item>
       <title>那些高效的Chrome插件</title>
-      <link>http://blog.imcompany.cn/2019/03/%E9%82%A3%E4%BA%9B%E9%AB%98%E6%95%88%E7%9A%84chrome%E6%8F%92%E4%BB%B6/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2019/03/%E9%82%A3%E4%BA%9B%E9%AB%98%E6%95%88%E7%9A%84chrome%E6%8F%92%E4%BB%B6/</guid>
+      <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
       <description>1Password extension 密码管理工具1Password的Chrome插件。插件地址 Auto Refresh 自动刷新网页的插件，支持设置刷新时间间隔。插件地址 Awesome Autocomplete for GitHub 在浏览器中为Gi</description>
     </item>
     
     <item>
       <title>那些提高效率的命令行工具</title>
-      <link>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
       <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
       <description>brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址 cowsay</description>
     </item>
     
     <item>
       <title>那些提高效率的Alfred Workflow</title>
-      <link>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84alfred-workflow/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
       <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84alfred-workflow/</guid>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
       <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方</description>
     </item>
     
     <item>
       <title>那些提高效率的Idea插件</title>
-      <link>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84idea%E6%8F%92%E4%BB%B6/</link>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/09/%E9%82%A3%E4%BA%9B%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87%E7%9A%84idea%E6%8F%92%E4%BB%B6/</guid>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
       <description>.ignore 插件说明 ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与I</description>
     </item>
     
     <item>
       <title>Idea中vim键的映射</title>
-      <link>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</link>
+      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
       <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/2018/05/idea%E4%B8%ADvim%E9%94%AE%E7%9A%84%E6%98%A0%E5%B0%84/</guid>
+      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
       <description>Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavi</description>
     </item>
     
