@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/linux-man/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-08T11:29:00+08:00" />
-<meta property="article:modified_time" content="2022-12-08T19:44:35+08:00" />
+<meta property="article:modified_time" content="2022-12-14T18:04:54+08:00" />
 <meta itemprop="name" content="Linux-man">
 <meta itemprop="description" content="功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命"><meta itemprop="datePublished" content="2022-12-08T11:29:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-08T19:44:35+08:00" />
-<meta itemprop="wordCount" content="549">
+<meta itemprop="dateModified" content="2022-12-14T18:04:54+08:00" />
+<meta itemprop="wordCount" content="424">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux-man"/>
 <meta name="twitter:description" content="功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命"/>
@@ -139,8 +139,8 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 549 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 424 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -157,11 +157,7 @@
         <li><a href="#章节组织形式">章节组织形式</a></li>
       </ul>
     </li>
-    <li><a href="#常用命令">常用命令</a>
-      <ul>
-        <li><a href="#man">man</a></li>
-      </ul>
-    </li>
+    <li><a href="#常用命令">常用命令</a></li>
     <li><a href="#ref">Ref</a></li>
   </ul>
 </nav>
@@ -266,49 +262,10 @@
 <li>延伸阅读(see also)</li>
 </ol>
 <h2 id="常用命令">常用命令</h2>
-<h3 id="man">man</h3>
-<h4 id="man-f">man -f</h4>
-<p>显示命令的简介, 同 <strong>whatis</strong> 命令</p>
-<h4 id="man-k">man -k</h4>
-<p>搜索命令描述，当只记得一些关键词时很有用。同 <strong>apropos</strong> 命令</p>
-<h4 id="man-w">man -w</h4>
-<p>显示手册所在路径</p>
-<h4 id="man-a">man -a</h4>
-<p>查询所有满足条件的文档</p>
-<h4 id="man-t">man -t</h4>
-<p>格式化man手册的输出</p>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>转化为Preview输出</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">man -t rsync <span class="p">|</span> open -f -a Preview.app
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>转化成html</p>
-<p>这里面需要借助 <a href="https://savannah.nongnu.org/projects/man2html/">man2html</a> 命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">man ls <span class="p">|</span> man2html &gt; /tmp/tmp.html <span class="p">;</span> open /tmp/tmp.html
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
 <h2 id="ref">Ref</h2>
 <p><a href="http://blog.fpliu.com/it/software/man">http://blog.fpliu.com/it/software/man</a></p>
 <p><a href="https://man7.org/linux/man-pages/man1/man.1.html">https://man7.org/linux/man-pages/man1/man.1.html</a></p>
+<p><a href="https://linux.die.net/man/">https://linux.die.net/man/</a></p>
 
     </div>
 
@@ -320,7 +277,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-12-08
+        2022-12-14
         
     </span>
   </p>
@@ -434,7 +391,7 @@
       <i class="iconfont icon-up"></i>
     </div>
   </div>
-  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>

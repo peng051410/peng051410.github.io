@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 01 Jun 2022 11:04:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Dec 2022 16:23:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何使用Java JDK17版本OpenJ9 JVM</title>
+      <link>http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/</link>
+      <pubDate>Wed, 14 Dec 2022 16:23:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/</guid>
+      <description>前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本+OpenJ9 JVM，在升级过程中遇到找不到安装资</description>
+    </item>
+    
     <item>
       <title>Spring的RedisTemplate如何与Lettuce进行交互的</title>
       <link>http://blog.imcompany.cn/post/spring-redisttemplate-lettuce/</link>
