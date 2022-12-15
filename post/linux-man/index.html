@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux-man - I&#39;m company</title>
+  <title>Linux-man学习 - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -39,18 +39,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux-man" />
+<meta property="og:title" content="Linux-man学习" />
 <meta property="og:description" content="功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/linux-man/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-08T11:29:00+08:00" />
-<meta property="article:modified_time" content="2022-12-14T18:04:54+08:00" />
-<meta itemprop="name" content="Linux-man">
+<meta property="article:modified_time" content="2022-12-15T17:13:05+08:00" />
+<meta itemprop="name" content="Linux-man学习">
 <meta itemprop="description" content="功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命"><meta itemprop="datePublished" content="2022-12-08T11:29:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-14T18:04:54+08:00" />
-<meta itemprop="wordCount" content="424">
+<meta itemprop="dateModified" content="2022-12-15T17:13:05+08:00" />
+<meta itemprop="wordCount" content="545">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux-man"/>
+<meta name="twitter:title" content="Linux-man学习"/>
 <meta name="twitter:description" content="功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命"/>
 
 <!--[if lte IE 9]>
@@ -132,15 +132,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux-man</h1>
+      <h1 class="post-title">Linux-man学习</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2022-12-08 </span>
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 424 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 545 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -157,8 +157,19 @@
         <li><a href="#章节组织形式">章节组织形式</a></li>
       </ul>
     </li>
-    <li><a href="#常用命令">常用命令</a></li>
-    <li><a href="#ref">Ref</a></li>
+    <li><a href="#常用命令">常用命令</a>
+      <ul>
+        <li><a href="#man">man</a></li>
+      </ul>
+    </li>
+    <li><a href="#ref">Ref</a>
+      <ul>
+        <li><a href="#http-blog-dot-fpliu-dot-com-it-software-man"><a href="http://blog.fpliu.com/it/software/man">http://blog.fpliu.com/it/software/man</a></a></li>
+        <li><a href="#https-man7-dot-org-linux-man-pages-man1-man-dot-1-dot-html"><a href="https://man7.org/linux/man-pages/man1/man.1.html">https://man7.org/linux/man-pages/man1/man.1.html</a></a></li>
+        <li><a href="#https-linux-dot-die-dot-net-man"><a href="https://linux.die.net/man/">https://linux.die.net/man/</a></a></li>
+        <li><a href="#man-page-wikipedia"><a href="https://en.wikipedia.org/wiki/Man_page">man page - Wikipedia</a></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -262,10 +273,41 @@
 <li>延伸阅读(see also)</li>
 </ol>
 <h2 id="常用命令">常用命令</h2>
+<h3 id="man">man</h3>
+<h4 id="man-f">man -f</h4>
+<p>显示命令的简介, 同 <strong>whatis</strong> 命令</p>
+<h4 id="man-k">man -k</h4>
+<p>搜索命令描述，当只记得一些关键词时很有用。同 <strong>apropos</strong> 命令</p>
+<h4 id="man-w">man -w</h4>
+<p>显示手册所在路径</p>
+<h4 id="man-a">man -a</h4>
+<p>查询所有满足条件的文档</p>
+<h4 id="man-t">man -t</h4>
+<p>格式化man手册的输出</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>转化为Preview输出</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>转化成html</p>
+<p>这里面需要借助 <a href="https://savannah.nongnu.org/projects/man2html/">man2html</a> 命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">man ls <span class="p">|</span> man2html &gt; /tmp/tmp.html <span class="p">;</span> open /tmp/tmp.html
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
 <h2 id="ref">Ref</h2>
-<p><a href="http://blog.fpliu.com/it/software/man">http://blog.fpliu.com/it/software/man</a></p>
-<p><a href="https://man7.org/linux/man-pages/man1/man.1.html">https://man7.org/linux/man-pages/man1/man.1.html</a></p>
-<p><a href="https://linux.die.net/man/">https://linux.die.net/man/</a></p>
+<h3 id="http-blog-dot-fpliu-dot-com-it-software-man"><a href="http://blog.fpliu.com/it/software/man">http://blog.fpliu.com/it/software/man</a></h3>
+<h3 id="https-man7-dot-org-linux-man-pages-man1-man-dot-1-dot-html"><a href="https://man7.org/linux/man-pages/man1/man.1.html">https://man7.org/linux/man-pages/man1/man.1.html</a></h3>
+<h3 id="https-linux-dot-die-dot-net-man"><a href="https://linux.die.net/man/">https://linux.die.net/man/</a></h3>
+<h3 id="man-page-wikipedia"><a href="https://en.wikipedia.org/wiki/Man_page">man page - Wikipedia</a></h3>
 
     </div>
 
@@ -277,7 +319,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-12-14
+        2022-12-15
         
     </span>
   </p>
