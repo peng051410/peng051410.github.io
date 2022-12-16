@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/linux-ls/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-15T20:17:00+08:00" />
-<meta property="article:modified_time" content="2022-12-15T17:12:38+08:00" />
+<meta property="article:modified_time" content="2022-12-16T15:01:23+08:00" />
 <meta itemprop="name" content="Linux-ls命令学习">
 <meta itemprop="description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"><meta itemprop="datePublished" content="2022-12-15T20:17:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-15T17:12:38+08:00" />
-<meta itemprop="wordCount" content="703">
+<meta itemprop="dateModified" content="2022-12-16T15:01:23+08:00" />
+<meta itemprop="wordCount" content="707">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux-ls命令学习"/>
 <meta name="twitter:description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"/>
@@ -139,7 +139,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 703 字 </span>
+          <span class="more-meta"> 约 707 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -183,7 +183,7 @@
     </li>
     <li><a href="#组合杀">组合杀</a>
       <ul>
-        <li><a href="#显示当前目录最后修改的文件-ls-rtl">显示当前目录最后修改的文件 ls -rtl</a></li>
+        <li><a href="#显示当前目录最新修改的文件-ls-rtl">显示当前目录最新修改的文件 ls -rtl</a></li>
         <li><a href="#显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</a></li>
         <li><a href="#显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</a></li>
       </ul>
@@ -255,7 +255,7 @@
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1juQbr.png"/>
 </figure>
 
-<p>显示结果加引号</p>
+<p>显示结果加 <strong>引号</strong></p>
 <h3 id="ls-p">ls -p</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1MsunG.png"/>
 </figure>
@@ -271,29 +271,29 @@
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/OGTO2j.png"/>
 </figure>
 
-<p>显示结果按字母倒序方式显示</p>
+<p>显示结果 <strong>按字母倒序</strong> 方式显示</p>
 <h3 id="ls-sl">ls -Sl</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DRXzFa.png"/>
 </figure>
 
-<p>按文件大小显示，占用空间最大的在前面</p>
+<p><strong>按文件大小</strong> 显示，占用空间最大的在前面</p>
 <h3 id="ls-tl">ls -tl</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DYITnT.png"/>
 </figure>
 
-<p>按修改时间进行显示，最新修改的在前面</p>
+<p><strong>按修改时间</strong> 进行显示，最新修改的在前面</p>
 <h2 id="组合杀">组合杀</h2>
 <p>多个选项组合使用可以发挥出更大威力，一些常见的组合方式:</p>
-<h3 id="显示当前目录最后修改的文件-ls-rtl">显示当前目录最后修改的文件 ls -rtl</h3>
+<h3 id="显示当前目录最新修改的文件-ls-rtl">显示当前目录最新修改的文件 ls -rtl</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UwaZSW.png"/>
 </figure>
 
-<p>如上所示，最后修改的文件在最后一条，这们可以快速的查询到最新修改的文件，在查询系统日志时很有用</p>
+<p>如上所示， <strong>最新修改</strong> 的文件在最后一条，这们可以快速的查询到最近改动的文件，在查询系统日志时很有用</p>
 <h3 id="显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/aEy1Iq.png"/>
 </figure>
 
-<p>如上所示，占用空间最大的文件在最后一条，这们可以快速的查询到最新修改的文件，在查询系统日志时很有用</p>
+<p>如上所示， <strong>占用空间最大</strong> 的文件在最后一条，这们可以快速的查询到占用磁盘空间最大的文件，在统计磁盘使用时很有用</p>
 <h3 id="显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</h3>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oHQnTn.png"/>
 </figure>
@@ -311,7 +311,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-12-15
+        2022-12-16
         
     </span>
   </p>
