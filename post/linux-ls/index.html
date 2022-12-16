@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>如何使用Java JDK17版本OpenJ9 JVM - I&#39;m company</title>
+  <title>Linux-ls命令学习 - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-ls/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="如何使用Java JDK17版本OpenJ9 JVM" />
-<meta property="og:description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资" />
+<meta property="og:title" content="Linux-ls命令学习" />
+<meta property="og:description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-12-14T16:23:00+08:00" />
-<meta property="article:modified_time" content="2022-12-14T18:55:58+08:00" />
-<meta itemprop="name" content="如何使用Java JDK17版本OpenJ9 JVM">
-<meta itemprop="description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资"><meta itemprop="datePublished" content="2022-12-14T16:23:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-14T18:55:58+08:00" />
-<meta itemprop="wordCount" content="597">
-<meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="如何使用Java JDK17版本OpenJ9 JVM"/>
-<meta name="twitter:description" content="前言 心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本&#43;OpenJ9 JVM，在升级过程中遇到找不到安装资"/>
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-ls/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-15T20:17:00+08:00" />
+<meta property="article:modified_time" content="2022-12-15T17:12:38+08:00" />
+<meta itemprop="name" content="Linux-ls命令学习">
+<meta itemprop="description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"><meta itemprop="datePublished" content="2022-12-15T20:17:00+08:00" />
+<meta itemprop="dateModified" content="2022-12-15T17:12:38+08:00" />
+<meta itemprop="wordCount" content="703">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux-ls命令学习"/>
+<meta name="twitter:description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,12 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">如何使用Java JDK17版本OpenJ9 JVM</h1>
+      <h1 class="post-title">Linux-ls命令学习</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-12-14 </span>
-        
-          <span class="more-meta"> 约 597 字 </span>
+        <span class="post-time"> 2022-12-15 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 703 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -148,14 +150,47 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#使用adoptopenjdk-openjdk-安装">使用adoptopenjdk/openjdk/安装</a></li>
-    <li><a href="#adoptopenjdk不维护了">AdoptOpenJdk不维护了</a></li>
-    <li><a href="#temurin中不包含openj9-jvm">Temurin中不包含OpenJ9 JVM</a></li>
-    <li><a href="#使用ibm维护的jdk">使用IBM维护的JDK</a></li>
+    <li><a href="#功能">功能</a></li>
+    <li><a href="#显示哪些内容">显示哪些内容</a>
+      <ul>
+        <li><a href="#ls">ls</a></li>
+        <li><a href="#ls-a">ls -a</a></li>
+        <li><a href="#ls-a">ls -A</a></li>
+        <li><a href="#ls-tmp">ls /tmp</a></li>
+      </ul>
+    </li>
+    <li><a href="#显示方式">显示方式</a>
+      <ul>
+        <li><a href="#ls-l">ls -l</a></li>
+        <li><a href="#ls-x">ls -x</a></li>
+        <li><a href="#ls-1">ls -1</a></li>
+        <li><a href="#ls-r">ls -R</a></li>
+      </ul>
+    </li>
+    <li><a href="#格式化显示">格式化显示</a>
+      <ul>
+        <li><a href="#ls-q">ls -Q</a></li>
+        <li><a href="#ls-p">ls -p</a></li>
+        <li><a href="#ls-m">ls -m</a></li>
+      </ul>
+    </li>
+    <li><a href="#显示结果排序">显示结果排序</a>
+      <ul>
+        <li><a href="#ls-r">ls -r</a></li>
+        <li><a href="#ls-sl">ls -Sl</a></li>
+        <li><a href="#ls-tl">ls -tl</a></li>
+      </ul>
+    </li>
+    <li><a href="#组合杀">组合杀</a>
+      <ul>
+        <li><a href="#显示当前目录最后修改的文件-ls-rtl">显示当前目录最后修改的文件 ls -rtl</a></li>
+        <li><a href="#显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</a></li>
+        <li><a href="#显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</a></li>
+      </ul>
+    </li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#https-medium-dot-com-sdkman-adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a"><a href="https://medium.com/@sdkman_/adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a">https://medium.com/@sdkman_/adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a</a></a></li>
+        <li><a href="#ls-wikipedia"><a href="https://en.wikipedia.org/wiki/Ls">ls - Wikipedia</a></a></li>
       </ul>
     </li>
   </ul>
@@ -163,56 +198,108 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="前言">前言</h2>
-<p>心血来潮，看到JDK19都出来了，想着升级一下自己电脑上的JDK到JDK17 LTS版本+OpenJ9 JVM，在升级过程中遇到找不到安装资源的问题，记录一下解决过程</p>
+      <h2 id="功能">功能</h2>
+<p><strong>ls</strong> 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 <strong>man ls</strong> 查看帮助，发现 <strong>ls</strong> 支持了非常多的参数，后续学习以实际应用为主，只展示常用的内容</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/qlBbbJ.png"/>
+</figure>
+
 <blockquote>
-<p>JDK17是Oracle的提供的长期支持版本，IBM J9是IBM优化的JVM版本，使用它可以节省JAVA服务使用的内存</p>
+<p>ls 命令帮助归属于<a href="https://blog.imcompany.cn/post/linux-man/">man</a>文件第一章节</p>
 </blockquote>
-<h2 id="使用adoptopenjdk-openjdk-安装">使用adoptopenjdk/openjdk/安装</h2>
-<p>先前的adoptopenjdk11-openj9版本是从<a href="https://github.com/AdoptOpenJDK/homebrew-openjdk">adoptOpenJdk</a>源进行安装的，想着JDK17版本也从这个源进行安装，执行以下命令进行安装</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install adoptopenjdk/openjdk/adoptopenjdk17-openj9
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Xk0c7b.png"/>
+<h2 id="显示哪些内容">显示哪些内容</h2>
+<h3 id="ls">ls</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/gn4J0K.png" alt="">
+不带任何参数，显示当前目录下的文件内容，结果按字母自然排序</p>
+<h3 id="ls-a">ls -a</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GWPMbm.png" alt="">
+显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，如上显示 <strong>.emacs</strong> 和 <strong>.hide</strong> 文件显示了出来</p>
+<h3 id="ls-a">ls -A</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yq9OSr.png" alt="">
+显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，但不包含 <strong>.</strong> 和 <strong>..</strong></p>
+<blockquote>
+<p>. 代表当前目录
+.. 代表上一级目录</p>
+</blockquote>
+<h3 id="ls-tmp">ls /tmp</h3>
+<p>显示/tmp目录下的文件内容</p>
+<h2 id="显示方式">显示方式</h2>
+<h3 id="ls-l">ls -l</h3>
+<p>默认情况 <strong>ls</strong> 只显示内容的名称， <strong>ls -l</strong> 表示以长列表方式显示目录内容
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lJyhLJ.png" alt=""></p>
+<p>增加了 <strong>-l</strong> 选项后，显示结果中包含的文件内容更详细(包括权限、所属用户组、大小、修改时间等信息)</p>
+<h4 id="ls-lh">ls -lh</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xK7nfK.png"/>
 </figure>
 
-<p>报错了，没有找到，为什么？明明JDK已经到19版本了，openjdk的17版本却没有更新?</p>
-<h2 id="adoptopenjdk不维护了">AdoptOpenJdk不维护了</h2>
-<p>查了半天的google，又上 AdoptOpenJDK 的<a href="https://github.com/AdoptOpenJDK/homebrew-openjdk">brew</a>源上看，找到了问题所在
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/TawO63.png" alt=""></p>
-<p>根据官方brew源仓库的说明， <strong>AdoptOpenJdk</strong> 在2021-08-01 后不再更新了，所有版本都迁移到了Eclipse 基金会维护的JAVA生态顶级项目 <a href="https://projects.eclipse.org/projects/adoptium">Eclipse Adoptium</a></p>
-<h2 id="temurin中不包含openj9-jvm">Temurin中不包含OpenJ9 JVM</h2>
-<p>Eclipse Adoptium维护的JDK版本，通过 <strong>temurin</strong> 命令进行安装</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew search temurin
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/AN1wNl.png"/>
+<p><strong>ls</strong> 中有很多与 <strong>-l</strong> 选项配合使用的其它选项，如 <strong>-h</strong> 选项，可以显示文件大小为可读的形式（以M、G为单位）</p>
+<blockquote>
+<p><strong>ls -l</strong> 中文件大小默认是按byte为单位显示的</p>
+</blockquote>
+<h3 id="ls-x">ls -x</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmVnyB.png"/>
 </figure>
 
-<p>没有看到带OpenJ9名称的版本，查询<a href="https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/">temurin官方博客</a>中发现目前的 <strong>temurin</strong> 中暂时不包含OpenJ9版本，需要到 IBM 官网进行安装</p>
-<h2 id="使用ibm维护的jdk">使用IBM维护的JDK</h2>
-<p>最后从<a href="https://developer.ibm.com/languages/java/semeru-runtimes/">IBM的网站</a>上找到了OpenJ9，IBM的JDK版本在brew中使用 <strong>semeru</strong> 命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install semeru-jdk17-open
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装成功. 终于可以使用 J9版本的JDK17了</p>
+<p>按列显示</p>
+<h3 id="ls-1">ls -1</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5yYqrQ.png"/>
+</figure>
+
+<p>一行显示一个</p>
+<h3 id="ls-r">ls -R</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T47nqt.png"/>
+</figure>
+
+<p>递归显示所有内容</p>
+<h2 id="格式化显示">格式化显示</h2>
+<h3 id="ls-q">ls -Q</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1juQbr.png"/>
+</figure>
+
+<p>显示结果加引号</p>
+<h3 id="ls-p">ls -p</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1MsunG.png"/>
+</figure>
+
+<p>给文件夹增加 <strong>/</strong> , 等同于 <strong>ls &ndash;indicator-style=slash</strong></p>
+<h3 id="ls-m">ls -m</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pjdCbG.png"/>
+</figure>
+
+<p>显示结果使用 <strong>,</strong> 进行连接，等同于 <strong>ls &ndash;format=commas</strong></p>
+<h2 id="显示结果排序">显示结果排序</h2>
+<h3 id="ls-r">ls -r</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/OGTO2j.png"/>
+</figure>
+
+<p>显示结果按字母倒序方式显示</p>
+<h3 id="ls-sl">ls -Sl</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DRXzFa.png"/>
+</figure>
+
+<p>按文件大小显示，占用空间最大的在前面</p>
+<h3 id="ls-tl">ls -tl</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DYITnT.png"/>
+</figure>
+
+<p>按修改时间进行显示，最新修改的在前面</p>
+<h2 id="组合杀">组合杀</h2>
+<p>多个选项组合使用可以发挥出更大威力，一些常见的组合方式:</p>
+<h3 id="显示当前目录最后修改的文件-ls-rtl">显示当前目录最后修改的文件 ls -rtl</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UwaZSW.png"/>
+</figure>
+
+<p>如上所示，最后修改的文件在最后一条，这们可以快速的查询到最新修改的文件，在查询系统日志时很有用</p>
+<h3 id="显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/aEy1Iq.png"/>
+</figure>
+
+<p>如上所示，占用空间最大的文件在最后一条，这们可以快速的查询到最新修改的文件，在查询系统日志时很有用</p>
+<h3 id="显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oHQnTn.png"/>
+</figure>
+
 <h2 id="ref">REF</h2>
-<h3 id="https-medium-dot-com-sdkman-adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a"><a href="https://medium.com/@sdkman_/adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a">https://medium.com/@sdkman_/adoptopenjdk-is-dead-long-live-eclipse-adoptium-4f2677ca935a</a></h3>
+<h3 id="ls-wikipedia"><a href="https://en.wikipedia.org/wiki/Ls">ls - Wikipedia</a></h3>
 
     </div>
 
@@ -224,7 +311,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2022-12-14
+        2022-12-15
         
     </span>
   </p>
@@ -250,16 +337,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/tags/">tags</a>
+          <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-ls/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux-ls命令学习</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/java-check-object-class/">
-            <span class="next-text nav-default">JAVA中如何判断对象与类的关系之-instanceOf, Class.isInstance, Class.isAssignableFrom</span>
+        
+        <a class="next" href="/post/how-to-use-jdk17-j9jvm/">
+            <span class="next-text nav-default">如何使用Java JDK17版本OpenJ9 JVM</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

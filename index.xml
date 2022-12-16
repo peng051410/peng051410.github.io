@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 14 Dec 2022 16:23:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Dec 2022 20:17:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux-ls命令学习</title>
+      <link>http://blog.imcompany.cn/post/linux-ls/</link>
+      <pubDate>Thu, 15 Dec 2022 20:17:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-ls/</guid>
+      <description>功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示</description>
+    </item>
+    
     <item>
       <title>如何使用Java JDK17版本OpenJ9 JVM</title>
       <link>http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/</link>
