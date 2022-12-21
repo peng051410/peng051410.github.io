@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 15 Dec 2022 20:17:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Dec 2022 15:20:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之删除rm, rmdir</title>
+      <link>http://blog.imcompany.cn/post/linux-mkdir-rm/</link>
+      <pubDate>Wed, 21 Dec 2022 15:20:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-mkdir-rm/</guid>
+      <description>前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删</description>
+    </item>
+    
     <item>
       <title>Linux-ls命令学习</title>
       <link>http://blog.imcompany.cn/post/linux-ls/</link>

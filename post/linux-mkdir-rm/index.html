@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux-ls命令学习 - I&#39;m company</title>
+  <title>Linux命令学习之删除rm, rmdir - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/linux-ls/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-mkdir-rm/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux-ls命令学习" />
-<meta property="og:description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示" />
+<meta property="og:title" content="Linux命令学习之删除rm, rmdir" />
+<meta property="og:description" content="前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/linux-ls/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-12-15T20:17:00+08:00" />
-<meta property="article:modified_time" content="2022-12-21T17:17:51+08:00" />
-<meta itemprop="name" content="Linux-ls命令学习">
-<meta itemprop="description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"><meta itemprop="datePublished" content="2022-12-15T20:17:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-21T17:17:51+08:00" />
-<meta itemprop="wordCount" content="720">
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-mkdir-rm/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-12-21T15:20:00+08:00" />
+<meta property="article:modified_time" content="2022-12-21T17:12:42+08:00" />
+<meta itemprop="name" content="Linux命令学习之删除rm, rmdir">
+<meta itemprop="description" content="前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删"><meta itemprop="datePublished" content="2022-12-21T15:20:00+08:00" />
+<meta itemprop="dateModified" content="2022-12-21T17:12:42+08:00" />
+<meta itemprop="wordCount" content="528">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux-ls命令学习"/>
-<meta name="twitter:description" content="功能 ls 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 man ls 查看帮助，发现 ls 支持了非常多的参数，后续学习以实际应用为主，只展示"/>
+<meta name="twitter:title" content="Linux命令学习之删除rm, rmdir"/>
+<meta name="twitter:description" content="前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux-ls命令学习</h1>
+      <h1 class="post-title">Linux命令学习之删除rm, rmdir</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-12-15 </span>
+        <span class="post-time"> 2022-12-21 </span>
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 720 字 </span>
+          <span class="more-meta"> 约 528 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,48 +150,27 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#功能">功能</a></li>
-    <li><a href="#显示哪些内容">显示哪些内容</a>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#rm">rm</a>
       <ul>
-        <li><a href="#ls">ls</a></li>
-        <li><a href="#ls-a">ls -a</a></li>
-        <li><a href="#ls-a">ls -A</a></li>
-        <li><a href="#ls-tmp">ls /tmp</a></li>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#删除谁">删除谁</a></li>
+        <li><a href="#删除方式">删除方式</a></li>
+        <li><a href="#删除记录">删除记录</a></li>
+        <li><a href="#组合杀">组合杀</a></li>
       </ul>
     </li>
-    <li><a href="#显示方式">显示方式</a>
+    <li><a href="#rmdir">rmdir</a>
       <ul>
-        <li><a href="#ls-l">ls -l</a></li>
-        <li><a href="#ls-x">ls -x</a></li>
-        <li><a href="#ls-x">ls -X</a></li>
-        <li><a href="#ls-1">ls -1</a></li>
-        <li><a href="#ls-r">ls -R</a></li>
-      </ul>
-    </li>
-    <li><a href="#格式化显示">格式化显示</a>
-      <ul>
-        <li><a href="#ls-q">ls -Q</a></li>
-        <li><a href="#ls-p">ls -p</a></li>
-        <li><a href="#ls-m">ls -m</a></li>
-      </ul>
-    </li>
-    <li><a href="#显示结果排序">显示结果排序</a>
-      <ul>
-        <li><a href="#ls-r">ls -r</a></li>
-        <li><a href="#ls-sl">ls -Sl</a></li>
-        <li><a href="#ls-tl">ls -tl</a></li>
-      </ul>
-    </li>
-    <li><a href="#组合杀">组合杀</a>
-      <ul>
-        <li><a href="#显示当前目录最新修改的文件-ls-rtl">显示当前目录最新修改的文件 ls -rtl</a></li>
-        <li><a href="#显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</a></li>
-        <li><a href="#显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</a></li>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#为什么有这个命令">为什么有这个命令</a></li>
+        <li><a href="#删除方式">删除方式</a></li>
       </ul>
     </li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#ls-wikipedia"><a href="https://en.wikipedia.org/wiki/Ls">ls - Wikipedia</a></a></li>
+        <li><a href="#rm--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Rm_(Unix)">rm (Unix) - Wikipedia</a></a></li>
+        <li><a href="#rmdir-wikipedia"><a href="https://en.wikipedia.org/wiki/Rmdir">rmdir - Wikipedia</a></a></li>
       </ul>
     </li>
   </ul>
@@ -199,91 +178,107 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="功能">功能</h2>
-<p><strong>ls</strong> 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 <strong>man ls</strong> 查看帮助，发现 <strong>ls</strong> 支持了非常多的参数，后续学习以实际应用为主，只展示常用的内容</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/qlBbbJ.png"/>
+      <h2 id="前言">前言</h2>
+<p>今天学习一下Linux命令中的删除命令，主要学习 <strong>rm</strong> 与 <strong>rmdir</strong></p>
+<h2 id="rm">rm</h2>
+<h3 id="功能">功能</h3>
+<p>删除文件或目录</p>
+<h3 id="删除谁">删除谁</h3>
+<h4 id="rm-file">rm file</h4>
+<p>删除指定文件，只能删除文件，不能删除目录</p>
+<figure><img src="http://pic.imcompany.cn/pic/OWOx6x.png"/>
 </figure>
+
+<h4 id="rm-r-file">rm -r file</h4>
+<p>递归删除目录及目录下的文件</p>
+<figure><img src="http://pic.imcompany.cn/pic/8C7Pzk.png"/>
+</figure>
+
+<h4 id="rm-d-file">rm -d file</h4>
+<p>删除空文件夹，文件夹不空则报错</p>
+<figure><img src="http://pic.imcompany.cn/pic/P3XaUD.png"/>
+</figure>
+
+<h3 id="删除方式">删除方式</h3>
+<h4 id="rm-f-file">rm -f file</h4>
+<p>强制删除文件，忽略文件不存在的错误信息</p>
+<figure><img src="http://pic.imcompany.cn/pic/YG7444.png"/>
+</figure>
+
+<h4 id="rm-i-file">rm -i file</h4>
+<p>删除文件前进行确认提示，每删除一个文件提示一次</p>
+<figure><img src="http://pic.imcompany.cn/pic/N0PKCP.png"/>
+</figure>
+
+<h4 id="rm-i-file">rm -I file</h4>
+<p>删除文件前进行有条件的确认提示，触发条件为：</p>
+<ol>
+<li>删除文件大于3个，只提示一次，小于等于3个不提示，直接删除</li>
+<li>递归删除时提示一次</li>
+</ol>
+<figure><img src="http://pic.imcompany.cn/pic/20KVxM.png"/>
+</figure>
+
+<h3 id="删除记录">删除记录</h3>
+<h4 id="rm-v-file">rm -v file</h4>
+<p>显示删除的文件明细，有日志作用，有写脚本时很有用</p>
+<figure><img src="http://pic.imcompany.cn/pic/18ROjI.png"/>
+</figure>
+
+<h3 id="组合杀">组合杀</h3>
+<h4 id="递归删除目录的文件-不带确认">递归删除目录的文件（不带确认）</h4>
+<p><strong>rm -rf file</strong> 常用的删除命令（在受限用户上使用比较稳妥）</p>
+<figure><img src="http://pic.imcompany.cn/pic/wKA9AV.png"/>
+</figure>
+
+<h4 id="递归删除目录的文件-带确认一次">递归删除目录的文件（带确认一次）</h4>
+<p><strong>rm -rfI file</strong> 比较稳妥的删除目录方式，有一步确认提示(又防止了文件多提示多的烦恼)，防止手快</p>
+<figure><img src="http://pic.imcompany.cn/pic/PiZ35A.png"/>
+</figure>
+
+<h2 id="rmdir">rmdir</h2>
+<h3 id="功能">功能</h3>
+<p>删除空的文件夹(支持多个)</p>
+<h3 id="为什么有这个命令">为什么有这个命令</h3>
+<p>删除空文件夹的功能 <strong>rm -d</strong> 也可以实现，为什么还要有这个命令?</p>
+<h4 id="rmdir存在的原因">rmdir存在的原因</h4>
+<ol>
+<li>它只能删除文件夹，功能更具体</li>
+<li>它可以删除目录及其父目录，这个 <strong>rm -d</strong> 是做不到的, <strong>rm -d</strong> 只能删除一层</li>
+</ol>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>rm -d</p>
+<figure><img src="http://pic.imcompany.cn/pic/avfl5t.png"
+             alt="rm -d"/>
+    </figure>
+
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>rmdir</p>
+<figure><img src="http://pic.imcompany.cn/pic/lbmdGr.png"
+             alt="rmdir"/>
+    </figure>
 
 <blockquote>
-<p>ls 命令帮助归属于<a href="https://blog.imcompany.cn/post/linux-man/">man</a>文件第一章节</p>
+<p>与 <strong>rmdir</strong> 对应的一个创建目录的命令为 <a href="https://man7.org/linux/man-pages/man1/mkdir.1.html">mkdir</a></p>
 </blockquote>
-<h2 id="显示哪些内容">显示哪些内容</h2>
-<h3 id="ls">ls</h3>
-<p>不带任何参数，显示当前目录下的文件内容，结果按字母自然排序
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/gn4J0K.png" alt=""></p>
-<h3 id="ls-a">ls -a</h3>
-<p>显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，如上显示 <strong>.emacs</strong> 和 <strong>.hide</strong> 文件显示了出来
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GWPMbm.png" alt=""></p>
-<h3 id="ls-a">ls -A</h3>
-<p>显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，但不包含 <strong>.</strong> 和 <strong>..</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yq9OSr.png" alt=""></p>
-<blockquote>
-<p>. 代表当前目录
-.. 代表上一级目录</p>
-</blockquote>
-<h3 id="ls-tmp">ls /tmp</h3>
-<p>显示/tmp目录下的文件内容</p>
-<h2 id="显示方式">显示方式</h2>
-<h3 id="ls-l">ls -l</h3>
-<p>默认情况 <strong>ls</strong> 只显示内容的名称， <strong>ls -l</strong> 表示以长列表方式显示目录内容
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lJyhLJ.png" alt=""></p>
-<p>增加了 <strong>-l</strong> 选项后，显示结果中包含的文件内容更详细(包括权限、所属用户组、大小、修改时间等信息)</p>
-<h4 id="ls-lh">ls -lh</h4>
-<p><strong>ls</strong> 中有很多与 <strong>-l</strong> 选项配合使用的其它选项，如 <strong>-h</strong> 选项，可以显示文件大小为可读的形式（以M、G为单位）
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xK7nfK.png" alt=""></p>
-<blockquote>
-<p><strong>ls -l</strong> 中文件大小默认是按byte为单位显示的</p>
-</blockquote>
-<h3 id="ls-x">ls -x</h3>
-<p>按列显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmVnyB.png" alt=""></p>
-<h3 id="ls-x">ls -X</h3>
-<p>按文件类型字母排序显示
-<img src="http://pic.imcompany.cn/pic/c55emA.png" alt=""></p>
-<h3 id="ls-1">ls -1</h3>
-<p>一行显示一个
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5yYqrQ.png" alt=""></p>
-<h3 id="ls-r">ls -R</h3>
-<p>递归显示所有内容
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T47nqt.png" alt=""></p>
-<h2 id="格式化显示">格式化显示</h2>
-<h3 id="ls-q">ls -Q</h3>
-<p>显示结果加 <strong>引号</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1juQbr.png" alt=""></p>
-<h3 id="ls-p">ls -p</h3>
-<p>给文件夹增加 <strong>/</strong> , 等同于 <strong>ls &ndash;indicator-style=slash</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1MsunG.png" alt=""></p>
-<h3 id="ls-m">ls -m</h3>
-<p>显示结果使用 <strong>,</strong> 进行连接，等同于 <strong>ls &ndash;format=commas</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pjdCbG.png" alt=""></p>
-<h2 id="显示结果排序">显示结果排序</h2>
-<h3 id="ls-r">ls -r</h3>
-<p>显示结果 <strong>按字母倒序</strong> 方式显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/OGTO2j.png" alt=""></p>
-<h3 id="ls-sl">ls -Sl</h3>
-<p><strong>按文件大小</strong> 显示，占用空间最大的在前面
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DRXzFa.png" alt=""></p>
-<h3 id="ls-tl">ls -tl</h3>
-<p><strong>按修改时间</strong> 进行显示，最新修改的在前面
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DYITnT.png" alt=""></p>
-<h2 id="组合杀">组合杀</h2>
-<p>多个选项组合使用可以发挥出更大威力，一些常见的组合方式:</p>
-<h3 id="显示当前目录最新修改的文件-ls-rtl">显示当前目录最新修改的文件 ls -rtl</h3>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UwaZSW.png"/>
-</figure>
-
-<p>如上所示， <strong>最新修改</strong> 的文件在最后一条，这们可以快速的查询到最近改动的文件，在查询系统日志时很有用</p>
-<h3 id="显示当前目录占用空间最大的文件-ls-rslh">显示当前目录占用空间最大的文件 ls -rSlh</h3>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/aEy1Iq.png"/>
-</figure>
-
-<p>如上所示， <strong>占用空间最大</strong> 的文件在最后一条，这们可以快速的查询到占用磁盘空间最大的文件，在统计磁盘使用时很有用</p>
-<h3 id="显示当前目录的大小-ls-lsha">显示当前目录的大小 ls -lsha</h3>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oHQnTn.png"/>
-</figure>
-
+</li>
+</ul>
+<h3 id="删除方式">删除方式</h3>
+<h4 id="rmdir-dir-folder">rmdir dir folder</h4>
+<p>删除一个空文件夹, 功能同 <strong>rm -d folder</strong>
+<img src="http://pic.imcompany.cn/pic/VavOfx.png" alt=""></p>
+<h4 id="rmdir-p-a-b-c">rmdir -p a/b/c</h4>
+<p>删除a文件夹下的b和文件夹，功能等同于 <strong>rmdir a/b/c rmdir a/b rmdir a</strong>
+<img src="http://pic.imcompany.cn/pic/1FlGQ9.png" alt=""></p>
 <h2 id="ref">REF</h2>
-<h3 id="ls-wikipedia"><a href="https://en.wikipedia.org/wiki/Ls">ls - Wikipedia</a></h3>
+<h3 id="rm--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Rm_(Unix)">rm (Unix) - Wikipedia</a></h3>
+<h3 id="rmdir-wikipedia"><a href="https://en.wikipedia.org/wiki/Rmdir">rmdir - Wikipedia</a></h3>
 
     </div>
 
@@ -324,13 +319,9 @@
           <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-mkdir-rm/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux命令学习之删除rm, rmdir</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/how-to-use-jdk17-j9jvm/">
-            <span class="next-text nav-default">如何使用Java JDK17版本OpenJ9 JVM</span>
+        
+        <a class="next" href="/post/linux-ls/">
+            <span class="next-text nav-default">Linux-ls命令学习</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
