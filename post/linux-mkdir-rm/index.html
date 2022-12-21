@@ -44,10 +44,10 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/linux-mkdir-rm/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-12-21T15:20:00+08:00" />
-<meta property="article:modified_time" content="2022-12-21T17:12:42+08:00" />
+<meta property="article:modified_time" content="2022-12-21T17:44:24+08:00" />
 <meta itemprop="name" content="Linux命令学习之删除rm, rmdir">
 <meta itemprop="description" content="前言 今天学习一下Linux命令中的删除命令，主要学习 rm 与 rmdir rm 功能 删除文件或目录 删除谁 rm file 删除指定文件，只能删除文件，不能删除目录 rm -r file 递归删"><meta itemprop="datePublished" content="2022-12-21T15:20:00+08:00" />
-<meta itemprop="dateModified" content="2022-12-21T17:12:42+08:00" />
+<meta itemprop="dateModified" content="2022-12-21T17:44:24+08:00" />
 <meta itemprop="wordCount" content="528">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux命令学习之删除rm, rmdir"/>
@@ -185,57 +185,41 @@
 <p>删除文件或目录</p>
 <h3 id="删除谁">删除谁</h3>
 <h4 id="rm-file">rm file</h4>
-<p>删除指定文件，只能删除文件，不能删除目录</p>
-<figure><img src="http://pic.imcompany.cn/pic/OWOx6x.png"/>
-</figure>
-
+<p>删除指定文件，只能删除文件，不能删除目录
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/h8RcDg.png" alt=""></p>
 <h4 id="rm-r-file">rm -r file</h4>
-<p>递归删除目录及目录下的文件</p>
-<figure><img src="http://pic.imcompany.cn/pic/8C7Pzk.png"/>
-</figure>
-
+<p>递归删除目录及目录下的文件
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0OFKsT.png" alt=""></p>
 <h4 id="rm-d-file">rm -d file</h4>
-<p>删除空文件夹，文件夹不空则报错</p>
-<figure><img src="http://pic.imcompany.cn/pic/P3XaUD.png"/>
-</figure>
-
+<p>删除空文件夹，文件夹不空则报错
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MULkwJ.png" alt=""></p>
 <h3 id="删除方式">删除方式</h3>
 <h4 id="rm-f-file">rm -f file</h4>
-<p>强制删除文件，忽略文件不存在的错误信息</p>
-<figure><img src="http://pic.imcompany.cn/pic/YG7444.png"/>
-</figure>
-
+<p>强制删除文件，忽略文件不存在的错误信息
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zBH6Cy.png" alt=""></p>
 <h4 id="rm-i-file">rm -i file</h4>
-<p>删除文件前进行确认提示，每删除一个文件提示一次</p>
-<figure><img src="http://pic.imcompany.cn/pic/N0PKCP.png"/>
-</figure>
-
+<p>删除文件前进行确认提示，每删除一个文件提示一次
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZZ6ZMd.png" alt=""></p>
 <h4 id="rm-i-file">rm -I file</h4>
 <p>删除文件前进行有条件的确认提示，触发条件为：</p>
 <ol>
 <li>删除文件大于3个，只提示一次，小于等于3个不提示，直接删除</li>
 <li>递归删除时提示一次</li>
 </ol>
-<figure><img src="http://pic.imcompany.cn/pic/20KVxM.png"/>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0R32Gj.png"/>
 </figure>
 
 <h3 id="删除记录">删除记录</h3>
 <h4 id="rm-v-file">rm -v file</h4>
-<p>显示删除的文件明细，有日志作用，有写脚本时很有用</p>
-<figure><img src="http://pic.imcompany.cn/pic/18ROjI.png"/>
-</figure>
-
+<p>显示删除的文件明细，有日志作用，有写脚本时很有用
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/62s2jL.png" alt=""></p>
 <h3 id="组合杀">组合杀</h3>
 <h4 id="递归删除目录的文件-不带确认">递归删除目录的文件（不带确认）</h4>
-<p><strong>rm -rf file</strong> 常用的删除命令（在受限用户上使用比较稳妥）</p>
-<figure><img src="http://pic.imcompany.cn/pic/wKA9AV.png"/>
-</figure>
-
+<p><strong>rm -rf file</strong> 常用的删除命令（在受限用户上使用比较稳妥）
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/I46Y4y.png" alt=""></p>
 <h4 id="递归删除目录的文件-带确认一次">递归删除目录的文件（带确认一次）</h4>
-<p><strong>rm -rfI file</strong> 比较稳妥的删除目录方式，有一步确认提示(又防止了文件多提示多的烦恼)，防止手快</p>
-<figure><img src="http://pic.imcompany.cn/pic/PiZ35A.png"/>
-</figure>
-
+<p><strong>rm -rfI file</strong> 比较稳妥的删除目录方式，有一步确认提示(又防止了文件多提示多的烦恼)，防止手快
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xoAoe9.png" alt=""></p>
 <h2 id="rmdir">rmdir</h2>
 <h3 id="功能">功能</h3>
 <p>删除空的文件夹(支持多个)</p>
@@ -250,7 +234,7 @@
 <ul>
 <li>
 <p>rm -d</p>
-<figure><img src="http://pic.imcompany.cn/pic/avfl5t.png"
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zJuSrs.png"
              alt="rm -d"/>
     </figure>
 
@@ -260,7 +244,7 @@
 <ul>
 <li>
 <p>rmdir</p>
-<figure><img src="http://pic.imcompany.cn/pic/lbmdGr.png"
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9OVEP5.png"
              alt="rmdir"/>
     </figure>
 
@@ -272,10 +256,10 @@
 <h3 id="删除方式">删除方式</h3>
 <h4 id="rmdir-dir-folder">rmdir dir folder</h4>
 <p>删除一个空文件夹, 功能同 <strong>rm -d folder</strong>
-<img src="http://pic.imcompany.cn/pic/VavOfx.png" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VKH8HG.png" alt=""></p>
 <h4 id="rmdir-p-a-b-c">rmdir -p a/b/c</h4>
 <p>删除a文件夹下的b和文件夹，功能等同于 <strong>rmdir a/b/c rmdir a/b rmdir a</strong>
-<img src="http://pic.imcompany.cn/pic/1FlGQ9.png" alt=""></p>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MKHePI.png" alt=""></p>
 <h2 id="ref">REF</h2>
 <h3 id="rm--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Rm_(Unix)">rm (Unix) - Wikipedia</a></h3>
 <h3 id="rmdir-wikipedia"><a href="https://en.wikipedia.org/wiki/Rmdir">rmdir - Wikipedia</a></h3>
