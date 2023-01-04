@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Mac上使用网易Mumu模拟器踩坑指北 - I&#39;m company</title>
+  <title>Linux命令学习之Cp, Mv - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/mumu-android-issue/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-cpmv/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Mac上使用网易Mumu模拟器踩坑指北" />
-<meta property="og:description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB" />
+<meta property="og:title" content="Linux命令学习之Cp, Mv" />
+<meta property="og:description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/mumu-android-issue/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-02-11T16:04:09+08:00" />
-<meta property="article:modified_time" content="2020-02-11T16:59:03+08:00" />
-<meta itemprop="name" content="Mac上使用网易Mumu模拟器踩坑指北">
-<meta itemprop="description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB"><meta itemprop="datePublished" content="2020-02-11T16:04:09+08:00" />
-<meta itemprop="dateModified" content="2020-02-11T16:59:03+08:00" />
-<meta itemprop="wordCount" content="560">
-<meta itemprop="keywords" content="mumu,charles,android," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac上使用网易Mumu模拟器踩坑指北"/>
-<meta name="twitter:description" content="前言 为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualB"/>
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-cpmv/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-04T10:11:00+08:00" />
+<meta property="article:modified_time" content="2023-01-04T11:01:15+08:00" />
+<meta itemprop="name" content="Linux命令学习之Cp, Mv">
+<meta itemprop="description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果"><meta itemprop="datePublished" content="2023-01-04T10:11:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-04T11:01:15+08:00" />
+<meta itemprop="wordCount" content="456">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux命令学习之Cp, Mv"/>
+<meta name="twitter:description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,15 +132,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Mac上使用网易Mumu模拟器踩坑指北</h1>
+      <h1 class="post-title">Linux命令学习之Cp, Mv</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-02-11 </span>
+        <span class="post-time"> 2023-01-04 </span>
         <div class="post-category">
-            <a href="/categories/charles/"> charles </a>
+            <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 560 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 456 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -151,13 +151,35 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#替代者">替代者</a></li>
-    <li><a href="#配置charles抓包">配置Charles抓包</a>
+    <li><a href="#cp">CP</a>
       <ul>
-        <li><a href="#ssl代理配置问题">SSL代理配置问题</a></li>
-        <li><a href="#ssl证书安装问题">SSL证书安装问题</a></li>
-        <li><a href="#多开问题">多开问题</a></li>
-        <li><a href="#软件窗口问题">软件窗口问题</a></li>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#cp-file-target">cp file target</a></li>
+        <li><a href="#cp-i">cp -i</a></li>
+        <li><a href="#cp-n">cp -n</a></li>
+        <li><a href="#cp-b">cp -b</a></li>
+        <li><a href="#cp-f">cp -f</a></li>
+        <li><a href="#cp-p">cp -p</a></li>
+        <li><a href="#cp-u">cp -u</a></li>
+        <li><a href="#cp-r">cp -r</a></li>
+        <li><a href="#组合杀">组合杀</a></li>
+      </ul>
+    </li>
+    <li><a href="#mv">MV</a>
+      <ul>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#mv">mv</a></li>
+        <li><a href="#mv-i">mv -i</a></li>
+        <li><a href="#mv-n">mv -n</a></li>
+        <li><a href="#mv-u">mv -u</a></li>
+        <li><a href="#mv-f">mv -f</a></li>
+      </ul>
+    </li>
+    <li><a href="#ref">REF</a>
+      <ul>
+        <li><a href="#cp--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cp_(Unix)">cp (Unix) - Wikipedia</a></a></li>
+        <li><a href="#mv--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Mv_(Unix)">mv (Unix) - Wikipedia</a></a></li>
+        <li><a href="#两个高效的cp-命令用法-linux就该这么学"><a href="https://www.linuxprobe.com/two-cp-usage.html">两个高效的cp 命令用法！ | 《Linux就该这么学》</a></a></li>
       </ul>
     </li>
   </ul>
@@ -166,21 +188,105 @@
 </div>
     <div class="post-content">
       <h2 id="前言">前言</h2>
-<p>为了给mac找一款合适的android模拟器，先前使用的Nox player，但是老哥这Mac版本好几年都不更新了，使用的VirtualBox也不兼容。</p>
-<h2 id="替代者">替代者</h2>
-<p><a href="https://mumu.163.com/">网易MuMu模拟器</a>
-号称非常快，主要是Mac版本有更新。其它的都不行。</p>
-<h2 id="配置charles抓包">配置Charles抓包</h2>
-<p>以为找到了一个非常好的模拟器，没想到配置Charles抓包时遇到很多问题（我这使用的是Mumu版本是1.9.1）</p>
-<h3 id="ssl代理配置问题">SSL代理配置问题</h3>
-<p>正常情况下的代码只需要配置ip和端口就可以，但是发现配置保存后，不能进行输入，修改成无代理就又可以了，后来各种找发现还得在配置中不使用代理中要配置10.0.2.2这个ip，好像是模拟器内部要用这个地址。
-<img src="/ox-hugo/mumu-net-config.png" alt=""></p>
-<h3 id="ssl证书安装问题">SSL证书安装问题</h3>
-<p>配置好代码ip后，要下载Charles的证书并安装，这时要配置模拟器的解锁密码，如果遇到输入正确密码后不能安装的问题，则可以考虑重新配置一下密码，大于6位的吧</p>
-<h3 id="多开问题">多开问题</h3>
-<p>对于Nox player可以进行真正意义的完全多开（模拟器环境隔离），Mumu只是实现了简单的多开，不能使用不同版本的app，目测只是一个镜像。但是好在能使用了，希望后续开发团队可以支持。</p>
-<h3 id="软件窗口问题">软件窗口问题</h3>
-<p>如果在Mac使用窗口操作工具对Mumu进行操作，则可能一下子就找不到应用了，只能重启，正确的使用方式是使用Mumu菜单中的窗口下的拼贴功能，使用起来还不错。</p>
+<p>今天学习一下Linux中的复制移动相关命令，主要学习 <strong>cp</strong> 与 <strong>mv</strong></p>
+<h2 id="cp">CP</h2>
+<h3 id="功能">功能</h3>
+<p>复制文件或文件夹</p>
+<h3 id="cp-file-target">cp file target</h3>
+<p>复制文件到target目录</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/awxABc.png"/>
+</figure>
+
+<h3 id="cp-i">cp -i</h3>
+<p>复制前进行询问(如果存在同名文件)</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UIwLJ9.png"/>
+</figure>
+
+<h3 id="cp-n">cp -n</h3>
+<p>复制，但不覆盖已经存在的文件</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LWdOji.png"/>
+</figure>
+
+<h3 id="cp-b">cp -b</h3>
+<p>复制，复制前备份目标同名文件(如果存在)</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmwxBW.png"/>
+</figure>
+
+<h3 id="cp-f">cp -f</h3>
+<p>强制删除(目录文件不能打开)并覆盖
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tPA8AB.png" alt=""></p>
+<h3 id="cp-p">cp -p</h3>
+<p>复制文件到目标文件夹，保留原文件的修改时间、访问时间与归属相关信息</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0Rt6Ur.png"/>
+</figure>
+
+<h3 id="cp-u">cp -u</h3>
+<p>复制文件到目标文件夹，仅当源文件的修改时间晚于目标同名文件时进行复制</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0cVlU7.png"/>
+</figure>
+
+<h3 id="cp-r">cp -r</h3>
+<p>递归复制文件夹内容到目标文件夹</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yUFV2H.png"/>
+</figure>
+
+<h3 id="组合杀">组合杀</h3>
+<h4 id="对文件进行备份-按数字方式">对文件进行备份，按数字方式</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp -f --backup<span class="o">=</span>numbered aa.txt aa.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6P4lSq.png"/>
+</figure>
+
+<p>如图所示，每执行一次命令，就顺序产生一个同名文件+编号的备份，有点类似于一个版本管理系统</p>
+<h4 id="更新文件夹">更新文件夹</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp -ruv e ../target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cZw5ta.png" alt="">
+如图所示，只有e/ee.txt有更新，执行命令时只做了增量更新文件</p>
+<h2 id="mv">MV</h2>
+<h3 id="功能">功能</h3>
+<p>移动(重命名)文件或文件夹</p>
+<h3 id="mv">mv</h3>
+<h4 id="移动文件">移动文件</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T0iZkY.png"/>
+</figure>
+
+<h4 id="移动并重命名">移动并重命名</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GSDCV7.png"/>
+</figure>
+
+<h3 id="mv-i">mv -i</h3>
+<p>移动前询问（目标有同名文件）</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zMSVIF.png"/>
+</figure>
+
+<h3 id="mv-n">mv -n</h3>
+<p>移动文件，但不覆盖存在的文件</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rhG7PO.png"/>
+</figure>
+
+<h3 id="mv-u">mv -u</h3>
+<p>移动文件，只在源文件比目标文件新时才执行
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lOLRtR.png" alt=""></p>
+<h3 id="mv-f">mv -f</h3>
+<p>执行覆盖，不提示
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uBKFdn.png" alt=""></p>
+<h2 id="ref">REF</h2>
+<h3 id="cp--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cp_(Unix)">cp (Unix) - Wikipedia</a></h3>
+<h3 id="mv--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Mv_(Unix)">mv (Unix) - Wikipedia</a></h3>
+<h3 id="两个高效的cp-命令用法-linux就该这么学"><a href="https://www.linuxprobe.com/two-cp-usage.html">两个高效的cp 命令用法！ | 《Linux就该这么学》</a></h3>
 
     </div>
 
@@ -192,7 +298,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-02-11
+        2023-01-04
         
     </span>
   </p>
@@ -218,18 +324,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/mumu/">mumu</a>
-          <a href="/tags/charles/">charles</a>
-          <a href="/tags/android/">android</a>
+          <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2020-arts-006/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">2020-ARTS-打卡第六天</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2020-arts-005/">
-            <span class="next-text nav-default">2020-ARTS-打卡第五天</span>
+        
+        <a class="next" href="/post/linux-mkdir-rm/">
+            <span class="next-text nav-default">Linux命令学习之删除rm, rmdir</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

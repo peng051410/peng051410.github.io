@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 21 Dec 2022 15:20:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 10:11:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之Cp, Mv</title>
+      <link>http://blog.imcompany.cn/post/linux-cpmv/</link>
+      <pubDate>Wed, 04 Jan 2023 10:11:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-cpmv/</guid>
+      <description>前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果</description>
+    </item>
+    
     <item>
       <title>Linux命令学习之删除rm, rmdir</title>
       <link>http://blog.imcompany.cn/post/linux-mkdir-rm/</link>
