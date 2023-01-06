@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 04 Jan 2023 10:11:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Jan 2023 17:55:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之touch</title>
+      <link>http://blog.imcompany.cn/post/linux-touch/</link>
+      <pubDate>Fri, 06 Jan 2023 17:55:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-touch/</guid>
+      <description>前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间</description>
+    </item>
+    
     <item>
       <title>Linux命令学习之Cp, Mv</title>
       <link>http://blog.imcompany.cn/post/linux-cpmv/</link>

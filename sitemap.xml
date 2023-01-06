@@ -3,48 +3,55 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/linux/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/linux/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/post/linux-cpmv/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <loc>http://blog.imcompany.cn/post/linux-touch/</loc>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2023-01-04T11:03:34+08:00</lastmod>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2023-01-06T18:59:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/linux-cpmv/</loc>
     <lastmod>2023-01-04T11:03:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux命令学习之Cp, Mv - I&#39;m company</title>
+  <title>Linux命令学习之touch - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/linux-cpmv/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-touch/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux命令学习之Cp, Mv" />
-<meta property="og:description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果" />
+<meta property="og:title" content="Linux命令学习之touch" />
+<meta property="og:description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/linux-cpmv/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-04T10:11:00+08:00" />
-<meta property="article:modified_time" content="2023-01-04T11:03:34+08:00" />
-<meta itemprop="name" content="Linux命令学习之Cp, Mv">
-<meta itemprop="description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果"><meta itemprop="datePublished" content="2023-01-04T10:11:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-04T11:03:34+08:00" />
-<meta itemprop="wordCount" content="440">
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-touch/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-06T17:55:00+08:00" />
+<meta property="article:modified_time" content="2023-01-06T18:59:22+08:00" />
+<meta itemprop="name" content="Linux命令学习之touch">
+<meta itemprop="description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间"><meta itemprop="datePublished" content="2023-01-06T17:55:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-06T18:59:22+08:00" />
+<meta itemprop="wordCount" content="310">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux命令学习之Cp, Mv"/>
-<meta name="twitter:description" content="前言 今天学习一下Linux中的复制移动相关命令，主要学习 cp 与 mv CP 功能 复制文件或文件夹 cp file target 复制文件到target目录 cp -i 复制前进行询问(如果"/>
+<meta name="twitter:title" content="Linux命令学习之touch"/>
+<meta name="twitter:description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux命令学习之Cp, Mv</h1>
+      <h1 class="post-title">Linux命令学习之touch</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-01-04 </span>
+        <span class="post-time"> 2023-01-06 </span>
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 440 字 </span>
+          <span class="more-meta"> 约 310 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -151,35 +151,18 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#cp">CP</a>
-      <ul>
-        <li><a href="#功能">功能</a></li>
-        <li><a href="#cp-file-target">cp file target</a></li>
-        <li><a href="#cp-i">cp -i</a></li>
-        <li><a href="#cp-n">cp -n</a></li>
-        <li><a href="#cp-b">cp -b</a></li>
-        <li><a href="#cp-f">cp -f</a></li>
-        <li><a href="#cp-p">cp -p</a></li>
-        <li><a href="#cp-u">cp -u</a></li>
-        <li><a href="#cp-r">cp -r</a></li>
-        <li><a href="#组合杀">组合杀</a></li>
-      </ul>
-    </li>
-    <li><a href="#mv">MV</a>
-      <ul>
-        <li><a href="#功能">功能</a></li>
-        <li><a href="#mv">mv</a></li>
-        <li><a href="#mv-i">mv -i</a></li>
-        <li><a href="#mv-n">mv -n</a></li>
-        <li><a href="#mv-u">mv -u</a></li>
-        <li><a href="#mv-f">mv -f</a></li>
-      </ul>
-    </li>
+    <li><a href="#功能">功能</a></li>
+    <li><a href="#touch-file">touch file</a></li>
+    <li><a href="#touch-a-file">touch -a file</a></li>
+    <li><a href="#touch-m-file">touch -m file</a></li>
+    <li><a href="#touch-t-file">touch -t file</a></li>
+    <li><a href="#touch-d-file">touch -d file</a></li>
+    <li><a href="#touch-r-reffile-file">touch -r reffile file</a></li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#cp--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cp_(Unix)">cp (Unix) - Wikipedia</a></a></li>
-        <li><a href="#mv--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Mv_(Unix)">mv (Unix) - Wikipedia</a></a></li>
-        <li><a href="#two-great-uses-for-the-cp-command-opensource-dot-com"><a href="https://opensource.com/article/17/7/two-great-uses-cp-command">Two great uses for the cp command | Opensource.com</a></a></li>
+        <li><a href="#touch--command--wikipedia"><a href="https://en.wikipedia.org/wiki/Touch_(command)">touch (command) - Wikipedia</a></a></li>
+        <li><a href="#check-file-access-and-modification-time-in-linux-linux-tutorials-learn-linux-configuration"><a href="https://linuxconfig.org/check-file-access-and-modification-time-in-linux">Check file access and modification time in Linux - Linux Tutorials - Learn Linux Configuration</a></a></li>
+        <li><a href="#stat--1--file-file-system-status-linux-man-page"><a href="https://linux.die.net/man/1/stat">stat(1): file/file system status - Linux man page</a></a></li>
       </ul>
     </li>
   </ul>
@@ -188,105 +171,42 @@
 </div>
     <div class="post-content">
       <h2 id="前言">前言</h2>
-<p>今天学习一下Linux中的复制移动相关命令，主要学习 <strong>cp</strong> 与 <strong>mv</strong></p>
-<h2 id="cp">CP</h2>
-<h3 id="功能">功能</h3>
-<p>复制文件或文件夹</p>
-<h3 id="cp-file-target">cp file target</h3>
-<p>复制文件到target目录</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/awxABc.png"/>
+<p>今天学习一下Linux的 <strong>touch</strong> 命令</p>
+<h2 id="功能">功能</h2>
+<p>按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 <strong>创建文件</strong>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RPJQDx.png" alt=""></p>
+<h2 id="touch-file">touch file</h2>
+<p>创建一个空文件，文件的访问时间与修改时间为当前时间</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Rf6wbV.png"/>
 </figure>
 
-<h3 id="cp-i">cp -i</h3>
-<p>复制前进行询问(如果存在同名文件)</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UIwLJ9.png"/>
-</figure>
-
-<h3 id="cp-n">cp -n</h3>
-<p>复制，但不覆盖已经存在的文件</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LWdOji.png"/>
-</figure>
-
-<h3 id="cp-b">cp -b</h3>
-<p>复制，复制前备份目标同名文件(如果存在)</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmwxBW.png"/>
-</figure>
-
-<h3 id="cp-f">cp -f</h3>
-<p>强制删除(目录文件不能打开)并覆盖
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tPA8AB.png" alt=""></p>
-<h3 id="cp-p">cp -p</h3>
-<p>复制文件到目标文件夹，保留原文件的修改时间、访问时间与归属相关信息</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0Rt6Ur.png"/>
-</figure>
-
-<h3 id="cp-u">cp -u</h3>
-<p>复制文件到目标文件夹，仅当源文件的修改时间晚于目标同名文件时进行复制</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0cVlU7.png"/>
-</figure>
-
-<h3 id="cp-r">cp -r</h3>
-<p>递归复制文件夹内容到目标文件夹</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yUFV2H.png"/>
-</figure>
-
-<h3 id="组合杀">组合杀</h3>
-<h4 id="对文件进行备份-按数字方式">对文件进行备份，按数字方式</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp -f --backup<span class="o">=</span>numbered aa.txt aa.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6P4lSq.png"/>
-</figure>
-
-<p>如图所示，每执行一次命令，就顺序产生一个同名文件+编号的备份，有点类似于一个版本管理系统</p>
-<h4 id="更新文件夹">更新文件夹</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cp -ruv e ../target
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cZw5ta.png" alt="">
-如图所示，只有e/ee.txt有更新，执行命令时只做了增量更新文件</p>
-<h2 id="mv">MV</h2>
-<h3 id="功能">功能</h3>
-<p>移动(重命名)文件或文件夹</p>
-<h3 id="mv">mv</h3>
-<h4 id="移动文件">移动文件</h4>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T0iZkY.png"/>
-</figure>
-
-<h4 id="移动并重命名">移动并重命名</h4>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GSDCV7.png"/>
-</figure>
-
-<h3 id="mv-i">mv -i</h3>
-<p>移动前询问（目标有同名文件）</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zMSVIF.png"/>
-</figure>
-
-<h3 id="mv-n">mv -n</h3>
-<p>移动文件，但不覆盖存在的文件</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rhG7PO.png"/>
-</figure>
-
-<h3 id="mv-u">mv -u</h3>
-<p>移动文件，只在源文件比目标文件新时才执行
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lOLRtR.png" alt=""></p>
-<h3 id="mv-f">mv -f</h3>
-<p>执行覆盖，不提示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uBKFdn.png" alt=""></p>
+<h2 id="touch-a-file">touch -a file</h2>
+<p>改变文件的访问时间
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/iU6HMm.png" alt=""></p>
+<p>从上图可以看出来， <strong>b.txt</strong> 文件只有访问时间被修改了，修改时间没有变</p>
+<blockquote>
+<p>验证时用到 <a href="https://linux.die.net/man/1/stat">stat</a> 命令， 这个后续具体学习</p>
+</blockquote>
+<h2 id="touch-m-file">touch -m file</h2>
+<p>改变文件的修改时间
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ayyjFL.png" alt="">
+从上图可以看出来， <strong>cc.txt</strong> 文件只有修改时间变了，访问时间没有变</p>
+<h2 id="touch-t-file">touch -t file</h2>
+<p>修改文件为指定的时间，格式为 <strong>[[CC]YY]MMDDhhmm[.ss]</strong>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vtge5A.png" alt=""></p>
+<p>上图命令将 <strong>dd.txt</strong> 文件的访问时间与修改时间改成了 <strong>2022-01-02 12:22:23</strong></p>
+<h2 id="touch-d-file">touch -d file</h2>
+<p>修改文件为指定的日期，支持的时间格式更广泛
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/d6IgY9.png" alt=""></p>
+<h2 id="touch-r-reffile-file">touch -r reffile file</h2>
+<p>修改文件的时间为引用的文件时间
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3N9iFx.png" alt=""></p>
+<p>如图， <strong>ff.txt</strong> 文件与 <strong>a.txt</strong> 的时间同步了</p>
 <h2 id="ref">REF</h2>
-<h3 id="cp--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cp_(Unix)">cp (Unix) - Wikipedia</a></h3>
-<h3 id="mv--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Mv_(Unix)">mv (Unix) - Wikipedia</a></h3>
-<h3 id="two-great-uses-for-the-cp-command-opensource-dot-com"><a href="https://opensource.com/article/17/7/two-great-uses-cp-command">Two great uses for the cp command | Opensource.com</a></h3>
+<h3 id="touch--command--wikipedia"><a href="https://en.wikipedia.org/wiki/Touch_(command)">touch (command) - Wikipedia</a></h3>
+<h3 id="check-file-access-and-modification-time-in-linux-linux-tutorials-learn-linux-configuration"><a href="https://linuxconfig.org/check-file-access-and-modification-time-in-linux">Check file access and modification time in Linux - Linux Tutorials - Learn Linux Configuration</a></h3>
+<h3 id="stat--1--file-file-system-status-linux-man-page"><a href="https://linux.die.net/man/1/stat">stat(1): file/file system status - Linux man page</a></h3>
+<p>Captured On: <!-- raw HTML omitted --><!-- raw HTML omitted -->[2023-01-06 Fri 18:55]<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 
     </div>
 
@@ -298,7 +218,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-01-04
+        2023-01-06
         
     </span>
   </p>
@@ -327,13 +247,9 @@
           <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-touch/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux命令学习之touch</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/linux-mkdir-rm/">
-            <span class="next-text nav-default">Linux命令学习之删除rm, rmdir</span>
+        
+        <a class="next" href="/post/linux-cpmv/">
+            <span class="next-text nav-default">Linux命令学习之Cp, Mv</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
