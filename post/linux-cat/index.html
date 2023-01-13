@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux命令学习之touch - I&#39;m company</title>
+  <title>Linux命令学习之cat - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/linux-touch/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-cat/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux命令学习之touch" />
-<meta property="og:description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间" />
+<meta property="og:title" content="Linux命令学习之cat" />
+<meta property="og:description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/linux-touch/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-06T17:55:00+08:00" />
-<meta property="article:modified_time" content="2023-01-06T18:59:22+08:00" />
-<meta itemprop="name" content="Linux命令学习之touch">
-<meta itemprop="description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间"><meta itemprop="datePublished" content="2023-01-06T17:55:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-06T18:59:22+08:00" />
-<meta itemprop="wordCount" content="310">
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-cat/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-13T11:41:00+08:00" />
+<meta property="article:modified_time" content="2023-01-13T14:58:55+08:00" />
+<meta itemprop="name" content="Linux命令学习之cat">
+<meta itemprop="description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat"><meta itemprop="datePublished" content="2023-01-13T11:41:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-13T14:58:55+08:00" />
+<meta itemprop="wordCount" content="404">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux命令学习之touch"/>
-<meta name="twitter:description" content="前言 今天学习一下Linux的 touch 命令 功能 按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 创建文件 touch file 创建一个空文件，文件的访问时间"/>
+<meta name="twitter:title" content="Linux命令学习之cat"/>
+<meta name="twitter:description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux命令学习之touch</h1>
+      <h1 class="post-title">Linux命令学习之cat</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-01-06 </span>
+        <span class="post-time"> 2023-01-13 </span>
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 310 字 </span>
+          <span class="more-meta"> 约 404 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,19 +150,33 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#前言">前言</a></li>
     <li><a href="#功能">功能</a></li>
-    <li><a href="#touch-file">touch file</a></li>
-    <li><a href="#touch-a-file">touch -a file</a></li>
-    <li><a href="#touch-m-file">touch -m file</a></li>
-    <li><a href="#touch-t-file">touch -t file</a></li>
-    <li><a href="#touch-d-file">touch -d file</a></li>
-    <li><a href="#touch-r-reffile-file">touch -r reffile file</a></li>
+    <li><a href="#输出文件内容">输出文件内容</a>
+      <ul>
+        <li><a href="#cat-file">cat file</a></li>
+        <li><a href="#cat-n-file">cat -n file</a></li>
+        <li><a href="#cat-b-file">cat -b file</a></li>
+        <li><a href="#cat-s-file">cat -s file</a></li>
+        <li><a href="#cat-e-file">cat -E file</a></li>
+        <li><a href="#cat-t-file">cat -T file</a></li>
+        <li><a href="#cat-a-file">cat -A file</a></li>
+        <li><a href="#cat-multiple-files">cat multiple files</a></li>
+      </ul>
+    </li>
+    <li><a href="#合并文件内容">合并文件内容</a>
+      <ul>
+        <li><a href="#cat-file1-file2-file3">cat file1 file2 &gt; file3</a></li>
+        <li><a href="#cat-newfile">cat &gt;newfile</a></li>
+        <li><a href="#cat">cat</a></li>
+        <li><a href="#cat-n-file1-file2-file3">cat -n file1 file2 &gt; file3</a></li>
+        <li><a href="#cat-file1-file2-file3">cat file1 - file2 &gt; file3</a></li>
+        <li><a href="#cat-file1-file2">cat file1 &gt;&gt; file2</a></li>
+      </ul>
+    </li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#touch--command--wikipedia"><a href="https://en.wikipedia.org/wiki/Touch_(command)">touch (command) - Wikipedia</a></a></li>
-        <li><a href="#check-file-access-and-modification-time-in-linux-linux-tutorials-learn-linux-configuration"><a href="https://linuxconfig.org/check-file-access-and-modification-time-in-linux">Check file access and modification time in Linux - Linux Tutorials - Learn Linux Configuration</a></a></li>
-        <li><a href="#stat--1--file-file-system-status-linux-man-page"><a href="https://linux.die.net/man/1/stat">stat(1): file/file system status - Linux man page</a></a></li>
+        <li><a href="#cat--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat (Unix) - Wikipedia</a></a></li>
+        <li><a href="#cat--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/cat.1.html">cat(1) - Linux manual page</a></a></li>
       </ul>
     </li>
   </ul>
@@ -170,43 +184,70 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="前言">前言</h2>
-<p>今天学习一下Linux的 <strong>touch</strong> 命令</p>
-<h2 id="功能">功能</h2>
-<p>按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 <strong>创建文件</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RPJQDx.png" alt=""></p>
-<h2 id="touch-file">touch file</h2>
-<p>创建一个空文件，文件的访问时间与修改时间为当前时间</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Rf6wbV.png"/>
+      <h2 id="功能">功能</h2>
+<p>Cat命令有两个作用：</p>
+<ol>
+<li>输出文件内容到标准输出</li>
+<li>合并文件内容</li>
+</ol>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UPmfmN.png"/>
 </figure>
 
-<h2 id="touch-a-file">touch -a file</h2>
-<p>改变文件的访问时间
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/iU6HMm.png" alt=""></p>
-<p>从上图可以看出来， <strong>b.txt</strong> 文件只有访问时间被修改了，修改时间没有变</p>
-<blockquote>
-<p>验证时用到 <a href="https://linux.die.net/man/1/stat">stat</a> 命令， 这个后续具体学习</p>
-</blockquote>
-<h2 id="touch-m-file">touch -m file</h2>
-<p>改变文件的修改时间
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ayyjFL.png" alt="">
-从上图可以看出来， <strong>cc.txt</strong> 文件只有修改时间变了，访问时间没有变</p>
-<h2 id="touch-t-file">touch -t file</h2>
-<p>修改文件为指定的时间，格式为 <strong>[[CC]YY]MMDDhhmm[.ss]</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vtge5A.png" alt=""></p>
-<p>上图命令将 <strong>dd.txt</strong> 文件的访问时间与修改时间改成了 <strong>2022-01-02 12:22:23</strong></p>
-<h2 id="touch-d-file">touch -d file</h2>
-<p>修改文件为指定的日期，支持的时间格式更广泛
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/d6IgY9.png" alt=""></p>
-<h2 id="touch-r-reffile-file">touch -r reffile file</h2>
-<p>修改文件的时间为引用的文件时间
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3N9iFx.png" alt=""></p>
-<p>如图， <strong>ff.txt</strong> 文件与 <strong>a.txt</strong> 的时间同步了</p>
+<h2 id="输出文件内容">输出文件内容</h2>
+<h3 id="cat-file">cat file</h3>
+<p>查看文件内容</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9LJohL.png"/>
+</figure>
+
+<h3 id="cat-n-file">cat -n file</h3>
+<p>查看文件内容，带行号，统计所有行(包括空行)</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7C1eEu.png"/>
+</figure>
+
+<h3 id="cat-b-file">cat -b file</h3>
+<p>查看文件内容，带行号，不统计空行</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rQsJte.png"/>
+</figure>
+
+<h3 id="cat-s-file">cat -s file</h3>
+<p>查看文件内容，压缩空行，多个空行只显示一行空行
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kqjJl8.png" alt=""></p>
+<h3 id="cat-e-file">cat -E file</h3>
+<p>查看文件内容，显示行结束符号为 <strong>$</strong>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7FBdUy.png" alt=""></p>
+<h3 id="cat-t-file">cat -T file</h3>
+<p>查看文件内容，显示tab符号为 <strong>^</strong>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MRJk0v.png" alt=""></p>
+<h3 id="cat-a-file">cat -A file</h3>
+<p>查看文件内容，显示tab符号为 <strong>^</strong> ，显示行结束符号为 <strong>$</strong>
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WeFwYd.png" alt=""></p>
+<h3 id="cat-multiple-files">cat multiple files</h3>
+<p>查看多个文件
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ElyTTc.png" alt=""></p>
+<h2 id="合并文件内容">合并文件内容</h2>
+<p>cat配合linux的管道命令可以实现更强大的功能</p>
+<h3 id="cat-file1-file2-file3">cat file1 file2 &gt; file3</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ekol3C.png"/>
+</figure>
+
+<h3 id="cat-newfile">cat &gt;newfile</h3>
+<p>这是一个很强大的命令，可以直接创建文件并把输入的内容写入到新创建的文件中
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-newfile.gif" alt=""></p>
+<h3 id="cat">cat</h3>
+<p>只输入cat会发生什么呢，它会把输入的内容再输出出来，没事可以自言自语了
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-self.gif" alt=""></p>
+<h3 id="cat-n-file1-file2-file3">cat -n file1 file2 &gt; file3</h3>
+<p>统计两个文件的内容带行号写入到file3
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hjApFc.png" alt=""></p>
+<h3 id="cat-file1-file2-file3">cat file1 - file2 &gt; file3</h3>
+<p>获取file1的内容，用户进行输入，最后加上file2的内容写到file3文件中
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-with-middle-write.gif" alt=""></p>
+<h3 id="cat-file1-file2">cat file1 &gt;&gt; file2</h3>
+<p>追加file1的内容到file2中
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/QQWmfb.png" alt=""></p>
 <h2 id="ref">REF</h2>
-<h3 id="touch--command--wikipedia"><a href="https://en.wikipedia.org/wiki/Touch_(command)">touch (command) - Wikipedia</a></h3>
-<h3 id="check-file-access-and-modification-time-in-linux-linux-tutorials-learn-linux-configuration"><a href="https://linuxconfig.org/check-file-access-and-modification-time-in-linux">Check file access and modification time in Linux - Linux Tutorials - Learn Linux Configuration</a></h3>
-<h3 id="stat--1--file-file-system-status-linux-man-page"><a href="https://linux.die.net/man/1/stat">stat(1): file/file system status - Linux man page</a></h3>
-<p>Captured On: <!-- raw HTML omitted --><!-- raw HTML omitted -->[2023-01-06 Fri 18:55]<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="cat--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat (Unix) - Wikipedia</a></h3>
+<h3 id="cat--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/cat.1.html">cat(1) - Linux manual page</a></h3>
 
     </div>
 
@@ -218,7 +259,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-01-06
+        2023-01-13
         
     </span>
   </p>
@@ -247,13 +288,9 @@
           <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-cat/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux命令学习之cat</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/linux-cpmv/">
-            <span class="next-text nav-default">Linux命令学习之Cp, Mv</span>
+        
+        <a class="next" href="/post/linux-touch/">
+            <span class="next-text nav-default">Linux命令学习之touch</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 06 Jan 2023 17:55:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 11:41:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之cat</title>
+      <link>http://blog.imcompany.cn/post/linux-cat/</link>
+      <pubDate>Fri, 13 Jan 2023 11:41:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-cat/</guid>
+      <description>功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat</description>
+    </item>
+    
     <item>
       <title>Linux命令学习之touch</title>
       <link>http://blog.imcompany.cn/post/linux-touch/</link>
