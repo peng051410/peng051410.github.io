@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux命令学习之cat - I&#39;m company</title>
+  <title>Linux命令学习-只看文件一部分的head与tail - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="前言 开发中常常需要查看文件的部分内容，这时可以用 head 命令来查看文件开头部分与 tail 命令来查看文件结尾部分 Head head file 打印文件的前10行内容 head -n file 打印文件" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/linux-cat/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-headtail/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux命令学习之cat" />
-<meta property="og:description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat" />
+<meta property="og:title" content="Linux命令学习-只看文件一部分的head与tail" />
+<meta property="og:description" content="前言 开发中常常需要查看文件的部分内容，这时可以用 head 命令来查看文件开头部分与 tail 命令来查看文件结尾部分 Head head file 打印文件的前10行内容 head -n file 打印文件" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/linux-cat/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-01-13T11:41:00+08:00" />
-<meta property="article:modified_time" content="2023-01-13T14:58:55+08:00" />
-<meta itemprop="name" content="Linux命令学习之cat">
-<meta itemprop="description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat"><meta itemprop="datePublished" content="2023-01-13T11:41:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-13T14:58:55+08:00" />
-<meta itemprop="wordCount" content="404">
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-headtail/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-30T18:27:00+08:00" />
+<meta property="article:modified_time" content="2023-01-30T18:27:50+08:00" />
+<meta itemprop="name" content="Linux命令学习-只看文件一部分的head与tail">
+<meta itemprop="description" content="前言 开发中常常需要查看文件的部分内容，这时可以用 head 命令来查看文件开头部分与 tail 命令来查看文件结尾部分 Head head file 打印文件的前10行内容 head -n file 打印文件"><meta itemprop="datePublished" content="2023-01-30T18:27:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-30T18:27:50+08:00" />
+<meta itemprop="wordCount" content="450">
 <meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux命令学习之cat"/>
-<meta name="twitter:description" content="功能 Cat命令有两个作用： 输出文件内容到标准输出 合并文件内容 输出文件内容 cat file 查看文件内容 cat -n file 查看文件内容，带行号，统计所有行(包括空行) cat"/>
+<meta name="twitter:title" content="Linux命令学习-只看文件一部分的head与tail"/>
+<meta name="twitter:description" content="前言 开发中常常需要查看文件的部分内容，这时可以用 head 命令来查看文件开头部分与 tail 命令来查看文件结尾部分 Head head file 打印文件的前10行内容 head -n file 打印文件"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,14 +132,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux命令学习之cat</h1>
+      <h1 class="post-title">Linux命令学习-只看文件一部分的head与tail</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-01-13 </span>
+        <span class="post-time"> 2023-01-30 </span>
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 404 字 </span>
+          <span class="more-meta"> 约 450 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,33 +150,33 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#功能">功能</a></li>
-    <li><a href="#输出文件内容">输出文件内容</a>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#head">Head</a>
       <ul>
-        <li><a href="#cat-file">cat file</a></li>
-        <li><a href="#cat-n-file">cat -n file</a></li>
-        <li><a href="#cat-b-file">cat -b file</a></li>
-        <li><a href="#cat-s-file">cat -s file</a></li>
-        <li><a href="#cat-e-file">cat -E file</a></li>
-        <li><a href="#cat-t-file">cat -T file</a></li>
-        <li><a href="#cat-a-file">cat -A file</a></li>
-        <li><a href="#cat-multiple-files">cat multiple files</a></li>
+        <li><a href="#head-file">head file</a></li>
+        <li><a href="#head-n-file">head -n file</a></li>
+        <li><a href="#head-c-file">head -c file</a></li>
+        <li><a href="#head-v-file">head -v file</a></li>
+        <li><a href="#head-file1-file2">head file1 file2</a></li>
+        <li><a href="#head-q-file1-file2">head -q file1 file2</a></li>
       </ul>
     </li>
-    <li><a href="#合并文件内容">合并文件内容</a>
+    <li><a href="#tail">Tail</a>
       <ul>
-        <li><a href="#cat-file1-file2-file3">cat file1 file2 &gt; file3</a></li>
-        <li><a href="#cat-newfile">cat &gt;newfile</a></li>
-        <li><a href="#cat">cat</a></li>
-        <li><a href="#cat-n-file1-file2-file3">cat -n file1 file2 &gt; file3</a></li>
-        <li><a href="#cat-file1-file2-file3">cat file1 - file2 &gt; file3</a></li>
-        <li><a href="#cat-file1-file2">cat file1 &gt;&gt; file2</a></li>
+        <li><a href="#tail-file">tail file</a></li>
+        <li><a href="#tail-n-file">tail -n file</a></li>
+        <li><a href="#tail-c-file">tail -c file</a></li>
+        <li><a href="#tail-v-file">tail -v file</a></li>
+        <li><a href="#tail-q-file1-file2">tail -q file1 file2</a></li>
+        <li><a href="#tail-f-file">tail -f file</a></li>
+        <li><a href="#tail-f-file">tail -F file</a></li>
+        <li><a href="#tail-f-pid-n-file">tail -f &ndash;pid=n file</a></li>
       </ul>
     </li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#cat--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat (Unix) - Wikipedia</a></a></li>
-        <li><a href="#cat--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/cat.1.html">cat(1) - Linux manual page</a></a></li>
+        <li><a href="#head--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Head_(Unix)?useskin=vector">head (Unix) - Wikipedia</a></a></li>
+        <li><a href="#using-linux-tail-command-with-pid-terminate-option-youtube"><a href="https://www.youtube.com/watch?v=wWHz1mfFZ-w">Using Linux Tail Command with PID Terminate Option - YouTube</a></a></li>
       </ul>
     </li>
   </ul>
@@ -184,70 +184,91 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="功能">功能</h2>
-<p>Cat命令有两个作用：</p>
-<ol>
-<li>输出文件内容到标准输出</li>
-<li>合并文件内容</li>
-</ol>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UPmfmN.png"/>
+      <h2 id="前言">前言</h2>
+<p>开发中常常需要查看文件的部分内容，这时可以用 <strong>head</strong> 命令来查看文件开头部分与 <strong>tail</strong> 命令来查看文件结尾部分</p>
+<h2 id="head">Head</h2>
+<h3 id="head-file">head file</h3>
+<p>打印文件的前10行内容</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/o2zr7E.png"/>
 </figure>
 
-<h2 id="输出文件内容">输出文件内容</h2>
-<h3 id="cat-file">cat file</h3>
-<p>查看文件内容</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9LJohL.png"/>
+<h3 id="head-n-file">head -n file</h3>
+<p>打印文件前n行的内容</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/TCsOEj.png"/>
 </figure>
 
-<h3 id="cat-n-file">cat -n file</h3>
-<p>查看文件内容，带行号，统计所有行(包括空行)</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7C1eEu.png"/>
+<h3 id="head-c-file">head -c file</h3>
+<p>打印文件前n个字节(换行符计算在内)的内容，文件小于指定字节则打印全部文件内容</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lsEmuL.png"/>
 </figure>
 
-<h3 id="cat-b-file">cat -b file</h3>
-<p>查看文件内容，带行号，不统计空行</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rQsJte.png"/>
+<h3 id="head-v-file">head -v file</h3>
+<p>打印文件的前10行内容，显示打印的文件标题</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Nkabtm.png"/>
 </figure>
 
-<h3 id="cat-s-file">cat -s file</h3>
-<p>查看文件内容，压缩空行，多个空行只显示一行空行
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kqjJl8.png" alt=""></p>
-<h3 id="cat-e-file">cat -E file</h3>
-<p>查看文件内容，显示行结束符号为 <strong>$</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7FBdUy.png" alt=""></p>
-<h3 id="cat-t-file">cat -T file</h3>
-<p>查看文件内容，显示tab符号为 <strong>^</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MRJk0v.png" alt=""></p>
-<h3 id="cat-a-file">cat -A file</h3>
-<p>查看文件内容，显示tab符号为 <strong>^</strong> ，显示行结束符号为 <strong>$</strong>
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WeFwYd.png" alt=""></p>
-<h3 id="cat-multiple-files">cat multiple files</h3>
-<p>查看多个文件
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ElyTTc.png" alt=""></p>
-<h2 id="合并文件内容">合并文件内容</h2>
-<p>cat配合linux的管道命令可以实现更强大的功能</p>
-<h3 id="cat-file1-file2-file3">cat file1 file2 &gt; file3</h3>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ekol3C.png"/>
-</figure>
+<h3 id="head-file1-file2">head file1 file2</h3>
+<p>同时查看多个文件的头部内容
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/mEcQRv.png" alt=""></p>
+<h3 id="head-q-file1-file2">head -q file1 file2</h3>
+<p>同时查看多个文件的头部内容，不打印文件标题，可用于后续文件内容合并处理
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Lw9ZuL.png" alt=""></p>
+<h2 id="tail">Tail</h2>
+<h3 id="tail-file">tail file</h3>
+<p>打印文件后10行内容，不足则打印全部内容
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/fFRryh.png" alt=""></p>
+<h3 id="tail-n-file">tail -n file</h3>
+<p>指定打印文件后n行的内容
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/KVopOw.png" alt=""></p>
+<h3 id="tail-c-file">tail -c file</h3>
+<p>打印文件尾部n个字节(换行符计算在内)的内容，文件小于指定字节则打印全部文件内容
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1G0PFd.png" alt=""></p>
+<h3 id="tail-v-file">tail -v file</h3>
+<p>打印文件的尾部10行内容，显示打印的文件标题
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/x1LfMy.png" alt=""></p>
+<h3 id="tail-q-file1-file2">tail -q file1 file2</h3>
+<p>同时查看多个文件的尾部内容，不打印文件标题，可用于后续文件内容合并处理
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/jUhR6k.png" alt=""></p>
+<h3 id="tail-f-file">tail -f file</h3>
+<p>监控文件后续输出，对监控线上服务日志输出很有用
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tail-with-follow.gif" alt=""></p>
+<h3 id="tail-f-file">tail -F file</h3>
+<p>监控文件后续输出，即使文件重命名也可以正确输出，对监控线上服务日志输出很有用
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tail-with-follow-f.gif" alt=""></p>
+<h3 id="tail-f-pid-n-file">tail -f &ndash;pid=n file</h3>
+<p>监控文件输出，当监控的进程退出时， <strong>tail</strong> 程序退出</p>
+<style>
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    }
+      
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    }
+</style>
+      
 
-<h3 id="cat-newfile">cat &gt;newfile</h3>
-<p>这是一个很强大的命令，可以直接创建文件并把输入的内容写入到新创建的文件中
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-newfile.gif" alt=""></p>
-<h3 id="cat">cat</h3>
-<p>只输入cat会发生什么呢，它会把输入的内容再输出出来，没事可以自言自语了
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-self.gif" alt=""></p>
-<h3 id="cat-n-file1-file2-file3">cat -n file1 file2 &gt; file3</h3>
-<p>统计两个文件的内容带行号写入到file3
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hjApFc.png" alt=""></p>
-<h3 id="cat-file1-file2-file3">cat file1 - file2 &gt; file3</h3>
-<p>获取file1的内容，用户进行输入，最后加上file2的内容写到file3文件中
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-with-middle-write.gif" alt=""></p>
-<h3 id="cat-file1-file2">cat file1 &gt;&gt; file2</h3>
-<p>追加file1的内容到file2中
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/QQWmfb.png" alt=""></p>
+<div align=center class="aspect-ratio">
+    <iframe src="https://player.bilibili.com/player.html?aid=736118195&&page=1&as_wide=1&high_quality=1&danmaku=0" 
+    scrolling="no" 
+    border="0" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"> 
+    </iframe>
+</div>
+
+
 <h2 id="ref">REF</h2>
-<h3 id="cat--unix--wikipedia"><a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat (Unix) - Wikipedia</a></h3>
-<h3 id="cat--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/cat.1.html">cat(1) - Linux manual page</a></h3>
+<h3 id="head--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Head_(Unix)?useskin=vector">head (Unix) - Wikipedia</a></h3>
+<h3 id="using-linux-tail-command-with-pid-terminate-option-youtube"><a href="https://www.youtube.com/watch?v=wWHz1mfFZ-w">Using Linux Tail Command with PID Terminate Option - YouTube</a></h3>
 
     </div>
 
@@ -259,7 +280,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-01-13
+        2023-01-30
         
     </span>
   </p>
@@ -288,13 +309,9 @@
           <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-headtail/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux命令学习-只看文件一部分的head与tail</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/linux-touch/">
-            <span class="next-text nav-default">Linux命令学习之touch</span>
+        
+        <a class="next" href="/post/linux-cat/">
+            <span class="next-text nav-default">Linux命令学习之cat</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

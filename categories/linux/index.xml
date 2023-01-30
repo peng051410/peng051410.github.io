@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 11:41:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2023 18:27:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习-只看文件一部分的head与tail</title>
+      <link>http://blog.imcompany.cn/post/linux-headtail/</link>
+      <pubDate>Mon, 30 Jan 2023 18:27:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-headtail/</guid>
+      <description>前言 开发中常常需要查看文件的部分内容，这时可以用 head 命令来查看文件开头部分与 tail 命令来查看文件结尾部分 Head head file 打印文件的前10行内容 head -n file 打印文件</description>
+    </item>
+    
     <item>
       <title>Linux命令学习之cat</title>
       <link>http://blog.imcompany.cn/post/linux-cat/</link>
