@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Mon, 30 Jan 2023 18:27:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Feb 2023 15:54:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之More and Less</title>
+      <link>http://blog.imcompany.cn/post/linux-moreless/</link>
+      <pubDate>Wed, 08 Feb 2023 15:54:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-moreless/</guid>
+      <description>前言 开发中查看日志信息过多时，可以使用linux中的 more 和 less 命令进行分页查看 More 分页显示文件内容，只可以向后翻页 more file 分页显示文件内容, 在页面使用</description>
+    </item>
+    
     <item>
       <title>Linux命令学习-只看文件一部分的head与tail</title>
       <link>http://blog.imcompany.cn/post/linux-headtail/</link>
