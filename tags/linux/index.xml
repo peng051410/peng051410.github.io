@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Mon, 30 Jan 2023 18:27:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 15:44:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令学习之wc</title>
+      <link>http://blog.imcompany.cn/post/linux-wc/</link>
+      <pubDate>Thu, 02 Mar 2023 15:44:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/linux-wc/</guid>
+      <description>前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示</description>
+    </item>
+    
     <item>
       <title>Linux命令学习-只看文件一部分的head与tail</title>
       <link>http://blog.imcompany.cn/post/linux-headtail/</link>

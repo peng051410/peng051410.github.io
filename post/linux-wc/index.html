@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Linux命令学习之More and Less - I&#39;m company</title>
+  <title>Linux命令学习之wc - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="前言 开发中查看日志信息过多时，可以使用linux中的 more 和 less 命令进行分页查看 More 分页显示文件内容，只可以向后翻页 more file 分页显示文件内容, 在页面使用" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.108.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/linux-moreless/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/linux-wc/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Linux命令学习之More and Less" />
-<meta property="og:description" content="前言 开发中查看日志信息过多时，可以使用linux中的 more 和 less 命令进行分页查看 More 分页显示文件内容，只可以向后翻页 more file 分页显示文件内容, 在页面使用" />
+<meta property="og:title" content="Linux命令学习之wc" />
+<meta property="og:description" content="前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/linux-moreless/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-02-08T15:54:00+08:00" />
-<meta property="article:modified_time" content="2023-02-10T18:43:01+08:00" />
-<meta itemprop="name" content="Linux命令学习之More and Less">
-<meta itemprop="description" content="前言 开发中查看日志信息过多时，可以使用linux中的 more 和 less 命令进行分页查看 More 分页显示文件内容，只可以向后翻页 more file 分页显示文件内容, 在页面使用"><meta itemprop="datePublished" content="2023-02-08T15:54:00+08:00" />
-<meta itemprop="dateModified" content="2023-02-10T18:43:01+08:00" />
-<meta itemprop="wordCount" content="551">
-<meta itemprop="keywords" content="tags," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux命令学习之More and Less"/>
-<meta name="twitter:description" content="前言 开发中查看日志信息过多时，可以使用linux中的 more 和 less 命令进行分页查看 More 分页显示文件内容，只可以向后翻页 more file 分页显示文件内容, 在页面使用"/>
+<meta property="og:url" content="http://blog.imcompany.cn/post/linux-wc/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-03-02T15:44:00+08:00" />
+<meta property="article:modified_time" content="2023-03-02T17:53:28+08:00" />
+<meta itemprop="name" content="Linux命令学习之wc">
+<meta itemprop="description" content="前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示"><meta itemprop="datePublished" content="2023-03-02T15:44:00+08:00" />
+<meta itemprop="dateModified" content="2023-03-02T17:53:28+08:00" />
+<meta itemprop="wordCount" content="433">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux命令学习之wc"/>
+<meta name="twitter:description" content="前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,13 +132,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Linux命令学习之More and Less</h1>
+      <h1 class="post-title">Linux命令学习之wc</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2023-02-08 </span>
-        
-          <span class="more-meta"> 约 551 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="post-time"> 2023-03-02 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 433 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -149,37 +151,27 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#more">More</a>
+    <li><a href="#wc">Wc</a>
       <ul>
-        <li><a href="#more-file">more file</a></li>
-        <li><a href="#more-n-file">more -n file</a></li>
-        <li><a href="#more-d-file">more -d file</a></li>
-        <li><a href="#more-p-file">more -p file</a></li>
-        <li><a href="#more-s-file">more -s file</a></li>
-        <li><a href="#more-plus-num-file">more +num file</a></li>
-        <li><a href="#more-f-file">more -f file</a></li>
+        <li><a href="#wc-file">wc file</a></li>
+        <li><a href="#wc-c-file">wc -c file</a></li>
+        <li><a href="#wc-w-file">wc -w file</a></li>
+        <li><a href="#wc-l-file">wc -l file</a></li>
+        <li><a href="#wc-file1-file2">wc file1 file2</a></li>
+        <li><a href="#wc-file">wc &lt; file</a></li>
+        <li><a href="#wc-l-file">wc -L file</a></li>
       </ul>
     </li>
-    <li><a href="#less">Less</a>
+    <li><a href="#疑惑">疑惑</a>
       <ul>
-        <li><a href="#less-file">less file</a></li>
-        <li><a href="#less-g-file">less -g file</a></li>
-        <li><a href="#less-n-file">less -N file</a></li>
-        <li><a href="#less-s-file">less -s file</a></li>
-        <li><a href="#less-m-file">less -M file</a></li>
-        <li><a href="#less-p-file">less -p file</a></li>
-        <li><a href="#less-plus-g-file">less +G file</a></li>
-        <li><a href="#less-e-file">less -e file</a></li>
-        <li><a href="#less-plus-f-file">less +F file</a></li>
+        <li><a href="#wc-c-与-wc-w-是如何统计的">wc -c 与 wc -w 是如何统计的</a></li>
       </ul>
     </li>
     <li><a href="#ref">REF</a>
       <ul>
-        <li><a href="#more--command--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/More_(command)?useskin=vector">more (command) - Wikipedia</a></a></li>
-        <li><a href="#more--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/more.1.html">more(1) - Linux manual page</a></a></li>
-        <li><a href="#less--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Less_(Unix)?useskin=vector">less (Unix) - Wikipedia</a></a></li>
-        <li><a href="#less--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/less.1.html">less(1) - Linux manual page</a></a></li>
-        <li><a href="#wofr06-lesspipe-lesspipe-display-more-with-less"><a href="https://github.com/wofr06/lesspipe">wofr06/lesspipe: lesspipe - display more with less</a></a></li>
+        <li><a href="#wc--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Wc_(Unix)?useskin=vector">wc (Unix) - Wikipedia</a></a></li>
+        <li><a href="#wc-how-to-display-the-number-of-lines-words-and-characters-in-separate-lines-unix-and-linux-stack-exchange"><a href="https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines">wc - How to display the number of lines, words and characters in separate lines? - Unix &amp; Linux Stack Exchange</a></a></li>
+        <li><a href="#confusion-with-the-concept-of-wc-c-and-wc-m"><a href="https://www.unix.com/unix-for-dummies-questions-and-answers/251122-confusion-concept-wc-c-wc-m.html">Confusion with the concept of wc -c and wc -m</a></a></li>
       </ul>
     </li>
   </ul>
@@ -188,66 +180,47 @@
 </div>
     <div class="post-content">
       <h2 id="前言">前言</h2>
-<p>开发中查看日志信息过多时，可以使用linux中的 <strong>more</strong> 和 <strong>less</strong> 命令进行分页查看</p>
-<h2 id="more">More</h2>
-<p>分页显示文件内容，只可以向后翻页</p>
-<h3 id="more-file">more file</h3>
-<p>分页显示文件内容, 在页面使用 <strong>空格键</strong> 进行翻页
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file.gif" alt=""></p>
-<h3 id="more-n-file">more -n file</h3>
-<p>分页显示文件内容，一页显示指定行数
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-number.gif" alt=""></p>
-<h3 id="more-d-file">more -d file</h3>
-<p>分页显示文件内容，带页面操作提示信息
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-slient.gif" alt=""></p>
-<h3 id="more-p-file">more -p file</h3>
-<p>分页显示文件内容，不进行滚动，而是直接替换页面的内容
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-p.gif" alt=""></p>
-<h3 id="more-s-file">more -s file</h3>
-<p>分页显示文件内容，多行空格按一行空格显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-blank-line.gif" alt=""></p>
-<h3 id="more-plus-num-file">more +num file</h3>
-<p>分页显示文件内容，从文件的第 <strong>n</strong> 行开始显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-start.gif" alt=""></p>
-<h3 id="more-f-file">more -f file</h3>
-<p>分页显示文件内容，不折叠长行
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-longline.gif" alt=""></p>
-<p>如上图所示，第一行这个长行按两行进行了统计</p>
-<h2 id="less">Less</h2>
-<p>分页显示文件内容，More的增强版本，支持向前向后翻页，页面操作类VI形式。less &gt; more</p>
-<h3 id="less-file">less file</h3>
-<p>分页显示文件内容，可上下(b)翻页，按行(j/k)翻
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file.gif" alt=""></p>
-<h3 id="less-g-file">less -g file</h3>
-<p>分页显示内容，只高亮单条结果(默认高亮所有匹配)，对大文件可提升性能
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-highlight-one.gif" alt=""></p>
-<h3 id="less-n-file">less -N file</h3>
-<p>分页显示内容，带行号，可用来查看源码
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-number.gif" alt=""></p>
-<h3 id="less-s-file">less -s file</h3>
-<p>分页显示文件内容，多行空格按一行空格显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-blank-line.gif" alt=""></p>
-<h3 id="less-m-file">less -M file</h3>
-<p>分页显示文件内容，底部显示更多信息(当前的进度和屏幕显示的行信息)
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-line-info.gif" alt=""></p>
-<h3 id="less-p-file">less -p file</h3>
-<p>分页显示文件内容，查询指定内容，在匹配处开始显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-search-pattern.gif" alt=""></p>
-<h3 id="less-plus-g-file">less +G file</h3>
-<p>分页显示文件内容，从文件结尾开始显示
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-from-bottom.gif" alt=""></p>
-<h3 id="less-e-file">less -e file</h3>
-<p>分页显示文件内容，到文件结尾后再翻页就直接退出
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-exit.gif" alt=""></p>
-<h3 id="less-plus-f-file">less +F file</h3>
-<p>分页显示文件内容，监控文件内容后续输出，类似于 <strong>tail -f</strong> 功能
-<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-follow.gif" alt=""></p>
+<p>在日常应用中，统计文件内容是一种常见的需求，可以通过 <strong>wc</strong> 命令来实现</p>
+<h2 id="wc">Wc</h2>
+<h3 id="wc-file">wc file</h3>
+<p>统计文件，显示行数、单词数、字节数，带文件名
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uSkm52.png" alt=""></p>
+<h3 id="wc-c-file">wc -c file</h3>
+<p>统计文件，只显示字节数
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kdVyQV.png" alt=""></p>
+<h3 id="wc-w-file">wc -w file</h3>
+<p>统计文件，只显示单词数
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/qRx3ta.png" alt=""></p>
+<h3 id="wc-l-file">wc -l file</h3>
+<p>统计文件，只显示文件行数
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/knyLfa.png" alt=""></p>
+<h3 id="wc-file1-file2">wc file1 file2</h3>
+<p>统计多个文件，显示汇总信息
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/2FhCi3.png" alt=""></p>
+<h3 id="wc-file">wc &lt; file</h3>
+<p>统计文件，显示行数、单词数、字节数，不带文件，便于shell脚本后续处理
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/aQe3Of.png" alt=""></p>
+<h3 id="wc-l-file">wc -L file</h3>
+<p>打印出文件行最长的节数
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pZaMqM.png" alt=""></p>
+<h2 id="疑惑">疑惑</h2>
+<h3 id="wc-c-与-wc-w-是如何统计的">wc -c 与 wc -w 是如何统计的</h3>
+<p>在统计 <strong>hello.txt</strong> 时， <strong>wc -c</strong> 的结果为 <strong>55</strong> ， <strong>wc -m</strong> 的结果为 <strong>45</strong> ，为什么统计的结果不一样？这个文本中包含了中文内容，猜测和这个有关</p>
+<h4 id="验证是否与中文有关">验证是否与中文有关</h4>
+<p>这个好办，建一个不带中文的文件，验证如下
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lGB8Hn.png" alt=""></p>
+<p>可以看到统计的结果是一样的</p>
+<h4 id="中文是如何统计的">中文是如何统计的?</h4>
+<p>这个就涉及到编码的问题了，先用 <a href="https://github.com/sharkdp/hexyl">hexyl</a> 查看一下，字节的总数为55，但是在进行字符统计时，使用的<a href="https://en.wikipedia.org/wiki/Unicode?useskin=vector">unicode</a>编码将3个字节计算为1个字符(例如 <strong>好</strong> 被编码成 <strong>E5 A5 BD</strong> )，这就对上了，哈哈!
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yCMZHP.png" alt=""></p>
+<blockquote>
+<p>编码是个大话题，后续好好学习一下</p>
+</blockquote>
 <h2 id="ref">REF</h2>
-<h3 id="more--command--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/More_(command)?useskin=vector">more (command) - Wikipedia</a></h3>
-<h3 id="more--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/more.1.html">more(1) - Linux manual page</a></h3>
-<h3 id="less--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Less_(Unix)?useskin=vector">less (Unix) - Wikipedia</a></h3>
-<h3 id="less--1--linux-manual-page"><a href="https://man7.org/linux/man-pages/man1/less.1.html">less(1) - Linux manual page</a></h3>
-<h3 id="wofr06-lesspipe-lesspipe-display-more-with-less"><a href="https://github.com/wofr06/lesspipe">wofr06/lesspipe: lesspipe - display more with less</a></h3>
+<h3 id="wc--unix--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/Wc_(Unix)?useskin=vector">wc (Unix) - Wikipedia</a></h3>
+<h3 id="wc-how-to-display-the-number-of-lines-words-and-characters-in-separate-lines-unix-and-linux-stack-exchange"><a href="https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines">wc - How to display the number of lines, words and characters in separate lines? - Unix &amp; Linux Stack Exchange</a></h3>
+<p>Captured On: <!-- raw HTML omitted --><!-- raw HTML omitted -->[2023-03-02 Thu 16:28]<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="confusion-with-the-concept-of-wc-c-and-wc-m"><a href="https://www.unix.com/unix-for-dummies-questions-and-answers/251122-confusion-concept-wc-c-wc-m.html">Confusion with the concept of wc -c and wc -m</a></h3>
 
     </div>
 
@@ -259,7 +232,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2023-02-10
+        2023-03-02
         
     </span>
   </p>
@@ -285,16 +258,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/tags/">tags</a>
+          <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/linux-wc/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Linux命令学习之wc</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/linux-headtail/">
-            <span class="next-text nav-default">Linux命令学习-只看文件一部分的head与tail</span>
+        
+        <a class="next" href="/post/linux-moreless/">
+            <span class="next-text nav-default">Linux命令学习之More and Less</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
