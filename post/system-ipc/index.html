@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>性能的本质IPC之动手验证 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="前言 最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验 术语说明 IPC 本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.108.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/system-ipc/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="性能的本质IPC之动手验证" />
+<meta property="og:description" content="前言 最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验 术语说明 IPC 本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/system-ipc/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-25T15:42:00+08:00" />
+<meta property="article:modified_time" content="2023-05-25T19:28:34+08:00" />
+<meta itemprop="name" content="性能的本质IPC之动手验证">
+<meta itemprop="description" content="前言 最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验 术语说明 IPC 本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可"><meta itemprop="datePublished" content="2023-05-25T15:42:00+08:00" />
+<meta itemprop="dateModified" content="2023-05-25T19:28:34+08:00" />
+<meta itemprop="wordCount" content="1144">
+<meta itemprop="keywords" content="linux,," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="性能的本质IPC之动手验证"/>
+<meta name="twitter:description" content="前言 最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验 术语说明 IPC 本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">性能的本质IPC之动手验证</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-05-25 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 1144 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#术语说明">术语说明</a>
+      <ul>
+        <li><a href="#ipc">IPC</a></li>
+        <li><a href="#nop">NOP</a></li>
+      </ul>
+    </li>
+    <li><a href="#实验代码下载">实验代码下载</a></li>
+    <li><a href="#实验机器信息">实验机器信息</a></li>
+    <li><a href="#实验验证">实验验证</a>
+      <ul>
+        <li><a href="#测试nop指令">测试nop指令</a></li>
+        <li><a href="#测试pause指令">测试pause指令</a></li>
+        <li><a href="#测试nop指令跑两份各自绑定到同一物理核">测试nop指令跑两份各自绑定到同一物理核</a></li>
+        <li><a href="#测试pause指令跑两份各自绑定到同一物理核">测试pause指令跑两份各自绑定到同一物理核</a></li>
+      </ul>
+    </li>
+    <li><a href="#待解答问题">待解答问题</a>
+      <ul>
+        <li><a href="#为什么死循环里要写这么多-pause-写一次行不行">为什么死循环里要写这么多 pause? 写一次行不行？</a></li>
+        <li><a href="#有什么方式可以查看当前cpu的流水线长度吗">有什么方式可以查看当前CPU的流水线长度吗？</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#番外">番外</a>
+      <ul>
+        <li><a href="#云机器动态开超线程">云机器动态开超线程</a></li>
+        <li><a href="#尝试使用mac测试">尝试使用MAC测试</a></li>
+        <li><a href="#虚拟上是不支持ipc结果显示的">虚拟上是不支持IPC结果显示的</a></li>
+      </ul>
+    </li>
+    <li><a href="#ref">Ref</a>
+      <ul>
+        <li><a href="#instructions-per-cycle-wikipedia"><a href="https://en.wikipedia.org/wiki/Instructions_per_cycle?useskin=vector">Instructions per cycle - Wikipedia</a></a></li>
+        <li><a href="#nop--code--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/NOP_(code)?useskin=vector">NOP (code) - Wikipedia</a></a></li>
+        <li><a href="#x86-instruction-listings-wikipedia"><a href="https://en.wikipedia.org/wiki/X86_instruction_listings?useskin=vector">x86 instruction listings - Wikipedia</a></a></li>
+        <li><a href="#说说如何判断-linux-是否开启了超线程-掘金"><a href="https://juejin.cn/post/6910489270054715400">说说如何判断 Linux 是否开启了超线程 - 掘金</a></a></li>
+        <li><a href="#perf-ipc以及cpu性能-plantegg"><a href="https://plantegg.github.io/2021/05/16/Perf_IPC%E4%BB%A5%E5%8F%8ACPU%E5%88%A9%E7%94%A8%E7%8E%87/">Perf IPC以及CPU性能 | plantegg</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+<p>最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验</p>
+<h2 id="术语说明">术语说明</h2>
+<h3 id="ipc">IPC</h3>
+<p>本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可执行的指令数，常用来做为评判处理器性能的指标</p>
+<h3 id="nop">NOP</h3>
+<p>no operation, 在指令集中表示一个指令不改变所执行程序的 register，status flag，也就是不要进行上下文的切换，CPU的上下文切换是有时间开销的</p>
+<h2 id="实验代码下载">实验代码下载</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/plantegg/programmer_case
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="实验机器信息">实验机器信息</h2>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-lscpu.png"/>
+</figure>
+
+<blockquote>
+<p>实验只可在物理机下进行</p>
+</blockquote>
+<h2 id="实验验证">实验验证</h2>
+<h3 id="测试nop指令">测试nop指令</h3>
+<h4 id="编译测试代码">编译测试代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gcc ./nop.c -o nop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="执行测试">执行测试</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">perf stat ./nop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>现象</p>
+<p>IPC跑到3.79</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-alone-3.79.png"/>
+    </figure>
+
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>问题</p>
+<ol>
+<li>我记得第一次执行IPC好像跑到了4(未改变代码)，当时忘记截图了，后续测试的都到不了4了</li>
+<li>IPC与perf执行时间长短有关吗？
+<ol>
+<li>好像是无关的，保证cpu 100%后就可以停止进行查看</li>
+</ol>
+</li>
+<li>IPC怎么接近4？
+<ol>
+<li>改代码增加nop指令的数量，加到将近700个，IPC达到3.97</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="测试pause指令">测试pause指令</h3>
+<h4 id="编译测试代码">编译测试代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gcc ./pause.c -o pause
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="执行测试">执行测试</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">perf stat ./pause
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>现象</p>
+<p>IPC只跑到了0.11</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-pause-alone-0.11.png"/>
+    </figure>
+
+</li>
+</ul>
+<h3 id="测试nop指令跑两份各自绑定到同一物理核">测试nop指令跑两份各自绑定到同一物理核</h3>
+<blockquote>
+<p>如何判断HT？通过查看/proc/cpuinfo信息，
+如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT</p>
+</blockquote>
+<h4 id="执行测试">执行测试</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">taskset -c <span class="m">0</span> perf stat ./nop
+</span></span><span class="line"><span class="cl">taskset -c <span class="m">24</span> perf stat ./nop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>现象</p>
+<p>绑定在0号CPU上的IPC为2.42，绑定到24号CPU上的IPC为1.48，这两个CPU同属于一个物理核</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-bind0.png"/>
+    </figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-bind24.png"/>
+    </figure>
+
+<p>第一次测试时两个程序都运行在同一物理核上，IPC减半了</p>
+<blockquote>
+<p>(2.42+1.48)/(3.79*2)=0.51</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="执行测试2-换了另一组同物理核">执行测试2（换了另一组同物理核）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">taskset -c <span class="m">1</span> perf stat ./nop
+</span></span><span class="line"><span class="cl">taskset -c <span class="m">25</span> perf stat ./nop
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>现象</p>
+<p>绑定在1号CPU上的IPC为1.94，绑定到25号CPU上的IPC为1.48，使用效率不到一半了</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-bind1.png"/>
+    </figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-bind25.png"/>
+    </figure>
+
+</li>
+</ul>
+<h3 id="测试pause指令跑两份各自绑定到同一物理核">测试pause指令跑两份各自绑定到同一物理核</h3>
+<h4 id="执行测试">执行测试</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">taskset -c <span class="m">0</span> perf stat ./pause
+</span></span><span class="line"><span class="cl">taskset -c <span class="m">24</span> perf stat ./pause
+</span></span></code></pre></td></tr></table>
+</div>
+</div><!-- raw HTML omitted -->
+<ul>
+<li>
+<p>现象</p>
+<p>绑定在0号CPU上的IPC为0.09，绑定到24号CPU上的IPC为0.09
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-pause-bind0.png" alt=""></p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-pause-bind24.png"/>
+    </figure>
+
+</li>
+</ul>
+<h2 id="待解答问题">待解答问题</h2>
+<h3 id="为什么死循环里要写这么多-pause-写一次行不行">为什么死循环里要写这么多 pause? 写一次行不行？</h3>
+<p>我尝试了改代码只写一次pause，查看IPC也没什么变化，我理解是写一次的话流水线不饱和，但是不是有死循环呢吗？</p>
+<h3 id="有什么方式可以查看当前cpu的流水线长度吗">有什么方式可以查看当前CPU的流水线长度吗？</h3>
+<p>待补充</p>
+<h2 id="总结">总结</h2>
+<ol>
+<li>学习了perf命令</li>
+<li>学习了taskset命令</li>
+<li>学习了IPC对性能的影响</li>
+<li>学习了超线程相关信息</li>
+<li>上面学习到的都是需要后续深入研究的</li>
+</ol>
+<h2 id="番外">番外</h2>
+<h3 id="云机器动态开超线程">云机器动态开超线程</h3>
+<p>在网上搜索了linux动态开启HT的内容，找到一个<a href="https://cloud.tencent.com/developer/article/1720778">脚本</a>，在购买的云主机上尝试了一下不生效</p>
+<h3 id="尝试使用mac测试">尝试使用MAC测试</h3>
+<p>尝试了一下在MAC上是不是可以做这个实验，目前的结论是perf工具mac上可以使用<a href="https://github.com/gperftools/gperftools">gerftools</a>，但是绑定指定核的命令 <strong>taskset</strong> 没有找到对应的工具，mac上好像不支持</p>
+<h3 id="虚拟上是不支持ipc结果显示的">虚拟上是不支持IPC结果显示的</h3>
+<p>直接上图
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vmware-ubuntu-not-support-perf-ipc.png" alt=""></p>
+<h2 id="ref">Ref</h2>
+<h3 id="instructions-per-cycle-wikipedia"><a href="https://en.wikipedia.org/wiki/Instructions_per_cycle?useskin=vector">Instructions per cycle - Wikipedia</a></h3>
+<h3 id="nop--code--wikipedia-useskin-vector"><a href="https://en.wikipedia.org/wiki/NOP_(code)?useskin=vector">NOP (code) - Wikipedia</a></h3>
+<h3 id="x86-instruction-listings-wikipedia"><a href="https://en.wikipedia.org/wiki/X86_instruction_listings?useskin=vector">x86 instruction listings - Wikipedia</a></h3>
+<h3 id="说说如何判断-linux-是否开启了超线程-掘金"><a href="https://juejin.cn/post/6910489270054715400">说说如何判断 Linux 是否开启了超线程 - 掘金</a></h3>
+<h3 id="perf-ipc以及cpu性能-plantegg"><a href="https://plantegg.github.io/2021/05/16/Perf_IPC%E4%BB%A5%E5%8F%8ACPU%E5%88%A9%E7%94%A8%E7%8E%87/">Perf IPC以及CPU性能 | plantegg</a></h3>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-05-25
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags//"></a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/linux-wc/">
+            <span class="next-text nav-default">Linux命令学习之wc</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
