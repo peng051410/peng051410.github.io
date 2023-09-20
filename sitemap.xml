@@ -2,14 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2023-05-25T19:32:04+08:00</lastmod>
+    <loc>http://blog.imcompany.cn/tags/go/</loc>
+    <lastmod>2023-09-20T11:33:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/learn-go/</loc>
+    <lastmod>2023-09-20T11:33:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2023-09-20T11:33:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2023-09-20T11:33:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2023-09-20T11:33:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
     <lastmod>2023-05-25T19:32:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -31,20 +59,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/linux/</loc>
-    <lastmod>2023-05-25T19:32:04+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2023-05-25T19:32:04+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
     <lastmod>2023-05-25T19:32:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
