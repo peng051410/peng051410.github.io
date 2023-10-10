@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 14 Dec 2022 16:23:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 11:35:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MAC本地编译go源码记录</title>
+      <link>http://blog.imcompany.cn/post/go-compile-source-code/</link>
+      <pubDate>Wed, 20 Sep 2023 11:35:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/go-compile-source-code/</guid>
+      <description>说明 近期在学习GO语言，想深入研读一下GO的源码，第一步就要是可以在本地正常的编译源代码，此文对MAC上go源的安装进行记录 下载go源码 1 git</description>
+    </item>
+    
     <item>
       <title>如何使用Java JDK17版本OpenJ9 JVM</title>
       <link>http://blog.imcompany.cn/post/how-to-use-jdk17-j9jvm/</link>

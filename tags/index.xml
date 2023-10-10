@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 19 Sep 2023 16:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 11:35:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tags</title>
+      <link>http://blog.imcompany.cn/tags/tags/</link>
+      <pubDate>Wed, 20 Sep 2023 11:35:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/tags/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>go</title>
       <link>http://blog.imcompany.cn/tags/go/</link>
@@ -41,15 +50,6 @@
       <pubDate>Wed, 08 Feb 2023 15:54:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/cmd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tags</title>
-      <link>http://blog.imcompany.cn/tags/tags/</link>
-      <pubDate>Wed, 14 Dec 2022 16:23:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/tags/tags/</guid>
       <description></description>
     </item>
     
