@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 20 Sep 2023 11:35:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Nov 2023 16:22:20 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 第1期</title>
+      <link>http://blog.imcompany.cn/post/peng-week1/</link>
+      <pubDate>Thu, 30 Nov 2023 16:22:20 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/peng-week1/</guid>
+      <description>Read How to Choose a Tool Captured On: [2023-11-20 Mon 15:12] 如何选择工具，作者认为可以从以下方面进行： 确定需求 工具必备功能 好用但不是必备的功能 非必备功能 搜寻工具 上网搜索 找人推荐 分</description>
+    </item>
+    
+    <item>
+      <title>Logseq常用插件</title>
+      <link>http://blog.imcompany.cn/post/logseq-plugin/</link>
+      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/logseq-plugin/</guid>
+      <description>前言 以此文章记录我常用的Logseq plugin，常用常更新 Readwise Official Plugin Logseq Anki Sync</description>
+    </item>
+    
     <item>
       <title>MAC本地编译go源码记录</title>
       <link>http://blog.imcompany.cn/post/go-compile-source-code/</link>
@@ -185,7 +203,7 @@
       <pubDate>Mon, 05 Sep 2022 17:45:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/vscode-plugin/</guid>
-      <description>必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指</description>
+      <description>必备 vscodevim.vim 在VSCode中使用VIM angelo-breuer.clock 在状态栏增加时间显示 redguardtoo.matchit Tag匹配，在代码结构中快速跳转 kahole.magit 类Emacs magit chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .</description>
     </item>
     
     <item>

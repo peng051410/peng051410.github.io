@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logseq on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/logseq/</link>
+    <description>Recent content in logseq on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Fri, 24 Nov 2023 19:07:41 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/logseq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logseq常用插件</title>
+      <link>http://blog.imcompany.cn/post/logseq-plugin/</link>
+      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/logseq-plugin/</guid>
+      <description>前言 以此文章记录我常用的Logseq plugin，常用常更新 Readwise Official Plugin Logseq Anki Sync</description>
+    </item>
+    
+  </channel>
+</rss>

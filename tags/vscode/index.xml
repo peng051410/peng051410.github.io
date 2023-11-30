@@ -14,7 +14,7 @@
       <pubDate>Mon, 05 Sep 2022 17:45:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/vscode-plugin/</guid>
-      <description>必备 angelo-breuer.clock 在状态栏增加时间显示 chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .ignore文件支持 wmaurer.change-case 快速切换选择单词的格式，支持驼峰，大小写等 lucax88x.codeacejumper 快速跳转到指</description>
+      <description>必备 vscodevim.vim 在VSCode中使用VIM angelo-breuer.clock 在状态栏增加时间显示 redguardtoo.matchit Tag匹配，在代码结构中快速跳转 kahole.magit 类Emacs magit chadalen.vscode-jetbrains-icon-theme 类JetBrains的文件图标 codezombiech.gitignore .</description>
     </item>
     
   </channel>

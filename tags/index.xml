@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 20 Sep 2023 11:35:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Nov 2023 16:22:20 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>weekly</title>
+      <link>http://blog.imcompany.cn/tags/weekly/</link>
+      <pubDate>Thu, 30 Nov 2023 16:22:20 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/weekly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logseq</title>
+      <link>http://blog.imcompany.cn/tags/logseq/</link>
+      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/logseq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plugin</title>
+      <link>http://blog.imcompany.cn/tags/plugin/</link>
+      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/plugin/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tags</title>
       <link>http://blog.imcompany.cn/tags/tags/</link>
@@ -167,15 +194,6 @@
       <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>plugin</title>
-      <link>http://blog.imcompany.cn/tags/plugin/</link>
-      <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/tags/plugin/</guid>
       <description></description>
     </item>
     
