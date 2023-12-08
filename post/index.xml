@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 30 Nov 2023 16:22:20 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Dec 2023 11:40:07 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这些年使用过的AI工具们</title>
+      <link>http://blog.imcompany.cn/post/ai-tools/</link>
+      <pubDate>Fri, 08 Dec 2023 11:40:07 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
+      <description>GitHub Copilot · Your AI pair programmer 微软的AI编程助手 AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI Stable Diffusion 本地浏览器UI Ollama 本地运行大模型的Mac APP，搭配 ellama-emacs 食用更佳 Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file. Mozilla发</description>
+    </item>
+    
+    <item>
+      <title>Anki常用插件集合</title>
+      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
+      <pubDate>Tue, 05 Dec 2023 11:24:35 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
+      <description>Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接在anki中配合 YouGlish 学习英语单词真实场景发音 这位作者还开发了一些其它功能的anki插件 code 38866997 AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三</description>
+    </item>
+    
+    <item>
+      <title>众乐乐-weekly 第2期</title>
+      <link>http://blog.imcompany.cn/post/peng-week2/</link>
+      <pubDate>Tue, 05 Dec 2023 11:02:04 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/peng-week2/</guid>
+      <description>Read You are not the cause of everything that happens to you, but you are responsible for how you respond to everything that happens to you From JamesClear 321 weekly 别了，华清嘉园 Captured On: [2023-12-05 Tue 10:25] 20年，见证互联网的兴衰，连带着房地产的兴衰 Idea APP 使用案例</description>
+    </item>
+    
     <item>
       <title>众乐乐-weekly 第1期</title>
       <link>http://blog.imcompany.cn/post/peng-week1/</link>

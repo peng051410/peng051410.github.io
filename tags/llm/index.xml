@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>llm on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/llm/</link>
+    <description>Recent content in llm on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Fri, 08 Dec 2023 11:40:07 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这些年使用过的AI工具们</title>
+      <link>http://blog.imcompany.cn/post/ai-tools/</link>
+      <pubDate>Fri, 08 Dec 2023 11:40:07 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
+      <description>GitHub Copilot · Your AI pair programmer 微软的AI编程助手 AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI Stable Diffusion 本地浏览器UI Ollama 本地运行大模型的Mac APP，搭配 ellama-emacs 食用更佳 Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file. Mozilla发</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anki on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/anki/</link>
+    <description>Recent content in anki on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Tue, 05 Dec 2023 11:24:35 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/anki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anki常用插件集合</title>
+      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
+      <pubDate>Tue, 05 Dec 2023 11:24:35 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
+      <description>Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接在anki中配合 YouGlish 学习英语单词真实场景发音 这位作者还开发了一些其它功能的anki插件 code 38866997 AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三</description>
+    </item>
+    
+  </channel>
+</rss>

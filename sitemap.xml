@@ -2,43 +2,113 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/tags/ai/</loc>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2023-11-30T16:22:20+08:00</lastmod>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/gpt/</loc>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2023-11-30T16:22:30+08:00</lastmod>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/llm/</loc>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2023-11-30T16:22:30+08:00</lastmod>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2023-11-30T16:22:30+08:00</lastmod>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/tool/</loc>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/ai-tools/</loc>
+    <lastmod>2023-12-08T11:40:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/anki/</loc>
+    <lastmod>2023-12-05T11:24:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/anki/</loc>
+    <lastmod>2023-12-05T11:24:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/anki-plugins/</loc>
+    <lastmod>2023-12-05T11:24:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/plugin/</loc>
+    <lastmod>2023-12-05T11:24:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/weekly/</loc>
-    <lastmod>2023-11-30T16:22:20+08:00</lastmod>
+    <lastmod>2023-12-05T11:02:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/weekly/</loc>
-    <lastmod>2023-11-30T16:22:20+08:00</lastmod>
+    <lastmod>2023-12-05T11:02:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/peng-week2/</loc>
+    <lastmod>2023-12-05T11:02:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -59,13 +129,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/logseq-plugin/</loc>
-    <lastmod>2023-11-24T19:07:41+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/plugin/</loc>
     <lastmod>2023-11-24T19:07:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -422,13 +485,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/tool/</loc>
-    <lastmod>2023-10-10T10:06:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/post/mac-soft/</loc>
     <lastmod>2021-10-28T19:08:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -696,14 +752,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/chrome/</loc>
-    <lastmod>2023-10-10T10:06:51+08:00</lastmod>
+    <lastmod>2023-12-05T11:14:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</loc>
-    <lastmod>2023-10-10T10:06:51+08:00</lastmod>
+    <lastmod>2023-12-05T11:14:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
