@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>year on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/year/</link>
+    <description>Recent content in year on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Tue, 26 Dec 2023 10:44:15 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/year/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023年终总结</title>
+      <link>http://blog.imcompany.cn/post/2023-sum-year/</link>
+      <pubDate>Tue, 26 Dec 2023 10:44:15 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/2023-sum-year/</guid>
+      <description>今年开始写年终总结 开始读书 开始锻炼 开始认真学英语 开始系统学计算机基础 生活开始做减法</description>
+    </item>
+    
+  </channel>
+</rss>

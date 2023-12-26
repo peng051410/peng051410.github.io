@@ -2,29 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/post/2023-sum-year/</loc>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2023-12-21T20:13:25+08:00</lastmod>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2023-12-21T20:13:25+08:00</lastmod>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2023-12-21T20:13:25+08:00</lastmod>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/sum/</loc>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2023-12-21T20:13:25+08:00</lastmod>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/year/</loc>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/year/</loc>
+    <lastmod>2023-12-26T10:44:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
