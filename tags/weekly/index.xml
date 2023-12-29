@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 21 Dec 2023 20:13:25 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Dec 2023 16:20:30 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 第4期</title>
+      <link>http://blog.imcompany.cn/post/peng-week4/</link>
+      <pubDate>Fri, 29 Dec 2023 16:20:30 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/peng-week4/</guid>
+      <description>Read 📖 方便的代价 万事皆有两面性，方便的代价有哪些呢？ 不再理解过程，只关注结果，弱化了与目标的连接感 过度依赖，不可控 放大了欲望 难以长时间集中注意</description>
+    </item>
+    
     <item>
       <title>众乐乐-weekly 第3期</title>
       <link>http://blog.imcompany.cn/post/peng-week3/</link>
-      <pubDate>Thu, 21 Dec 2023 20:13:25 +0800</pubDate>
+      <pubDate>Fri, 29 Dec 2023 15:48:35 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/peng-week3/</guid>
       <description>Read Stop &amp;ldquo;Springifying&amp;rdquo; your unit tests Captured On: [2023-12-12 Tue 10:34] 做单元测试真的需要Spring的Context吗? 只是测试一个Service，需要引入Context吗？Spring只</description>
