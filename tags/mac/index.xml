@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/mac/</link>
+    <description>Recent content in mac on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Fri, 21 Sep 2018 10:02:49 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些提高效率的Alfred Workflow</title>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
+      <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
+      <description>Alfred Browser Toolbox Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方</description>
+    </item>
+    
+  </channel>
+</rss>
