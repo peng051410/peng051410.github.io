@@ -3,28 +3,105 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2024-02-27T16:17:17+08:00</lastmod>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2024-02-27T16:17:17+08:00</lastmod>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2024-02-27T16:17:17+08:00</lastmod>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/srt/</loc>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2024-02-27T16:17:17+08:00</lastmod>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/ted/</loc>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/video/</loc>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/ted-srt-video-not-match/</loc>
+    <lastmod>2024-03-20T09:59:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/movie/</loc>
+    <lastmod>2024-03-08T11:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/movie/</loc>
+    <lastmod>2024-03-08T11:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/video/</loc>
+    <lastmod>2024-03-08T11:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/na-xie-videos/</loc>
+    <lastmod>2024-03-08T11:18:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/speech/</loc>
+    <lastmod>2024-03-08T18:17:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/speech/</loc>
+    <lastmod>2024-03-08T18:17:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/speech/</loc>
+    <lastmod>2024-03-08T18:17:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -46,34 +123,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/peng-week8/</loc>
     <lastmod>2024-02-27T16:17:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/movie/</loc>
-    <lastmod>2024-02-04T11:29:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/movie/</loc>
-    <lastmod>2024-02-04T11:29:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/video/</loc>
-    <lastmod>2024-02-04T11:29:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/na-xie-videos/</loc>
-    <lastmod>2024-02-04T11:29:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
