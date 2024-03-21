@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>解决下载后的TED视频与字幕时间对不上的问题 - I&#39;m company</title>
+  <title>Emacs问题之为什么org-mode中的imenu不好使了 - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="问题 准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样 此时说话人刚讲到第7" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="问题 在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.119.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/ted-srt-video-not-match/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/emacs-imenu-issue/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="解决下载后的TED视频与字幕时间对不上的问题" />
-<meta property="og:description" content="问题 准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样 此时说话人刚讲到第7" />
+<meta property="og:title" content="Emacs问题之为什么org-mode中的imenu不好使了" />
+<meta property="og:description" content="问题 在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/ted-srt-video-not-match/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/emacs-imenu-issue/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2024-03-20T09:59:04+08:00" />
-<meta itemprop="name" content="解决下载后的TED视频与字幕时间对不上的问题">
-<meta itemprop="description" content="问题 准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样 此时说话人刚讲到第7">
-<meta itemprop="dateModified" content="2024-03-20T09:59:04+08:00" />
-<meta itemprop="wordCount" content="357">
-<meta itemprop="keywords" content="ted,srt," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="解决下载后的TED视频与字幕时间对不上的问题"/>
-<meta name="twitter:description" content="问题 准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样 此时说话人刚讲到第7"/>
+<meta property="article:modified_time" content="2024-03-21T17:48:07+08:00" />
+<meta itemprop="name" content="Emacs问题之为什么org-mode中的imenu不好使了">
+<meta itemprop="description" content="问题 在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在">
+<meta itemprop="dateModified" content="2024-03-21T17:48:07+08:00" />
+<meta itemprop="wordCount" content="504">
+<meta itemprop="keywords" content="emacs,issue," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs问题之为什么org-mode中的imenu不好使了"/>
+<meta name="twitter:description" content="问题 在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,15 +136,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">解决下载后的TED视频与字幕时间对不上的问题</h1>
+      <h1 class="post-title">Emacs问题之为什么org-mode中的imenu不好使了</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2024-03-20 </span>
+        <span class="post-time"> 2024-03-21 </span>
         <div class="post-category">
-            <a href="/categories/video/"> video </a>
+            <a href="/categories/emacs/"> emacs </a>
             </div>
-          <span class="more-meta"> 约 357 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 504 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -155,37 +155,22 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#问题">问题</a></li>
-    <li><a href="#定位">定位</a></li>
-    <li><a href="#解决">解决</a></li>
+    <li><a href="#排查">排查</a></li>
+    <li><a href="#结论">结论</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
       <h2 id="问题">问题</h2>
-<p>准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kyLMx7.png"/>
+<p>在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在，因为我也是小白，使用了陈斌大神的Emacs配置，还配置了懒猫的eaf-framework</p>
+<h2 id="排查">排查</h2>
+<p>在没配置eaf-framework时，imenu是可以正常使用的，配置后就不好使了，所以一度怀疑是配置eaf的问题，但是eaf的功能我还要使用，所以陷入的两难的境地，一直就这么先忍着不依赖这个imenu，而是使用ivy进行搜索。先前也调用了 toggle-debug-on-error 命令进行调试，但是也没看出来个所以然。今天想着再试试，还是不行，在结果页面显示了一句提示信息&quot;No items suitable for an index found in this buffer&quot;，于是按这个信息google了一下，找到的结果比较少，但是 <a href="https://github.com/bmag/imenu-list/issues/51">bmag/imenu-list的这个issue</a> 讨论的过程给了我新的解决步骤，关键的步骤就是要查看一下当前buffer使用的imenu索引方法 <strong>imenu-default-create-index-function</strong> ，在有问题的org file中查看了这个变量的值为 <strong>my-imenu-create-index-function-no-org-link</strong> , 很明显这个hack过的，根据提示找到了源码，先注释掉验证一下，发现可以了，真是高兴极了。</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/B1RvZP.png"/>
 </figure>
 
-<p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vMjSRG.png" alt="">
-此时说话人刚讲到第7秒钟，但是字幕已经显示到了11秒钟的内容，很奇怪，所有的视频文件与字幕文件都是从官网下载来的，用了其它的工具也试了，确保下载的文件都是正确的</p>
-<h2 id="定位">定位</h2>
-<p>换了个浏览器重新查看TED上的对应视频，发现视频开头播放了5s钟的TED广告，其实就是TED的开场内容</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ARJVmy.png"/>
-</figure>
-
-<p>在下载工具进行下载时，会把这5s的开场也给下载下来，而TED官方字幕是从正片开始计算的时间，这就导致了字幕与声音对应不上的问题</p>
-<h2 id="解决">解决</h2>
-<p>找到问题就好办了，只需要把下载下来的视频的前5s截取下来或者从第5s开始进行转换视频就可以了，这时候就要祭出 ffmpeg 大法，命令如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -ss <span class="s2">&#34;00:00:05&#34;</span> -i ted.mp4 -i ted.srt -vcodec copy -acodec copy ted.mkv
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再播放截取的视频，正常了，又可以愉快的学英语了</p>
+<h2 id="结论">结论</h2>
+<p>问题解决不了先放一放，万一哪天有灵感了呢</p>
 
     </div>
 
@@ -197,7 +182,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2024-03-20
+        2024-03-21
         
     </span>
   </p>
@@ -223,17 +208,13 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/ted/">ted</a>
-          <a href="/tags/srt/">srt</a>
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/issue/">issue</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/emacs-imenu-issue/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Emacs问题之为什么org-mode中的imenu不好使了</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/na-xie-videos/">
-            <span class="next-text nav-default">那些被推荐的Video</span>
+        
+        <a class="next" href="/post/ted-srt-video-not-match/">
+            <span class="next-text nav-default">解决下载后的TED视频与字幕时间对不上的问题</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

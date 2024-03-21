@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 20 Mar 2024 09:59:04 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2024 17:48:07 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs问题之为什么org-mode中的imenu不好使了</title>
+      <link>http://blog.imcompany.cn/post/emacs-imenu-issue/</link>
+      <pubDate>Thu, 21 Mar 2024 17:48:07 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/emacs-imenu-issue/</guid>
+      <description>问题 在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在</description>
+    </item>
+    
     <item>
       <title>解决下载后的TED视频与字幕时间对不上的问题</title>
       <link>http://blog.imcompany.cn/post/ted-srt-video-not-match/</link>
