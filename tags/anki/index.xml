@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 05 Dec 2023 11:24:35 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/anki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 14:54:36 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/anki/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anki常用插件集合</title>
       <link>http://blog.imcompany.cn/post/anki-plugins/</link>
-      <pubDate>Tue, 05 Dec 2023 11:24:35 +0800</pubDate>
+      <pubDate>Mon, 15 Apr 2024 14:54:36 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
-      <description>Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接在anki中配合 YouGlish 学习英语单词真实场景发音 这位作者还开发了一些其它功能的anki插件 code 38866997 AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三</description>
+      <description>AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki code 2055492159 Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接</description>
     </item>
     
   </channel>
