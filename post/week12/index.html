@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="Read 📖 Tools 🧰 ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers 聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下: 快速搜索 智能跳转 命令板" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="Read 📖 On the origins of DS_store MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -40,18 +40,18 @@
 
 
 <meta property="og:title" content="众乐乐-weekly 第12期" />
-<meta property="og:description" content="Read 📖 Tools 🧰 ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers 聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下: 快速搜索 智能跳转 命令板" />
+<meta property="og:description" content="Read 📖 On the origins of DS_store MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/week12/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-04-16T16:20:00+08:00" />
-<meta property="article:modified_time" content="2024-05-21T19:50:15+08:00" />
+<meta property="article:modified_time" content="2024-07-05T11:23:51+08:00" />
 <meta itemprop="name" content="众乐乐-weekly 第12期">
-<meta itemprop="description" content="Read 📖 Tools 🧰 ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers 聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下: 快速搜索 智能跳转 命令板"><meta itemprop="datePublished" content="2024-04-16T16:20:00+08:00" />
-<meta itemprop="dateModified" content="2024-05-21T19:50:15+08:00" />
-<meta itemprop="wordCount" content="116">
+<meta itemprop="description" content="Read 📖 On the origins of DS_store MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发"><meta itemprop="datePublished" content="2024-04-16T16:20:00+08:00" />
+<meta itemprop="dateModified" content="2024-07-05T11:23:51+08:00" />
+<meta itemprop="wordCount" content="493">
 <meta itemprop="keywords" content="weekly," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="众乐乐-weekly 第12期"/>
-<meta name="twitter:description" content="Read 📖 Tools 🧰 ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers 聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下: 快速搜索 智能跳转 命令板"/>
+<meta name="twitter:description" content="Read 📖 On the origins of DS_store MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -143,7 +143,7 @@
         <div class="post-category">
             <a href="/categories/weekly/"> weekly </a>
             </div>
-          <span class="more-meta"> 约 116 字 </span>
+          <span class="more-meta"> 约 493 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -154,7 +154,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#read">Read 📖</a></li>
+    <li><a href="#read">Read 📖</a>
+      <ul>
+        <li><a href="#on-the-origins-of-ds-store"><a href="https://www.arno.org/on-the-origins-of-ds-store">On the origins of DS_store</a></a></li>
+      </ul>
+    </li>
     <li><a href="#tools">Tools 🧰</a>
       <ul>
         <li><a href="#ahrm-sioyek-sioyek-is-a-pdf-viewer-with-a-focus-on-textbooks-and-research-papers"><a href="https://github.com/ahrm/sioyek">ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers</a></a></li>
@@ -169,7 +173,33 @@
 </div>
     <div class="post-content">
       <h2 id="read">Read 📖</h2>
-<h2 id="tools">Tools 🧰</h2>
+<h3 id="on-the-origins-of-ds-store"><a href="https://www.arno.org/on-the-origins-of-ds-store">On the origins of DS_store</a></h3>
+<p>MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发过程中认为后端可能会被多个地方使用到，就将它做公共API使用，这时就涉及起名问题，此时作者就给这个未来的API起了名字.DS_store，意为Desktop Service Store，名字前的 <strong>.</strong> 用来表示隐藏文件。本来此API设计被用在特定的地方，但是从目前表现看只要访问Finder就会被创建，些坑一直示被修复。问题来了，如何解决这个问题，可以从以下两方面入手</p>
+<h4 id="如何禁止创建-dot-ds-store文件">如何禁止创建.DS_Store文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 禁止网络设备上生成</span>
+</span></span><span class="line"><span class="cl">defaults write com.apple.desktopservices DSDontWriteNetworkStores <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁止移动设备上生成</span>
+</span></span><span class="line"><span class="cl">defaults write com.apple.desktopservices DSDontWriteUSBStores -bool <span class="nb">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="删除已生成的-dot-ds-store文件">删除已生成的.DS_store文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">find / -iname <span class="s1">&#39;*.DS_Store*&#39;</span> -delete 2&gt;/dev/null
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="tools">Tools 🧰</h2>
 <h3 id="ahrm-sioyek-sioyek-is-a-pdf-viewer-with-a-focus-on-textbooks-and-research-papers"><a href="https://github.com/ahrm/sioyek">ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers</a></h3>
 <p>聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下:</p>
 <ol>
@@ -196,7 +226,13 @@
 <li>h</li>
 </ol>
 <h2 id="image-️">Image 🖼️</h2>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/8FMBD6.png"/>
+</figure>
+
+<p>帅帅的CyberTruck新伙伴</p>
 <h2 id="speech">Speech 💬</h2>
+<p>只有那些知道自己智慧一文不值的人，才是最有智慧的人。</p>
+<p>&ndash;王小波 《沉默的大多数》</p>
 <h2 id="idea">Idea 💡</h2>
 
     </div>
@@ -209,7 +245,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2024-05-21
+        2024-07-05
         
     </span>
   </p>
