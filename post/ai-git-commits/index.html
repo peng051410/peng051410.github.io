@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用AI生成 git commit message - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="背景 Github上支持对PR生成AI摘要信息，具体说明 有没有应用支持生成提交内容的摘要信息呢？ AI Commits 经过一番搜索，找到了IDEA插件 AI Commits 功能 支" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/ai-git-commits/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用AI生成 git commit message" />
+<meta property="og:description" content="背景 Github上支持对PR生成AI摘要信息，具体说明 有没有应用支持生成提交内容的摘要信息呢？ AI Commits 经过一番搜索，找到了IDEA插件 AI Commits 功能 支" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/ai-git-commits/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2024-08-02T11:34:59+08:00" />
+<meta itemprop="name" content="使用AI生成 git commit message">
+<meta itemprop="description" content="背景 Github上支持对PR生成AI摘要信息，具体说明 有没有应用支持生成提交内容的摘要信息呢？ AI Commits 经过一番搜索，找到了IDEA插件 AI Commits 功能 支">
+<meta itemprop="dateModified" content="2024-08-02T11:34:59+08:00" />
+<meta itemprop="wordCount" content="958">
+<meta itemprop="keywords" content="ai,gpt,llm," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用AI生成 git commit message"/>
+<meta name="twitter:description" content="背景 Github上支持对PR生成AI摘要信息，具体说明 有没有应用支持生成提交内容的摘要信息呢？ AI Commits 经过一番搜索，找到了IDEA插件 AI Commits 功能 支"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用AI生成 git commit message</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-08-02 </span>
+        <div class="post-category">
+            <a href="/categories/tool/"> tool </a>
+            </div>
+          <span class="more-meta"> 约 958 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#ai-commits">AI Commits</a>
+      <ul>
+        <li><a href="#功能">功能</a></li>
+        <li><a href="#支持的服务">支持的服务</a></li>
+        <li><a href="#插件使用">插件使用</a></li>
+        <li><a href="#关于prompt">关于Prompt</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="背景">背景</h2>
+<p>Github上支持对PR生成AI摘要信息，<a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/creating-a-pull-request-summary-with-github-copilot">具体说明</a></p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uDEDV8.png"/>
+</figure>
+
+<p>有没有应用支持生成提交内容的摘要信息呢？
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WfS9Yg.png" alt=""></p>
+<h2 id="ai-commits">AI Commits</h2>
+<p>经过一番搜索，找到了IDEA插件 <a href="https://plugins.jetbrains.com/plugin/21335-ai-commits">AI Commits</a></p>
+<h3 id="功能">功能</h3>
+<ol>
+<li>支持多个AI服务</li>
+<li>支持多语言</li>
+<li>支持自定义Prompt</li>
+</ol>
+<h3 id="支持的服务">支持的服务</h3>
+<h4 id="openai">OpenAI</h4>
+<p>不支持国内访问，可使用国内转发进行访问，但需要有token，免费的token对token长度有限制，最大4098</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>国内转发</p>
+<p><a href="https://github.com/chatanywhere/GPT_API_free">https://github.com/chatanywhere/GPT_API_free</a></p>
+<p>可申请免费API Key，限制200请求/天/IP&amp;Key调用频率，常规使用足够了</p>
+</li>
+</ul>
+<h4 id="ollama">👍Ollama</h4>
+<p><a href="https://ollama.com/">官网</a>，功能完全免费，多种开源模型可用，无使用限制，但需要本地部署，对机器内存有要求</p>
+<p>推荐的开源模型如下：</p>
+<ol>
+<li><a href="https://ollama.com/library/codeqwen">codeqwen</a></li>
+<li><a href="https://ollama.com/library/deepseek-coder-v2">deepseek-coder-v2</a></li>
+</ol>
+<h4 id="qianfan">Qianfan</h4>
+<p>百度的AI模型千帆，<a href="https://qianfan.cloud.baidu.com/">https://qianfan.cloud.baidu.com/</a></p>
+<p>需要以下操作方可正常使用</p>
+<ol>
+<li>登录百度账号</li>
+<li>创建应用id</li>
+<li>开通模型计费且需要进行实名(银行卡/人脸)</li>
+</ol>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/i6xBDy.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XQ7tpX.png"/>
+</figure>
+
+<p>开通后在AI Commits的Qianfan模型中设置API key和Secret key
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/I4xch9.png" alt=""></p>
+<h4 id="gemini">Gemini</h4>
+<p>不支持国内访问，有用量限额</p>
+<h3 id="插件使用">插件使用</h3>
+<h4 id="选择llm-client和prompt">选择LLM Client和Prompt</h4>
+<p>在AI Commits中配置好使用的LLM Client 和 Prompt，如选择 OpenAI 和名为 Basic 的Prompt</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/CEzbZI.png"/>
+</figure>
+
+<h4 id="修改git项目代码">修改git项目代码</h4>
+<p>修改项目文件代码，比如加一行日志打印</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UnxQfn.png"/>
+</figure>
+
+<h4 id="提交代码">提交代码</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>进行提交代码界面，在提交信息栏多出一个 AI Commits 的图标，点击图标</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pxaei0.png"/>
+    </figure>
+
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>点击后生成的提交信息</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/EyCDCf.png"/>
+    </figure>
+
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>使用Ollama的gemma2:9b生成的提交信息</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6Adzvw.png"/>
+    </figure>
+
+</li>
+</ul>
+<h3 id="关于prompt">关于Prompt</h3>
+<p>插件默认自带了3个Prompt，插件的仓库提供更多的Prompt使用，点击插件配置页面的 <a href="https://github.com/Blarc/ai-commits-intellij-plugin/discussions/18">More prompts</a> 即可跳转</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1scKaT.png"/>
+</figure>
+
+<h4 id="其它有意思的prompt">其它有意思的Prompt</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>特朗普风格</p>
+<p>懂王风格</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Write an insightful but concise Git commit message in Donald Trump style in present tense for
+</span></span><span class="line"><span class="cl">the following diff without prefacing it with anything, the response must be in the language {locale}
+</span></span><span class="line"><span class="cl">and must not be longer than 74 characters. The sent text will be the differences between files,
+</span></span><span class="line"><span class="cl">where deleted lines are prefixed with a single minus sign and added lines are prefixed with a
+</span></span><span class="line"><span class="cl">single plus sign.
+</span></span><span class="line"><span class="cl">{diff}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/drNKtu.png"/>
+    </figure>
+
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>增强版本的emoji风格</p>
+<p>对提交类型进行详细的分类，支持emoji</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Using the diff provided below, create a concise commit message following the Conventional Commits format (e.g., &#34; fix(types): corrected imports in types&#34;). Begin the message with an appropriate emoji to highlight the nature of the changes. Use the past tense and first person for articulation. Ensure the line does not exceed 74 characters. Write in {locale}. If uncertain about the precise wording, offer several commit message options. Your response should consist solely of the commit message, without additional descriptions. If the diff does not provide enough information to determine the commit&#39;s purpose, focus on the specific changes made rather than attempting to guess the intent. Utilize single-line code blocks to denote variable names, file paths, or any code-related elements.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Emoji Usage Guide:
+</span></span><span class="line"><span class="cl">-  fix: For bug fixes.
+</span></span><span class="line"><span class="cl">- ✨ feat: For new features.
+</span></span><span class="line"><span class="cl">-  docs: For documentation changes.
+</span></span><span class="line"><span class="cl">-  refactor: For code refactoring without changing functionality.
+</span></span><span class="line"><span class="cl">-  perf: For performance improvements.
+</span></span><span class="line"><span class="cl">-  security: For security-related fixes.
+</span></span><span class="line"><span class="cl">-  chore: For maintenance tasks.
+</span></span><span class="line"><span class="cl">-  test: for test related chagnes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{Author&#39;s notes: &#34;$hint&#34;}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Avoid verbosity, here is an output of `git diff --staged` command:
+</span></span><span class="line"><span class="cl">{diff}
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>其它待发掘?</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2024-08-02
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ai/">ai</a>
+          <a href="/tags/gpt/">gpt</a>
+          <a href="/tags/llm/">llm</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/na-xie-videos/">
+            <span class="next-text nav-default">那些被推荐的Video</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 08 Dec 2023 11:40:07 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Aug 2024 11:34:59 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用AI生成 git commit message</title>
+      <link>http://blog.imcompany.cn/post/ai-git-commits/</link>
+      <pubDate>Fri, 02 Aug 2024 11:34:59 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/ai-git-commits/</guid>
+      <description>背景 Github上支持对PR生成AI摘要信息，具体说明 有没有应用支持生成提交内容的摘要信息呢？ AI Commits 经过一番搜索，找到了IDEA插件 AI Commits 功能 支</description>
+    </item>
+    
     <item>
       <title>这些年使用过的AI工具们</title>
       <link>http://blog.imcompany.cn/post/ai-tools/</link>
