@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 21 Aug 2024 14:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Oct 2024 09:54:06 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anki常用插件集合</title>
+      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
+      <pubDate>Thu, 17 Oct 2024 09:54:06 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
+      <description>AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki code 2055492159 Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接</description>
+    </item>
+    
+    <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Tue, 15 Oct 2024 19:37:42 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>照片 证件照 证件照生成器 Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。</description>
+    </item>
+    
+    <item>
+      <title>基于Spring initializr实现自己的项目模板</title>
+      <link>http://blog.imcompany.cn/post/spring-initializr/</link>
+      <pubDate>Tue, 15 Oct 2024 17:44:29 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-initializr/</guid>
+      <description>介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项</description>
+    </item>
+    
     <item>
       <title>AI辅助生成菜谱</title>
       <link>http://blog.imcompany.cn/post/ai-study-bilibili/</link>
@@ -42,15 +69,6 @@
       
       <guid>http://blog.imcompany.cn/post/week12/</guid>
       <description>Read 📖 On the origins of DS_store MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发</description>
-    </item>
-    
-    <item>
-      <title>Anki常用插件集合</title>
-      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
-      <pubDate>Mon, 15 Apr 2024 14:54:36 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
-      <description>AnkiConnect - AnkiWeb Captured On: [2023-12-05 Tue 11:20] 扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki code 2055492159 Aglish - YouGlish Widget for Anki - AnkiWeb Captured On: [2023-12-05 Tue 11:16] 直接</description>
     </item>
     
     <item>
@@ -104,7 +122,7 @@
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/speech/</guid>
-      <description>一切的学习最终都是自学 如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。 https://news.ycombinator.com/item?id=38676257</description>
+      <description>一切的学习最终都是自学 如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。 作为一个普通人，一个小人物，不要给自己使命感，你来这</description>
     </item>
     
     <item>

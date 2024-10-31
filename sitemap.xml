@@ -2,6 +2,125 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/tags/anki/</loc>
+    <lastmod>2024-10-17T09:54:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/anki/</loc>
+    <lastmod>2024-10-17T09:54:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/anki-plugins/</loc>
+    <lastmod>2024-10-17T09:54:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/plugin/</loc>
+    <lastmod>2024-10-17T09:54:06+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/tool/</loc>
+    <lastmod>2024-10-15T19:37:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/tool/</loc>
+    <lastmod>2024-10-16T11:35:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/util/</loc>
+    <lastmod>2024-10-15T19:37:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/useful-tools/</loc>
+    <lastmod>2024-10-15T19:37:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/initializr/</loc>
+    <lastmod>2024-10-15T17:44:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/java/</loc>
+    <lastmod>2024-10-15T17:44:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/spring/</loc>
+    <lastmod>2024-10-15T17:44:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/spring/</loc>
+    <lastmod>2024-10-15T17:44:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/spring-initializr/</loc>
+    <lastmod>2024-10-15T17:44:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/tags/ai/</loc>
     <lastmod>2024-08-28T10:15:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,34 +136,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/ai-study-bilibili/</loc>
-    <lastmod>2024-08-28T10:15:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2024-08-28T10:15:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2024-08-28T10:15:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2024-08-28T10:15:31+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
     <lastmod>2024-08-28T10:15:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -93,13 +184,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/tool/</loc>
-    <lastmod>2024-08-16T14:09:46+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/post/ai-git-commits/</loc>
     <lastmod>2024-08-02T11:34:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -123,34 +207,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/week12/</loc>
     <lastmod>2024-07-05T11:23:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/anki/</loc>
-    <lastmod>2024-04-15T14:54:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/categories/anki/</loc>
-    <lastmod>2024-04-15T14:54:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/anki-plugins/</loc>
-    <lastmod>2024-04-15T14:54:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/plugin/</loc>
-    <lastmod>2024-08-16T14:09:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -234,21 +290,21 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/speech/</loc>
-    <lastmod>2024-04-12T11:45:50+08:00</lastmod>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/speech/</loc>
-    <lastmod>2024-04-12T11:45:50+08:00</lastmod>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/speech/</loc>
-    <lastmod>2024-04-12T11:45:50+08:00</lastmod>
+    <lastmod>2024-10-31T11:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -513,13 +569,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/java/</loc>
-    <lastmod>2022-12-14T15:18:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/categories/java/</loc>
     <lastmod>2022-12-14T15:18:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -625,13 +674,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/spring/</loc>
-    <lastmod>2022-05-30T20:10:14+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/post/springwebflux-start/</loc>
     <lastmod>2022-05-30T20:10:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -681,13 +723,6 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/tags/spring/</loc>
-    <lastmod>2022-04-13T18:44:50+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/post/springwebflux-leak-bug/</loc>
     <lastmod>2022-04-13T18:44:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -696,7 +731,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/idea/</loc>
-    <lastmod>2024-08-16T14:09:46+08:00</lastmod>
+    <lastmod>2024-10-16T11:35:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -969,14 +1004,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/chrome/</loc>
-    <lastmod>2024-06-21T14:38:10+08:00</lastmod>
+    <lastmod>2024-10-15T09:48:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</loc>
-    <lastmod>2024-06-21T14:38:10+08:00</lastmod>
+    <lastmod>2024-10-15T09:48:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1025,7 +1060,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</loc>
-    <lastmod>2024-08-16T14:09:46+08:00</lastmod>
+    <lastmod>2024-10-16T11:35:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

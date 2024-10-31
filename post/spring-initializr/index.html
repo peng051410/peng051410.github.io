@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>基于Spring initializr实现自己的项目模板 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-initializr/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="基于Spring initializr实现自己的项目模板" />
+<meta property="og:description" content="介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-initializr/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2024-10-15T17:44:29+08:00" />
+<meta itemprop="name" content="基于Spring initializr实现自己的项目模板">
+<meta itemprop="description" content="介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项">
+<meta itemprop="dateModified" content="2024-10-15T17:44:29+08:00" />
+<meta itemprop="wordCount" content="686">
+<meta itemprop="keywords" content="java,spring,initializr," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基于Spring initializr实现自己的项目模板"/>
+<meta name="twitter:description" content="介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">基于Spring initializr实现自己的项目模板</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-10-15 </span>
+        <div class="post-category">
+            <a href="/categories/spring/"> spring </a>
+            </div>
+          <span class="more-meta"> 约 686 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍">介绍</a>
+      <ul>
+        <li><a href="#目标">目标</a></li>
+        <li><a href="#最终效果">最终效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现">实现</a>
+      <ul>
+        <li><a href="#主流程">主流程</a></li>
+        <li><a href="#核心功能实现">核心功能实现</a></li>
+        <li><a href="#依赖管理">依赖管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#实践">实践</a>
+      <ul>
+        <li><a href="#命令行快速生成">命令行快速生成</a></li>
+        <li><a href="#idea中生成">IDEA中生成</a></li>
+        <li><a href="#启动">启动</a></li>
+        <li><a href="#验证">验证</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="介绍">介绍</h2>
+<p>先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于<a href="https://github.com/spring-io/start.spring.io">Spring Starter</a>项目进行定制，脚手架2.0版本也就应运而生。</p>
+<h3 id="目标">目标</h3>
+<ol>
+<li>快速创建最小可运行工程</li>
+<li>基础组件依赖管理
+<ol>
+<li>版本管理</li>
+<li>帮助信息</li>
+</ol>
+</li>
+<li>按需生成项目结构</li>
+</ol>
+<h3 id="最终效果">最终效果</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/M1kRNC.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/eFelCJ.png"/>
+</figure>
+
+<h2 id="实现">实现</h2>
+<h3 id="主流程">主流程</h3>
+<h4 id="获取配置">获取配置</h4>
+<p>通过请求服务根路径获取脚手架信息，对应接口代码</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hGib0q.png"/>
+</figure>
+
+<p>如请求: <a href="http://localhost:8080">http://localhost:8080</a> 会返回以下内容信息</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uzQ6UA.png"/>
+</figure>
+
+<p>接口返回了服务支持配置的元数据信息</p>
+<h4 id="生成工程代码">生成工程代码</h4>
+<p>用户选择配置相应功能后，点击生成按钮，会调用 <a href="http://localhost:8080/start.zip">http://localhost:8080/start.zip</a> 接口将配置信息传给服务，服务根据信息生成代码</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GAn0ja.png"/>
+</figure>
+
+<h3 id="核心功能实现">核心功能实现</h3>
+<p>项目工程由以下几方面组成:</p>
+<ol>
+<li>application.yml文件</li>
+<li>工程目录(controller, servier&hellip;)</li>
+<li>auto_publish相关目录</li>
+<li>trpc_java.yaml文件</li>
+<li>配置相关
+<ol>
+<li>日志配置文件</li>
+</ol>
+</li>
+<li>web服务相关
+<ol>
+<li>httpApi接口</li>
+<li>httpApi实现类StartController</li>
+</ol>
+</li>
+<li>Maven依赖管理</li>
+<li>主启动程序自定义</li>
+<li>测试辅助开发相关自定义
+<ol>
+<li>applicationTest</li>
+</ol>
+</li>
+</ol>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/p5s2VW.png"/>
+</figure>
+
+<h3 id="依赖管理">依赖管理</h3>
+<p>根据现有常用的 <strong>Peacock</strong> 框架功能包，依赖管理配置以下模块:</p>
+<ol>
+<li>Starter</li>
+<li>Integration</li>
+<li>Provider</li>
+<li>Data</li>
+<li>Testing</li>
+<li>MQ</li>
+<li>Job</li>
+</ol>
+<h2 id="实践">实践</h2>
+<p>生成一个最小可运行Web应用</p>
+<h3 id="命令行快速生成">命令行快速生成</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -L <span class="s1">&#39;http://localhost:8080/start.zip?type=peacock-project&amp;bootVersion=1.5.7.RELEASE&amp;groupId=com.yuewen.bookcoop&amp;artifactId=solution_demo&amp;name=solution_demo101&amp;version=1.0.0-SNAPSHOT&amp;language=java&amp;packageName=com.yuewen.bookcoop.solution_demo&amp;javaVersion=1.8&amp;packaging=jar&amp;description=solution_demo101&amp;dependencies=integration-web&amp;dependencies=peacock-test&amp;dependencies=integration-common&amp;dependencies=starter&#39;</span> -o solution_demo.zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>具体的依赖库元信息可以在根路径下请求获得，具体依赖信息为dependencies值对应id的值</p>
+</blockquote>
+<h3 id="idea中生成">IDEA中生成</h3>
+<h4 id="idea配置脚手架地址">Idea配置脚手架地址</h4>
+<p>使用本地地址如: <a href="http://localhost:8080">http://localhost:8080</a></p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/H1TIwb.png"/>
+</figure>
+
+<h4 id="配置工程信息">配置工程信息</h4>
+<p>填写好相关的业务信息与版本信息</p>
+<h4 id="选择依赖模块">选择依赖模块</h4>
+<p>Web应用需选择以下模块:</p>
+<ol>
+<li>Peacock Trpc Starter</li>
+<li>Integration Web</li>
+<li>Integration Common</li>
+<li>Peacock Test</li>
+</ol>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9eAIUh.png"/>
+</figure>
+
+<p>选择完成后点击 <strong>生成</strong> 按钮生成代码</p>
+<h3 id="启动">启动</h3>
+<p>在生成的代码中找到 <strong>TrpcServerApplicationTests</strong> 测试类，配置启动参数，运行 <strong>main</strong> 方法启动Web服务</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1m0nL9.png"/>
+</figure>
+
+<p>启动参数如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-Drainbow.profiles.active<span class="o">=</span>dev
+</span></span><span class="line"><span class="cl">-Denv_type<span class="o">=</span>Development
+</span></span><span class="line"><span class="cl">-Denv_name<span class="o">=</span><span class="nb">test</span>
+</span></span><span class="line"><span class="cl">-Dcontainer_name<span class="o">=</span>localContainer
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DQHjaM.png"/>
+</figure>
+
+<h3 id="验证">验证</h3>
+<p>服务启动后，请求 <a href="http://localhost:18080">http://localhost:18080</a> 返回 &ldquo;start pong&rdquo; 则证明启动成功</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ey2EFk.png"/>
+</figure>
+
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2024-10-15
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/java/">java</a>
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/initializr/">initializr</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/useful-tools/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">那些日常使用的工具们</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ai-study-bilibili/">
+            <span class="next-text nav-default">AI辅助生成菜谱</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
