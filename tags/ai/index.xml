@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Wed, 21 Aug 2024 14:12:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Nov 2024 11:29:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集有用的Prompts</title>
+      <link>http://blog.imcompany.cn/post/prompts/</link>
+      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/prompts/</guid>
+      <description>can you visualize this? 如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化 explain the answers in narration 将答案用段落写</description>
+    </item>
+    
     <item>
       <title>AI辅助生成菜谱</title>
       <link>http://blog.imcompany.cn/post/ai-study-bilibili/</link>
