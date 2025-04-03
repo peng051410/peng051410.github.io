@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>众乐乐-weekly 第13期 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="Read 📖 Michael Tsai - Blog - iPhone 80% Charging Limit Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验 POLL: Trust in Firefox and Mozilla is Gone - Let&amp;rsquo;s Talk Alternatives 注" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/peng-week13/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="众乐乐-weekly 第13期" />
+<meta property="og:description" content="Read 📖 Michael Tsai - Blog - iPhone 80% Charging Limit Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验 POLL: Trust in Firefox and Mozilla is Gone - Let&rsquo;s Talk Alternatives 注" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/peng-week13/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-09-27T10:19:00+08:00" />
+<meta property="article:modified_time" content="2025-04-03T15:22:56+08:00" />
+<meta itemprop="name" content="众乐乐-weekly 第13期">
+<meta itemprop="description" content="Read 📖 Michael Tsai - Blog - iPhone 80% Charging Limit Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验 POLL: Trust in Firefox and Mozilla is Gone - Let&rsquo;s Talk Alternatives 注"><meta itemprop="datePublished" content="2024-09-27T10:19:00+08:00" />
+<meta itemprop="dateModified" content="2025-04-03T15:22:56+08:00" />
+<meta itemprop="wordCount" content="682">
+<meta itemprop="keywords" content="weekly," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="众乐乐-weekly 第13期"/>
+<meta name="twitter:description" content="Read 📖 Michael Tsai - Blog - iPhone 80% Charging Limit Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验 POLL: Trust in Firefox and Mozilla is Gone - Let&rsquo;s Talk Alternatives 注"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">众乐乐-weekly 第13期</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2024-09-27 </span>
+        <div class="post-category">
+            <a href="/categories/weekly/"> weekly </a>
+            </div>
+          <span class="more-meta"> 约 682 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#read">Read 📖</a>
+      <ul>
+        <li><a href="#michael-tsai-blog-iphone-80-charging-limit"><a href="https://mjtsai.com/blog/2024/09/26/iphone-80-charging-limit/">Michael Tsai - Blog - iPhone 80% Charging Limit</a></a></li>
+        <li><a href="#poll-trust-in-firefox-and-mozilla-is-gone-let-s-talk-alternatives"><a href="https://boilingsteam.com/poll-trust-in-firefox-mozilla-is-gone/">POLL: Trust in Firefox and Mozilla is Gone - Let&rsquo;s Talk Alternatives</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#tools">Tools 🧰</a>
+      <ul>
+        <li><a href="#通义效率-你的工作学习助手-通义tongyi-dot-ai-通义千问"><a href="https://tongyi.aliyun.com/efficiency/">通义效率_你的工作学习助手_通义tongyi.ai-通义千问</a></a></li>
+        <li><a href="#subframe7536-maple-font-maple-mono-open-source-monospace-font-with-round-corner-ligatures-and-nerd-font-for-ide-and-terminal-fine-grained-customization-options-dot-带连字和控制台图标的圆角等宽字体-中英文宽度完美2-1-细粒度的自定义选项"><a href="https://github.com/subframe7536/maple-font">subframe7536/maple-font: Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项</a></a></li>
+        <li><a href="#raycast-your-shortcut-to-everything"><a href="https://www.raycast.com/">Raycast - Your shortcut to everything</a></a></li>
+        <li><a href="#trae-ship-faster-with-trae"><a href="https://www.trae.ai/">Trae - Ship Faster with Trae</a></a></li>
+        <li><a href="#vlc-official-site-free-multimedia-solutions-for-all-os-videolan"><a href="https://www.videolan.org/">VLC: Official site - Free multimedia solutions for all OS! - VideoLAN</a></a></li>
+        <li><a href="#eza-community-eza-a-modern-alternative-to-ls"><a href="https://github.com/eza-community/eza">eza-community/eza: A modern alternative to ls</a></a></li>
+        <li><a href="#d12frosted-homebrew-emacs-plus-emacs-plus-formulae-for-the-homebrew-package-manager"><a href="https://github.com/d12frosted/homebrew-emacs-plus">d12frosted/homebrew-emacs-plus: Emacs Plus formulae for the Homebrew package manager</a></a></li>
+        <li><a href="#sinclairtarget-git-who-git-blame-for-file-trees"><a href="https://github.com/sinclairtarget/git-who">sinclairtarget/git-who: Git blame for file trees</a></a></li>
+        <li><a href="#httrack-website-copier-free-software-offline-browser--gnu-gpl"><a href="https://www.httrack.com/">HTTrack Website Copier - Free Software Offline Browser (GNU GPL)</a></a></li>
+        <li><a href="#jcsalterego-pngpaste-paste-png-into-files-much-like-pbpaste-does-for-text-dot"><a href="https://github.com/jcsalterego/pngpaste">jcsalterego/pngpaste: Paste PNG into files, much like pbpaste does for text.</a></a></li>
+        <li><a href="#genymobile-scrcpy-display-and-control-your-android-device"><a href="https://github.com/Genymobile/scrcpy">Genymobile/scrcpy: Display and control your Android device</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#project">Project</a>
+      <ul>
+        <li><a href="#alibaba-transmittable-thread-local-a-missing-java-std-lib--simple-and-0-dependency--for-framework-middleware-provide-an-enhanced-inheritablethreadlocal-that-transmits-values-between-threads-even-using-thread-pooling-components-dot"><a href="https://github.com/alibaba/transmittable-thread-local">alibaba/transmittable-thread-local: 📌 a missing Java std lib(simple &amp; 0-dependency) for framework/middleware, provide an enhanced InheritableThreadLocal that transmits values between threads even using thread pooling components.</a></a></li>
+        <li><a href="#foldright-cffu-java-completablefuture-fu--cf-fu-pronounced-shifu--a-tiny-sidekick-library-to-make-completablefuture-usage-more-convenient-more-efficient-and-safer-in-your-application-dot"><a href="https://github.com/foldright/cffu">foldright/cffu: 🦝 Java CompletableFuture-Fu(CF-Fu, pronounced &ldquo;Shifu&rdquo;), a tiny sidekick library to make CompletableFuture usage more convenient, more efficient and safer in your application. 😋🚀🦺</a></a></li>
+        <li><a href="#christian-fei-my-yt-a-clean-and-minimal-youtube-frontend-without-all-the-ads-and-whistles"><a href="https://github.com/christian-fei/my-yt">christian-fei/my-yt: A clean and minimal youtube frontend, without all the ads and whistles</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#speech">Speech 💬</a></li>
+    <li><a href="#idea">Idea 💡</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="read">Read 📖</h2>
+<h3 id="michael-tsai-blog-iphone-80-charging-limit"><a href="https://mjtsai.com/blog/2024/09/26/iphone-80-charging-limit/">Michael Tsai - Blog - iPhone 80% Charging Limit</a></h3>
+<p>Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验</p>
+<h3 id="poll-trust-in-firefox-and-mozilla-is-gone-let-s-talk-alternatives"><a href="https://boilingsteam.com/poll-trust-in-firefox-mozilla-is-gone/">POLL: Trust in Firefox and Mozilla is Gone - Let&rsquo;s Talk Alternatives</a></h3>
+<p>注重用户隐私的浏览器Firefox开始收集用户数据, 文章提出了对Firefox的担忧并提供了替换浏览器选项</p>
+<h2 id="tools">Tools 🧰</h2>
+<h3 id="通义效率-你的工作学习助手-通义tongyi-dot-ai-通义千问"><a href="https://tongyi.aliyun.com/efficiency/">通义效率_你的工作学习助手_通义tongyi.ai-通义千问</a></h3>
+<p>阿里通义效率 的语音速读功能 对快速了解一个播客需不需要深入听很有帮助，速度还挺快的</p>
+<h3 id="subframe7536-maple-font-maple-mono-open-source-monospace-font-with-round-corner-ligatures-and-nerd-font-for-ide-and-terminal-fine-grained-customization-options-dot-带连字和控制台图标的圆角等宽字体-中英文宽度完美2-1-细粒度的自定义选项"><a href="https://github.com/subframe7536/maple-font">subframe7536/maple-font: Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项</a></h3>
+<p>为了让终端显示图标，新安装了 font-maple-mono-nf 字体</p>
+<h3 id="raycast-your-shortcut-to-everything"><a href="https://www.raycast.com/">Raycast - Your shortcut to everything</a></h3>
+<p>又把 raycast装回来了，主要是AI集成吸引人</p>
+<h3 id="trae-ship-faster-with-trae"><a href="https://www.trae.ai/">Trae - Ship Faster with Trae</a></h3>
+<p>国内的AI编辑器，主打一个免费</p>
+<h3 id="vlc-official-site-free-multimedia-solutions-for-all-os-videolan"><a href="https://www.videolan.org/">VLC: Official site - Free multimedia solutions for all OS! - VideoLAN</a></h3>
+<p>老牌免费多平台视频播放器</p>
+<h3 id="eza-community-eza-a-modern-alternative-to-ls"><a href="https://github.com/eza-community/eza">eza-community/eza: A modern alternative to ls</a></h3>
+<p>从老的exa迁移到eza，ls的完美替代</p>
+<h3 id="d12frosted-homebrew-emacs-plus-emacs-plus-formulae-for-the-homebrew-package-manager"><a href="https://github.com/d12frosted/homebrew-emacs-plus">d12frosted/homebrew-emacs-plus: Emacs Plus formulae for the Homebrew package manager</a></h3>
+<p>把Emacs从29升级到了30，主要遇到的就是启动编译时系统环境变量找不到的问题</p>
+<h3 id="sinclairtarget-git-who-git-blame-for-file-trees"><a href="https://github.com/sinclairtarget/git-who">sinclairtarget/git-who: Git blame for file trees</a></h3>
+<p>以文件树方式显示仓库提交人信息</p>
+<h3 id="httrack-website-copier-free-software-offline-browser--gnu-gpl"><a href="https://www.httrack.com/">HTTrack Website Copier - Free Software Offline Browser (GNU GPL)</a></h3>
+<p>web页面抓取器</p>
+<h3 id="jcsalterego-pngpaste-paste-png-into-files-much-like-pbpaste-does-for-text-dot"><a href="https://github.com/jcsalterego/pngpaste">jcsalterego/pngpaste: Paste PNG into files, much like pbpaste does for text.</a></h3>
+<p>粘贴剪切版本的png文件</p>
+<h3 id="genymobile-scrcpy-display-and-control-your-android-device"><a href="https://github.com/Genymobile/scrcpy">Genymobile/scrcpy: Display and control your Android device</a></h3>
+<p>在MAC上显示并控制Android设备，丝滑方便</p>
+<h2 id="project">Project</h2>
+<h3 id="alibaba-transmittable-thread-local-a-missing-java-std-lib--simple-and-0-dependency--for-framework-middleware-provide-an-enhanced-inheritablethreadlocal-that-transmits-values-between-threads-even-using-thread-pooling-components-dot"><a href="https://github.com/alibaba/transmittable-thread-local">alibaba/transmittable-thread-local: 📌 a missing Java std lib(simple &amp; 0-dependency) for framework/middleware, provide an enhanced InheritableThreadLocal that transmits values between threads even using thread pooling components.</a></h3>
+<p>增强版JAVA ThreadLocal类</p>
+<h3 id="foldright-cffu-java-completablefuture-fu--cf-fu-pronounced-shifu--a-tiny-sidekick-library-to-make-completablefuture-usage-more-convenient-more-efficient-and-safer-in-your-application-dot"><a href="https://github.com/foldright/cffu">foldright/cffu: 🦝 Java CompletableFuture-Fu(CF-Fu, pronounced &ldquo;Shifu&rdquo;), a tiny sidekick library to make CompletableFuture usage more convenient, more efficient and safer in your application. 😋🚀🦺</a></h3>
+<p>针对Java CompletableFuture的工具库，可以更方便高效的使用</p>
+<h3 id="christian-fei-my-yt-a-clean-and-minimal-youtube-frontend-without-all-the-ads-and-whistles"><a href="https://github.com/christian-fei/my-yt">christian-fei/my-yt: A clean and minimal youtube frontend, without all the ads and whistles</a></h3>
+<p>简洁无广告的Youtube 前端，可本地部署，集成Ollama AI总结</p>
+<h2 id="speech">Speech 💬</h2>
+<p>认得与认识需要大量实践</p>
+<h2 id="idea">Idea 💡</h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-04-03
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/weekly/">weekly</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/spring-initializr/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">基于Spring initializr实现自己的项目模板</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/ai-study-bilibili/">
+            <span class="next-text nav-default">AI辅助生成菜谱</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

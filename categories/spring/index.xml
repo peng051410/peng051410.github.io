@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 15 Oct 2024 17:44:29 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Mar 2025 18:18:10 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC统一配置接口WebMvcConfigurer功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</link>
+      <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</guid>
+      <description>接口说明 WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配</description>
+    </item>
+    
     <item>
       <title>基于Spring initializr实现自己的项目模板</title>
       <link>http://blog.imcompany.cn/post/spring-initializr/</link>

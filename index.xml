@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 17 Jan 2025 15:55:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Apr 2025 10:18:54 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些被推荐的Video</title>
+      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
+      <pubDate>Tue, 01 Apr 2025 10:18:54 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
+      <description>继承之战 第一季 (豆瓣) 燃烧 (豆瓣) 第二次世界大战：前线视角 (豆瓣) 生活多美好 (豆瓣) 大明王朝1566 (豆瓣) 流人 第一季 (豆瓣) 冰血暴 第一季 (</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC统一配置接口WebMvcConfigurer功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</link>
+      <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</guid>
+      <description>接口说明 WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配</description>
+    </item>
+    
     <item>
       <title>大鹏慢读-tomyli的读书2025</title>
       <link>http://blog.imcompany.cn/post/peng-read-2025/</link>
@@ -15,15 +33,6 @@
       
       <guid>http://blog.imcompany.cn/post/peng-read-2025/</guid>
       <description>TODO 非暴力沟通 TODO 金榜题名之后</description>
-    </item>
-    
-    <item>
-      <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Mon, 30 Dec 2024 11:05:08 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
-      <description>燃烧 (豆瓣) 第二次世界大战：前线视角 (豆瓣) 生活多美好 (豆瓣) 大明王朝1566 (豆瓣) 流人 第一季 (豆瓣) 冰血暴 第一季 (豆瓣) 咒术回战 (豆瓣)</description>
     </item>
     
     <item>
@@ -87,6 +96,15 @@
       
       <guid>http://blog.imcompany.cn/post/spring-initializr/</guid>
       <description>介绍 先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于Spring Starter项</description>
+    </item>
+    
+    <item>
+      <title>众乐乐-weekly 第13期</title>
+      <link>http://blog.imcompany.cn/post/peng-week13/</link>
+      <pubDate>Fri, 27 Sep 2024 10:19:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/peng-week13/</guid>
+      <description>Read 📖 Michael Tsai - Blog - iPhone 80% Charging Limit Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验 POLL: Trust in Firefox and Mozilla is Gone - Let&amp;rsquo;s Talk Alternatives 注</description>
     </item>
     
     <item>

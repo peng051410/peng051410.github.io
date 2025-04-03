@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>springmvc on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/springmvc/</link>
+    <description>Recent content in springmvc on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Fri, 28 Mar 2025 18:18:10 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/springmvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC统一配置接口WebMvcConfigurer功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</link>
+      <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</guid>
+      <description>接口说明 WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配</description>
+    </item>
+    
+  </channel>
+</rss>
