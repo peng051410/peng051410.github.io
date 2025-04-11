@@ -18,15 +18,6 @@
     </item>
     
     <item>
-      <title>Spring学习之HandlerMapping</title>
-      <link>http://blog.imcompany.cn/post/spring-webmvc-simpleurlhandlermapping/</link>
-      <pubDate>Wed, 09 Apr 2025 14:45:53 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/spring-webmvc-simpleurlhandlermapping/</guid>
-      <description>起因 新服务在处理不存在的url请求时，上报日志报错，具体错误信息： 根据报错信息找到相关代码 代码处做了对参数hanler的强制转换，但是真正传</description>
-    </item>
-    
-    <item>
       <title>那些被推荐的Video</title>
       <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
       <pubDate>Tue, 01 Apr 2025 10:18:54 +0800</pubDate>

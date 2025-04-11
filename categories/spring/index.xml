@@ -18,15 +18,6 @@
     </item>
     
     <item>
-      <title>Spring学习之HandlerMapping</title>
-      <link>http://blog.imcompany.cn/post/spring-webmvc-simpleurlhandlermapping/</link>
-      <pubDate>Wed, 09 Apr 2025 14:45:53 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/spring-webmvc-simpleurlhandlermapping/</guid>
-      <description>起因 新服务在处理不存在的url请求时，上报日志报错，具体错误信息： 根据报错信息找到相关代码 代码处做了对参数hanler的强制转换，但是真正传</description>
-    </item>
-    
-    <item>
       <title>SpringMVC统一配置接口WebMvcConfigurer功能</title>
       <link>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</link>
       <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
