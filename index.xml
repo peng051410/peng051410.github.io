@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 11 Apr 2025 15:40:19 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Apr 2025 11:04:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC学习之Exception处理</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-exception/</link>
+      <pubDate>Mon, 14 Apr 2025 11:04:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-exception/</guid>
+      <description>背景 开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的? Spring处理异常的方式 Sp</description>
+    </item>
+    
     <item>
       <title>Spring学习之HandlerMapping</title>
       <link>http://blog.imcompany.cn/post/spring-webmvc-handler/</link>

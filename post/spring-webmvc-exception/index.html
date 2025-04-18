@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SpringMVC学习之Exception处理 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="背景 开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的? Spring处理异常的方式 Sp" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-webmvc-exception/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SpringMVC学习之Exception处理" />
+<meta property="og:description" content="背景 开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的? Spring处理异常的方式 Sp" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-webmvc-exception/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-04-14T11:04:00+08:00" />
+<meta property="article:modified_time" content="2025-04-18T11:18:32+08:00" />
+<meta itemprop="name" content="SpringMVC学习之Exception处理">
+<meta itemprop="description" content="背景 开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的? Spring处理异常的方式 Sp"><meta itemprop="datePublished" content="2025-04-14T11:04:00+08:00" />
+<meta itemprop="dateModified" content="2025-04-18T11:18:32+08:00" />
+<meta itemprop="wordCount" content="1289">
+<meta itemprop="keywords" content="spring,exception,springmvc," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringMVC学习之Exception处理"/>
+<meta name="twitter:description" content="背景 开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的? Spring处理异常的方式 Sp"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SpringMVC学习之Exception处理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-04-14 </span>
+        <div class="post-category">
+            <a href="/categories/spring/"> spring </a>
+            </div>
+          <span class="more-meta"> 约 1289 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#spring处理异常的方式">Spring处理异常的方式</a></li>
+    <li><a href="#handlerexceptionresolver登场">HandlerExceptionResolver登场</a>
+      <ul>
+        <li><a href="#spring提供了哪些exceptionresolver">Spring提供了哪些ExceptionResolver?</a></li>
+      </ul>
+    </li>
+    <li><a href="#具体异常处理流程">具体异常处理流程</a>
+      <ul>
+        <li><a href="#handlerexceptionresolvers-有哪些">handlerExceptionResolvers 有哪些？</a></li>
+      </ul>
+    </li>
+    <li><a href="#细说说exceptionhandler">细说说ExceptionHandler</a>
+      <ul>
+        <li><a href="#实现逻辑">实现逻辑</a></li>
+        <li><a href="#注解配置在何时生效">注解配置在何时生效</a></li>
+        <li><a href="#有异常时如何匹配对应的-exceptionhandler">有异常时如何匹配对应的 ExceptionHandler</a></li>
+        <li><a href="#如何解析对应的异常">如何解析对应的异常</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="背景">背景</h2>
+<p>开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的?</p>
+<h2 id="spring处理异常的方式">Spring处理异常的方式</h2>
+<p>Spring采用了全局的异常捕获统一处理的方式，虽然JAVA的异常机制一直有争议，但是Spring还是选择基于实际开发需要使用抛异常后捕获统一处理的方式</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yZjYzc.png"/>
+</figure>
+
+<h2 id="handlerexceptionresolver登场">HandlerExceptionResolver登场</h2>
+<p><code>HandlerExceptionResolver</code> 是SpringMVC提供的解析Handler调用过程抛出异常的解析器，只提供了一个解析异常的方法 <code>resovleException</code></p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VTJMf6.png"/>
+</figure>
+
+<h3 id="spring提供了哪些exceptionresolver">Spring提供了哪些ExceptionResolver?</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ndAxqw.png"/>
+</figure>
+
+<h4 id="经典的interface-abstract方式的实现类">经典的Interface-Abstract方式的实现类</h4>
+<table>
+<thead>
+<tr>
+<th>Resolver</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SimpleMappingExceptionResolver</td>
+<td>提供exception class name到view的映射</td>
+</tr>
+<tr>
+<td>DefaultHandlerExceptionResolver</td>
+<td>默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码</td>
+</tr>
+<tr>
+<td>ResponseStatusExceptionResolver</td>
+<td>基于 @ResponseStatus 注解来映射异常与Http状态码</td>
+</tr>
+<tr>
+<td>ExceptionHandlerExceptionResolver</td>
+<td>基于 @ExceptionHalder 注解来解析处理异常信息</td>
+</tr>
+</tbody>
+</table>
+<h4 id="直接实现handlerexceptionresolver的类">直接实现HandlerExceptionResolver的类</h4>
+<table>
+<thead>
+<tr>
+<th>Resolver</th>
+<th>Desc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DefaultErrorAttributes</td>
+<td>默认错误属性实现</td>
+</tr>
+<tr>
+<td>HandlerExceptionResolverComposite</td>
+<td>代理其它Resolver集合的ExceptionResolver</td>
+</tr>
+</tbody>
+</table>
+<p><code>HandlerExceptionResolverComposite</code> 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver</p>
+<h2 id="具体异常处理流程">具体异常处理流程</h2>
+<p>异常处理的核心逻辑都在 <code>processHandlerException</code> 方法中，Spring处理完请求后，如果有异常抛出，则会把异常信息传给 <code>processHandlerException</code> 方法， <code>processHandlerException</code> 遍历持有的 handlerExceptionResolvers 进行对异常的解析，如果解析成功则直接返回对应的 ModelAndView(此返回与正常的handler处理返回保持了一致)</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oQdSdj.png"/>
+</figure>
+
+<h3 id="handlerexceptionresolvers-有哪些">handlerExceptionResolvers 有哪些？</h3>
+<p>在 SpringMVC启动时会调用 <code>initHandlerExceptionResolvers</code> 方法来查找所有可用的 handlerExceptionResolver 并保存到 <code>handlerExceptionResolvers</code> 变量中。SpringMVC配置了两个 resolver 来提供异常解析</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZkaEcp.png"/>
+</figure>
+
+<h4 id="errorattributes">errorAttributes</h4>
+<p>此Resolver是在 <code>ErrorMvcAutoConfiguration</code> 进行实例化的
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lkrPBk.png" alt=""></p>
+<p>此实现的 resolverExcption 方法逻辑简单，直接返回了null，不是关注重点</p>
+<h4 id="handlerexceptionresolver">handlerExceptionResolver</h4>
+<p>此Resolver真正的实现类为 <code>HandlerExceptionResolverComposite</code> ，也就是持有多个ExceptionResolver列表的 Resolver，它是在 <code>WebMvcConfigurationSupport</code> 实例化的</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3nWLzs.png"/>
+</figure>
+
+<p>在此方法中设置了 <code>HandlerExceptionResolverComposite</code> , 那 <code>HandlerExceptionResolverComposite</code> 持有哪些 ExceptionResolver?
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rvwAnw.png" alt=""></p>
+<p>由图可知， <code>HandlerExceptionResolverComposite</code> 持有 ExceptionHandlerExceptionResolver 、ResponseStatusExceptionResolver 、DefaultHandlerExceptionResolver 3个Resolver，这些Resolver才是真正干活的Resolver</p>
+<h2 id="细说说exceptionhandler">细说说ExceptionHandler</h2>
+<p>Spring 3.0 开始支持通过配置 <code>@ControllerAdvice</code> 与 <code>@ExceptionHandler</code> 注解的方式来处理全局异常，通过配置的不同的注解参数类型与支持的方法参数类型进行细粒度的异常匹配，配置样例</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/p90OxW.png"/>
+</figure>
+
+<h3 id="实现逻辑">实现逻辑</h3>
+<p>处理 <code>@ExceptionHandler</code> 注解对应的实现类为  <code>ExceptionHandlerExceptionResolver</code></p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/213wUx.png"/>
+</figure>
+
+<p>从上图可知 <code>@ExceptionHanlder</code> 是通过持有 <code>HandlerMethodArgumentResolverComposite</code> 和 <code>HandlerMethodReturnValueHandlerComposite</code> 支持不同参数类型与返回值的</p>
+<h3 id="注解配置在何时生效">注解配置在何时生效</h3>
+<p>对应配置的 ExceptionHandler 是在创建 ExceptionHandlerExceptionResolver 进行处理的，核心代码逻辑在 <code>WebMvcConfigurationSupport#addDefaultHandlerExceptionResolvers</code> , 它调用了 exceptionHandlerResolver.afterPropertiesSet() ，在此方法时会扫描配置的 @ExceptionHandler 并将参数与返回值进行保存</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZHma8C.png"/>
+</figure>
+
+<h3 id="有异常时如何匹配对应的-exceptionhandler">有异常时如何匹配对应的 ExceptionHandler</h3>
+<p>当有异常抛出时，最终会调用 <code>ExceptionHandlerExceptionResolver</code> 的 doResolveHandlerMethodException 方法匹配对应 exceptionHandlerMethod ，然后执行注解标识方法的逻辑，这样就实现了对不同异常的自定义逻辑处理。</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/mtYUAm.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zbDwBL.png"/>
+</figure>
+
+<p>ExceptionHandler匹配顺序为：当前Controller -&gt; 全局配置的ExceptionHandler</p>
+<h3 id="如何解析对应的异常">如何解析对应的异常</h3>
+<p>核心逻辑在 <code>ExceptionHandlerMethodResolver</code> 的 <code>resolveMethodByThrowable</code> 方法，先根据原始异常查，查不到，遍历查询异常的 Cause 异常</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GmJSJW.png"/>
+</figure>
+
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-04-18
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/exception/">exception</a>
+          <a href="/tags/springmvc/">springmvc</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spring-webmvc-handler/">
+            <span class="next-text nav-default">Spring学习之HandlerMapping</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
