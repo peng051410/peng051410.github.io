@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 18 Apr 2025 11:27:45 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/springmvc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Apr 2025 17:53:54 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/springmvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC实践之集成Sentinel限流功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-interceptor/</link>
+      <pubDate>Fri, 25 Apr 2025 17:53:54 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-interceptor/</guid>
+      <description>背景 近期收到线上报警，发现个别新接口在同1s内被请求了接近上百次，对系统的稳定造成了一些影响，近期调研了一下通用的限流框架，打算将Senti</description>
+    </item>
+    
     <item>
       <title>SpringMVC学习之HandlerMapping</title>
       <link>http://blog.imcompany.cn/post/spring-webmvc-handler/</link>
