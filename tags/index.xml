@@ -7,11 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 29 Apr 2025 11:23:49 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 May 2025 11:40:11 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>annotation</title>
+      <link>http://blog.imcompany.cn/tags/annotation/</link>
+      <pubDate>Fri, 09 May 2025 11:40:11 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/annotation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>configuration</title>
+      <link>http://blog.imcompany.cn/tags/configuration/</link>
+      <pubDate>Fri, 09 May 2025 11:40:11 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>http://blog.imcompany.cn/tags/spring/</link>
+      <pubDate>Fri, 09 May 2025 11:40:11 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/spring/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tool</title>
       <link>http://blog.imcompany.cn/tags/tool/</link>
-      <pubDate>Tue, 29 Apr 2025 11:23:49 +0800</pubDate>
+      <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/tool/</guid>
       <description></description>
@@ -20,7 +47,7 @@
     <item>
       <title>util</title>
       <link>http://blog.imcompany.cn/tags/util/</link>
-      <pubDate>Tue, 29 Apr 2025 11:23:49 +0800</pubDate>
+      <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/util/</guid>
       <description></description>
@@ -32,15 +59,6 @@
       <pubDate>Sun, 27 Apr 2025 15:40:22 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>http://blog.imcompany.cn/tags/spring/</link>
-      <pubDate>Fri, 25 Apr 2025 17:53:54 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/tags/spring/</guid>
       <description></description>
     </item>
     

@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 29 Apr 2025 11:23:49 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 May 2025 11:40:11 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring学习之@Configuration</title>
+      <link>http://blog.imcompany.cn/post/spring-configuration/</link>
+      <pubDate>Fri, 09 May 2025 11:40:11 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-configuration/</guid>
+      <description>@Configuration是什么？ @Configuration 是 Spring提供的一个用于配置与声明Bean与相应Bean之间依赖的注解，根据文档描述，此注解通常由</description>
+    </item>
+    
     <item>
       <title>那些日常使用的工具们</title>
       <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Tue, 29 Apr 2025 11:23:49 +0800</pubDate>
+      <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>照片 证件照 证件照生成器 Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。 Github download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo. 下载</description>
+      <description>最佳平替 - 用更低价的搜索词购物 照片 证件照 证件照生成器 Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。</description>
     </item>
     
     <item>
