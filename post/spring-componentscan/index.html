@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring学习之@CompnentScan - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-componentscan/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring学习之@CompnentScan" />
+<meta property="og:description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-componentscan/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2025-05-15T16:29:33+08:00" />
+<meta itemprop="name" content="Spring学习之@CompnentScan">
+<meta itemprop="description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自">
+<meta itemprop="dateModified" content="2025-05-15T16:29:33+08:00" />
+<meta itemprop="wordCount" content="885">
+<meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring学习之@CompnentScan"/>
+<meta name="twitter:description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring学习之@CompnentScan</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-05-15 </span>
+        <div class="post-category">
+            <a href="/categories/spring/"> spring </a>
+            </div>
+          <span class="more-meta"> 约 885 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#注解说明">注解说明</a></li>
+    <li><a href="#注解能做什么">注解能做什么？</a></li>
+    <li><a href="#源码分析">源码分析</a>
+      <ul>
+        <li><a href="#对注解属性的解析">对注解属性的解析</a></li>
+        <li><a href="#扫描操作">扫描操作</a></li>
+        <li><a href="#注册bean">注册Bean</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li><a href="#调整包结构后一些-bean配置扫描不到了">调整包结构后一些@Bean配置扫描不到了</a></li>
+        <li><a href="#如何将未配置spring相关组件注解的bean纳入spring管理">如何将未配置Spring相关组件注解的Bean纳入Spring管理?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="注解说明">注解说明</h2>
+<p><a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ComponentScan.html">@ComponentScan</a> 注解是Spring 提供的对组件进行扫描的注解指令，通常与 <a href="https://blog.imcompany.cn/post/spring-configuration/">@Configuration</a> 注解一起使用，支持在类上重复标注</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1Gfqcy.png"/>
+</figure>
+
+<h2 id="注解能做什么">注解能做什么？</h2>
+<p>此注解支持以下重要特性:</p>
+<ol>
+<li>自定义扫描的包范围</li>
+<li>配置包含扫描组件的过滤器</li>
+<li>配置排除组件的过滤器</li>
+<li>是否使用默认过滤器</li>
+<li>是否配置懒加载</li>
+</ol>
+<h2 id="源码分析">源码分析</h2>
+<p>由于此注解通常与 @Configuration 注解一起使用，其解析的主要逻辑都是在 refresh 阶段的 invokeBeanFactoryPostProcessors 方法中，最终会定位到   <code>ConfigurationClassParser#doProcessConfigurationClass()</code> 方法中，在方法中可以看到对 ComponentScan 注解的操作逻辑了</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/nLgM3W.png"/>
+</figure>
+
+<h3 id="对注解属性的解析">对注解属性的解析</h3>
+<p>所有对属性的解析都在 <code>ComponentScanAnnotationParser#parse()</code> 方法中进行，此方法中会创建一个 <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html">ClassPathBeanDefinitionScanner</a> 实例scanner，此实例初始化过程中会对默认的Filter进行加载</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vRkGfu.png"/>
+</figure>
+
+<blockquote>
+<p>处理默认Filter主要是 <a href="https://www.ibm.com/docs/en/wasdtfe?topic=reference-jax-ws-common-annotations-jsr-250">JSR-250</a> 与 <a href="https://jcp.org/en/jsr/detail?id=330">JSR-330</a> API 增加的注解</p>
+</blockquote>
+<p>然后会把配置的 <code>includeFilter</code> 和 <code>excludeFilter</code> 设置到 scanner 中，接着会对 <code>basePackage</code> 扫描包属性进行解析配置，如果配置了就添加，没有配置，默认就使用 <code>@ComponentScan</code> 注解标注类所在的包路径。解析完注解属性后，就开始了真正的扫描操作</p>
+<h3 id="扫描操作">扫描操作</h3>
+<p>扫描操作由  <code>ClassPathBeanDefinitionScanner#doScan()</code> 方法进行处理，此方法会调用 <code>findCandidateComponents()</code> 方法在给定的包下查找符合条件的组件，查找的任务由 <code>scanCandidateComponents()</code> 进行，该方法调用 <code>isCandidateComponent()</code> 方法，根据解析的includeFilter和excludeFilter 来选择满足条件的组件</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/V9WgPz.png"/>
+</figure>
+
+<p>这样扫描到所有满足条件的Bean后，会接着对这些Bean进行parse操作，直到注解再无其它依赖</p>
+<h3 id="注册bean">注册Bean</h3>
+<p>扫描完所有Bean后，会调用 <code>checkCandidate()</code> 方法进行检查，检查当前要注册的Bean是否与已经注册过的Bean的定义是否兼容，如果冲突会报 <code>ConflictingBeanDefinitionException</code> 。检查没问题后，会调用 <code>registerBeanDefinition()</code> 方法对Bean进行注册，这个过程就涉及到Spring其它的生命周期了（这个后续专门学习总结），对于@ComponentScan 组件来说已经完成了它的使命</p>
+<h2 id="总结">总结</h2>
+<p>最后以注解解析过程中的涉及的核心类做一下总结</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/At29IK.png"/>
+</figure>
+
+<h2 id="常见问题">常见问题</h2>
+<h3 id="调整包结构后一些-bean配置扫描不到了">调整包结构后一些@Bean配置扫描不到了</h3>
+<ol>
+<li>调用启动类的包路径为最外层，这样可以扫描当前包及子包的配置</li>
+<li>默认只扫描当前标注注解的包，可以通过配置 <code>basePackage</code> 属性指定扫描路径，配置后默认的扫描路径就不生效了</li>
+</ol>
+<h3 id="如何将未配置spring相关组件注解的bean纳入spring管理">如何将未配置Spring相关组件注解的Bean纳入Spring管理?</h3>
+<p>可以通过配置 ComponentScan的includeFilter 来实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ComponentScan</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePackages</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;cn.imcompany.bean.scan&#34;</span><span class="o">},</span>
+</span></span><span class="line"><span class="cl">        <span class="n">includeFilters</span> <span class="o">=</span> <span class="nd">@ComponentScan.Filter</span><span class="o">(</span><span class="n">type</span> <span class="o">=</span> <span class="n">FilterType</span><span class="o">.</span><span class="na">ASSIGNABLE_TYPE</span><span class="o">,</span> <span class="n">classes</span> <span class="o">=</span> <span class="o">{</span><span class="n">SpecialComponent</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
+</span></span><span class="line"><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpecialComponent</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-05-15
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/annotation/">annotation</a>
+          <a href="/tags/configuration/">configuration</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spring-configuration/">
+            <span class="next-text nav-default">Spring学习之@Configuration</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
