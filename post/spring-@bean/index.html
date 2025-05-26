@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Spring学习之@CompnentScan - I&#39;m company</title>
+  <title>Spring学习之@Bean - I&#39;m company</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="tomyli" /><meta name="description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+<meta name="author" content="tomyli" /><meta name="description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.119.0 with theme even" />
 
 
-<link rel="canonical" href="http://blog.imcompany.cn/post/spring-componentscan/" />
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-@bean/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,19 +39,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Spring学习之@CompnentScan" />
-<meta property="og:description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自" />
+<meta property="og:title" content="Spring学习之@Bean" />
+<meta property="og:description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.imcompany.cn/post/spring-componentscan/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-@bean/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2025-05-15T16:29:33+08:00" />
-<meta itemprop="name" content="Spring学习之@CompnentScan">
-<meta itemprop="description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自">
-<meta itemprop="dateModified" content="2025-05-15T16:29:33+08:00" />
-<meta itemprop="wordCount" content="885">
+<meta property="article:modified_time" content="2025-05-19T17:18:23+08:00" />
+<meta itemprop="name" content="Spring学习之@Bean">
+<meta itemprop="description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解">
+<meta itemprop="dateModified" content="2025-05-19T17:18:23+08:00" />
+<meta itemprop="wordCount" content="1501">
 <meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Spring学习之@CompnentScan"/>
-<meta name="twitter:description" content="注解说明 @ComponentScan 注解是Spring 提供的对组件进行扫描的注解指令，通常与 @Configuration 注解一起使用，支持在类上重复标注 注解能做什么？ 此注解支持以下重要特性: 自"/>
+<meta name="twitter:title" content="Spring学习之@Bean"/>
+<meta name="twitter:description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,15 +136,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Spring学习之@CompnentScan</h1>
+      <h1 class="post-title">Spring学习之@Bean</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2025-05-15 </span>
+        <span class="post-time"> 2025-05-19 </span>
         <div class="post-category">
             <a href="/categories/spring/"> spring </a>
             </div>
-          <span class="more-meta"> 约 885 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 1501 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -155,96 +155,116 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#注解说明">注解说明</a></li>
-    <li><a href="#注解能做什么">注解能做什么？</a></li>
-    <li><a href="#源码分析">源码分析</a>
+    <li><a href="#属性说明">属性说明</a>
       <ul>
-        <li><a href="#对注解属性的解析">对注解属性的解析</a></li>
-        <li><a href="#扫描操作">扫描操作</a></li>
-        <li><a href="#注册bean">注册Bean</a></li>
+        <li><a href="#name">name</a></li>
+        <li><a href="#initmethod">initMethod</a></li>
+        <li><a href="#destroymethod">destroyMethod</a></li>
       </ul>
     </li>
-    <li><a href="#总结">总结</a></li>
-    <li><a href="#常见问题">常见问题</a>
+    <li><a href="#与其它注解的关联">与其它注解的关联</a></li>
+    <li><a href="#源码阅读">源码阅读</a>
       <ul>
-        <li><a href="#调整包结构后一些-bean配置扫描不到了">调整包结构后一些@Bean配置扫描不到了</a></li>
-        <li><a href="#如何将未配置spring相关组件注解的bean纳入spring管理">如何将未配置Spring相关组件注解的Bean纳入Spring管理?</a></li>
+        <li><a href="#bean注解配置实例化">Bean注解配置实例化</a></li>
+        <li><a href="#bean初始化">Bean初始化</a></li>
+        <li><a href="#bean销毁">Bean销毁</a></li>
       </ul>
     </li>
+    <li><a href="#返回-beanfactoryprstprocessor-类型">返回 BeanFactoryPrstProcessor 类型</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
       <h2 id="注解说明">注解说明</h2>
-<p><a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ComponentScan.html">@ComponentScan</a> 注解是Spring 提供的对组件进行扫描的注解指令，通常与 <a href="https://blog.imcompany.cn/post/spring-configuration/">@Configuration</a> 注解一起使用，支持在类上重复标注</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1Gfqcy.png"/>
+<p><a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Bean.html">@Bean</a> 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解可以使用JAVA的特性配置对象。默认情况下Bean名字为方法名，也支持通过属性进行配置</p>
+<h2 id="属性说明">属性说明</h2>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/k4Kb1n.png"/>
 </figure>
 
-<h2 id="注解能做什么">注解能做什么？</h2>
-<p>此注解支持以下重要特性:</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xhsjVe.png"/>
+</figure>
+
+<h3 id="name">name</h3>
+<p>自定义Bean的名称，支持配置多个名称，不配置默认为方法名称</p>
+<h3 id="initmethod">initMethod</h3>
+<p>配置实例初始化方法，在Bean实例化被调用，默认为空</p>
+<h3 id="destroymethod">destroyMethod</h3>
+<p>配置实例销毁方法，默认值为 <code>(inferred)</code> 即会根据返回的Bean尝试查找识别对象的销毁方法 close 或者 shutdown(限制只查找public无参方法)，如返回一个 <code>BasicDataSource</code> 实例，会默认查找 <code>close()</code> 方法进行注册，如果不想Spring进行此操作，需要将此值设置为: <code>destroyMethod=&quot;&quot;</code> (此配置对 <a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/beans/factory/DisposableBean.html">DisposableBean</a> 回调不生效)</p>
+<blockquote>
+<p>核心逻辑在 DisposableBeanAdapter#inferDestroyMethodsIfNecessary() 方法中</p>
+</blockquote>
+<h2 id="与其它注解的关联">与其它注解的关联</h2>
+<p>@Bean 与XML配置方式中的 &lt;bean&gt; 标签不同，它使用与其它注解组合的方式来实现类型 Scope 或者懒加载的功能，具体可组合注解如下：</p>
 <ol>
-<li>自定义扫描的包范围</li>
-<li>配置包含扫描组件的过滤器</li>
-<li>配置排除组件的过滤器</li>
-<li>是否使用默认过滤器</li>
-<li>是否配置懒加载</li>
+<li>@Profile</li>
+<li>@Scope</li>
+<li>@Lazy</li>
+<li>@DepednsOn</li>
+<li>@Primary</li>
+<li>@Order</li>
 </ol>
-<h2 id="源码分析">源码分析</h2>
-<p>由于此注解通常与 @Configuration 注解一起使用，其解析的主要逻辑都是在 refresh 阶段的 invokeBeanFactoryPostProcessors 方法中，最终会定位到   <code>ConfigurationClassParser#doProcessConfigurationClass()</code> 方法中，在方法中可以看到对 ComponentScan 注解的操作逻辑了</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/nLgM3W.png"/>
+<h2 id="源码阅读">源码阅读</h2>
+<h3 id="bean注解配置实例化">Bean注解配置实例化</h3>
+<p>由于@Bean通常与@Configuration 一起使用，核心逻辑在 refresh 阶段，定位代码发现在 ConfigurationClassParser#doProcessConfigurationClass() 方法进行对 @Bean 标识方法的解析</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/wbrJ1N.png"/>
 </figure>
 
-<h3 id="对注解属性的解析">对注解属性的解析</h3>
-<p>所有对属性的解析都在 <code>ComponentScanAnnotationParser#parse()</code> 方法中进行，此方法中会创建一个 <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html">ClassPathBeanDefinitionScanner</a> 实例scanner，此实例初始化过程中会对默认的Filter进行加载</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vRkGfu.png"/>
+<p>首先 通过调用 retrieveBeanMethodMetadata() 获取Bean定义方法元数据信息，在这里如果定义的Bean方法超过1个则会通过ASM工具来获取方法定义的顺序，这个处理是因为JAVA反射处理的顺序是不确定的</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Daw2Q2.png"/>
+</figure>
+
+<p>扫描完Bean配置信息，需要通过 processConfigBeanDefinitions() 调用 ConfigurationClassBeanDefinitionReader#loadBeanDefinitions() 对Bean进行注册，到这就是Spring的核心，可以确保 @Bean 方法返回的Bean被容器解析并注册。对于每个 beanMethod ，会调用 loadBeanDefinitionsForBeanMethod() 对每个Bean配置进行加载，在这个方法里面会看到所有对 @Bean 属性的处理逻辑。这里面对于静态方法，会直接使用方法所有类作为bean的类，否则使用类名作为工厂bean的名，还设置了工厂方法名为当前@Bean方法的名字</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Pz1y4K.png"/>
+</figure>
+
+<p>这些属性都处理完后，最后会调用 registry#registerBeanDefinition() 将Bean注册到容器中</p>
+<h4 id="核心类调用">核心类调用</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/57SydT.png"/>
+</figure>
+
+<h3 id="bean初始化">Bean初始化</h3>
+<p>前面说了 Bean配置的initMethod会在Bean实例化后被执行，在代码里面对着的是 refresh 阶段的 finishBeanFactoryInitialization() 调用，重点看一下这个方法的逻辑，此方法调用 DefaultListableBeanFactory#preInstantiateSingletons() 对剩下的单例进行初始化，此方法会调用 preInstantiateSingleton() 对单个 bean 进行实例化，在此方法判断bean不是懒加载就调用 instantiateSingleton() 方法进行实例化，然后就看到了熟悉的 getBean() 方法，这个方法会负责 bean 的实例化、初始化以及其依赖的注入。</p>
+<p>在 getBean() 方法又调用了 doGetBean() 方法实际来执行创建，在此方法中，容器会从缓存中查询bean是否已经创建，不有创建就会调用 createBean() 方法来创建bean，此方法又会调用 doCreateBean() 来真正执行创建bean的操作。在 doCreateBean() 方法中，会调用 initializeBean() 方法来进行初始化操作，这里面主要关注对 invokeInitMethods() 调用，看名字知道是调用初始化的方法，此方法会判断 initMehtod 是否配置，如果配置了，则会调用 invokeCustomInitMethod() 方法通过反射来对bean初始化方法进行调用</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/PH7Rdb.png"/>
+</figure>
+
+<h4 id="核心类调用">核心类调用</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6eo2PS.png"/>
+</figure>
+
+<h3 id="bean销毁">Bean销毁</h3>
+<p>Bean销毁发生成 context 的close() 方法调用时</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/J2fcHp.png"/>
+</figure>
+
+<p>close 会调用 doClose() 方法来真正执行关闭操作，此方法会调用 destroyBeans() 对容器所有缓存的单例进行销毁操作，进行调用 DefaultSingletonBeanRegistry#destroySingletons() 方法，此方法会遍历所有要销毁的 disposableBeanNames， 倒序调用 destroySingleton() 方法，然后调用 bean#destory() 来真正的销毁bean，这里面会进入到  DisposableBeanAdapter#destory() 方法，在此方法会判断 是否存在 destoryMethod ，有则通过 invokeCustomDestroyMethod 调用bean的 destoryMethod()</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MRITzK.png"/>
 </figure>
 
 <blockquote>
-<p>处理默认Filter主要是 <a href="https://www.ibm.com/docs/en/wasdtfe?topic=reference-jax-ws-common-annotations-jsr-250">JSR-250</a> 与 <a href="https://jcp.org/en/jsr/detail?id=330">JSR-330</a> API 增加的注解</p>
-</blockquote>
-<p>然后会把配置的 <code>includeFilter</code> 和 <code>excludeFilter</code> 设置到 scanner 中，接着会对 <code>basePackage</code> 扫描包属性进行解析配置，如果配置了就添加，没有配置，默认就使用 <code>@ComponentScan</code> 注解标注类所在的包路径。解析完注解属性后，就开始了真正的扫描操作</p>
-<h3 id="扫描操作">扫描操作</h3>
-<p>扫描操作由  <code>ClassPathBeanDefinitionScanner#doScan()</code> 方法进行处理，此方法会调用 <code>findCandidateComponents()</code> 方法在给定的包下查找符合条件的组件，查找的任务由 <code>scanCandidateComponents()</code> 进行，该方法调用 <code>isCandidateComponent()</code> 方法，根据解析的includeFilter和excludeFilter 来选择满足条件的组件</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/V9WgPz.png"/>
-</figure>
-
-<p>这样扫描到所有满足条件的Bean后，会接着对这些Bean进行parse操作，直到注解再无其它依赖</p>
-<h3 id="注册bean">注册Bean</h3>
-<p>扫描完所有Bean后，会调用 <code>checkCandidate()</code> 方法进行检查，检查当前要注册的Bean是否与已经注册过的Bean的定义是否兼容，如果冲突会报 <code>ConflictingBeanDefinitionException</code> 。检查没问题后，会调用 <code>registerBeanDefinition()</code> 方法对Bean进行注册，这个过程就涉及到Spring其它的生命周期了（这个后续专门学习总结），对于@ComponentScan 组件来说已经完成了它的使命</p>
-<h2 id="总结">总结</h2>
-<p>最后以注解解析过程中的涉及的核心类做一下总结</p>
-<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/At29IK.png"/>
-</figure>
-
-<h2 id="常见问题">常见问题</h2>
-<h3 id="调整包结构后一些-bean配置扫描不到了">调整包结构后一些@Bean配置扫描不到了</h3>
+<p>DisposableBeanAdapter主要对给定bean执行一系列解构步骤，主要包含：</p>
 <ol>
-<li>调用启动类的包路径为最外层，这样可以扫描当前包及子包的配置</li>
-<li>默认只扫描当前标注注解的包，可以通过配置 <code>basePackage</code> 属性指定扫描路径，配置后默认的扫描路径就不生效了</li>
+<li>解构AwareBeanPostProcessors</li>
+<li>实现了 DisposableBean 接口的bean</li>
+<li>bean定义指定了destory方法</li>
 </ol>
-<h3 id="如何将未配置spring相关组件注解的bean纳入spring管理">如何将未配置Spring相关组件注解的Bean纳入Spring管理?</h3>
-<p>可以通过配置 ComponentScan的includeFilter 来实现</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ComponentScan</span><span class="o">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">basePackages</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;cn.imcompany.bean.scan&#34;</span><span class="o">},</span>
-</span></span><span class="line"><span class="cl">        <span class="n">includeFilters</span> <span class="o">=</span> <span class="nd">@ComponentScan.Filter</span><span class="o">(</span><span class="n">type</span> <span class="o">=</span> <span class="n">FilterType</span><span class="o">.</span><span class="na">ASSIGNABLE_TYPE</span><span class="o">,</span> <span class="n">classes</span> <span class="o">=</span> <span class="o">{</span><span class="n">SpecialComponent</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
-</span></span><span class="line"><span class="cl"><span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpecialComponent</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</blockquote>
+<h4 id="核心类调用">核心类调用</h4>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pdYshd.png"/>
+</figure>
+
+<h2 id="返回-beanfactoryprstprocessor-类型">返回 BeanFactoryPrstProcessor 类型</h2>
+<p>因为 <code>BeanFactoryPostProcessor</code> 类型的Bean需要在Spring很早的阶段就进行实例化来处理其它注解，需要将返回 <code>BeanFactoryPostProcessor</code> 类型的方法标记为 static ，通过直接调用静态方法来避免冲突(不用等到 @Configuration 类实例化)。对于静态方法是不会被AOP增强</p>
+<blockquote>
+<p>BeanFactoryPostProcessor 用于处理其它类型的注解如：</p>
+<ol>
+<li>@Autowired</li>
+<li>@Value</li>
+<li>@PostConstruct</li>
+</ol>
+</blockquote>
+
     </div>
 
     <div class="post-copyright">
@@ -255,7 +275,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2025-05-15
+        2025-05-19
         
     </span>
   </p>
@@ -286,13 +306,9 @@
           <a href="/tags/configuration/">configuration</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/spring-@bean/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Spring学习之@Bean</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/spring-configuration/">
-            <span class="next-text nav-default">Spring学习之@Configuration</span>
+        
+        <a class="next" href="/post/spring-componentscan/">
+            <span class="next-text nav-default">Spring学习之@CompnentScan</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
