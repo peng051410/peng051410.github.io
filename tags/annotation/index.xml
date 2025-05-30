@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Mon, 19 May 2025 17:18:23 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 May 2025 14:41:12 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring学习之@Import</title>
+      <link>http://blog.imcompany.cn/post/spring-@import/</link>
+      <pubDate>Fri, 30 May 2025 14:41:12 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-@import/</guid>
+      <description>注解说明 @Import 注解用于标识多个需要导入的 Component 类，支持导入 @Configuration 类， ImportSelector 与 ImportBeanDefinitionRegistrar 实现，与 AnnotationConfigApplicationContext.register() 方法实现的功能类似。此注解常见的实践方式是标注在 EnableXXXX 注解上，用于开启某</description>
+    </item>
+    
     <item>
       <title>Spring学习之@Bean</title>
       <link>http://blog.imcompany.cn/post/spring-@bean/</link>
