@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imcompany.cn/categories/</loc>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/code/</loc>
+    <lastmod>2025-05-30T16:08:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/skill/</loc>
+    <lastmod>2025-05-30T16:08:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/categories/tech/</loc>
+    <lastmod>2025-05-30T16:08:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/the-key-to-accelerating-your-coding-skills/</loc>
+    <lastmod>2025-05-30T16:08:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.imcompany.cn/tags/annotation/</loc>
     <lastmod>2025-05-30T14:41:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,28 +65,7 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2025-05-30T14:41:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/tags/configuration/</loc>
-    <lastmod>2025-05-30T14:41:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2025-05-30T14:41:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
     <lastmod>2025-05-30T14:41:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,13 +87,6 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/spring-@import/</loc>
-    <lastmod>2025-05-30T14:41:12+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
     <lastmod>2025-05-30T14:41:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -255,28 +283,28 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/book/</loc>
-    <lastmod>2025-04-03T15:26:47+08:00</lastmod>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/book/</loc>
-    <lastmod>2025-04-03T15:26:47+08:00</lastmod>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/read/</loc>
-    <lastmod>2025-04-03T15:26:47+08:00</lastmod>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/peng-read-2025/</loc>
-    <lastmod>2025-04-03T15:26:47+08:00</lastmod>
+    <lastmod>2025-06-04T17:19:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -991,13 +1019,6 @@
   <url>
     <loc>http://blog.imcompany.cn/post/mac-soft/</loc>
     <lastmod>2024-04-28T11:21:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/code/</loc>
-    <lastmod>2021-09-06T11:25:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
