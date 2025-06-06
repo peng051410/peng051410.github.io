@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 30 May 2025 15:34:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Jun 2025 17:33:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring学习之@Autowireid</title>
+      <link>http://blog.imcompany.cn/post/spring-@autowired/</link>
+      <pubDate>Thu, 05 Jun 2025 17:33:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-@autowired/</guid>
+      <description>注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项</description>
+    </item>
+    
     <item>
       <title>The Key To Accelerating Your Coding Skills（收藏）</title>
       <link>http://blog.imcompany.cn/post/the-key-to-accelerating-your-coding-skills/</link>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring学习之@Autowireid - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-@autowired/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring学习之@Autowireid" />
+<meta property="og:description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-@autowired/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-06-05T17:33:00+08:00" />
+<meta property="article:modified_time" content="2025-06-06T15:02:29+08:00" />
+<meta itemprop="name" content="Spring学习之@Autowireid">
+<meta itemprop="description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项"><meta itemprop="datePublished" content="2025-06-05T17:33:00+08:00" />
+<meta itemprop="dateModified" content="2025-06-06T15:02:29+08:00" />
+<meta itemprop="wordCount" content="1829">
+<meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring学习之@Autowireid"/>
+<meta name="twitter:description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring学习之@Autowireid</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-06-05 </span>
+        <div class="post-category">
+            <a href="/categories/spring/"> spring </a>
+            </div>
+          <span class="more-meta"> 约 1829 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#注解说明">注解说明</a></li>
+    <li><a href="#属性说明">属性说明</a></li>
+    <li><a href="#注解注入规则说明">注解注入规则说明</a>
+      <ul>
+        <li><a href="#构造器注入">构造器注入</a></li>
+        <li><a href="#字段注入">字段注入</a></li>
+        <li><a href="#方法注入">方法注入</a></li>
+        <li><a href="#参数注入">参数注入</a></li>
+        <li><a href="#数组-集合注入">数组/集合注入</a></li>
+        <li><a href="#不支持-beanpostprocessor-或者-beanfactorypostprocessor">不支持 BeanPostProcessor 或者 BeanFactoryPostProcessor</a></li>
+      </ul>
+    </li>
+    <li><a href="#源码阅读">源码阅读</a>
+      <ul>
+        <li><a href="#元数据收集">元数据收集</a></li>
+        <li><a href="#注入">注入</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="注解说明">注解说明</h2>
+<p><a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html">@Autowired</a> 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 <a href="https://javax-inject.github.io/javax-inject/">JSR-330 @Inject</a> 注解的替代，支持配置 <code>依赖是否必须</code> 选项</p>
+<h2 id="属性说明">属性说明</h2>
+<p>此注解只有一个属性 <code>required</code> ，默认为 true 表示待注入组件必须存在</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vvxKeV.png"/>
+</figure>
+
+<h2 id="注解注入规则说明">注解注入规则说明</h2>
+<h3 id="构造器注入">构造器注入</h3>
+<ol>
+<li>如果一个类声明了多个构造器且没有一个显式标注 @Autowired，则Spring会使用默认的构造方法进行装载</li>
+<li>如果一个类只声明了一个构造器，不管有没有标注 @Autowired 注解它都会被直接使用</li>
+<li>多参数可以配置多个required属性，对于可选注入，可以声明为 Java8 的Optional类型</li>
+</ol>
+<h3 id="字段注入">字段注入</h3>
+<p>字段在构造器之后，配置方法注入之前进行自动注入</p>
+<h3 id="方法注入">方法注入</h3>
+<p>方法注入不限制方法名与参数个数，所有参数会被Spring进行匹配注入</p>
+<h3 id="参数注入">参数注入</h3>
+<p>目前只在 <a href="https://docs.spring.io/spring-framework/reference/testing.html">spring-test</a> 模块中有效，其它地方使用会被忽略</p>
+<h3 id="数组-集合注入">数组/集合注入</h3>
+<p>Spring通过匹配数组/集合的值进行注入，Map的key必须为String类型，支持集合中元素的Order配置</p>
+<h3 id="不支持-beanpostprocessor-或者-beanfactorypostprocessor">不支持 BeanPostProcessor 或者 BeanFactoryPostProcessor</h3>
+<p>因为真实的注入动作发生在 <code>BeanPostProcessor</code> 阶段，所以不能在 <code>BeanPostProcessor</code> 或者 <code>BeanFactoryPostProcessor</code> 中使用此注解</p>
+<h2 id="源码阅读">源码阅读</h2>
+<p>在Spring中，处理 @Autowired 注解对应的类为 <a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.html">AutowiredAnnotationBeanPostProcessor</a> ，又是一个Bean后置处理器</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3DVo64.png"/>
+</figure>
+
+<p>对于此类，需要关注其实现的两个接口类 <code>MergedBeanDefinitionPostProcessor</code> (运行时合并Bean的定义回调接口)和 <code>InstantiationAwareBeanPostProcessor</code> (在Bean实例化前后进行处理后置处理器)</p>
+<blockquote>
+<ol>
+<li>MergedBeanDefinitionPostProcessor 主要是为了在真正bean实例化前准备缓存的bean元数据</li>
+<li>InstantiationAwareBeanPostProcessor Bean实例化回调接口，通常用于为bean创建代理</li>
+</ol>
+</blockquote>
+<h3 id="元数据收集">元数据收集</h3>
+<p>调用栈信息如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">postProcessMergedBeanDefinition:294, AutowiredAnnotationBeanPostProcessor <span class="o">(</span>org.springframework.beans.factory.annotation<span class="o">)</span>
+</span></span><span class="line"><span class="cl">applyMergedBeanDefinitionPostProcessors:1099, AbstractAutowireCapableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">doCreateBean:575, AbstractAutowireCapableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">createBean:523, AbstractAutowireCapableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lambda<span class="nv">$doGetBean$0</span>:336, AbstractBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">getObject:-1, AbstractBeanFactory<span class="nv">$$</span>Lambda/0x0000007001101000 <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">getSingleton:288, DefaultSingletonBeanRegistry <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">doGetBean:334, AbstractBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">getBean:199, AbstractBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">instantiateSingleton:1122, DefaultListableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">preInstantiateSingleton:1093, DefaultListableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">preInstantiateSingletons:1030, DefaultListableBeanFactory <span class="o">(</span>org.springframework.beans.factory.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">finishBeanFactoryInitialization:987, AbstractApplicationContext <span class="o">(</span>org.springframework.context.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">refresh:627, AbstractApplicationContext <span class="o">(</span>org.springframework.context.support<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&lt;init&gt;:93, AnnotationConfigApplicationContext <span class="o">(</span>org.springframework.context.annotation<span class="o">)</span>
+</span></span><span class="line"><span class="cl">main:19, Main <span class="o">(</span>cn.imcompany.bean.autowired<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>由调用栈信息可以发现此动作发生在 finishBeanFactoryInitialization() 阶段, 在doCreateBean方法中被调用</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ln0SKy.png"/>
+</figure>
+
+<p>核心逻辑在 buildAutowiringMetadata() 方法中，此方法会循环遍历当前的类(一直到Object类为止)，处理类中的字段与方法是否有需要自动装载的配置，如果有，则会将需要注入的元数据信息存放在 List&lt;InjectionMetadata.InjectedElement&gt; 中返回</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/eDuJbq.png"/>
+</figure>
+
+<p>在调用方 findAutowiringMetadata() 方法会将返回的元数据信息存入 injectionMetadataCache 中
+<img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/bi3rMF.png" alt=""></p>
+<h4 id="autowiredannotationbeanpostprocessor能处理哪些注解">AutowiredAnnotationBeanPostProcessor能处理哪些注解</h4>
+<p>由其构造器逻辑可以发现，AutowiredAnnotationBeanPostProcessor 可以处理:</p>
+<ol>
+<li>@Autowired</li>
+<li>@Value</li>
+<li>@jakarta.inject.Inject</li>
+<li>@javax.inject.Inject</li>
+</ol>
+<h3 id="注入">注入</h3>
+<p>自动装配的注入是由 AutowiredAnnotationBeanPostProcessor#postProcessProperties() 来处理(此方法会被AbstractAutowireCapableBeanFactory#populateBean调用)，它会先调用 findAutowiringMetadata() 来查询要注入的元数据信息，查到后调用元数据实体InjectionMetadata的inject() 方法进行注入操作。</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GPkQb5.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DARkCF.png"/>
+</figure>
+
+<blockquote>
+<p>注入分为: 字段注入(AutowiredFieldElement)与方法注入(AutowiredMethodElement)</p>
+</blockquote>
+<p>第一次由于没有缓存，则会调用 AutowiredFieldElement#resolveFieldValue() 方法(因为测试用例将注解写在了字段上)，此方法会调用 DefaultListableBeanFactory#resolveDependency() 对需要注入的bean进行查找解析，找到后会将要注入的bean通过反射设置到当前Class对应字段上。真正的依赖bean解析工作是由 doResolveDependency() 来完成的。</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/OeFoBk.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Hc3Puq.png"/>
+</figure>
+
+<p>doResolveDependency具体实现步骤:</p>
+<ol>
+<li>使用快捷方式解析，因为实现直接返回null，则继续往下执行</li>
+<li>解析@Value注解上预定义的值或者表达式，由于测试用例未配置，则继续执行</li>
+<li>通过声明的依赖名称进行解析，对于要查找的依赖名称和类型进行判断，满足条件后，则通过调用 getBean() 方法获取依赖的Bean实例，获取成功后则调用 resolveInstance() 直接返回，否则继续执行</li>
+<li>处理多bean，如集合、数组、Map
+<ol>
+<li>特定类型的集合bean匹配</li>
+</ol>
+</li>
+<li>如果匹配到了多个，确定一个</li>
+<li>对单个结果进行检验</li>
+</ol>
+<p>本次用例的依赖解析会在第3步中查找完成并进行返回，对于第3步中一个合格的依赖bean需要满足条件如下：</p>
+<ol>
+<li>类型匹配</li>
+<li>是可以注入的候选者</li>
+<li>没有被标注为fallback</li>
+<li>不是primary冲突的bean</li>
+<li>不是自引用</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>@Autowired 是Spring框架的核心注解，用于自动注入依赖Bean，可实现对字段、构造器、方法的注入，支持集合类型方式注入。其实现类为 AutowiredAnnotationBeanPostProcessor , Spring解析此注解发生在 refresh操作的 finishBeanFactoryInitialization 阶段。注入分为两步：</p>
+<ol>
+<li>收集：在构建实例(doCreateBean)时会调用  AutowiredAnnotationBeanPostProcessor#postProcessMergedBeanDefinition() 方法来统一对merged bean 定义进行修改，具体实现为遍历当前类以及父类，判断其定义的字段或者方法上是否标注了此注解，标注则记录其相应的注入信息。</li>
+<li>注入：真正的注入发生在调用populateBean()，此方法会调用 AutowiredAnnotationBeanPostProcessor#postProcessProperties 查询收集的依赖的Bean信息，找到后进行注入，在注入过程中会对候选者进行一系列的条件筛选，满足条件则注入成功</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-06-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/annotation/">annotation</a>
+          <a href="/tags/configuration/">configuration</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/the-key-to-accelerating-your-coding-skills/">
+            <span class="next-text nav-default">The Key To Accelerating Your Coding Skills（收藏）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
