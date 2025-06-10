@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/spring-@bean/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2025-05-19T17:18:23+08:00" />
+<meta property="article:modified_time" content="2025-06-10T11:27:24+08:00" />
 <meta itemprop="name" content="Spring学习之@Bean">
 <meta itemprop="description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解">
-<meta itemprop="dateModified" content="2025-05-19T17:18:23+08:00" />
-<meta itemprop="wordCount" content="1501">
+<meta itemprop="dateModified" content="2025-06-10T11:27:24+08:00" />
+<meta itemprop="wordCount" content="1629">
 <meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring学习之@Bean"/>
 <meta name="twitter:description" content="注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解"/>
@@ -139,12 +139,12 @@
       <h1 class="post-title">Spring学习之@Bean</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2025-05-19 </span>
+        <span class="post-time"> 2025-06-10 </span>
         <div class="post-category">
             <a href="/categories/spring/"> spring </a>
             </div>
-          <span class="more-meta"> 约 1501 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 1629 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -163,6 +163,7 @@
       </ul>
     </li>
     <li><a href="#与其它注解的关联">与其它注解的关联</a></li>
+    <li><a href="#接口默认方法定义bean">接口默认方法定义Bean</a></li>
     <li><a href="#源码阅读">源码阅读</a>
       <ul>
         <li><a href="#bean注解配置实例化">Bean注解配置实例化</a></li>
@@ -203,8 +204,40 @@
 <li>@DepednsOn</li>
 <li>@Primary</li>
 <li>@Order</li>
+<li>@Description(给注解bean详细描述，此注解的值会保存在 <code>BeanDefinition</code> 实例上)</li>
+<li>@Conditional</li>
 </ol>
-<h2 id="源码阅读">源码阅读</h2>
+<h2 id="接口默认方法定义bean">接口默认方法定义Bean</h2>
+<p>Spring 支持在接口中使用默认方法的方式进行bean的定义，方便子类配置类直接复用，示例代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">BaseConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span> <span class="n">MyBean3</span> <span class="nf">myBean3</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean3</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppConfig</span> <span class="kd">implements</span> <span class="n">BaseConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="源码阅读">源码阅读</h2>
 <h3 id="bean注解配置实例化">Bean注解配置实例化</h3>
 <p>由于@Bean通常与@Configuration 一起使用，核心逻辑在 refresh 阶段，定位代码发现在 ConfigurationClassParser#doProcessConfigurationClass() 方法进行对 @Bean 标识方法的解析</p>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/wbrJ1N.png"/>
@@ -275,7 +308,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2025-05-19
+        2025-06-10
         
     </span>
   </p>
@@ -306,13 +339,9 @@
           <a href="/tags/configuration/">configuration</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/spring-@import/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Spring学习之@Import</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/peng-week17/">
-            <span class="next-text nav-default">众乐乐-weekly 第17期</span>
+        
+        <a class="next" href="/post/spring-@autowired/">
+            <span class="next-text nav-default">Spring学习之@Autowireid</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
