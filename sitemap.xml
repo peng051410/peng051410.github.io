@@ -3,62 +3,69 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/annotation/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/configuration/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/spring/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/spring/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/post/spring-@bean/</loc>
-    <lastmod>2025-06-10T11:27:24+08:00</lastmod>
+    <loc>http://blog.imcompany.cn/post/spring-@value/</loc>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/spring-@bean/</loc>
     <lastmod>2025-06-10T11:27:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -318,21 +325,21 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/sports/</loc>
-    <lastmod>2025-05-16T10:12:18+08:00</lastmod>
+    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/sports/</loc>
-    <lastmod>2025-05-16T10:12:18+08:00</lastmod>
+    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/badminton/</loc>
-    <lastmod>2025-05-16T10:12:18+08:00</lastmod>
+    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -360,14 +367,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/speech/</loc>
-    <lastmod>2025-05-15T18:23:22+08:00</lastmod>
+    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/speech/</loc>
-    <lastmod>2025-05-15T18:23:22+08:00</lastmod>
+    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -584,7 +591,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/speech/</loc>
-    <lastmod>2025-05-15T18:23:22+08:00</lastmod>
+    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
