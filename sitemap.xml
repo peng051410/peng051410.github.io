@@ -10,7 +10,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -24,14 +24,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2025-06-13T18:20:15+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -367,14 +367,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/speech/</loc>
-    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/speech/</loc>
-    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -591,7 +591,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/post/speech/</loc>
-    <lastmod>2025-06-13T09:41:14+08:00</lastmod>
+    <lastmod>2025-06-13T18:20:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
