@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/spring-@import/" /><meta property="article:section" content="post" />
 
-<meta property="article:modified_time" content="2025-05-30T14:41:12+08:00" />
+<meta property="article:modified_time" content="2025-06-17T17:32:55+08:00" />
 <meta itemprop="name" content="Spring学习之@Import">
 <meta itemprop="description" content="注解说明 @Import 注解用于标识多个需要导入的 Component 类，支持导入 @Configuration 类， ImportSelector 与 ImportBeanDefinitionRegistrar 实现，与 AnnotationConfigApplicationContext.register() 方法实现的功能类似。此注解常见的实践方式是标注在 EnableXXXX 注解上，用于开启某">
-<meta itemprop="dateModified" content="2025-05-30T14:41:12+08:00" />
-<meta itemprop="wordCount" content="1153">
+<meta itemprop="dateModified" content="2025-06-17T17:32:55+08:00" />
+<meta itemprop="wordCount" content="1271">
 <meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring学习之@Import"/>
 <meta name="twitter:description" content="注解说明 @Import 注解用于标识多个需要导入的 Component 类，支持导入 @Configuration 类， ImportSelector 与 ImportBeanDefinitionRegistrar 实现，与 AnnotationConfigApplicationContext.register() 方法实现的功能类似。此注解常见的实践方式是标注在 EnableXXXX 注解上，用于开启某"/>
@@ -139,11 +139,11 @@
       <h1 class="post-title">Spring学习之@Import</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2025-05-30 </span>
+        <span class="post-time"> 2025-06-17 </span>
         <div class="post-category">
             <a href="/categories/spring/"> spring </a>
             </div>
-          <span class="more-meta"> 约 1153 字 </span>
+          <span class="more-meta"> 约 1271 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -162,9 +162,10 @@
     </li>
     <li><a href="#源码分析">源码分析</a>
       <ul>
-        <li><a href="#处理-importselectot-实现类">处理 ImportSelectot 实现类</a></li>
-        <li><a href="#处理deferredimportselector-实现类">处理DeferredImportSelector 实现类</a></li>
+        <li><a href="#处理-importselector-实现类">处理 ImportSelector 实现类</a></li>
+        <li><a href="#处理-deferredimportselector-实现类">处理 DeferredImportSelector 实现类</a></li>
         <li><a href="#处理-importbeandefinitionregistrar-实现类">处理 ImportBeanDefinitionRegistrar 实现类</a></li>
+        <li><a href="#处理其它类型的导入">处理其它类型的导入</a></li>
       </ul>
     </li>
     <li><a href="#总结">总结</a></li>
@@ -298,11 +299,11 @@
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0CjQf3.png"/>
 </figure>
 
-<h3 id="处理-importselectot-实现类">处理 ImportSelectot 实现类</h3>
+<h3 id="处理-importselector-实现类">处理 ImportSelector 实现类</h3>
 <p>首先实例化 ImportSelector ，在此看到可以使用的 environment, resourceLoader 和 registry
 <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ka7Y13.png" alt=""></p>
 <p>如果 selector 是 <code>ImportSelector</code> ，则获取导入的类名字列表，然后对导入类名字列表分别进行导入操作</p>
-<h3 id="处理deferredimportselector-实现类">处理DeferredImportSelector 实现类</h3>
+<h3 id="处理-deferredimportselector-实现类">处理 DeferredImportSelector 实现类</h3>
 <p>如果 selector 是 <code>DeferredImportSelector</code> ，则调用 <code>DeferredImportSelectorHandler#handle()</code> 方法进行延迟处理，此方法会委托 <code>DeferredImportSelectorGroupingHandler</code> 类进行分组处理，实例化 handler 后，会把 deferrredSelectHolder 存储到 deferredImportSelectors 列表中，在没有显示配置的情况使用的是 <code>DeferredImportSelectorHolder</code></p>
 <p>在 <code>ConfigurationClassParser</code> 解析完所有的 import 类定义后，会调用 <code>DeferredImportSelectorGroupingHandler#process()</code> 方法来处理延迟导入的Bean配置</p>
 <figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Qalg7W.png"/>
@@ -320,6 +321,17 @@
 <p><code>ImportBeanDefinitionRegistrar</code> 的实现类的Bean注册没有依赖于组件扫描或者自动配置，而是通过调用 <code>ConfigurationClassBeanDefinitionReader#loadBeanDefinitionsFromRegistrars()</code> 来调用 ImportBeanDefinitionRegistrar 的 registerBeanDefinitions 方法(子类需要实现的方法)来进行注入</p>
 <p><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rwjBYY.png" alt="">
 <img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/owTeTV.png" alt=""></p>
+<h3 id="处理其它类型的导入">处理其它类型的导入</h3>
+<p>如果要导入的类不是 ImportSelector 及其实现类和 ImportBeanDefinitionRegistrar 的实现类，则会按照 @Configuration 类方式进行导入，Spring会调用 候选类的 <code>asConfigClass()</code> 方法将其包装成 ConfigurationClass 返回然后来进行处理，这样就就使用 在 @Import 注解中直接导入一个实体Bean成为了可能</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/AjhMcJ.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3xHlh6.png"/>
+</figure>
+
+<blockquote>
+<p>ConfigurationClass 类是Spring内部用于表示一个扁平化的用户定义的 @Configuration 配置类的模型对象</p>
+</blockquote>
 <h2 id="总结">总结</h2>
 <p>Spring的强大在于提供了多种导入配置的方式，分别为：</p>
 <ol>
@@ -338,7 +350,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2025-05-30
+        2025-06-17
         
     </span>
   </p>
@@ -369,13 +381,13 @@
           <a href="/tags/configuration/">configuration</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/the-key-to-accelerating-your-coding-skills/">
+        <a class="prev" href="/post/spring-@bean/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">The Key To Accelerating Your Coding Skills（收藏）</span>
+            <span class="prev-text nav-default">Spring学习之@Bean</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/post/peng-week17/">
-            <span class="next-text nav-default">众乐乐-weekly 第17期</span>
+        <a class="next" href="/post/spring-@value/">
+            <span class="next-text nav-default">Spring学习之@Value</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
