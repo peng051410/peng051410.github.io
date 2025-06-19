@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 17 Jun 2025 17:52:30 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jun 2025 17:56:39 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring学习之@Bean</title>
       <link>http://blog.imcompany.cn/post/spring-@bean/</link>
-      <pubDate>Tue, 17 Jun 2025 17:52:30 +0800</pubDate>
+      <pubDate>Tue, 17 Jun 2025 17:56:39 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/spring-@bean/</guid>
       <description>注解说明 @Bean 是Spring的一个核心注解，通常与 @Configuration 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解</description>

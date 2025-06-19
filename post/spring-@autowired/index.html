@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.imcompany.cn/post/spring-@autowired/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2025-06-06T16:00:00+08:00" />
-<meta property="article:modified_time" content="2025-06-06T17:18:24+08:00" />
+<meta property="article:modified_time" content="2025-06-19T11:14:05+08:00" />
 <meta itemprop="name" content="Spring学习之@Autowireid">
 <meta itemprop="description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项"><meta itemprop="datePublished" content="2025-06-06T16:00:00+08:00" />
-<meta itemprop="dateModified" content="2025-06-06T17:18:24+08:00" />
-<meta itemprop="wordCount" content="1987">
+<meta itemprop="dateModified" content="2025-06-19T11:14:05+08:00" />
+<meta itemprop="wordCount" content="2089">
 <meta itemprop="keywords" content="spring,annotation,configuration," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring学习之@Autowireid"/>
 <meta name="twitter:description" content="注解说明 @Autowired 是Spring框架的核心注解，用于自动装载构造器、字段、set方法、配置方法上的依赖，它是 JSR-330 @Inject 注解的替代，支持配置 依赖是否必须 选项"/>
@@ -143,8 +143,8 @@
         <div class="post-category">
             <a href="/categories/spring/"> spring </a>
             </div>
-          <span class="more-meta"> 约 1987 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+          <span class="more-meta"> 约 2089 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -191,10 +191,16 @@
 <ol>
 <li>如果一个类声明了多个构造器且没有一个显式标注 @Autowired，则Spring会使用默认的构造方法进行装载</li>
 <li>如果一个类只声明了一个构造器，不管有没有标注 @Autowired 注解它都会被直接使用</li>
-<li>多参数可以配置多个required属性，对于可选注入，可以声明为 Java8 的Optional类型</li>
+<li>多参数可以配置多个required属性，对于可选注入，可以声明为 Java8 的 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a> 类型</li>
 </ol>
+<blockquote>
+<p>对于可选注入也可以使用 JSR-305 的 <code>javax.annotation.Nullable</code> 注解</p>
+</blockquote>
 <h3 id="字段注入">字段注入</h3>
 <p>字段在构造器之后，配置方法注入之前进行自动注入</p>
+<blockquote>
+<p>字段注入支持组件自引用(self references)</p>
+</blockquote>
 <h3 id="方法注入">方法注入</h3>
 <p>方法注入不限制方法名与参数个数，所有参数会被Spring进行匹配注入</p>
 <h3 id="参数注入">参数注入</h3>
@@ -394,6 +400,22 @@
 <li>@Fallback</li>
 </ol>
 </blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>在此配置的@Order注解只会影响注入点的顺序，不会影响单例的启动顺序</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>Spring的一些内部组件(及其扩展接口)支持自动解析注入，常见的有:</p>
+<ol>
+<li>BeanFactory</li>
+<li>ApplicaitonContext</li>
+<li>Environment</li>
+<li>ResourceLoader</li>
+<li>ApplicationEventPublisher</li>
+<li>MessageSource</li>
+</ol>
+</blockquote>
 <h2 id="总结">总结</h2>
 <p><code>@Autowired</code> 是Spring框架的核心注解，用于自动注入依赖Bean，可实现对字段、构造器、方法的注入，支持集合类型方式注入。其实现类为 <code>AutowiredAnnotationBeanPostProcessor</code> , Spring解析此注解发生在 refresh 操作的 finishBeanFactoryInitialization 阶段。注入分为两步：</p>
 <ol>
@@ -413,7 +435,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2025-06-06
+        2025-06-19
         
     </span>
   </p>
