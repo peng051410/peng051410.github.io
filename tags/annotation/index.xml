@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Tue, 17 Jun 2025 17:56:39 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jun 2025 15:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/annotation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring学习之@Conditional</title>
+      <link>http://blog.imcompany.cn/post/spring-@conditional/</link>
+      <pubDate>Wed, 18 Jun 2025 15:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/spring-@conditional/</guid>
+      <description>注解说明 @Conditional 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类</description>
+    </item>
+    
     <item>
       <title>Spring学习之@Bean</title>
       <link>http://blog.imcompany.cn/post/spring-@bean/</link>

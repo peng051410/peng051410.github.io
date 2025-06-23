@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring学习之@Conditional - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="注解说明 @Conditional 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/spring-@conditional/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring学习之@Conditional" />
+<meta property="og:description" content="注解说明 @Conditional 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/spring-@conditional/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-06-18T15:00:00+08:00" />
+<meta property="article:modified_time" content="2025-06-23T11:33:04+08:00" />
+<meta itemprop="name" content="Spring学习之@Conditional">
+<meta itemprop="description" content="注解说明 @Conditional 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类"><meta itemprop="datePublished" content="2025-06-18T15:00:00+08:00" />
+<meta itemprop="dateModified" content="2025-06-23T11:33:04+08:00" />
+<meta itemprop="wordCount" content="1635">
+<meta itemprop="keywords" content="spring,annotation,configuration,condition," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring学习之@Conditional"/>
+<meta name="twitter:description" content="注解说明 @Conditional 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring学习之@Conditional</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-06-18 </span>
+        <div class="post-category">
+            <a href="/categories/spring/"> spring </a>
+            </div>
+          <span class="more-meta"> 约 1635 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#注解说明">注解说明</a></li>
+    <li><a href="#注解属性">注解属性</a></li>
+    <li><a href="#测试代码">测试代码</a></li>
+    <li><a href="#源码阅读">源码阅读</a>
+      <ul>
+        <li><a href="#快速解析configuration注解类">快速解析Configuration注解类</a></li>
+        <li><a href="#解析其它配置及配置中的bean">解析其它配置及配置中的Bean</a></li>
+      </ul>
+    </li>
+    <li><a href="#聊聊-profile">聊聊@Profile</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="注解说明">注解说明</h2>
+<p><a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Conditional.html">@Conditional</a> 是 Spring 提供的用于判断是否对 Bean 注入的条件注解(在4.0后版本引入)，只有满足了所有的条件，一个 bean 才会被注册成功并使用。此注解可标注在类上、元注解上、@Bean方法上，通常与 @Configuration 注解配合使用，标识在 @Configuration 注解上的 @Conditional 会影响此配置类的所有 @Bean 注解方法、@Import 注解和@ComponentScan 注解。另需注意 @Conditional 注解不支持继承</p>
+<blockquote>
+<p>对于标注在元注解上的样例，可查看 SpringBoot 项目下的 <code>org.springframework.boot.autoconfigure.condition</code> 包以 ConditionalOn 开头的类</p>
+</blockquote>
+<h2 id="注解属性">注解属性</h2>
+<p>此注解只有一个属性 <code>value</code> ，返回类型为 Class 数组，它用来配置所有的 <a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Condition.html">Condition</a> 类信息</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ndm3ZA.png"/>
+</figure>
+
+<blockquote>
+<p>Condition 是 Spring 提供的一个接口，它提供了 matches 方法来提供判断的依据逻辑，对于其参数 <a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ConditionContext.html">ConditionContext</a> 提供了丰富的上下文信息</p>
+</blockquote>
+<h2 id="测试代码">测试代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@ComponentScan</span><span class="o">(</span><span class="n">basePackages</span> <span class="o">=</span> <span class="s">&#34;cn.imcompany.bean.condition&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@ConditionalOnDate</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MyBean</span> <span class="nf">myBean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MyBean2</span> <span class="nf">myBean2</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean2</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Conditional</span><span class="o">(</span><span class="n">ConfigPropertyCondition</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MyBean5</span> <span class="nf">myBean5</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean5</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Conditional</span><span class="o">(</span><span class="n">ConfigPropertyCondition</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyConfigConfiguration</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MyBean3</span> <span class="nf">myBean3</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean3</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Bean</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MyBean4</span> <span class="nf">myBean4</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">MyBean4</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDateCondition</span> <span class="kd">implements</span> <span class="n">Condition</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="n">ConditionContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">AnnotatedTypeMetadata</span> <span class="n">metadata</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">LocalDateTime</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="o">.</span><span class="na">now</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">minute</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="na">getMinute</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">minute</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 每隔两分钟满足条件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Retention</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Target</span><span class="o">({</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">})</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Documented</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Conditional</span><span class="o">(</span><span class="n">MyDateCondition</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="nd">@interface</span> <span class="n">ConditionalOnDate</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConfigPropertyCondition</span> <span class="kd">implements</span> <span class="n">Condition</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">matches</span><span class="o">(</span><span class="n">ConditionContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">AnnotatedTypeMetadata</span> <span class="n">metadata</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s">&#34;true&#34;</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&#34;my.config.property&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">setProperty</span><span class="o">(</span><span class="s">&#34;my.config.property&#34;</span><span class="o">,</span> <span class="s">&#34;true&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AnnotationConfigApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AnnotationConfigApplicationContext</span><span class="o">(</span><span class="n">MyConfiguration</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">beanDefinitionName</span> <span class="o">:</span> <span class="n">context</span><span class="o">.</span><span class="na">getBeanDefinitionNames</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;beanDefinitionName = &#34;</span> <span class="o">+</span> <span class="n">beanDefinitionName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="源码阅读">源码阅读</h2>
+<p>对于 Configuration 类条件处理分为两个阶段：</p>
+<ol>
+<li>PARSE_CONFIGURATION, 解析 @Configuration 类阶段</li>
+<li>REGISTER_BEAN，注册Bean阶段，如 @Configuration 类下定义的 @Bean 方法</li>
+</ol>
+<h3 id="快速解析configuration注解类">快速解析Configuration注解类</h3>
+<p>快速解析 @Conditional 注解的逻辑在 AnnotationConfigApplicationContext的register阶段，此方法会调用 <code>AnnotatedBeanDefinitionReader#doRegisterBean</code> 来对Spring中常用的组件类(@Compnent，@Configuration)进行注入操作，在此方法会调用核心方法 <code>ConditionEvaluator#shouldSkip</code> 来判断要处理类的是否要进行注册。 shouldSkip 会先判断是否标注有 @Conditional 注解，如果没有则进行正常的注册，如果有则会调用 <code>collectConditions()</code> 方法收集注解上的 Condition 信息并进行排序返回(此操作会先从配置类上获取 Condition 类信息再实例化类)，然后会遍历 conditions 来进行判断，如果调用某个 Condition的match() 方法返回 <code>false</code> ，则确认此配置类的解析需要跳过</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WY6Z8K.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uCQOmj.png"/>
+</figure>
+
+<p>由于测试代码的 MyConfiguration 注解类没有标注 @Conditional 相关的注解，则此类中的其它配置在后续 refresh 阶段会继续进行解析</p>
+<h3 id="解析其它配置及配置中的bean">解析其它配置及配置中的Bean</h3>
+<p>除了在 <code>AnnotationConfigApplicationContext</code> 的构造方法中提供的配置类解析后，其它的配置类及其类中的配置条件判断都发生在 <code>refresh</code> 阶段，这里面的判断逻辑发生在 @Configuration 配置的解析流程中，主要涉及 @Configuration、@Componenet、@Import、@Bean 这4个注解的解析</p>
+<h4 id="解析-configuration">解析@Configuration</h4>
+<p>对于 @Configuration 最终会在 <code>ConfigurationClassParser#processConfigurationClass</code> 中先对 @Configuration 进行条件判断，此方法会调用 <code>ConditionEvaluator#shouldSkip</code> 进行判断，不满足则不再进行后续的解析</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/PJ8DVg.png"/>
+</figure>
+
+<h4 id="解析-componentscan">解析@ComponentScan</h4>
+<p>对于 @ComponentScan 扫描的配置类的条件判断发生在 <code>ClassPathScanningCandidateComponentProvider#isCandidateComponent</code> 中，此方法会调用 <code>isConditionMatch()</code> 方法进而来调用 <code>ConditionEvaluator#shouldSkip</code> 来进行判断</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/bXzsPz.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MUYraJ.png"/>
+</figure>
+
+<h4 id="解析-import">解析@Import</h4>
+<p>对于在 @Configuration 中使用 @Import 注解导入的配置类，要满足导入此配置类的类没有被判断为skip才会对导入的类进行注册，此方法会调用 <code>TrackedConditionEvaluator#shouldSkip</code> 进而调用 <code>ConditionEvaluator#shouldSkip</code> 来进行判断</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/50P5Z5.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rr3gBe.png"/>
+</figure>
+
+<h4 id="解析-bean">解析@Bean</h4>
+<p>对于 @Configuration 中配置的 @Bean 方法返回的类的条件判断发生在 <code>ConfigurationClassBeanDefinitionReader#loadBeanDefinitionsForConfigurationClass</code> 中，此方法会调用 <code>loadBeanDefinitionsForBeanMethod</code> 方法进而调用 <code>ConditionEvaluator#shouldSkip</code> 来进行判断</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Efp55O.png"/>
+</figure>
+
+<h2 id="聊聊-profile">聊聊@Profile</h2>
+<p>Spring 中提供了 <a href="https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Profile.html">@Profile</a> 注解来实现候选组件对特定的一组环境名称满足条件时被注册使用，它就是基于 <code>@Conditional</code> 注解来实现的，此注解关联定义了 ProfileCondition ，在ProfileCondition 对Spring中的环境名进行匹配逻辑的处理</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/St8vdH.png"/>
+</figure>
+
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cSOLrK.png"/>
+</figure>
+
+<blockquote>
+<p>The @Profile annotation is actually implemented by using a much more flexible annotation called @Conditional.</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>@Profile与@Conditional的区别，@Profile侧重于环境，而@Conditional更通用</p>
+</blockquote>
+<h2 id="总结">总结</h2>
+<p>Spring 通过提供 <code>@Conditional</code> 注解使 Spring 支持更加灵活的配置类注入控制，特别是支持多个条件配置，其核心处理逻辑在 ConditionEvaluator的shouldSkip方法。开发人员可以通过配置此类来打开关闭相关的功能(典型如Spring Boot的条件化装配)，通常开发的基本功能配置可以通过增加 <code>@Conditional</code> 注解来判断只有在特定情况下才使用默认的配置，这对于模块化开发很有帮助。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-06-23
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/spring/">spring</a>
+          <a href="/tags/annotation/">annotation</a>
+          <a href="/tags/configuration/">configuration</a>
+          <a href="/tags/condition/">condition</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spring-@bean/">
+            <span class="next-text nav-default">Spring学习之@Bean</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
