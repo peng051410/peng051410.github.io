@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>重拾Anroid的快乐-LinearLayout布局 - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐 垂直方向(Vertical) 垂直方向会按每行一个元素排列，而不管设置的宽" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/android-linearlayout/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="重拾Anroid的快乐-LinearLayout布局" />
+<meta property="og:description" content="说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐 垂直方向(Vertical) 垂直方向会按每行一个元素排列，而不管设置的宽" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/android-linearlayout/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-07-01T16:00:00+08:00" />
+<meta property="article:modified_time" content="2025-07-02T16:30:09+08:00" />
+<meta itemprop="name" content="重拾Anroid的快乐-LinearLayout布局">
+<meta itemprop="description" content="说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐 垂直方向(Vertical) 垂直方向会按每行一个元素排列，而不管设置的宽"><meta itemprop="datePublished" content="2025-07-01T16:00:00+08:00" />
+<meta itemprop="dateModified" content="2025-07-02T16:30:09+08:00" />
+<meta itemprop="wordCount" content="587">
+<meta itemprop="keywords" content="android,layout,compose," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="重拾Anroid的快乐-LinearLayout布局"/>
+<meta name="twitter:description" content="说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐 垂直方向(Vertical) 垂直方向会按每行一个元素排列，而不管设置的宽"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">重拾Anroid的快乐-LinearLayout布局</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-07-01 </span>
+        <div class="post-category">
+            <a href="/categories/android/"> android </a>
+            </div>
+          <span class="more-meta"> 约 587 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#说明">说明</a>
+      <ul>
+        <li><a href="#垂直方向--vertical">垂直方向(Vertical)</a></li>
+        <li><a href="#水平方向--horizontal">水平方向(Horizontal)</a></li>
+      </ul>
+    </li>
+    <li><a href="#常用属性配置">常用属性配置</a>
+      <ul>
+        <li><a href="#android-orientation">android:orientation</a></li>
+        <li><a href="#android-layout-width">android:layout_width</a></li>
+        <li><a href="#android-layout-height">android:layout_height</a></li>
+        <li><a href="#android-layout-weight">android:layout_weight</a></li>
+        <li><a href="#android-gravity">android:gravity</a></li>
+      </ul>
+    </li>
+    <li><a href="#实战案例">实战案例</a>
+      <ul>
+        <li><a href="#效果图">效果图</a></li>
+      </ul>
+    </li>
+    <li><a href="#jetpack-compose组件实现同样效果">Jetpack Compose组件实现同样效果</a>
+      <ul>
+        <li><a href="#效果图">效果图</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="说明">说明</h2>
+<p>LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 <code>垂直/水平</code> 对齐</p>
+<h3 id="垂直方向--vertical">垂直方向(Vertical)</h3>
+<p>垂直方向会按每行一个元素排列，而不管设置的宽度</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/bIMjZV.png"/>
+</figure>
+
+<h3 id="水平方向--horizontal">水平方向(Horizontal)</h3>
+<p>水平方向只有一行高，它的高度为最高的子元素+Padding值</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XkHPYo.png"/>
+</figure>
+
+<h2 id="常用属性配置">常用属性配置</h2>
+<h3 id="android-orientation">android:orientation</h3>
+<p>布局方向，可配置值:</p>
+<ol>
+<li>horizontal 水平</li>
+<li>vertical 垂直</li>
+</ol>
+<h3 id="android-layout-width">android:layout_width</h3>
+<p>元素宽度</p>
+<h3 id="android-layout-height">android:layout_height</h3>
+<p>元素高度，可配置具体的数值，还支持常用的值如下:</p>
+<ol>
+<li>match_parent  与父元素同尺寸</li>
+<li>wrap_content 只包含内容大小（+padding）</li>
+</ol>
+<h3 id="android-layout-weight">android:layout_weight</h3>
+<p>布局权重，用于设置元素占据的空间值，值越大占的空间越大，默认值为0</p>
+<h3 id="android-gravity">android:gravity</h3>
+<p>指定视图内容在其自身边界内的对齐方式</p>
+<h2 id="实战案例">实战案例</h2>
+<p>实现一个简单的邮件发送功能</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingLeft=</span><span class="s">&#34;16dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:paddingRight=</span><span class="s">&#34;16dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:orientation=</span><span class="s">&#34;vertical&#34;</span> <span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:autofillHints=</span><span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:hint=</span><span class="s">&#34;@string/to&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:autofillHints=</span><span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:hint=</span><span class="s">&#34;@string/subject&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;0dp&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_weight=</span><span class="s">&#34;1&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:autofillHints=</span><span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:gravity=</span><span class="s">&#34;top&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:hint=</span><span class="s">&#34;@string/message&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:inputType=</span><span class="s">&#34;text&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;100dp&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_gravity=</span><span class="s">&#34;end&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:text=</span><span class="s">&#34;@string/send&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="效果图">效果图</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/HvXVvn.png"/>
+</figure>
+
+<h2 id="jetpack-compose组件实现同样效果">Jetpack Compose组件实现同样效果</h2>
+<p><a href="https://developer.android.com/compose">Jetpack Compose</a> 是google新推出并推荐使用的基于kotlin声明式UI组件库，可以用更少的代码来加速开发</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Composable</span>
+</span></span><span class="line"><span class="cl"><span class="k">fun</span> <span class="nf">LineLayoutSample</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">toHint</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subjectHint</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messageHint</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sendText</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">modifier</span><span class="p">:</span> <span class="n">Modifier</span> <span class="p">=</span> <span class="n">Modifier</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Column</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">modifier</span> <span class="p">=</span> <span class="n">Modifier</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">fillMaxSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="p">.</span><span class="n">padding</span><span class="p">(</span><span class="n">start</span> <span class="p">=</span> <span class="m">16.</span><span class="n">dp</span><span class="p">,</span> <span class="n">end</span> <span class="p">=</span> <span class="m">16.</span><span class="n">dp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TextField</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="k">value</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">onValueChange</span> <span class="p">=</span> <span class="p">{</span>  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">fillMaxWidth</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">placeholder</span> <span class="p">=</span> <span class="p">{</span> <span class="n">Text</span><span class="p">(</span><span class="n">toHint</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">height</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TextField</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="k">value</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">onValueChange</span> <span class="p">=</span> <span class="p">{</span>  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">fillMaxWidth</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">placeholder</span> <span class="p">=</span> <span class="p">{</span> <span class="n">Text</span><span class="p">(</span><span class="n">subjectHint</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">height</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TextField</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="k">value</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">onValueChange</span> <span class="p">=</span> <span class="p">{</span>  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="n">modifier</span> <span class="p">=</span> <span class="n">Modifier</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">fillMaxWidth</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="n">weight</span><span class="p">(</span><span class="m">1f</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">placeholder</span> <span class="p">=</span> <span class="p">{</span> <span class="n">Text</span><span class="p">(</span><span class="n">messageHint</span><span class="p">)</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="n">singleLine</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">maxLines</span> <span class="p">=</span> <span class="nc">Int</span><span class="p">.</span><span class="n">MAX_VALUE</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Spacer</span><span class="p">(</span><span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">height</span><span class="p">(</span><span class="m">8.</span><span class="n">dp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Row</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">fillMaxWidth</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">horizontalArrangement</span> <span class="p">=</span> <span class="nc">Arrangement</span><span class="p">.</span><span class="n">End</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Button</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">onClick</span> <span class="p">=</span> <span class="p">{</span> <span class="cm">/* handle send */</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                <span class="n">modifier</span> <span class="p">=</span> <span class="nc">Modifier</span><span class="p">.</span><span class="n">width</span><span class="p">(</span><span class="m">100.</span><span class="n">dp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Text</span><span class="p">(</span><span class="n">sendText</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="效果图">效果图</h3>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/gONFy0.png"/>
+</figure>
+
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-07-02
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/android/">android</a>
+          <a href="/tags/layout/">layout</a>
+          <a href="/tags/compose/">compose</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/spring-@conditional/">
+            <span class="next-text nav-default">Spring学习之@Conditional</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
