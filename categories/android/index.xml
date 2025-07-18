@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 10 Jul 2025 16:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jul 2025 14:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重拾Android的快乐-TableLayout布局</title>
+      <link>http://blog.imcompany.cn/post/android-tablelayout/</link>
+      <pubDate>Thu, 17 Jul 2025 14:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/android-tablelayout/</guid>
+      <description>说明 TableLayout 是一个用来以行或者列方式来显示子View的视图组。TableLayout不显示行、列或者单元格的边框线。一个表可以留空多个单元格，也可</description>
+    </item>
+    
     <item>
       <title>重拾Android的快乐-RelativeLayout布局</title>
       <link>http://blog.imcompany.cn/post/android-relativelayout/</link>
