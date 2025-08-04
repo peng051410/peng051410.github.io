@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 17 Jul 2025 14:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Aug 2025 19:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重拾Android的快乐-Handler</title>
+      <link>http://blog.imcompany.cn/post/android-handler/</link>
+      <pubDate>Fri, 01 Aug 2025 19:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/android-handler/</guid>
+      <description>说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队</description>
+    </item>
+    
+    <item>
+      <title>重拾Android的快乐-Service</title>
+      <link>http://blog.imcompany.cn/post/android-service/</link>
+      <pubDate>Tue, 29 Jul 2025 14:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/android-service/</guid>
+      <description>说明 REF https://developer.android.com/develop/background-work/services</description>
+    </item>
+    
+    <item>
+      <title>重拾Android的快乐-ListView组件</title>
+      <link>http://blog.imcompany.cn/post/android-listview/</link>
+      <pubDate>Fri, 25 Jul 2025 14:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/android-listview/</guid>
+      <description>说明 ListView 组件用来以垂直滚动的显示View集合，配置方式如下: 1 2 3 4 &amp;lt;ListView android:id=&amp;#34;@+id/list_view&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; /&amp;gt; ListView 实现动态数据展示 ListView 是一个 AdapterView，它不关心要显示</description>
+    </item>
+    
     <item>
       <title>重拾Android的快乐-TableLayout布局</title>
       <link>http://blog.imcompany.cn/post/android-tablelayout/</link>

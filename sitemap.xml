@@ -3,21 +3,105 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/android/</loc>
-    <lastmod>2025-07-17T14:50:22+08:00</lastmod>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/android/</loc>
-    <lastmod>2025-07-17T14:50:22+08:00</lastmod>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/</loc>
-    <lastmod>2025-07-18T10:57:51+08:00</lastmod>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/core/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/handler/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/android-handler/</loc>
+    <lastmod>2025-08-04T17:20:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/service/</loc>
+    <lastmod>2025-07-29T11:34:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/android-service/</loc>
+    <lastmod>2025-07-29T11:34:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/adapter/</loc>
+    <lastmod>2025-08-04T17:08:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/list/</loc>
+    <lastmod>2025-08-04T17:08:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/tags/view/</loc>
+    <lastmod>2025-08-04T17:08:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.imcompany.cn/post/android-listview/</loc>
+    <lastmod>2025-08-04T17:08:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,29 +114,8 @@
   </url>
   
   <url>
-    <loc>http://blog.imcompany.cn/</loc>
-    <lastmod>2025-07-18T10:57:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.imcompany.cn/tags/layout/</loc>
     <lastmod>2025-07-17T14:50:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/post/</loc>
-    <lastmod>2025-07-18T10:57:51+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.imcompany.cn/tags/</loc>
-    <lastmod>2025-07-18T10:57:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -220,7 +283,7 @@
   
   <url>
     <loc>http://blog.imcompany.cn/categories/tool/</loc>
-    <lastmod>2025-06-24T10:49:54+08:00</lastmod>
+    <lastmod>2025-08-04T10:26:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -388,21 +451,21 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/sports/</loc>
-    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
+    <lastmod>2025-07-29T09:53:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/categories/sports/</loc>
-    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
+    <lastmod>2025-07-29T09:53:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/badminton/</loc>
-    <lastmod>2025-06-13T15:01:46+08:00</lastmod>
+    <lastmod>2025-07-29T09:53:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1347,14 +1410,14 @@
   
   <url>
     <loc>http://blog.imcompany.cn/tags/chrome/</loc>
-    <lastmod>2025-06-24T10:49:54+08:00</lastmod>
+    <lastmod>2025-08-04T10:26:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</loc>
-    <lastmod>2025-06-24T10:49:54+08:00</lastmod>
+    <lastmod>2025-08-04T10:26:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>重拾Android的快乐-Handler - I&#39;m company</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="tomyli" /><meta name="description" content="说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队" /><meta name="keywords" content="Java, Tool, Emacs, Mac" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.119.0 with theme even" />
+
+
+<link rel="canonical" href="http://blog.imcompany.cn/post/android-handler/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="重拾Android的快乐-Handler" />
+<meta property="og:description" content="说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.imcompany.cn/post/android-handler/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-08-01T19:00:00+08:00" />
+<meta property="article:modified_time" content="2025-08-04T17:20:42+08:00" />
+<meta itemprop="name" content="重拾Android的快乐-Handler">
+<meta itemprop="description" content="说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队"><meta itemprop="datePublished" content="2025-08-01T19:00:00+08:00" />
+<meta itemprop="dateModified" content="2025-08-04T17:20:42+08:00" />
+<meta itemprop="wordCount" content="871">
+<meta itemprop="keywords" content="android,handler,core," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="重拾Android的快乐-Handler"/>
+<meta name="twitter:description" content="说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">I&#39;m company</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="https://cse.google.com/cse?cx=327586c9e64354403">
+        <li class="mobile-menu-item">Search</li>
+      </a><a href="https://github.com/peng051410/today_i_learn">
+        <li class="mobile-menu-item">Til</li>
+      </a><a href="/categories/weekly/">
+        <li class="mobile-menu-item">Weekly</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">I&#39;m company</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://cse.google.com/cse?cx=327586c9e64354403">Search</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://github.com/peng051410/today_i_learn">Til</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/weekly/">Weekly</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">重拾Android的快乐-Handler</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2025-08-01 </span>
+        <div class="post-category">
+            <a href="/categories/android/"> android </a>
+            </div>
+          <span class="more-meta"> 约 871 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#为什么提供handler机制">为什么提供Handler机制</a></li>
+    <li><a href="#常用方法">常用方法</a>
+      <ul>
+        <li><a href="#sendmessage">sendMessage</a></li>
+        <li><a href="#handlemessage">handleMessage</a></li>
+        <li><a href="#obtainmessage">obtainMessage</a></li>
+        <li><a href="#post">post</a></li>
+        <li><a href="#removemessages">removeMessages</a></li>
+        <li><a href="#hasmessages">hasMessages</a></li>
+      </ul>
+    </li>
+    <li><a href="#实战">实战</a>
+      <ul>
+        <li><a href="#页面">页面</a></li>
+        <li><a href="#代码逻辑">代码逻辑</a></li>
+      </ul>
+    </li>
+    <li><a href="#在子线程中调用handler">在子线程中调用Handler</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="说明">说明</h2>
+<p><a href="https://developer.android.com/reference/android/os/Handler">Handler</a> 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能：</p>
+<ol>
+<li>将消息与可运行对象在安排在未来某个时间点运行</li>
+<li>在其它线程上操作队列</li>
+</ol>
+<h2 id="为什么提供handler机制">为什么提供Handler机制</h2>
+<p>Android在启动后会有一个主线程，它不允许子线程去改变主UI线程的内容，为了防止一些耗时操作导致主UI线程无响应而闪退，是Android提供的一种保护机制。在现实中确实有一些耗时长的需求使用异步线程，比如调用三方接口，加载完后来刷新UI，这种需要就可以用Android提供的 <code>Handler</code> 机制来实现，可以认为 <code>Handler</code> 是一个与Android主进程的通道</p>
+<h2 id="常用方法">常用方法</h2>
+<h3 id="sendmessage">sendMessage</h3>
+<p>发送消息</p>
+<h3 id="handlemessage">handleMessage</h3>
+<p>接收消息</p>
+<h3 id="obtainmessage">obtainMessage</h3>
+<p>从全局消息pool获取一个Message对象</p>
+<h3 id="post">post</h3>
+<p>提交可运行对象，后缀带AtTime表示在指定时间提交，后续带Delayed表示提交延迟运行</p>
+<h3 id="removemessages">removeMessages</h3>
+<p>移除消息队列中等待中的消息</p>
+<h3 id="hasmessages">hasMessages</h3>
+<p>判断消息队列中是否有某个指定消息</p>
+<h2 id="实战">实战</h2>
+<p>实现一个指定时间切换图片的功能，最终效果如下</p>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/handler_image.gif"/>
+</figure>
+
+<h3 id="页面">页面</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/RelativeLayout1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;ImageView</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_width=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:id=</span><span class="s">&#34;@+id/imgAnimation&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_alignParentLeft=</span><span class="s">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:layout_alignParentTop=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/RelativeLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>代码比较简单，就是一个图片，居中显示</p>
+<h3 id="代码逻辑">代码逻辑</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="k">var</span> <span class="py">imgAnimation</span><span class="p">:</span> <span class="n">ImageView</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl"><span class="k">var</span> <span class="py">imgstart</span> <span class="p">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">val</span> <span class="py">imgids</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">pic1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">pic2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">pic3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">pic4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">R</span><span class="p">.</span><span class="n">drawable</span><span class="p">.</span><span class="n">pic5</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="k">fun</span> <span class="nf">testHandler</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">setContentView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">handler_sample</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">imgAnimation</span> <span class="p">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">imgAnimation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">handler</span> <span class="p">=</span> <span class="n">ImgAnimationHandler</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Timer</span><span class="p">().</span><span class="n">schedule</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="k">object</span> <span class="err">: </span><span class="nc">TimerTask</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">override</span> <span class="k">fun</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">handler</span><span class="p">.</span><span class="n">sendEmptyMessage</span><span class="p">(</span><span class="m">101</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="m">0</span><span class="p">,</span> <span class="m">500</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ImgAnimationHandler</span> <span class="p">:</span> <span class="n">Handler</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">override</span> <span class="k">fun</span> <span class="nf">handleMessage</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">Message</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="p">.</span><span class="n">what</span> <span class="o">==</span> <span class="m">101</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">imgAnimation</span><span class="o">?.</span><span class="n">setImageResource</span><span class="p">(</span><span class="n">imgids</span><span class="p">[</span><span class="n">imgstart</span><span class="o">++</span> <span class="p">%</span> <span class="n">imgids</span><span class="p">.</span><span class="n">size</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>消息处理：主要是新建了一个 <code>ImgAnimationHandler</code> ，它覆写了 handleMessage 方法来处理信息，当消息what值=101 时，从 imgids 中顺序选择一个 sourceId 来达到图片切换的效果</li>
+<li>发送消息：主线程中创建一个Timer的schedule线程每隔 500ms 通过 <code>ImgAnimationHandler</code> 发送消息 (what=101)</li>
+</ol>
+<h2 id="在子线程中调用handler">在子线程中调用Handler</h2>
+<p>在子线程中调用Handler，需要设置指定 <a href="https://developer.android.com/reference/android/os/Looper?hl=en">Looper</a> 的Handler（在创建 Handler 时，官方不再建议使用默认的构造函数创建 Handler，而是推荐 传入 Looper 实例作为构建参数的构造函数）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">LooperThread</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">       <span class="kd">public</span> <span class="n">Handler</span> <span class="n">mHandler</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">           <span class="n">Looper</span><span class="o">.</span><span class="na">prepare</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="n">mHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Handler</span><span class="o">(</span><span class="n">Looper</span><span class="o">.</span><span class="na">myLooper</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">               <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="n">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                   <span class="c1">// process incoming messages here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>               <span class="o">}</span>
+</span></span><span class="line"><span class="cl">           <span class="o">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="n">Looper</span><span class="o">.</span><span class="na">loop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">       <span class="o">}</span>
+</span></span><span class="line"><span class="cl">   <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如上最佳实践</p>
+<ol>
+<li>使用 Looper.prepare() 来初始化当前线程为一个looper</li>
+<li>创建 Handler 引用 与当前线程关联的 looper</li>
+<li>调用 Looper.loop() 执行当前线程的消息队列</li>
+</ol>
+<figure><img src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/wqKe8A.png"/>
+</figure>
+
+<blockquote>
+<p>使用 Looper.getMainLooper() 可以方便的将其它线程的任务提交到UI线程</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">tomyli</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2025-08-04
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/agPgJk.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZVY37P.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/android/">android</a>
+          <a href="/tags/handler/">handler</a>
+          <a href="/tags/core/">core</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/android-service/">
+            <span class="next-text nav-default">重拾Android的快乐-Service</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'tomyli';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="peng051410/peng051410.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:peng051410@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/5213114/tomyli" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/tomylitoo" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/%e5%bf%97%e9%b9%8f-%e6%9d%8e-9138b5110/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/peng051410" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2039256763" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://space.bilibili.com/22410536" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://blog.imcompany.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2025<span class="heart"><i class="iconfont icon-heart"></i></span><span>京ICP备17037246号</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

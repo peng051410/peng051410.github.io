@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>handler on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/handler/</link>
+    <description>Recent content in handler on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Fri, 01 Aug 2025 19:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/handler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重拾Android的快乐-Handler</title>
+      <link>http://blog.imcompany.cn/post/android-handler/</link>
+      <pubDate>Fri, 01 Aug 2025 19:00:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/android-handler/</guid>
+      <description>说明 Handler 是Android提供的一个用于处理消息与可运行对象的组件，它有两个功能： 将消息与可运行对象在安排在未来某个时间点运行 在其它线程上操作队</description>
+    </item>
+    
+  </channel>
+</rss>
