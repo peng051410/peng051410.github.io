@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 01 Aug 2025 19:00:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Dec 2025 18:54:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>weekly</title>
+      <link>http://blog.imcompany.cn/categories/weekly/</link>
+      <pubDate>Fri, 19 Dec 2025 18:54:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/categories/weekly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>movie</title>
+      <link>http://blog.imcompany.cn/categories/movie/</link>
+      <pubDate>Wed, 06 Aug 2025 10:41:40 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/categories/movie/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>android</title>
       <link>http://blog.imcompany.cn/categories/android/</link>
@@ -36,15 +54,6 @@
     </item>
     
     <item>
-      <title>weekly</title>
-      <link>http://blog.imcompany.cn/categories/weekly/</link>
-      <pubDate>Fri, 16 May 2025 10:19:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/categories/weekly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tool</title>
       <link>http://blog.imcompany.cn/categories/tool/</link>
       <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
@@ -59,15 +68,6 @@
       <pubDate>Sun, 27 Apr 2025 15:40:22 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>movie</title>
-      <link>http://blog.imcompany.cn/categories/movie/</link>
-      <pubDate>Tue, 01 Apr 2025 10:18:54 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/categories/movie/</guid>
       <description></description>
     </item>
     
