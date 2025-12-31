@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Thu, 08 May 2025 14:41:05 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Dec 2025 17:57:06 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
       <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
+      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>最佳平替 - 用更低价的搜索词购物 照片 证件照 证件照生成器 Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。</description>
+      <description>最佳平替 - 用更低价的搜索词购物 Subtitle Converter | HappyScribe 字幕文件转换 Puter 一个有趣的开源项目，可撸，开源的webOS，可当图床用 Breaking Medium paywall! - Freedium 解锁medium 即时工具</description>
+    </item>
+    
+    <item>
+      <title>收集的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
+      <description>Atuin - Shell History &amp;amp; Executable Runbooks 一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史 Watchman - A file watching service | Watchman 监控文件变化并及时通知 bensadeh/tailspin: 🌀 A log file highlighter 日志文</description>
     </item>
     
     <item>

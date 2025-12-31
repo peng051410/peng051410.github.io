@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cli on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/cli/</link>
+    <description>Recent content in cli on I&#39;m company</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>京ICP备17037246号</copyright>
+    <lastBuildDate>Wed, 31 Dec 2025 17:16:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
+      <description>Atuin - Shell History &amp;amp; Executable Runbooks 一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史 Watchman - A file watching service | Watchman 监控文件变化并及时通知 bensadeh/tailspin: 🌀 A log file highlighter 日志文</description>
+    </item>
+    
+  </channel>
+</rss>

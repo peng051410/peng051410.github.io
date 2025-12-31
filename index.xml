@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 26 Dec 2025 17:24:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Dec 2025 17:57:15 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些被推荐的Video</title>
+      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
+      <pubDate>Wed, 31 Dec 2025 17:57:15 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
+      <description>继承之战 第一季 (豆瓣) 燃烧 (豆瓣) 第二次世界大战：前线视角 (豆瓣) 生活多美好 (豆瓣) 大明王朝1566 (豆瓣) 流人 第一季 (豆瓣) 冰血暴 第一季 (</description>
+    </item>
+    
+    <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>最佳平替 - 用更低价的搜索词购物 Subtitle Converter | HappyScribe 字幕文件转换 Puter 一个有趣的开源项目，可撸，开源的webOS，可当图床用 Breaking Medium paywall! - Freedium 解锁medium 即时工具</description>
+    </item>
+    
+    <item>
+      <title>收集的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
+      <description>Atuin - Shell History &amp;amp; Executable Runbooks 一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史 Watchman - A file watching service | Watchman 监控文件变化并及时通知 bensadeh/tailspin: 🌀 A log file highlighter 日志文</description>
+    </item>
+    
     <item>
       <title>众乐乐-weekly 2025-W52</title>
       <link>http://blog.imcompany.cn/post/2025-week52/</link>
@@ -24,15 +51,6 @@
       
       <guid>http://blog.imcompany.cn/post/2025-week51/</guid>
       <description>Read 📖 在读《简读中国史》，作为科普读物，这本书写的很多，给人一个中国历史发展的大地图。 受 https://ciceroxiao.github.io/hong525/2025/12/16/2025-W50.html 启发，在2025年末开启周报模式 Tools 🧰 最近在深度使用L</description>
-    </item>
-    
-    <item>
-      <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Wed, 06 Aug 2025 10:41:40 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
-      <description>继承之战 第一季 (豆瓣) 燃烧 (豆瓣) 第二次世界大战：前线视角 (豆瓣) 生活多美好 (豆瓣) 大明王朝1566 (豆瓣) 流人 第一季 (豆瓣) 冰血暴 第一季 (</description>
     </item>
     
     <item>
@@ -168,15 +186,6 @@
       
       <guid>http://blog.imcompany.cn/post/spring-configuration/</guid>
       <description>@Configuration是什么？ @Configuration 是 Spring提供的一个用于配置与声明Bean与相应Bean之间依赖的注解，根据文档描述，此注解通常由</description>
-    </item>
-    
-    <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Thu, 08 May 2025 14:41:05 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>最佳平替 - 用更低价的搜索词购物 照片 证件照 证件照生成器 Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。</description>
     </item>
     
     <item>
