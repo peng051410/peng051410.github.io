@@ -9,11 +9,20 @@
     <copyright>京ICP备17037246号</copyright>
     <lastBuildDate>Tue, 06 Jan 2026 11:30:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>weekly</title>
-      <link>http://blog.imcompany.cn/tags/weekly/</link>
+      <title>book</title>
+      <link>http://blog.imcompany.cn/tags/book/</link>
       <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
       
-      <guid>http://blog.imcompany.cn/tags/weekly/</guid>
+      <guid>http://blog.imcompany.cn/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>read</title>
+      <link>http://blog.imcompany.cn/tags/read/</link>
+      <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/read/</guid>
       <description></description>
     </item>
     
@@ -68,6 +77,15 @@
       <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/cmd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>weekly</title>
+      <link>http://blog.imcompany.cn/tags/weekly/</link>
+      <pubDate>Fri, 26 Dec 2025 17:24:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/tags/weekly/</guid>
       <description></description>
     </item>
     
@@ -239,24 +257,6 @@
       <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>book</title>
-      <link>http://blog.imcompany.cn/tags/book/</link>
-      <pubDate>Fri, 17 Jan 2025 15:55:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>read</title>
-      <link>http://blog.imcompany.cn/tags/read/</link>
-      <pubDate>Fri, 17 Jan 2025 15:55:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/tags/read/</guid>
       <description></description>
     </item>
     
