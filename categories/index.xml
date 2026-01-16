@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Mon, 12 Jan 2026 10:55:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jan 2026 19:01:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>weekly</title>
       <link>http://blog.imcompany.cn/categories/weekly/</link>
-      <pubDate>Mon, 12 Jan 2026 10:55:00 +0800</pubDate>
+      <pubDate>Fri, 16 Jan 2026 19:01:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/categories/weekly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>movie</title>
+      <link>http://blog.imcompany.cn/categories/movie/</link>
+      <pubDate>Tue, 13 Jan 2026 10:34:11 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/categories/movie/</guid>
       <description></description>
     </item>
     
@@ -23,15 +32,6 @@
       <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/categories/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>movie</title>
-      <link>http://blog.imcompany.cn/categories/movie/</link>
-      <pubDate>Wed, 31 Dec 2025 17:57:15 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/categories/movie/</guid>
       <description></description>
     </item>
     
@@ -81,6 +81,15 @@
     </item>
     
     <item>
+      <title>ai</title>
+      <link>http://blog.imcompany.cn/categories/ai/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/categories/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>sports</title>
       <link>http://blog.imcompany.cn/categories/sports/</link>
       <pubDate>Thu, 12 Dec 2024 09:55:00 +0800</pubDate>
@@ -104,15 +113,6 @@
       <pubDate>Thu, 05 Dec 2024 09:55:00 +0800</pubDate>
       
       <guid>http://blog.imcompany.cn/categories/speech/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ai</title>
-      <link>http://blog.imcompany.cn/categories/ai/</link>
-      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
-      
-      <guid>http://blog.imcompany.cn/categories/ai/</guid>
       <description></description>
     </item>
     

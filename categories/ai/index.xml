@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>京ICP备17037246号</copyright>
-    <lastBuildDate>Fri, 01 Nov 2024 11:29:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Feb 2025 18:55:00 +0800</lastBuildDate><atom:link href="http://blog.imcompany.cn/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的Cursor信息</title>
+      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      
+      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
+      <description>整理收集的关于Cursor编辑器的信息 Features | Cursor - The AI Code Editor Cursor Directory - Cursor Rules &amp;amp; MCP Servers eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills 学习 Cursor ，拥抱 AI 编程 | Cursor 101 PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files</description>
+    </item>
+    
     <item>
       <title>收集有用的Prompts</title>
       <link>http://blog.imcompany.cn/post/prompts/</link>
