@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ipc on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/ipc/</link>
+    <description>Recent content in Ipc on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 May 2023 19:32:04 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/ipc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>性能的本质IPC之动手验证</title>
+      <link>http://blog.imcompany.cn/post/system-ipc/</link>
+      <pubDate>Thu, 25 May 2023 15:42:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/system-ipc/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验&lt;/p&gt;
+&lt;h2 id=&#34;术语说明&#34;&gt;术语说明&lt;/h2&gt;
+&lt;h3 id=&#34;ipc&#34;&gt;IPC&lt;/h3&gt;
+&lt;p&gt;本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可执行的指令数，常用来做为评判处理器性能的指标&lt;/p&gt;
+&lt;h3 id=&#34;nop&#34;&gt;NOP&lt;/h3&gt;
+&lt;p&gt;no operation, 在指令集中表示一个指令不改变所执行程序的 register，status flag，也就是不要进行上下文的切换，CPU的上下文切换是有时间开销的&lt;/p&gt;
+&lt;h2 id=&#34;实验代码下载&#34;&gt;实验代码下载&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/plantegg/programmer_case
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实验机器信息&#34;&gt;实验机器信息&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-lscpu.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;实验只可在物理机下进行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;实验验证&#34;&gt;实验验证&lt;/h2&gt;
+&lt;h3 id=&#34;测试nop指令&#34;&gt;测试nop指令&lt;/h3&gt;
+&lt;h4 id=&#34;编译测试代码&#34;&gt;编译测试代码&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gcc ./nop.c -o nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;
+&lt;p&gt;IPC跑到3.79&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-alone-3.79.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我记得第一次执行IPC好像跑到了4(未改变代码)，当时忘记截图了，后续测试的都到不了4了&lt;/li&gt;
+&lt;li&gt;IPC与perf执行时间长短有关吗？
+&lt;ol&gt;
+&lt;li&gt;好像是无关的，保证cpu 100%后就可以停止进行查看&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;IPC怎么接近4？
+&lt;ol&gt;
+&lt;li&gt;改代码增加nop指令的数量，加到将近700个，IPC达到3.97&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;测试pause指令&#34;&gt;测试pause指令&lt;/h3&gt;
+&lt;h4 id=&#34;编译测试代码&#34;&gt;编译测试代码&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gcc ./pause.c -o pause
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perf stat ./pause
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;
+&lt;p&gt;IPC只跑到了0.11&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-pause-alone-0.11.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;测试nop指令跑两份各自绑定到同一物理核&#34;&gt;测试nop指令跑两份各自绑定到同一物理核&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何判断HT？通过查看/proc/cpuinfo信息，
+如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;taskset -c &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;taskset -c &lt;span class=&#34;m&#34;&gt;24&lt;/span&gt; perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

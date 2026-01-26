@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/ai/</link>
+    <description>Recent content in Ai on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Jan 2026 11:29:45 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的Cursor信息</title>
+      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
+      <description>&lt;p&gt;整理收集的关于Cursor编辑器的信息&lt;/p&gt;
+&lt;h2 id=&#34;features-cursor-the-ai-code-editor&#34;&gt;&lt;a href=&#34;https://www.cursor.com/features&#34;&gt;Features | Cursor - The AI Code Editor&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;cursor-directory-cursor-rules-and-mcp-servers&#34;&gt;&lt;a href=&#34;https://cursor.directory/&#34;&gt;Cursor Directory - Cursor Rules &amp;amp; MCP Servers&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;eastlondoner-cursor-tools-give-cursor-agent-an-ai-team-and-advanced-skills&#34;&gt;&lt;a href=&#34;https://github.com/eastlondoner/cursor-tools&#34;&gt;eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;学习-cursor-拥抱-ai-编程-cursor-101&#34;&gt;&lt;a href=&#34;https://cursor101.com/zh&#34;&gt;学习 Cursor ，拥抱 AI 编程 | Cursor 101&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;patrickjs-awesome-cursorrules-a-curated-list-of-awesome-dot-cursorrules-files&#34;&gt;&lt;a href=&#34;https://github.com/PatrickJS/awesome-cursorrules&#34;&gt;PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>收集有用的Prompts</title>
+      <link>http://blog.imcompany.cn/post/prompts/</link>
+      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/prompts/</guid>
+      <description>&lt;h2 id=&#34;can-you-visualize-this&#34;&gt;can you visualize this?&lt;/h2&gt;
+&lt;p&gt;如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化&lt;/p&gt;
+&lt;h2 id=&#34;explain-the-answers-in-narration&#34;&gt;explain the answers in narration&lt;/h2&gt;
+&lt;p&gt;将答案用段落写出来&lt;/p&gt;
+&lt;h2 id=&#34;用逐渐增加复杂度的方式解释-xxx&#34;&gt;用逐渐增加复杂度的方式解释 XXX&lt;/h2&gt;
+&lt;h2 id=&#34;先别写代码-先跟我讨论一下方案&#34;&gt;先别写代码，先跟我讨论一下方案&lt;/h2&gt;
+&lt;p&gt;适合只讨论方案&lt;/p&gt;
+&lt;h2 id=&#34;在输出的时候遵循-业界最佳实践&#34;&gt;在输出的时候遵循“业界最佳实践”&lt;/h2&gt;
+&lt;h2 id=&#34;书面表达&#34;&gt;书面表达&lt;/h2&gt;
+&lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

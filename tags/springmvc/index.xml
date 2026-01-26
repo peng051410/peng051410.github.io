@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Springmvc on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/springmvc/</link>
+    <description>Recent content in Springmvc on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Apr 2025 17:53:54 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/springmvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC实践之集成Sentinel限流功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-interceptor/</link>
+      <pubDate>Fri, 25 Apr 2025 17:53:54 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-interceptor/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;近期收到线上报警，发现个别新接口在同1s内被请求了接近上百次，对系统的稳定造成了一些影响，近期调研了一下通用的限流框架，打算将Sentinel的限流功能集成进新服务&lt;/p&gt;
+&lt;h2 id=&#34;sentinel前置知识&#34;&gt;Sentinel前置知识&lt;/h2&gt;
+&lt;p&gt;Sentinel 限流主要涉及以下几方面&lt;/p&gt;
+&lt;h3 id=&#34;resource&#34;&gt;Resource&lt;/h3&gt;
+&lt;p&gt;限流的资源，资源支持动态加载，核心类为： &lt;code&gt;AbstractDataSource&lt;/code&gt; ，Sentinel 默认提供了市面常见的资源管理服务的实现，也可以自定义实现
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/bMQyLZ.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rule&#34;&gt;Rule&lt;/h3&gt;
+&lt;p&gt;对定义的 Resouce 应用的限流规则，基于QPS、响应时间与系统负载。Sentinel 是通过一系列的功能Slot来实现不同的统计/控制功能，对于限流功能对应的就是 &lt;code&gt;FlowSlot&lt;/code&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DSNjeo.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;code&gt;FlowSlot&lt;/code&gt; 的功能实现需要依赖前面的 &lt;code&gt;NodeSelectorSlot&lt;/code&gt; 和 &lt;code&gt;ClusterBuilderSlot&lt;/code&gt; 等统计Slot，有了统计信息才可以针对配置进行限流操作，这里面借用一张官方的实现图
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3TQkqg.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;各Slot默认的顺序也可以在代码中找到
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hZyabG.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;核心处理逻辑&#34;&gt;核心处理逻辑&lt;/h4&gt;
+&lt;p&gt;核心逻辑是在执行调用chain的捕获Blockexcption然后执行后续操作&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/514k2Q.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;集成步骤&#34;&gt;集成步骤&lt;/h2&gt;
+&lt;p&gt;借助SpringMVC中提供的 &lt;code&gt;HandlerInterceptor&lt;/code&gt; 拦截器功能 与 Sentinel 提供的SpringMVC框架集成类库可以方便快速的实现限流功能&lt;/p&gt;
+&lt;h3 id=&#34;引入sentinel-springmvc-adapter&#34;&gt;引入Sentinel SpringMVC Adapter&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.alibaba.csp&lt;span class=&#34;nt&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;sentinel-spring-webmvc-adapter&lt;span class=&#34;nt&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.8.8&lt;span class=&#34;nt&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;配置sentinelwebinterceptor&#34;&gt;配置SentinelWebInterceptor&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/alibaba/Sentinel/tree/1.8/sentinel-adapter/sentinel-spring-webmvc-adapter&#34;&gt;Sentinel  SpringMVC Adapter&lt;/a&gt;中提供了 &lt;code&gt;SentinelWebInterceptor&lt;/code&gt; 来实现限流功能，这个 Interceptor 支持一些自定义的行为，主要通过 SentinelWebMvcConfig 来实现&lt;/p&gt;
+&lt;h4 id=&#34;sentinelwebmvcconfig-常用配置说明&#34;&gt;SentinelWebMvcConfig 常用配置说明&lt;/h4&gt;
+&lt;p&gt;SentinelWebMvcConfig 支持以下配置能力&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;urlCleaner&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/8I1bRn.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;p&gt;自定义对请求url的处理，比如厂商此次需要通过请求的设备id维度进行限流，对于其它的请求参数都进行忽略，最终可定义效果为: &lt;code&gt;/api/v1/test/ping?did=6308103f1026acf274bbcc1b10001291551xxX&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;httpMethodSpecify&lt;/p&gt;
+&lt;p&gt;是否指定特定的Http请求方法，此设置是对资源的请求方法进行了细粒度的配置，默认为false不开启，配置为true后，会在设定好的资源名前加上请求的方法，类似效果:  &lt;code&gt;GET: /api/v1/test/ping?did=6308103f1026acf274bbcc1b10001291551xxX&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;blockExceptionHandler&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XluwAf.png&#34;&gt;
+被Block的请求异常处理器，对Block的请求进行自定义处理，可以设置返回的值，如果未配置则需要服务自己捕获 BlockException，可以通过配置 &lt;code&gt;ExceptionHandler&lt;/code&gt; 进行统一处理&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;originParser&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/njPqHL.png&#34;&gt;
+请求来源处理器，针对请求的来源进行处理，在配置资源的规则的可以使用此解析的origin细粒度控制，例如可以解析ip、用户做为请求 origin&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SpringMVC学习之HandlerMapping</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-handler/</link>
+      <pubDate>Fri, 18 Apr 2025 11:27:45 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-handler/</guid>
+      <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;
+&lt;p&gt;新服务在处理不存在的url请求时，上报日志报错，具体错误信息：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6yGXgJ.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;根据报错信息找到相关代码
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3q8RWR.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;代码处做了对参数hanler的强制转换，但是真正传入的参数类型为 ResourceHttpRequestHandler 导致转换失败而报错，梳理一下，handler是在 自定义的日志Interceptor 的afterCompletion方法中由框架传入的
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/h8fQR5.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;resourcehttprequesthandler-是什么&#34;&gt;ResourceHttpRequestHandler 是什么?&lt;/h2&gt;
+&lt;p&gt;查阅类文档，ResourceHttpRequestHandler是SpringMVC提供的处理静态资源的Handler，比如常见的js或者css文件。在当前前后端分离的分工下，对于REST服务开发，不会再使用这种方式提供对静态资源的访问，为什么请求了一个不存在的url，会使用静态资源的Hanlder来处理?&lt;/p&gt;
+&lt;h2 id=&#34;springmvc提供了哪些handlermapping&#34;&gt;SpringMVC提供了哪些HandlerMapping?&lt;/h2&gt;
+&lt;p&gt;SpringMVC提供的HanlderMapping位于 org.springframework.web.servlet.handler 包下，主要包含&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Mapping&lt;/th&gt;
+          &lt;th&gt;Desc&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RequestMappingHandlerMapping&lt;/td&gt;
+          &lt;td&gt;处理@RequestMapping 注解映射关系&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SimpleUrlHandlerMapping&lt;/td&gt;
+          &lt;td&gt;使用URL模式匹配映射关系&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BeanNameUrlHandlerMapping&lt;/td&gt;
+          &lt;td&gt;基于Bean名匹配映射关系&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/CeRZGp.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;springmvc-路径映射流程回顾&#34;&gt;SpringMVC 路径映射流程回顾&lt;/h3&gt;
+&lt;p&gt;回顾一下SpringMVC的路径映射流程，通常的url请求的编码方式为:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/ping&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ping&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;success&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;pong&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;标识了 @RequestMapping 注解的方法会被 SpringMVC 框架的 RequestMappingHandlerMapping 类在启动时进行扫描并根据映射信息来创建 RequestMappingInfo(RequestMappingInfo 类维护请求的映射信息)，扫描后的所有Mapping信息在 MappingRegistry(AbstractHandlerMethodMapping内部类) 类进行维护&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/D0VzNH.png&#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/D0VzNH.png&#34;/&gt; &lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;springmvc如何处理request与handlermethod的映射关系&#34;&gt;SpringMVC如何处理request与HandlerMethod的映射关系&lt;/h2&gt;
+&lt;p&gt;AbstractHandlerMethodMapping的getHandler 方法用来通过给定的request来找到一个合适的handler进行处理
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RobS4l.png&#34;&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RqkBp1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;getHandler会先调用抽象方法 getHandlerInternal 由子类实现查找逻辑，如果找不到，则查找默认配置的Hanlder，默认Hanlder找不到则返回null&lt;/p&gt;
+&lt;h2 id=&#34;springmvc默认使用了哪些handlermapping&#34;&gt;SpringMVC默认使用了哪些HandlerMapping&lt;/h2&gt;
+&lt;p&gt;如何查询Handler是在 DispacherServlet的getHandler方法操作的，它会在所有的handlerMappings(有序handlerMapping)中查找出一个可用的handler进行request的处理
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/fR6ezN.png&#34;&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kYtDXf.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如图可知会在7个handlerMapping中依次进行查询，这些handlerMapping是在 &lt;code&gt;DispatcherServlet#initHandlerMappings()&lt;/code&gt;  设置的&lt;/p&gt;
+&lt;h2 id=&#34;定位到问题原因&#34;&gt;定位到问题原因&lt;/h2&gt;
+&lt;p&gt;跟踪请求代码发现对于不存在的url会在 SimpleUrlHanlderMapping中找到可用的handler，因为最终请求url匹配上了 /**，而 /** 模式对应的handler就是 ResourceHttpRequestHandler，此时getHandler的结果就是ResourceHttpRequestHandler 了，但是在上报时使用的是 HandlerMethod，执行到此时报了转换异常&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/FNSevN.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pBVyIz.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;webmvcautoconfiguration中的sourcehandler在哪注册的&#34;&gt;WebMvcAutoConfiguration中的SourceHandler在哪注册的？&lt;/h2&gt;
+&lt;p&gt;在启用MVC功能时，会增加注解 @EnableWebMvc，而对应的MVC配置类为 WebMvcConfigurationSupport，在这个类中进行SourceHandler的注册。跟踪代码发现两个ResourceHandler是在 WebMvcAutoConfigurationAdapter中添加的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SpringMVC学习之Exception处理</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-exception/</link>
+      <pubDate>Mon, 14 Apr 2025 11:04:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-exception/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的?&lt;/p&gt;
+&lt;h2 id=&#34;spring处理异常的方式&#34;&gt;Spring处理异常的方式&lt;/h2&gt;
+&lt;p&gt;Spring采用了全局的异常捕获统一处理的方式，虽然JAVA的异常机制一直有争议，但是Spring还是选择基于实际开发需要使用抛异常后捕获统一处理的方式&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yZjYzc.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;handlerexceptionresolver登场&#34;&gt;HandlerExceptionResolver登场&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;HandlerExceptionResolver&lt;/code&gt; 是SpringMVC提供的解析Handler调用过程抛出异常的解析器，只提供了一个解析异常的方法 &lt;code&gt;resovleException&lt;/code&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VTJMf6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;spring提供了哪些exceptionresolver&#34;&gt;Spring提供了哪些ExceptionResolver?&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ndAxqw.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;经典的interface-abstract方式的实现类&#34;&gt;经典的Interface-Abstract方式的实现类&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Resolver&lt;/th&gt;
+          &lt;th&gt;Desc&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SimpleMappingExceptionResolver&lt;/td&gt;
+          &lt;td&gt;提供exception class name到view的映射&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DefaultHandlerExceptionResolver&lt;/td&gt;
+          &lt;td&gt;默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ResponseStatusExceptionResolver&lt;/td&gt;
+          &lt;td&gt;基于 @ResponseStatus 注解来映射异常与Http状态码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ExceptionHandlerExceptionResolver&lt;/td&gt;
+          &lt;td&gt;基于 @ExceptionHalder 注解来解析处理异常信息&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;直接实现handlerexceptionresolver的类&#34;&gt;直接实现HandlerExceptionResolver的类&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Resolver&lt;/th&gt;
+          &lt;th&gt;Desc&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DefaultErrorAttributes&lt;/td&gt;
+          &lt;td&gt;默认错误属性实现&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;HandlerExceptionResolverComposite&lt;/td&gt;
+          &lt;td&gt;代理其它Resolver集合的ExceptionResolver&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;HandlerExceptionResolverComposite&lt;/code&gt; 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver&lt;/p&gt;
+&lt;h2 id=&#34;具体异常处理流程&#34;&gt;具体异常处理流程&lt;/h2&gt;
+&lt;p&gt;异常处理的核心逻辑都在 &lt;code&gt;processHandlerException&lt;/code&gt; 方法中，Spring处理完请求后，如果有异常抛出，则会把异常信息传给 &lt;code&gt;processHandlerException&lt;/code&gt; 方法， &lt;code&gt;processHandlerException&lt;/code&gt; 遍历持有的 handlerExceptionResolvers 进行对异常的解析，如果解析成功则直接返回对应的 ModelAndView(此返回与正常的handler处理返回保持了一致)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oQdSdj.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;handlerexceptionresolvers-有哪些&#34;&gt;handlerExceptionResolvers 有哪些？&lt;/h3&gt;
+&lt;p&gt;在 SpringMVC启动时会调用 &lt;code&gt;initHandlerExceptionResolvers&lt;/code&gt; 方法来查找所有可用的 handlerExceptionResolver 并保存到 &lt;code&gt;handlerExceptionResolvers&lt;/code&gt; 变量中。SpringMVC配置了两个 resolver 来提供异常解析&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZkaEcp.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;errorattributes&#34;&gt;errorAttributes&lt;/h4&gt;
+&lt;p&gt;此Resolver是在 &lt;code&gt;ErrorMvcAutoConfiguration&lt;/code&gt; 进行实例化的
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lkrPBk.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;此实现的 resolverExcption 方法逻辑简单，直接返回了null，不是关注重点&lt;/p&gt;
+&lt;h4 id=&#34;handlerexceptionresolver&#34;&gt;handlerExceptionResolver&lt;/h4&gt;
+&lt;p&gt;此Resolver真正的实现类为 &lt;code&gt;HandlerExceptionResolverComposite&lt;/code&gt; ，也就是持有多个ExceptionResolver列表的 Resolver，它是在 &lt;code&gt;WebMvcConfigurationSupport&lt;/code&gt; 实例化的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SpringMVC统一配置接口WebMvcConfigurer功能</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</link>
+      <pubDate>Fri, 28 Mar 2025 18:18:10 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-webmvcconfigurer/</guid>
+      <description>&lt;h2 id=&#34;接口说明&#34;&gt;接口说明&lt;/h2&gt;
+&lt;p&gt;WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配置项：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/NGXzbc.png&#34;&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;方法名称&lt;/th&gt;
+          &lt;th&gt;参数&lt;/th&gt;
+          &lt;th&gt;用途&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addArgumentResolvers(List&amp;lt;HandlerMethodArgumentResolver&amp;gt; argumentResolvers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerMethodArgumentResolver&amp;gt; argumentResolvers&lt;/td&gt;
+          &lt;td&gt;添加自定义的 HandlerMethodArgumentResolver 用于解析方法参数。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addCorsMappings(CorsRegistry registry)&lt;/td&gt;
+          &lt;td&gt;CorsRegistry registry&lt;/td&gt;
+          &lt;td&gt;配置跨域资源共享 (CORS)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addFormatters(FormatterRegistry registry)&lt;/td&gt;
+          &lt;td&gt;FormatterRegistry registry&lt;/td&gt;
+          &lt;td&gt;添加自定义的格式化程序和转换器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addInterceptors(InterceptorRegistry registry)&lt;/td&gt;
+          &lt;td&gt;InterceptorRegistry registry&lt;/td&gt;
+          &lt;td&gt;添加自定义的拦截器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addRequestMappings(RequestMappingInfo customization, Class&amp;lt;Controller&amp;gt; controllerClass)&lt;/td&gt;
+          &lt;td&gt;RequestMappingInfo customization, Class&amp;lt;Controller&amp;gt; controllerClass&lt;/td&gt;
+          &lt;td&gt;关联自定义请求映射到具控制器类&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addResourceHandlers(ResourceHandlerRegistry registry)&lt;/td&gt;
+          &lt;td&gt;ResourceHandlerRegistry registry&lt;/td&gt;
+          &lt;td&gt;配置资源处理，如静态资源路径&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addReturnValueHandlers(List&amp;lt;HandlerMethodReturnValueHandler&amp;gt; returnValueHandlers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerMethodReturnValueHandler&amp;gt; returnValueHandlers&lt;/td&gt;
+          &lt;td&gt;添加自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;addViewControllers(ViewControllerRegistry registry)&lt;/td&gt;
+          &lt;td&gt;ViewControllerRegistry registry&lt;/td&gt;
+          &lt;td&gt;注册视图控制器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureAsyncSupport(AsyncSupportConfigurer configurer)&lt;/td&gt;
+          &lt;td&gt;AsyncSupportConfigurer configurer&lt;/td&gt;
+          &lt;td&gt;配置异步支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureContentNegotiation(ContentNegotiationConfigurer configurer)&lt;/td&gt;
+          &lt;td&gt;ContentNegotiationConfigurer configurer&lt;/td&gt;
+          &lt;td&gt;配置内容协商策略&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)&lt;/td&gt;
+          &lt;td&gt;DefaultServletHandlerConfigurer configurer&lt;/td&gt;
+          &lt;td&gt;启用默认 Servlet 处理&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureHandlerExceptionResolvers(List&amp;lt;HandlerExceptionResolver&amp;gt; exceptionResolvers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerExceptionResolver&amp;gt; exceptionResolvers&lt;/td&gt;
+          &lt;td&gt;配置异常处理程序&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureMessageConverters(List&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt; converters)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt; converters&lt;/td&gt;
+          &lt;td&gt;配置自定义的 HttpMessageConverter&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configurePathMatch(PathMatchConfigurer configurer)&lt;/td&gt;
+          &lt;td&gt;PathMatchConfigurer configurer&lt;/td&gt;
+          &lt;td&gt;配置路径匹配规则&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;configureViewResolvers(ViewResolverRegistry registry)&lt;/td&gt;
+          &lt;td&gt;ViewResolverRegistry registry&lt;/td&gt;
+          &lt;td&gt;配置视图解析器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendHandlerExceptionResolvers(List&amp;lt;HandlerExceptionResolver&amp;gt; exceptionResolvers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerExceptionResolver&amp;gt; exceptionResolvers&lt;/td&gt;
+          &lt;td&gt;扩展异常处理程序&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendMessageConverters(List&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt; converters)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HttpMessageConverter&amp;lt;?&amp;gt;&amp;gt; converters&lt;/td&gt;
+          &lt;td&gt;扩展自定义的 HttpMessageConverter&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendInterceptors(List&amp;lt;HandlerInterceptor&amp;gt; interceptors)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerInterceptor&amp;gt; interceptors&lt;/td&gt;
+          &lt;td&gt;扩展拦截器&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendArgumentResolvers(List&amp;lt;HandlerMethodArgumentResolver&amp;gt; argumentResolvers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerMethodArgumentResolver&amp;gt; argumentResolvers&lt;/td&gt;
+          &lt;td&gt;扩展自定义的 HandlerMethodArgumentResolver 用于解析方法参数。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendReturnValueHandlers(List&amp;lt;HandlerMethodReturnValueHandler&amp;gt; returnValueHandlers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;HandlerMethodReturnValueHandler&amp;gt; returnValueHandlers&lt;/td&gt;
+          &lt;td&gt;扩展自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;extendViewResolvers(List&amp;lt;ViewResolver&amp;gt; viewResolvers)&lt;/td&gt;
+          &lt;td&gt;List&amp;lt;ViewResolver&amp;gt; viewResolvers&lt;/td&gt;
+          &lt;td&gt;扩展视图解析器&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;关联类&#34;&gt;关联类&lt;/h2&gt;
+&lt;h3 id=&#34;webmvcconfigurationsupport&#34;&gt;WebMvcConfigurationSupport&lt;/h3&gt;
+&lt;h3 id=&#34;enablewebmvc&#34;&gt;EnableWebMvc&lt;/h3&gt;
+&lt;h2 id=&#34;接口常用方法&#34;&gt;接口常用方法&lt;/h2&gt;
+&lt;p&gt;接口提供了将近20个方法对Spring的配置进行调整，本次只针对常用的Rest接口开发相关内容进行展开学习研究&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

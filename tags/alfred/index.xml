@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Alfred on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/alfred/</link>
+    <description>Recent content in Alfred on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 03 Jan 2025 16:49:32 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/alfred/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些提高效率的Alfred Workflow</title>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</link>
+      <pubDate>Fri, 21 Sep 2018 10:02:49 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-alfred-workflow/</guid>
+      <description>&lt;h2 id=&#34;alfred-maestro&#34;&gt;Alfred Maestro&lt;/h2&gt;
+&lt;p&gt;操作Maestro的workflow，可以直接查找macro并执行。&lt;a href=&#34;https://github.com/iansinnott/alfred-maestro&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;alfred-github-workflow&#34;&gt;Alfred github workflow&lt;/h2&gt;
+&lt;p&gt;搜索github上的项目，可以搜索项目，人物等。&lt;a href=&#34;https://github.com/gharlan/alfred-github-workflow&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;myip&#34;&gt;MyIP&lt;/h2&gt;
+&lt;p&gt;快速的查询本机的ip，包括本地IP与外网IP。&lt;/p&gt;
+&lt;h2 id=&#34;switchhosts&#34;&gt;SwitchHosts!&lt;/h2&gt;
+&lt;p&gt;在alfred中快速本地host的配置，配合&lt;a href=&#34;https://github.com/oldj/SwitchHosts&#34;&gt;SwitchHosts&lt;/a&gt;来使用。&lt;a href=&#34;http://www.packal.org/workflow/switchhosts&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;snippetslab&#34;&gt;SnippetsLab&lt;/h2&gt;
+&lt;p&gt;在alfred中快速查看SnippetsLab中的代码片断&lt;/p&gt;
+&lt;h2 id=&#34;vmware-control&#34;&gt;VMWare Control&lt;/h2&gt;
+&lt;p&gt;在alfred中控制vmware虚拟机。支持启动、停止、挂起、切换等操作。&lt;a href=&#34;http://www.packal.org/workflow/vmware-control&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lxbrvr-alfred-keepassxc-workflow-alfred-workflow-for-fetching-the-attributes-of-the-keepassxc-entries-dot&#34;&gt;&lt;a href=&#34;https://github.com/lxbrvr/alfred-keepassxc-workflow&#34;&gt;lxbrvr/alfred-keepassxc-workflow: Alfred workflow for fetching the attributes of the KeepassXC entries.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Alfred 快速密码访问&lt;/p&gt;
+&lt;h2 id=&#34;8ed41f&#34;&gt;&lt;del&gt;Alfred Browser Toolbox&lt;/del&gt;&lt;/h2&gt;
+&lt;p&gt;Toolbox是一个文件操作浏览的工具，它支持创建、查找文件的功能，还可以查询pdf文件，非常方便。Mac上的Finder使用确定不方便。&lt;a href=&#34;https://www.alfredforum.com/topic/5166-copymove-to-and-alfred-browser-workflows/&#34;&gt;这里&lt;/a&gt;有具体的使用方式。&lt;/p&gt;
+&lt;h2 id=&#34;da05df&#34;&gt;&lt;del&gt;Alfred Keywords Help&lt;/del&gt;&lt;/h2&gt;
+&lt;p&gt;安装的workflow多了，记忆触发的keyword就比较困难，使用&lt;a href=&#34;https://github.com/pochemuto/alfred-help-workflow&#34;&gt;Keywords help&lt;/a&gt;这个插件可以显示出所有已经安装的workflow的触发key，还可以根据workflow进行查询。&lt;/p&gt;
+&lt;h2 id=&#34;alfred-my-mind&#34;&gt;Alfred My Mind&lt;/h2&gt;
+&lt;p&gt;快速查询&lt;a href=&#34;https://nikitavoloboev.xyz/&#34;&gt;Nikita&lt;/a&gt;的githubpage内容的workflow，我在他的文章里面学到了很多。&lt;a href=&#34;https://github.com/nikitavoloboev/alfred-my-mind#readme&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;f0b25f&#34;&gt;&lt;del&gt;Awesome lists&lt;/del&gt;&lt;/h2&gt;
+&lt;p&gt;快速查询Github上awesome列表的workflow，只为发现更多。&lt;a href=&#34;https://github.com/nikitavoloboev/alfred-awesome-lists&#34;&gt;插件地址&lt;/a&gt;，这个也是Nikita的作品。&lt;/p&gt;
+&lt;h2 id=&#34;baidu-map&#34;&gt;Baidu Map&lt;/h2&gt;
+&lt;p&gt;在alfred上使用百度地图。&lt;a href=&#34;https://github.com/wofeiwo/alfred-baidu-map&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;birthday&#34;&gt;Birthday&lt;/h2&gt;
+&lt;p&gt;在alfred中显示你来到这个世界多长时间，让你珍惜每一分，每一秒。&lt;a href=&#34;https://github.com/nikitavoloboev/small-workflows/tree/master/birthday#readme&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;calendar&#34;&gt;Calendar&lt;/h2&gt;
+&lt;p&gt;在alfred中显示出当月的日历信息。&lt;a href=&#34;https://github.com/owenwater/alfred-cal&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;chromes-bookmarks&#34;&gt;Chromes Bookmarks&lt;/h2&gt;
+&lt;p&gt;在aflred中搜索Chrome浏览器的书签，非常的好用。&lt;a href=&#34;https://github.com/blainesch/alfred-chrome-bookmarks&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;common-search&#34;&gt;Common Search&lt;/h2&gt;
+&lt;p&gt;国内常用网站的搜索，现在支持知乎、淘宝、掘金、github。&lt;a href=&#34;https://github.com/MuYunyun/commonSearch&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dash&#34;&gt;Dash&lt;/h2&gt;
+&lt;p&gt;在alfred中进行Dash的搜索，开发者必备。&lt;a href=&#34;https://github.com/Kapeli/Dash-Alfred-Workflow&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;directory-watches&#34;&gt;Directory watches&lt;/h2&gt;
+&lt;p&gt;本地目录文件查看，指定目录的搜索，回收站文件显示。&lt;/p&gt;
+&lt;h2 id=&#34;emacs-workflow&#34;&gt;Emacs Workflow&lt;/h2&gt;
+&lt;p&gt;在alfred中进行emacs的操作，比如打开文件等。&lt;a href=&#34;https://www.alfredforum.com/topic/8444-emacs-workflow/&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;git-repos&#34;&gt;Git Repos&lt;/h2&gt;
+&lt;p&gt;搜索本地的git文件夹，搜索到后可以使用指定软件进行打开，开发时很有用。&lt;a href=&#34;https://github.com/deanishe/alfred-repos&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;google-chrome-history&#34;&gt;Google Chrome History&lt;/h2&gt;
+&lt;p&gt;在alfred中快速查看Chrome的浏览历史。&lt;a href=&#34;https://github.com/tupton/alfred-chrome-history&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

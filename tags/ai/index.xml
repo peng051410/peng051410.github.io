@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/ai/</link>
+    <description>Recent content in Ai on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Jan 2026 11:29:45 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的Cursor信息</title>
+      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
+      <description>&lt;p&gt;整理收集的关于Cursor编辑器的信息&lt;/p&gt;
+&lt;h2 id=&#34;features-cursor-the-ai-code-editor&#34;&gt;&lt;a href=&#34;https://www.cursor.com/features&#34;&gt;Features | Cursor - The AI Code Editor&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;cursor-directory-cursor-rules-and-mcp-servers&#34;&gt;&lt;a href=&#34;https://cursor.directory/&#34;&gt;Cursor Directory - Cursor Rules &amp;amp; MCP Servers&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;eastlondoner-cursor-tools-give-cursor-agent-an-ai-team-and-advanced-skills&#34;&gt;&lt;a href=&#34;https://github.com/eastlondoner/cursor-tools&#34;&gt;eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;学习-cursor-拥抱-ai-编程-cursor-101&#34;&gt;&lt;a href=&#34;https://cursor101.com/zh&#34;&gt;学习 Cursor ，拥抱 AI 编程 | Cursor 101&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;patrickjs-awesome-cursorrules-a-curated-list-of-awesome-dot-cursorrules-files&#34;&gt;&lt;a href=&#34;https://github.com/PatrickJS/awesome-cursorrules&#34;&gt;PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>收集有用的Prompts</title>
+      <link>http://blog.imcompany.cn/post/prompts/</link>
+      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/prompts/</guid>
+      <description>&lt;h2 id=&#34;can-you-visualize-this&#34;&gt;can you visualize this?&lt;/h2&gt;
+&lt;p&gt;如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化&lt;/p&gt;
+&lt;h2 id=&#34;explain-the-answers-in-narration&#34;&gt;explain the answers in narration&lt;/h2&gt;
+&lt;p&gt;将答案用段落写出来&lt;/p&gt;
+&lt;h2 id=&#34;用逐渐增加复杂度的方式解释-xxx&#34;&gt;用逐渐增加复杂度的方式解释 XXX&lt;/h2&gt;
+&lt;h2 id=&#34;先别写代码-先跟我讨论一下方案&#34;&gt;先别写代码，先跟我讨论一下方案&lt;/h2&gt;
+&lt;p&gt;适合只讨论方案&lt;/p&gt;
+&lt;h2 id=&#34;在输出的时候遵循-业界最佳实践&#34;&gt;在输出的时候遵循“业界最佳实践”&lt;/h2&gt;
+&lt;h2 id=&#34;书面表达&#34;&gt;书面表达&lt;/h2&gt;
+&lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用AI生成 git commit message</title>
+      <link>http://blog.imcompany.cn/post/ai-git-commits/</link>
+      <pubDate>Fri, 02 Aug 2024 11:34:59 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-git-commits/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;Github上支持对PR生成AI摘要信息，&lt;a href=&#34;https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/creating-a-pull-request-summary-with-github-copilot&#34;&gt;具体说明&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uDEDV8.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;有没有应用支持生成提交内容的摘要信息呢？
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WfS9Yg.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ai-commits&#34;&gt;AI Commits&lt;/h2&gt;
+&lt;p&gt;经过一番搜索，找到了IDEA插件 &lt;a href=&#34;https://plugins.jetbrains.com/plugin/21335-ai-commits&#34;&gt;AI Commits&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;支持多个AI服务&lt;/li&gt;
+&lt;li&gt;支持多语言&lt;/li&gt;
+&lt;li&gt;支持自定义Prompt&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;支持的服务&#34;&gt;支持的服务&lt;/h3&gt;
+&lt;h4 id=&#34;openai&#34;&gt;OpenAI&lt;/h4&gt;
+&lt;p&gt;不支持国内访问，可使用国内转发进行访问，但需要有token，免费的token对token长度有限制，最大4098&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;国内转发&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/chatanywhere/GPT_API_free&#34;&gt;https://github.com/chatanywhere/GPT_API_free&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可申请免费API Key，限制200请求/天/IP&amp;amp;Key调用频率，常规使用足够了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ollama&#34;&gt;👍Ollama&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://ollama.com/&#34;&gt;官网&lt;/a&gt;，功能完全免费，多种开源模型可用，无使用限制，但需要本地部署，对机器内存有要求&lt;/p&gt;
+&lt;p&gt;推荐的开源模型如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ollama.com/library/codeqwen&#34;&gt;codeqwen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ollama.com/library/deepseek-coder-v2&#34;&gt;deepseek-coder-v2&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;qianfan&#34;&gt;Qianfan&lt;/h4&gt;
+&lt;p&gt;百度的AI模型千帆，&lt;a href=&#34;https://qianfan.cloud.baidu.com/&#34;&gt;https://qianfan.cloud.baidu.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;需要以下操作方可正常使用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;登录百度账号&lt;/li&gt;
+&lt;li&gt;创建应用id&lt;/li&gt;
+&lt;li&gt;开通模型计费且需要进行实名(银行卡/人脸)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/i6xBDy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XQ7tpX.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;开通后在AI Commits的Qianfan模型中设置API key和Secret key
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/I4xch9.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;gemini&#34;&gt;Gemini&lt;/h4&gt;
+&lt;p&gt;不支持国内访问，有用量限额&lt;/p&gt;
+&lt;h3 id=&#34;插件使用&#34;&gt;插件使用&lt;/h3&gt;
+&lt;h4 id=&#34;选择llm-client和prompt&#34;&gt;选择LLM Client和Prompt&lt;/h4&gt;
+&lt;p&gt;在AI Commits中配置好使用的LLM Client 和 Prompt，如选择 OpenAI 和名为 Basic 的Prompt&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/CEzbZI.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;修改git项目代码&#34;&gt;修改git项目代码&lt;/h4&gt;
+&lt;p&gt;修改项目文件代码，比如加一行日志打印&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UnxQfn.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;提交代码&#34;&gt;提交代码&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;进行提交代码界面，在提交信息栏多出一个 AI Commits 的图标，点击图标&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pxaei0.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击后生成的提交信息&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/EyCDCf.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用Ollama的gemma2:9b生成的提交信息&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6Adzvw.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;关于prompt&#34;&gt;关于Prompt&lt;/h3&gt;
+&lt;p&gt;插件默认自带了3个Prompt，插件的仓库提供更多的Prompt使用，点击插件配置页面的 &lt;a href=&#34;https://github.com/Blarc/ai-commits-intellij-plugin/discussions/18&#34;&gt;More prompts&lt;/a&gt; 即可跳转&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1scKaT.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;其它有意思的prompt&#34;&gt;其它有意思的Prompt&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;特朗普风格&lt;/p&gt;
+&lt;p&gt;懂王风格&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Write an insightful but concise Git commit message in Donald Trump style in present tense for
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;the following diff without prefacing it with anything, the response must be in the language {locale}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;and must not be longer than 74 characters. The sent text will be the differences between files,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;where deleted lines are prefixed with a single minus sign and added lines are prefixed with a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;single plus sign.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{diff}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/drNKtu.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;增强版本的emoji风格&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>这些年使用过的AI工具们</title>
+      <link>http://blog.imcompany.cn/post/ai-tools/</link>
+      <pubDate>Fri, 08 Dec 2023 11:40:07 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
+      <description>&lt;h2 id=&#34;github-copilot-your-ai-pair-programmer&#34;&gt;&lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot · Your AI pair programmer&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;微软的AI编程助手&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/29aimk.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;automatic1111-stable-diffusion-webui-stable-diffusion-web-ui&#34;&gt;&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Stable Diffusion 本地浏览器UI&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LqwqqB.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;ollama&#34;&gt;&lt;a href=&#34;https://github.com/jmorganca/ollama&#34;&gt;Ollama&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本地运行大模型的Mac APP，搭配 &lt;a href=&#34;https://github.com/s-kostyaev/ellama&#34;&gt;ellama-emacs&lt;/a&gt; 食用更佳&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uuo6eb.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;mozilla-ocho-llamafile-distribute-and-run-llms-with-a-single-file-dot&#34;&gt;&lt;a href=&#34;https://github.com/Mozilla-Ocho/llamafile&#34;&gt;Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mozilla发布的单个可执行运行大模型的文件，下载直接授权执行即可&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Atlgbo.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://simonwillison.net/2023/Nov/29/llamafile/&#34;&gt;https://simonwillison.net/2023/Nov/29/llamafile/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;warp-your-terminal-reimagined&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;Warp: Your terminal, reimagined&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-08 Fri 11:36]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;带AI功能命令行客户端&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vWCuIf.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;more-dot-dot-dot&#34;&gt;More&amp;hellip;&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

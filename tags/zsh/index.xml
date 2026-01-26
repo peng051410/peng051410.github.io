@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zsh on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/zsh/</link>
+    <description>Recent content in Zsh on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 04 Feb 2021 10:53:40 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些提高效率的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</link>
+      <pubDate>Sun, 30 Sep 2018 07:15:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ming-ling-xing-gong-ju/</guid>
+      <description>&lt;h2 id=&#34;brew&#34;&gt;brew&lt;/h2&gt;
+&lt;p&gt;Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。&lt;a href=&#34;https://github.com/Homebrew/brew&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bat&#34;&gt;bat&lt;/h2&gt;
+&lt;p&gt;bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。&lt;a href=&#34;https://github.com/sharkdp/bat&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;cowsay&#34;&gt;cowsay&lt;/h2&gt;
+&lt;p&gt;奶牛说： &lt;a href=&#34;https://github.com/piuccio/cowsay&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;coreutils&#34;&gt;coreutils&lt;/h2&gt;
+&lt;p&gt;使用Rust重写的gnuutils。&lt;a href=&#34;https://github.com/uutils/coreutils&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;direnv&#34;&gt;direnv&lt;/h2&gt;
+&lt;p&gt;环境变量切换，可以指定在进入某一文件夹后的操作，比如输出一条欢迎语句，在退出文件夹后则卸载变量（操作），它的&lt;a href=&#34;https://github.com/direnv/direnv/blob/master/stdlib.sh%0A%0A&#34;&gt;stdlib&lt;/a&gt;内置了一些功能来处理环境。 &lt;a href=&#34;https://github.com/direnv/direnv&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;exa&#34;&gt;exa&lt;/h2&gt;
+&lt;p&gt;ls、tree的替代者，支持多种显示方式，支持按指定条件排序显示。&lt;a href=&#34;https://github.com/ogham/exa&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;duti&#34;&gt;duti&lt;/h2&gt;
+&lt;p&gt;mac默认软件打开程序配置。再也不用一个手动的点击设置了，可以脚本化。&lt;a href=&#34;https://github.com/moretension/duti&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;riggrep&#34;&gt;riggrep&lt;/h2&gt;
+&lt;p&gt;强大的find，查询速度更快，支持匹配结果的字符替换，支持定义输出颜色。&lt;a href=&#34;https://github.com/BurntSushi/ripgrep&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fortune&#34;&gt;fortune&lt;/h2&gt;
+&lt;p&gt;英文名言集合，可以使用&lt;a href=&#34;https://github.com/ruanyf/fortunes&#34;&gt;fortunes&lt;/a&gt;进行扩展，对中文用户更友好。&lt;a href=&#34;https://www.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;fzf&#34;&gt;fzf&lt;/h2&gt;
+&lt;p&gt;强大的交互式搜索，大大提高效率，官网提供了很多实用的操作目录与git的命令。&lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;goku&#34;&gt;goku&lt;/h2&gt;
+&lt;p&gt;改键神器Karabiner的配置管理器，更健康，更人性化。&lt;a href=&#34;https://github.com/yqrashawn/GokuRakuJoudo&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;htop&#34;&gt;htop&lt;/h2&gt;
+&lt;p&gt;交互式的top信息显示，支持配色。&lt;a href=&#34;https://github.com/hishamhm/htop&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;imgcat&#34;&gt;imgcat&lt;/h2&gt;
+&lt;p&gt;命令行看图片。可以控制显示的高度、宽度。&lt;a href=&#34;https://github.com/eddieantonio/imgcat&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;jq&#34;&gt;jq&lt;/h2&gt;
+&lt;p&gt;json内容操作显示。支持分离、过滤、转换元素，判断JSON元素节点是否存在等功能，内置了很多方便的函数。 &lt;a href=&#34;https://github.com/stedolan/jq&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;jenv&#34;&gt;jenv&lt;/h2&gt;
+&lt;p&gt;JDK版本管理命令行工具，支持全局、当前目录、当前shell的jdk版本指定。还可以指定Java虚拟机指定的JVM参数。支持插件的启用与禁用。&lt;a href=&#34;https://www.jenv.be/&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lnav&#34;&gt;lnav&lt;/h2&gt;
+&lt;p&gt;log file navigator，增加的日志查看，可以根据日志级别显示不同颜色的日志信息。支持分页显示。&lt;a href=&#34;https://github.com/tstack/lnav&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lolcat&#34;&gt;lolcat&lt;/h2&gt;
+&lt;p&gt;命令、文件内容多彩输出。&lt;a href=&#34;https://github.com/busyloop/lolcat&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;m-cli&#34;&gt;m-cli&lt;/h2&gt;
+&lt;p&gt;Mac的瑞士军刀，支持各种mac组件(Dock，蓝牙，WIFI，Finder)的操作。&lt;a href=&#34;https://github.com/rgcr/m-cli&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mackup&#34;&gt;mackup&lt;/h2&gt;
+&lt;p&gt;Mac应用配置同步，支持多种存储方式。支持自定义应用的同步配置。主要命令为backup，restore，uninstall。&lt;a href=&#34;https://github.com/lra/mackup&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mas&#34;&gt;mas&lt;/h2&gt;
+&lt;p&gt;命令行安装apple store应用。&lt;a href=&#34;https://github.com/mas-cli/mas&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mycli&#34;&gt;mycli&lt;/h2&gt;
+&lt;p&gt;命令行中的mysql客户端。&lt;a href=&#34;https://github.com/dbcli/mycli&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ncdu&#34;&gt;ncdu&lt;/h2&gt;
+&lt;p&gt;增强版本的du，机器空间使用查询，支持扫描结果导出与导入，支持多种排序方式。&lt;a href=&#34;https://dev.yorhel.nl/ncdu&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ranger&#34;&gt;Ranger&lt;/h2&gt;
+&lt;p&gt;命令行下的文件管理，强大到没朋友。&lt;a href=&#34;https://github.com/ranger/ranger&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pandoc&#34;&gt;pandoc&lt;/h2&gt;
+&lt;p&gt;文档转换，支持非常多的的格式转换。&lt;a href=&#34;https://pandoc.org/&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pyenv&#34;&gt;pyenv&lt;/h2&gt;
+&lt;p&gt;pythne版本管理工具。&lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pyenv-virtualenv&#34;&gt;pyenv-virtualenv&lt;/h2&gt;
+&lt;p&gt;pythne虚拟环境管理，管理pyenv配置的环境。&lt;a href=&#34;https://github.com/pyenv/pyenv-virtualenv&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prettyping&#34;&gt;prettyping&lt;/h2&gt;
+&lt;p&gt;增强的ping，图形化显示，可以轻松的看出ping的地址的网络状况。&lt;a href=&#34;http://denilson.sa.nom.br/prettyping/&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rtv&#34;&gt;rtv&lt;/h2&gt;
+&lt;p&gt;命令行中浏览reddit。&lt;a href=&#34;https://github.com/michael-lazar/rtv&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;s-search&#34;&gt;s-search&lt;/h2&gt;
+&lt;p&gt;命令行下进行web搜索。&lt;a href=&#34;https://github.com/zquestz/s&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tmux&#34;&gt;tmux&lt;/h2&gt;
+&lt;p&gt;终端多会话管理器。&lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tldr&#34;&gt;tldr&lt;/h2&gt;
+&lt;p&gt;命令快速查询。简单的man。&lt;a href=&#34;https://tldr.sh/&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;terminal-notify&#34;&gt;Terminal Notify&lt;/h2&gt;
+&lt;p&gt;命令行操作mac显示通知，支持图标显示与点击后操作（如打开网址，执行命令）等。&lt;a href=&#34;https://github.com/julienXX/terminal-notifier&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;w3m&#34;&gt;w3m&lt;/h2&gt;
+&lt;p&gt;终端浏览器，操作方便。&lt;a href=&#34;http://w3m.sourceforge.net/&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

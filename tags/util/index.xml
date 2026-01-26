@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Util on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/util/</link>
+    <description>Recent content in Util on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Dec 2025 17:57:06 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/util/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;
+&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
+&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
+&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
+&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
+&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

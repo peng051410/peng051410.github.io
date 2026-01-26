@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Editor on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/editor/</link>
+    <description>Recent content in Editor on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Jan 2026 11:29:45 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的Cursor信息</title>
+      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
+      <description>&lt;p&gt;整理收集的关于Cursor编辑器的信息&lt;/p&gt;
+&lt;h2 id=&#34;features-cursor-the-ai-code-editor&#34;&gt;&lt;a href=&#34;https://www.cursor.com/features&#34;&gt;Features | Cursor - The AI Code Editor&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;cursor-directory-cursor-rules-and-mcp-servers&#34;&gt;&lt;a href=&#34;https://cursor.directory/&#34;&gt;Cursor Directory - Cursor Rules &amp;amp; MCP Servers&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;eastlondoner-cursor-tools-give-cursor-agent-an-ai-team-and-advanced-skills&#34;&gt;&lt;a href=&#34;https://github.com/eastlondoner/cursor-tools&#34;&gt;eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;学习-cursor-拥抱-ai-编程-cursor-101&#34;&gt;&lt;a href=&#34;https://cursor101.com/zh&#34;&gt;学习 Cursor ，拥抱 AI 编程 | Cursor 101&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;patrickjs-awesome-cursorrules-a-curated-list-of-awesome-dot-cursorrules-files&#34;&gt;&lt;a href=&#34;https://github.com/PatrickJS/awesome-cursorrules&#34;&gt;PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

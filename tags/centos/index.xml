@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Centos on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/centos/</link>
+    <description>Recent content in Centos on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 26 Jun 2019 10:31:28 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Centos7 install issue collect</title>
+      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
+      <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解决centos7-yum-could-not-retrieve-mirrorlist错误&#34;&gt;解决Centos7 yum could not retrieve mirrorlist错误&lt;/h2&gt;
+&lt;p&gt;刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考&lt;a href=&#34;https://my.oschina.net/u/2456768/blog/3011881&#34;&gt;https://my.oschina.net/u/2456768/blog/3011881&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置静态ip&#34;&gt;配置静态ip&lt;/h2&gt;
+&lt;p&gt;安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;IPADDR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NETMASK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;255.255.255.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GATEWAY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DNS1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://blog.csdn.net/zhishengqianjun/article/details/77046796&#34;&gt;https://blog.csdn.net/zhishengqianjun/article/details/77046796&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos7安装后配置国内仓库源&#34;&gt;Centos7安装后配置国内仓库源&lt;/h2&gt;
+&lt;p&gt;由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考&lt;a href=&#34;https://blog.csdn.net/inslow/article/details/54177191&#34;&gt;https://blog.csdn.net/inslow/article/details/54177191&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;centos7安装vmware-tools&#34;&gt;Centos7安装VMware Tools&lt;/h3&gt;
+&lt;p&gt;想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考&lt;a href=&#34;https://blog.csdn.net/WarnerWu/article/details/73718901&#34;&gt;https://blog.csdn.net/WarnerWu/article/details/73718901&lt;/a&gt; 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了&lt;/p&gt;
+&lt;h2 id=&#34;安装jdk8&#34;&gt;安装Jdk8&lt;/h2&gt;
+&lt;p&gt;一句命令搞定：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安装mysql&#34;&gt;安装mysql&lt;/h2&gt;
+&lt;p&gt;使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了&lt;a href=&#34;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&#34;&gt;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改mysql的root密码&#34;&gt;修改mysql的root密码&lt;/h2&gt;
+&lt;p&gt;安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了&lt;a href=&#34;https://blog.csdn.net/kuluzs/article/details/51924086&#34;&gt;https://blog.csdn.net/kuluzs/article/details/51924086&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开放3306端口&#34;&gt;开放3306端口&lt;/h2&gt;
+&lt;p&gt;为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start firewalld
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;public --add-port&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3306/tcp --permanent
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://www.jianshu.com/p/225a853350d9&#34;&gt;https://www.jianshu.com/p/225a853350d9&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装oh-my-bash&#34;&gt;安装oh-my-bash&lt;/h2&gt;
+&lt;p&gt;由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。&lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;https://github.com/ohmybash/oh-my-bash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos自动登录&#34;&gt;Centos自动登录&lt;/h2&gt;
+&lt;p&gt;安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;移除原来的getty@tty1.service软链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拷贝getty@.service file 并且命名为 &lt;a href=&#34;mailto:getty@tty1.service&#34;&gt;getty@tty1.service&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-/sbin/agetty --autologin root --noclear %I
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;Alias&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

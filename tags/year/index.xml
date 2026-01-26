@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Year on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/year/</link>
+    <description>Recent content in Year on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Dec 2023 10:44:15 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/year/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023年终总结</title>
+      <link>http://blog.imcompany.cn/post/2023-sum-year/</link>
+      <pubDate>Tue, 26 Dec 2023 10:44:15 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2023-sum-year/</guid>
+      <description>&lt;h2 id=&#34;今年开始写年终总结&#34;&gt;今年开始写年终总结&lt;/h2&gt;
+&lt;h2 id=&#34;开始读书&#34;&gt;开始读书&lt;/h2&gt;
+&lt;h2 id=&#34;开始锻炼&#34;&gt;开始锻炼&lt;/h2&gt;
+&lt;h2 id=&#34;开始认真学英语&#34;&gt;开始认真学英语&lt;/h2&gt;
+&lt;h2 id=&#34;开始系统学计算机基础&#34;&gt;开始系统学计算机基础&lt;/h2&gt;
+&lt;h2 id=&#34;生活开始做减法&#34;&gt;生活开始做减法&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Prompt on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/prompt/</link>
+    <description>Recent content in Prompt on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Jun 2025 17:53:41 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/prompt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集有用的Prompts</title>
+      <link>http://blog.imcompany.cn/post/prompts/</link>
+      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/prompts/</guid>
+      <description>&lt;h2 id=&#34;can-you-visualize-this&#34;&gt;can you visualize this?&lt;/h2&gt;
+&lt;p&gt;如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化&lt;/p&gt;
+&lt;h2 id=&#34;explain-the-answers-in-narration&#34;&gt;explain the answers in narration&lt;/h2&gt;
+&lt;p&gt;将答案用段落写出来&lt;/p&gt;
+&lt;h2 id=&#34;用逐渐增加复杂度的方式解释-xxx&#34;&gt;用逐渐增加复杂度的方式解释 XXX&lt;/h2&gt;
+&lt;h2 id=&#34;先别写代码-先跟我讨论一下方案&#34;&gt;先别写代码，先跟我讨论一下方案&lt;/h2&gt;
+&lt;p&gt;适合只讨论方案&lt;/p&gt;
+&lt;h2 id=&#34;在输出的时候遵循-业界最佳实践&#34;&gt;在输出的时候遵循“业界最佳实践”&lt;/h2&gt;
+&lt;h2 id=&#34;书面表达&#34;&gt;书面表达&lt;/h2&gt;
+&lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

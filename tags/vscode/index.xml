@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vscode on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/vscode/</link>
+    <description>Recent content in Vscode on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Apr 2025 15:57:14 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些高效的VSCode插件</title>
+      <link>http://blog.imcompany.cn/post/vscode-plugin/</link>
+      <pubDate>Mon, 05 Sep 2022 17:45:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/vscode-plugin/</guid>
+      <description>&lt;h2 id=&#34;必备&#34;&gt;必备&lt;/h2&gt;
+&lt;h3 id=&#34;vscodevim-dot-vim&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vscodevim.vim&#34;&gt;vscodevim.vim&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在VSCode中使用VIM&lt;/p&gt;
+&lt;h3 id=&#34;angelo-breuer-dot-clock&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=angelo-breuer.clock&#34;&gt;angelo-breuer.clock&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在状态栏增加时间显示&lt;/p&gt;
+&lt;h3 id=&#34;redguardtoo-dot-matchit&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=redguardtoo.matchit&#34;&gt;redguardtoo.matchit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Tag匹配，在代码结构中快速跳转&lt;/p&gt;
+&lt;h3 id=&#34;kahole-dot-magit&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=kahole.magit&#34;&gt;kahole.magit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类Emacs magit&lt;/p&gt;
+&lt;h3 id=&#34;chadalen-dot-vscode-jetbrains-icon-theme&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=chadalen.vscode-jetbrains-icon-theme&#34;&gt;chadalen.vscode-jetbrains-icon-theme&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类JetBrains的文件图标&lt;/p&gt;
+&lt;h3 id=&#34;codezombiech-dot-gitignore&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore&#34;&gt;codezombiech.gitignore&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;.ignore文件支持&lt;/p&gt;
+&lt;h3 id=&#34;wmaurer-dot-change-case&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case&#34;&gt;wmaurer.change-case&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;快速切换选择单词的格式，支持驼峰，大小写等&lt;/p&gt;
+&lt;h3 id=&#34;lucax88x-dot-codeacejumper&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=lucax88x.codeacejumper&#34;&gt;lucax88x.codeacejumper&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;快速跳转到指定字符&lt;/p&gt;
+&lt;h3 id=&#34;ntbbloodbath-dot-doom-one&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=NTBBloodbath.doom-one&#34;&gt;NTBBloodbath.doom-one&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类Emacs doom-one主题&lt;/p&gt;
+&lt;h3 id=&#34;geeebe-dot-duplicate&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=geeebe.duplicate&#34;&gt;geeebe.duplicate&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;复制当前光标中的行，VSCode默认行为增强&lt;/p&gt;
+&lt;h3 id=&#34;usernamehw-dot-errorlens&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens&#34;&gt;usernamehw.errorlens&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;VSCode错误提示增强&lt;/p&gt;
+&lt;h3 id=&#34;zerodind-dot-familiar-java-themes&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=zerodind.familiar-java-themes&#34;&gt;zerodind.familiar-java-themes&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;类Idea主题&lt;/p&gt;
+&lt;h3 id=&#34;vsls-contrib-dot-gistfs&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs&#34;&gt;vsls-contrib.gistfs&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Github gist快速查看与编辑&lt;/p&gt;
+&lt;h3 id=&#34;qezhu-dot-gitlink&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=qezhu.gitlink&#34;&gt;qezhu.gitlink&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;复制当前文件的仓库地址&lt;/p&gt;
+&lt;h3 id=&#34;trixnz-dot-go-to-method&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=trixnz.go-to-method&#34;&gt;trixnz.go-to-method&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;跳转到指定方法，不包换其它Symbol信息&lt;/p&gt;
+&lt;h3 id=&#34;yutengjing-dot-open-in-external-app&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=YuTengjing.open-in-external-app&#34;&gt;YuTengjing.open-in-external-app&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;使用外部应用打开当前文件&lt;/p&gt;
+&lt;h3 id=&#34;tootone-dot-org-mode&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=tootone.org-mode&#34;&gt;tootone.org-mode&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Emacs org-mode局部支持&lt;/p&gt;
+&lt;h3 id=&#34;mushan-dot-vscode-paste-image&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image&#34;&gt;mushan.vscode-paste-image&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;粘贴图片到Markdown&lt;/p&gt;
+&lt;h3 id=&#34;shan-dot-code-settings-sync&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync&#34;&gt;Shan.code-settings-sync&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;VSCode配置多终端同步&lt;/p&gt;
+&lt;h3 id=&#34;mybells-dot-someone-github-stars&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=mybells.someone-github-stars&#34;&gt;mybells.someone-github-stars&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;获取指定Githuber的Star并写入到Markdown&lt;/p&gt;
+&lt;h3 id=&#34;tabnine-dot-tabnine-vscode&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode&#34;&gt;TabNine.tabnine-vscode&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;TabNine AI代码完成&lt;/p&gt;
+&lt;h3 id=&#34;vspacecode-dot-whichkey&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey&#34;&gt;VSpaceCode.whichkey&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;VSCode按键修改与提示&lt;/p&gt;
+&lt;h3 id=&#34;office-viewer--markdown-editor--visual-studio-marketplace&#34;&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-office&#34;&gt;Office Viewer(Markdown Editor) - Visual Studio Marketplace&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-05-19 Fri 10:08]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

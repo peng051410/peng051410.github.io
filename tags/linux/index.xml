@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/linux/</link>
+    <description>Recent content in Linux on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jan 2026 15:45:16 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>性能的本质IPC之动手验证</title>
+      <link>http://blog.imcompany.cn/post/system-ipc/</link>
+      <pubDate>Thu, 25 May 2023 15:42:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/system-ipc/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验&lt;/p&gt;
+&lt;h2 id=&#34;术语说明&#34;&gt;术语说明&lt;/h2&gt;
+&lt;h3 id=&#34;ipc&#34;&gt;IPC&lt;/h3&gt;
+&lt;p&gt;本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可执行的指令数，常用来做为评判处理器性能的指标&lt;/p&gt;
+&lt;h3 id=&#34;nop&#34;&gt;NOP&lt;/h3&gt;
+&lt;p&gt;no operation, 在指令集中表示一个指令不改变所执行程序的 register，status flag，也就是不要进行上下文的切换，CPU的上下文切换是有时间开销的&lt;/p&gt;
+&lt;h2 id=&#34;实验代码下载&#34;&gt;实验代码下载&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/plantegg/programmer_case
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实验机器信息&#34;&gt;实验机器信息&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-lscpu.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;实验只可在物理机下进行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;实验验证&#34;&gt;实验验证&lt;/h2&gt;
+&lt;h3 id=&#34;测试nop指令&#34;&gt;测试nop指令&lt;/h3&gt;
+&lt;h4 id=&#34;编译测试代码&#34;&gt;编译测试代码&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gcc ./nop.c -o nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;
+&lt;p&gt;IPC跑到3.79&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-nop-alone-3.79.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我记得第一次执行IPC好像跑到了4(未改变代码)，当时忘记截图了，后续测试的都到不了4了&lt;/li&gt;
+&lt;li&gt;IPC与perf执行时间长短有关吗？
+&lt;ol&gt;
+&lt;li&gt;好像是无关的，保证cpu 100%后就可以停止进行查看&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;IPC怎么接近4？
+&lt;ol&gt;
+&lt;li&gt;改代码增加nop指令的数量，加到将近700个，IPC达到3.97&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;测试pause指令&#34;&gt;测试pause指令&lt;/h3&gt;
+&lt;h4 id=&#34;编译测试代码&#34;&gt;编译测试代码&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gcc ./pause.c -o pause
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;perf stat ./pause
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;
+&lt;p&gt;IPC只跑到了0.11&lt;/p&gt;
+&lt;figure&gt;
+        &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1581-pause-alone-0.11.png&#34;/&gt; 
+    &lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;测试nop指令跑两份各自绑定到同一物理核&#34;&gt;测试nop指令跑两份各自绑定到同一物理核&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何判断HT？通过查看/proc/cpuinfo信息，
+如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;执行测试&#34;&gt;执行测试&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;taskset -c &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;taskset -c &lt;span class=&#34;m&#34;&gt;24&lt;/span&gt; perf stat ./nop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;现象&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之wc</title>
+      <link>http://blog.imcompany.cn/post/linux-wc/</link>
+      <pubDate>Thu, 02 Mar 2023 15:44:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-wc/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在日常应用中，统计文件内容是一种常见的需求，可以通过 &lt;strong&gt;wc&lt;/strong&gt; 命令来实现&lt;/p&gt;
+&lt;h2 id=&#34;wc&#34;&gt;Wc&lt;/h2&gt;
+&lt;h3 id=&#34;wc-file&#34;&gt;wc file&lt;/h3&gt;
+&lt;p&gt;统计文件，显示行数、单词数、字节数，带文件名
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uSkm52.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-c-file&#34;&gt;wc -c file&lt;/h3&gt;
+&lt;p&gt;统计文件，只显示字节数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kdVyQV.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-w-file&#34;&gt;wc -w file&lt;/h3&gt;
+&lt;p&gt;统计文件，只显示单词数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/qRx3ta.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-l-file&#34;&gt;wc -l file&lt;/h3&gt;
+&lt;p&gt;统计文件，只显示文件行数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/knyLfa.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-file1-file2&#34;&gt;wc file1 file2&lt;/h3&gt;
+&lt;p&gt;统计多个文件，显示汇总信息
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/2FhCi3.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-file&#34;&gt;wc &amp;lt; file&lt;/h3&gt;
+&lt;p&gt;统计文件，显示行数、单词数、字节数，不带文件，便于shell脚本后续处理
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/aQe3Of.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wc-l-file&#34;&gt;wc -L file&lt;/h3&gt;
+&lt;p&gt;打印出文件行最长的节数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pZaMqM.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;疑惑&#34;&gt;疑惑&lt;/h2&gt;
+&lt;h3 id=&#34;wc-c-与-wc-w-是如何统计的&#34;&gt;wc -c 与 wc -w 是如何统计的&lt;/h3&gt;
+&lt;p&gt;在统计 &lt;strong&gt;hello.txt&lt;/strong&gt; 时， &lt;strong&gt;wc -c&lt;/strong&gt; 的结果为 &lt;strong&gt;55&lt;/strong&gt; ， &lt;strong&gt;wc -m&lt;/strong&gt; 的结果为 &lt;strong&gt;45&lt;/strong&gt; ，为什么统计的结果不一样？这个文本中包含了中文内容，猜测和这个有关&lt;/p&gt;
+&lt;h4 id=&#34;验证是否与中文有关&#34;&gt;验证是否与中文有关&lt;/h4&gt;
+&lt;p&gt;这个好办，建一个不带中文的文件，验证如下
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lGB8Hn.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到统计的结果是一样的&lt;/p&gt;
+&lt;h4 id=&#34;中文是如何统计的&#34;&gt;中文是如何统计的?&lt;/h4&gt;
+&lt;p&gt;这个就涉及到编码的问题了，先用 &lt;a href=&#34;https://github.com/sharkdp/hexyl&#34;&gt;hexyl&lt;/a&gt; 查看一下，字节的总数为55，但是在进行字符统计时，使用的&lt;a href=&#34;https://en.wikipedia.org/wiki/Unicode?useskin=vector&#34;&gt;unicode&lt;/a&gt;编码将3个字节计算为1个字符(例如 &lt;strong&gt;好&lt;/strong&gt; 被编码成 &lt;strong&gt;E5 A5 BD&lt;/strong&gt; )，这就对上了，哈哈!
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yCMZHP.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编码是个大话题，后续好好学习一下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;ref&#34;&gt;REF&lt;/h2&gt;
+&lt;h3 id=&#34;wc--unix--wikipedia-useskin-vector&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Wc_(Unix)?useskin=vector&#34;&gt;wc (Unix) - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;wc-how-to-display-the-number-of-lines-words-and-characters-in-separate-lines-unix-and-linux-stack-exchange&#34;&gt;&lt;a href=&#34;https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines&#34;&gt;wc - How to display the number of lines, words and characters in separate lines? - Unix &amp;amp; Linux Stack Exchange&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-03-02 Thu 16:28]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之More and Less</title>
+      <link>http://blog.imcompany.cn/post/linux-moreless/</link>
+      <pubDate>Wed, 08 Feb 2023 15:54:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-moreless/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;开发中查看日志信息过多时，可以使用linux中的 &lt;strong&gt;more&lt;/strong&gt; 和 &lt;strong&gt;less&lt;/strong&gt; 命令进行分页查看&lt;/p&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;p&gt;分页显示文件内容，只可以向后翻页&lt;/p&gt;
+&lt;h3 id=&#34;more-file&#34;&gt;more file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容, 在页面使用 &lt;strong&gt;空格键&lt;/strong&gt; 进行翻页
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-n-file&#34;&gt;more -n file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，一页显示指定行数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-number.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-d-file&#34;&gt;more -d file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，带页面操作提示信息
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-slient.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-p-file&#34;&gt;more -p file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，不进行滚动，而是直接替换页面的内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-p.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-s-file&#34;&gt;more -s file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，多行空格按一行空格显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-blank-line.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-plus-num-file&#34;&gt;more +num file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，从文件的第 &lt;strong&gt;n&lt;/strong&gt; 行开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-start.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-f-file&#34;&gt;more -f file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，不折叠长行
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-longline.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，第一行这个长行按两行进行了统计&lt;/p&gt;
+&lt;h2 id=&#34;less&#34;&gt;Less&lt;/h2&gt;
+&lt;p&gt;分页显示文件内容，More的增强版本，支持向前向后翻页，页面操作类VI形式。less &amp;gt; more&lt;/p&gt;
+&lt;h3 id=&#34;less-file&#34;&gt;less file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，可上下(b)翻页，按行(j/k)翻
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-g-file&#34;&gt;less -g file&lt;/h3&gt;
+&lt;p&gt;分页显示内容，只高亮单条结果(默认高亮所有匹配)，对大文件可提升性能
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-highlight-one.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-n-file&#34;&gt;less -N file&lt;/h3&gt;
+&lt;p&gt;分页显示内容，带行号，可用来查看源码
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-number.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-s-file&#34;&gt;less -s file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，多行空格按一行空格显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-blank-line.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-m-file&#34;&gt;less -M file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，底部显示更多信息(当前的进度和屏幕显示的行信息)
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-line-info.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-p-file&#34;&gt;less -p file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，查询指定内容，在匹配处开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-search-pattern.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-plus-g-file&#34;&gt;less +G file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，从文件结尾开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-from-bottom.gif&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习-只看文件一部分的head与tail</title>
+      <link>http://blog.imcompany.cn/post/linux-headtail/</link>
+      <pubDate>Mon, 30 Jan 2023 18:27:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-headtail/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;开发中常常需要查看文件的部分内容，这时可以用 &lt;strong&gt;head&lt;/strong&gt; 命令来查看文件开头部分与 &lt;strong&gt;tail&lt;/strong&gt; 命令来查看文件结尾部分&lt;/p&gt;
+&lt;h2 id=&#34;head&#34;&gt;Head&lt;/h2&gt;
+&lt;h3 id=&#34;head-file&#34;&gt;head file&lt;/h3&gt;
+&lt;p&gt;打印文件的前10行内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/o2zr7E.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;head-n-file&#34;&gt;head -n file&lt;/h3&gt;
+&lt;p&gt;打印文件前n行的内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/TCsOEj.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;head-c-file&#34;&gt;head -c file&lt;/h3&gt;
+&lt;p&gt;打印文件前n个字节(换行符计算在内)的内容，文件小于指定字节则打印全部文件内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lsEmuL.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;head-v-file&#34;&gt;head -v file&lt;/h3&gt;
+&lt;p&gt;打印文件的前10行内容，显示打印的文件标题&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Nkabtm.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;head-file1-file2&#34;&gt;head file1 file2&lt;/h3&gt;
+&lt;p&gt;同时查看多个文件的头部内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/mEcQRv.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;head-q-file1-file2&#34;&gt;head -q file1 file2&lt;/h3&gt;
+&lt;p&gt;同时查看多个文件的头部内容，不打印文件标题，可用于后续文件内容合并处理
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Lw9ZuL.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tail&#34;&gt;Tail&lt;/h2&gt;
+&lt;h3 id=&#34;tail-file&#34;&gt;tail file&lt;/h3&gt;
+&lt;p&gt;打印文件后10行内容，不足则打印全部内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/fFRryh.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-n-file&#34;&gt;tail -n file&lt;/h3&gt;
+&lt;p&gt;指定打印文件后n行的内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/KVopOw.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-c-file&#34;&gt;tail -c file&lt;/h3&gt;
+&lt;p&gt;打印文件尾部n个字节(换行符计算在内)的内容，文件小于指定字节则打印全部文件内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1G0PFd.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-v-file&#34;&gt;tail -v file&lt;/h3&gt;
+&lt;p&gt;打印文件的尾部10行内容，显示打印的文件标题
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/x1LfMy.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-q-file1-file2&#34;&gt;tail -q file1 file2&lt;/h3&gt;
+&lt;p&gt;同时查看多个文件的尾部内容，不打印文件标题，可用于后续文件内容合并处理
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/jUhR6k.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-f-file&#34;&gt;tail -f file&lt;/h3&gt;
+&lt;p&gt;监控文件后续输出，对监控线上服务日志输出很有用
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tail-with-follow.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-f-file&#34;&gt;tail -F file&lt;/h3&gt;
+&lt;p&gt;监控文件后续输出，即使文件重命名也可以正确输出，对监控线上服务日志输出很有用
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tail-with-follow-f.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tail-f-pid-n-file&#34;&gt;tail -f &amp;ndash;pid=n file&lt;/h3&gt;
+&lt;p&gt;监控文件输出，当监控的进程退出时， &lt;strong&gt;tail&lt;/strong&gt; 程序退出&lt;/p&gt;
+&lt;h2 id=&#34;ref&#34;&gt;REF&lt;/h2&gt;
+&lt;h3 id=&#34;head--unix--wikipedia-useskin-vector&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Head_(Unix)?useskin=vector&#34;&gt;head (Unix) - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;using-linux-tail-command-with-pid-terminate-option-youtube&#34;&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=wWHz1mfFZ-w&#34;&gt;Using Linux Tail Command with PID Terminate Option - YouTube&lt;/a&gt;&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之cat</title>
+      <link>http://blog.imcompany.cn/post/linux-cat/</link>
+      <pubDate>Fri, 13 Jan 2023 11:41:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-cat/</guid>
+      <description>&lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;Cat命令有两个作用：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;输出文件内容到标准输出&lt;/li&gt;
+&lt;li&gt;合并文件内容&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UPmfmN.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;输出文件内容&#34;&gt;输出文件内容&lt;/h2&gt;
+&lt;h3 id=&#34;cat-file&#34;&gt;cat file&lt;/h3&gt;
+&lt;p&gt;查看文件内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9LJohL.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cat-n-file&#34;&gt;cat -n file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，带行号，统计所有行(包括空行)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7C1eEu.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cat-b-file&#34;&gt;cat -b file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，带行号，不统计空行&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rQsJte.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cat-s-file&#34;&gt;cat -s file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，压缩空行，多个空行只显示一行空行
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kqjJl8.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-e-file&#34;&gt;cat -E file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，显示行结束符号为 &lt;strong&gt;$&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/7FBdUy.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-t-file&#34;&gt;cat -T file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，显示tab符号为 &lt;strong&gt;^&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MRJk0v.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-a-file&#34;&gt;cat -A file&lt;/h3&gt;
+&lt;p&gt;查看文件内容，显示tab符号为 &lt;strong&gt;^&lt;/strong&gt; ，显示行结束符号为 &lt;strong&gt;$&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/WeFwYd.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-multiple-files&#34;&gt;cat multiple files&lt;/h3&gt;
+&lt;p&gt;查看多个文件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ElyTTc.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;合并文件内容&#34;&gt;合并文件内容&lt;/h2&gt;
+&lt;p&gt;cat配合linux的管道命令可以实现更强大的功能&lt;/p&gt;
+&lt;h3 id=&#34;cat-file1-file2-file3&#34;&gt;cat file1 file2 &amp;gt; file3&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ekol3C.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cat-newfile&#34;&gt;cat &amp;gt;newfile&lt;/h3&gt;
+&lt;p&gt;这是一个很强大的命令，可以直接创建文件并把输入的内容写入到新创建的文件中
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-newfile.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat&#34;&gt;cat&lt;/h3&gt;
+&lt;p&gt;只输入cat会发生什么呢，它会把输入的内容再输出出来，没事可以自言自语了
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-self.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-n-file1-file2-file3&#34;&gt;cat -n file1 file2 &amp;gt; file3&lt;/h3&gt;
+&lt;p&gt;统计两个文件的内容带行号写入到file3
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hjApFc.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-file1-file2-file3&#34;&gt;cat file1 - file2 &amp;gt; file3&lt;/h3&gt;
+&lt;p&gt;获取file1的内容，用户进行输入，最后加上file2的内容写到file3文件中
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cat-with-middle-write.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cat-file1-file2&#34;&gt;cat file1 &amp;gt;&amp;gt; file2&lt;/h3&gt;
+&lt;p&gt;追加file1的内容到file2中
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/QQWmfb.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之touch</title>
+      <link>http://blog.imcompany.cn/post/linux-touch/</link>
+      <pubDate>Fri, 06 Jan 2023 17:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-touch/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;今天学习一下Linux的 &lt;strong&gt;touch&lt;/strong&gt; 命令&lt;/p&gt;
+&lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;按man文档的说明，是修改文件的时间戳，目前常用的操作是用来 &lt;strong&gt;创建文件&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RPJQDx.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;touch-file&#34;&gt;touch file&lt;/h2&gt;
+&lt;p&gt;创建一个空文件，文件的访问时间与修改时间为当前时间&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Rf6wbV.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;touch-a-file&#34;&gt;touch -a file&lt;/h2&gt;
+&lt;p&gt;改变文件的访问时间
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/iU6HMm.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;从上图可以看出来， &lt;strong&gt;b.txt&lt;/strong&gt; 文件只有访问时间被修改了，修改时间没有变&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;验证时用到 &lt;a href=&#34;https://linux.die.net/man/1/stat&#34;&gt;stat&lt;/a&gt; 命令， 这个后续具体学习&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;touch-m-file&#34;&gt;touch -m file&lt;/h2&gt;
+&lt;p&gt;改变文件的修改时间
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ayyjFL.png&#34;&gt;
+从上图可以看出来， &lt;strong&gt;cc.txt&lt;/strong&gt; 文件只有修改时间变了，访问时间没有变&lt;/p&gt;
+&lt;h2 id=&#34;touch-t-file&#34;&gt;touch -t file&lt;/h2&gt;
+&lt;p&gt;修改文件为指定的时间，格式为 &lt;strong&gt;[[CC]YY]MMDDhhmm[.ss]&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vtge5A.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上图命令将 &lt;strong&gt;dd.txt&lt;/strong&gt; 文件的访问时间与修改时间改成了 &lt;strong&gt;2022-01-02 12:22:23&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;touch-d-file&#34;&gt;touch -d file&lt;/h2&gt;
+&lt;p&gt;修改文件为指定的日期，支持的时间格式更广泛
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/d6IgY9.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;touch-r-reffile-file&#34;&gt;touch -r reffile file&lt;/h2&gt;
+&lt;p&gt;修改文件的时间为引用的文件时间
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3N9iFx.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如图， &lt;strong&gt;ff.txt&lt;/strong&gt; 文件与 &lt;strong&gt;a.txt&lt;/strong&gt; 的时间同步了&lt;/p&gt;
+&lt;h2 id=&#34;ref&#34;&gt;REF&lt;/h2&gt;
+&lt;h3 id=&#34;touch--command--wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Touch_(command)&#34;&gt;touch (command) - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;check-file-access-and-modification-time-in-linux-linux-tutorials-learn-linux-configuration&#34;&gt;&lt;a href=&#34;https://linuxconfig.org/check-file-access-and-modification-time-in-linux&#34;&gt;Check file access and modification time in Linux - Linux Tutorials - Learn Linux Configuration&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;stat--1--file-file-system-status-linux-man-page&#34;&gt;&lt;a href=&#34;https://linux.die.net/man/1/stat&#34;&gt;stat(1): file/file system status - Linux man page&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-01-06 Fri 18:55]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之Cp, Mv</title>
+      <link>http://blog.imcompany.cn/post/linux-cpmv/</link>
+      <pubDate>Wed, 04 Jan 2023 10:11:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-cpmv/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;今天学习一下Linux中的复制移动相关命令，主要学习 &lt;strong&gt;cp&lt;/strong&gt; 与 &lt;strong&gt;mv&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;cp&#34;&gt;CP&lt;/h2&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;p&gt;复制文件或文件夹&lt;/p&gt;
+&lt;h3 id=&#34;cp-file-target&#34;&gt;cp file target&lt;/h3&gt;
+&lt;p&gt;复制文件到target目录&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/awxABc.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-i&#34;&gt;cp -i&lt;/h3&gt;
+&lt;p&gt;复制前进行询问(如果存在同名文件)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/UIwLJ9.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-n&#34;&gt;cp -n&lt;/h3&gt;
+&lt;p&gt;复制，但不覆盖已经存在的文件&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LWdOji.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-b&#34;&gt;cp -b&lt;/h3&gt;
+&lt;p&gt;复制，复制前备份目标同名文件(如果存在)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmwxBW.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-f&#34;&gt;cp -f&lt;/h3&gt;
+&lt;p&gt;强制删除(目录文件不能打开)并覆盖
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tPA8AB.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cp-p&#34;&gt;cp -p&lt;/h3&gt;
+&lt;p&gt;复制文件到目标文件夹，保留原文件的修改时间、访问时间与归属相关信息&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0Rt6Ur.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-u&#34;&gt;cp -u&lt;/h3&gt;
+&lt;p&gt;复制文件到目标文件夹，仅当源文件的修改时间晚于目标同名文件时进行复制&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0cVlU7.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;cp-r&#34;&gt;cp -r&lt;/h3&gt;
+&lt;p&gt;递归复制文件夹内容到目标文件夹&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yUFV2H.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;组合杀&#34;&gt;组合杀&lt;/h3&gt;
+&lt;h4 id=&#34;对文件进行备份-按数字方式&#34;&gt;对文件进行备份，按数字方式&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp -f --backup&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;numbered aa.txt aa.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6P4lSq.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如图所示，每执行一次命令，就顺序产生一个同名文件+编号的备份，有点类似于一个版本管理系统&lt;/p&gt;
+&lt;h4 id=&#34;更新文件夹&#34;&gt;更新文件夹&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp -ruv e ../target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cZw5ta.png&#34;&gt;
+如图所示，只有e/ee.txt有更新，执行命令时只做了增量更新文件&lt;/p&gt;
+&lt;h2 id=&#34;mv&#34;&gt;MV&lt;/h2&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;p&gt;移动(重命名)文件或文件夹&lt;/p&gt;
+&lt;h3 id=&#34;mv&#34;&gt;mv&lt;/h3&gt;
+&lt;h4 id=&#34;移动文件&#34;&gt;移动文件&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T0iZkY.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;移动并重命名&#34;&gt;移动并重命名&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GSDCV7.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;mv-i&#34;&gt;mv -i&lt;/h3&gt;
+&lt;p&gt;移动前询问（目标有同名文件）&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zMSVIF.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;mv-n&#34;&gt;mv -n&lt;/h3&gt;
+&lt;p&gt;移动文件，但不覆盖存在的文件&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/rhG7PO.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;mv-u&#34;&gt;mv -u&lt;/h3&gt;
+&lt;p&gt;移动文件，只在源文件比目标文件新时才执行
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lOLRtR.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mv-f&#34;&gt;mv -f&lt;/h3&gt;
+&lt;p&gt;执行覆盖，不提示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uBKFdn.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ref&#34;&gt;REF&lt;/h2&gt;
+&lt;h3 id=&#34;cp--unix--wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cp_(Unix)&#34;&gt;cp (Unix) - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;mv--unix--wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Mv_(Unix)&#34;&gt;mv (Unix) - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;two-great-uses-for-the-cp-command-opensource-dot-com&#34;&gt;&lt;a href=&#34;https://opensource.com/article/17/7/two-great-uses-cp-command&#34;&gt;Two great uses for the cp command | Opensource.com&lt;/a&gt;&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之删除rm, rmdir</title>
+      <link>http://blog.imcompany.cn/post/linux-mkdir-rm/</link>
+      <pubDate>Wed, 21 Dec 2022 15:20:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-mkdir-rm/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;今天学习一下Linux命令中的删除命令，主要学习 &lt;strong&gt;rm&lt;/strong&gt; 与 &lt;strong&gt;rmdir&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rm&#34;&gt;rm&lt;/h2&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;p&gt;删除文件或目录&lt;/p&gt;
+&lt;h3 id=&#34;删除谁&#34;&gt;删除谁&lt;/h3&gt;
+&lt;h4 id=&#34;rm-file&#34;&gt;rm file&lt;/h4&gt;
+&lt;p&gt;删除指定文件，只能删除文件，不能删除目录
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/h8RcDg.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rm-r-file&#34;&gt;rm -r file&lt;/h4&gt;
+&lt;p&gt;递归删除目录及目录下的文件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0OFKsT.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rm-d-file&#34;&gt;rm -d file&lt;/h4&gt;
+&lt;p&gt;删除空文件夹，文件夹不空则报错
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/MULkwJ.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;删除方式&#34;&gt;删除方式&lt;/h3&gt;
+&lt;h4 id=&#34;rm-f-file&#34;&gt;rm -f file&lt;/h4&gt;
+&lt;p&gt;强制删除文件，忽略文件不存在的错误信息
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zBH6Cy.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rm-i-file&#34;&gt;rm -i file&lt;/h4&gt;
+&lt;p&gt;删除文件前进行确认提示，每删除一个文件提示一次
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZZ6ZMd.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;rm-i-file&#34;&gt;rm -I file&lt;/h4&gt;
+&lt;p&gt;删除文件前进行有条件的确认提示，触发条件为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;删除文件大于3个，只提示一次，小于等于3个不提示，直接删除&lt;/li&gt;
+&lt;li&gt;递归删除时提示一次&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/0R32Gj.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;删除记录&#34;&gt;删除记录&lt;/h3&gt;
+&lt;h4 id=&#34;rm-v-file&#34;&gt;rm -v file&lt;/h4&gt;
+&lt;p&gt;显示删除的文件明细，有日志作用，有写脚本时很有用
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/62s2jL.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;组合杀&#34;&gt;组合杀&lt;/h3&gt;
+&lt;h4 id=&#34;递归删除目录的文件-不带确认&#34;&gt;递归删除目录的文件（不带确认）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;rm -rf file&lt;/strong&gt; 常用的删除命令（在受限用户上使用比较稳妥）
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/I46Y4y.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;递归删除目录的文件-带确认一次&#34;&gt;递归删除目录的文件（带确认一次）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;rm -rfI file&lt;/strong&gt; 比较稳妥的删除目录方式，有一步确认提示(又防止了文件多提示多的烦恼)，防止手快
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xoAoe9.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rmdir&#34;&gt;rmdir&lt;/h2&gt;
+&lt;h3 id=&#34;功能&#34;&gt;功能&lt;/h3&gt;
+&lt;p&gt;删除空的文件夹(支持多个)&lt;/p&gt;
+&lt;h3 id=&#34;为什么有这个命令&#34;&gt;为什么有这个命令&lt;/h3&gt;
+&lt;p&gt;删除空文件夹的功能 &lt;strong&gt;rm -d&lt;/strong&gt; 也可以实现，为什么还要有这个命令?&lt;/p&gt;
+&lt;h4 id=&#34;rmdir存在的原因&#34;&gt;rmdir存在的原因&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;它只能删除文件夹，功能更具体&lt;/li&gt;
+&lt;li&gt;它可以删除目录及其父目录，这个 &lt;strong&gt;rm -d&lt;/strong&gt; 是做不到的, &lt;strong&gt;rm -d&lt;/strong&gt; 只能删除一层&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;rm -d&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-ls命令学习</title>
+      <link>http://blog.imcompany.cn/post/linux-ls/</link>
+      <pubDate>Thu, 15 Dec 2022 20:17:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-ls/</guid>
+      <description>&lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;ls&lt;/strong&gt; 的功能为显示目录下的内容，默认情况下显示当前所在目录下的内容。用 &lt;strong&gt;man ls&lt;/strong&gt; 查看帮助，发现 &lt;strong&gt;ls&lt;/strong&gt; 支持了非常多的参数，后续学习以实际应用为主，只展示常用的内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/qlBbbJ.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ls 命令帮助归属于&lt;a href=&#34;https://blog.imcompany.cn/post/linux-man/&#34;&gt;man&lt;/a&gt;文件第一章节&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;显示哪些内容&#34;&gt;显示哪些内容&lt;/h2&gt;
+&lt;h3 id=&#34;ls&#34;&gt;ls&lt;/h3&gt;
+&lt;p&gt;不带任何参数，显示当前目录下的文件内容，结果按字母自然排序
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/gn4J0K.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ls-a&#34;&gt;ls -a&lt;/h3&gt;
+&lt;p&gt;显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，如上显示 &lt;strong&gt;.emacs&lt;/strong&gt; 和 &lt;strong&gt;.hide&lt;/strong&gt; 文件显示了出来
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GWPMbm.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ls-a&#34;&gt;ls -A&lt;/h3&gt;
+&lt;p&gt;显示当前目录下所有的内容，包含隐藏(以.开头的文件)的内容，但不包含 &lt;strong&gt;.&lt;/strong&gt; 和 &lt;strong&gt;..&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yq9OSr.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;. 代表当前目录
+.. 代表上一级目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;ls-tmp&#34;&gt;ls /tmp&lt;/h3&gt;
+&lt;p&gt;显示/tmp目录下的文件内容&lt;/p&gt;
+&lt;h2 id=&#34;显示方式&#34;&gt;显示方式&lt;/h2&gt;
+&lt;h3 id=&#34;ls-l&#34;&gt;ls -l&lt;/h3&gt;
+&lt;p&gt;默认情况 &lt;strong&gt;ls&lt;/strong&gt; 只显示内容的名称， &lt;strong&gt;ls -l&lt;/strong&gt; 表示以长列表方式显示目录内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lJyhLJ.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;增加了 &lt;strong&gt;-l&lt;/strong&gt; 选项后，显示结果中包含的文件内容更详细(包括权限、所属用户组、大小、修改时间等信息)&lt;/p&gt;
+&lt;h4 id=&#34;ls-lh&#34;&gt;ls -lh&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;ls&lt;/strong&gt; 中有很多与 &lt;strong&gt;-l&lt;/strong&gt; 选项配合使用的其它选项，如 &lt;strong&gt;-h&lt;/strong&gt; 选项，可以显示文件大小为可读的形式（以M、G为单位）
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xK7nfK.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ls -l&lt;/strong&gt; 中文件大小默认是按byte为单位显示的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;ls-x&#34;&gt;ls -x&lt;/h3&gt;
+&lt;p&gt;按列显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmVnyB.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ls-x&#34;&gt;ls -X&lt;/h3&gt;
+&lt;p&gt;按文件类型字母排序显示
+&lt;img loading=&#34;lazy&#34; src=&#34;http://pic.imcompany.cn/pic/c55emA.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ls-1&#34;&gt;ls -1&lt;/h3&gt;
+&lt;p&gt;一行显示一个
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5yYqrQ.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ls-r&#34;&gt;ls -R&lt;/h3&gt;
+&lt;p&gt;递归显示所有内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/T47nqt.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;格式化显示&#34;&gt;格式化显示&lt;/h2&gt;
+&lt;h3 id=&#34;ls-q&#34;&gt;ls -Q&lt;/h3&gt;
+&lt;p&gt;显示结果加 &lt;strong&gt;引号&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1juQbr.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-man学习</title>
+      <link>http://blog.imcompany.cn/post/linux-man/</link>
+      <pubDate>Thu, 08 Dec 2022 11:29:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-man/</guid>
+      <description>&lt;h2 id=&#34;功能&#34;&gt;功能&lt;/h2&gt;
+&lt;p&gt;显示命令行命令的帮助手册
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/npZhjZ.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;排版&#34;&gt;排版&lt;/h2&gt;
+&lt;p&gt;Man页面是按章节(section)进行分配的，在Man中包含9个特定章节
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/edrOUj.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;特定章节&#34;&gt;特定章节&lt;/h3&gt;
+&lt;h4 id=&#34;可执行程序或者shell命令--1&#34;&gt;可执行程序或者Shell命令(1)&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;man 默认查询第1章节，也可以直接忽略写章节进行查询&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此命令与上边命令效果相同&lt;/p&gt;
+&lt;h4 id=&#34;系统调用--2&#34;&gt;系统调用(2)&lt;/h4&gt;
+&lt;p&gt;系统调用（内核的功能）相关的帮助在第2章节，例如下面查询系统调用 &lt;strong&gt;read&lt;/strong&gt; 的帮助手册&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;库调用--3&#34;&gt;库调用(3)&lt;/h4&gt;
+&lt;p&gt;库调用相关帮助在第3章节，例如下面查询 &lt;a href=&#34;https://libzip.org/documentation/zip_fread.html&#34;&gt;ziplib&lt;/a&gt; 库中read 的帮助信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; zip_fread
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;特定设备文件--4&#34;&gt;特定设备文件(4)&lt;/h4&gt;
+&lt;p&gt;查询/dev（保存的设备文件）下的待定文件相关帮助在第4章节, 查一下 &lt;strong&gt;null&lt;/strong&gt; 设备的帮助信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;4&lt;/span&gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;配置文件书写规则与约定--5&#34;&gt;配置文件书写规则与约定(5)&lt;/h4&gt;
+&lt;p&gt;配置文件的帮助信息放在了第5章，查询一下 /etc/passwd 的帮助&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; passwod
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;游戏相关--6&#34;&gt;游戏相关(6)&lt;/h4&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h4 id=&#34;杂项--7&#34;&gt;杂项(7)&lt;/h4&gt;
+&lt;p&gt;一些杂项帮助信息放在第7章，查一下 groff 文件的帮助&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;man &lt;span class=&#34;m&#34;&gt;7&lt;/span&gt; groff
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;系统管理员命令--8&#34;&gt;系统管理员命令(8)&lt;/h4&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h4 id=&#34;内核相关--9&#34;&gt;内核相关(9)&lt;/h4&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h3 id=&#34;章节组织形式&#34;&gt;章节组织形式&lt;/h3&gt;
+&lt;p&gt;以下只列出比较常用的信息&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;名称&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;总览&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;描述&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;命令选项&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;退出码&lt;/li&gt;
+&lt;li&gt;返回值&lt;/li&gt;
+&lt;li&gt;环境变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;例子&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;作者&lt;/li&gt;
+&lt;li&gt;延伸阅读(see also)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
+&lt;h3 id=&#34;man&#34;&gt;man&lt;/h3&gt;
+&lt;h4 id=&#34;man-f&#34;&gt;man -f&lt;/h4&gt;
+&lt;p&gt;显示命令的简介, 同 &lt;strong&gt;whatis&lt;/strong&gt; 命令&lt;/p&gt;
+&lt;h4 id=&#34;man-k&#34;&gt;man -k&lt;/h4&gt;
+&lt;p&gt;搜索命令描述，当只记得一些关键词时很有用。同 &lt;strong&gt;apropos&lt;/strong&gt; 命令&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux代码结构学习</title>
+      <link>http://blog.imcompany.cn/post/linux-source/</link>
+      <pubDate>Wed, 06 Apr 2022 18:53:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-source/</guid>
+      <description>&lt;h2 id=&#34;linux代码结构&#34;&gt;Linux代码结构&lt;/h2&gt;
+&lt;p&gt;准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/6Xc7mE.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;代码主要文件解析&#34;&gt;代码主要文件解析&lt;/h2&gt;
+&lt;h3 id=&#34;makefile&#34;&gt;Makefile&lt;/h3&gt;
+&lt;p&gt;这是整个源码的Makefile，里面定义了一系列的变量和规则，比如默认的gcc编译flag。&lt;/p&gt;
+&lt;h3 id=&#34;documentation&#34;&gt;Documentation/&lt;/h3&gt;
+&lt;p&gt;项目文档，里面包含了很多关于配置内核、与ramdisk运行等有用的信息。这里面没有不同配置项的帮助信息，这些信息可以在相关子目录的 &lt;strong&gt;Kconfig&lt;/strong&gt; 文件中查看。&lt;/p&gt;
+&lt;h3 id=&#34;arch&#34;&gt;arch/&lt;/h3&gt;
+&lt;p&gt;体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 &lt;strong&gt;arch/x86&lt;/strong&gt; 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编例程等信息。&lt;/p&gt;
+&lt;h3 id=&#34;crypto&#34;&gt;crypto/&lt;/h3&gt;
+&lt;p&gt;内核使用的加密API代码。&lt;/p&gt;
+&lt;h3 id=&#34;drivers&#34;&gt;drivers/&lt;/h3&gt;
+&lt;p&gt;所有设备相关的信息都在这个目录下。包括视频设备，网卡设备，低级别的SCSI设备。比如网络设备一般是在 &lt;strong&gt;drivers/net&lt;/strong&gt; 目录下。&lt;/p&gt;
+&lt;h3 id=&#34;fs&#34;&gt;fs/&lt;/h3&gt;
+&lt;p&gt;通用的文件系统与其它类型的文件系统代码都在这里。现在的操作系统的根文件系统一般为ext4格式，它的代码在 &lt;strong&gt;fs/ext4&lt;/strong&gt; 下&lt;/p&gt;
+&lt;h3 id=&#34;include&#34;&gt;include/&lt;/h3&gt;
+&lt;p&gt;所有.c文件中包含的头文件都定义在这个目录下。&lt;/p&gt;
+&lt;h3 id=&#34;init&#34;&gt;init/&lt;/h3&gt;
+&lt;p&gt;这个目录包含了内核启动的入口文件 &lt;strong&gt;main.c&lt;/strong&gt; ，版本信息文件 &lt;strong&gt;version.c&lt;/strong&gt; 和早期用户空间相关的代码，早期空间代码提供内核出现时的功能，它不需要在内核中进行运行。&lt;/p&gt;
+&lt;h3 id=&#34;ipc&#34;&gt;ipc/&lt;/h3&gt;
+&lt;p&gt;进程间通信相关代码，包含共享内存，信号量等信息。&lt;/p&gt;
+&lt;h3 id=&#34;kernel&#34;&gt;kernel/&lt;/h3&gt;
+&lt;p&gt;内核级别代码，上层的系统调用代码在这里，还有关于 &lt;strong&gt;printk()&lt;/strong&gt; 代码，调度，信号量处理的代码。&lt;/p&gt;
+&lt;h3 id=&#34;lib&#34;&gt;lib/&lt;/h3&gt;
+&lt;p&gt;内核所有使用的库都在这里。常见的字符串运算，调试库，命令行解析代码等。&lt;/p&gt;
+&lt;h3 id=&#34;mm&#34;&gt;mm/&lt;/h3&gt;
+&lt;p&gt;高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 &lt;strong&gt;arch/&lt;!-- raw HTML omitted --&gt;/mm&lt;/strong&gt; )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。&lt;/p&gt;
+&lt;h3 id=&#34;net&#34;&gt;net/&lt;/h3&gt;
+&lt;p&gt;高级别的网络代码。与低级别的网络进行发包与收包交互。*net/core* 中包含其它网络协议使用的核心代码。net子目录就是特定的网络协议实现。&lt;/p&gt;
+&lt;h3 id=&#34;scripts&#34;&gt;scripts/&lt;/h3&gt;
+&lt;p&gt;这里面包含构建内核的脚本文件。&lt;/p&gt;
+&lt;h3 id=&#34;security&#34;&gt;security/&lt;/h3&gt;
+&lt;p&gt;不同Linux的安全模型代码。&lt;/p&gt;
+&lt;h3 id=&#34;sound&#34;&gt;sound/&lt;/h3&gt;
+&lt;p&gt;声卡及相关代码在这里。&lt;/p&gt;
+&lt;h3 id=&#34;usr&#34;&gt;usr/&lt;/h3&gt;
+&lt;p&gt;该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Centos7 install issue collect</title>
+      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
+      <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解决centos7-yum-could-not-retrieve-mirrorlist错误&#34;&gt;解决Centos7 yum could not retrieve mirrorlist错误&lt;/h2&gt;
+&lt;p&gt;刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考&lt;a href=&#34;https://my.oschina.net/u/2456768/blog/3011881&#34;&gt;https://my.oschina.net/u/2456768/blog/3011881&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置静态ip&#34;&gt;配置静态ip&lt;/h2&gt;
+&lt;p&gt;安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;IPADDR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NETMASK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;255.255.255.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GATEWAY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DNS1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://blog.csdn.net/zhishengqianjun/article/details/77046796&#34;&gt;https://blog.csdn.net/zhishengqianjun/article/details/77046796&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos7安装后配置国内仓库源&#34;&gt;Centos7安装后配置国内仓库源&lt;/h2&gt;
+&lt;p&gt;由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考&lt;a href=&#34;https://blog.csdn.net/inslow/article/details/54177191&#34;&gt;https://blog.csdn.net/inslow/article/details/54177191&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;centos7安装vmware-tools&#34;&gt;Centos7安装VMware Tools&lt;/h3&gt;
+&lt;p&gt;想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考&lt;a href=&#34;https://blog.csdn.net/WarnerWu/article/details/73718901&#34;&gt;https://blog.csdn.net/WarnerWu/article/details/73718901&lt;/a&gt; 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了&lt;/p&gt;
+&lt;h2 id=&#34;安装jdk8&#34;&gt;安装Jdk8&lt;/h2&gt;
+&lt;p&gt;一句命令搞定：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安装mysql&#34;&gt;安装mysql&lt;/h2&gt;
+&lt;p&gt;使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了&lt;a href=&#34;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&#34;&gt;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改mysql的root密码&#34;&gt;修改mysql的root密码&lt;/h2&gt;
+&lt;p&gt;安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了&lt;a href=&#34;https://blog.csdn.net/kuluzs/article/details/51924086&#34;&gt;https://blog.csdn.net/kuluzs/article/details/51924086&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开放3306端口&#34;&gt;开放3306端口&lt;/h2&gt;
+&lt;p&gt;为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start firewalld
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;public --add-port&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3306/tcp --permanent
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://www.jianshu.com/p/225a853350d9&#34;&gt;https://www.jianshu.com/p/225a853350d9&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装oh-my-bash&#34;&gt;安装oh-my-bash&lt;/h2&gt;
+&lt;p&gt;由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。&lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;https://github.com/ohmybash/oh-my-bash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos自动登录&#34;&gt;Centos自动登录&lt;/h2&gt;
+&lt;p&gt;安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;移除原来的getty@tty1.service软链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拷贝getty@.service file 并且命名为 &lt;a href=&#34;mailto:getty@tty1.service&#34;&gt;getty@tty1.service&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-/sbin/agetty --autologin root --noclear %I
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;Alias&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

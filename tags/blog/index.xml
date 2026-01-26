@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/blog/</link>
+    <description>Recent content in Blog on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Jan 2026 11:21:07 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收藏的blog</title>
+      <link>http://blog.imcompany.cn/post/favorite-blog/</link>
+      <pubDate>Mon, 19 Jan 2026 18:15:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/favorite-blog/</guid>
+      <description>&lt;h2 id=&#34;酷壳-coolshell-dot-cn&#34;&gt;&lt;a href=&#34;https://coolshell.cn/&#34;&gt;酷壳 – CoolShell.cn&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;plantegg&#34;&gt;&lt;a href=&#34;https://plantegg.github.io/&#34;&gt;plantegg&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;manateelazycat&#34;&gt;&lt;a href=&#34;https://manateelazycat.github.io/&#34;&gt;ManateeLazyCat&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;happy-xiao-substack&#34;&gt;&lt;a href=&#34;https://substack.com/@happyxiao&#34;&gt;happy xiao | Substack&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;laycat推荐，以前已经关注过&lt;/p&gt;
+&lt;h2 id=&#34;个人主页-微博-本恰恰&#34;&gt;&lt;a href=&#34;https://www.weibo.com/u/2166767661&#34;&gt;个人主页 - 微博-本恰恰&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;kk-blog-通用基础&#34;&gt;&lt;a href=&#34;https://abcdxyzk.github.io/&#34;&gt;kk Blog —— 通用基础&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;memozine-es-muss-sein-es-muss-sein&#34;&gt;&lt;a href=&#34;https://memozine.me/&#34;&gt;Memozine - Es muss sein? Es muss sein!&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;ginobefun-bestblogs-bestblogs-dot-dev-汇集顶级编程-人工智能-产品-科技文章-大语言模型摘要评分辅助阅读-探索编程和技术未来&#34;&gt;&lt;a href=&#34;https://github.com/ginobefun/BestBlogs&#34;&gt;ginobefun/BestBlogs: bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;engineering-blogs&#34;&gt;&lt;a href=&#34;https://engineeringblogs.xyz/&#34;&gt;Engineering Blogs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;将 506 个工程师的博客的 RSS 给订阅起来，将每天有更新的自动同步到网站上，甚至你可以汇集的方式来订阅。&lt;/p&gt;
+&lt;h2 id=&#34;qianguyihao-blog-list-中文博客琅琊榜-只收录精品独立博客&#34;&gt;&lt;a href=&#34;https://github.com/qianguyihao/blog-list&#34;&gt;qianguyihao/blog-list: 中文博客琅琊榜，只收录精品独立博客&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;dennisthink-awesome-twitter-cn-值得关注的中文twitter用户&#34;&gt;&lt;a href=&#34;https://github.com/DennisThink/awesome_twitter_CN&#34;&gt;DennisThink/awesome_twitter_CN: 值得关注的中文twitter用户&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

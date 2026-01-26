@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Logseq on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/logseq/</link>
+    <description>Recent content in Logseq on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 24 Nov 2023 19:07:41 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/logseq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logseq常用插件</title>
+      <link>http://blog.imcompany.cn/post/logseq-plugin/</link>
+      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/logseq-plugin/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;以此文章记录我常用的Logseq plugin，常用常更新&lt;/p&gt;
+&lt;h2 id=&#34;readwise-official-plugin&#34;&gt;Readwise Official Plugin&lt;/h2&gt;
+&lt;h2 id=&#34;logseq-anki-sync&#34;&gt;Logseq Anki Sync&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Weekly on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/weekly/</link>
+    <description>Recent content in Weekly on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jan 2026 14:07:00 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W03</title>
+      <link>http://blog.imcompany.cn/post/2026-week3/</link>
+      <pubDate>Fri, 23 Jan 2026 19:12:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week3/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;看 丝绸之路_一部全新的世界史 接触到新多新的地方词语，有点晕&lt;/li&gt;
+&lt;li&gt;看 资治通鉴 光看白话文对人物关系和事件还是拿不准，搭配 &lt;a href=&#34;https://space.bilibili.com/479010993/lists/4804976?type=season&#34;&gt;地图中的大汉史&lt;/a&gt;  这个解说就好很多&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;想导出hugo时把优先级也导出，查了一下发现hugo和org的优先级规则还不一样，暂时不动了&lt;/li&gt;
+&lt;li&gt;买了胜利GR50的缓震膜，看能不能解决一下球拍手柄握着感觉小的问题&lt;/li&gt;
+&lt;li&gt;VMware Fusion提示更新，但是需要登录后才能下载&lt;/li&gt;
+&lt;li&gt;平头耳机如何佩戴也是很有讲究的：挂在下耳窝，耳柄一定要贴脸颊&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;要从 AI 中获益，关键是学会用高质量的提问与它协作&lt;/li&gt;
+&lt;li&gt;重点投资放在学习 Prompt、上下文工程和构建能力上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/He_Zuoxiu?useskin=vector&#34;&gt;https://en.wikipedia.org/wiki/He_Zuoxiu?useskin=vector&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;何祚庥，中国科学院院士，伪科学打假人士，有意思的他还批评过钱学森气功言论&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W02</title>
+      <link>http://blog.imcompany.cn/post/2026-week2/</link>
+      <pubDate>Fri, 16 Jan 2026 19:01:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week2/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;读完 《世界简单史》&lt;/li&gt;
+&lt;li&gt;开始读 《丝绸之路：一部全新的世界史》&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;买的胜利碳音max球到了，试了一下冬天打不错&lt;/li&gt;
+&lt;li&gt;新增chrome插件 &lt;a href=&#34;https://chromewebstore.google.com/detail/peeklink/hdaniddaeomoofbnoagkncfofebaablc&#34;&gt;PeekLink - Chrome Web Store&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;尝试使用obsidian的 media-extended 插件来看视频并记日记，logseq这方面不太给力&lt;/li&gt;
+&lt;li&gt;在弄obsidian的在线播放youtube视频时，学会了使用script为proxyman增加request header的方法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;p&gt;麦当劳桌子上都有无线充了&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DlYSFw.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;阅读使人丰富，写作使人精确，讨论使人完备 &amp;ndash; 培根&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Reuters?useskin=vector&#34;&gt;https://en.wikipedia.org/wiki/Reuters?useskin=vector&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;路透社，英国报社，2008年被汤姆森公司收购&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W01</title>
+      <link>http://blog.imcompany.cn/post/2026-week1/</link>
+      <pubDate>Mon, 12 Jan 2026 10:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week1/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;继续读《20世纪简史》，预计下周就可以读完&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;升级完Idea，好多按键都不好使了，尤其是AI相关&lt;/li&gt;
+&lt;li&gt;尝试了一下Obsidian，还是更喜欢Logseq，两者各有千秋：Logseq 是“思考的空间”，Obsidian 是“输出的空间&lt;/li&gt;
+&lt;li&gt;给每日回顾模板增加每天和每周的review任务&lt;/li&gt;
+&lt;li&gt;pdd上买的电脑立式支架到了，试了一下，感觉一般，直接退了&lt;/li&gt;
+&lt;li&gt;开始使用Dropzone&lt;/li&gt;
+&lt;li&gt;AI的辅助编程还是用云端的模型更准确&lt;/li&gt;
+&lt;li&gt;NotebookLLM最终推荐的人挺多，准备深入研究一下&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;好的评论不是给出答案，而是打开问题&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2025-W52</title>
+      <link>http://blog.imcompany.cn/post/2025-week52/</link>
+      <pubDate>Fri, 26 Dec 2025 17:24:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2025-week52/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;开始读 &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;新买的耳机到了，测试了一下不错，随后又买了中空耳塞和耳机转typec转接器，这样手机电脑就都可以用了&lt;/li&gt;
+&lt;li&gt;准备看 坠落的审判&lt;/li&gt;
+&lt;li&gt;ReaderWise 播客内容解析功能显示真的是一塌糊涂，全都连在了一起&lt;/li&gt;
+&lt;li&gt;帮朋友弄一个双旦的海报，试了几个工具效果都不好，用豆包和comet的效果也不好，最好还是同事帮弄了一下&lt;/li&gt;
+&lt;li&gt;网盘filen续费&lt;/li&gt;
+&lt;li&gt;在网上看到一个三角支架，可以手机电脑使用，有点心动&lt;/li&gt;
+&lt;li&gt;Amazing AI需要高版本的15.2才能安装，准备升级&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;拥有资源并不意味着就能找到方向&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Mira_Murati?useskin=vector&#34;&gt;Mira Murati&lt;/a&gt;，她创立了一家名为Thinking Machines Lab的人工智能初创公司，之前在OpenAI和Tesla任职。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2025-W51</title>
+      <link>http://blog.imcompany.cn/post/2025-week51/</link>
+      <pubDate>Fri, 19 Dec 2025 18:54:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2025-week51/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;在读《简读中国史》，作为科普读物，这本书写的很多，给人一个中国历史发展的大地图。&lt;/li&gt;
+&lt;li&gt;受 &lt;a href=&#34;https://ciceroxiao.github.io/hong525/2025/12/16/2025-W50.html&#34;&gt;https://ciceroxiao.github.io/hong525/2025/12/16/2025-W50.html&lt;/a&gt; 启发，在2025年末开启周报模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;最近在深度使用Logseq，有点感觉了，还是得尊重人是视觉动物的原则&lt;/li&gt;
+&lt;li&gt;使用Logseq整理以前收藏的内容，发现自己是严重的收集狂，于是又开始进行归类、删除&lt;/li&gt;
+&lt;li&gt;更新完Emacs和陈大神的配置后，搜索不能记录历史了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;故事不能替代现实，只能帮助我们面对现实&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第17期</title>
+      <link>http://blog.imcompany.cn/post/peng-week17/</link>
+      <pubDate>Fri, 16 May 2025 10:19:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week17/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;programming-on-34-keys-oppi-dot-li&#34;&gt;&lt;a href=&#34;https://oppi.li/posts/programming_on_34_keys/&#34;&gt;Programming On 34 Keys · oppi.li&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/EKszUu.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;作者自己构建了一个分离式的34键的键盘用来日常编程，由于只有34个键，包含26个字母+4个常用符号+4个功能键(Tab，Space, Enter，Backspace)，对于其它的功能键就需要使用不同的layter来完成，作者就定义了三种模式来实现不能的功能&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;NAV层，导航模式，实现上下左右的移动，通过按住左侧的 &lt;code&gt;Space&lt;/code&gt; 触发&lt;/li&gt;
+&lt;li&gt;SYM层，符号模式，包含所有常用的符号，主要集中在左侧键盘，通过按住右侧的 &lt;code&gt;Enter&lt;/code&gt; 触发&lt;/li&gt;
+&lt;li&gt;NUM层，数字模式，包含所有数字，主要集中在右侧键盘 ，通过按住左侧的 &lt;code&gt;Tab&lt;/code&gt; 触发&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于常用的 Esc 键盘，作者通过组合按键的方式来实现，分别按住左右两侧的键&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;trycua-cua-c-ua-is-the-docker-container-for-computer-use-ai-agents-dot&#34;&gt;&lt;a href=&#34;https://github.com/trycua/cua&#34;&gt;trycua/cua: c/ua is the Docker Container for Computer-Use AI Agents.&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vVs9sS.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;运行AI Agents的Docker容器，这下可以大胆的尝试AI Agents了&lt;/p&gt;
+&lt;h3 id=&#34;crhuber-kelp-a-simple-alternative-to-homebrew-for-installing-binary-packages-on-macos-written-in-go-dot&#34;&gt;&lt;a href=&#34;https://github.com/crhuber/kelp&#34;&gt;crhuber/kelp: A simple alternative to homebrew for installing binary packages on MacOS written in Go.&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kDs1wO.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Mac上软件安装管理的工具，homebrew的简易替代品&lt;/p&gt;
+&lt;h3 id=&#34;zen-browser-desktop-welcome-to-a-calmer-internet&#34;&gt;&lt;a href=&#34;https://github.com/zen-browser/desktop&#34;&gt;zen-browser/desktop: Welcome to a calmer internet&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vlXebD.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Firefox浏览器的替代，号称最大限度平衡速度、隐私与效率，试了一下挺不错的，颜值也能打&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Our mission is to give you a balance between speed, privacy and productivity!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第16期</title>
+      <link>http://blog.imcompany.cn/post/peng-week16/</link>
+      <pubDate>Thu, 08 May 2025 10:46:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week16/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;clion-is-now-free-for-non-commercial-use-the-clion-blog&#34;&gt;&lt;a href=&#34;https://blog.jetbrains.com/clion/2025/05/clion-is-now-free-for-non-commercial-use/&#34;&gt;CLion Is Now Free for Non-Commercial Use | The CLion Blog&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;C编辑器CLion对非商业使用免费了&lt;/p&gt;
+&lt;h3 id=&#34;voideditor-void&#34;&gt;&lt;a href=&#34;https://github.com/voideditor/void&#34;&gt;voideditor/void&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开源的Cursor编辑器，基于VSCode开发&lt;/p&gt;
+&lt;h3 id=&#34;brokkai-brokk-brokk-brings-code-intelligence-to-ai&#34;&gt;&lt;a href=&#34;https://github.com/BrokkAi/brokk&#34;&gt;BrokkAi/brokk: Brokk brings code intelligence to AI&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;号称理解代码语法，对于大型项目支持更好的AI工具&lt;/p&gt;
+&lt;h3 id=&#34;奇客solidot-食用超加工食品或有害健康&#34;&gt;&lt;a href=&#34;https://www.solidot.org/story?sid=81242&amp;amp;__readwiseLocation=&#34;&gt;奇客Solidot | 食用超加工食品或有害健康&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;目前超加工食品越来越多，我们被困在了里面&lt;/p&gt;
+&lt;h3 id=&#34;bhznjns-motioneasetune-a-simple-application-that-can-prevent-you-from-motion-sickness-via-100hz-sound-dot&#34;&gt;&lt;a href=&#34;https://github.com/BHznJNs/MotionEaseTune&#34;&gt;BHznJNs/MotionEaseTune: A simple application that can prevent you from motion sickness via 100Hz sound.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;播放100Hz声音来预防晕车的Android应用&lt;/p&gt;
+&lt;h3 id=&#34;ebrizzzz-youtube-playlist-to-formatted-text-a-desktop-application-that-extracts-youtube-playlist-transcripts-and-enhances-them-using-google-s-gemini-ai-models-dot-the-output-is-a-book-in-any-language-you-want-dot&#34;&gt;&lt;a href=&#34;https://github.com/Ebrizzzz/Youtube-playlist-to-formatted-text&#34;&gt;Ebrizzzz/Youtube-playlist-to-formatted-text: A desktop application that extracts YouTube playlist transcripts and enhances them using Google&amp;rsquo;s Gemini AI models. The output is a book in any language you want.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;将Youtube列表通过AI转成电子书&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第15期</title>
+      <link>http://blog.imcompany.cn/post/peng-week15/</link>
+      <pubDate>Tue, 22 Apr 2025 11:42:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week15/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;cherry-studio-网络搜索与知识库最佳实践&#34;&gt;&lt;a href=&#34;https://chentao0717.cn/posts/cherry-rag-websearch&#34;&gt;Cherry Studio 网络搜索与知识库最佳实践&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;奇客solidot-youtube-用户上传了-20-万亿则视频&#34;&gt;&lt;a href=&#34;https://www.solidot.org/story?sid=81130&amp;amp;__readwiseLocation=&#34;&gt;奇客Solidot | YouTube 用户上传了 20 万亿则视频&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;20年，20万亿的视频，惊到了&lt;/p&gt;
+&lt;h3 id=&#34;如何避免在-ai-时代技能退化-宝玉的分享&#34;&gt;&lt;a href=&#34;https://baoyu.io/translations/avoiding-skill-atrophy-in-the-age?__readwiseLocation=&#34;&gt;如何避免在 AI 时代技能退化 | 宝玉的分享&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;把AI当做协作者，而不是拐杖，做了一个完整独立的人&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;the-via-app&#34;&gt;&lt;a href=&#34;https://github.com/the-via/app&#34;&gt;the-via/app&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;改键神器，如果使用中老是卡在查找设备的页面，可以在设置中改成3D模式&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;h3 id=&#34;天不生人上之人-也不生人下之人&#34;&gt;天不生人上之人，也不生人下之人&lt;/h3&gt;
+&lt;h3 id=&#34;规则就像汽车上的安全带-一开始可能会有点不舒服-但一段时间后-使用规则就会成为习惯-不使用规则就变得不可想象&#34;&gt;规则就像汽车上的安全带：一开始可能会有点不舒服，但一段时间后，使用规则就会成为习惯，不使用规则就变得不可想象。&lt;/h3&gt;
+&lt;h2 id=&#34;idea&#34;&gt;Idea 💡&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第14期</title>
+      <link>http://blog.imcompany.cn/post/peng-week14/</link>
+      <pubDate>Mon, 14 Apr 2025 18:06:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week14/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;中国民航局颁发首批飞行出租车运营合格证&#34;&gt;&lt;a href=&#34;https://www.ehang.com/cn/&#34;&gt;中国民航局颁发首批飞行出租车运营合格证&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;看了一下宣传片，有机会要体验一下，空间上感觉坐两个人有些拥挤&lt;/p&gt;
+&lt;h3 id=&#34;jetbrains-ides-go-ai-coding-agent-smarter-assistance-free-tier-the-jetbrains-blog&#34;&gt;&lt;a href=&#34;https://blog.jetbrains.com/blog/2025/04/16/jetbrains-ides-go-ai/&#34;&gt;JetBrains IDEs Go AI: Coding Agent, Smarter Assistance, Free Tier | The JetBrains Blog&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;JetBrains在最新的版本提供了可以免费使用的AI，目前看只有一个模型：Qwen Max&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/l8gMAQ.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;vivaldi-browser-powerful-personal-and-private-web-browser&#34;&gt;&lt;a href=&#34;https://vivaldi.com/&#34;&gt;Vivaldi Browser | Powerful, Personal and Private web browser&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;由于近期的 FireFox 事件，要多装几个注重隐私的浏览器&lt;/p&gt;
+&lt;h3 id=&#34;windsurf-editor-windsurf--formerly-codeium&#34;&gt;&lt;a href=&#34;https://windsurf.com/editor&#34;&gt;Windsurf Editor | Windsurf (formerly Codeium)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;AI编辑器，大量使用价格具有性价比&lt;/p&gt;
+&lt;h3 id=&#34;pypa-pipx-install-and-run-python-applications-in-isolated-environments&#34;&gt;&lt;a href=&#34;https://github.com/pypa/pipx&#34;&gt;pypa/pipx: Install and Run Python Applications in Isolated Environments&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;更方便的在隔离环境运行Python应用&lt;/p&gt;
+&lt;h3 id=&#34;nomic-ai-gpt4all-gpt4all-run-local-llms-on-any-device-dot-open-source-and-available-for-commercial-use-dot&#34;&gt;&lt;a href=&#34;https://github.com/nomic-ai/gpt4all&#34;&gt;nomic-ai/gpt4all: GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在命令行运行本地大模型，跨平台支持&lt;/p&gt;
+&lt;h3 id=&#34;pronotes&#34;&gt;&lt;a href=&#34;https://www.pronotes.app/&#34;&gt;ProNotes&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;对Mac 的Notebook进行样式增强的APP，Pro版本带AI功能&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;任何时候，都不要放弃自己的思考&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第13期</title>
+      <link>http://blog.imcompany.cn/post/peng-week13/</link>
+      <pubDate>Fri, 27 Sep 2024 10:19:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week13/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;michael-tsai-blog-iphone-80-charging-limit&#34;&gt;&lt;a href=&#34;https://mjtsai.com/blog/2024/09/26/iphone-80-charging-limit/&#34;&gt;Michael Tsai - Blog - iPhone 80% Charging Limit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Iphone 80%充电控制与Iphone算法自带的充电调整对比，短期内80%的充电限制没有什么优势体验&lt;/p&gt;
+&lt;h3 id=&#34;poll-trust-in-firefox-and-mozilla-is-gone-let-s-talk-alternatives&#34;&gt;&lt;a href=&#34;https://boilingsteam.com/poll-trust-in-firefox-mozilla-is-gone/&#34;&gt;POLL: Trust in Firefox and Mozilla is Gone - Let&amp;rsquo;s Talk Alternatives&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;注重用户隐私的浏览器Firefox开始收集用户数据, 文章提出了对Firefox的担忧并提供了替换浏览器选项&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;通义效率-你的工作学习助手-通义tongyi-dot-ai-通义千问&#34;&gt;&lt;a href=&#34;https://tongyi.aliyun.com/efficiency/&#34;&gt;通义效率_你的工作学习助手_通义tongyi.ai-通义千问&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;阿里通义效率 的语音速读功能 对快速了解一个播客需不需要深入听很有帮助，速度还挺快的&lt;/p&gt;
+&lt;h3 id=&#34;subframe7536-maple-font-maple-mono-open-source-monospace-font-with-round-corner-ligatures-and-nerd-font-for-ide-and-terminal-fine-grained-customization-options-dot-带连字和控制台图标的圆角等宽字体-中英文宽度完美2-1-细粒度的自定义选项&#34;&gt;&lt;a href=&#34;https://github.com/subframe7536/maple-font&#34;&gt;subframe7536/maple-font: Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;为了让终端显示图标，新安装了 font-maple-mono-nf 字体&lt;/p&gt;
+&lt;h3 id=&#34;raycast-your-shortcut-to-everything&#34;&gt;&lt;a href=&#34;https://www.raycast.com/&#34;&gt;Raycast - Your shortcut to everything&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;又把 raycast装回来了，主要是AI集成吸引人&lt;/p&gt;
+&lt;h3 id=&#34;trae-ship-faster-with-trae&#34;&gt;&lt;a href=&#34;https://www.trae.ai/&#34;&gt;Trae - Ship Faster with Trae&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;国内的AI编辑器，主打一个免费&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第12期</title>
+      <link>http://blog.imcompany.cn/post/week12/</link>
+      <pubDate>Tue, 16 Apr 2024 16:20:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/week12/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;on-the-origins-of-ds-store&#34;&gt;&lt;a href=&#34;https://www.arno.org/on-the-origins-of-ds-store&#34;&gt;On the origins of DS_store&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;MAC电脑上那可恶的.DS_store文件是如何来的，文章中说在重写Finder系统时，对系统进行了抽象分了前后两端，后续开发过程中认为后端可能会被多个地方使用到，就将它做公共API使用，这时就涉及起名问题，此时作者就给这个未来的API起了名字.DS_store，意为Desktop Service Store，名字前的 &lt;strong&gt;.&lt;/strong&gt; 用来表示隐藏文件。本来此API设计被用在特定的地方，但是从目前表现看只要访问Finder就会被创建，些坑一直示被修复。问题来了，如何解决这个问题，可以从以下两方面入手&lt;/p&gt;
+&lt;h4 id=&#34;如何禁止创建-dot-ds-store文件&#34;&gt;如何禁止创建.DS_Store文件&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 禁止网络设备上生成&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 禁止移动设备上生成&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;defaults write com.apple.desktopservices DSDontWriteUSBStores -bool &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;删除已生成的-dot-ds-store文件&#34;&gt;删除已生成的.DS_store文件&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -iname &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.DS_Store*&amp;#39;&lt;/span&gt; -delete 2&amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;ahrm-sioyek-sioyek-is-a-pdf-viewer-with-a-focus-on-textbooks-and-research-papers&#34;&gt;&lt;a href=&#34;https://github.com/ahrm/sioyek&#34;&gt;ahrm/sioyek: Sioyek is a PDF viewer with a focus on textbooks and research papers&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;聚焦于文本书与论文阅读的PDF阅读器，类VI操作，非常适合键盘党，标志性功能如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;快速搜索&lt;/li&gt;
+&lt;li&gt;智能跳转&lt;/li&gt;
+&lt;li&gt;命令板&lt;/li&gt;
+&lt;li&gt;标记&lt;/li&gt;
+&lt;li&gt;书签&lt;/li&gt;
+&lt;li&gt;高亮&lt;/li&gt;
+&lt;li&gt;搜索&lt;/li&gt;
+&lt;li&gt;支持Latex实时编辑预览&lt;/li&gt;
+&lt;li&gt;可配置&lt;/li&gt;
+&lt;li&gt;可扩展&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;常用命令&#34;&gt;常用命令&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;:&lt;/li&gt;
+&lt;li&gt;O&lt;/li&gt;
+&lt;li&gt;t&lt;/li&gt;
+&lt;li&gt;gc&lt;/li&gt;
+&lt;li&gt;/&lt;/li&gt;
+&lt;li&gt;m&lt;/li&gt;
+&lt;li&gt;b&lt;/li&gt;
+&lt;li&gt;h&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/8FMBD6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;帅帅的CyberTruck新伙伴&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第11期</title>
+      <link>http://blog.imcompany.cn/post/week11/</link>
+      <pubDate>Mon, 01 Apr 2024 14:42:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/week11/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;the-best-places-to-get-the-same-text-written-for-different-levels-larry-ferlazzo-s-websites-of-the-day-dot-dot-dot&#34;&gt;&lt;a href=&#34;https://larryferlazzo.edublogs.org/2014/11/16/the-best-places-to-get-the-same-text-written-for-different-levels/&#34;&gt;The Best Places To Get The “Same” Text Written For Different “Levels” | Larry Ferlazzo&amp;rsquo;s Websites of the Day&amp;hellip;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;用不同等级的语言表达相同的内容，作者在文章中推荐了练习使用不同级别的词汇句子来表达相同内容的资源，摘抄了以下两个感觉还不错的资源记录一下：&lt;/p&gt;
+&lt;h4 id=&#34;news-in-levels&#34;&gt;&lt;a href=&#34;https://www.newsinlevels.com/&#34;&gt;News In Levels&lt;/a&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;免费资源&lt;/li&gt;
+&lt;li&gt;网站提供三个级别的内容表达，根据内容生成了音频&lt;/li&gt;
+&lt;li&gt;提供视频学习&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;breaking-news-english-lessons-easy-english-world-news-materials-esl&#34;&gt;&lt;a href=&#34;https://breakingnewsenglish.com/&#34;&gt;Breaking News English Lessons: Easy English World News Materials - ESL&lt;/a&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;提供7个级别的表达&lt;/li&gt;
+&lt;li&gt;支持5种速度音频播放&lt;/li&gt;
+&lt;li&gt;带课后测试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;sfsam-itsycal-itsycal-is-a-tiny-calendar-for-your-mac-s-menu-bar-dot-http-www-dot-mowglii-dot-com-itsycal&#34;&gt;&lt;a href=&#34;https://github.com/sfsam/Itsycal&#34;&gt;sfsam/Itsycal: Itsycal is a tiny calendar for your Mac&amp;rsquo;s menu bar. http://www.mowglii.com/itsycal&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;MAC上menu bar上的显示日历&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/20Jyho.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;精美UI，菜单栏的日期图标好看&lt;/li&gt;
+&lt;li&gt;支持显示周信息&lt;/li&gt;
+&lt;li&gt;快捷键操作&lt;/li&gt;
+&lt;li&gt;支持设置一周的第一天&lt;/li&gt;
+&lt;li&gt;支持日历事件&lt;/li&gt;
+&lt;li&gt;日期显示大小控制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;目前itsycal不支持显示中国的农历，可以在打开itsycal时按 &lt;strong&gt;cmd+o&lt;/strong&gt; 打开系统的日历，在系统的日历中可以配置显示农历信息&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/plnqXM.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;在Tw上看到的，国外有人用船拖着房子，以后真是要空间自由了，查了一下，这东西叫&lt;a href=&#34;https://en.wikipedia.org/w/index.php?title=Houseboat&amp;amp;useskin=vector&#34;&gt;浮动房屋&lt;/a&gt;，酷!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第10期</title>
+      <link>http://blog.imcompany.cn/post/week10/</link>
+      <pubDate>Wed, 27 Mar 2024 15:49:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/week10/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;how-is-computer-programming-different-today-than-20-years-ago-by-sedat-kapanoglu-medium&#34;&gt;&lt;a href=&#34;https://ssg.dev/how-is-computer-programming-different-today-than-20-years-ago-9d0154d1b6ce&#34;&gt;How is computer programming different today than 20 years ago? | by Sedat Kapanoglu | Medium&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;现在的计算机编程与20年前有什么不同？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;20年前的理论性概念成为主流，如尾递归，模式匹配&lt;/li&gt;
+&lt;li&gt;现在的桌面软件=浏览器+页面&lt;/li&gt;
+&lt;li&gt;面向对象编程正在失去风头，基于特征的语言开始流行，组合比继承更可取&lt;/li&gt;
+&lt;li&gt;不参加一个高端会议并拍照不会被认为是一个正式程序员&lt;/li&gt;
+&lt;li&gt;由于并行计算的发展，响应式编程更流行&lt;/li&gt;
+&lt;li&gt;像素不再是相关的测量单位&lt;/li&gt;
+&lt;li&gt;垃圾回收已经成为安全编程的常用方式，Rust中更新的安全模型正在出现&lt;/li&gt;
+&lt;li&gt;302亿台设备运行在JAVA上，近10年没怎么变化&lt;/li&gt;
+&lt;li&gt;包管理系统现在是编程语言的重要基础，20年前要经过访问页面-&amp;gt;下载-&amp;gt;复制-&amp;gt;添加的方式&lt;/li&gt;
+&lt;li&gt;现在的软件开发团队早上要举行15分钟站会&lt;/li&gt;
+&lt;li&gt;如今语言工具更丰富，如代码格式化，模板创建&lt;/li&gt;
+&lt;li&gt;编程语言的tab与空格争论不休&lt;/li&gt;
+&lt;li&gt;现在Adobe Flash不存在了，现在要在三个平台上提供相同交互的产品&lt;/li&gt;
+&lt;li&gt;IDE与编程语言距离越来起远，以前IDE支持特定的语言，现在VSCode支持所有语言&lt;/li&gt;
+&lt;li&gt;如今跨平台开发成为主流，20年只有PC&lt;/li&gt;
+&lt;li&gt;在本地运行代码的行为变少了？&lt;/li&gt;
+&lt;li&gt;文档始终在线，离线文档名存实亡&lt;/li&gt;
+&lt;li&gt;如今视频教程成为学习的方式&lt;/li&gt;
+&lt;li&gt;现在有SO，以前有问题只能与同事交流&lt;/li&gt;
+&lt;li&gt;现在人们在MAC上进行软件开发&lt;/li&gt;
+&lt;li&gt;互联网连接是常态，以前正好相反&lt;/li&gt;
+&lt;li&gt;现今更注重安全性&lt;/li&gt;
+&lt;li&gt;现在移动设备可以显示常规网页，不再需要WAP页面&lt;/li&gt;
+&lt;li&gt;我们默认开源了所有代码，除了那些让人尴尬的&lt;/li&gt;
+&lt;li&gt;现在的女程序员更多了，这个行业在平等方面好很多&lt;/li&gt;
+&lt;li&gt;被黑客入侵现在是常见的事，丢失用户数据不需要道歉&lt;/li&gt;
+&lt;li&gt;现在进行运程工作更容易&lt;/li&gt;
+&lt;li&gt;现在都不使用那种需要输入服务器地址的IRC软件，而是使用庸肿的Slack&lt;/li&gt;
+&lt;li&gt;现在在图形卡上运行程序&lt;/li&gt;
+&lt;li&gt;1G存储空间在某种情况下不够了&lt;/li&gt;
+&lt;li&gt;物理处理器现在也不可信了（由于侧道攻击）&lt;/li&gt;
+&lt;li&gt;现在的编程很多是在足球桌上完成的（在国内是吗）？&lt;/li&gt;
+&lt;li&gt;现在的python数值计算与20年使用Fortran一样，因为现代CPU快了很多（也就是说Python做数值计算慢的很）&lt;/li&gt;
+&lt;li&gt;创建编程语言甚至硬件成为一种通用爱好&lt;/li&gt;
+&lt;li&gt;单元测试的好处被过分炒作，以至于变成了一种信仰&lt;/li&gt;
+&lt;li&gt;现在明文密码已经不赞成使用了，但是我们仍在使用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结一句话: &lt;strong&gt;一切都好但是又感觉不那么好了&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;jasonjmcghee-rem-an-open-source-approach-to-locally-record-and-enable-searching-everything-you-view-on-your-mac-dot&#34;&gt;&lt;a href=&#34;https://github.com/jasonjmcghee/rem&#34;&gt;jasonjmcghee/rem: An open source approach to locally record and enable searching everything you view on your Mac.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开源本地记录用户行为的APP，Rewind开源替代，方便了解自己一天都做了什么，它有以下功能：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第9期</title>
+      <link>http://blog.imcompany.cn/post/peng-week9/</link>
+      <pubDate>Wed, 28 Feb 2024 11:12:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week9/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;reading-strategy-guessing-unknown-words-i-think-so&#34;&gt;&lt;a href=&#34;https://itsme76109913.wordpress.com/2018/06/07/reading-strategy-guessing-unknown-words/&#34;&gt;Reading Strategy: Guessing Unknown Words – I THINK SO&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;实用的阅读策略，根据上下文猜测陌生的词。文章中还提到了多种关于英语阅读的方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;阅读不只是解码文本，还要理解作者要表达的深层次想法&lt;/li&gt;
+&lt;li&gt;阅读时有两个重要的问题：作者的观点是什么(论点)，针对主要观点作者说了哪些(论据)&lt;/li&gt;
+&lt;li&gt;好的阅读者的习惯
+&lt;ol&gt;
+&lt;li&gt;以短语为单位进行阅读&lt;/li&gt;
+&lt;li&gt;根据已有的知识进行内容预测&lt;/li&gt;
+&lt;li&gt;字里行间阅读，理解信息&lt;/li&gt;
+&lt;li&gt;通过下上文猜测新单词&lt;/li&gt;
+&lt;li&gt;可以区分事实与观点&lt;/li&gt;
+&lt;li&gt;识别特定转折信号，如however来理解较早段落的含义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;SQ3R阅读
+&lt;ol&gt;
+&lt;li&gt;Survey 阅读之前了解大意，查看标题、副标题、图表等信息&lt;/li&gt;
+&lt;li&gt;Question 提出问题，针对特定目的提出问题&lt;/li&gt;
+&lt;li&gt;Read 尽可能快的不间断的阅读，母语阅读要达到350词每分钟&lt;/li&gt;
+&lt;li&gt;Recall 回想，阅读后是否解决了先前提出的问题，没有的话，快速扫描找到特定信息&lt;/li&gt;
+&lt;li&gt;Review 回顾，频繁回顾文章的内容有利于长期记忆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;关于单词量
+&lt;ol&gt;
+&lt;li&gt;多读&lt;/li&gt;
+&lt;li&gt;利用上下文线索
+&lt;ol&gt;
+&lt;li&gt;同义词&lt;/li&gt;
+&lt;li&gt;反义词&lt;/li&gt;
+&lt;li&gt;例句说明&lt;/li&gt;
+&lt;li&gt;语调&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;nikitabobko-aerospace-aerospace-is-an-i3-like-tiling-window-manager-for-macos&#34;&gt;&lt;a href=&#34;https://github.com/nikitabobko/AeroSpace&#34;&gt;nikitabobko/AeroSpace: AeroSpace is an i3-like tiling window manager for macOS&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mac上的窗口布局管理器，类似于Linux上的i3，功能如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;支持配置文件&lt;/li&gt;
+&lt;li&gt;不需要关闭SIP&lt;/li&gt;
+&lt;li&gt;支持命令行脚本&lt;/li&gt;
+&lt;li&gt;多显示器支持&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RUFyn6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;用下来感觉还是我的KeyboardMaestro窗口配置简单一点，再观察看看&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vjC4aq.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://interestingengineering.com/culture/circular-bridge-built-to-slow-down-drivers&#34;&gt;为什么要构建一座环形的桥？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该桥位于乌拉圭加尔松，建立此桥是为了降低车速使人们可以欣赏窗外美景，在减少当地人通勤时间的同时还带动了当地的旅游业发展。&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/TTlNw3.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;我们的问题不是无知，而是缺少行动。&amp;ndash; 戴尔卡耐基&lt;/p&gt;
+&lt;h2 id=&#34;idea&#34;&gt;Idea 💡&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第8期</title>
+      <link>http://blog.imcompany.cn/post/peng-week8/</link>
+      <pubDate>Tue, 27 Feb 2024 16:17:17 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week8/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;the-art-of-loving&#34;&gt;&lt;a href=&#34;https://impalas-sit-6xj.craft.me/DxNFpwLvkwxlsH&#34;&gt;The Art of Loving&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;爱是一门节术，它需要知识与努力&lt;/li&gt;
+&lt;li&gt;新的爱的自由概念以对象的重要性为主，而不是功能性&lt;/li&gt;
+&lt;li&gt;分离是所有焦虑的根源&lt;/li&gt;
+&lt;li&gt;人最深切的需要就是克服孤独&lt;/li&gt;
+&lt;li&gt;成熟的爱是在保持独立性与个人特质下的结合&lt;/li&gt;
+&lt;li&gt;爱的主动性是给予而不是接受&lt;/li&gt;
+&lt;li&gt;爱是产生爱的力量&lt;/li&gt;
+&lt;li&gt;爱的积极性的基本要素：关怀、责任、尊重和知识&lt;/li&gt;
+&lt;li&gt;尊重存在于自由的基础上，爱是自由之子而不是统治之子&lt;/li&gt;
+&lt;li&gt;对自己的生活、幸福、成长、自由的肯定根植于一个人爱的能力&lt;/li&gt;
+&lt;li&gt;爱是由适当的性满足所得到的结果&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;nonwill-goldendict-ocr-goldendict-plus-plus&#34;&gt;&lt;a href=&#34;https://github.com/nonwill/GoldenDict-OCR&#34;&gt;nonwill/GoldenDict-OCR: GoldenDict++&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;GoldenDict官方版本增强与修正，速度杠杠的！&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ULg3vI.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Sgzih5.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Amazon公司CEO贝佐斯创立的蓝色起源公司的&lt;a href=&#34;https://www.space.com/blue-origin-new-glenn-rocket-launch-pad-photo&#34;&gt;新格伦火箭发射&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;If you want to reach the most people, learn to make videos. If you want to reach the smartest people, learn to write.&lt;/strong&gt; - &lt;a href=&#34;https://twitter.com/david_perell&#34;&gt;@david_perell&lt;/a&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XLeQYR.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;The more things you have, the more things you have to manage, Simplicity isn&amp;rsquo;t merely cheaper, it&amp;rsquo;s easier.&amp;rdquo;&lt;/strong&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xzoxRW.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;idea&#34;&gt;Idea 💡&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第7期</title>
+      <link>http://blog.imcompany.cn/post/peng-week7/</link>
+      <pubDate>Wed, 31 Jan 2024 16:12:28 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week7/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;the-go-to-person-what-you-need-to-become-one&#34;&gt;&lt;a href=&#34;https://www.forbes.com/sites/jeffschmitt/2013/10/31/the-go-to-person-what-you-need-to-become-one/?sh=243d1617522e&#34;&gt;The Go-To Person: What You Need To Become One&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;成为一个牛人需要做哪些，作者引入体育竞技中的牛人的特征来对工作上如何成为牛人提供参考，主要有以下10点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;时刻准备，准备的更多，处理的更快&lt;/li&gt;
+&lt;li&gt;拥抱责任，只害怕错过而不是犯错误&lt;/li&gt;
+&lt;li&gt;树立榜样，日常生活始终如一，不走捷径&lt;/li&gt;
+&lt;li&gt;负责，只关心自己能控制什么&lt;/li&gt;
+&lt;li&gt;不回避失败，失败是正常的，一次次的失败会带来成功&lt;/li&gt;
+&lt;li&gt;忍受批评，坚定自己的信念&lt;/li&gt;
+&lt;li&gt;建立联系，与队友建立起联系&lt;/li&gt;
+&lt;li&gt;召唤意志，聚焦人心&lt;/li&gt;
+&lt;li&gt;保持镇定，不过度反应&lt;/li&gt;
+&lt;li&gt;认识自己的时间，可以交给其它人做&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;stretchly-the-break-time-reminder-app&#34;&gt;&lt;a href=&#34;https://hovancik.net/stretchly/&#34;&gt;Stretchly - The break time reminder app&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;跨平台休息提醒APP，开源，配合&lt;a href=&#34;https://github.com/KingOfSpades/stretchFred&#34;&gt;Alfred插件&lt;/a&gt;食用更佳&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yb86JR.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;还提供命令行接口
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Zkr914.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;支持配置文件设置，默认配置文件在 &lt;strong&gt;~/Library/Application Support/Stretchly/config.json&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/cYHg8c.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;英语单词对世界空间维度的抽象，还是一个是空间维度的相对性问题&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;The power of better question:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;ldquo;Why am I not successful?&amp;rdquo; You&amp;rsquo;ll get answers that berate you.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;How can I succeed here?&amp;rdquo; You&amp;rsquo;ll get answers that push you.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Be deliberate in the questions you ask yourself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第6期</title>
+      <link>http://blog.imcompany.cn/post/peng-week6/</link>
+      <pubDate>Tue, 23 Jan 2024 11:29:36 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week6/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-build-a-minimum-loveable-product-by-laurence-mccahill-the-happy-startup-school-medium&#34;&gt;&lt;a href=&#34;https://medium.com/the-happy-startup-school/beyond-mvp-10-steps-to-make-your-product-minimum-loveable-51800164ae0c&#34;&gt;How to Build a Minimum Loveable Product | by Laurence McCahill | The Happy Startup School | Medium&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何构建一个最小可爱产品(MLP)，对应的MVP已经提出多年，它表示以最小工作量带回对客户的充分了解；而最小可爱产品则是以最少的努力从产品的早期用户中获取到最大的爱，强调产品要有爱。
+作者给出做好MLP的几点建议：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;确定产品的点，专注于WHY&lt;/li&gt;
+&lt;li&gt;做好一件事, FOCUS&lt;/li&gt;
+&lt;li&gt;添加约束，限制产品时间，3个月足够&lt;/li&gt;
+&lt;li&gt;只解决高价值问题&lt;/li&gt;
+&lt;li&gt;给产品增加惊喜与喜悦&lt;/li&gt;
+&lt;li&gt;请最好的设计师&lt;/li&gt;
+&lt;li&gt;吸引用户，让用户渴望更多&lt;/li&gt;
+&lt;li&gt;建立部落&lt;/li&gt;
+&lt;li&gt;让产品变得非凡&lt;/li&gt;
+&lt;li&gt;要有战略眼光，产品只是一部分&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;让产品超越可用，让用户爱你的产品！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;keyboard-maestro-11-dot-0-dot-2-work-faster-with-macros-for-macos&#34;&gt;&lt;a href=&#34;https://www.keyboardmaestro.com/main/&#34;&gt;Keyboard Maestro 11.0.2: Work Faster with Macros for macOS&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uzSqzI.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;MAC生产力工具，内置上百个动作，收费软件，但绝对物超所值，列几个常用功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;快捷键映射&lt;/li&gt;
+&lt;li&gt;palette(菜单面板)&lt;/li&gt;
+&lt;li&gt;按键模拟&lt;/li&gt;
+&lt;li&gt;针对特定应用执行动作&lt;/li&gt;
+&lt;li&gt;配合&lt;a href=&#34;https://forum.keyboardmaestro.com/t/macro-spotlight-search-prompt/4665&#34;&gt;Spotlight Search Prompt macro&lt;/a&gt;无敌了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://www.goodfreephotos.com/albums/vector-images/cat-sniffing-a-plate-bread-vector-clipart.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;开始使用&lt;a href=&#34;https://www.goodfreephotos.com/&#34;&gt;免费&lt;/a&gt;的图片，推荐一下这个&lt;a href=&#34;https://github.com/neutraltone/awesome-stock-resources&#34;&gt;免费资源仓库&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;Domain names and websites are the new real-estate. - &lt;a href=&#34;https://en.wikipedia.org/wiki/Marc_Ostrofsky?useskin=vector&#34;&gt;Marc Ostrofsky&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;想, 全是问题；做，全是答案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第5期</title>
+      <link>http://blog.imcompany.cn/post/peng-week5/</link>
+      <pubDate>Tue, 16 Jan 2024 10:17:09 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week5/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-make-hard-decisions&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://vasilishynkarenka.com/how-to-make-hard-decisions/&#34;&gt;How to make hard decisions&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2024-01-11 Thu 16:28]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何做出艰难的选择，可供参考的9个思想实验&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模拟&lt;/li&gt;
+&lt;li&gt;电影人物&lt;/li&gt;
+&lt;li&gt;临终前的我&lt;/li&gt;
+&lt;li&gt;后悔最小化框架&lt;/li&gt;
+&lt;li&gt;恐惧设定&lt;/li&gt;
+&lt;li&gt;幻想小人&lt;/li&gt;
+&lt;li&gt;最后一天&lt;/li&gt;
+&lt;li&gt;绿色大按钮&lt;/li&gt;
+&lt;li&gt;信封&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;作者提供的决策原则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;身体与精神状态良好&lt;/li&gt;
+&lt;li&gt;给解决方案前先花时间描述问题&lt;/li&gt;
+&lt;li&gt;检查偏差(沉没成本)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;目前只对&lt;a href=&#34;https://search.bilibili.com/all?vt=63109354&amp;amp;keyword=%E4%B9%94%E5%B8%83%E6%96%AF%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%BC%94%E8%AE%B2&#34;&gt;Jobs&lt;/a&gt;的最后一天(7)思想实验很有感触&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;shortcat-universal-command-palette-for-your-mac-shortcat&#34;&gt;&lt;a href=&#34;https://shortcat.app/&#34;&gt;Shortcat: Universal command palette for your Mac | Shortcat&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;搜索&lt;/li&gt;
+&lt;li&gt;选择&lt;/li&gt;
+&lt;li&gt;动作&lt;/li&gt;
+&lt;li&gt;支持emoji，输入 *:*，但是要知道emoji对应的编码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;类似按键增强的APP还有付费软件 &lt;a href=&#34;https://superkey.app/&#34;&gt;superkey&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VrssuX.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ultimatehackingkeyboard.com/&#34;&gt;https://ultimatehackingkeyboard.com/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第4期</title>
+      <link>http://blog.imcompany.cn/post/peng-week4/</link>
+      <pubDate>Fri, 29 Dec 2023 16:20:30 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week4/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;方便的代价&#34;&gt;&lt;a href=&#34;https://limboy.me/posts/the-price-of-convenience/&#34;&gt;方便的代价&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;万事皆有两面性，方便的代价有哪些呢？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不再理解过程，只关注结果，弱化了与目标的连接感&lt;/li&gt;
+&lt;li&gt;过度依赖，不可控&lt;/li&gt;
+&lt;li&gt;放大了欲望&lt;/li&gt;
+&lt;li&gt;难以长时间集中注意力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;firefox&#34;&gt;Firefox&lt;/h3&gt;
+&lt;p&gt;市面上基于Firefox浏览器的修改版本&lt;/p&gt;
+&lt;h4 id=&#34;librewolf&#34;&gt;&lt;a href=&#34;https://librewolf.net/&#34;&gt;LibreWolf&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Firefox修改版，注意隐私、安全、用户自由，支持配置文件定制化配置&lt;/p&gt;
+&lt;h4 id=&#34;floorp&#34;&gt;&lt;a href=&#34;https://floorp.app/en/&#34;&gt;Floorp&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-29 Fri 15:57]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;先进速度快的Firefox衍生品&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;p&gt;Midjourney v6 杰作&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Ak3amk.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/chaseleantj/status/1738511249107767788&#34;&gt;https://twitter.com/chaseleantj/status/1738511249107767788&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/zdNIQM.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/baduyifei&#34;&gt;@baduyifei&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;idea&#34;&gt;Idea 💡&lt;/h2&gt;
+&lt;p&gt;开始做减法&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第3期</title>
+      <link>http://blog.imcompany.cn/post/peng-week3/</link>
+      <pubDate>Fri, 29 Dec 2023 15:48:35 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week3/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+&lt;h3 id=&#34;stop-springifying-your-unit-tests&#34;&gt;&lt;a href=&#34;https://saile.it/stop-springifying-your-unit-tests/&#34;&gt;Stop &amp;ldquo;Springifying&amp;rdquo; your unit tests&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-12 Tue 10:34]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;做单元测试真的需要Spring的Context吗?&lt;/li&gt;
+&lt;li&gt;只是测试一个Service，需要引入Context吗？Spring只不过给new了一个Service&lt;/li&gt;
+&lt;li&gt;测试前考虑好究竟要测试什么&lt;/li&gt;
+&lt;li&gt;集成测试与单元测试的边界是什么&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;核电站-四种公认有效的学习法&#34;&gt;&lt;a href=&#34;https://hwv430.blogspot.com/2023/12/blog-post_90.html&#34;&gt;核电站: 四种公认有效的学习法&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-15 Fri 14:58]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;了解过费曼学习法和思维导图学习法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;ai&#34;&gt;AI&lt;/h2&gt;
+&lt;h3 id=&#34;onboard-ai&#34;&gt;&lt;a href=&#34;https://app.getonboardai.com/&#34;&gt;Onboard AI&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-15 Fri 10:34]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第2期</title>
+      <link>http://blog.imcompany.cn/post/peng-week2/</link>
+      <pubDate>Fri, 08 Dec 2023 11:45:44 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week2/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+&lt;h3 id=&#34;you-are-not-the-cause-of-everything-that-happens-to-you-but-you-are-responsible-for-how-you-respond-to-everything-that-happens-to-you&#34;&gt;You are not the cause of everything that happens to you, but you are responsible for how you respond to everything that happens to you&lt;/h3&gt;
+&lt;p&gt;From &lt;a href=&#34;https://twitter.com/JamesClear&#34;&gt;JamesClear&lt;/a&gt; 321 weekly&lt;/p&gt;
+&lt;h3 id=&#34;别了-华清嘉园&#34;&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/b99teSrzeg0S89Ey00c8WQ&#34;&gt;别了，华清嘉园&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 10:25]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;20年，见证互联网的兴衰，连带着房地产的兴衰&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;idea&#34;&gt;Idea&lt;/h2&gt;
+&lt;h3 id=&#34;awl-highlighter&#34;&gt;&lt;a href=&#34;https://www.eapfoundation.com/vocab/academic/highlighter/&#34;&gt;AWL highlighter&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-07 Thu 17:25]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 第1期</title>
+      <link>http://blog.imcompany.cn/post/peng-week1/</link>
+      <pubDate>Thu, 30 Nov 2023 16:22:20 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week1/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read&lt;/h2&gt;
+&lt;h3 id=&#34;how-to-choose-a-tool&#34;&gt;&lt;a href=&#34;https://karl-voit.at/2021/01/18/tool-choices/&#34;&gt;How to Choose a Tool&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-11-20 Mon 15:12]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如何选择工具，作者认为可以从以下方面进行：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;确定需求
+&lt;ol&gt;
+&lt;li&gt;工具必备功能&lt;/li&gt;
+&lt;li&gt;好用但不是必备的功能&lt;/li&gt;
+&lt;li&gt;非必备功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;搜寻工具
+&lt;ol&gt;
+&lt;li&gt;上网搜索&lt;/li&gt;
+&lt;li&gt;找人推荐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;分析可用工具
+&lt;ol&gt;
+&lt;li&gt;具体开放性&lt;/li&gt;
+&lt;li&gt;灵活性&lt;/li&gt;
+&lt;li&gt;数据复用与导出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;选择工具
+&lt;ol&gt;
+&lt;li&gt;重新比对一下需求与要使用的工具&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;定期改进与评估&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我选择工具的标准:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;优选开源免费&lt;/li&gt;
+&lt;li&gt;可配置，可扩展&lt;/li&gt;
+&lt;li&gt;数据可方便导入导出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;罗肖尼-如何永远学会一个单词-哔哩哔哩-bilibili&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1ns4y1A7fj/&#34;&gt;【罗肖尼】如何永远学会一个单词？_哔哩哔哩_bilibili&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-11-21 Tue 17:53]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如何学习英语:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单词在语境中才有意义&lt;/li&gt;
+&lt;li&gt;如何记住单词并扩充广度和深度
+&lt;ol&gt;
+&lt;li&gt;读英文书&lt;/li&gt;
+&lt;li&gt;有褶皱的书更有意义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;重复(万能大法)&lt;/li&gt;
+&lt;li&gt;不要低估习惯的力量，从读一段文字开始，每天坚持，逐步递进，给自己一个加速度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;app&#34;&gt;APP&lt;/h2&gt;
+&lt;p&gt;主要是一些MAC相关的APP&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

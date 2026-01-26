@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cmd on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/cmd/</link>
+    <description>Recent content in Cmd on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Dec 2025 17:56:49 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
+      <description>&lt;h2 id=&#34;atuin-shell-history-and-executable-runbooks&#34;&gt;&lt;a href=&#34;https://atuin.sh/&#34;&gt;Atuin - Shell History &amp;amp; Executable Runbooks&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史&lt;/p&gt;
+&lt;h2 id=&#34;watchman-a-file-watching-service-watchman&#34;&gt;&lt;a href=&#34;https://facebook.github.io/watchman/&#34;&gt;Watchman - A file watching service | Watchman&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;监控文件变化并及时通知&lt;/p&gt;
+&lt;h2 id=&#34;bensadeh-tailspin-a-log-file-highlighter&#34;&gt;&lt;a href=&#34;https://github.com/bensadeh/tailspin/&#34;&gt;bensadeh/tailspin: 🌀 A log file highlighter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;日志文件高亮&lt;/p&gt;
+&lt;h2 id=&#34;yihong0618-epubhv-make-your-epub-books-vertical-or-horizontal-dot&#34;&gt;&lt;a href=&#34;https://github.com/yihong0618/epubhv&#34;&gt;yihong0618/epubhv: Make your epub books vertical or horizontal.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;任意转换 epub 书的横竖排。(可批量）&lt;/p&gt;
+&lt;h2 id=&#34;os-health-ssar-site-reliability-engineering-system-activity-reporter&#34;&gt;&lt;a href=&#34;https://github.com/os-health/ssar&#34;&gt;os-health/ssar: Site Reliability Engineering System Activity Reporter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;磁盘 io 监控，作者开发的其它工具也很好用&lt;/p&gt;
+&lt;h2 id=&#34;curl-by-example-interactive-guide&#34;&gt;&lt;a href=&#34;https://antonz.org/curl-by-example/&#34;&gt;Curl by example: Interactive guide&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;curl命令指南，还有互动的示例&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux命令学习之More and Less</title>
+      <link>http://blog.imcompany.cn/post/linux-moreless/</link>
+      <pubDate>Wed, 08 Feb 2023 15:54:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/linux-moreless/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;开发中查看日志信息过多时，可以使用linux中的 &lt;strong&gt;more&lt;/strong&gt; 和 &lt;strong&gt;less&lt;/strong&gt; 命令进行分页查看&lt;/p&gt;
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+&lt;p&gt;分页显示文件内容，只可以向后翻页&lt;/p&gt;
+&lt;h3 id=&#34;more-file&#34;&gt;more file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容, 在页面使用 &lt;strong&gt;空格键&lt;/strong&gt; 进行翻页
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-n-file&#34;&gt;more -n file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，一页显示指定行数
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-number.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-d-file&#34;&gt;more -d file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，带页面操作提示信息
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-slient.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-p-file&#34;&gt;more -p file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，不进行滚动，而是直接替换页面的内容
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-p.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-s-file&#34;&gt;more -s file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，多行空格按一行空格显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-blank-line.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-plus-num-file&#34;&gt;more +num file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，从文件的第 &lt;strong&gt;n&lt;/strong&gt; 行开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-start.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;more-f-file&#34;&gt;more -f file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，不折叠长行
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-more-file-with-longline.gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，第一行这个长行按两行进行了统计&lt;/p&gt;
+&lt;h2 id=&#34;less&#34;&gt;Less&lt;/h2&gt;
+&lt;p&gt;分页显示文件内容，More的增强版本，支持向前向后翻页，页面操作类VI形式。less &amp;gt; more&lt;/p&gt;
+&lt;h3 id=&#34;less-file&#34;&gt;less file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，可上下(b)翻页，按行(j/k)翻
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-g-file&#34;&gt;less -g file&lt;/h3&gt;
+&lt;p&gt;分页显示内容，只高亮单条结果(默认高亮所有匹配)，对大文件可提升性能
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-highlight-one.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-n-file&#34;&gt;less -N file&lt;/h3&gt;
+&lt;p&gt;分页显示内容，带行号，可用来查看源码
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-number.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-s-file&#34;&gt;less -s file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，多行空格按一行空格显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-blank-line.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-m-file&#34;&gt;less -M file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，底部显示更多信息(当前的进度和屏幕显示的行信息)
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-show-line-info.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-p-file&#34;&gt;less -p file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，查询指定内容，在匹配处开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-search-pattern.gif&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;less-plus-g-file&#34;&gt;less +G file&lt;/h3&gt;
+&lt;p&gt;分页显示文件内容，从文件结尾开始显示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/linux-less-file-from-bottom.gif&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

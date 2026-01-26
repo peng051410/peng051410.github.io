@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Service on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/service/</link>
+    <description>Recent content in Service on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 29 Jul 2025 11:34:10 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/service/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重拾Android的快乐-Service</title>
+      <link>http://blog.imcompany.cn/post/android-service/</link>
+      <pubDate>Tue, 29 Jul 2025 14:00:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/android-service/</guid>
+      <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+&lt;h2 id=&#34;ref&#34;&gt;REF&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/develop/background-work/services&#34;&gt;https://developer.android.com/develop/background-work/services&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

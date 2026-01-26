@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Netty on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/netty/</link>
+    <description>Recent content in Netty on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Apr 2022 18:44:50 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/netty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记一次SpringWebflux框架下堆外OOM排查经历</title>
+      <link>http://blog.imcompany.cn/post/springwebflux-leak-bug/</link>
+      <pubDate>Thu, 31 Mar 2022 20:12:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/springwebflux-leak-bug/</guid>
+      <description>&lt;h2 id=&#34;症状&#34;&gt;症状&lt;/h2&gt;
+&lt;p&gt;生产环境业务页面打不开，看错误日志是 &lt;strong&gt;OutOfDirectMemoryError&lt;/strong&gt; (OOM)了，详情报错信息如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2022-03-21 06:00:00.541 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;,&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;tafprx-asyrecv_9&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; ERROR r.c.p.Operators - &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;error,314&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; - Operator called default onErrorDropped
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java.lang.OutOfMemoryError: Direct buffer memory
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.nio.Bits.reserveMemory&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Bits.java:175&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.nio.DirectByteBuffer.&amp;lt;init&amp;gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;DirectByteBuffer.java:118&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.nio.ByteBuffer.allocateDirect&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ByteBuffer.java:317&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena&lt;span class=&#34;nv&#34;&gt;$DirectArena&lt;/span&gt;.allocateDirect&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:632&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena&lt;span class=&#34;nv&#34;&gt;$DirectArena&lt;/span&gt;.newChunk&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:607&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena.allocateNormal&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:202&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena.tcacheAllocateSmall&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:172&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena.allocate&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:134&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PoolArena.allocate&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PoolArena.java:126&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.PooledByteBufAllocator.newDirectBuffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;PooledByteBufAllocator.java:395&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.AbstractByteBufAllocator.directBuffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;AbstractByteBufAllocator.java:187&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.AbstractByteBufAllocator.directBuffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;AbstractByteBufAllocator.java:178&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at io.netty.buffer.AbstractByteBufAllocator.buffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;AbstractByteBufAllocator.java:115&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;NettyDataBufferFactory.java:71&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at org.springframework.core.io.buffer.NettyDataBufferFactory.allocateBuffer&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;NettyDataBufferFactory.java:39&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at org.springframework.http.codec.json.AbstractJackson2Encoder.encodeValue&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;AbstractJackson2Encoder.java:236&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at org.springframework.http.codec.json.AbstractJackson2Encoder.lambda&lt;span class=&#34;nv&#34;&gt;$encode$0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;AbstractJackson2Encoder.java:150&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.FluxMapFuseable&lt;span class=&#34;nv&#34;&gt;$MapFuseableSubscriber&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;FluxMapFuseable.java:113&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.Operators&lt;span class=&#34;nv&#34;&gt;$MonoSubscriber&lt;/span&gt;.complete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Operators.java:1815&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoCompletionStage.lambda&lt;span class=&#34;nv&#34;&gt;$subscribe$0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoCompletionStage.java:82&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;CompletableFuture.java:859&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;CompletableFuture.java:883&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.util.concurrent.CompletableFuture.whenComplete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;CompletableFuture.java:2251&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at java.base/java.util.concurrent.CompletableFuture.whenComplete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;CompletableFuture.java:143&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoCompletionStage.subscribe&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoCompletionStage.java:57&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.InternalMonoOperator.subscribe&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;InternalMonoOperator.java:64&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoFlatMap&lt;span class=&#34;nv&#34;&gt;$FlatMapMain&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoFlatMap.java:157&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.Operators&lt;span class=&#34;nv&#34;&gt;$MonoSubscriber&lt;/span&gt;.complete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Operators.java:1815&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoFlatMap&lt;span class=&#34;nv&#34;&gt;$FlatMapInner&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoFlatMap.java:249&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.FluxOnErrorResume&lt;span class=&#34;nv&#34;&gt;$ResumeSubscriber&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;FluxOnErrorResume.java:79&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.FluxPeek&lt;span class=&#34;nv&#34;&gt;$PeekSubscriber&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;FluxPeek.java:199&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.FluxPeek&lt;span class=&#34;nv&#34;&gt;$PeekSubscriber&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;FluxPeek.java:199&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoIgnoreThen&lt;span class=&#34;nv&#34;&gt;$ThenIgnoreMain&lt;/span&gt;.complete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoIgnoreThen.java:284&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoIgnoreThen&lt;span class=&#34;nv&#34;&gt;$ThenIgnoreMain&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoIgnoreThen.java:187&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.Operators&lt;span class=&#34;nv&#34;&gt;$MonoSubscriber&lt;/span&gt;.complete&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Operators.java:1815&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        at reactor.core.publisher.MonoFlatMap&lt;span class=&#34;nv&#34;&gt;$FlatMapMain&lt;/span&gt;.onNext&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;MonoFlatMap.java:151&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据报错的堆栈，找到 &lt;strong&gt;AbstractJackson2Encoder:236&lt;/strong&gt; 行，调试发现框架使用的buffer在最后都进行了释放，看着没问题。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

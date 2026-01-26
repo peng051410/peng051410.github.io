@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Emacs on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/emacs/</link>
+    <description>Recent content in Emacs on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Mar 2024 17:48:07 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs问题之为什么org-mode中的imenu不好使了</title>
+      <link>http://blog.imcompany.cn/post/emacs-imenu-issue/</link>
+      <pubDate>Thu, 21 Mar 2024 17:48:07 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/emacs-imenu-issue/</guid>
+      <description>&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;在Emacs的org file中，调用imenu命令不显示结果了，这个imenu菜单我是严重依赖的，没有结果后非常难受，于是开始找问题所在，因为我也是小白，使用了陈斌大神的Emacs配置，还配置了懒猫的eaf-framework&lt;/p&gt;
+&lt;h2 id=&#34;排查&#34;&gt;排查&lt;/h2&gt;
+&lt;p&gt;在没配置eaf-framework时，imenu是可以正常使用的，配置后就不好使了，所以一度怀疑是配置eaf的问题，但是eaf的功能我还要使用，所以陷入的两难的境地，一直就这么先忍着不依赖这个imenu，而是使用ivy进行搜索。先前也调用了 toggle-debug-on-error 命令进行调试，但是也没看出来个所以然。今天想着再试试，还是不行，在结果页面显示了一句提示信息&amp;quot;No items suitable for an index found in this buffer&amp;quot;，于是按这个信息google了一下，找到的结果比较少，但是 &lt;a href=&#34;https://github.com/bmag/imenu-list/issues/51&#34;&gt;bmag/imenu-list的这个issue&lt;/a&gt; 讨论的过程给了我新的解决步骤，关键的步骤就是要查看一下当前buffer使用的imenu索引方法 &lt;strong&gt;imenu-default-create-index-function&lt;/strong&gt; ，在有问题的org file中查看了这个变量的值为 &lt;strong&gt;my-imenu-create-index-function-no-org-link&lt;/strong&gt; , 很明显这个hack过的，根据提示找到了源码，先注释掉验证一下，发现可以了，真是高兴极了。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/B1RvZP.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;结论&#34;&gt;结论&lt;/h2&gt;
+&lt;p&gt;问题解决不了先放一放，万一哪天有灵感了呢&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

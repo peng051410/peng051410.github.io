@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Org on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/org/</link>
+    <description>Recent content in Org on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Sep 2022 16:17:36 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org-babel学习记录</title>
+      <link>http://blog.imcompany.cn/post/org-babel-study/</link>
+      <pubDate>Wed, 28 Sep 2022 15:12:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/org-babel-study/</guid>
+      <description>&lt;h2 id=&#34;基础&#34;&gt;基础&lt;/h2&gt;
+&lt;h3 id=&#34;匿名代码段&#34;&gt;匿名代码段&lt;/h3&gt;
+&lt;h3 id=&#34;命名的代码块&#34;&gt;命名的代码块&lt;/h3&gt;
+&lt;p&gt;命名的代码块与结果项是可以分开的，orgmode通过代码块的名称进行匹配&lt;/p&gt;
+&lt;h3 id=&#34;定义参数&#34;&gt;定义参数&lt;/h3&gt;
+&lt;p&gt;参数变量根据对应语言表现方式不同
+:var x=0&lt;/p&gt;
+&lt;h3 id=&#34;header&#34;&gt;Header&lt;/h3&gt;
+&lt;p&gt;header多行书写便于阅读&lt;/p&gt;
+&lt;h3 id=&#34;内联代码段&#34;&gt;内联代码段&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;4&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
+&lt;h3 id=&#34;org-babel-execute-buffer&#34;&gt;org-babel-execute-buffer&lt;/h3&gt;
+&lt;p&gt;执行buffer的所有代码段&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Org-anki, Org与Anki的完美结合</title>
+      <link>http://blog.imcompany.cn/post/tools-org-anki/</link>
+      <pubDate>Tue, 27 Sep 2022 15:03:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/tools-org-anki/</guid>
+      <description>&lt;h2 id=&#34;org-anki&#34;&gt;Org-anki&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/eyeinsky/org-anki&#34;&gt;Org-anki&lt;/a&gt;是一个同步Org中note到&lt;a href=&#34;https://apps.ankiweb.net/&#34;&gt;Anki&lt;/a&gt;的Emacs包，它的实现非常简单灵活，文档书写体验好&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;use-package&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-anki&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nb&#34;&gt;:commands&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;org-anki-sync-entry&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-anki-sync-all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;支持的note&#34;&gt;支持的note&lt;/h2&gt;
+&lt;h3 id=&#34;基础note&#34;&gt;基础note&lt;/h3&gt;
+&lt;p&gt;基本的正反两面问答形式，在org中，heading表示问题，内容表示答案&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;gs&#34;&gt; 我是问题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我就是答案了
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/O1233j.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;填空型note&#34;&gt;填空型note&lt;/h3&gt;
+&lt;p&gt;填空形式，处理格式为 {{&amp;hellip;}}, 只关注heading，不关注内容&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;gs&#34;&gt; 我是问题 {{c1::答案在这}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/FlXgWy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;嵌套型&#34;&gt;嵌套型&lt;/h3&gt;
+&lt;p&gt;其它也是基础型，但是这种功能让org note的组织更加友好，因为有时一个记忆点可能需要多种方式来实现&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;gs&#34;&gt; 我是问题1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是答案1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;**&lt;/span&gt; 我是问题1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我是问题1的另一种答案
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的情况会在anki中创建两个基础的card，也就是两个记忆点，好用&lt;/p&gt;
+&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
+&lt;h3 id=&#34;org-anki-sync-all&#34;&gt;org-anki-sync-all&lt;/h3&gt;
+&lt;p&gt;同步所有note到anki&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-sync-entry&#34;&gt;org-anki-sync-entry&lt;/h3&gt;
+&lt;p&gt;同步当前光标所属的entry到anki&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-cloze-dwim&#34;&gt;org-anki-cloze-dwim&lt;/h3&gt;
+&lt;p&gt;创建填空形式，要选中标题部分区域进行转换&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-browse-entry&#34;&gt;org-anki-browse-entry&lt;/h3&gt;
+&lt;p&gt;在Anki中浏览当前光标下entry的note信息&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-import-deck&#34;&gt;org-anki-import-deck&lt;/h3&gt;
+&lt;p&gt;从Anki中导入，在Anki中已经存在部分note时，可以先导入到org中，再进行同步&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-delete-entry&#34;&gt;org-anki-delete-entry&lt;/h3&gt;
+&lt;p&gt;删除当前entry&lt;/p&gt;
+&lt;h3 id=&#34;org-anki-delete-all&#34;&gt;org-anki-delete-all&lt;/h3&gt;
+&lt;p&gt;删除所有entry&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

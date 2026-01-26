@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Initializr on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/initializr/</link>
+    <description>Recent content in Initializr on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Oct 2024 17:44:29 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/initializr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于Spring initializr实现自己的项目模板</title>
+      <link>http://blog.imcompany.cn/post/spring-initializr/</link>
+      <pubDate>Tue, 15 Oct 2024 17:44:29 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-initializr/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;先前通过 Apache Maven Archetype 生成了一个项目脚手架1.0版本，模板比较固定，无法根据需要进行灵活定制，经过调研后，发现可基于&lt;a href=&#34;https://github.com/spring-io/start.spring.io&#34;&gt;Spring Starter&lt;/a&gt;项目进行定制，脚手架2.0版本也就应运而生。&lt;/p&gt;
+&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;快速创建最小可运行工程&lt;/li&gt;
+&lt;li&gt;基础组件依赖管理
+&lt;ol&gt;
+&lt;li&gt;版本管理&lt;/li&gt;
+&lt;li&gt;帮助信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;按需生成项目结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;最终效果&#34;&gt;最终效果&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/M1kRNC.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/eFelCJ.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;实现&#34;&gt;实现&lt;/h2&gt;
+&lt;h3 id=&#34;主流程&#34;&gt;主流程&lt;/h3&gt;
+&lt;h4 id=&#34;获取配置&#34;&gt;获取配置&lt;/h4&gt;
+&lt;p&gt;通过请求服务根路径获取脚手架信息，对应接口代码&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hGib0q.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如请求: &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt; 会返回以下内容信息&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uzQ6UA.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;接口返回了服务支持配置的元数据信息&lt;/p&gt;
+&lt;h4 id=&#34;生成工程代码&#34;&gt;生成工程代码&lt;/h4&gt;
+&lt;p&gt;用户选择配置相应功能后，点击生成按钮，会调用 &lt;a href=&#34;http://localhost:8080/start.zip&#34;&gt;http://localhost:8080/start.zip&lt;/a&gt; 接口将配置信息传给服务，服务根据信息生成代码&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/GAn0ja.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;核心功能实现&#34;&gt;核心功能实现&lt;/h3&gt;
+&lt;p&gt;项目工程由以下几方面组成:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;application.yml文件&lt;/li&gt;
+&lt;li&gt;工程目录(controller, servier&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;auto_publish相关目录&lt;/li&gt;
+&lt;li&gt;trpc_java.yaml文件&lt;/li&gt;
+&lt;li&gt;配置相关
+&lt;ol&gt;
+&lt;li&gt;日志配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;web服务相关
+&lt;ol&gt;
+&lt;li&gt;httpApi接口&lt;/li&gt;
+&lt;li&gt;httpApi实现类StartController&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Maven依赖管理&lt;/li&gt;
+&lt;li&gt;主启动程序自定义&lt;/li&gt;
+&lt;li&gt;测试辅助开发相关自定义
+&lt;ol&gt;
+&lt;li&gt;applicationTest&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/p5s2VW.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;依赖管理&#34;&gt;依赖管理&lt;/h3&gt;
+&lt;p&gt;根据现有常用的 &lt;strong&gt;Peacock&lt;/strong&gt; 框架功能包，依赖管理配置以下模块:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Starter&lt;/li&gt;
+&lt;li&gt;Integration&lt;/li&gt;
+&lt;li&gt;Provider&lt;/li&gt;
+&lt;li&gt;Data&lt;/li&gt;
+&lt;li&gt;Testing&lt;/li&gt;
+&lt;li&gt;MQ&lt;/li&gt;
+&lt;li&gt;Job&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;实践&#34;&gt;实践&lt;/h2&gt;
+&lt;p&gt;生成一个最小可运行Web应用&lt;/p&gt;
+&lt;h3 id=&#34;命令行快速生成&#34;&gt;命令行快速生成&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -L &lt;span class=&#34;s1&#34;&gt;&amp;#39;http://localhost:8080/start.zip?type=peacock-project&amp;amp;bootVersion=1.5.7.RELEASE&amp;amp;groupId=com.yuewen.bookcoop&amp;amp;artifactId=solution_demo&amp;amp;name=solution_demo101&amp;amp;version=1.0.0-SNAPSHOT&amp;amp;language=java&amp;amp;packageName=com.yuewen.bookcoop.solution_demo&amp;amp;javaVersion=1.8&amp;amp;packaging=jar&amp;amp;description=solution_demo101&amp;amp;dependencies=integration-web&amp;amp;dependencies=peacock-test&amp;amp;dependencies=integration-common&amp;amp;dependencies=starter&amp;#39;&lt;/span&gt; -o solution_demo.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;具体的依赖库元信息可以在根路径下请求获得，具体依赖信息为dependencies值对应id的值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;idea中生成&#34;&gt;IDEA中生成&lt;/h3&gt;
+&lt;h4 id=&#34;idea配置脚手架地址&#34;&gt;Idea配置脚手架地址&lt;/h4&gt;
+&lt;p&gt;使用本地地址如: &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/H1TIwb.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;配置工程信息&#34;&gt;配置工程信息&lt;/h4&gt;
+&lt;p&gt;填写好相关的业务信息与版本信息&lt;/p&gt;
+&lt;h4 id=&#34;选择依赖模块&#34;&gt;选择依赖模块&lt;/h4&gt;
+&lt;p&gt;Web应用需选择以下模块:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Peacock Trpc Starter&lt;/li&gt;
+&lt;li&gt;Integration Web&lt;/li&gt;
+&lt;li&gt;Integration Common&lt;/li&gt;
+&lt;li&gt;Peacock Test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/9eAIUh.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;选择完成后点击 &lt;strong&gt;生成&lt;/strong&gt; 按钮生成代码&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Video on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/categories/video/</link>
+    <description>Recent content in Video on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Mar 2024 09:59:04 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/categories/video/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决下载后的TED视频与字幕时间对不上的问题</title>
+      <link>http://blog.imcompany.cn/post/ted-srt-video-not-match/</link>
+      <pubDate>Wed, 20 Mar 2024 09:59:04 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ted-srt-video-not-match/</guid>
+      <description>&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/kyLMx7.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vMjSRG.png&#34;&gt;
+此时说话人刚讲到第7秒钟，但是字幕已经显示到了11秒钟的内容，很奇怪，所有的视频文件与字幕文件都是从官网下载来的，用了其它的工具也试了，确保下载的文件都是正确的&lt;/p&gt;
+&lt;h2 id=&#34;定位&#34;&gt;定位&lt;/h2&gt;
+&lt;p&gt;换了个浏览器重新查看TED上的对应视频，发现视频开头播放了5s钟的TED广告，其实就是TED的开场内容&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ARJVmy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;在下载工具进行下载时，会把这5s的开场也给下载下来，而TED官方字幕是从正片开始计算的时间，这就导致了字幕与声音对应不上的问题&lt;/p&gt;
+&lt;h2 id=&#34;解决&#34;&gt;解决&lt;/h2&gt;
+&lt;p&gt;找到问题就好办了，只需要把下载下来的视频的前5s截取下来或者从第5s开始进行转换视频就可以了，这时候就要祭出 ffmpeg 大法，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;s2&#34;&gt;&amp;#34;00:00:05&amp;#34;&lt;/span&gt; -i ted.mp4 -i ted.srt -vcodec copy -acodec copy ted.mkv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再播放截取的视频，正常了，又可以愉快的学英语了&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

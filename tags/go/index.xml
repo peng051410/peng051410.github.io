@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Go on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/go/</link>
+    <description>Recent content in Go on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Oct 2023 20:16:45 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GO语言学习与分享-入门篇</title>
+      <link>http://blog.imcompany.cn/post/learn-go/</link>
+      <pubDate>Tue, 19 Sep 2023 16:00:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/learn-go/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;GO诞生于2009年，&lt;a href=&#34;https://go.dev/&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;静态编译型语言&lt;/li&gt;
+&lt;li&gt;强类型语言&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://blog.imcompany.cn/ox-hugo/golang.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;创始人&#34;&gt;创始人&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Ken Thompson&lt;/li&gt;
+&lt;li&gt;Rob Pike&lt;/li&gt;
+&lt;li&gt;Robert Griesemer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;http://blog.imcompany.cn/ox-hugo/go-fathers.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;ol&gt;
+&lt;li&gt;肯 汤普森&lt;/li&gt;
+&lt;li&gt;罗伯 派克&lt;/li&gt;
+&lt;li&gt;罗伯特 格瑞史莫&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;简单&lt;/li&gt;
+&lt;li&gt;高效&lt;/li&gt;
+&lt;li&gt;生产力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;借鉴多门编程语言，新时代的C&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;设计哲学&#34;&gt;设计哲学&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;简单&lt;/li&gt;
+&lt;li&gt;显式&lt;/li&gt;
+&lt;li&gt;组合&lt;/li&gt;
+&lt;li&gt;并发&lt;/li&gt;
+&lt;li&gt;面向工程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;类型&#34;&gt;类型&lt;/h2&gt;
+&lt;h3 id=&#34;普通类型&#34;&gt;普通类型&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$GOPATH/src/builtin/builtin.go&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;type-study/type-study_test.go&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.educative.io/answers/what-is-type-uintptr-in-golang&#34;&gt;https://www.educative.io/answers/what-is-type-uintptr-in-golang&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h4 id=&#34;int&#34;&gt;int&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;int&lt;/li&gt;
+&lt;li&gt;int8&lt;/li&gt;
+&lt;li&gt;int16&lt;/li&gt;
+&lt;li&gt;int32&lt;/li&gt;
+&lt;li&gt;int64&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;uint&#34;&gt;uint&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;uint&lt;/li&gt;
+&lt;li&gt;uint8&lt;/li&gt;
+&lt;li&gt;uint16&lt;/li&gt;
+&lt;li&gt;uint32&lt;/li&gt;
+&lt;li&gt;uint64&lt;/li&gt;
+&lt;li&gt;uintptr&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;不带数字的为平台相关的类型&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

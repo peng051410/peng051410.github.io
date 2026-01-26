@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Exception on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/exception/</link>
+    <description>Recent content in Exception on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Apr 2025 11:18:32 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/exception/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringMVC学习之Exception处理</title>
+      <link>http://blog.imcompany.cn/post/spring-webmvc-exception/</link>
+      <pubDate>Mon, 14 Apr 2025 11:04:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-webmvc-exception/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;开发过程中，会出现很多异常情况，比如RPC调用异常、请求参数异常，SpringMVC是如何处理异常信息的?&lt;/p&gt;
+&lt;h2 id=&#34;spring处理异常的方式&#34;&gt;Spring处理异常的方式&lt;/h2&gt;
+&lt;p&gt;Spring采用了全局的异常捕获统一处理的方式，虽然JAVA的异常机制一直有争议，但是Spring还是选择基于实际开发需要使用抛异常后捕获统一处理的方式&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/yZjYzc.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;handlerexceptionresolver登场&#34;&gt;HandlerExceptionResolver登场&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;HandlerExceptionResolver&lt;/code&gt; 是SpringMVC提供的解析Handler调用过程抛出异常的解析器，只提供了一个解析异常的方法 &lt;code&gt;resovleException&lt;/code&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VTJMf6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;spring提供了哪些exceptionresolver&#34;&gt;Spring提供了哪些ExceptionResolver?&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ndAxqw.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;经典的interface-abstract方式的实现类&#34;&gt;经典的Interface-Abstract方式的实现类&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Resolver&lt;/th&gt;
+          &lt;th&gt;Desc&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SimpleMappingExceptionResolver&lt;/td&gt;
+          &lt;td&gt;提供exception class name到view的映射&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DefaultHandlerExceptionResolver&lt;/td&gt;
+          &lt;td&gt;默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ResponseStatusExceptionResolver&lt;/td&gt;
+          &lt;td&gt;基于 @ResponseStatus 注解来映射异常与Http状态码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ExceptionHandlerExceptionResolver&lt;/td&gt;
+          &lt;td&gt;基于 @ExceptionHalder 注解来解析处理异常信息&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;直接实现handlerexceptionresolver的类&#34;&gt;直接实现HandlerExceptionResolver的类&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Resolver&lt;/th&gt;
+          &lt;th&gt;Desc&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DefaultErrorAttributes&lt;/td&gt;
+          &lt;td&gt;默认错误属性实现&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;HandlerExceptionResolverComposite&lt;/td&gt;
+          &lt;td&gt;代理其它Resolver集合的ExceptionResolver&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;HandlerExceptionResolverComposite&lt;/code&gt; 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver&lt;/p&gt;
+&lt;h2 id=&#34;具体异常处理流程&#34;&gt;具体异常处理流程&lt;/h2&gt;
+&lt;p&gt;异常处理的核心逻辑都在 &lt;code&gt;processHandlerException&lt;/code&gt; 方法中，Spring处理完请求后，如果有异常抛出，则会把异常信息传给 &lt;code&gt;processHandlerException&lt;/code&gt; 方法， &lt;code&gt;processHandlerException&lt;/code&gt; 遍历持有的 handlerExceptionResolvers 进行对异常的解析，如果解析成功则直接返回对应的 ModelAndView(此返回与正常的handler处理返回保持了一致)&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/oQdSdj.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;handlerexceptionresolvers-有哪些&#34;&gt;handlerExceptionResolvers 有哪些？&lt;/h3&gt;
+&lt;p&gt;在 SpringMVC启动时会调用 &lt;code&gt;initHandlerExceptionResolvers&lt;/code&gt; 方法来查找所有可用的 handlerExceptionResolver 并保存到 &lt;code&gt;handlerExceptionResolvers&lt;/code&gt; 变量中。SpringMVC配置了两个 resolver 来提供异常解析&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZkaEcp.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;errorattributes&#34;&gt;errorAttributes&lt;/h4&gt;
+&lt;p&gt;此Resolver是在 &lt;code&gt;ErrorMvcAutoConfiguration&lt;/code&gt; 进行实例化的
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lkrPBk.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;此实现的 resolverExcption 方法逻辑简单，直接返回了null，不是关注重点&lt;/p&gt;
+&lt;h4 id=&#34;handlerexceptionresolver&#34;&gt;handlerExceptionResolver&lt;/h4&gt;
+&lt;p&gt;此Resolver真正的实现类为 &lt;code&gt;HandlerExceptionResolverComposite&lt;/code&gt; ，也就是持有多个ExceptionResolver列表的 Resolver，它是在 &lt;code&gt;WebMvcConfigurationSupport&lt;/code&gt; 实例化的&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

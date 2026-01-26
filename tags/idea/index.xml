@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Idea on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/tags/idea/</link>
+    <description>Recent content in Idea on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Feb 2025 19:35:02 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些提高效率MAC软件(全程免费)</title>
+      <link>http://blog.imcompany.cn/post/mac-soft/</link>
+      <pubDate>Mon, 25 Oct 2021 20:12:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/mac-soft/</guid>
+      <description>&lt;h2 id=&#34;ntfs&#34;&gt;&lt;a href=&#34;https://github.com/ntfstool/ntfstool&#34;&gt;NTFS&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;支持MAC电脑读取NTFS格式文件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ntfs-display.jpeg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;eul&#34;&gt;&lt;a href=&#34;https://github.com/gao-sun/eul&#34;&gt;eul&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;监控MAC运行状态的工具
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/eul.jpeg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;upic&#34;&gt;&lt;a href=&#34;https://github.com/gee1k/uPic&#34;&gt;uPic&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;文件与图片云端上传工具
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/upic.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sequel-ace&#34;&gt;&lt;a href=&#34;https://github.com/Sequel-Ace/Sequel-Ace&#34;&gt;Sequel-Ace&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上数据库管理工具，支持Mysql与MariaDB
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/sequelAce.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;copyq&#34;&gt;&lt;a href=&#34;https://github.com/hluk/CopyQ&#34;&gt;CopyQ&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上免费的剪切板工具
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/copyq.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bob&#34;&gt;&lt;a href=&#34;https://github.com/ripperhe/Bob&#34;&gt;Bob&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上翻译软件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/bob.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lulu&#34;&gt;&lt;a href=&#34;https://github.com/objective-see/LuLu&#34;&gt;LuLu&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上强大的防火墙
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lulu.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hidden&#34;&gt;&lt;a href=&#34;https://github.com/dwarvesf/hidden&#34;&gt;hidden&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC菜单栏图标隐藏工具
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/hiddenbar.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;brooklyn&#34;&gt;&lt;a href=&#34;https://github.com/pedrommcarrasco/Brooklyn&#34;&gt;Brooklyn&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上炫酷的屏保程序
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/brooklyn.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gifski&#34;&gt;&lt;a href=&#34;https://github.com/sindresorhus/Gifski&#34;&gt;Gifski&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;把Video转换成Gif
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/gifski.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;backgroundmusic&#34;&gt;&lt;a href=&#34;https://github.com/kyleneideck/BackgroundMusic&#34;&gt;BackgroundMusic&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;音频工具，可以为每个app设定音量值
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Backgroundmusic.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pixel-picker&#34;&gt;&lt;a href=&#34;https://github.com/acheronfail/pixel-picker&#34;&gt;pixel-picker&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC取色软件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pixel-picker.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;itsycal&#34;&gt;&lt;a href=&#34;https://github.com/sfsam/Itsycal&#34;&gt;Itsycal&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC日历软件
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/itsycal.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;switchhosts&#34;&gt;&lt;a href=&#34;https://github.com/oldj/SwitchHosts&#34;&gt;SwitchHosts&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;快速切换机器Host，开发必备
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/switchhosts.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hammerspoon&#34;&gt;&lt;a href=&#34;https://github.com/Hammerspoon/hammerspoon&#34;&gt;hammerspoon&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用Lua脚本来控制电脑&lt;/p&gt;
+&lt;h2 id=&#34;squirrel&#34;&gt;&lt;a href=&#34;https://github.com/rime/squirrel&#34;&gt;squirrel&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;鼠鬚管，无敌的输入法
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/squirrel.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;iterm2&#34;&gt;&lt;a href=&#34;https://github.com/gnachman/iTerm2&#34;&gt;iTerm2&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上的终端模拟器
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/iterm2.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;keycastr&#34;&gt;&lt;a href=&#34;https://github.com/keycastr/keycastr&#34;&gt;keycastr&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MAC上按键显示工具
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/keycastr.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pot-app-pot-desktop-一个跨平台的划词翻译和ocr软件-a-cross-platform-software-for-text-translation-and-recognition-dot&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/pot-app/pot-desktop&#34;&gt;pot-app/pot-desktop: 🌈一个跨平台的划词翻译和OCR软件 | A cross-platform software for text translation and recognition.&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;jordanbaird-ice-powerful-menu-bar-manager-for-macos&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/jordanbaird/Ice&#34;&gt;jordanbaird/Ice: Powerful menu bar manager for macOS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;qarmin-czkawka-multi-functional-app-to-find-duplicates-empty-folders-similar-images-etc-dot&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/qarmin/czkawka&#34;&gt;qarmin/czkawka: Multi functional app to find duplicates, empty folders, similar images etc.&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;felixkratz-sketchybar-a-highly-customizable-macos-status-bar-replacement&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/FelixKratz/SketchyBar&#34;&gt;FelixKratz/SketchyBar: A highly customizable macOS status bar replacement&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;nikitabobko-aerospace-aerospace-is-an-i3-like-tiling-window-manager-for-macos&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/nikitabobko/AeroSpace&#34;&gt;nikitabobko/AeroSpace: AeroSpace is an i3-like tiling window manager for macOS&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;alex313031-thorium-chromium-fork-named-after-radioactive-element-no-dot-90-dot-windows-and-macos-raspi-android-special-builds-are-in-different-repositories-links-are-towards-the-top-of-the-readme-dot-md-dot&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/Alex313031/thorium&#34;&gt;Alex313031/thorium: Chromium fork named after radioactive element No. 90. Windows and MacOS/Raspi/Android/Special builds are in different repositories, links are towards the top of the README.md.&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;odlp-bluesnooze-sleeping-mac-bluetooth-off&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/odlp/bluesnooze&#34;&gt;odlp/bluesnooze: Sleeping Mac = Bluetooth off&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;nonwill-goldendict-ocr-goldendict-plus-plus-内置大量的官方版本问题的修正-先期添加了一个简单的插件机制-并基于该机制接入了多个-ocr-划词-和-音频播放-引擎-后期在增强易用性的基础上为提高查询效率-减少运行时-cpu-及-内存-占用-降低代码维护难度-完全重构了所有的实现-将来的目标是将功能扩展和词典格式处理抽象为完整的插件实现-以进一步增强应用的扩展性和可维护性&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/nonwill/GoldenDict-OCR&#34;&gt;nonwill/GoldenDict-OCR: GoldenDict++：内置大量的官方版本问题的修正；先期添加了一个简单的插件机制，并基于该机制接入了多个 OCR 划词 和 音频播放 引擎；后期在增强易用性的基础上为提高查询效率、减少运行时 CPU 及 内存 占用、降低代码维护难度，完全重构了所有的实现；将来的目标是将功能扩展和词典格式处理抽象为完整的插件实现，以进一步增强应用的扩展性和可维护性。&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;homebrew-homebrew-bundle-bundler-for-non-ruby-dependencies-from-homebrew-homebrew-cask-and-the-mac-app-store-dot&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://github.com/Homebrew/homebrew-bundle&#34;&gt;Homebrew/homebrew-bundle: 📦 Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask and the Mac App Store.&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;ungoogled-software-ungoogled-chromium-google-chromium-sans-integration-with-google&#34;&gt;&lt;a href=&#34;https://github.com/ungoogled-software/ungoogled-chromium&#34;&gt;ungoogled-software/ungoogled-chromium: Google Chromium, sans integration with Google&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;生活中去google化&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JAVA中获取调用栈帧的最优方式</title>
+      <link>http://blog.imcompany.cn/post/java-stackwalker/</link>
+      <pubDate>Tue, 20 Apr 2021 19:30:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/java-stackwalker/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。&lt;/p&gt;
+&lt;h2 id=&#34;解决方案&#34;&gt;解决方案&lt;/h2&gt;
+&lt;p&gt;一般情况下，在程序有异常信息时可以打印出整个调用堆栈信息，但是现在需要的是正常调用下来获取到当前方法的调用帧。&lt;/p&gt;
+&lt;h3 id=&#34;java9之前&#34;&gt;JAVA9之前&lt;/h3&gt;
+&lt;h4 id=&#34;thread-dot-dumpstack&#34;&gt;Thread.dumpStack()&lt;/h4&gt;
+&lt;p&gt;这个可以打印出当前的堆栈错误信息，本质上是new一个Exception，调用了printStackTrace()方法，但是这个方法只建议用于调试。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;two&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;two&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;three&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;three&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;dumpStack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行后输出如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Stack&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trace&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;at&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;lang&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;Thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;dumpStack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1379&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;at&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;imcompany&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;three&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;at&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;imcompany&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;two&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;21&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;at&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;imcompany&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;one&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;at&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;imcompany&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;StackTraceExample1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;java&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接以异常的方式显示出来了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些提高效率的Idea插件</title>
+      <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
+      <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
+      <description>&lt;h2 id=&#34;dot-ignore&#34;&gt;.ignore&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hsz/idea-gitignore&#34;&gt;https://github.com/hsz/idea-gitignore&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ideavim&#34;&gt;IdeaVim&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/JetBrains/ideavim&#34;&gt;https://github.com/JetBrains/ideavim&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ideavimextension-plugin-for-jetbrains-ides-jetbrains-marketplace&#34;&gt;&lt;a href=&#34;https://plugins.jetbrains.com/plugin/9615-ideavimextension&#34;&gt;IdeaVimExtension Plugin for JetBrains IDEs | JetBrains Marketplace&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;IdeaVim的扩展功能&lt;/p&gt;
+&lt;h2 id=&#34;5a9516&#34;&gt;&lt;del&gt;emacsIDEAs&lt;/del&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/whunmr/emacsIDEAs&#34;&gt;https://github.com/whunmr/emacsIDEAs&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;acejump-acejump-️-single-character-search-select-and-jump&#34;&gt;&lt;a href=&#34;https://github.com/acejump/AceJump#acejump&#34;&gt;acejump/AceJump: 🅰️ single character search, select, and jump&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Idea中快速跳转&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;支持行模式&lt;/li&gt;
+&lt;li&gt;支持IdeaVim集成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;custom-postfix-templates&#34;&gt;Custom Postfix Templates&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xylo/intellij-postfix-templates&#34;&gt;https://github.com/xylo/intellij-postfix-templates&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;jrebel&#34;&gt;Jrebel&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://zeroturnaround.com/software/jrebel/&#34;&gt;https://zeroturnaround.com/software/jrebel/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hotswaphelper&#34;&gt;&lt;a href=&#34;https://github.com/gejun123456/HotSwapHelper&#34;&gt;HotSwapHelper&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;开源免费的热部署插件&lt;/p&gt;
+&lt;h2 id=&#34;camelcase&#34;&gt;CamelCase&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7160-camelcase&#34;&gt;https://plugins.jetbrains.com/plugin/7160-camelcase&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;codehelper&#34;&gt;Codehelper&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少&lt;/li&gt;
+&lt;li&gt;生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/zhengjunbase/codehelper.generator&#34;&gt;https://github.com/zhengjunbase/codehelper.generator&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;translation&#34;&gt;Translation&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;Idea中集成翻译功能,目前支持有道和goolge,百度翻译.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/izhangzhihao/intellij-rainbow-brackets&#34;&gt;https://github.com/izhangzhihao/intellij-rainbow-brackets&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;clock&#34;&gt;Clock&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。&lt;/p&gt;
+&lt;h3 id=&#34;插件地址&#34;&gt;插件地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xamgore/intellij-clock&#34;&gt;https://github.com/xamgore/intellij-clock&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Idea中vim键的映射</title>
+      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
+      <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
+      <description>&lt;p&gt;Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Key&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;kj&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gt&lt;/td&gt;
+          &lt;td&gt;VimBack&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gT&lt;/td&gt;
+          &lt;td&gt;VimForward&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gd&lt;/td&gt;
+          &lt;td&gt;GotoDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gf&lt;/td&gt;
+          &lt;td&gt;GotoTypeDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gh&lt;/td&gt;
+          &lt;td&gt;QuickJavaDoc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gs&lt;/td&gt;
+          &lt;td&gt;GotoSymbol&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gi&lt;/td&gt;
+          &lt;td&gt;GotoImplementation&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gu&lt;/td&gt;
+          &lt;td&gt;FindUsages&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gj&lt;/td&gt;
+          &lt;td&gt;IntroduceVariable&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w d&lt;/td&gt;
+          &lt;td&gt;ActivateDatabaseToolWindow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader &#39;&lt;/td&gt;
+          &lt;td&gt;ActivateTerminalToolWindow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w r&lt;/td&gt;
+          &lt;td&gt;ActivateRedisServersToolWindow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w m&lt;/td&gt;
+          &lt;td&gt;ActivateMavenProjectsToolWindow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w a&lt;/td&gt;
+          &lt;td&gt;HideActiveWindow&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w w&lt;/td&gt;
+          &lt;td&gt;HideAllWindows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w p&lt;/td&gt;
+          &lt;td&gt;ActivateProjectToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w s&lt;/td&gt;
+          &lt;td&gt;ActivateStructureToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w v&lt;/td&gt;
+          &lt;td&gt;ActivateVersionControlToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w h&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;h  Go to left window&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w l&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;l  Go to right window&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w k&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;k  Go to window up&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w j&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;j  Go to window down&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w V&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;v  Split Window Vertically&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w -&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;s  Split Winodw Horizontally&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w c&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;c  Close current window&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader w o&lt;/td&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;o  Close all window except current&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader &lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+          &lt;td&gt;GotoAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader c c&lt;/td&gt;
+          &lt;td&gt;GotoClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader c r&lt;/td&gt;
+          &lt;td&gt;CopyReference&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader c p&lt;/td&gt;
+          &lt;td&gt;CopyPaths&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader f f&lt;/td&gt;
+          &lt;td&gt;GotoFile&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader f d&lt;/td&gt;
+          &lt;td&gt;DashLauncherAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader b b&lt;/td&gt;
+          &lt;td&gt;RecentFiles&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader b p&lt;/td&gt;
+          &lt;td&gt;FileStructurePopup&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader b u&lt;/td&gt;
+          &lt;td&gt;ReopenClosedTab&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader d d&lt;/td&gt;
+          &lt;td&gt;Debug&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader d D&lt;/td&gt;
+          &lt;td&gt;DebugClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader d j&lt;/td&gt;
+          &lt;td&gt;JRebel&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader l l&lt;/td&gt;
+          &lt;td&gt;EvaluateExpression&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader t t&lt;/td&gt;
+          &lt;td&gt;ToggleLineBreakpoint&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader r r&lt;/td&gt;
+          &lt;td&gt;Run&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader r R&lt;/td&gt;
+          &lt;td&gt;RunClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader i m&lt;/td&gt;
+          &lt;td&gt;ImplementMethods&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader e e&lt;/td&gt;
+          &lt;td&gt;ShowErrorDescription&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader e n&lt;/td&gt;
+          &lt;td&gt;GotoNextError&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader R&lt;/td&gt;
+          &lt;td&gt;:source ~/.ideavimrc&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader g s&lt;/td&gt;
+          &lt;td&gt;Vcs.QuickListPopupAction&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader r p&lt;/td&gt;
+          &lt;td&gt;ReplaceInPath&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;zO&lt;/td&gt;
+          &lt;td&gt;ExpandAllRegions&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;zo&lt;/td&gt;
+          &lt;td&gt;ExpandRegion&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;zc&lt;/td&gt;
+          &lt;td&gt;CollapseRegion&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;zC&lt;/td&gt;
+          &lt;td&gt;CollapseAllRegions&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;fj&lt;/td&gt;
+          &lt;td&gt;emacsIDEAs.AceJump&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;fw&lt;/td&gt;
+          &lt;td&gt;emacsIDEAs.AceJumpWord&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ff&lt;/td&gt;
+          &lt;td&gt;CommentByLineComment&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;fb&lt;/td&gt;
+          &lt;td&gt;CommentByBlockComment&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gd&lt;/td&gt;
+          &lt;td&gt;GotoDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gf&lt;/td&gt;
+          &lt;td&gt;GotoTypeDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gh&lt;/td&gt;
+          &lt;td&gt;QuickJavaDoc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gs&lt;/td&gt;
+          &lt;td&gt;GotoSymbol&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gi&lt;/td&gt;
+          &lt;td&gt;GotoImplementation&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gu&lt;/td&gt;
+          &lt;td&gt;FindUsages&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;gj&lt;/td&gt;
+          &lt;td&gt;IntroduceVariable&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;,,&lt;/td&gt;
+          &lt;td&gt;ReformatCode&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;,r&lt;/td&gt;
+          &lt;td&gt;RenameElement&lt;!-- raw HTML omitted --&gt;i&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+          &lt;td&gt;Back&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+          &lt;td&gt;Forward&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader R&lt;/td&gt;
+          &lt;td&gt;reload ~/.ideavimrc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader a l&lt;/td&gt;
+          &lt;td&gt;:actionlist&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader g s&lt;/td&gt;
+          &lt;td&gt;Vcs.QuickListPopupAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader s p&lt;/td&gt;
+          &lt;td&gt;FindInPath&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;leader r p&lt;/td&gt;
+          &lt;td&gt;ReplaceInPath&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;, c r&lt;/td&gt;
+          &lt;td&gt;Revert change&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;, c t&lt;/td&gt;
+          &lt;td&gt;Close other tab&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>
