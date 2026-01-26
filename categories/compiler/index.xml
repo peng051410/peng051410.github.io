@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Compiler on I&#39;m company</title>
+    <link>http://localhost:1313/categories/compiler/</link>
+    <description>Recent content in Compiler on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Feb 2024 17:56:54 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/compiler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编译原理学习</title>
+      <link>http://localhost:1313/post/compiler-study/</link>
+      <pubDate>Thu, 26 Oct 2023 17:37:23 +0800</pubDate>
+      <guid>http://localhost:1313/post/compiler-study/</guid>
+      <description>&lt;h2 id=&#34;学习课程&#34;&gt;学习课程&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1cE411f78c/&#34;&gt;Staff CS 103&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;书籍&#34;&gt;书籍&lt;/h2&gt;
+&lt;h2 id=&#34;学习记录&#34;&gt;学习记录&lt;/h2&gt;
+&lt;h3 id=&#34;为什么有语义分析与语法分析&#34;&gt;为什么有语义分析与语法分析?&lt;/h3&gt;
+&lt;p&gt;语法与语义是多对一的关系，有必要进行分开&lt;/p&gt;
+&lt;h3 id=&#34;有限自动机&#34;&gt;有限自动机&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;起始状态&lt;/li&gt;
+&lt;li&gt;输入&lt;/li&gt;
+&lt;li&gt;结束状态&lt;/li&gt;
+&lt;li&gt;结果
+&lt;ol&gt;
+&lt;li&gt;Accept&lt;/li&gt;
+&lt;li&gt;Reject&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;dfa与nfa&#34;&gt;DFA与NFA&lt;/h3&gt;
+&lt;h4 id=&#34;dfa&#34;&gt;DFA&lt;/h4&gt;
+&lt;p&gt;DFA表示确定性有限自动机&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按顺序执行&lt;/li&gt;
+&lt;li&gt;只有一个结果&lt;/li&gt;
+&lt;li&gt;没有空跳操作&lt;/li&gt;
+&lt;li&gt;执行速度快&lt;/li&gt;
+&lt;li&gt;空间松散(按state算)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;nfa&#34;&gt;NFA&lt;/h4&gt;
+&lt;p&gt;NFA表示非确定性有限自动机&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;多分支执行&lt;/li&gt;
+&lt;li&gt;可能有多个结果&lt;/li&gt;
+&lt;li&gt;可执行空跳操作&lt;/li&gt;
+&lt;li&gt;占用空间小&lt;/li&gt;
+&lt;li&gt;空间紧凑(按state集算)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;nfa-dfa&#34;&gt;NFA-&amp;gt;DFA&lt;/h4&gt;
+&lt;h4 id=&#34;正则表达式匹配策略&#34;&gt;正则表达式匹配策略&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;贪婪&lt;/li&gt;
+&lt;li&gt;非贪婪&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;解析阶段&#34;&gt;解析阶段&lt;/h3&gt;
+&lt;h4 id=&#34;组成&#34;&gt;组成&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;非终端&lt;/li&gt;
+&lt;li&gt;终端&lt;/li&gt;
+&lt;li&gt;生成式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;E -&amp;gt; E * E | E + E | id&lt;/p&gt;
+&lt;h4 id=&#34;ast树&#34;&gt;AST树&lt;/h4&gt;
+&lt;h4 id=&#34;解析的方式&#34;&gt;解析的方式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;左递归&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;右递归&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如何歧义性?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分层&lt;/li&gt;
+&lt;li&gt;加规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;作用域和生存期&#34;&gt;作用域和生存期&lt;/h3&gt;
+&lt;h4 id=&#34;作用域是指计算机语言中变量-函数-类等起作用的范围&#34;&gt;作用域是指计算机语言中变量、函数、类等起作用的范围&lt;/h4&gt;
+&lt;h4 id=&#34;对作用域的分析就是语义分析的任务&#34;&gt;对作用域的分析就是语义分析的任务&lt;/h4&gt;
+&lt;p&gt;有了AST，在运行之前，还要做语义分析&lt;/p&gt;
+&lt;h4 id=&#34;生存期表示变量可以访问的时间段-指的是从内存分配它-到收回它之间的时间&#34;&gt;生存期表示变量可以访问的时间段，指的是从内存分配它，到收回它之间的时间&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;与作用域一致&lt;/li&gt;
+&lt;li&gt;与作用域不一致，堆中变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;作用域与生存期对应到了运行时的内存管理的基本机制&#34;&gt;作用域与生存期对应到了运行时的内存管理的基本机制&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;堆&lt;/li&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;解析函数时要考虑参数问题&#34;&gt;解析函数时要考虑参数问题&lt;/h4&gt;
+&lt;p&gt;在函数内部，参数的使用和变通的变量没有不同，也是保存在栈帧里&lt;/p&gt;
+&lt;h4 id=&#34;语义上的差别是每种语言真正的差别-但是底层有一些共通的机制&#34;&gt;语义上的差别是每种语言真正的差别，但是底层有一些共通的机制&lt;/h4&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/VU3qdX.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;面向对象&#34;&gt;面向对象&lt;/h3&gt;
+&lt;h4 id=&#34;面向对象是世界观-是方法论&#34;&gt;面向对象是世界观，是方法论&lt;/h4&gt;
+&lt;h4 id=&#34;面向对象的特点就是封装&#34;&gt;面向对象的特点就是封装&lt;/h4&gt;
+&lt;h4 id=&#34;语义特征&#34;&gt;语义特征&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;类型角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;作用域角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;生存期角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;语义工作&#34;&gt;语义工作&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;分析AST，识别所有自定义为类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变量类型消解&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
