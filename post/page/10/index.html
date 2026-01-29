@@ -2,7 +2,31 @@
 <svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://blog.imcompany.cn/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=http://blog.imcompany.cn/categories/ title=Categories><span>Categories</span></a></li><li><a href=http://blog.imcompany.cn/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://github.com/peng051410/today_i_learn title=Til><span>Til</span>&nbsp;
 <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://blog.imcompany.cn/>Home</a></div><h1>Posts
-<a href=/post/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>JAVA中获取调用栈帧的最优方式</h2></header><div class=entry-content><p>前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。
+<a href=/post/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>让好代码生生不息-更好的对待NULL</h2></header><div class=entry-content><p>什么样的代码是好代码 易读的代码，行云流水的代码
+JAVA中的NULL处理 众所周知，在Java代码中总是少不了一堆的判null逻辑，在代码bug中，NullPointerException出镜率也是非常高的，尤其是现在的主流分布式架构，一个web接口要调用后端的N个RPC服务来实现功能，基于防御编程的思想，判null就更重要了
+在处理NULL时怎么做更好 IDE 既然无法避免null，IDE就给程序员增加了可以快速判断空的功能，比如在IDEA中，可以使用Postfix功能，在对象上o使用.nn来快速输入if(o != null) {}
+JAVA基础类库 近期的JDK版本也针对null判断增加了一些实用的方法
+Objects类 JAVA8在Objects工具提供了isNull()和nonNull()方法，JAVA9又增加了requireNonNullElse()和requireNonNullElseGet()来给待处理对象增加设置默认值的方法
+知名三方库 Apache common utils中提供了非常多的判空工具类，如针对String操作的StringUtils类和针对集合操作的CollectionUtils、MapUtils、ListUtils、SetUtils，这几个类都有一些典型的方法来进行判空处理，通用的方法如下：
+StringUtils isEmpty()/isNotEmpty()
+判断String是否为空/不空
+isBlank()/isNoneBlank()
+判断String是否为空/不空，这类方法还会判断实际值是否为空串
+defaultString()
+此方法允许在String为null时为返回空串
+defaultIfBlank()/defaultIfEmpty()
+此方法允许在String为空串或null时设置一个默认值
+集合类Utils isEmpty()/isNotEmpty()
+判断集合是否为空/不空
+emptyIfNull()
+这是一个很有用的方法，当传入对象为空时则返回设置的默认对象，可以很好的根治if处理null的问题，下面两段代码演示一下
+正常情况下有if判断 List&lt;Object> values = rpcClient.getFromRpcList(); if(CollectionUtils.isNotEmpty(values)) { return values .forEach(System.out::println); } 使用emptyIfNull方法 return CollectionUtils.emptyIfNull(rpcClient.getFromRpcList()) .forEach(System.out::println); 这样保证了代码编写的连贯性，爽！
+此方法在ListUtis、MapUtils、SetUtils中也有提供
+defaultIfNull()
+此方法允许在集合为null时设置一个默认值，也是可以链式操作
+优秀的Coder 在编写通用方法时，对于有null返回的情况可以使用返回默认值来代替null
+不返回空，以空对象来代替 比如返回一个new Object()
+...</p></div><footer class=entry-footer><span title='2021-07-17 16:04:09 +0800 CST'>July 17, 2021</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>60 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 让好代码生生不息-更好的对待NULL" href=http://blog.imcompany.cn/post/best-code1/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>JAVA中获取调用栈帧的最优方式</h2></header><div class=entry-content><p>前言 近期在做日志优化，需要记录业务日志，日志内容包括业务的请求、响应信息。当然还应该有具体的调用方法位置、日志的所在的方法等通用信息。
 解决方案 一般情况下，在程序有异常信息时可以打印出整个调用堆栈信息，但是现在需要的是正常调用下来获取到当前方法的调用帧。
 JAVA9之前 Thread.dumpStack() 这个可以打印出当前的堆栈错误信息，本质上是new一个Exception，调用了printStackTrace()方法，但是这个方法只建议用于调试。
 public class StackTraceExample1 { public static void main(String[] args) { one(); } public static void one() { two(); } private static void two() { three(); } private static void three() { Thread.dumpStack(); } } 执行后输出如下:
@@ -30,10 +54,7 @@ Example 输入: 38 输出: 2 解释: 各位相加的过程为：3 + 8 = 11, 1 + 
 题目解答 解答一（递归） public class AddDigitsV1 { public int addDigits(int num) { if(num &lt; 10) return num; return addDigits(num % 10 + num / 10); } } 此解法的时间复杂度为O(log(n))，空间复杂度为O(1)
 使用递归要满足的条件
 一个任务可以拆分成多个子任务 每个任务都有相似的处理步骤（流程） 存在终止条件 解答二（模9法） public class addDigitsV2 { public int addDigits(int num) { return (num - 1) % 9 + 1; } } 查找规律发现可以以%9来得到答案，但是对于整除9的结果就不行了，所以还要采用借1还1的方式来处理。此解的时间复杂度为O(1)，空间复杂度为O(1)
-...</p></div><footer class=entry-footer><span title='2020-02-22 14:30:09 +0800 CST'>February 22, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>112 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 2020-ARTS-打卡第七天" href=http://blog.imcompany.cn/post/2020-arts-007/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>2020-ARTS-打卡第六天</h2></header><div class=entry-content><p>Algorithm 题目描述 设计你的循环队列实现，支持入队，出队，获取队首元素，获取队尾元素
-题目解答 采用数组可以实现，由于要达到循环效果，主要要考虑队头与队尾的情况
-public class MyCircurlarQueue { private int[] queue; private int headIndex; private int count; public MyCircurlarQueue(int capacity) { this.queue = new int[capacity]; } private boolean inQueue(int value) { if (isFull()) { return false; } queue[(headIndex + count) % queue.length] = value; count += 1; return true; } private boolean deQueue() { if (isEmpty()) { return false; } headIndex = (headIndex + 1) % queue.length; count -= 1; return true; } private int First() { if (isEmpty()) { return -1; } return queue[(headIndex + 1) % queue.length]; } private int Rear() { if (isEmpty()) { return -1; } return queue[(headIndex + count - 1) % queue.length]; } private boolean isEmpty() { return count == 0; } private boolean isFull() { return count == queue.length; } } Review code-smells-multi-responsibility-methods本文是Idea作者代码味道系列的第五篇。讲述作者对一个大方法进行重构的过程，主要处理的代码坏味道为多职责方法，在实际开发中随着功能的增加方法会一点点膨胀，这时候就要注意了
-...</p></div><footer class=entry-footer><span title='2020-02-13 19:04:09 +0800 CST'>February 13, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>154 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 2020-ARTS-打卡第六天" href=http://blog.imcompany.cn/post/2020-arts-006/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/post/page/9/>«&nbsp;Prev&nbsp;
+...</p></div><footer class=entry-footer><span title='2020-02-22 14:30:09 +0800 CST'>February 22, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>112 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 2020-ARTS-打卡第七天" href=http://blog.imcompany.cn/post/2020-arts-007/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/post/page/9/>«&nbsp;Prev&nbsp;
 </a><a class=next href=http://blog.imcompany.cn/post/page/11/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
