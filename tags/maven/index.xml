@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:58:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Apr 2022 17:57:05 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>开发中会遇到的Maven问题解惑</title>
@@ -87,6 +87,59 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/plugin&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.soebes.de/blog/2017/04/02/maven-pom-files-without-a-version-in-it/&#34;&gt;Maven: POM files without a version in it? - SoftwareEntwicklung Beratung Schulung&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maven发布401问题排查</title>
+      <link>http://blog.imcompany.cn/post/maven-deploy-issue/</link>
+      <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
+      <description>&lt;h2 id=&#34;日志问题现象&#34;&gt;日志问题现象&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据提示，401未授权，表面来看就是发布的权限未认证&lt;/p&gt;
+&lt;h2 id=&#34;排查步骤&#34;&gt;排查步骤&lt;/h2&gt;
+&lt;h3 id=&#34;settings文件是否配置了发布的用户名与密码-且用户有deploy的权限&#34;&gt;settings文件是否配置了发布的用户名与密码，且用户有deploy的权限&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-nxml&#34; data-lang=&#34;nxml&#34;&gt;&amp;lt;servers&amp;gt;
+  &amp;lt;server&amp;gt;
+    &amp;lt;id&amp;gt;myid&amp;lt;/id&amp;gt;
+    &amp;lt;username&amp;gt;myuser&amp;lt;/username&amp;gt;
+    &amp;lt;password&amp;gt;mypasswd&amp;lt;/password&amp;gt;
+  &amp;lt;/server&amp;gt;
+&amp;lt;/servers&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看deploy插件的版本&#34;&gt;查看deploy插件的版本&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;如果是2.X的版本,可以使用以下命令进行发布&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -DaltDeploymentRepository&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;company::default::http://test.compnay.local/nexus/repository/maven-snapshots clean package deploy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;如果是3.X的版本，则需要按3.X版本进行指定发布&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn deploy:deploy-file -Dfile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;xxx-1.0.0-SNAPSHOT.jar -Durl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://test.local/nexus/content/repositories/snapshots -DrepositoryId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;test-snapshot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;deploy-3-dot-0-dot-0-m1的发布bug&#34;&gt;Deploy 3.0.0-M1的发布bug&lt;/h3&gt;
+&lt;p&gt;如果配置的deploy的插件为3.0.0-M1，则可参考&lt;a href=&#34;https://support.sonatype.com/hc/en-us/articles/360010223594-maven-deploy-plugin-version-3-0-0-M1-deploy-fails-with-401-ReasonPhrase-Unauthorized&#34;&gt;3.0.0-M1 401 bug&lt;/a&gt; 进行修改，具体就是指定depoly版本为2.8，根据&lt;a href=&#34;https://issues.apache.org/jira/browse/MDEPLOY-244?focusedCommentId=16648217&amp;amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16648217&#34;&gt;插件作者的回复&lt;/a&gt;感觉就是3.0.0-M1与altDeploymentRepository参数不能一起用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些有用maven命令</title>
+      <link>http://blog.imcompany.cn/post/maven-swim/</link>
+      <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
+      <description>&lt;h2 id=&#34;查看当前系统的配置信息&#34;&gt;查看当前系统的配置信息&lt;/h2&gt;
+&lt;p&gt;排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看当前有效的settings文件&#34;&gt;查看当前有效的settings文件&lt;/h2&gt;
+&lt;p&gt;maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:effective-settings
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看settings配置的值&#34;&gt;查看Settings配置的值&lt;/h2&gt;
+&lt;p&gt;以下命令可以查看settings文件中的settings-&amp;gt;servers的配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;settings.servers -DforceStdout help:evaluate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;a href=&#34;https://maven.apache.org/plugins/maven-help-plugin/evaluate-mojo.html&#34;&gt;help:evaluate&lt;/a&gt;可以查看所有的配置信息&lt;/p&gt;
+&lt;h2 id=&#34;指定发布到其它仓库&#34;&gt;指定发布到其它仓库&lt;/h2&gt;
+&lt;h3 id=&#34;deploy插件2-dot-x版本发布&#34;&gt;Deploy插件2.X版本发布&lt;/h3&gt;
+&lt;p&gt;有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -DaltDeploymentRepository&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;id::layout::url
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;具体说明参见&lt;a href=&#34;https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html&#34;&gt;deploy:deploy&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy插件3-dot-0-dot-0-m1版本发布&#34;&gt;Deploy插件3.0.0-M1版本发布&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;com.qqreader -Dfile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./target/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;/data/mvn/bin/mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;project.build.finalName -DforceStdout help:evaluate&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.jar -Durl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;snapshot-id
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

@@ -11,12 +11,12 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:51:17 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2024 09:59:04 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/video/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决下载后的TED视频与字幕时间对不上的问题</title>
       <link>http://blog.imcompany.cn/post/ted-srt-video-not-match/</link>
-      <pubDate>Fri, 30 Jan 2026 10:51:17 +0800</pubDate>
+      <pubDate>Wed, 20 Mar 2024 09:59:04 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/ted-srt-video-not-match/</guid>
       <description>&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
 &lt;p&gt;准备使用TED上的视频进行英语学习，使用Downie下载下来视频与字幕后，播放发现字幕比声音快了几秒中，类似下面这样&lt;/p&gt;

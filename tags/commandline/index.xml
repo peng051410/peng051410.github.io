@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 11:02:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Oct 2022 17:54:16 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/commandline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用Riggrep进行快速搜索</title>
@@ -28,22 +28,57 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;使用说明&#34;&gt;使用说明&lt;/h2&gt;
 &lt;p&gt;样例所有操作使用 &lt;strong&gt;&lt;a href=&#34;https://github.com/peng051410/study-sample&#34;&gt;study-sample&lt;/a&gt;&lt;/strong&gt; 仓库，里面是常用语言的入门学习资源，操作文档结构如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tree ~/github/study-sample
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- LearnBash.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- LearnJava.java
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- README.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- commonlisp.lisp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learn-emacs-lisp.el
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learn.nix
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learnc.c
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learnclojure.clj
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learngo.go
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learnlua.lua
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learnpython.py
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-- learnrust.rs
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;-- markdown.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; directories, &lt;span class=&#34;m&#34;&gt;13&lt;/span&gt; files
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
 &lt;p&gt;遍历查询 &lt;strong&gt;~/github/study-sample/&lt;/strong&gt; 下所有包含 &lt;strong&gt;TODO say hello&lt;/strong&gt; 字符串的结果&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rg &lt;span class=&#34;s1&#34;&gt;&amp;#39;TODO say hello&amp;#39;&lt;/span&gt; ~/github/study-sample/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查询到的结果以 &lt;strong&gt;文件&lt;/strong&gt; 维度进行展示，使用 &lt;strong&gt;分号&lt;/strong&gt; 进行分割，分号前为文件路径，分号后为查询匹配到的内容&lt;/p&gt;
-&lt;h2 id=&#34;只打印路径不打印匹配的内容&#34;&gt;只打印路径不打印匹配的内容&lt;/h2&gt;
-&lt;p&gt;如果只关注匹配的文件不关注内容，可以使用 &lt;strong&gt;&amp;ndash;files-with-match&lt;/strong&gt; 选项，短选项为 &lt;strong&gt;-l&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rg -l &lt;span class=&#34;s1&#34;&gt;&amp;#39;TODO say hello&amp;#39;&lt;/span&gt; ~/github/study-sample/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述结果只显示了匹配的文件路径，不再包含内容&lt;/p&gt;
-&lt;h2 id=&#34;搜索结果进行排序&#34;&gt;搜索结果进行排序&lt;/h2&gt;
-&lt;p&gt;为了性能考虑，rg默认搜索结果是无序的，如果想让结果有序，可增加 &lt;strong&gt;&amp;ndash;sort path&lt;/strong&gt; 选项&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rg -l &lt;span class=&#34;s1&#34;&gt;&amp;#39;TODO say hello&amp;#39;&lt;/span&gt; --sort path ~/github/study-sample/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述输出将结果按字母进行排序&lt;/p&gt;
-&lt;h2 id=&#34;搜索不包含指定内容&#34;&gt;搜索不包含指定内容&lt;/h2&gt;
-&lt;p&gt;如果想查询不包含指定内容的文件，可以使用 &lt;strong&gt;&amp;ndash;files-without-match&lt;/strong&gt; 选项，此选项无缩写选项&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rg --files-without-match &lt;span class=&#34;s1&#34;&gt;&amp;#39;TODO say hello&amp;#39;&lt;/span&gt; --sort path ~/github/study-sample/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以上结果正好与上一项的搜索结果相反&lt;/p&gt;</description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/commonlisp.lisp:&lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt; TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/learnclojure.clj:&lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt; TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/learn-emacs-lisp.el:&lt;span class=&#34;p&#34;&gt;;;&lt;/span&gt; TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查询到的结果以 &lt;strong&gt;文件&lt;/strong&gt; 维度进行展示，使用 &lt;strong&gt;分号&lt;/strong&gt; 进行分割，分号前为文件路径，分号后为查询匹配到的内容&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些有用maven命令</title>
+      <link>http://blog.imcompany.cn/post/maven-swim/</link>
+      <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
+      <description>&lt;h2 id=&#34;查看当前系统的配置信息&#34;&gt;查看当前系统的配置信息&lt;/h2&gt;
+&lt;p&gt;排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看当前有效的settings文件&#34;&gt;查看当前有效的settings文件&lt;/h2&gt;
+&lt;p&gt;maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:effective-settings
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看settings配置的值&#34;&gt;查看Settings配置的值&lt;/h2&gt;
+&lt;p&gt;以下命令可以查看settings文件中的settings-&amp;gt;servers的配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;settings.servers -DforceStdout help:evaluate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;a href=&#34;https://maven.apache.org/plugins/maven-help-plugin/evaluate-mojo.html&#34;&gt;help:evaluate&lt;/a&gt;可以查看所有的配置信息&lt;/p&gt;
+&lt;h2 id=&#34;指定发布到其它仓库&#34;&gt;指定发布到其它仓库&lt;/h2&gt;
+&lt;h3 id=&#34;deploy插件2-dot-x版本发布&#34;&gt;Deploy插件2.X版本发布&lt;/h3&gt;
+&lt;p&gt;有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -DaltDeploymentRepository&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;id::layout::url
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;具体说明参见&lt;a href=&#34;https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html&#34;&gt;deploy:deploy&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy插件3-dot-0-dot-0-m1版本发布&#34;&gt;Deploy插件3.0.0-M1版本发布&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;com.qqreader -Dfile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./target/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;/data/mvn/bin/mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;project.build.finalName -DforceStdout help:evaluate&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.jar -Durl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;snapshot-id
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>那些提高效率的命令行工具</title>

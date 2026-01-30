@@ -11,12 +11,12 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:45:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 17:57:06 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
       <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Fri, 30 Jan 2026 10:45:00 +0800</pubDate>
+      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
       <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
@@ -44,6 +44,24 @@
 &lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
 &lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;下载单个github文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>收集的命令行工具</title>
+      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
+      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
+      <description>&lt;h2 id=&#34;atuin-shell-history-and-executable-runbooks&#34;&gt;&lt;a href=&#34;https://atuin.sh/&#34;&gt;Atuin - Shell History &amp;amp; Executable Runbooks&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史&lt;/p&gt;
+&lt;h2 id=&#34;watchman-a-file-watching-service-watchman&#34;&gt;&lt;a href=&#34;https://facebook.github.io/watchman/&#34;&gt;Watchman - A file watching service | Watchman&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;监控文件变化并及时通知&lt;/p&gt;
+&lt;h2 id=&#34;bensadeh-tailspin-a-log-file-highlighter&#34;&gt;&lt;a href=&#34;https://github.com/bensadeh/tailspin/&#34;&gt;bensadeh/tailspin: 🌀 A log file highlighter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;日志文件高亮&lt;/p&gt;
+&lt;h2 id=&#34;yihong0618-epubhv-make-your-epub-books-vertical-or-horizontal-dot&#34;&gt;&lt;a href=&#34;https://github.com/yihong0618/epubhv&#34;&gt;yihong0618/epubhv: Make your epub books vertical or horizontal.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;任意转换 epub 书的横竖排。(可批量）&lt;/p&gt;
+&lt;h2 id=&#34;os-health-ssar-site-reliability-engineering-system-activity-reporter&#34;&gt;&lt;a href=&#34;https://github.com/os-health/ssar&#34;&gt;os-health/ssar: Site Reliability Engineering System Activity Reporter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;磁盘 io 监控，作者开发的其它工具也很好用&lt;/p&gt;
+&lt;h2 id=&#34;curl-by-example-interactive-guide&#34;&gt;&lt;a href=&#34;https://antonz.org/curl-by-example/&#34;&gt;Curl by example: Interactive guide&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;curl命令指南，还有互动的示例&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

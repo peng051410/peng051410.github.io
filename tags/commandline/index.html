@@ -5,15 +5,15 @@
 <a href=/tags/commandline/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>用Riggrep进行快速搜索</h2></header><div class=entry-content><p>为什么要学习riggrep? Riggrep快 天下武功，唯快不破
 Riggrep聪明 默认会排除 .gitignore/.ignore/.rgignore 文件下的配置和隐藏文件、二进制文件
 安装 brew install ripgrep 使用说明 样例所有操作使用 study-sample 仓库，里面是常用语言的入门学习资源，操作文档结构如下：
-tree ~/github/study-sample 基本使用 遍历查询 ~/github/study-sample/ 下所有包含 TODO say hello 字符串的结果
-rg 'TODO say hello' ~/github/study-sample/ 查询到的结果以 文件 维度进行展示，使用 分号 进行分割，分号前为文件路径，分号后为查询匹配到的内容
-只打印路径不打印匹配的内容 如果只关注匹配的文件不关注内容，可以使用 –files-with-match 选项，短选项为 -l
-rg -l 'TODO say hello' ~/github/study-sample/ 上述结果只显示了匹配的文件路径，不再包含内容
-搜索结果进行排序 为了性能考虑，rg默认搜索结果是无序的，如果想让结果有序，可增加 –sort path 选项
-rg -l 'TODO say hello' --sort path ~/github/study-sample/ 上述输出将结果按字母进行排序
-搜索不包含指定内容 如果想查询不包含指定内容的文件，可以使用 –files-without-match 选项，此选项无缩写选项
-rg --files-without-match 'TODO say hello' --sort path ~/github/study-sample/ 以上结果正好与上一项的搜索结果相反
-...</p></div><footer class=entry-footer><span title='2022-08-30 20:01:00 +0800 CST'>August 30, 2022</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>292 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 用Riggrep进行快速搜索" href=http://blog.imcompany.cn/post/ripgrep-study/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>那些提高效率的命令行工具</h2></header><div class=entry-content><p>brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址
+tree ~/github/study-sample /Users/tomyli/github/study-sample |-- LearnBash.sh |-- LearnJava.java |-- README.md |-- commonlisp.lisp |-- learn-emacs-lisp.el |-- learn.nix |-- learnc.c |-- learnclojure.clj |-- learngo.go |-- learnlua.lua |-- learnpython.py |-- learnrust.rs `-- markdown.md 0 directories, 13 files 基本使用 遍历查询 ~/github/study-sample/ 下所有包含 TODO say hello 字符串的结果
+rg 'TODO say hello' ~/github/study-sample/ /Users/tomyli/github/study-sample/learnc.c:/* TODO say hello */ /Users/tomyli/github/study-sample/commonlisp.lisp:;; TODO say hello /Users/tomyli/github/study-sample/learnclojure.clj:;; TODO say hello /Users/tomyli/github/study-sample/learn-emacs-lisp.el:;; TODO say hello /Users/tomyli/github/study-sample/LearnBash.sh:# TODO say hello /Users/tomyli/github/study-sample/LearnJava.java: // TODO say hello /Users/tomyli/github/study-sample/learnrust.rs:// TODO say hello 查询到的结果以 文件 维度进行展示，使用 分号 进行分割，分号前为文件路径，分号后为查询匹配到的内容
+...</p></div><footer class=entry-footer><span title='2022-08-30 20:01:00 +0800 CST'>August 30, 2022</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>552 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 用Riggrep进行快速搜索" href=http://blog.imcompany.cn/post/ripgrep-study/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>那些有用maven命令</h2></header><div class=entry-content><p>查看当前系统的配置信息 排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息
+mvn help:system 查看当前有效的settings文件 maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用
+mvn help:effective-settings 查看Settings配置的值 以下命令可以查看settings文件中的settings->servers的配置
+mvn -q -Dexpression=settings.servers -DforceStdout help:evaluate 使用help:evaluate可以查看所有的配置信息
+指定发布到其它仓库 Deploy插件2.X版本发布 有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现
+mvn -DaltDeploymentRepository=id::layout::url 具体说明参见deploy:deploy
+Deploy插件3.0.0-M1版本发布 /data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId=com.qqreader -Dfile=./target/$(/data/mvn/bin/mvn -q -Dexpression=project.build.finalName -DforceStdout help:evaluate).jar -Durl=http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId=snapshot-id</p></div><footer class=entry-footer><span title='2019-12-31 10:45:55 +0800 CST'>December 31, 2019</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>33 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 那些有用maven命令" href=http://blog.imcompany.cn/post/maven-swim/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>那些提高效率的命令行工具</h2></header><div class=entry-content><p>brew Mac软件包管理工具。用命令行命令来安装软件，仓库软件丰富。地址
 bat bat? No，高端cat，不费眼。带颜色显示，支持git状态，自动分页。地址
 cowsay 奶牛说： 地址
 coreutils 使用Rust重写的gnuutils。地址

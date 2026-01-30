@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:46:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jul 2025 14:50:22 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/compose/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>重拾Android的快乐-TableLayout布局</title>
@@ -223,9 +223,6 @@
       <guid>http://blog.imcompany.cn/post/android-linearlayout/</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://developer.android.com/develop/ui/views/layout/linear&#34;&gt;LinearLayout&lt;/a&gt; 是一个视图组件，它可以将所有子视图按一个方向进行 &lt;code&gt;垂直/水平&lt;/code&gt; 对齐&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;视图组是不可见的容器用来构建View的布局结构&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h3 id=&#34;垂直方向--vertical&#34;&gt;垂直方向(Vertical)&lt;/h3&gt;
 &lt;p&gt;垂直方向会按每行一个元素排列，而不管设置的宽度&lt;/p&gt;
 &lt;figure&gt;

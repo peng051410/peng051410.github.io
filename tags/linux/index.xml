@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:58:51 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 15:45:16 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>性能的本质IPC之动手验证</title>
@@ -24,7 +24,7 @@
 &lt;h3 id=&#34;ipc&#34;&gt;IPC&lt;/h3&gt;
 &lt;p&gt;本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可执行的指令数，常用来做为评判处理器性能的指标&lt;/p&gt;
 &lt;h3 id=&#34;nop&#34;&gt;NOP&lt;/h3&gt;
-&lt;p&gt;no operation, CPU指令，表示不执行任何操作&lt;/p&gt;
+&lt;p&gt;no operation, 在指令集中表示一个指令不改变所执行程序的 register，status flag，也就是不要进行上下文的切换，CPU的上下文切换是有时间开销的&lt;/p&gt;
 &lt;h2 id=&#34;实验代码下载&#34;&gt;实验代码下载&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/plantegg/programmer_case
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;实验机器信息&#34;&gt;实验机器信息&lt;/h2&gt;
@@ -592,7 +592,7 @@
 &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/RmVnyB.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;ls-x&#34;&gt;ls -X&lt;/h3&gt;
 &lt;p&gt;按文件类型字母排序显示
-&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vuglLC.png&#34;&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;http://pic.imcompany.cn/pic/c55emA.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;ls-1&#34;&gt;ls -1&lt;/h3&gt;
 &lt;p&gt;一行显示一个
 &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5yYqrQ.png&#34;&gt;&lt;/p&gt;
@@ -658,11 +658,11 @@
 &lt;li&gt;延伸阅读(see also)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;
-&lt;h2 id=&#34;ref&#34;&gt;Ref&lt;/h2&gt;
-&lt;h3 id=&#34;http-blog-dot-fpliu-dot-com-it-software-man&#34;&gt;&lt;a href=&#34;http://blog.fpliu.com/it/software/man&#34;&gt;http://blog.fpliu.com/it/software/man&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;https-man7-dot-org-linux-man-pages-man1-man-dot-1-dot-html&#34;&gt;&lt;a href=&#34;https://man7.org/linux/man-pages/man1/man.1.html&#34;&gt;https://man7.org/linux/man-pages/man1/man.1.html&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;https-linux-dot-die-dot-net-man&#34;&gt;&lt;a href=&#34;https://linux.die.net/man/&#34;&gt;https://linux.die.net/man/&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;man-page-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Man_page&#34;&gt;man page - Wikipedia&lt;/a&gt;&lt;/h3&gt;</description>
+&lt;h3 id=&#34;man&#34;&gt;man&lt;/h3&gt;
+&lt;h4 id=&#34;man-f&#34;&gt;man -f&lt;/h4&gt;
+&lt;p&gt;显示命令的简介, 同 &lt;strong&gt;whatis&lt;/strong&gt; 命令&lt;/p&gt;
+&lt;h4 id=&#34;man-k&#34;&gt;man -k&lt;/h4&gt;
+&lt;p&gt;搜索命令描述，当只记得一些关键词时很有用。同 &lt;strong&gt;apropos&lt;/strong&gt; 命令&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux代码结构学习</title>
@@ -681,7 +681,7 @@
 &lt;h3 id=&#34;documentation&#34;&gt;Documentation/&lt;/h3&gt;
 &lt;p&gt;项目文档，里面包含了很多关于配置内核、与ramdisk运行等有用的信息。这里面没有不同配置项的帮助信息，这些信息可以在相关子目录的 &lt;strong&gt;Kconfig&lt;/strong&gt; 文件中查看。&lt;/p&gt;
 &lt;h3 id=&#34;arch&#34;&gt;arch/&lt;/h3&gt;
-&lt;p&gt;体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 &lt;strong&gt;arch/x86&lt;/strong&gt; 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编库等信息。&lt;/p&gt;
+&lt;p&gt;体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 &lt;strong&gt;arch/x86&lt;/strong&gt; 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编例程等信息。&lt;/p&gt;
 &lt;h3 id=&#34;crypto&#34;&gt;crypto/&lt;/h3&gt;
 &lt;p&gt;内核使用的加密API代码。&lt;/p&gt;
 &lt;h3 id=&#34;drivers&#34;&gt;drivers/&lt;/h3&gt;
@@ -699,7 +699,7 @@
 &lt;h3 id=&#34;lib&#34;&gt;lib/&lt;/h3&gt;
 &lt;p&gt;内核所有使用的库都在这里。常见的字符串运算，调试库，命令行解析代码等。&lt;/p&gt;
 &lt;h3 id=&#34;mm&#34;&gt;mm/&lt;/h3&gt;
-&lt;p&gt;高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 &lt;strong&gt;arch/&amp;lt;arch&amp;gt;/mm&lt;/strong&gt; )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。&lt;/p&gt;
+&lt;p&gt;高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 &lt;strong&gt;arch/&lt;!-- raw HTML omitted --&gt;/mm&lt;/strong&gt; )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。&lt;/p&gt;
 &lt;h3 id=&#34;net&#34;&gt;net/&lt;/h3&gt;
 &lt;p&gt;高级别的网络代码。与低级别的网络进行发包与收包交互。*net/core* 中包含其它网络协议使用的核心代码。net子目录就是特定的网络协议实现。&lt;/p&gt;
 &lt;h3 id=&#34;scripts&#34;&gt;scripts/&lt;/h3&gt;
@@ -709,9 +709,67 @@
 &lt;h3 id=&#34;sound&#34;&gt;sound/&lt;/h3&gt;
 &lt;p&gt;声卡及相关代码在这里。&lt;/p&gt;
 &lt;h3 id=&#34;usr&#34;&gt;usr/&lt;/h3&gt;
-&lt;p&gt;该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。&lt;/p&gt;
-&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://courses.linuxchix.org/kernel-hacking-2002/08-overview-kernel-source.html&#34;&gt;08 Overview of the Kernel Source | LinuxChix Courses&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Centos7 install issue collect</title>
+      <link>http://blog.imcompany.cn/post/centos7-install-issue-collect/</link>
+      <pubDate>Mon, 06 May 2019 13:00:55 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/centos7-install-issue-collect/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解决centos7-yum-could-not-retrieve-mirrorlist错误&#34;&gt;解决Centos7 yum could not retrieve mirrorlist错误&lt;/h2&gt;
+&lt;p&gt;刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考&lt;a href=&#34;https://my.oschina.net/u/2456768/blog/3011881&#34;&gt;https://my.oschina.net/u/2456768/blog/3011881&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置静态ip&#34;&gt;配置静态ip&lt;/h2&gt;
+&lt;p&gt;安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;IPADDR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.101
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;NETMASK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;255.255.255.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GATEWAY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DNS1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.116.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://blog.csdn.net/zhishengqianjun/article/details/77046796&#34;&gt;https://blog.csdn.net/zhishengqianjun/article/details/77046796&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos7安装后配置国内仓库源&#34;&gt;Centos7安装后配置国内仓库源&lt;/h2&gt;
+&lt;p&gt;由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考&lt;a href=&#34;https://blog.csdn.net/inslow/article/details/54177191&#34;&gt;https://blog.csdn.net/inslow/article/details/54177191&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;centos7安装vmware-tools&#34;&gt;Centos7安装VMware Tools&lt;/h3&gt;
+&lt;p&gt;想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考&lt;a href=&#34;https://blog.csdn.net/WarnerWu/article/details/73718901&#34;&gt;https://blog.csdn.net/WarnerWu/article/details/73718901&lt;/a&gt; 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了&lt;/p&gt;
+&lt;h2 id=&#34;安装jdk8&#34;&gt;安装Jdk8&lt;/h2&gt;
+&lt;p&gt;一句命令搞定：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安装mysql&#34;&gt;安装mysql&lt;/h2&gt;
+&lt;p&gt;使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了&lt;a href=&#34;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&#34;&gt;https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改mysql的root密码&#34;&gt;修改mysql的root密码&lt;/h2&gt;
+&lt;p&gt;安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了&lt;a href=&#34;https://blog.csdn.net/kuluzs/article/details/51924086&#34;&gt;https://blog.csdn.net/kuluzs/article/details/51924086&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开放3306端口&#34;&gt;开放3306端口&lt;/h2&gt;
+&lt;p&gt;为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start firewalld
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;public --add-port&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3306/tcp --permanent
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个参考了&lt;a href=&#34;https://www.jianshu.com/p/225a853350d9&#34;&gt;https://www.jianshu.com/p/225a853350d9&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装oh-my-bash&#34;&gt;安装oh-my-bash&lt;/h2&gt;
+&lt;p&gt;由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。&lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;https://github.com/ohmybash/oh-my-bash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;centos自动登录&#34;&gt;Centos自动登录&lt;/h2&gt;
+&lt;p&gt;安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;移除原来的getty@tty1.service软链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm /etc/systemd/system/getty.target.wants/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拷贝getty@.service file 并且命名为 &lt;a href=&#34;mailto:getty@tty1.service&#34;&gt;getty@tty1.service&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Service&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ExecStart&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-/sbin/agetty --autologin root --noclear %I
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Install&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;Alias&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:55:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 28 Sep 2022 16:17:36 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org-babel学习记录</title>
@@ -41,7 +41,9 @@
       <description>&lt;h2 id=&#34;org-anki&#34;&gt;Org-anki&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/eyeinsky/org-anki&#34;&gt;Org-anki&lt;/a&gt;是一个同步Org中note到&lt;a href=&#34;https://apps.ankiweb.net/&#34;&gt;Anki&lt;/a&gt;的Emacs包，它的实现非常简单灵活，文档书写体验好&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
-&lt;h2 id=&#34;支持的note&#34;&gt;支持的note&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;use-package&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-anki&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nb&#34;&gt;:commands&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;org-anki-sync-entry&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;org-anki-sync-all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;支持的note&#34;&gt;支持的note&lt;/h2&gt;
 &lt;h3 id=&#34;基础note&#34;&gt;基础note&lt;/h3&gt;
 &lt;p&gt;基本的正反两面问答形式，在org中，heading表示问题，内容表示答案&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-org&#34; data-lang=&#34;org&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;gs&#34;&gt; 我是问题&lt;/span&gt;
