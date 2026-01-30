@@ -31,7 +31,9 @@ defaultIfBlank()/defaultIfEmpty()
 判断集合是否为空/不空
 emptyIfNull()
 这是一个很有用的方法，当传入对象为空时则返回设置的默认对象，可以很好的根治if处理null的问题，下面两段代码演示一下
-正常情况下有if判断 List&lt;Object> values = rpcClient.getFromRpcList(); if(CollectionUtils.isNotEmpty(values)) { return values .forEach(System.out::println); } 使用emptyIfNull方法 return CollectionUtils.emptyIfNull(rpcClient.getFromRpcList()) .forEach(System.out::println); 这样保证了代码编写的连贯性，爽！
+正常情况下有if判断
+List&lt;Object> values = rpcClient.getFromRpcList(); if(CollectionUtils.isNotEmpty(values)) { return values .forEach(System.out::println); } 使用emptyIfNull方法
+return CollectionUtils.emptyIfNull(rpcClient.getFromRpcList()) .forEach(System.out::println); 这样保证了代码编写的连贯性，爽！
 此方法在ListUtis、MapUtils、SetUtils中也有提供
 defaultIfNull()
 此方法允许在集合为null时设置一个默认值，也是可以链式操作

@@ -11,27 +11,97 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Jan 2026 14:27:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 11:19:03 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Read</title>
-      <link>http://blog.imcompany.cn/categories/read/</link>
-      <pubDate>Tue, 27 Jan 2026 11:38:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/read/</guid>
+      <title>Arts</title>
+      <link>http://blog.imcompany.cn/categories/arts/</link>
+      <pubDate>Fri, 30 Jan 2026 11:00:31 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/arts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plugin</title>
+      <link>http://blog.imcompany.cn/categories/plugin/</link>
+      <pubDate>Fri, 30 Jan 2026 10:53:05 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/plugin/</guid>
       <description></description>
     </item>
     <item>
       <title>Weekly</title>
       <link>http://blog.imcompany.cn/categories/weekly/</link>
-      <pubDate>Fri, 23 Jan 2026 19:12:00 +0800</pubDate>
+      <pubDate>Fri, 30 Jan 2026 10:52:58 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/weekly/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tool</title>
+      <link>http://blog.imcompany.cn/categories/tool/</link>
+      <pubDate>Fri, 30 Jan 2026 10:52:50 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/tool/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Year</title>
+      <link>http://blog.imcompany.cn/categories/year/</link>
+      <pubDate>Fri, 30 Jan 2026 10:52:29 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/year/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video</title>
+      <link>http://blog.imcompany.cn/categories/video/</link>
+      <pubDate>Fri, 30 Jan 2026 10:51:17 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/video/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Emacs</title>
+      <link>http://blog.imcompany.cn/categories/emacs/</link>
+      <pubDate>Fri, 30 Jan 2026 10:51:08 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/emacs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Org</title>
+      <link>http://blog.imcompany.cn/categories/org/</link>
+      <pubDate>Fri, 30 Jan 2026 10:51:08 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/org/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anki</title>
+      <link>http://blog.imcompany.cn/categories/anki/</link>
+      <pubDate>Fri, 30 Jan 2026 10:50:19 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/anki/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>http://blog.imcompany.cn/categories/spring/</link>
+      <pubDate>Fri, 30 Jan 2026 10:49:28 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/spring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://blog.imcompany.cn/categories/windows/</link>
+      <pubDate>Fri, 30 Jan 2026 10:47:35 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Movie</title>
       <link>http://blog.imcompany.cn/categories/movie/</link>
-      <pubDate>Fri, 23 Jan 2026 19:05:49 +0800</pubDate>
+      <pubDate>Fri, 30 Jan 2026 10:43:58 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/movie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Read</title>
+      <link>http://blog.imcompany.cn/categories/read/</link>
+      <pubDate>Tue, 27 Jan 2026 11:38:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/read/</guid>
       <description></description>
     </item>
     <item>
@@ -49,24 +119,10 @@
       <description></description>
     </item>
     <item>
-      <title>Tool</title>
-      <link>http://blog.imcompany.cn/categories/tool/</link>
-      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/tool/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Android</title>
       <link>http://blog.imcompany.cn/categories/android/</link>
-      <pubDate>Fri, 01 Aug 2025 19:00:00 +0800</pubDate>
+      <pubDate>Fri, 08 Aug 2025 14:00:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/android/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Spring</title>
-      <link>http://blog.imcompany.cn/categories/spring/</link>
-      <pubDate>Wed, 18 Jun 2025 15:00:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/spring/</guid>
       <description></description>
     </item>
     <item>
@@ -74,13 +130,6 @@
       <link>http://blog.imcompany.cn/categories/tech/</link>
       <pubDate>Fri, 30 May 2025 15:34:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/tech/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://blog.imcompany.cn/categories/windows/</link>
-      <pubDate>Sun, 27 Apr 2025 15:40:22 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -112,45 +161,10 @@
       <description></description>
     </item>
     <item>
-      <title>Anki</title>
-      <link>http://blog.imcompany.cn/categories/anki/</link>
-      <pubDate>Thu, 17 Oct 2024 09:54:06 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/anki/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Emacs</title>
-      <link>http://blog.imcompany.cn/categories/emacs/</link>
-      <pubDate>Thu, 21 Mar 2024 17:48:07 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/emacs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Video</title>
-      <link>http://blog.imcompany.cn/categories/video/</link>
-      <pubDate>Wed, 20 Mar 2024 09:59:04 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/video/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Podcast</title>
       <link>http://blog.imcompany.cn/categories/podcast/</link>
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/podcast/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Year</title>
-      <link>http://blog.imcompany.cn/categories/year/</link>
-      <pubDate>Tue, 26 Dec 2023 10:44:15 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/year/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Plugin</title>
-      <link>http://blog.imcompany.cn/categories/plugin/</link>
-      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/plugin/</guid>
       <description></description>
     </item>
     <item>
@@ -175,24 +189,10 @@
       <description></description>
     </item>
     <item>
-      <title>Arts</title>
-      <link>http://blog.imcompany.cn/categories/arts/</link>
-      <pubDate>Mon, 20 Apr 2020 09:12:41 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/arts/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Charles</title>
       <link>http://blog.imcompany.cn/categories/charles/</link>
       <pubDate>Tue, 11 Feb 2020 16:04:09 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/charles/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Apollo</title>
-      <link>http://blog.imcompany.cn/categories/apollo/</link>
-      <pubDate>Mon, 01 Jul 2019 07:04:09 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/apollo/</guid>
       <description></description>
     </item>
   </channel>

@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Feb 2020 16:59:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 11:01:32 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/mumu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac上使用网易Mumu模拟器踩坑指北</title>
@@ -27,7 +27,7 @@
 &lt;p&gt;以为找到了一个非常好的模拟器，没想到配置Charles抓包时遇到很多问题（我这使用的是Mumu版本是1.9.1）&lt;/p&gt;
 &lt;h3 id=&#34;ssl代理配置问题&#34;&gt;SSL代理配置问题&lt;/h3&gt;
 &lt;p&gt;正常情况下的代码只需要配置ip和端口就可以，但是发现配置保存后，不能进行输入，修改成无代理就又可以了，后来各种找发现还得在配置中不使用代理中要配置10.0.2.2这个ip，好像是模拟器内部要用这个地址。
-&lt;img loading=&#34;lazy&#34; src=&#34;http://blog.imcompany.cn/ox-hugo/mumu-net-config.png&#34;&gt;&lt;/p&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;~/Nustore/blog/images/mumu-net-config.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;ssl证书安装问题&#34;&gt;SSL证书安装问题&lt;/h3&gt;
 &lt;p&gt;配置好代码ip后，要下载Charles的证书并安装，这时要配置模拟器的解锁密码，如果遇到输入正确密码后不能安装的问题，则可以考虑重新配置一下密码，大于6位的吧&lt;/p&gt;
 &lt;h3 id=&#34;多开问题&#34;&gt;多开问题&lt;/h3&gt;

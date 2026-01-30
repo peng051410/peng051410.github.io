@@ -4,7 +4,7 @@
 <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://blog.imcompany.cn/>Home</a>&nbsp;»&nbsp;<a href=http://blog.imcompany.cn/tags/>Tags</a></div><h1>Linux
 <a href=/tags/linux/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>性能的本质IPC之动手验证</h2></header><div class=entry-content><p>前言 最近在实践学习plantegg大佬的程序员案例，对IPC的实验进行一下记录，以备查验
 术语说明 IPC 本文的主角，全名为 Instructions per cycle(clock), 表示每个时钟周期可执行的指令数，常用来做为评判处理器性能的指标
-NOP no operation, 在指令集中表示一个指令不改变所执行程序的 register，status flag，也就是不要进行上下文的切换，CPU的上下文切换是有时间开销的
+NOP no operation, CPU指令，表示不执行任何操作
 实验代码下载 git clone https://github.com/plantegg/programmer_case 实验机器信息 实验只可在物理机下进行
 实验验证 测试nop指令 编译测试代码 gcc ./nop.c -o nop 执行测试 perf stat ./nop 现象
 IPC跑到3.79
@@ -13,7 +13,7 @@ IPC跑到3.79
 IPC只跑到了0.11
 测试nop指令跑两份各自绑定到同一物理核 如何判断HT？通过查看/proc/cpuinfo信息， 如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT
 执行测试 taskset -c 0 perf stat ./nop taskset -c 24 perf stat ./nop 现象
-...</p></div><footer class=entry-footer><span title='2023-05-25 15:42:00 +0800 CST'>May 25, 2023</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>152 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 性能的本质IPC之动手验证" href=http://blog.imcompany.cn/post/system-ipc/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux命令学习之wc</h2></header><div class=entry-content><p>前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现
+...</p></div><footer class=entry-footer><span title='2023-05-25 15:42:00 +0800 CST'>May 25, 2023</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>150 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 性能的本质IPC之动手验证" href=http://blog.imcompany.cn/post/system-ipc/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux命令学习之wc</h2></header><div class=entry-content><p>前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现
 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示字节数 wc -w file 统计文件，只显示单词数 wc -l file 统计文件，只显示文件行数 wc file1 file2 统计多个文件，显示汇总信息 wc &lt; file 统计文件，显示行数、单词数、字节数，不带文件，便于shell脚本后续处理 wc -L file 打印出文件行最长的节数 疑惑 wc -c 与 wc -w 是如何统计的 在统计 hello.txt 时， wc -c 的结果为 55 ， wc -m 的结果为 45 ，为什么统计的结果不一样？这个文本中包含了中文内容，猜测和这个有关
 验证是否与中文有关 这个好办，建一个不带中文的文件，验证如下 可以看到统计的结果是一样的
 中文是如何统计的? 这个就涉及到编码的问题了，先用 hexyl 查看一下，字节的总数为55，但是在进行字符统计时，使用的unicode编码将3个字节计算为1个字符(例如 好 被编码成 E5 A5 BD )，这就对上了，哈哈! 编码是个大话题，后续好好学习一下
@@ -66,7 +66,7 @@ ls 命令帮助归属于man文件第一章节
 ls /tmp 显示/tmp目录下的文件内容
 显示方式 ls -l 默认情况 ls 只显示内容的名称， ls -l 表示以长列表方式显示目录内容 增加了 -l 选项后，显示结果中包含的文件内容更详细(包括权限、所属用户组、大小、修改时间等信息)
 ls -lh ls 中有很多与 -l 选项配合使用的其它选项，如 -h 选项，可以显示文件大小为可读的形式（以M、G为单位） ls -l 中文件大小默认是按byte为单位显示的
-ls -x 按列显示 ls -X 按文件类型字母排序显示 ls -1 一行显示一个 ls -R 递归显示所有内容 格式化显示 ls -Q 显示结果加 引号 ...</p></div><footer class=entry-footer><span title='2022-12-15 20:17:00 +0800 CST'>December 15, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>123 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux-ls命令学习" href=http://blog.imcompany.cn/post/linux-ls/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux-man学习</h2></header><div class=entry-content><p>功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命令(1) man 1 ls man 默认查询第1章节，也可以直接忽略写章节进行查询
+ls -x 按列显示 ls -X 按文件类型字母排序显示 ls -1 一行显示一个 ls -R 递归显示所有内容 格式化显示 ls -Q 显示结果加 引号 ...</p></div><footer class=entry-footer><span title='2022-12-15 20:17:00 +0800 CST'>December 15, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>127 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux-ls命令学习" href=http://blog.imcompany.cn/post/linux-ls/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux-man学习</h2></header><div class=entry-content><p>功能 显示命令行命令的帮助手册 排版 Man页面是按章节(section)进行分配的，在Man中包含9个特定章节 特定章节 可执行程序或者Shell命令(1) man 1 ls man 默认查询第1章节，也可以直接忽略写章节进行查询
 man ls 此命令与上边命令效果相同
 系统调用(2) 系统调用（内核的功能）相关的帮助在第2章节，例如下面查询系统调用 read 的帮助手册
 man 2 read 库调用(3) 库调用相关帮助在第3章节，例如下面查询 ziplib 库中read 的帮助信息
@@ -77,9 +77,7 @@ man 5 passwod 游戏相关(6) 略
 man 7 groff 系统管理员命令(8) 略
 内核相关(9) 略
 章节组织形式 以下只列出比较常用的信息
-名称 总览 配置 描述 命令选项 退出码 返回值 环境变量 例子 作者 延伸阅读(see also) 常用命令 man man -f 显示命令的简介, 同 whatis 命令
-man -k 搜索命令描述，当只记得一些关键词时很有用。同 apropos 命令
-...</p></div><footer class=entry-footer><span title='2022-12-08 11:29:00 +0800 CST'>December 8, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>115 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux-man学习" href=http://blog.imcompany.cn/post/linux-man/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://blog.imcompany.cn/tags/linux/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
+名称 总览 配置 描述 命令选项 退出码 返回值 环境变量 例子 作者 延伸阅读(see also) 常用命令 Ref http://blog.fpliu.com/it/software/man https://man7.org/linux/man-pages/man1/man.1.html https://linux.die.net/man/ man page - Wikipedia</p></div><footer class=entry-footer><span title='2022-12-08 11:29:00 +0800 CST'>December 8, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>80 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux-man学习" href=http://blog.imcompany.cn/post/linux-man/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://blog.imcompany.cn/tags/linux/page/2/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>

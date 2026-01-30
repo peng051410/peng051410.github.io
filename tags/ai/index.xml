@@ -11,40 +11,54 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Jan 2026 11:29:45 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 10:52:50 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>收集的Cursor信息</title>
-      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
-      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
-      <description>&lt;p&gt;整理收集的关于Cursor编辑器的信息&lt;/p&gt;
-&lt;h2 id=&#34;features-cursor-the-ai-code-editor&#34;&gt;&lt;a href=&#34;https://www.cursor.com/features&#34;&gt;Features | Cursor - The AI Code Editor&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;cursor-directory-cursor-rules-and-mcp-servers&#34;&gt;&lt;a href=&#34;https://cursor.directory/&#34;&gt;Cursor Directory - Cursor Rules &amp;amp; MCP Servers&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;eastlondoner-cursor-tools-give-cursor-agent-an-ai-team-and-advanced-skills&#34;&gt;&lt;a href=&#34;https://github.com/eastlondoner/cursor-tools&#34;&gt;eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;学习-cursor-拥抱-ai-编程-cursor-101&#34;&gt;&lt;a href=&#34;https://cursor101.com/zh&#34;&gt;学习 Cursor ，拥抱 AI 编程 | Cursor 101&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;patrickjs-awesome-cursorrules-a-curated-list-of-awesome-dot-cursorrules-files&#34;&gt;&lt;a href=&#34;https://github.com/PatrickJS/awesome-cursorrules&#34;&gt;PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files&lt;/a&gt;&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>收集有用的Prompts</title>
-      <link>http://blog.imcompany.cn/post/prompts/</link>
-      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/prompts/</guid>
-      <description>&lt;h2 id=&#34;can-you-visualize-this&#34;&gt;can you visualize this?&lt;/h2&gt;
-&lt;p&gt;如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化&lt;/p&gt;
-&lt;h2 id=&#34;explain-the-answers-in-narration&#34;&gt;explain the answers in narration&lt;/h2&gt;
-&lt;p&gt;将答案用段落写出来&lt;/p&gt;
-&lt;h2 id=&#34;用逐渐增加复杂度的方式解释-xxx&#34;&gt;用逐渐增加复杂度的方式解释 XXX&lt;/h2&gt;
-&lt;h2 id=&#34;先别写代码-先跟我讨论一下方案&#34;&gt;先别写代码，先跟我讨论一下方案&lt;/h2&gt;
-&lt;p&gt;适合只讨论方案&lt;/p&gt;
-&lt;h2 id=&#34;在输出的时候遵循-业界最佳实践&#34;&gt;在输出的时候遵循“业界最佳实践”&lt;/h2&gt;
-&lt;h2 id=&#34;书面表达&#34;&gt;书面表达&lt;/h2&gt;
-&lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
+      <title>这些年使用过的AI工具们</title>
+      <link>http://blog.imcompany.cn/post/ai-tools/</link>
+      <pubDate>Fri, 30 Jan 2026 10:52:50 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
+      <description>&lt;h2 id=&#34;github-copilot-your-ai-pair-programmer&#34;&gt;&lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot · Your AI pair programmer&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;微软的AI编程助手&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/29aimk.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;automatic1111-stable-diffusion-webui-stable-diffusion-web-ui&#34;&gt;&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Stable Diffusion 本地浏览器UI&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LqwqqB.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;ollama&#34;&gt;&lt;a href=&#34;https://github.com/jmorganca/ollama&#34;&gt;Ollama&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本地运行大模型的Mac APP，搭配 &lt;a href=&#34;https://github.com/s-kostyaev/ellama&#34;&gt;ellama-emacs&lt;/a&gt; 食用更佳&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uuo6eb.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;mozilla-ocho-llamafile-distribute-and-run-llms-with-a-single-file-dot&#34;&gt;&lt;a href=&#34;https://github.com/Mozilla-Ocho/llamafile&#34;&gt;Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mozilla发布的单个可执行运行大模型的文件，下载直接授权执行即可&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Atlgbo.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://simonwillison.net/2023/Nov/29/llamafile/&#34;&gt;https://simonwillison.net/2023/Nov/29/llamafile/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;warp-your-terminal-reimagined&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;Warp: Your terminal, reimagined&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-08 Fri 11:36]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;带AI功能命令行客户端&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vWCuIf.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;nashsu-freeaskinternet-freeaskinternet-is-a-completely-free-private-and-locally-running-search-aggregator-and-answer-generate-using-llm-without-gpu-needed-dot&#34;&gt;&lt;a href=&#34;https://github.com/nashsu/FreeAskInternet&#34;&gt;nashsu/FreeAskInternet: FreeAskInternet is a completely free, private and locally running search aggregator &amp;amp; answer generate using LLM, without GPU needed.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本地运行LLM进行搜索&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用AI生成 git commit message</title>
       <link>http://blog.imcompany.cn/post/ai-git-commits/</link>
-      <pubDate>Fri, 02 Aug 2024 11:34:59 +0800</pubDate>
+      <pubDate>Fri, 30 Jan 2026 10:50:39 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/ai-git-commits/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;Github上支持对PR生成AI摘要信息，&lt;a href=&#34;https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/creating-a-pull-request-summary-with-github-copilot&#34;&gt;具体说明&lt;/a&gt;&lt;/p&gt;
@@ -168,45 +182,32 @@
 &lt;p&gt;增强版本的emoji风格&lt;/p&gt;</description>
     </item>
     <item>
-      <title>这些年使用过的AI工具们</title>
-      <link>http://blog.imcompany.cn/post/ai-tools/</link>
-      <pubDate>Fri, 08 Dec 2023 11:40:07 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
-      <description>&lt;h2 id=&#34;github-copilot-your-ai-pair-programmer&#34;&gt;&lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot · Your AI pair programmer&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;微软的AI编程助手&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/29aimk.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;automatic1111-stable-diffusion-webui-stable-diffusion-web-ui&#34;&gt;&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Stable Diffusion 本地浏览器UI&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LqwqqB.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;ollama&#34;&gt;&lt;a href=&#34;https://github.com/jmorganca/ollama&#34;&gt;Ollama&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;本地运行大模型的Mac APP，搭配 &lt;a href=&#34;https://github.com/s-kostyaev/ellama&#34;&gt;ellama-emacs&lt;/a&gt; 食用更佳&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uuo6eb.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;mozilla-ocho-llamafile-distribute-and-run-llms-with-a-single-file-dot&#34;&gt;&lt;a href=&#34;https://github.com/Mozilla-Ocho/llamafile&#34;&gt;Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Mozilla发布的单个可执行运行大模型的文件，下载直接授权执行即可&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Atlgbo.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://simonwillison.net/2023/Nov/29/llamafile/&#34;&gt;https://simonwillison.net/2023/Nov/29/llamafile/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;warp-your-terminal-reimagined&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;Warp: Your terminal, reimagined&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-08 Fri 11:36]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;带AI功能命令行客户端&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vWCuIf.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;more-dot-dot-dot&#34;&gt;More&amp;hellip;&lt;/h2&gt;</description>
+      <title>收集的Cursor信息</title>
+      <link>http://blog.imcompany.cn/post/ai-cursor/</link>
+      <pubDate>Tue, 25 Feb 2025 18:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-cursor/</guid>
+      <description>&lt;p&gt;整理收集的关于Cursor编辑器的信息&lt;/p&gt;
+&lt;h2 id=&#34;features-cursor-the-ai-code-editor&#34;&gt;&lt;a href=&#34;https://www.cursor.com/features&#34;&gt;Features | Cursor - The AI Code Editor&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;cursor-directory-cursor-rules-and-mcp-servers&#34;&gt;&lt;a href=&#34;https://cursor.directory/&#34;&gt;Cursor Directory - Cursor Rules &amp;amp; MCP Servers&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;eastlondoner-cursor-tools-give-cursor-agent-an-ai-team-and-advanced-skills&#34;&gt;&lt;a href=&#34;https://github.com/eastlondoner/cursor-tools&#34;&gt;eastlondoner/cursor-tools: Give Cursor Agent an AI Team and Advanced Skills&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;学习-cursor-拥抱-ai-编程-cursor-101&#34;&gt;&lt;a href=&#34;https://cursor101.com/zh&#34;&gt;学习 Cursor ，拥抱 AI 编程 | Cursor 101&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;patrickjs-awesome-cursorrules-a-curated-list-of-awesome-dot-cursorrules-files&#34;&gt;&lt;a href=&#34;https://github.com/PatrickJS/awesome-cursorrules&#34;&gt;PatrickJS/awesome-cursorrules: 📄 A curated list of awesome .cursorrules files&lt;/a&gt;&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>收集有用的Prompts</title>
+      <link>http://blog.imcompany.cn/post/prompts/</link>
+      <pubDate>Fri, 01 Nov 2024 11:29:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/prompts/</guid>
+      <description>&lt;h2 id=&#34;can-you-visualize-this&#34;&gt;can you visualize this?&lt;/h2&gt;
+&lt;p&gt;如果对一个概念不是很拿的准。想让它画图，又不知道能画什么图，直接给他个最模糊的指令，visualize视觉化&lt;/p&gt;
+&lt;h2 id=&#34;explain-the-answers-in-narration&#34;&gt;explain the answers in narration&lt;/h2&gt;
+&lt;p&gt;将答案用段落写出来&lt;/p&gt;
+&lt;h2 id=&#34;用逐渐增加复杂度的方式解释-xxx&#34;&gt;用逐渐增加复杂度的方式解释 XXX&lt;/h2&gt;
+&lt;h2 id=&#34;先别写代码-先跟我讨论一下方案&#34;&gt;先别写代码，先跟我讨论一下方案&lt;/h2&gt;
+&lt;p&gt;适合只讨论方案&lt;/p&gt;
+&lt;h2 id=&#34;在输出的时候遵循-业界最佳实践&#34;&gt;在输出的时候遵循“业界最佳实践”&lt;/h2&gt;
+&lt;h2 id=&#34;书面表达&#34;&gt;书面表达&lt;/h2&gt;
+&lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

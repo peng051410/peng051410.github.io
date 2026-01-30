@@ -11,62 +11,54 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Jan 2026 20:04:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 11:05:33 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;
-&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
-&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
-&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
-&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
-&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
-&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>收集的命令行工具</title>
-      <link>http://blog.imcompany.cn/post/cmd-tools/</link>
-      <pubDate>Wed, 31 Dec 2025 17:16:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/cmd-tools/</guid>
-      <description>&lt;h2 id=&#34;atuin-shell-history-and-executable-runbooks&#34;&gt;&lt;a href=&#34;https://atuin.sh/&#34;&gt;Atuin - Shell History &amp;amp; Executable Runbooks&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个命令行工具, 可以在你的所有机器上同步/搜索/备份shell命令历史&lt;/p&gt;
-&lt;h2 id=&#34;watchman-a-file-watching-service-watchman&#34;&gt;&lt;a href=&#34;https://facebook.github.io/watchman/&#34;&gt;Watchman - A file watching service | Watchman&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;监控文件变化并及时通知&lt;/p&gt;
-&lt;h2 id=&#34;bensadeh-tailspin-a-log-file-highlighter&#34;&gt;&lt;a href=&#34;https://github.com/bensadeh/tailspin/&#34;&gt;bensadeh/tailspin: 🌀 A log file highlighter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;日志文件高亮&lt;/p&gt;
-&lt;h2 id=&#34;yihong0618-epubhv-make-your-epub-books-vertical-or-horizontal-dot&#34;&gt;&lt;a href=&#34;https://github.com/yihong0618/epubhv&#34;&gt;yihong0618/epubhv: Make your epub books vertical or horizontal.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;任意转换 epub 书的横竖排。(可批量）&lt;/p&gt;
-&lt;h2 id=&#34;os-health-ssar-site-reliability-engineering-system-activity-reporter&#34;&gt;&lt;a href=&#34;https://github.com/os-health/ssar&#34;&gt;os-health/ssar: Site Reliability Engineering System Activity Reporter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;磁盘 io 监控，作者开发的其它工具也很好用&lt;/p&gt;
-&lt;h2 id=&#34;curl-by-example-interactive-guide&#34;&gt;&lt;a href=&#34;https://antonz.org/curl-by-example/&#34;&gt;Curl by example: Interactive guide&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;curl命令指南，还有互动的示例&lt;/p&gt;</description>
+      <title>这些年使用过的AI工具们</title>
+      <link>http://blog.imcompany.cn/post/ai-tools/</link>
+      <pubDate>Fri, 30 Jan 2026 10:52:50 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
+      <description>&lt;h2 id=&#34;github-copilot-your-ai-pair-programmer&#34;&gt;&lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot · Your AI pair programmer&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;微软的AI编程助手&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/29aimk.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;automatic1111-stable-diffusion-webui-stable-diffusion-web-ui&#34;&gt;&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Stable Diffusion 本地浏览器UI&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LqwqqB.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;ollama&#34;&gt;&lt;a href=&#34;https://github.com/jmorganca/ollama&#34;&gt;Ollama&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本地运行大模型的Mac APP，搭配 &lt;a href=&#34;https://github.com/s-kostyaev/ellama&#34;&gt;ellama-emacs&lt;/a&gt; 食用更佳&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uuo6eb.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;mozilla-ocho-llamafile-distribute-and-run-llms-with-a-single-file-dot&#34;&gt;&lt;a href=&#34;https://github.com/Mozilla-Ocho/llamafile&#34;&gt;Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Mozilla发布的单个可执行运行大模型的文件，下载直接授权执行即可&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Atlgbo.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://simonwillison.net/2023/Nov/29/llamafile/&#34;&gt;https://simonwillison.net/2023/Nov/29/llamafile/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;warp-your-terminal-reimagined&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;Warp: Your terminal, reimagined&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-08 Fri 11:36]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;带AI功能命令行客户端&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vWCuIf.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;nashsu-freeaskinternet-freeaskinternet-is-a-completely-free-private-and-locally-running-search-aggregator-and-answer-generate-using-llm-without-gpu-needed-dot&#34;&gt;&lt;a href=&#34;https://github.com/nashsu/FreeAskInternet&#34;&gt;nashsu/FreeAskInternet: FreeAskInternet is a completely free, private and locally running search aggregator &amp;amp; answer generate using LLM, without GPU needed.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;本地运行LLM进行搜索&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用AI生成 git commit message</title>
       <link>http://blog.imcompany.cn/post/ai-git-commits/</link>
-      <pubDate>Fri, 02 Aug 2024 11:34:59 +0800</pubDate>
+      <pubDate>Fri, 30 Jan 2026 10:50:39 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/ai-git-commits/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;Github上支持对PR生成AI摘要信息，&lt;a href=&#34;https://docs.github.com/en/enterprise-cloud@latest/copilot/using-github-copilot/creating-a-pull-request-summary-with-github-copilot&#34;&gt;具体说明&lt;/a&gt;&lt;/p&gt;
@@ -190,45 +182,36 @@
 &lt;p&gt;增强版本的emoji风格&lt;/p&gt;</description>
     </item>
     <item>
-      <title>这些年使用过的AI工具们</title>
-      <link>http://blog.imcompany.cn/post/ai-tools/</link>
-      <pubDate>Fri, 08 Dec 2023 11:40:07 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/ai-tools/</guid>
-      <description>&lt;h2 id=&#34;github-copilot-your-ai-pair-programmer&#34;&gt;&lt;a href=&#34;https://github.com/features/copilot&#34;&gt;GitHub Copilot · Your AI pair programmer&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;微软的AI编程助手&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/29aimk.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;automatic1111-stable-diffusion-webui-stable-diffusion-web-ui&#34;&gt;&lt;a href=&#34;https://github.com/AUTOMATIC1111/stable-diffusion-webui&#34;&gt;AUTOMATIC1111/stable-diffusion-webui: Stable Diffusion web UI&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Stable Diffusion 本地浏览器UI&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/LqwqqB.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;ollama&#34;&gt;&lt;a href=&#34;https://github.com/jmorganca/ollama&#34;&gt;Ollama&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;本地运行大模型的Mac APP，搭配 &lt;a href=&#34;https://github.com/s-kostyaev/ellama&#34;&gt;ellama-emacs&lt;/a&gt; 食用更佳&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/uuo6eb.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;mozilla-ocho-llamafile-distribute-and-run-llms-with-a-single-file-dot&#34;&gt;&lt;a href=&#34;https://github.com/Mozilla-Ocho/llamafile&#34;&gt;Mozilla-Ocho/llamafile: Distribute and run LLMs with a single file.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Mozilla发布的单个可执行运行大模型的文件，下载直接授权执行即可&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Atlgbo.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://simonwillison.net/2023/Nov/29/llamafile/&#34;&gt;https://simonwillison.net/2023/Nov/29/llamafile/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;warp-your-terminal-reimagined&#34;&gt;&lt;a href=&#34;https://www.warp.dev/&#34;&gt;Warp: Your terminal, reimagined&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-08 Fri 11:36]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;带AI功能命令行客户端&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vWCuIf.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;more-dot-dot-dot&#34;&gt;More&amp;hellip;&lt;/h2&gt;</description>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Fri, 30 Jan 2026 10:45:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;
+&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
+&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
+&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
+&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
+&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些提高效率MAC软件(全程免费)</title>
@@ -341,59 +324,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接以异常的方式显示出来了。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Maven发布401问题排查</title>
-      <link>http://blog.imcompany.cn/post/maven-deploy-issue/</link>
-      <pubDate>Tue, 31 Dec 2019 11:15:55 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/maven-deploy-issue/</guid>
-      <description>&lt;h2 id=&#34;日志问题现象&#34;&gt;日志问题现象&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Caused by: org.apache.maven.shared.transfer.artifact.deploy.ArtifactDeployerException: Failed to deploy artifacts: Could not transfer artifact com.aa.bb:client:jar:1.0.0-20191231.021137-1 from/to company::default (http://test.company.local/nexus/repository/maven-snapshots): Transfer failed for http://test.company.local/nexus/repository/maven-snapshots/com/aa/bb/client/1.0.0-SNAPSHOT/client-1.0.0-20191231.021137-1.jar 401 Unauthorized
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;根据提示，401未授权，表面来看就是发布的权限未认证&lt;/p&gt;
-&lt;h2 id=&#34;排查步骤&#34;&gt;排查步骤&lt;/h2&gt;
-&lt;h3 id=&#34;settings文件是否配置了发布的用户名与密码-且用户有deploy的权限&#34;&gt;settings文件是否配置了发布的用户名与密码，且用户有deploy的权限&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-nxml&#34; data-lang=&#34;nxml&#34;&gt;&amp;lt;servers&amp;gt;
-  &amp;lt;server&amp;gt;
-    &amp;lt;id&amp;gt;myid&amp;lt;/id&amp;gt;
-    &amp;lt;username&amp;gt;myuser&amp;lt;/username&amp;gt;
-    &amp;lt;password&amp;gt;mypasswd&amp;lt;/password&amp;gt;
-  &amp;lt;/server&amp;gt;
-&amp;lt;/servers&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;查看deploy插件的版本&#34;&gt;查看deploy插件的版本&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;如果是2.X的版本,可以使用以下命令进行发布&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -DaltDeploymentRepository&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;company::default::http://test.compnay.local/nexus/repository/maven-snapshots clean package deploy
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
-&lt;li&gt;如果是3.X的版本，则需要按3.X版本进行指定发布&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn deploy:deploy-file -Dfile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;xxx-1.0.0-SNAPSHOT.jar -Durl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://test.local/nexus/content/repositories/snapshots -DrepositoryId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;test-snapshot
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;deploy-3-dot-0-dot-0-m1的发布bug&#34;&gt;Deploy 3.0.0-M1的发布bug&lt;/h3&gt;
-&lt;p&gt;如果配置的deploy的插件为3.0.0-M1，则可参考&lt;a href=&#34;https://support.sonatype.com/hc/en-us/articles/360010223594-maven-deploy-plugin-version-3-0-0-M1-deploy-fails-with-401-ReasonPhrase-Unauthorized&#34;&gt;3.0.0-M1 401 bug&lt;/a&gt; 进行修改，具体就是指定depoly版本为2.8，根据&lt;a href=&#34;https://issues.apache.org/jira/browse/MDEPLOY-244?focusedCommentId=16648217&amp;amp;page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-16648217&#34;&gt;插件作者的回复&lt;/a&gt;感觉就是3.0.0-M1与altDeploymentRepository参数不能一起用&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>那些有用maven命令</title>
-      <link>http://blog.imcompany.cn/post/maven-swim/</link>
-      <pubDate>Tue, 31 Dec 2019 10:45:55 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/maven-swim/</guid>
-      <description>&lt;h2 id=&#34;查看当前系统的配置信息&#34;&gt;查看当前系统的配置信息&lt;/h2&gt;
-&lt;p&gt;排查问题可以查看当前maven所依赖系统的所有变量(系统变量或者环境变量)信息&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:system
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看当前有效的settings文件&#34;&gt;查看当前有效的settings文件&lt;/h2&gt;
-&lt;p&gt;maven的配置文件分为全局配置与个人配置，全局配置在$M2_HOME/conf/下，个人配置一般在~/.m2/下，此时查看当前有效的settings配置可以使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn help:effective-settings
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看settings配置的值&#34;&gt;查看Settings配置的值&lt;/h2&gt;
-&lt;p&gt;以下命令可以查看settings文件中的settings-&amp;gt;servers的配置&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;settings.servers -DforceStdout help:evaluate
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用&lt;a href=&#34;https://maven.apache.org/plugins/maven-help-plugin/evaluate-mojo.html&#34;&gt;help:evaluate&lt;/a&gt;可以查看所有的配置信息&lt;/p&gt;
-&lt;h2 id=&#34;指定发布到其它仓库&#34;&gt;指定发布到其它仓库&lt;/h2&gt;
-&lt;h3 id=&#34;deploy插件2-dot-x版本发布&#34;&gt;Deploy插件2.X版本发布&lt;/h3&gt;
-&lt;p&gt;有时候在pom文件中指定了发布的仓库地址，但是又需要发布到另一个仓库，这时可以指定-DaltDeploymentRepository来实现&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mvn -DaltDeploymentRepository&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;id::layout::url
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;具体说明参见&lt;a href=&#34;https://maven.apache.org/plugins/maven-deploy-plugin/deploy-mojo.html&#34;&gt;deploy:deploy&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy插件3-dot-0-dot-0-m1版本发布&#34;&gt;Deploy插件3.0.0-M1版本发布&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/data/mvn/bin/mvn org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1:deploy-file -DgroupId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;com.qqreader -Dfile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;./target/&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;/data/mvn/bin/mvn -q -Dexpression&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;project.build.finalName -DforceStdout help:evaluate&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.jar -Durl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://testurl.local/nexus/content/repositories/snapshots -DrepositoryId&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;snapshot-id
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
       <title>那些高效的Chrome插件</title>
       <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
@@ -418,6 +348,7 @@
 &lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;podstation-podcast-player-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/podstation-podcast-player/bpcagekijmfcocgjlnnhpdogbplajjfn&#34;&gt;podStation Podcast Player - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
+&lt;h2 id=&#34;rsshub-radar-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa&#34;&gt;RSSHub Radar - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;about-glasp&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://glasp.co/about&#34;&gt;About | Glasp&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;openstyles-stylus-stylus-userstyles-manager&#34;&gt;&lt;a href=&#34;https://github.com/openstyles/stylus/&#34;&gt;openstyles/stylus: Stylus - Userstyles Manager&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;配置Chrome的样式，可针对指定域名进行设置，目前主要用来设置字体&lt;/p&gt;</description>
@@ -547,381 +478,53 @@
       <link>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</link>
       <pubDate>Wed, 05 Sep 2018 08:12:23 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/na-xie-ti-gao-xiao-lu-de-ideacha-jian/</guid>
-      <description>&lt;h2 id=&#34;dot-ignore&#34;&gt;.ignore&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。&lt;/p&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hsz/idea-gitignore&#34;&gt;https://github.com/hsz/idea-gitignore&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ideavim&#34;&gt;IdeaVim&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;ideavim&#34;&gt;IdeaVim&lt;/h2&gt;
 &lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
 &lt;p&gt;在Idea中使用vi键位来进行编码操作,可以很高的提高效率,插件支持自定义键位来对Idea的action来进行定制,程序员可以根据自己的编程习惯来定制出一个键盘流来.&lt;/p&gt;
 &lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/JetBrains/ideavim&#34;&gt;https://github.com/JetBrains/ideavim&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;custom-postfix-templates&#34;&gt;Custom Postfix Templates&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xylo/intellij-postfix-templates&#34;&gt;https://github.com/xylo/intellij-postfix-templates&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;camelcase&#34;&gt;CamelCase&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7160-camelcase&#34;&gt;https://plugins.jetbrains.com/plugin/7160-camelcase&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;clock&#34;&gt;Clock&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。&lt;/p&gt;
+&lt;h3 id=&#34;插件地址&#34;&gt;插件地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/xamgore/intellij-clock&#34;&gt;https://github.com/xamgore/intellij-clock&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lombok&#34;&gt;Lombok&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://projectlombok.org/&#34;&gt;Lombox&lt;/a&gt;的Idea插件,使用注释的方式来快速处理getter和setter,当然功能不止这些.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mplushnikov/lombok-intellij-plugin&#34;&gt;https://github.com/mplushnikov/lombok-intellij-plugin&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;string-mainpulatin&#34;&gt;String Mainpulatin&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;String字符操作插件,支持CamelCase插件的功能,另外还支持Encode,Decode,对齐,trim等操作,功能很强大.&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/krasa/StringManipulation&#34;&gt;https://github.com/krasa/StringManipulation&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;frame-switcher&#34;&gt;Frame Switcher&lt;/h2&gt;
+&lt;p&gt;打开了多个project，找不到哪个项目，来回切换太麻烦，来用Frame Switcher吧。&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&#34;&gt;https://plugins.jetbrains.com/plugin/7138-frame-switcher/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;blarc-ai-commits-intellij-plugin-ai-commits-for-intellij-based-ides-android-studio-dot&#34;&gt;&lt;a href=&#34;https://github.com/Blarc/ai-commits-intellij-plugin&#34;&gt;Blarc/ai-commits-intellij-plugin: AI Commits for IntelliJ based IDEs/Android Studio.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;AI写commit message&lt;/p&gt;
+&lt;h2 id=&#34;krasa-mavenhelper-intellij-plugin-https-plugins-dot-jetbrains-dot-com-plugin-7179&#34;&gt;&lt;a href=&#34;https://github.com/krasa/MavenHelper&#34;&gt;krasa/MavenHelper: IntelliJ plugin - https://plugins.jetbrains.com/plugin/7179&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;dot-ignore&#34;&gt;.ignore&lt;/h2&gt;
+&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
+&lt;p&gt;ignore文件忽略，支持绝大多数的开发语言，支持直接导航到忽略的文件，在创建时可以选择模板，比如Java开发可以选择Java与Idea选项来生成忽略target文件与.idea文件等的忽略规则。&lt;/p&gt;
+&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hsz/idea-gitignore&#34;&gt;https://github.com/hsz/idea-gitignore&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ideavimextension-plugin-for-jetbrains-ides-jetbrains-marketplace&#34;&gt;&lt;a href=&#34;https://plugins.jetbrains.com/plugin/9615-ideavimextension&#34;&gt;IdeaVimExtension Plugin for JetBrains IDEs | JetBrains Marketplace&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;IdeaVim的扩展功能&lt;/p&gt;
 &lt;h2 id=&#34;5a9516&#34;&gt;&lt;del&gt;emacsIDEAs&lt;/del&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
 &lt;p&gt;支持一些Emacs操作的Idea插件,主要是一些复制,移动,替换,跳转的快捷操作,目前使用最多的是快速查找替换.&lt;/p&gt;
 &lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/whunmr/emacsIDEAs&#34;&gt;https://github.com/whunmr/emacsIDEAs&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;acejump-acejump-️-single-character-search-select-and-jump&#34;&gt;&lt;a href=&#34;https://github.com/acejump/AceJump#acejump&#34;&gt;acejump/AceJump: 🅰️ single character search, select, and jump&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Idea中快速跳转&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;支持行模式&lt;/li&gt;
-&lt;li&gt;支持IdeaVim集成&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;custom-postfix-templates&#34;&gt;Custom Postfix Templates&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;Idea中非常高效的就是postfix，但是系统自带不可以进行增加，这个插件就可以让用户可以自定义一些高级的postfix语句来提高效率。&lt;/p&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/xylo/intellij-postfix-templates&#34;&gt;https://github.com/xylo/intellij-postfix-templates&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;jrebel&#34;&gt;Jrebel&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;动态部署代码插件,可以在不重启Tomcat的情况下进行代码的热部署，提高开发效率没得说。先前可以使用twitter号来免费使用，现在不行，需要自行购买了。&lt;/p&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://zeroturnaround.com/software/jrebel/&#34;&gt;https://zeroturnaround.com/software/jrebel/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;hotswaphelper&#34;&gt;&lt;a href=&#34;https://github.com/gejun123456/HotSwapHelper&#34;&gt;HotSwapHelper&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;开源免费的热部署插件&lt;/p&gt;
-&lt;h2 id=&#34;camelcase&#34;&gt;CamelCase&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;文本驼峰规则快速转换，支持从CamelCase-&amp;gt;camelCaase-&amp;gt;camel_case-&amp;gt;camel-case-&amp;gt;CAMEL_CASE的顺序转换，idea中只支持全部大写与全部小写的转换.&lt;/p&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://plugins.jetbrains.com/plugin/7160-camelcase&#34;&gt;https://plugins.jetbrains.com/plugin/7160-camelcase&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;codehelper&#34;&gt;Codehelper&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;代码自动生成插件，支持根据Pojo名来生成dao,mapper,xml等文件，目前使用较少&lt;/li&gt;
-&lt;li&gt;生成实体类的setter方法，使用频率高，主要是生成类的setter方法，配合F2查找下一个错误而使焦点至上而下，操作起来非常顺畅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/zhengjunbase/codehelper.generator&#34;&gt;https://github.com/zhengjunbase/codehelper.generator&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;translation&#34;&gt;Translation&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;Idea中集成翻译功能,目前支持有道和goolge,百度翻译.&lt;/p&gt;
-&lt;h3 id=&#34;项目地址&#34;&gt;项目地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/izhangzhihao/intellij-rainbow-brackets&#34;&gt;https://github.com/izhangzhihao/intellij-rainbow-brackets&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;clock&#34;&gt;Clock&lt;/h2&gt;
-&lt;h3 id=&#34;插件说明&#34;&gt;插件说明&lt;/h3&gt;
-&lt;p&gt;当你全屏投入工作时，想知道当前的时间，需要切换出全屏模式，这样就打乱了节奏，这个插件可以在Idea的右下方显示出当前的时间信息，非常实用。&lt;/p&gt;
-&lt;h3 id=&#34;插件地址&#34;&gt;插件地址&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/xamgore/intellij-clock&#34;&gt;https://github.com/xamgore/intellij-clock&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Idea中vim键的映射</title>
-      <link>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</link>
-      <pubDate>Mon, 14 May 2018 14:48:33 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/chang-yong-de-ideacha-jian/</guid>
-      <description>&lt;p&gt;Idea中IdeaVim插件可以让我们在Idea中使用vi的按键来进行操作，但是原生的配置只带有一些基本的移动操作。需要在~/.ideavimrc文件中进行Idea的动作映射来发挥它们的最大力量。&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Key&lt;/th&gt;
-          &lt;th&gt;Description&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;kj&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gt&lt;/td&gt;
-          &lt;td&gt;VimBack&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gT&lt;/td&gt;
-          &lt;td&gt;VimForward&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gd&lt;/td&gt;
-          &lt;td&gt;GotoDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gf&lt;/td&gt;
-          &lt;td&gt;GotoTypeDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gh&lt;/td&gt;
-          &lt;td&gt;QuickJavaDoc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gs&lt;/td&gt;
-          &lt;td&gt;GotoSymbol&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gi&lt;/td&gt;
-          &lt;td&gt;GotoImplementation&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gu&lt;/td&gt;
-          &lt;td&gt;FindUsages&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gj&lt;/td&gt;
-          &lt;td&gt;IntroduceVariable&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w d&lt;/td&gt;
-          &lt;td&gt;ActivateDatabaseToolWindow&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader &#39;&lt;/td&gt;
-          &lt;td&gt;ActivateTerminalToolWindow&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w r&lt;/td&gt;
-          &lt;td&gt;ActivateRedisServersToolWindow&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w m&lt;/td&gt;
-          &lt;td&gt;ActivateMavenProjectsToolWindow&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w a&lt;/td&gt;
-          &lt;td&gt;HideActiveWindow&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w w&lt;/td&gt;
-          &lt;td&gt;HideAllWindows&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w p&lt;/td&gt;
-          &lt;td&gt;ActivateProjectToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w s&lt;/td&gt;
-          &lt;td&gt;ActivateStructureToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w v&lt;/td&gt;
-          &lt;td&gt;ActivateVersionControlToolWindow&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w h&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;h  Go to left window&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w l&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;l  Go to right window&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w k&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;k  Go to window up&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w j&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;j  Go to window down&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w V&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;v  Split Window Vertically&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w -&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;s  Split Winodw Horizontally&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w c&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;c  Close current window&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader w o&lt;/td&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;o  Close all window except current&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader &lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-          &lt;td&gt;GotoAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader c c&lt;/td&gt;
-          &lt;td&gt;GotoClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader c r&lt;/td&gt;
-          &lt;td&gt;CopyReference&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader c p&lt;/td&gt;
-          &lt;td&gt;CopyPaths&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader f f&lt;/td&gt;
-          &lt;td&gt;GotoFile&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader f d&lt;/td&gt;
-          &lt;td&gt;DashLauncherAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader b b&lt;/td&gt;
-          &lt;td&gt;RecentFiles&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader b p&lt;/td&gt;
-          &lt;td&gt;FileStructurePopup&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader b u&lt;/td&gt;
-          &lt;td&gt;ReopenClosedTab&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader d d&lt;/td&gt;
-          &lt;td&gt;Debug&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader d D&lt;/td&gt;
-          &lt;td&gt;DebugClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader d j&lt;/td&gt;
-          &lt;td&gt;JRebel&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader l l&lt;/td&gt;
-          &lt;td&gt;EvaluateExpression&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader t t&lt;/td&gt;
-          &lt;td&gt;ToggleLineBreakpoint&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader r r&lt;/td&gt;
-          &lt;td&gt;Run&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader r R&lt;/td&gt;
-          &lt;td&gt;RunClass&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader i m&lt;/td&gt;
-          &lt;td&gt;ImplementMethods&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader e e&lt;/td&gt;
-          &lt;td&gt;ShowErrorDescription&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader e n&lt;/td&gt;
-          &lt;td&gt;GotoNextError&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader R&lt;/td&gt;
-          &lt;td&gt;:source ~/.ideavimrc&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader g s&lt;/td&gt;
-          &lt;td&gt;Vcs.QuickListPopupAction&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader r p&lt;/td&gt;
-          &lt;td&gt;ReplaceInPath&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;zO&lt;/td&gt;
-          &lt;td&gt;ExpandAllRegions&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;zo&lt;/td&gt;
-          &lt;td&gt;ExpandRegion&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;zc&lt;/td&gt;
-          &lt;td&gt;CollapseRegion&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;zC&lt;/td&gt;
-          &lt;td&gt;CollapseAllRegions&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;fj&lt;/td&gt;
-          &lt;td&gt;emacsIDEAs.AceJump&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;fw&lt;/td&gt;
-          &lt;td&gt;emacsIDEAs.AceJumpWord&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;ff&lt;/td&gt;
-          &lt;td&gt;CommentByLineComment&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;fb&lt;/td&gt;
-          &lt;td&gt;CommentByBlockComment&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gd&lt;/td&gt;
-          &lt;td&gt;GotoDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gf&lt;/td&gt;
-          &lt;td&gt;GotoTypeDeclaration&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gh&lt;/td&gt;
-          &lt;td&gt;QuickJavaDoc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gs&lt;/td&gt;
-          &lt;td&gt;GotoSymbol&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gi&lt;/td&gt;
-          &lt;td&gt;GotoImplementation&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gu&lt;/td&gt;
-          &lt;td&gt;FindUsages&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;gj&lt;/td&gt;
-          &lt;td&gt;IntroduceVariable&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;,,&lt;/td&gt;
-          &lt;td&gt;ReformatCode&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;,r&lt;/td&gt;
-          &lt;td&gt;RenameElement&lt;!-- raw HTML omitted --&gt;i&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-          &lt;td&gt;Back&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-          &lt;td&gt;Forward&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader R&lt;/td&gt;
-          &lt;td&gt;reload ~/.ideavimrc&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader a l&lt;/td&gt;
-          &lt;td&gt;:actionlist&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader g s&lt;/td&gt;
-          &lt;td&gt;Vcs.QuickListPopupAction&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader s p&lt;/td&gt;
-          &lt;td&gt;FindInPath&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;leader r p&lt;/td&gt;
-          &lt;td&gt;ReplaceInPath&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;, c r&lt;/td&gt;
-          &lt;td&gt;Revert change&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;, c t&lt;/td&gt;
-          &lt;td&gt;Close other tab&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/whunmr/emacsIDEAs&#34;&gt;https://github.com/whunmr/emacsIDEAs&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

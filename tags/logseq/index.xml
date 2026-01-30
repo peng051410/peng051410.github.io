@@ -11,17 +11,50 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Nov 2023 19:07:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 10:53:05 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/logseq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Logseq常用插件</title>
       <link>http://blog.imcompany.cn/post/logseq-plugin/</link>
-      <pubDate>Fri, 24 Nov 2023 19:07:41 +0800</pubDate>
+      <pubDate>Fri, 30 Jan 2026 10:53:05 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/logseq-plugin/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;以此文章记录我常用的Logseq plugin，常用常更新&lt;/p&gt;
 &lt;h2 id=&#34;readwise-official-plugin&#34;&gt;Readwise Official Plugin&lt;/h2&gt;
-&lt;h2 id=&#34;logseq-anki-sync&#34;&gt;Logseq Anki Sync&lt;/h2&gt;</description>
+&lt;h2 id=&#34;logseq-anki-sync&#34;&gt;Logseq Anki Sync&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://pkmer.cn/Pkmer-Docs/11-zotero/zotero%E6%8F%92%E4%BB%B6/%E9%98%85%E8%AF%BB%E6%B5%81%E7%A8%8B%E4%BD%BF%E7%94%A8zotero%E6%9D%A5%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/&#34;&gt;PKMer_阅读流程使用
+zotero 来阅读一本书&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gidongkwon/logseq-plugin-tags&#34;&gt;gidongkwon/logseq-plugin-tags:
+A logseq plugin that lets you find #tags&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/b-yp/logseq-preview-footnote&#34;&gt;b-yp/logseq-preview-footnote:
+Float preview logseq footnote&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gremi-jr/logseq-footnote-plugin&#34;&gt;gremi-jr/logseq-footnote-plugin:
+A easy and simple plugin to create footnotes in logseq.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/e-zz/logseq-pdf-extract&#34;&gt;e-zz/logseq-pdf-extract:
+Import Zotero into Logseq, extract text or area Highlights into
+block.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/duydl/logseq-calibre-plugin&#34;&gt;duydl/logseq-calibre-plugin:
+Allow you to access calibre libraries, read books, and sync
+annotations directly in Logseq.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/pengx17/logseq-plugin-link-preview&#34;&gt;pengx17/logseq-plugin-link-preview:
+Preview links in logseq&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

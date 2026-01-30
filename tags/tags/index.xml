@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Sep 2023 20:16:05 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 10:58:27 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MAC本地编译go源码记录</title>
@@ -21,14 +21,14 @@
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
 &lt;p&gt;近期在学习GO语言，想深入研读一下GO的源码，第一步就要是可以在本地正常的编译源代码，此文对MAC上go源的安装进行记录&lt;/p&gt;
 &lt;h2 id=&#34;下载go源码&#34;&gt;下载go源码&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/golang/go
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/golang/go
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;选择go版本分支&#34;&gt;选择go版本分支&lt;/h2&gt;
 &lt;p&gt;本次使用go 1.8版本分支来进行编译，切换分支&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout release-branch.go1.8
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;本地编译&#34;&gt;本地编译&lt;/h2&gt;
 &lt;h3 id=&#34;查看本地的go版本&#34;&gt;查看本地的go版本&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version go1.20.5 darwin/amd64
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version go1.23.2 darwin/arm64
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置编译源码的go版本&#34;&gt;设置编译源码的go版本&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GOROOT_BOOTSTRAP&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$GOROOT&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;设置go-mod模式为auto&#34;&gt;设置go mod模式为auto&lt;/h3&gt;
@@ -151,7 +151,7 @@ Installed commands in /Users/tomyli/github/go/bin&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;第12步进行返回处理&lt;/p&gt;
-&lt;p&gt;LettuceConnection的doInvoke方法进行了LettuceInvoker的返回处理，在里面看到的是调用了feture.get()方法使用等待的方式来实现了异步转同步的调用&lt;/p&gt;
+&lt;p&gt;LettuceConnection的doInvoke方法进行了LettuceInvoker的返回处理，在里面看到的是调用了feture.get()方法使用等待的方式来实现了异步转同步的调用，等待的超时时间通过 &lt;strong&gt;spring.redis.timeout&lt;/strong&gt; 进行配置，默认为6000ms&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;获取连接阶段与执行命令阶段图示&#34;&gt;获取连接阶段与执行命令阶段图示&lt;/h4&gt;

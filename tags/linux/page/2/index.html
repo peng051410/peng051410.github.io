@@ -5,7 +5,7 @@
 <a href=/tags/linux/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux代码结构学习</h2></header><div class=entry-content><p>Linux代码结构 准备学习Linux，看源码是少不了的，先对Linux源码有个大体认识(基于linux4.13)
 代码主要文件解析 Makefile 这是整个源码的Makefile，里面定义了一系列的变量和规则，比如默认的gcc编译flag。
 Documentation/ 项目文档，里面包含了很多关于配置内核、与ramdisk运行等有用的信息。这里面没有不同配置项的帮助信息，这些信息可以在相关子目录的 Kconfig 文件中查看。
-arch/ 体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 arch/x86 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编例程等信息。
+arch/ 体系结构相关代码都在这里，还有一部分在include/arch-generic中。每个体系结构在这个目录下都有一个子目录。比如基于x86体系的代码都在 arch/x86 下。另外，这个目录下还包含低级别的内存管理，中断处理，早期初始化，汇编库等信息。
 crypto/ 内核使用的加密API代码。
 drivers/ 所有设备相关的信息都在这个目录下。包括视频设备，网卡设备，低级别的SCSI设备。比如网络设备一般是在 drivers/net 目录下。
 fs/ 通用的文件系统与其它类型的文件系统代码都在这里。现在的操作系统的根文件系统一般为ext4格式，它的代码在 fs/ext4 下
@@ -14,30 +14,13 @@ init/ 这个目录包含了内核启动的入口文件 main.c ，版本信息文
 ipc/ 进程间通信相关代码，包含共享内存，信号量等信息。
 kernel/ 内核级别代码，上层的系统调用代码在这里，还有关于 printk() 代码，调度，信号量处理的代码。
 lib/ 内核所有使用的库都在这里。常见的字符串运算，调试库，命令行解析代码等。
-mm/ 高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 arch//mm )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。
+mm/ 高级别的内存管理代码。虚拟内存是通过这些库与低级别的体系结构代码(在 arch/&lt;arch>/mm )一同实现的。这里完成了早期引导内存管理，涉及文件的内存映射，页缓存的管理，内存分配和RAM中页面的交换。
 net/ 高级别的网络代码。与低级别的网络进行发包与收包交互。*net/core* 中包含其它网络协议使用的核心代码。net子目录就是特定的网络协议实现。
 scripts/ 这里面包含构建内核的脚本文件。
 security/ 不同Linux的安全模型代码。
 sound/ 声卡及相关代码在这里。
-usr/ 该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。</p></div><footer class=entry-footer><span title='2022-04-06 18:53:00 +0800 CST'>April 6, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>54 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux代码结构学习" href=http://blog.imcompany.cn/post/linux-source/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Centos7 install issue collect</h2></header><div class=entry-content><p>由于工作需要，使用VMWare虚拟机安装了Centos7系统，遇到了很多问题，现在把这些问题记录下来，以备后用。
-解决Centos7 yum could not retrieve mirrorlist错误 刚安装好的VM使用ip add查看局域网的ip没有结果，这个参考https://my.oschina.net/u/2456768/blog/3011881
-配置静态ip 安装虚拟机就是模拟多个机器通讯的情况，但是目前的配置是机器ip是动态获取的，老是变，每次都得看ip，所以需要配置一下VMware来支持静态ip。主要机器上的配置信息为：
-IPADDR=192.168.116.101 NETMASK=255.255.255.0 GATEWAY=192.168.116.2 DNS1=192.168.116.2 这个参考了https://blog.csdn.net/zhishengqianjun/article/details/77046796
-Centos7安装后配置国内仓库源 由于国内访问centos的原始源慢，需要换成163的软件源，新安装的系统执行命令都提示not found，只能从物理下载源的配置再上传到VM中，但是首先得知道VM的ip地址，使用ifconfig是不可能了，查了一下可以使用
-ip a 来查看VM的ip地址，这样配置源的的问题可以解决了，具体的配置源的方法参考https://blog.csdn.net/inslow/article/details/54177191
-Centos7安装VMware Tools 想更好的让VM与物理机协同，则VMware Tools必须要安装，好久不用linux的我连挂载也忘的一干二净了。搜了一下，参考https://blog.csdn.net/WarnerWu/article/details/73718901 完成VMware Tools的安装。这样共享目录的功能就可以正常使用了
-安装Jdk8 一句命令搞定：
-yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel 安装mysql 使用yum安装mysql需要下载安装mysql的源，更新后就可以安装了，这个参考了https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7/
-修改mysql的root密码 安装完mysql后登录找不到密码了，其实在使用yum安装时会mysql会自动生成一个随机密码，这个密码可以在安装的日志中找到。此方法参考了https://blog.csdn.net/kuluzs/article/details/51924086
-开放3306端口 为了方便mysql工具进行操作，需要开放3306端口。Centos7的防火墙还改了。具体就3个命令：
-systemctl start firewalld firewall-cmd --zone=public --add-port=3306/tcp --permanent firewall-cmd --reload 这个参考了https://www.jianshu.com/p/225a853350d9
-安装oh-my-bash 由于一般服务器都自带bash为默认的shell，但是操作起来着实不方便，安装oh-my-bash可以对shell进行一些增强。https://github.com/ohmybash/oh-my-bash
-Centos自动登录 安装后每次启动VM都要输入密码，这个对于自己测试很麻烦，要使Centos能登录后自动登录需要做以下操作：
-移除原来的getty@tty1.service软链接
-rm /etc/systemd/system/getty.target.wants/getty@tty1.service 拷贝getty@.service file 并且命名为 getty@tty1.service
-cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service 编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上
-[Service] ... ExecStart=-/sbin/agetty --autologin root --noclear %I ... [Install] ... ;Alias=getty@tty1.service 在getty.target.wants目录做一下软链接
-...</p></div><footer class=entry-footer><span title='2019-05-06 13:00:55 +0800 CST'>May 6, 2019</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>85 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Centos7 install issue collect" href=http://blog.imcompany.cn/post/centos7-install-issue-collect/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/tags/linux/>«&nbsp;Prev&nbsp;</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
+usr/ 该目录包含构建根文件系统映射的cpio格式的文档代码，该文档用于早期的用户空间。
+Reference 08 Overview of the Kernel Source | LinuxChix Courses</p></div><footer class=entry-footer><span title='2022-04-06 18:53:00 +0800 CST'>April 6, 2022</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>64 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Linux代码结构学习" href=http://blog.imcompany.cn/post/linux-source/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/tags/linux/>«&nbsp;Prev&nbsp;</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>

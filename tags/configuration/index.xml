@@ -11,8 +11,245 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Jun 2025 11:33:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 10:47:22 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring学习之@Configuration</title>
+      <link>http://blog.imcompany.cn/post/spring-configuration/</link>
+      <pubDate>Fri, 30 Jan 2026 10:47:22 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-configuration/</guid>
+      <description>&lt;h2 id=&#34;configuration是什么&#34;&gt;@Configuration是什么？&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Configuration.html&#34;&gt;@Configuration&lt;/a&gt; 是 Spring提供的一个用于配置与声明Bean与相应Bean之间依赖的注解，根据文档描述，此注解通常由 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/web/context/support/AnnotationConfigWebApplicationContext.html&#34;&gt;AnnotationConfigApplicationContext&lt;/a&gt; 上下文进行启动加载&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/PRtMuy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/fYfwMj.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;configuration能做什么&#34;&gt;@Configuration能做什么？&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5R7RVf.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;先看一下此注解的声明，在此注解上标识了 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/stereotype/Component.html&#34;&gt;@Component&lt;/a&gt; ，则证明此注解是一个 Component，拥有 &lt;code&gt;@Component&lt;/code&gt; 注解的基础能力(可以被Spring容器自动扫描与加载)&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/61UMNj.png&#34;&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XHjgyf.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上图标识了注解常用的配置方式，分类为以下几种&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;属性资源导入&lt;/li&gt;
+&lt;li&gt;引入其它配置类的配置&lt;/li&gt;
+&lt;li&gt;Value注入&lt;/li&gt;
+&lt;li&gt;Spring容器组件注入&lt;/li&gt;
+&lt;li&gt;支持Profile配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;注解属性&#34;&gt;注解属性&lt;/h2&gt;
+&lt;p&gt;在Spring5.x版本中，只支持两个属性配置&lt;/p&gt;
+&lt;h3 id=&#34;value&#34;&gt;value&lt;/h3&gt;
+&lt;p&gt;配置注解的名称&lt;/p&gt;
+&lt;h3 id=&#34;proxybeanmethods&#34;&gt;proxyBeanMethods&lt;/h3&gt;
+&lt;p&gt;是否代理增强(基于CGLIB)标识 @Bean 的方法，默认为true，保证声明的bean是单例共享的，而不是每一次通过方法调用都生成一个新的&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/2hAi0n.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;此属性的两个值被定义为两种模式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;full 模式(值为true)&lt;/li&gt;
+&lt;li&gt;lite 模式(值为false)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;源码分析&#34;&gt;源码分析&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;@Configuration&lt;/code&gt; 注解的解析类为 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ConfigurationClassPostProcessor.html&#34;&gt;ConfigurationClassPostProcessor&lt;/a&gt; ，本次主要关注从  &lt;code&gt;AnnotationConfigApplicationContext&lt;/code&gt; 启动后的整个处理过程， &lt;code&gt;AnnotationConfigApplicationContext&lt;/code&gt; 启动分为三个阶段&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/CjzEJ4.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;先上一张三个阶段的涉及的主要类与调用关系图
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/khv7Ac.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;初始化&#34;&gt;初始化&lt;/h3&gt;
+&lt;h4 id=&#34;初始化reader&#34;&gt;初始化reader&lt;/h4&gt;
+&lt;p&gt;此过程会实例化 &lt;code&gt;AnnotatedBeanDefinitionReader&lt;/code&gt; 类，此类在实例化时会调用 &lt;code&gt;AnnotationConfigUtils.registerAnnotationConfigProcessors&lt;/code&gt; 来注册解析配置的Processor，如果registry中没有包含 &lt;code&gt;ConfigurationClassPostProcessor&lt;/code&gt; 类的定义，则会新new一个 &lt;code&gt;ConfigurationClassPostProcessor&lt;/code&gt; 的Bean定义类&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Hc0pp8.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;整体调用链路如下：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/mkddrx.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;初始化scanner&#34;&gt;初始化scanner&lt;/h4&gt;
+&lt;p&gt;此过程会实例化Bean定义扫描器 &lt;code&gt;ClassPathBeanDefinitionScanner&lt;/code&gt; , 在此过程中主要会设置 Environment 和 ResourceLoader 相关信息&lt;/p&gt;
+&lt;h3 id=&#34;注册&#34;&gt;注册&lt;/h3&gt;
+&lt;p&gt;注册阶段主要是对标注了 &lt;code&gt;@Configuration&lt;/code&gt; 类(MyConfig)进行注册，以便Spring可以正常识别，主要逻辑在 &lt;code&gt;AnnotatedBeanDefinitionReader#doRegisterBean&lt;/code&gt; 中，此方法会调用 &lt;code&gt;BeanDefinitionReaderUtils.registerBeanDefinition&lt;/code&gt; 对此Bean进行注册&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xbi8aV.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XNcLXU.png&#34;&gt;
+至此， &lt;code&gt;@Configuration&lt;/code&gt; 类信息就注册到了 Spring 容器中&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spring学习之@CompnentScan</title>
+      <link>http://blog.imcompany.cn/post/spring-componentscan/</link>
+      <pubDate>Fri, 30 Jan 2026 10:47:15 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-componentscan/</guid>
+      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ComponentScan.html&#34;&gt;@ComponentScan&lt;/a&gt; 注解是Spring 提供的对组件进行扫描的注解指令，通常与 &lt;a href=&#34;https://blog.imcompany.cn/post/spring-configuration/&#34;&gt;@Configuration&lt;/a&gt; 注解一起使用，支持在类上重复标注&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1Gfqcy.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;注解能做什么&#34;&gt;注解能做什么？&lt;/h2&gt;
+&lt;p&gt;此注解支持以下重要特性:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;自定义扫描的包范围&lt;/li&gt;
+&lt;li&gt;配置包含扫描组件的过滤器&lt;/li&gt;
+&lt;li&gt;配置排除组件的过滤器&lt;/li&gt;
+&lt;li&gt;是否使用默认过滤器&lt;/li&gt;
+&lt;li&gt;是否配置懒加载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;源码分析&#34;&gt;源码分析&lt;/h2&gt;
+&lt;p&gt;由于此注解通常与 @Configuration 注解一起使用，其解析的主要逻辑都是在 refresh 阶段的 invokeBeanFactoryPostProcessors 方法中，最终会定位到   &lt;code&gt;ConfigurationClassParser#doProcessConfigurationClass()&lt;/code&gt; 方法中，在方法中可以看到对 ComponentScan 注解的操作逻辑了&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/nLgM3W.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;对注解属性的解析&#34;&gt;对注解属性的解析&lt;/h3&gt;
+&lt;p&gt;所有对属性的解析都在 &lt;code&gt;ComponentScanAnnotationParser#parse()&lt;/code&gt; 方法中进行，此方法中会创建一个 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html&#34;&gt;ClassPathBeanDefinitionScanner&lt;/a&gt; 实例scanner，此实例初始化过程中会对默认的Filter进行加载&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vRkGfu.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;处理默认Filter主要是 &lt;a href=&#34;https://www.ibm.com/docs/en/wasdtfe?topic=reference-jax-ws-common-annotations-jsr-250&#34;&gt;JSR-250&lt;/a&gt; 与 &lt;a href=&#34;https://jcp.org/en/jsr/detail?id=330&#34;&gt;JSR-330&lt;/a&gt; API 增加的注解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后会把配置的 &lt;code&gt;includeFilter&lt;/code&gt; 和 &lt;code&gt;excludeFilter&lt;/code&gt; 设置到 scanner 中，接着会对 &lt;code&gt;basePackage&lt;/code&gt; 扫描包属性进行解析配置，如果配置了就添加，没有配置，默认就使用 &lt;code&gt;@ComponentScan&lt;/code&gt; 注解标注类所在的包路径。解析完注解属性后，就开始了真正的扫描操作&lt;/p&gt;
+&lt;h3 id=&#34;扫描操作&#34;&gt;扫描操作&lt;/h3&gt;
+&lt;p&gt;扫描操作由  &lt;code&gt;ClassPathBeanDefinitionScanner#doScan()&lt;/code&gt; 方法进行处理，此方法会调用 &lt;code&gt;findCandidateComponents()&lt;/code&gt; 方法在给定的包下查找符合条件的组件，查找的任务由 &lt;code&gt;scanCandidateComponents()&lt;/code&gt; 进行，该方法调用 &lt;code&gt;isCandidateComponent()&lt;/code&gt; 方法，根据解析的includeFilter和excludeFilter 来选择满足条件的组件&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/V9WgPz.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;这样扫描到所有满足条件的Bean后，会接着对这些Bean进行parse操作，直到注解再无其它依赖&lt;/p&gt;
+&lt;h3 id=&#34;注册bean&#34;&gt;注册Bean&lt;/h3&gt;
+&lt;p&gt;扫描完所有Bean后，会调用 &lt;code&gt;checkCandidate()&lt;/code&gt; 方法进行检查，检查当前要注册的Bean是否与已经注册过的Bean的定义是否兼容，如果冲突会报 &lt;code&gt;ConflictingBeanDefinitionException&lt;/code&gt; 。检查没问题后，会调用 &lt;code&gt;registerBeanDefinition()&lt;/code&gt; 方法对Bean进行注册，这个过程就涉及到Spring其它的生命周期了（这个后续专门学习总结），对于@ComponentScan 组件来说已经完成了它的使命&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;最后以注解解析过程中的涉及的核心类做一下总结&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/At29IK.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;h3 id=&#34;调整包结构后一些-bean配置扫描不到了&#34;&gt;调整包结构后一些@Bean配置扫描不到了&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;调用启动类的包路径为最外层，这样可以扫描当前包及子包的配置&lt;/li&gt;
+&lt;li&gt;默认只扫描当前标注注解的包，可以通过配置 &lt;code&gt;basePackage&lt;/code&gt; 属性指定扫描路径，配置后默认的扫描路径就不生效了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;如何将未配置spring相关组件注解的bean纳入spring管理&#34;&gt;如何将未配置Spring相关组件注解的Bean纳入Spring管理?&lt;/h3&gt;
+&lt;p&gt;可以通过配置 ComponentScan的includeFilter 来实现&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spring学习之@Import</title>
+      <link>http://blog.imcompany.cn/post/spring-@import/</link>
+      <pubDate>Fri, 30 Jan 2026 10:46:27 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-@import/</guid>
+      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Import.html&#34;&gt;@Import&lt;/a&gt; 注解用于标识多个需要导入的 Component 类，支持导入 @Configuration 类， &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ImportSelector.html&#34;&gt;ImportSelector&lt;/a&gt;
+与 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.html&#34;&gt;ImportBeanDefinitionRegistrar&lt;/a&gt; 实现，与 &lt;code&gt;AnnotationConfigApplicationContext.register()&lt;/code&gt; 方法实现的功能类似。此注解常见的实践方式是标注在 EnableXXXX 注解上，用于开启某些功能，在开启功能时就需要通过 @Import 注解来选择导入哪些类的定义&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Q3KggE.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;属性说明&#34;&gt;属性说明&lt;/h2&gt;
+&lt;p&gt;此注解只有一个属性 value，返回 &lt;code&gt;Class[]&lt;/code&gt; ，用于标识导入的类&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/jZeILk.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;class类型&#34;&gt;Class类型&lt;/h3&gt;
+&lt;h4 id=&#34;configuration标识的类&#34;&gt;@Configuration标识的类&lt;/h4&gt;
+&lt;p&gt;对于不同功能的配置使用多个 @Configuration 标识，由一个类来 Import 另一个 类的配置，来达到复用的效果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyConfig2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanD&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;myBeanD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Import&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyConfig2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;importselector实现类&#34;&gt;ImportSelector实现类&lt;/h4&gt;
+&lt;p&gt;所有的 &lt;code&gt;ImportSelector&lt;/code&gt; 实现都需要实现它的 selectImports 方法，来返回要导入的bean类名称集合
+&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tnwVTo.png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyImportSelector&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImportSelector&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Override&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;selectImports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AnnotationMetadata&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;importingClassMetadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()};&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 ImportSelector 可以通过Aware或者构造器注入的方式使用 Spring中的容器组件：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spring学习之@Bean</title>
+      <link>http://blog.imcompany.cn/post/spring-@bean/</link>
+      <pubDate>Fri, 30 Jan 2026 10:46:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/spring-@bean/</guid>
+      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Bean.html&#34;&gt;@Bean&lt;/a&gt; 是Spring的一个核心注解，通常与 &lt;a href=&#34;https://blog.imcompany.cn/post/spring-configuration/&#34;&gt;@Configuration&lt;/a&gt; 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解可以使用JAVA的特性配置对象。默认情况下Bean名字为方法名，也支持通过属性进行配置&lt;/p&gt;
+&lt;h2 id=&#34;属性说明&#34;&gt;属性说明&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/k4Kb1n.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xhsjVe.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;name&#34;&gt;name&lt;/h3&gt;
+&lt;p&gt;自定义Bean的名称，支持配置多个名称，不配置默认为方法名称&lt;/p&gt;
+&lt;h3 id=&#34;initmethod&#34;&gt;initMethod&lt;/h3&gt;
+&lt;p&gt;配置实例初始化方法，在Bean实例化被调用，默认为空&lt;/p&gt;
+&lt;h3 id=&#34;destroymethod&#34;&gt;destroyMethod&lt;/h3&gt;
+&lt;p&gt;配置实例销毁方法，默认值为 &lt;code&gt;(inferred)&lt;/code&gt; 即会根据返回的Bean尝试查找识别对象的销毁方法 close 或者 shutdown(限制只查找public无参方法)，如返回一个 &lt;code&gt;BasicDataSource&lt;/code&gt; 实例，会默认查找 &lt;code&gt;close()&lt;/code&gt; 方法进行注册，如果不想Spring进行此操作，需要将此值设置为: &lt;code&gt;destroyMethod=&amp;quot;&amp;quot;&lt;/code&gt; (此配置对 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/beans/factory/DisposableBean.html&#34;&gt;DisposableBean&lt;/a&gt; 回调不生效)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;核心逻辑在 DisposableBeanAdapter#inferDestroyMethodsIfNecessary() 方法中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;与其它注解的关联&#34;&gt;与其它注解的关联&lt;/h2&gt;
+&lt;p&gt;@Bean 与XML配置方式中的 &amp;lt;bean&amp;gt; 标签不同，它使用与其它注解组合的方式来实现类型 Scope 或者懒加载的功能，具体可组合注解如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;@Profile&lt;/li&gt;
+&lt;li&gt;@Scope&lt;/li&gt;
+&lt;li&gt;@Lazy&lt;/li&gt;
+&lt;li&gt;@DepednsOn&lt;/li&gt;
+&lt;li&gt;@Primary&lt;/li&gt;
+&lt;li&gt;@Order&lt;/li&gt;
+&lt;li&gt;@Description(给注解bean详细描述，此注解的值会保存在 &lt;code&gt;BeanDefinition&lt;/code&gt; 实例上)&lt;/li&gt;
+&lt;li&gt;@Conditional&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;接口默认方法定义bean&#34;&gt;接口默认方法定义Bean&lt;/h2&gt;
+&lt;p&gt;Spring 支持在接口中使用默认方法的方式进行bean的定义，方便子类配置类直接复用，示例代码:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;BaseConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBean3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;myBean3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBean3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;AppConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BaseConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;源码阅读&#34;&gt;源码阅读&lt;/h2&gt;
+&lt;h3 id=&#34;bean注解配置实例化&#34;&gt;Bean注解配置实例化&lt;/h3&gt;
+&lt;p&gt;由于@Bean通常与@Configuration 一起使用，核心逻辑在 refresh 阶段，定位代码发现在 ConfigurationClassParser#doProcessConfigurationClass() 方法进行对 @Bean 标识方法的解析&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Spring学习之@Conditional</title>
       <link>http://blog.imcompany.cn/post/spring-@conditional/</link>
@@ -108,106 +345,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;源码阅读&#34;&gt;源码阅读&lt;/h2&gt;
 &lt;p&gt;对于 Configuration 类条件处理分为两个阶段：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spring学习之@Bean</title>
-      <link>http://blog.imcompany.cn/post/spring-@bean/</link>
-      <pubDate>Tue, 17 Jun 2025 17:56:39 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/spring-@bean/</guid>
-      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Bean.html&#34;&gt;@Bean&lt;/a&gt; 是Spring的一个核心注解，通常与 &lt;a href=&#34;https://blog.imcompany.cn/post/spring-configuration/&#34;&gt;@Configuration&lt;/a&gt; 注解一起使用，用于标记一个方法，方法返回的实体做为Spring管理的一个Bean，通过此注解可以使用JAVA的特性配置对象。默认情况下Bean名字为方法名，也支持通过属性进行配置&lt;/p&gt;
-&lt;h2 id=&#34;属性说明&#34;&gt;属性说明&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/k4Kb1n.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xhsjVe.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;name&#34;&gt;name&lt;/h3&gt;
-&lt;p&gt;自定义Bean的名称，支持配置多个名称，不配置默认为方法名称&lt;/p&gt;
-&lt;h3 id=&#34;initmethod&#34;&gt;initMethod&lt;/h3&gt;
-&lt;p&gt;配置实例初始化方法，在Bean实例化被调用，默认为空&lt;/p&gt;
-&lt;h3 id=&#34;destroymethod&#34;&gt;destroyMethod&lt;/h3&gt;
-&lt;p&gt;配置实例销毁方法，默认值为 &lt;code&gt;(inferred)&lt;/code&gt; 即会根据返回的Bean尝试查找识别对象的销毁方法 close 或者 shutdown(限制只查找public无参方法)，如返回一个 &lt;code&gt;BasicDataSource&lt;/code&gt; 实例，会默认查找 &lt;code&gt;close()&lt;/code&gt; 方法进行注册，如果不想Spring进行此操作，需要将此值设置为: &lt;code&gt;destroyMethod=&amp;quot;&amp;quot;&lt;/code&gt; (此配置对 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/beans/factory/DisposableBean.html&#34;&gt;DisposableBean&lt;/a&gt; 回调不生效)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;核心逻辑在 DisposableBeanAdapter#inferDestroyMethodsIfNecessary() 方法中&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;与其它注解的关联&#34;&gt;与其它注解的关联&lt;/h2&gt;
-&lt;p&gt;@Bean 与XML配置方式中的 &amp;lt;bean&amp;gt; 标签不同，它使用与其它注解组合的方式来实现类型 Scope 或者懒加载的功能，具体可组合注解如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;@Profile&lt;/li&gt;
-&lt;li&gt;@Scope&lt;/li&gt;
-&lt;li&gt;@Lazy&lt;/li&gt;
-&lt;li&gt;@DepednsOn&lt;/li&gt;
-&lt;li&gt;@Primary&lt;/li&gt;
-&lt;li&gt;@Order&lt;/li&gt;
-&lt;li&gt;@Description(给注解bean详细描述，此注解的值会保存在 &lt;code&gt;BeanDefinition&lt;/code&gt; 实例上)&lt;/li&gt;
-&lt;li&gt;@Conditional&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;接口默认方法定义bean&#34;&gt;接口默认方法定义Bean&lt;/h2&gt;
-&lt;p&gt;Spring 支持在接口中使用默认方法的方式进行bean的定义，方便子类配置类直接复用，示例代码:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;interface&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;BaseConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBean3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;myBean3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBean3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;AppConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BaseConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;源码阅读&#34;&gt;源码阅读&lt;/h2&gt;
-&lt;h3 id=&#34;bean注解配置实例化&#34;&gt;Bean注解配置实例化&lt;/h3&gt;
-&lt;p&gt;由于@Bean通常与@Configuration 一起使用，核心逻辑在 refresh 阶段，定位代码发现在 ConfigurationClassParser#doProcessConfigurationClass() 方法进行对 @Bean 标识方法的解析&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spring学习之@Import</title>
-      <link>http://blog.imcompany.cn/post/spring-@import/</link>
-      <pubDate>Tue, 17 Jun 2025 17:32:55 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/spring-@import/</guid>
-      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Import.html&#34;&gt;@Import&lt;/a&gt; 注解用于标识多个需要导入的 Component 类，支持导入 @Configuration 类， &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ImportSelector.html&#34;&gt;ImportSelector&lt;/a&gt;
-与 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ImportBeanDefinitionRegistrar.html&#34;&gt;ImportBeanDefinitionRegistrar&lt;/a&gt; 实现，与 &lt;code&gt;AnnotationConfigApplicationContext.register()&lt;/code&gt; 方法实现的功能类似。此注解常见的实践方式是标注在 EnableXXXX 注解上，用于开启某些功能，在开启功能时就需要通过 @Import 注解来选择导入哪些类的定义&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Q3KggE.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;属性说明&#34;&gt;属性说明&lt;/h2&gt;
-&lt;p&gt;此注解只有一个属性 value，返回 &lt;code&gt;Class[]&lt;/code&gt; ，用于标识导入的类&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/jZeILk.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;class类型&#34;&gt;Class类型&lt;/h3&gt;
-&lt;h4 id=&#34;configuration标识的类&#34;&gt;@Configuration标识的类&lt;/h4&gt;
-&lt;p&gt;对于不同功能的配置使用多个 @Configuration 标识，由一个类来 Import 另一个 类的配置，来达到复用的效果&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyConfig2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Bean&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanD&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;myBeanD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Configuration&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@Import&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyConfig2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyConfig&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;importselector实现类&#34;&gt;ImportSelector实现类&lt;/h4&gt;
-&lt;p&gt;所有的 &lt;code&gt;ImportSelector&lt;/code&gt; 实现都需要实现它的 selectImports 方法，来返回要导入的bean类名称集合
-&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/tnwVTo.png&#34;&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;MyImportSelector&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;implements&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ImportSelector&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Override&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;selectImports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AnnotationMetadata&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;importingClassMetadata&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MyBeanA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()};&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在 ImportSelector 可以通过Aware或者构造器注入的方式使用 Spring中的容器组件：&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spring学习之@Value</title>
@@ -341,143 +478,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;元数据收集&#34;&gt;元数据收集&lt;/h3&gt;
 &lt;p&gt;调用栈信息如下：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spring学习之@CompnentScan</title>
-      <link>http://blog.imcompany.cn/post/spring-componentscan/</link>
-      <pubDate>Thu, 15 May 2025 16:29:33 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/spring-componentscan/</guid>
-      <description>&lt;h2 id=&#34;注解说明&#34;&gt;注解说明&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ComponentScan.html&#34;&gt;@ComponentScan&lt;/a&gt; 注解是Spring 提供的对组件进行扫描的注解指令，通常与 &lt;a href=&#34;https://blog.imcompany.cn/post/spring-configuration/&#34;&gt;@Configuration&lt;/a&gt; 注解一起使用，支持在类上重复标注&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/1Gfqcy.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;注解能做什么&#34;&gt;注解能做什么？&lt;/h2&gt;
-&lt;p&gt;此注解支持以下重要特性:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;自定义扫描的包范围&lt;/li&gt;
-&lt;li&gt;配置包含扫描组件的过滤器&lt;/li&gt;
-&lt;li&gt;配置排除组件的过滤器&lt;/li&gt;
-&lt;li&gt;是否使用默认过滤器&lt;/li&gt;
-&lt;li&gt;是否配置懒加载&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;源码分析&#34;&gt;源码分析&lt;/h2&gt;
-&lt;p&gt;由于此注解通常与 @Configuration 注解一起使用，其解析的主要逻辑都是在 refresh 阶段的 invokeBeanFactoryPostProcessors 方法中，最终会定位到   &lt;code&gt;ConfigurationClassParser#doProcessConfigurationClass()&lt;/code&gt; 方法中，在方法中可以看到对 ComponentScan 注解的操作逻辑了&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/nLgM3W.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;对注解属性的解析&#34;&gt;对注解属性的解析&lt;/h3&gt;
-&lt;p&gt;所有对属性的解析都在 &lt;code&gt;ComponentScanAnnotationParser#parse()&lt;/code&gt; 方法中进行，此方法中会创建一个 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/ClassPathBeanDefinitionScanner.html&#34;&gt;ClassPathBeanDefinitionScanner&lt;/a&gt; 实例scanner，此实例初始化过程中会对默认的Filter进行加载&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/vRkGfu.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;处理默认Filter主要是 &lt;a href=&#34;https://www.ibm.com/docs/en/wasdtfe?topic=reference-jax-ws-common-annotations-jsr-250&#34;&gt;JSR-250&lt;/a&gt; 与 &lt;a href=&#34;https://jcp.org/en/jsr/detail?id=330&#34;&gt;JSR-330&lt;/a&gt; API 增加的注解&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;然后会把配置的 &lt;code&gt;includeFilter&lt;/code&gt; 和 &lt;code&gt;excludeFilter&lt;/code&gt; 设置到 scanner 中，接着会对 &lt;code&gt;basePackage&lt;/code&gt; 扫描包属性进行解析配置，如果配置了就添加，没有配置，默认就使用 &lt;code&gt;@ComponentScan&lt;/code&gt; 注解标注类所在的包路径。解析完注解属性后，就开始了真正的扫描操作&lt;/p&gt;
-&lt;h3 id=&#34;扫描操作&#34;&gt;扫描操作&lt;/h3&gt;
-&lt;p&gt;扫描操作由  &lt;code&gt;ClassPathBeanDefinitionScanner#doScan()&lt;/code&gt; 方法进行处理，此方法会调用 &lt;code&gt;findCandidateComponents()&lt;/code&gt; 方法在给定的包下查找符合条件的组件，查找的任务由 &lt;code&gt;scanCandidateComponents()&lt;/code&gt; 进行，该方法调用 &lt;code&gt;isCandidateComponent()&lt;/code&gt; 方法，根据解析的includeFilter和excludeFilter 来选择满足条件的组件&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/V9WgPz.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;这样扫描到所有满足条件的Bean后，会接着对这些Bean进行parse操作，直到注解再无其它依赖&lt;/p&gt;
-&lt;h3 id=&#34;注册bean&#34;&gt;注册Bean&lt;/h3&gt;
-&lt;p&gt;扫描完所有Bean后，会调用 &lt;code&gt;checkCandidate()&lt;/code&gt; 方法进行检查，检查当前要注册的Bean是否与已经注册过的Bean的定义是否兼容，如果冲突会报 &lt;code&gt;ConflictingBeanDefinitionException&lt;/code&gt; 。检查没问题后，会调用 &lt;code&gt;registerBeanDefinition()&lt;/code&gt; 方法对Bean进行注册，这个过程就涉及到Spring其它的生命周期了（这个后续专门学习总结），对于@ComponentScan 组件来说已经完成了它的使命&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;p&gt;最后以注解解析过程中的涉及的核心类做一下总结&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/At29IK.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
-&lt;h3 id=&#34;调整包结构后一些-bean配置扫描不到了&#34;&gt;调整包结构后一些@Bean配置扫描不到了&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;调用启动类的包路径为最外层，这样可以扫描当前包及子包的配置&lt;/li&gt;
-&lt;li&gt;默认只扫描当前标注注解的包，可以通过配置 &lt;code&gt;basePackage&lt;/code&gt; 属性指定扫描路径，配置后默认的扫描路径就不生效了&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;如何将未配置spring相关组件注解的bean纳入spring管理&#34;&gt;如何将未配置Spring相关组件注解的Bean纳入Spring管理?&lt;/h3&gt;
-&lt;p&gt;可以通过配置 ComponentScan的includeFilter 来实现&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spring学习之@Configuration</title>
-      <link>http://blog.imcompany.cn/post/spring-configuration/</link>
-      <pubDate>Fri, 09 May 2025 11:40:11 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/spring-configuration/</guid>
-      <description>&lt;h2 id=&#34;configuration是什么&#34;&gt;@Configuration是什么？&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/Configuration.html&#34;&gt;@Configuration&lt;/a&gt; 是 Spring提供的一个用于配置与声明Bean与相应Bean之间依赖的注解，根据文档描述，此注解通常由 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/web/context/support/AnnotationConfigWebApplicationContext.html&#34;&gt;AnnotationConfigApplicationContext&lt;/a&gt; 上下文进行启动加载&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/PRtMuy.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/fYfwMj.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;configuration能做什么&#34;&gt;@Configuration能做什么？&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/5R7RVf.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;先看一下此注解的声明，在此注解上标识了 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/stereotype/Component.html&#34;&gt;@Component&lt;/a&gt; ，则证明此注解是一个 Component，拥有 &lt;code&gt;@Component&lt;/code&gt; 注解的基础能力(可以被Spring容器自动扫描与加载)&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/61UMNj.png&#34;&gt;
-&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XHjgyf.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;上图标识了注解常用的配置方式，分类为以下几种&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;属性资源导入&lt;/li&gt;
-&lt;li&gt;引入其它配置类的配置&lt;/li&gt;
-&lt;li&gt;Value注入&lt;/li&gt;
-&lt;li&gt;Spring容器组件注入&lt;/li&gt;
-&lt;li&gt;支持Profile配置&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;注解属性&#34;&gt;注解属性&lt;/h2&gt;
-&lt;p&gt;在Spring5.x版本中，只支持两个属性配置&lt;/p&gt;
-&lt;h3 id=&#34;value&#34;&gt;value&lt;/h3&gt;
-&lt;p&gt;配置注解的名称&lt;/p&gt;
-&lt;h3 id=&#34;proxybeanmethods&#34;&gt;proxyBeanMethods&lt;/h3&gt;
-&lt;p&gt;是否代理增强(基于CGLIB)标识 @Bean 的方法，默认为true，保证声明的bean是单例共享的，而不是每一次通过方法调用都生成一个新的&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/2hAi0n.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;此属性的两个值被定义为两种模式&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;full 模式(值为true)&lt;/li&gt;
-&lt;li&gt;lite 模式(值为false)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;源码分析&#34;&gt;源码分析&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;@Configuration&lt;/code&gt; 注解的解析类为 &lt;a href=&#34;https://docs.spring.io/spring-framework/docs/6.2.0/javadoc-api/org/springframework/context/annotation/ConfigurationClassPostProcessor.html&#34;&gt;ConfigurationClassPostProcessor&lt;/a&gt; ，本次主要关注从  &lt;code&gt;AnnotationConfigApplicationContext&lt;/code&gt; 启动后的整个处理过程， &lt;code&gt;AnnotationConfigApplicationContext&lt;/code&gt; 启动分为三个阶段&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/CjzEJ4.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;先上一张三个阶段的涉及的主要类与调用关系图
-&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/khv7Ac.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;初始化&#34;&gt;初始化&lt;/h3&gt;
-&lt;h4 id=&#34;初始化reader&#34;&gt;初始化reader&lt;/h4&gt;
-&lt;p&gt;此过程会实例化 &lt;code&gt;AnnotatedBeanDefinitionReader&lt;/code&gt; 类，此类在实例化时会调用 &lt;code&gt;AnnotationConfigUtils.registerAnnotationConfigProcessors&lt;/code&gt; 来注册解析配置的Processor，如果registry中没有包含 &lt;code&gt;ConfigurationClassPostProcessor&lt;/code&gt; 类的定义，则会新new一个 &lt;code&gt;ConfigurationClassPostProcessor&lt;/code&gt; 的Bean定义类&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Hc0pp8.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;整体调用链路如下：&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/mkddrx.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h4 id=&#34;初始化scanner&#34;&gt;初始化scanner&lt;/h4&gt;
-&lt;p&gt;此过程会实例化Bean定义扫描器 &lt;code&gt;ClassPathBeanDefinitionScanner&lt;/code&gt; , 在此过程中主要会设置 Environment 和 ResourceLoader 相关信息&lt;/p&gt;
-&lt;h3 id=&#34;注册&#34;&gt;注册&lt;/h3&gt;
-&lt;p&gt;注册阶段主要是对标注了 &lt;code&gt;@Configuration&lt;/code&gt; 类(MyConfig)进行注册，以便Spring可以正常识别，主要逻辑在 &lt;code&gt;AnnotatedBeanDefinitionReader#doRegisterBean&lt;/code&gt; 中，此方法会调用 &lt;code&gt;BeanDefinitionReaderUtils.registerBeanDefinition&lt;/code&gt; 对此Bean进行注册&lt;/p&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/xbi8aV.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/XNcLXU.png&#34;&gt;
-至此， &lt;code&gt;@Configuration&lt;/code&gt; 类信息就注册到了 Spring 容器中&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
