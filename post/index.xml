@@ -11,8 +11,39 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jan 2026 10:51:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2026 11:46:57 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W04</title>
+      <link>http://blog.imcompany.cn/post/2026-week4/</link>
+      <pubDate>Mon, 02 Feb 2026 09:49:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week4/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;我如何使用-apple-notes-做笔记-randy-s-blog&#34;&gt;&lt;a href=&#34;https://lutaonan.com/blog/apple-notes-and-para/&#34;&gt;我如何使用 Apple Notes 做笔记 | Randy&amp;rsquo;s Blog&lt;/a&gt;&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/lsaFdG.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;受启发的是作者提到的笔记的优先级: 快速打开、快速记录，美观是次要的&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;博客主题切换到 &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;hugo-PaperMod&lt;/a&gt;，因为兼容问题把hugo也升级到最新版本0.154.5，又把相关配置统一管理起来&lt;/li&gt;
+&lt;li&gt;Anki中包含了最新的算法 &lt;a href=&#34;https://github.com/open-spaced-repetition/fsrs4anki&#34;&gt;FSRS&lt;/a&gt; ，需要手动开启&lt;/li&gt;
+&lt;li&gt;听说最近typeless很火，下载试试&lt;/li&gt;
+&lt;li&gt;Mac 的TimeMachine 的备份是滚动的，不用担心满的问题，它会在满时自动进行判断来删除老的备份&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/dZV3Aq.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;记录一下常用的Setapp软件&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;耐心就是放弃完美主义&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;minneapolis-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Minneapolis?useskin=vector&#34;&gt;Minneapolis - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;明尼阿波里斯市，隶属于明尼苏达州，与首府圣保罗相邻，有湖泊之城的美誉。近期因与特朗普的移民执法行动而备受关注&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SpringMVC实践之集成Sentinel限流功能</title>
       <link>http://blog.imcompany.cn/post/spring-webmvc-interceptor-sentinel/</link>
