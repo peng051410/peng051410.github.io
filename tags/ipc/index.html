@@ -13,7 +13,7 @@ IPC跑到3.79
 IPC只跑到了0.11
 测试nop指令跑两份各自绑定到同一物理核 如何判断HT？通过查看/proc/cpuinfo信息， 如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT
 执行测试 taskset -c 0 perf stat ./nop taskset -c 24 perf stat ./nop 现象
-...</p></div><footer class=entry-footer><span title='2023-05-25 15:42:00 +0800 CST'>May 25, 2023</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>152 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 性能的本质IPC之动手验证" href=http://blog.imcompany.cn/post/system-ipc/></a></article></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
+...</p></div><footer class=entry-footer><span title='Created: 2023-05-25 15:42:00 +0800 CST'>2023-05-25</span>&nbsp;·&nbsp;<span title='Modified: 2023-05-25 19:32:04 +0800 CST'> (Updated: 2023-05-25)</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>152 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 性能的本质IPC之动手验证" href=http://blog.imcompany.cn/post/system-ipc/></a></article></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
