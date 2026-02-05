@@ -7,7 +7,7 @@
 定位 换了个浏览器重新查看TED上的对应视频，发现视频开头播放了5s钟的TED广告，其实就是TED的开场内容
 在下载工具进行下载时，会把这5s的开场也给下载下来，而TED官方字幕是从正片开始计算的时间，这就导致了字幕与声音对应不上的问题
 解决 找到问题就好办了，只需要把下载下来的视频的前5s截取下来或者从第5s开始进行转换视频就可以了，这时候就要祭出 ffmpeg 大法，命令如下：
-ffmpeg -ss "00:00:05" -i ted.mp4 -i ted.srt -vcodec copy -acodec copy ted.mkv 再播放截取的视频，正常了，又可以愉快的学英语了</p></div><footer class=entry-footer><span title='Created: 2024-03-20 09:59:04 +0800 CST'>2024-03-20</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>23 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 解决下载后的TED视频与字幕时间对不上的问题" href=http://blog.imcompany.cn/post/ted-srt-video-not-match/></a></article></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
+ffmpeg -ss "00:00:05" -i ted.mp4 -i ted.srt -vcodec copy -acodec copy ted.mkv 再播放截取的视频，正常了，又可以愉快的学英语了</p></div><footer class=entry-footer><span title='2024-03-20 09:59:04 +0800 CST'>2024-03-20</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>23 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 解决下载后的TED视频与字幕时间对不上的问题" href=http://blog.imcompany.cn/post/ted-srt-video-not-match/></a></article></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
