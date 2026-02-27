@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Jan 2026 20:04:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 09:54:05 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
@@ -418,9 +418,10 @@
 &lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;podstation-podcast-player-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/podstation-podcast-player/bpcagekijmfcocgjlnnhpdogbplajjfn&#34;&gt;podStation Podcast Player - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
-&lt;h2 id=&#34;about-glasp&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://glasp.co/about&#34;&gt;About | Glasp&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;openstyles-stylus-stylus-userstyles-manager&#34;&gt;&lt;a href=&#34;https://github.com/openstyles/stylus/&#34;&gt;openstyles/stylus: Stylus - Userstyles Manager&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;配置Chrome的样式，可针对指定域名进行设置，目前主要用来设置字体&lt;/p&gt;</description>
+&lt;h2 id=&#34;rsshub-radar-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa&#34;&gt;RSSHub Radar - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;burning-vocabulary-reading-and-vocabulary-mate&#34;&gt;&lt;a href=&#34;https://burningvocabulary.com/&#34;&gt;Burning Vocabulary - Reading and Vocabulary Mate&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;j3sch-logseq-clipper-a-browser-extension-for-capturing-web-content-directly-into-your-logseq-graph-dot-adapted-from-obsidian-s-web-clipper-dot&#34;&gt;&lt;a href=&#34;https://github.com/j3sch/logseq-clipper&#34;&gt;j3sch/logseq-clipper: A browser extension for capturing web content directly into your Logseq graph. Adapted from Obsidian&amp;rsquo;s Web Clipper.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;优化logseq官方插件，直接捕获内容&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些提高效率的命令行工具</title>
