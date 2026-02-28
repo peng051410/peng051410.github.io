@@ -11,37 +11,77 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 27 Feb 2026 09:56:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 18:51:07 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>众乐乐-weekly 2026-W05</title>
-      <link>http://blog.imcompany.cn/post/2026-week5/</link>
-      <pubDate>Fri, 06 Feb 2026 18:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/2026-week5/</guid>
-      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;读完-丝绸之路-一部全新的世界史&#34;&gt;读完 丝绸之路_一部全新的世界史&lt;/h3&gt;
+      <title>众乐乐-weekly 2026-W09</title>
+      <link>http://blog.imcompany.cn/post/2026-week9/</link>
+      <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week9/</guid>
+      <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
+&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991&#34;&gt;开始阅读 《极端的年代：1914—1991》&lt;/h3&gt;
+&lt;p&gt;一部大作&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;timemachine备份空间不足-使用-diskdrill-来扫描配合着删除一些占用大的空间-brew和idea相关的cache是清理大户&#34;&gt;TimeMachine备份空间不足，使用 &lt;a href=&#34;https://www.cleverfiles.com/&#34;&gt;DiskDrill&lt;/a&gt; 来扫描配合着删除一些占用大的空间，brew和idea相关的cache是清理大户&lt;/h3&gt;
-&lt;h3 id=&#34;重新全量备份电脑-给tm设置了密码保证安全&#34;&gt;重新全量备份电脑，给TM设置了密码保证安全&lt;/h3&gt;
-&lt;h3 id=&#34;参考-我如何使用-apple-notes-做笔记-开始实践para方法论&#34;&gt;参考 &lt;a href=&#34;https://lutaonan.com/blog/apple-notes-and-para/&#34;&gt;我如何使用 Apple Notes 做笔记&lt;/a&gt; 开始实践PARA方法论&lt;/h3&gt;
-&lt;h3 id=&#34;mac鼠标滑到右下角可以直接quick-note-感觉不错&#34;&gt;mac鼠标滑到右下角可以直接quick note，感觉不错&lt;/h3&gt;
-&lt;h3 id=&#34;给-blog-增加了-updatetime&#34;&gt;给 blog 增加了 updatetime&lt;/h3&gt;
-&lt;h3 id=&#34;我如何使用-apple-notes-做笔记--org82f05ee&#34;&gt;&lt;a href=&#34;#%E5%8F%82%E8%80%83-%E6%88%91%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-apple-notes-%E5%81%9A%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%A7%8B%E5%AE%9E%E8%B7%B5para%E6%96%B9%E6%B3%95%E8%AE%BA&#34;&gt;我如何使用 Apple Notes 做笔记&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;altserver签名报错了-找了几个替换品都比较麻烦-想了一下使用频率也不高-不折腾了&#34;&gt;AltServer签名报错了，找了几个替换品都比较麻烦，想了一下使用频率也不高，不折腾了&lt;/h3&gt;
+&lt;h3 id=&#34;尝试了一下-supercmd&#34;&gt;尝试了一下&lt;a href=&#34;https://github.com/SuperCmdLabs/SuperCmd&#34;&gt;SuperCmd&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;说是Raycast的开源平替，支持语音，使用下来发现不能连接Ollama，后续看看有没有迭代&lt;/p&gt;
+&lt;h3 id=&#34;org-logseq-命令时好时坏&#34;&gt;&lt;a href=&#34;https://github.com/llcc/org-logseq&#34;&gt;org-logseq&lt;/a&gt;命令时好时坏&lt;/h3&gt;
+&lt;p&gt;底层使用grep命令行实现的&lt;/p&gt;
+&lt;h3 id=&#34;在本机通过docker安装了openclaw&#34;&gt;在本机通过Docker安装了OpenClaw&lt;/h3&gt;
+&lt;p&gt;参考的 &lt;a href=&#34;https://til.simonwillison.net/llms/openclaw-docker&#34;&gt;Simon Willison&amp;rsquo;s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;snippetslab从setapp版切到applestore版本&#34;&gt;SnippetsLab从Setapp版切到AppleStore版本&lt;/h3&gt;
+&lt;p&gt;SnippetsLab 竟然在2024年底就免费了，切换比较顺畅，Setapp版本导出库，AppleStore版本导入即可&lt;/p&gt;
 &lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/EeAoTr.png&#34;/&gt; 
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZD7oUS.png&#34;/&gt; 
 &lt;/figure&gt;
 
+&lt;p&gt;人生就是一场马拉松，使用Google的 Nano Banana 2 模型&lt;/p&gt;
 &lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
-&lt;p&gt;知识教的来，见识教不来&lt;/p&gt;
+&lt;p&gt;交易就是做对时要敢于多拿一会儿，做错时要能迅速止损，而不是死扛或频繁反悔&lt;/p&gt;
 &lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
-&lt;h3 id=&#34;kevin-warsh-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kevin_Warsh?useskin=vector&#34;&gt;Kevin Warsh - Wikipedia&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;凯文·麦克斯韦尔·沃什，美国金融家和银行高管，2016年1月30日，被特朗普正式提名为下一任美联储主席来接替 鲍威尔&lt;/p&gt;</description>
+&lt;h3 id=&#34;hunter-hess&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hunter_Hess?useskin=vector&#34;&gt;Hunter_Hess&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一位美国滑雪运动员，在2026年的米兰冬运会上的发言引来川普的反击&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Sat, 28 Feb 2026 09:31:30 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Emoji搜索&lt;/p&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;
+&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
+&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
+&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
+&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
+&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
+&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些被推荐的Video</title>
       <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Wed, 04 Feb 2026 09:53:31 +0800</pubDate>
+      <pubDate>Sat, 28 Feb 2026 09:31:15 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
       <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -162,12 +202,41 @@
 &lt;h2 id=&#34;lessons-in-chemistry--tv-mini-series-2023--imdb&#34;&gt;&lt;a href=&#34;https://www.imdb.com/title/tt13911628/&#34;&gt;Lessons in Chemistry (TV Mini Series 2023) - IMDb&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;coma--1978--imdb&#34;&gt;&lt;a href=&#34;https://www.imdb.com/title/tt0077355/&#34;&gt;Coma (1978) - IMDb&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;疯狂的麦克斯--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1295670/&#34;&gt;疯狂的麦克斯 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;查理-威尔森的战争--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1792933/&#34;&gt;查理·威尔森的战争 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;名侦探柯南-贝克街的亡灵--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2286642/&#34;&gt;名侦探柯南：贝克街的亡灵 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;你-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26955946/&#34;&gt;你 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;白色巨塔--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2150220/?suggest=%E7%99%BD%E8%89%B2&#34;&gt;白色巨塔 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;documentary&#34;&gt;Documentary&lt;/h2&gt;
 &lt;h3 id=&#34;the-silk-road--tv-mini-series-2016--imdb&#34;&gt;&lt;a href=&#34;https://www.imdb.com/title/tt5995592/&#34;&gt;The Silk Road (TV Mini Series 2016) - IMDb&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;关口知宏之中国铁道大纪行--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34447335/&#34;&gt;关口知宏之中国铁道大纪行 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;turning-point-the-bomb-and-the-cold-war--tv-series-2024--imdb&#34;&gt;&lt;a href=&#34;https://www.imdb.com/title/tt26227818/&#34;&gt;Turning Point: The Bomb and the Cold War (TV Series 2024) - IMDb&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;interesting-engineering-videos-latest-videos-from-technology-military-and-innovation&#34;&gt;&lt;a href=&#34;https://interestingengineering.com/videos&#34;&gt;Interesting Engineering Videos | Latest videos from Technology, Military &amp;amp; Innovation&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;分享不同的科学领域中，创造工程奇迹的视频&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W05</title>
+      <link>http://blog.imcompany.cn/post/2026-week5/</link>
+      <pubDate>Fri, 06 Feb 2026 18:55:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week5/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;读完-丝绸之路-一部全新的世界史&#34;&gt;读完 丝绸之路_一部全新的世界史&lt;/h3&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;timemachine备份空间不足-使用-diskdrill-来扫描配合着删除一些占用大的空间-brew和idea相关的cache是清理大户&#34;&gt;TimeMachine备份空间不足，使用 &lt;a href=&#34;https://www.cleverfiles.com/&#34;&gt;DiskDrill&lt;/a&gt; 来扫描配合着删除一些占用大的空间，brew和idea相关的cache是清理大户&lt;/h3&gt;
+&lt;h3 id=&#34;重新全量备份电脑-给tm设置了密码保证安全&#34;&gt;重新全量备份电脑，给TM设置了密码保证安全&lt;/h3&gt;
+&lt;h3 id=&#34;参考-我如何使用-apple-notes-做笔记-开始实践para方法论&#34;&gt;参考 &lt;a href=&#34;https://lutaonan.com/blog/apple-notes-and-para/&#34;&gt;我如何使用 Apple Notes 做笔记&lt;/a&gt; 开始实践PARA方法论&lt;/h3&gt;
+&lt;h3 id=&#34;mac鼠标滑到右下角可以直接quick-note-感觉不错&#34;&gt;mac鼠标滑到右下角可以直接quick note，感觉不错&lt;/h3&gt;
+&lt;h3 id=&#34;给-blog-增加了-updatetime&#34;&gt;给 blog 增加了 updatetime&lt;/h3&gt;
+&lt;h3 id=&#34;我如何使用-apple-notes-做笔记--org82f05ee&#34;&gt;&lt;a href=&#34;#%E5%8F%82%E8%80%83-%E6%88%91%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-apple-notes-%E5%81%9A%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%A7%8B%E5%AE%9E%E8%B7%B5para%E6%96%B9%E6%B3%95%E8%AE%BA&#34;&gt;我如何使用 Apple Notes 做笔记&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/EeAoTr.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;知识教的来，见识教不来&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;kevin-warsh-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kevin_Warsh?useskin=vector&#34;&gt;Kevin Warsh - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;凯文·麦克斯韦尔·沃什，美国金融家和银行高管，2016年1月30日，被特朗普正式提名为下一任美联储主席来接替 鲍威尔&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W04</title>
@@ -418,43 +487,11 @@
       <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/peng-read-2026/</guid>
       <description>&lt;h2 id=&#34;20世纪简史--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;丝绸之路--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/26853835/&#34;&gt;丝绸之路 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;极端的年代-1914-1991--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/27031979/&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;别闹了-费曼先生&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 别闹了，费曼先生！&lt;/h2&gt;
 &lt;h2 id=&#34;超越感觉&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 超越感觉&lt;/h2&gt;
 &lt;h2 id=&#34;练习的心态&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 练习的心态&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Wed, 31 Dec 2025 17:57:06 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;
-&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
-&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
-&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
-&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
-&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
-&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>收集的命令行工具</title>

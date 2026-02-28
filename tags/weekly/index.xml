@@ -11,8 +11,39 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Feb 2026 18:50:21 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 18:51:07 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W09</title>
+      <link>http://blog.imcompany.cn/post/2026-week9/</link>
+      <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week9/</guid>
+      <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
+&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991&#34;&gt;开始阅读 《极端的年代：1914—1991》&lt;/h3&gt;
+&lt;p&gt;一部大作&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;altserver签名报错了-找了几个替换品都比较麻烦-想了一下使用频率也不高-不折腾了&#34;&gt;AltServer签名报错了，找了几个替换品都比较麻烦，想了一下使用频率也不高，不折腾了&lt;/h3&gt;
+&lt;h3 id=&#34;尝试了一下-supercmd&#34;&gt;尝试了一下&lt;a href=&#34;https://github.com/SuperCmdLabs/SuperCmd&#34;&gt;SuperCmd&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;说是Raycast的开源平替，支持语音，使用下来发现不能连接Ollama，后续看看有没有迭代&lt;/p&gt;
+&lt;h3 id=&#34;org-logseq-命令时好时坏&#34;&gt;&lt;a href=&#34;https://github.com/llcc/org-logseq&#34;&gt;org-logseq&lt;/a&gt;命令时好时坏&lt;/h3&gt;
+&lt;p&gt;底层使用grep命令行实现的&lt;/p&gt;
+&lt;h3 id=&#34;在本机通过docker安装了openclaw&#34;&gt;在本机通过Docker安装了OpenClaw&lt;/h3&gt;
+&lt;p&gt;参考的 &lt;a href=&#34;https://til.simonwillison.net/llms/openclaw-docker&#34;&gt;Simon Willison&amp;rsquo;s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;snippetslab从setapp版切到applestore版本&#34;&gt;SnippetsLab从Setapp版切到AppleStore版本&lt;/h3&gt;
+&lt;p&gt;SnippetsLab 竟然在2024年底就免费了，切换比较顺畅，Setapp版本导出库，AppleStore版本导入即可&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZD7oUS.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;人生就是一场马拉松，使用Google的 Nano Banana 2 模型&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;交易就是做对时要敢于多拿一会儿，做错时要能迅速止损，而不是死扛或频繁反悔&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;hunter-hess&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hunter_Hess?useskin=vector&#34;&gt;Hunter_Hess&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一位美国滑雪运动员，在2026年的米兰冬运会上的发言引来川普的反击&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W05</title>
       <link>http://blog.imcompany.cn/post/2026-week5/</link>
