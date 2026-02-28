@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 Feb 2026 18:51:07 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 19:10:47 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>众乐乐-weekly 2026-W09</title>
@@ -22,6 +22,14 @@
 &lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
 &lt;h3 id=&#34;开始阅读-极端的年代-1914-1991&#34;&gt;开始阅读 《极端的年代：1914—1991》&lt;/h3&gt;
 &lt;p&gt;一部大作&lt;/p&gt;
+&lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;监视&lt;/li&gt;
+&lt;li&gt;阅读官方文档&lt;/li&gt;
+&lt;li&gt;做实验验证&lt;/li&gt;
+&lt;li&gt;动手实现一个terrible版本&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;altserver签名报错了-找了几个替换品都比较麻烦-想了一下使用频率也不高-不折腾了&#34;&gt;AltServer签名报错了，找了几个替换品都比较麻烦，想了一下使用频率也不高，不折腾了&lt;/h3&gt;
 &lt;h3 id=&#34;尝试了一下-supercmd&#34;&gt;尝试了一下&lt;a href=&#34;https://github.com/SuperCmdLabs/SuperCmd&#34;&gt;SuperCmd&lt;/a&gt;&lt;/h3&gt;
