@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Mar 2026 09:56:25 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 20:07:50 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W10</title>
+      <link>http://blog.imcompany.cn/post/2026-week10/</link>
+      <pubDate>Fri, 06 Mar 2026 19:44:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week10/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;开始读-我在北京送快递--豆瓣&#34;&gt;开始读 &lt;a href=&#34;https://book.douban.com/subject/36150423/&#34;&gt;我在北京送快递 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;主要是等公车时读&lt;/p&gt;
+&lt;h3 id=&#34;马年快乐-读者朋友们-余晟以为&#34;&gt;&lt;a href=&#34;https://quaily.com/yurii-says/p/happy-year-of-the-horse-readers-friends&#34;&gt;马年快乐，读者朋友们 | 余晟以为&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;像作者文章所说的：努力过好自己的生活，同时保持着对他人的理解和同情&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;开始使用claude-code&#34;&gt;开始使用Claude Code&lt;/h3&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/farion1231/cc-switch&#34;&gt;cc-switch&lt;/a&gt; 配置使用本地的Ollama模型，免费保障隐私&lt;/p&gt;
+&lt;h3 id=&#34;obsidian-升级到最新版本-有了-obsidian-cli&#34;&gt;Obsidian 升级到最新版本，有了 &lt;a href=&#34;https://help.obsidian.md/cli&#34;&gt;Obsidian Cli&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;自从ide加了ai窗口后-发现屏幕宽度不够了&#34;&gt;自从IDE加了AI窗口后，发现屏幕宽度不够了&lt;/h3&gt;
+&lt;p&gt;感觉40寸的屏幕会非常的爽&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pw1aXT.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;我的编程小助手们&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;AI时代代码免费了，但判断力没有&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;bayer-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Bayer?useskin=vector&#34;&gt;Bayer - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;拜耳，德国跨国制药公司和生物技术公司，总部位于勒沃库森，业务竟然还有农用化学品，近期因为除草剂Roundup产品引发淋巴瘤而支付30亿美元的法律和解费用&lt;/p&gt;</description>
+    </item>
     <item>
       <title>那些被推荐的Video</title>
       <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
