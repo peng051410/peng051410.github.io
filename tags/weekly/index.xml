@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Mar 2026 09:59:15 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 10:21:51 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W12</title>
+      <link>http://blog.imcompany.cn/post/2026-week12/</link>
+      <pubDate>Tue, 24 Mar 2026 09:38:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week12/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;autoresearching-apple-s-llm-in-a-flash-to-run-qwen-397b-locally&#34;&gt;&lt;a href=&#34;https://simonwillison.net/2026/Mar/18/llm-in-a-flash/?__readwiseLocation=#atom-everything&#34;&gt;Autoresearching Apple&amp;rsquo;s &amp;ldquo;LLM in a Flash&amp;rdquo; to run Qwen 397B locally&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;有人在48GB MacBook Pro M3 Max通过Falsh运行了Qwen397B，目前只针对Qwen3.5-397B-A17B这一个模型，对于本地想使用超大模型提供了方向&lt;/p&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读 《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;看到了 &lt;strong&gt;两晋十六国&lt;/strong&gt; 部分，那个时期是真的乱，还好又找到了 B站的&lt;a href=&#34;https://www.bilibili.com/video/BV1N7411M7wA/&#34;&gt;相关解说&lt;/a&gt;，配合着看舒服多了&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;安装了-cc-switch-的-命令行版本&#34;&gt;安装了 cc-switch 的&lt;a href=&#34;https://github.com/SaladDay/cc-switch-cli&#34;&gt;命令行版本&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;安装其它本地模型工具&#34;&gt;安装其它本地模型工具&lt;/h3&gt;
+&lt;p&gt;先后安装了 &lt;a href=&#34;https://github.com/waybarrios/vllm-mlx&#34;&gt;vllm-ml&lt;/a&gt;、 mlx 和 &lt;a href=&#34;https://github.com/madroidmaq/mlx-omni-server&#34;&gt;mlx-omni-server&lt;/a&gt;、&lt;a href=&#34;https://github.com/BerriAI/litellm&#34;&gt;litellm&lt;/a&gt; 来跑 &lt;a href=&#34;https://huggingface.co/mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit&#34;&gt;mlx-community/Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-4bit&lt;/a&gt;给CC用，尝试下来发现速度都不快，可能是我配置的不对。还尝试了安装了一下 &lt;a href=&#34;https://github.com/unslothai/unsloth&#34;&gt;unsloth&lt;/a&gt;，下载模型速度有点慢，准备后续再尝试。最后还是使用 LM Studio 成功实现，这个工具原生就支持了 MLX 格式的文件。目前看还可能会折腾一下 &lt;a href=&#34;https://github.com/ggml-org/llama.cpp&#34;&gt;llama.cpp&lt;/a&gt; 然后就圆满了&lt;/p&gt;
+&lt;h3 id=&#34;使用-x-cmd&#34;&gt;使用 x-cmd&lt;/h3&gt;
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/x-cmd/x-cmd&#34;&gt;X-cmd&lt;/a&gt; 来集中管理cli命令，官方建议直接使用 curl 方式进行安装，使用brew方式更新后文件丢失，一看这工具还支持 x brew 方式来安装应用&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Z8dy5p.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;本周完美的AI周，AI跑CC，AI改需求代码&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;不要把时间浪费在纠结问题上，而是应该放在解决问题上&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;academy-awards&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Academy_Awards?useskin=vector&#34;&gt;Academy Awards&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;学院奖，更为人所知的是奥斯卡，是电影业艺术与技术成就的奖项。此奖项每年由美国电影与艺术科学学院颁发。奥斯卡被认为是电影行业最具声望的奖项，第一次奖项颁发于1929年5月16日在好莱坞罗斯福酒店举行&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W11</title>
       <link>http://blog.imcompany.cn/post/2026-week11/</link>
