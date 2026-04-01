@@ -11,8 +11,30 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Mar 2026 10:21:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 09:25:49 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W13</title>
+      <link>http://blog.imcompany.cn/post/2026-week13/</link>
+      <pubDate>Tue, 31 Mar 2026 09:50:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week13/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;读完-我在北京送快递--豆瓣&#34;&gt;读完 &lt;a href=&#34;https://book.douban.com/subject/36150423/&#34;&gt;我在北京送快递 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;给了4星，前半部分与标题对应，后面就是罗列了作者的所有工作以及感想，可以换一个角度看不同的人生&lt;/p&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读 《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;搭配着视频看起了安州牧的 &lt;a href=&#34;https://www.bilibili.com/video/BV1w3411v7jd/?p=3&#34;&gt;风云南北朝&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;nowledge-mem-think-remember-connect&#34;&gt;&lt;a href=&#34;https://mem.nowledge.co/&#34;&gt;Nowledge Mem - Think, Remember, Connect&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;AI记忆层软件，整合文件、聊天笔记，准备试试&lt;/p&gt;
+&lt;h3 id=&#34;chaoswork-appine-appine-app-in-emacs-which-allows-you-to-open-native-macos-browser-pdf-viewer-and-video-player-directly-within-emacs-dot&#34;&gt;&lt;a href=&#34;https://github.com/chaoswork/appine&#34;&gt;chaoswork/appine: Appine = App in Emacs, which allows you to open native macOS browser, PDF viewer and video player directly within Emacs.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在Emacs中通过动态模块使用其可以直接打开原生的浏览器和文件&lt;/p&gt;
+&lt;h3 id=&#34;cc本地模型接入慢&#34;&gt;CC本地模型接入慢&lt;/h3&gt;
+&lt;p&gt;刷 X 发现有人也遇到了LM Studio 接入 CC慢的问题；对于Copilot 接入CC慢的问题，建议接入OpenCode&lt;/p&gt;
+&lt;h3 id=&#34;mole-调教&#34;&gt;Mole 调教&lt;/h3&gt;
+&lt;p&gt;清理完后 antidote 加载的插件就没有了，清理完后还是要重新再source和install，于是尝试重新用 git 方式安装 antidote，清理后还是一样的结果，查了文档发现其实是没有把 antidote 的插件地址加到whitelist，mole对于配置中的whitelist路径会跳过&lt;/p&gt;
+&lt;h3 id=&#34;jundot-omlx-llm-inference-server-with-continuous-batching-and-ssd-caching-for-apple-silicon-managed-from-the-macos-menu-bar&#34;&gt;&lt;a href=&#34;https://github.com/jundot/omlx&#34;&gt;jundot/omlx: LLM inference server with continuous batching &amp;amp; SSD caching for Apple Silicon — managed from the macOS menu bar&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;终于打到心仪的本地大模型工具了，可以识别MLX格式的模型，直接指定LM Studio的模型地址就可以；最好的是和CC搭配不错，能在界面直接操作 Context-Length&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W12</title>
       <link>http://blog.imcompany.cn/post/2026-week12/</link>
@@ -226,7 +248,7 @@
       <guid>http://blog.imcompany.cn/post/2026-week2/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;读完 《世界简单史》&lt;/li&gt;
+&lt;li&gt;读完 《世界简史》&lt;/li&gt;
 &lt;li&gt;开始读 《丝绸之路：一部全新的世界史》&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
