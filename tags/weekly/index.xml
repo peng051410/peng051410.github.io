@@ -11,8 +11,39 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Apr 2026 09:25:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 10:44:40 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W14</title>
+      <link>http://blog.imcompany.cn/post/2026-week14/</link>
+      <pubDate>Thu, 09 Apr 2026 09:44:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week14/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读 《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;补了补中间南北朝的历史，是真的乱&lt;/p&gt;
+&lt;h3 id=&#34;working-with-ai&#34;&gt;&lt;a href=&#34;https://working-with-ai.vercel.app/#1&#34;&gt;Working with AI&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;完全由AI生成的Slide，分享作者是如何使用AI及其思考，强烈推荐👍&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;使用-lmstudio-安装了-qwen3-dot-5的动态量化模型&#34;&gt;使用 LmStudio 安装了 &lt;a href=&#34;https://huggingface.co/Brooooooklyn/Qwen3.5-35B-A3B-UD-Q4_K_XL-mlx&#34;&gt;Qwen3.5的动态量化模型&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;刷推看到的，现在MLX Community 上都是非对称量化，影响输出质量，动态量化的模型就可以优化这个问题&lt;/p&gt;
+&lt;h3 id=&#34;安装了-type4me&#34;&gt;安装了 Type4Me&lt;/h3&gt;
+&lt;p&gt;近期语音输入应用很火，找到&lt;a href=&#34;https://github.com/joewongjc/type4me&#34;&gt;这款&lt;/a&gt;开源的可使用本地的 AI语音模型，很满意&lt;/p&gt;
+&lt;h3 id=&#34;brave-search验证失败&#34;&gt;Brave search验证失败&lt;/h3&gt;
+&lt;p&gt;用国内Visa卡验证 Brave Search 失败，放弃折腾&lt;/p&gt;
+&lt;h3 id=&#34;尝试gemma-4-26b&#34;&gt;尝试Gemma-4-26B&lt;/h3&gt;
+&lt;p&gt;使用 Llama.cpp 成功运行 Gemma-4，速度很快，质量有待考证，先用用再评&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/p0rnta.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;清明时节雨纷纷&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;故事不能替代现实，只能帮助我们面对现实&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;kharg-island&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kharg_Island&#34;&gt;Kharg Island&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;哈克岛，也被称为“禁岛”，是伊朗位于波斯湾的一个大陆岛，是伊朗石油出口的重要海上港口，近期的美以伊冲突特朗普宣称要袭击此岛来施压伊朗&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W13</title>
       <link>http://blog.imcompany.cn/post/2026-week13/</link>
