@@ -11,8 +11,28 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 15 Apr 2026 10:37:25 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 15:25:44 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W16</title>
+      <link>http://blog.imcompany.cn/post/2026-week16/</link>
+      <pubDate>Fri, 17 Apr 2026 16:22:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week16/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;读完-金色梦乡&#34;&gt;读完 《&lt;a href=&#34;https://book.douban.com/subject/26864984/&#34;&gt;金色梦乡&lt;/a&gt;》&lt;/h3&gt;
+&lt;p&gt;家人推荐，第一次看这种故事型小说，看的舒服，故事环环相扣，普通人在巨大的国家机器面前很难全身而退&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;getpaseo-paseo-orchestrate-coding-agents-remotely-from-your-phone-desktop-and-cli&#34;&gt;&lt;a href=&#34;https://github.com/getpaseo/paseo&#34;&gt;getpaseo/paseo: Orchestrate coding agents remotely from your phone, desktop and CLI&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;安装了Paseo，可以在手机上操作AI，支持CC、CodeX等&lt;/p&gt;
+&lt;h3 id=&#34;farouqaldori-vibe-notch-claude-code-notifications-without-the-context-switch-dot-a-minimal-always-present-session-manager-for-macos-dot&#34;&gt;&lt;a href=&#34;https://github.com/farouqaldori/vibe-notch&#34;&gt;farouqaldori/vibe-notch: Claude Code notifications without the context switch. A minimal, always-present session manager for macOS.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;终于找到一个可以在灵动岛直接授权AI的工具了，最近还换名了，先前叫 &lt;strong&gt;Claude Island&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;mathiszerbib-clicky-at-enhancement-lmstudio-gemma4&#34;&gt;&lt;a href=&#34;https://github.com/MathisZerbib/clicky&#34;&gt;MathisZerbib/clicky at enhancement/lmstudio-gemma4&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;在鼠标旁增加一个AI，来作为随时相伴的老师，需要自己部署一下，看着介绍挺让人心动的&lt;/p&gt;
+&lt;h3 id=&#34;multica-ai-multica-the-open-source-managed-agents-platform-dot-turn-coding-agents-into-real-teammates-assign-tasks-track-progress-compound-skills-dot&#34;&gt;&lt;a href=&#34;https://github.com/multica-ai/multica&#34;&gt;multica-ai/multica: The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;小团队任务管理协作工具，在本地部署跑了一下，可以把项目issue直接分配给AI，实时查看进度&lt;/p&gt;
+&lt;h3 id=&#34;bstnxbt-dflash-mlx-lossless-dflash-speculative-decoding-for-mlx-on-apple-silicon&#34;&gt;&lt;a href=&#34;https://github.com/bstnxbt/dflash-mlx&#34;&gt;bstnxbt/dflash-mlx: Lossless DFlash speculative decoding for MLX on Apple Silicon&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Apple Silicon 上 MLX 的无损 DFlash 推测解码，可以有效提高AI响应速度，测试了一下，在我的M2 Max上效果不是很明显，可能在M5 Max上才能发挥出真正的威力&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W15</title>
       <link>http://blog.imcompany.cn/post/2026-week15/</link>
