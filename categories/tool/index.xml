@@ -11,15 +11,16 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Apr 2026 09:53:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 09:50:23 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
       <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Wed, 08 Apr 2026 09:48:41 +0800</pubDate>
+      <pubDate>Mon, 27 Apr 2026 09:51:55 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
       <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
 &lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
@@ -422,12 +423,12 @@
 &lt;p&gt;浏览体验大升级&lt;/p&gt;
 &lt;h2 id=&#34;iorate-ublacklist-blocks-specific-sites-from-appearing-in-google-search-results&#34;&gt;&lt;a href=&#34;https://github.com/iorate/ublacklist?tab=readme-ov-file&#34;&gt;iorate/ublacklist: Blocks specific sites from appearing in Google search results&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;podstation-podcast-player-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/podstation-podcast-player/bpcagekijmfcocgjlnnhpdogbplajjfn&#34;&gt;podStation Podcast Player - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;podstation-podstation-podstation-is-a-web-podcast-aggregator-for-chrome-dot&#34;&gt;&lt;a href=&#34;https://github.com/podStation/podStation&#34;&gt;podStation/podStation: podStation is a web podcast aggregator for Chrome.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
-&lt;h2 id=&#34;rsshub-radar-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/rsshub-radar/kefjpfngnndepjbopdmoebkipbgkggaa&#34;&gt;RSSHub Radar - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;burning-vocabulary-reading-and-vocabulary-mate&#34;&gt;&lt;a href=&#34;https://burningvocabulary.com/&#34;&gt;Burning Vocabulary - Reading and Vocabulary Mate&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;j3sch-logseq-clipper-a-browser-extension-for-capturing-web-content-directly-into-your-logseq-graph-dot-adapted-from-obsidian-s-web-clipper-dot&#34;&gt;&lt;a href=&#34;https://github.com/j3sch/logseq-clipper&#34;&gt;j3sch/logseq-clipper: A browser extension for capturing web content directly into your Logseq graph. Adapted from Obsidian&amp;rsquo;s Web Clipper.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;优化logseq官方插件，直接捕获内容&lt;/p&gt;</description>
+&lt;h2 id=&#34;dukeluo-wai-一款可以预防颈椎病的新标签页扩展&#34;&gt;&lt;a href=&#34;https://github.com/dukeluo/wai&#34;&gt;dukeluo/wai: 一款可以预防颈椎病的新标签页扩展。&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;浏览信息，锻炼脖子&lt;/p&gt;
+&lt;h2 id=&#34;extension-manager-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco&#34;&gt;Extension Manager - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;应用扩展管理，支持url匹配，最多支持10个规则&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些提高效率的命令行工具</title>

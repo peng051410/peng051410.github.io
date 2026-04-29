@@ -11,8 +11,33 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Apr 2026 15:25:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2026 18:13:23 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W17</title>
+      <link>http://blog.imcompany.cn/post/2026-week17/</link>
+      <pubDate>Wed, 29 Apr 2026 15:54:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week17/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;阅读完-工作-消费主义和新穷人&#34;&gt;阅读完 《工作、消费主义和新穷人》&lt;/h3&gt;
+&lt;p&gt;我们现在生活一个消费主义时代，在以前的生产主义时代你的价值是你能生产什么，现在的消费主义时代你的价值是你能消费什么。对于穷人在生产主义时代还可以充当预备军，在消费主义时代则完全被抛弃&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;hehehai-voxt-️voice-input-and-translation-app-for-macos-dot-press-to-talk-release-to-paste-dot&#34;&gt;&lt;a href=&#34;https://github.com/hehehai/voxt&#34;&gt;hehehai/voxt: 🎙️Voice input and translation app for macOS. Press to talk, release to paste.&lt;/a&gt; &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;out&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/h3&gt;
+&lt;p&gt;尝试了一下这个语音APP，在权限处理时就卡住了，劝退了。目前同时在测试使用Typeless 和 Type4Me&lt;/p&gt;
+&lt;h3 id=&#34;ogulcancelik-herdr-agent-multiplexer-that-lives-in-your-terminal-dot&#34;&gt;&lt;a href=&#34;https://github.com/ogulcancelik/herdr&#34;&gt;ogulcancelik/herdr: agent multiplexer that lives in your terminal.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;终端内运行多Agent提示工具，类Tmux的操作，主要是AI运行后在左侧有提示。类似的还有一个 &lt;a href=&#34;https://github.com/manaflow-ai/cmux&#34;&gt;cmux&lt;/a&gt; ，目前使用下来感觉UI theme适配有些问题，再关注&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/SFsPxw.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;物业组织的羽毛球比赛落下帷幕，公司有新突破&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;AI只有信息，没有立场&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;colorado-river-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Colorado_River?useskin=vector&#34;&gt;Colorado River - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;科罗拉多河，美国西南部和墨西哥北部主要河流之一。长2330公里，是美国第五长的河，涵盖美国七个洲和墨西哥两个洲。科罗拉多河及其支流以其壮观的峡谷、急流和11个美国国家公园而闻名，是4000万人的重要水源。建立在此的最大的胡佛水坝于1935年竣工&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W16</title>
       <link>http://blog.imcompany.cn/post/2026-week16/</link>
