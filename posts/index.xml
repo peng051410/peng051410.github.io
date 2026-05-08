@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on I&#39;m company</title>
+    <link>http://blog.imcompany.cn/posts/</link>
+    <description>Recent content in Posts on I&#39;m company</description>
+    <image>
+      <title>I&#39;m company</title>
+      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 May 2026 10:19:14 +0800</lastBuildDate>
+    <atom:link href="http://blog.imcompany.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W18</title>
+      <link>http://blog.imcompany.cn/posts/2026-week18/</link>
+      <pubDate>Thu, 30 Apr 2026 09:48:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/2026-week18/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;ai-也该有护照了-虹线&#34;&gt;&lt;a href=&#34;https://1q43.blog/post/12323/&#34;&gt;AI 也该有护照了 | 虹线&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;作者对当前Menus收购热议提出的AI所属问题，讨论了AI产生的问题由谁来负责&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;lukilabs-craft-agents-oss&#34;&gt;&lt;a href=&#34;https://github.com/lukilabs/craft-agents-oss&#34;&gt;lukilabs/craft-agents-oss&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;AI工具，以Session组织Agents协同工作，给Agent工具带上了状态，可以细粒度跟踪&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;garrytan-gstack-use-garry-tan-s-exact-claude-code-setup-23-opinionated-tools-that-serve-as-ceo-designer-eng-manager-release-manager-doc-engineer-and-qa&#34;&gt;&lt;a href=&#34;https://github.com/garrytan/gstack&#34;&gt;garrytan/gstack: Use Garry Tan&amp;rsquo;s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;YC创始人的23个固执己见的AI工具，支持CC、Codex等工具，可以直接在Conductor的Playground中体验使用&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;dohooo-helmor-open-source-local-workbench-for-multi-agent-software-development-dot&#34;&gt;&lt;a href=&#34;https://github.com/dohooo/helmor&#34;&gt;dohooo/helmor: Open-source local workbench for multi-agent software development.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Conductor开源平替，都是支持组织AI任务状态流转的工具&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;graykode-abtop-like-htop-but-for-ai-coding-agents-dot-monitor-claude-code-and-codex-cli-sessions-tokens-context-window-rate-limits-and-ports-in-real-time-dot&#34;&gt;&lt;a href=&#34;https://github.com/graykode/abtop&#34;&gt;graykode/abtop: Like htop, but for AI coding agents. Monitor Claude Code &amp;amp; Codex CLI sessions, tokens, context window, rate limits, and ports in real-time.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;监控AI Agent的运行信息，包括Session、Tokens和Context Window信息、使用的端口信息&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
