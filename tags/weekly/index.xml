@@ -11,8 +11,37 @@
     </image>
     <generator>Hugo -- 0.154.5</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 May 2026 10:19:33 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 09:20:37 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W19</title>
+      <link>http://blog.imcompany.cn/post/2026-week19/</link>
+      <pubDate>Sat, 09 May 2026 17:12:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week19/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;读到隋朝创业与结业部分，杨坚9个月快速登上皇位，大表演家杨广上位太子进而当上隋炀帝，开启极限败家模式&lt;/p&gt;
+&lt;h3 id=&#34;一个新的-ai-记忆层概念-哈勃半径-虹线&#34;&gt;&lt;a href=&#34;https://1q43.blog/post/12336/&#34;&gt;一个新的 AI 记忆层概念：哈勃半径 | 虹线&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;作者提出的用AI构建自己的三层记忆系统：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我知道的&lt;/li&gt;
+&lt;li&gt;我应该知道的&lt;/li&gt;
+&lt;li&gt;我可能知道的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于前两个用卡片与LLM Wiki来解决，对于第3点作者提出了对未知领域的应对方式，哈勃半径，把关注的领域内容都放到一个私有的搜索引擎中来构建一个私人宇宙，对于第3点作者搭建了一个Meilisearch，可以借鉴，再考虑有没有其它轻量的替代方案&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;jerryzliu-dayflow-the-automatic-work-journal-dot-privately-turns-your-screen-into-a-timeline-of-what-you-actually-accomplished-dot-open-source-and-local-first-dot&#34;&gt;&lt;a href=&#34;https://github.com/JerryZLiu/Dayflow&#34;&gt;JerryZLiu/Dayflow: The automatic work journal. Privately turns your screen into a timeline of what you actually accomplished. Open-source and local-first.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开源记录本地电脑操作的应用，数据以本地优先，使用AI进行片断总结，使用下来感觉很好，对自己一天做的事有一个清晰的认识&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;xdd666t-codex-with-cc-codex穷鬼大救星&#34;&gt;&lt;a href=&#34;https://github.com/xdd666t/codex_with_cc&#34;&gt;xdd666t/codex_with_cc: codex穷鬼大救星&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;缓解token焦虑的方式，Codex当架构师，CC配合DeepSeek来干活&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;nowledge-co-con-terminal-the-native-terminal-emulator-with-a-builtin-ai-harness&#34;&gt;&lt;a href=&#34;https://github.com/nowledge-co/con-terminal&#34;&gt;nowledge-co/con-terminal: The Native Terminal Emulator with a builtin AI Harness&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开源、GPU加速的内部自带AI的终端模拟器&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;youssofal-mtplx-native-mtp-speculative-decoding-on-apple-silicon-2x-2-dot-5x-decode-tps-increase-at-temp-0-dot-6-mlx-native-openai-api-anthropic-compatible-serving-no-external-drafter-dot&#34;&gt;&lt;a href=&#34;https://github.com/youssofal/MTPLX&#34;&gt;youssofal/MTPLX: Native MTP Speculative Decoding On Apple Silicon | 2x - 2.5x decode TPS increase at temp 0.6 | MLX-native, OpenAI API/Anthropic-compatible serving, no external drafter.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;本地MTP解码加速工具，号称输出快2倍以上，使用仓库的Model实测试在M2Max上没有什么大的速度提升，还是20t/s的样子，再使用使用看看&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W18</title>
       <link>http://blog.imcompany.cn/post/2026-week18/</link>

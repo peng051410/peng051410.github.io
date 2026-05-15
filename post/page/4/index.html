@@ -2,7 +2,25 @@
 <svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://blog.imcompany.cn/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=http://blog.imcompany.cn/categories/ title=Categories><span>Categories</span></a></li><li><a href=http://blog.imcompany.cn/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://github.com/peng051410/today_i_learn title=Til><span>Til</span>&nbsp;
 <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://blog.imcompany.cn/>Home</a></div><h1>Posts
-<a href=/post/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>重拾Android的快乐-LinearLayout布局</h2></header><div class=entry-content><p>说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐
+<a href=/post/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>重拾Android的快乐-RelativeLayout布局</h2></header><div class=entry-content><p>说明 RelativeLayout 是一个提供子View相对位置的View组，可以指定相邻同级节点的位置（上下左右）或相对于父区域的位置。RelativeLayout主要是用来消除嵌套布局来保持布局层级扁平来提升性能。
+布局方向 Android中的布局方向有两种:
+LTR 从左到右 RTL 从右到左 可以通过 android:layoutDirection 进行设置
+常用属性配置 对齐相关 android:layout_alignParentTop 此视图顶部边缘与父视图顶部边缘对齐，忽略布局方向，对应的有 android:layout_alignParentBottom
+android:layout_alignParentLeft 此视图顶部边缘与父视图左侧对齐，只支持LTR，对应的有 android:layout_alignParentRight
+android:layout_alignParentStart 此视图顶部边缘与父视图左侧对齐，支持LTR与RTL，对应的有 android:layout_alignParentEnd
+android:layout_alignTop 此视图顶部边缘与给定视图顶部边缘对齐，忽略布局方向，对应的有 android:layout_alignParentBottom
+android:layout_alignLeft 此视图顶部边缘与给定视图左侧对齐，只支持LTR，对应的有 android:layout_alignRight
+android:layout_alignStart 此视图顶部边缘与给定视图左侧对齐，支持LTR与RTL，对应的有 android:layout_alignEnd
+android:layout_alignWithParentIfMissing 如果没有设置 layout_toLeftOf 或者 layout_toRightOf 属性则使用父view做为锚点
+居中相关 android:layout_centerHorizontal 子视图在父视图中垂直居中
+android:layout_centerVertical 子视图在父视图中水平居中
+android:layout_centerInParent 子视图在父视图中水平和垂直居中
+android:layout_below 用于控制垂直方向，此视图定位于指定资源id的下方，对应的还有 android:layout_above
+android:layout_toRightOf 用于左右(LTR)布局并忽略右左布局，此视图的左边缘定位于指定资源的右方，其它的还有 android:layout_toLeftOf
+android:layout_toEndOf 支持LTR与RTL两种布局，对于LTR表示位于指定资源id的右侧，对于RTL则相反
+示例 这里引用一个官方提供的样例
+效果图 代码 &lt;?xml version="1.0" encoding="utf-8"?> &lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingLeft="16dp" android:paddingRight="16dp" > &lt;EditText android:id="@+id/name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/reminder" /> &lt;Spinner android:id="@+id/dates" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_below="@id/name" android:layout_alignParentLeft="true" android:layout_toLeftOf="@+id/times" /> &lt;Spinner android:id="@id/times" android:layout_width="96dp" android:layout_height="wrap_content" android:layout_below="@id/name" android:layout_alignParentRight="true" /> &lt;Button android:layout_width="96dp" android:layout_height="wrap_content" android:layout_below="@id/times" android:layout_alignParentRight="true" android:text="@string/done" /> &lt;/RelativeLayout> 这里主要关注中间两个Spinner和Button
+...</p></div><footer class=entry-footer><span title='Created: 2025-07-10 16:00:00 +0800 CST'>2025-07-10</span>&nbsp;·&nbsp;<span title='Modified: 2025-07-17 11:13:19 +0800 CST'> (🌟Updated: 2025-07-17)</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>168 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 重拾Android的快乐-RelativeLayout布局" href=http://blog.imcompany.cn/post/android-relativelayout/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>重拾Android的快乐-LinearLayout布局</h2></header><div class=entry-content><p>说明 LinearLayout 是一个视图组件，它可以将所有子视图按一个方向进行 垂直/水平 对齐
 垂直方向(Vertical) 垂直方向会按每行一个元素排列，而不管设置的宽度
 水平方向(Horizontal) 水平方向只有一行高，它的高度为最高的子元素+Padding值
 常用属性配置 android:orientation 布局方向，可配置值:
@@ -62,20 +80,7 @@ Our mission is to give you a balance between speed, privacy and productivity!
 注册Bean 扫描完所有Bean后，会调用 checkCandidate() 方法进行检查，检查当前要注册的Bean是否与已经注册过的Bean的定义是否兼容，如果冲突会报 ConflictingBeanDefinitionException 。检查没问题后，会调用 registerBeanDefinition() 方法对Bean进行注册，这个过程就涉及到Spring其它的生命周期了（这个后续专门学习总结），对于@ComponentScan 组件来说已经完成了它的使命
 总结 最后以注解解析过程中的涉及的核心类做一下总结
 常见问题 调整包结构后一些@Bean配置扫描不到了 调用启动类的包路径为最外层，这样可以扫描当前包及子包的配置 默认只扫描当前标注注解的包，可以通过配置 basePackage 属性指定扫描路径，配置后默认的扫描路径就不生效了 如何将未配置Spring相关组件注解的Bean纳入Spring管理? 可以通过配置 ComponentScan的includeFilter 来实现
-...</p></div><footer class=entry-footer><span title='Created: 2025-05-15 16:29:33 +0800 CST'>2025-05-15</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>99 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Spring学习之@CompnentScan" href=http://blog.imcompany.cn/post/spring-componentscan/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Spring学习之@Configuration</h2></header><div class=entry-content><p>@Configuration是什么？ @Configuration 是 Spring提供的一个用于配置与声明Bean与相应Bean之间依赖的注解，根据文档描述，此注解通常由 AnnotationConfigApplicationContext 上下文进行启动加载
-@Configuration能做什么？ 先看一下此注解的声明，在此注解上标识了 @Component ，则证明此注解是一个 Component，拥有 @Component 注解的基础能力(可以被Spring容器自动扫描与加载)
-上图标识了注解常用的配置方式，分类为以下几种
-属性资源导入 引入其它配置类的配置 Value注入 Spring容器组件注入 支持Profile配置 注解属性 在Spring5.x版本中，只支持两个属性配置
-value 配置注解的名称
-proxyBeanMethods 是否代理增强(基于CGLIB)标识 @Bean 的方法，默认为true，保证声明的bean是单例共享的，而不是每一次通过方法调用都生成一个新的
-此属性的两个值被定义为两种模式
-full 模式(值为true) lite 模式(值为false) 源码分析 @Configuration 注解的解析类为 ConfigurationClassPostProcessor ，本次主要关注从 AnnotationConfigApplicationContext 启动后的整个处理过程， AnnotationConfigApplicationContext 启动分为三个阶段
-先上一张三个阶段的涉及的主要类与调用关系图 初始化 初始化reader 此过程会实例化 AnnotatedBeanDefinitionReader 类，此类在实例化时会调用 AnnotationConfigUtils.registerAnnotationConfigProcessors 来注册解析配置的Processor，如果registry中没有包含 ConfigurationClassPostProcessor 类的定义，则会新new一个 ConfigurationClassPostProcessor 的Bean定义类
-整体调用链路如下：
-初始化scanner 此过程会实例化Bean定义扫描器 ClassPathBeanDefinitionScanner , 在此过程中主要会设置 Environment 和 ResourceLoader 相关信息
-注册 注册阶段主要是对标注了 @Configuration 类(MyConfig)进行注册，以便Spring可以正常识别，主要逻辑在 AnnotatedBeanDefinitionReader#doRegisterBean 中，此方法会调用 BeanDefinitionReaderUtils.registerBeanDefinition 对此Bean进行注册
-至此， @Configuration 类信息就注册到了 Spring 容器中
-...</p></div><footer class=entry-footer><span title='Created: 2025-05-09 11:40:11 +0800 CST'>2025-05-09</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>202 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Spring学习之@Configuration" href=http://blog.imcompany.cn/post/spring-configuration/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/post/page/3/>«&nbsp;Prev&nbsp;
+...</p></div><footer class=entry-footer><span title='Created: 2025-05-15 16:29:33 +0800 CST'>2025-05-15</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>99 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Spring学习之@CompnentScan" href=http://blog.imcompany.cn/post/spring-componentscan/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://blog.imcompany.cn/post/page/3/>«&nbsp;Prev&nbsp;
 </a><a class=next href=http://blog.imcompany.cn/post/page/5/>Next&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
