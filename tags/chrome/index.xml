@@ -9,15 +9,45 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.154.5</generator>
+    <generator>Hugo -- 0.161.1</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Apr 2026 09:50:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 11:37:14 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些高效的Chrome插件</title>
       <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
+      <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
+&lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
+&lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;
+&lt;p&gt;无敌翻译软件，支持网页、PDF、本地文件翻译&lt;/p&gt;
+&lt;h2 id=&#34;tampermonkey&#34;&gt;&lt;a href=&#34;https://github.com/Tampermonkey/tampermonkey&#34;&gt;Tampermonkey&lt;/a&gt; 👍&lt;/h2&gt;
+&lt;p&gt;用户自定义脚本管理器&lt;/p&gt;
+&lt;h2 id=&#34;enhanced-github&#34;&gt;Enhanced GitHub&lt;/h2&gt;
+&lt;p&gt;Github加强版，显示仓库大小，下载单个文件等好用功能。&lt;a href=&#34;https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;眺览-tillglance&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/%E7%9C%BA%E8%A7%88-tillglance/aomnlmcemihejgfkeplljkcelfpneakg&#34;&gt;眺览 TillGlance&lt;/a&gt; 👍&lt;/h2&gt;
+&lt;p&gt;一目十行的阅读方式&lt;/p&gt;
+&lt;h2 id=&#34;elmo-your-ai-companion-to-create-summaries-and-insights&#34;&gt;&lt;a href=&#34;https://www.elmo.chat/&#34;&gt;Elmo - Your AI companion to create summaries and insights&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;最大优点是生成的摘要最接近原文&lt;/p&gt;
+&lt;h2 id=&#34;language-reactor&#34;&gt;&lt;a href=&#34;https://www.languagereactor.com/&#34;&gt;Language Reactor&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;探索、理解并从母语材料中学习的完美助手&lt;/p&gt;
+&lt;h2 id=&#34;peeklink-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/peeklink/hdaniddaeomoofbnoagkncfofebaablc&#34;&gt;PeekLink - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;浏览体验大升级&lt;/p&gt;
+&lt;h2 id=&#34;iorate-ublacklist-blocks-specific-sites-from-appearing-in-google-search-results&#34;&gt;&lt;a href=&#34;https://github.com/iorate/ublacklist?tab=readme-ov-file&#34;&gt;iorate/ublacklist: Blocks specific sites from appearing in Google search results&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;podstation-podstation-podstation-is-a-web-podcast-aggregator-for-chrome-dot&#34;&gt;&lt;a href=&#34;https://github.com/podStation/podStation&#34;&gt;podStation/podStation: podStation is a web podcast aggregator for Chrome.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
+&lt;h2 id=&#34;dukeluo-wai-一款可以预防颈椎病的新标签页扩展&#34;&gt;&lt;a href=&#34;https://github.com/dukeluo/wai&#34;&gt;dukeluo/wai: 一款可以预防颈椎病的新标签页扩展。&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;浏览信息，锻炼脖子&lt;/p&gt;
+&lt;h2 id=&#34;extension-manager-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco&#34;&gt;Extension Manager - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;应用扩展管理，支持url匹配，最多支持10个规则&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些高效的Chrome插件</title>
+      <link>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</link>
+      <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</guid>
       <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
 &lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
 &lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;

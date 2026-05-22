@@ -9,10 +9,38 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.154.5</generator>
+    <generator>Hugo -- 0.161.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 May 2026 09:20:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 15:36:54 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W20</title>
+      <link>http://blog.imcompany.cn/post/2026-week20/</link>
+      <pubDate>Fri, 15 May 2026 16:35:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week20/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;终于来到唐朝创业阶段，唐高宗李渊从晋阳起兵，以关中为中心最终一统天下。唐太宗李世民是真的强，为自家的创业真的是卖力，有勇有谋，战事判断精准；识人通达，尉迟敬德的忠心与骁勇为其平定中原奠定基础，也在后来的玄武门事变立下大功劳&lt;/p&gt;
+&lt;h3 id=&#34;用agent评测思路管理ai-coding-31万行代码ai重构的实践-美团技术团队&#34;&gt;&lt;a href=&#34;https://tech.meituan.com/2026/05/07/agent-ai-coding.html?__readwiseLocation=&#34;&gt;用Agent评测思路管理AI Coding —— 31万行代码AI重构的实践 - 美团技术团队&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;美团使用AI重构的实践分享，核心观点是先人与人对齐然后才是人与AI对齐，实施时建议PRe-PR让AI自查，然后人工CR主要聚焦业务语义&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;eduwass-tmux-palette-raycast-style-command-palette-for-tmux-fast-scriptable-easy-to-extend&#34;&gt;&lt;a href=&#34;https://github.com/eduwass/tmux-palette/&#34;&gt;eduwass/tmux-palette: Raycast-style command palette for tmux — fast, scriptable, easy to extend&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;给Tmux增加快速命令看板，香&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/DdmP89.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;编程的本质是思维不是语言&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;the-pentagon&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/The_Pentagon?useskin=vector&#34;&gt;The_Pentagon&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;五角大楼是美国国防部的司令部所在地，位于弗吉尼亚旗舰店的阿灵顿县。该建筑在第二次世界大战期间加速建造而成。作为美国军事的象征，“五角大楼”这一短语常被用来指代国防部及其领导层&lt;/p&gt;
+&lt;p&gt;该建筑由美国建筑师George Bergstrom 设计，由承包商John McShain建造。地面于1941年9月11日破土，于1943年1月15日落成&lt;/p&gt;
+&lt;p&gt;五角大楼是世界上第二大的办公楼，大约有650万平方英尺（60万平方米）的楼面面积。它有五个边，地上五层，地下两层，每层有五个环形走廊，还有一个中英五英亩（2公顷）的五边形广场&lt;/p&gt;
+&lt;p&gt;2001年，五角大楼在9月11日袭击中受损，125名五角大楼人员死亡&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W19</title>
       <link>http://blog.imcompany.cn/post/2026-week19/</link>
