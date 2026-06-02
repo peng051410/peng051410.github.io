@@ -9,9 +9,9 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.161.1</generator>
+    <generator>Hugo -- 0.162.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 May 2026 11:37:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 16:06:26 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些高效的Chrome插件</title>
@@ -68,10 +68,8 @@
 &lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;podstation-podstation-podstation-is-a-web-podcast-aggregator-for-chrome-dot&#34;&gt;&lt;a href=&#34;https://github.com/podStation/podStation&#34;&gt;podStation/podStation: podStation is a web podcast aggregator for Chrome.&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
-&lt;h2 id=&#34;dukeluo-wai-一款可以预防颈椎病的新标签页扩展&#34;&gt;&lt;a href=&#34;https://github.com/dukeluo/wai&#34;&gt;dukeluo/wai: 一款可以预防颈椎病的新标签页扩展。&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;浏览信息，锻炼脖子&lt;/p&gt;
-&lt;h2 id=&#34;extension-manager-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco&#34;&gt;Extension Manager - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;应用扩展管理，支持url匹配，最多支持10个规则&lt;/p&gt;</description>
+&lt;h2 id=&#34;justineo-github-hovercard-neat-hovercards-for-github-dot&#34;&gt;&lt;a href=&#34;https://github.com/Justineo/github-hovercard&#34;&gt;Justineo/github-hovercard: Neat hovercards for GitHub.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Github hover增强&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -19,49 +19,49 @@ Spring提供了哪些ExceptionResolver?
 
 经典的Interface-Abstract方式的实现类
 
-  
-      
-          Resolver
-          Desc
-      
-  
-  
-      
-          SimpleMappingExceptionResolver
-          提供exception class name到view的映射
-      
-      
-          DefaultHandlerExceptionResolver
-          默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码
-      
-      
-          ResponseStatusExceptionResolver
-          基于 @ResponseStatus 注解来映射异常与Http状态码
-      
-      
-          ExceptionHandlerExceptionResolver
-          基于 @ExceptionHalder 注解来解析处理异常信息
-      
-  
+	
+			
+					Resolver
+					Desc
+			
+	
+	
+			
+					SimpleMappingExceptionResolver
+					提供exception class name到view的映射
+			
+			
+					DefaultHandlerExceptionResolver
+					默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码
+			
+			
+					ResponseStatusExceptionResolver
+					基于 @ResponseStatus 注解来映射异常与Http状态码
+			
+			
+					ExceptionHandlerExceptionResolver
+					基于 @ExceptionHalder 注解来解析处理异常信息
+			
+	
 
 直接实现HandlerExceptionResolver的类
 
-  
-      
-          Resolver
-          Desc
-      
-  
-  
-      
-          DefaultErrorAttributes
-          默认错误属性实现
-      
-      
-          HandlerExceptionResolverComposite
-          代理其它Resolver集合的ExceptionResolver
-      
-  
+	
+			
+					Resolver
+					Desc
+			
+	
+	
+			
+					DefaultErrorAttributes
+					默认错误属性实现
+			
+			
+					HandlerExceptionResolverComposite
+					代理其它Resolver集合的ExceptionResolver
+			
+	
 
 HandlerExceptionResolverComposite 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver
 具体异常处理流程
@@ -109,49 +109,49 @@ Spring提供了哪些ExceptionResolver?
 
 经典的Interface-Abstract方式的实现类
 
-  
-      
-          Resolver
-          Desc
-      
-  
-  
-      
-          SimpleMappingExceptionResolver
-          提供exception class name到view的映射
-      
-      
-          DefaultHandlerExceptionResolver
-          默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码
-      
-      
-          ResponseStatusExceptionResolver
-          基于 @ResponseStatus 注解来映射异常与Http状态码
-      
-      
-          ExceptionHandlerExceptionResolver
-          基于 @ExceptionHalder 注解来解析处理异常信息
-      
-  
+	
+			
+					Resolver
+					Desc
+			
+	
+	
+			
+					SimpleMappingExceptionResolver
+					提供exception class name到view的映射
+			
+			
+					DefaultHandlerExceptionResolver
+					默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码
+			
+			
+					ResponseStatusExceptionResolver
+					基于 @ResponseStatus 注解来映射异常与Http状态码
+			
+			
+					ExceptionHandlerExceptionResolver
+					基于 @ExceptionHalder 注解来解析处理异常信息
+			
+	
 
 直接实现HandlerExceptionResolver的类
 
-  
-      
-          Resolver
-          Desc
-      
-  
-  
-      
-          DefaultErrorAttributes
-          默认错误属性实现
-      
-      
-          HandlerExceptionResolverComposite
-          代理其它Resolver集合的ExceptionResolver
-      
-  
+	
+			
+					Resolver
+					Desc
+			
+	
+	
+			
+					DefaultErrorAttributes
+					默认错误属性实现
+			
+			
+					HandlerExceptionResolverComposite
+					代理其它Resolver集合的ExceptionResolver
+			
+	
 
 HandlerExceptionResolverComposite 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver
 具体异常处理流程

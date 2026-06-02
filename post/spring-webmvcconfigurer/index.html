@@ -2,120 +2,120 @@
 WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配置项：
 
 
-  
-      
-          方法名称
-          参数
-          用途
-      
-  
-  
-      
-          addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
-          List<HandlerMethodArgumentResolver> argumentResolvers
-          添加自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
-      
-      
-          addCorsMappings(CorsRegistry registry)
-          CorsRegistry registry
-          配置跨域资源共享 (CORS)
-      
-      
-          addFormatters(FormatterRegistry registry)
-          FormatterRegistry registry
-          添加自定义的格式化程序和转换器
-      
-      
-          addInterceptors(InterceptorRegistry registry)
-          InterceptorRegistry registry
-          添加自定义的拦截器
-      
-      
-          addRequestMappings(RequestMappingInfo customization, Class<Controller> controllerClass)
-          RequestMappingInfo customization, Class<Controller> controllerClass
-          关联自定义请求映射到具控制器类
-      
-      
-          addResourceHandlers(ResourceHandlerRegistry registry)
-          ResourceHandlerRegistry registry
-          配置资源处理，如静态资源路径
-      
-      
-          addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
-          List<HandlerMethodReturnValueHandler> returnValueHandlers
-          添加自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值
-      
-      
-          addViewControllers(ViewControllerRegistry registry)
-          ViewControllerRegistry registry
-          注册视图控制器
-      
-      
-          configureAsyncSupport(AsyncSupportConfigurer configurer)
-          AsyncSupportConfigurer configurer
-          配置异步支持
-      
-      
-          configureContentNegotiation(ContentNegotiationConfigurer configurer)
-          ContentNegotiationConfigurer configurer
-          配置内容协商策略
-      
-      
-          configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
-          DefaultServletHandlerConfigurer configurer
-          启用默认 Servlet 处理
-      
-      
-          configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
-          List<HandlerExceptionResolver> exceptionResolvers
-          配置异常处理程序
-      
-      
-          configureMessageConverters(List<HttpMessageConverter<?>> converters)
-          List<HttpMessageConverter<?>> converters
-          配置自定义的 HttpMessageConverter
-      
-      
-          configurePathMatch(PathMatchConfigurer configurer)
-          PathMatchConfigurer configurer
-          配置路径匹配规则
-      
-      
-          configureViewResolvers(ViewResolverRegistry registry)
-          ViewResolverRegistry registry
-          配置视图解析器
-      
-      
-          extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
-          List<HandlerExceptionResolver> exceptionResolvers
-          扩展异常处理程序
-      
-      
-          extendMessageConverters(List<HttpMessageConverter<?>> converters)
-          List<HttpMessageConverter<?>> converters
-          扩展自定义的 HttpMessageConverter
-      
-      
-          extendInterceptors(List<HandlerInterceptor> interceptors)
-          List<HandlerInterceptor> interceptors
-          扩展拦截器
-      
-      
-          extendArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
-          List<HandlerMethodArgumentResolver> argumentResolvers
-          扩展自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
-      
-      
-          extendReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
-          List<HandlerMethodReturnValueHandler> returnValueHandlers
-          扩展自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值。
-      
-      
-          extendViewResolvers(List<ViewResolver> viewResolvers)
-          List<ViewResolver> viewResolvers
-          扩展视图解析器
-      
-  
+	
+			
+					方法名称
+					参数
+					用途
+			
+	
+	
+			
+					addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+					List<HandlerMethodArgumentResolver> argumentResolvers
+					添加自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
+			
+			
+					addCorsMappings(CorsRegistry registry)
+					CorsRegistry registry
+					配置跨域资源共享 (CORS)
+			
+			
+					addFormatters(FormatterRegistry registry)
+					FormatterRegistry registry
+					添加自定义的格式化程序和转换器
+			
+			
+					addInterceptors(InterceptorRegistry registry)
+					InterceptorRegistry registry
+					添加自定义的拦截器
+			
+			
+					addRequestMappings(RequestMappingInfo customization, Class<Controller> controllerClass)
+					RequestMappingInfo customization, Class<Controller> controllerClass
+					关联自定义请求映射到具控制器类
+			
+			
+					addResourceHandlers(ResourceHandlerRegistry registry)
+					ResourceHandlerRegistry registry
+					配置资源处理，如静态资源路径
+			
+			
+					addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
+					List<HandlerMethodReturnValueHandler> returnValueHandlers
+					添加自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值
+			
+			
+					addViewControllers(ViewControllerRegistry registry)
+					ViewControllerRegistry registry
+					注册视图控制器
+			
+			
+					configureAsyncSupport(AsyncSupportConfigurer configurer)
+					AsyncSupportConfigurer configurer
+					配置异步支持
+			
+			
+					configureContentNegotiation(ContentNegotiationConfigurer configurer)
+					ContentNegotiationConfigurer configurer
+					配置内容协商策略
+			
+			
+					configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
+					DefaultServletHandlerConfigurer configurer
+					启用默认 Servlet 处理
+			
+			
+					configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
+					List<HandlerExceptionResolver> exceptionResolvers
+					配置异常处理程序
+			
+			
+					configureMessageConverters(List<HttpMessageConverter<?>> converters)
+					List<HttpMessageConverter<?>> converters
+					配置自定义的 HttpMessageConverter
+			
+			
+					configurePathMatch(PathMatchConfigurer configurer)
+					PathMatchConfigurer configurer
+					配置路径匹配规则
+			
+			
+					configureViewResolvers(ViewResolverRegistry registry)
+					ViewResolverRegistry registry
+					配置视图解析器
+			
+			
+					extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
+					List<HandlerExceptionResolver> exceptionResolvers
+					扩展异常处理程序
+			
+			
+					extendMessageConverters(List<HttpMessageConverter<?>> converters)
+					List<HttpMessageConverter<?>> converters
+					扩展自定义的 HttpMessageConverter
+			
+			
+					extendInterceptors(List<HandlerInterceptor> interceptors)
+					List<HandlerInterceptor> interceptors
+					扩展拦截器
+			
+			
+					extendArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+					List<HandlerMethodArgumentResolver> argumentResolvers
+					扩展自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
+			
+			
+					extendReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
+					List<HandlerMethodReturnValueHandler> returnValueHandlers
+					扩展自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值。
+			
+			
+					extendViewResolvers(List<ViewResolver> viewResolvers)
+					List<ViewResolver> viewResolvers
+					扩展视图解析器
+			
+	
 
 关联类
 WebMvcConfigurationSupport
@@ -125,120 +125,120 @@ EnableWebMvc
 WebMvcConfigurer是Spring提供的统一配置接口，用于自定义Spring MVC的配置，全局更改服务的行为，提供的可配置项：
 
 
-  
-      
-          方法名称
-          参数
-          用途
-      
-  
-  
-      
-          addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
-          List<HandlerMethodArgumentResolver> argumentResolvers
-          添加自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
-      
-      
-          addCorsMappings(CorsRegistry registry)
-          CorsRegistry registry
-          配置跨域资源共享 (CORS)
-      
-      
-          addFormatters(FormatterRegistry registry)
-          FormatterRegistry registry
-          添加自定义的格式化程序和转换器
-      
-      
-          addInterceptors(InterceptorRegistry registry)
-          InterceptorRegistry registry
-          添加自定义的拦截器
-      
-      
-          addRequestMappings(RequestMappingInfo customization, Class<Controller> controllerClass)
-          RequestMappingInfo customization, Class<Controller> controllerClass
-          关联自定义请求映射到具控制器类
-      
-      
-          addResourceHandlers(ResourceHandlerRegistry registry)
-          ResourceHandlerRegistry registry
-          配置资源处理，如静态资源路径
-      
-      
-          addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
-          List<HandlerMethodReturnValueHandler> returnValueHandlers
-          添加自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值
-      
-      
-          addViewControllers(ViewControllerRegistry registry)
-          ViewControllerRegistry registry
-          注册视图控制器
-      
-      
-          configureAsyncSupport(AsyncSupportConfigurer configurer)
-          AsyncSupportConfigurer configurer
-          配置异步支持
-      
-      
-          configureContentNegotiation(ContentNegotiationConfigurer configurer)
-          ContentNegotiationConfigurer configurer
-          配置内容协商策略
-      
-      
-          configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
-          DefaultServletHandlerConfigurer configurer
-          启用默认 Servlet 处理
-      
-      
-          configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
-          List<HandlerExceptionResolver> exceptionResolvers
-          配置异常处理程序
-      
-      
-          configureMessageConverters(List<HttpMessageConverter<?>> converters)
-          List<HttpMessageConverter<?>> converters
-          配置自定义的 HttpMessageConverter
-      
-      
-          configurePathMatch(PathMatchConfigurer configurer)
-          PathMatchConfigurer configurer
-          配置路径匹配规则
-      
-      
-          configureViewResolvers(ViewResolverRegistry registry)
-          ViewResolverRegistry registry
-          配置视图解析器
-      
-      
-          extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
-          List<HandlerExceptionResolver> exceptionResolvers
-          扩展异常处理程序
-      
-      
-          extendMessageConverters(List<HttpMessageConverter<?>> converters)
-          List<HttpMessageConverter<?>> converters
-          扩展自定义的 HttpMessageConverter
-      
-      
-          extendInterceptors(List<HandlerInterceptor> interceptors)
-          List<HandlerInterceptor> interceptors
-          扩展拦截器
-      
-      
-          extendArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
-          List<HandlerMethodArgumentResolver> argumentResolvers
-          扩展自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
-      
-      
-          extendReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
-          List<HandlerMethodReturnValueHandler> returnValueHandlers
-          扩展自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值。
-      
-      
-          extendViewResolvers(List<ViewResolver> viewResolvers)
-          List<ViewResolver> viewResolvers
-          扩展视图解析器
-      
-  
+	
+			
+					方法名称
+					参数
+					用途
+			
+	
+	
+			
+					addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+					List<HandlerMethodArgumentResolver> argumentResolvers
+					添加自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
+			
+			
+					addCorsMappings(CorsRegistry registry)
+					CorsRegistry registry
+					配置跨域资源共享 (CORS)
+			
+			
+					addFormatters(FormatterRegistry registry)
+					FormatterRegistry registry
+					添加自定义的格式化程序和转换器
+			
+			
+					addInterceptors(InterceptorRegistry registry)
+					InterceptorRegistry registry
+					添加自定义的拦截器
+			
+			
+					addRequestMappings(RequestMappingInfo customization, Class<Controller> controllerClass)
+					RequestMappingInfo customization, Class<Controller> controllerClass
+					关联自定义请求映射到具控制器类
+			
+			
+					addResourceHandlers(ResourceHandlerRegistry registry)
+					ResourceHandlerRegistry registry
+					配置资源处理，如静态资源路径
+			
+			
+					addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
+					List<HandlerMethodReturnValueHandler> returnValueHandlers
+					添加自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值
+			
+			
+					addViewControllers(ViewControllerRegistry registry)
+					ViewControllerRegistry registry
+					注册视图控制器
+			
+			
+					configureAsyncSupport(AsyncSupportConfigurer configurer)
+					AsyncSupportConfigurer configurer
+					配置异步支持
+			
+			
+					configureContentNegotiation(ContentNegotiationConfigurer configurer)
+					ContentNegotiationConfigurer configurer
+					配置内容协商策略
+			
+			
+					configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
+					DefaultServletHandlerConfigurer configurer
+					启用默认 Servlet 处理
+			
+			
+					configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
+					List<HandlerExceptionResolver> exceptionResolvers
+					配置异常处理程序
+			
+			
+					configureMessageConverters(List<HttpMessageConverter<?>> converters)
+					List<HttpMessageConverter<?>> converters
+					配置自定义的 HttpMessageConverter
+			
+			
+					configurePathMatch(PathMatchConfigurer configurer)
+					PathMatchConfigurer configurer
+					配置路径匹配规则
+			
+			
+					configureViewResolvers(ViewResolverRegistry registry)
+					ViewResolverRegistry registry
+					配置视图解析器
+			
+			
+					extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers)
+					List<HandlerExceptionResolver> exceptionResolvers
+					扩展异常处理程序
+			
+			
+					extendMessageConverters(List<HttpMessageConverter<?>> converters)
+					List<HttpMessageConverter<?>> converters
+					扩展自定义的 HttpMessageConverter
+			
+			
+					extendInterceptors(List<HandlerInterceptor> interceptors)
+					List<HandlerInterceptor> interceptors
+					扩展拦截器
+			
+			
+					extendArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+					List<HandlerMethodArgumentResolver> argumentResolvers
+					扩展自定义的 HandlerMethodArgumentResolver 用于解析方法参数。
+			
+			
+					extendReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers)
+					List<HandlerMethodReturnValueHandler> returnValueHandlers
+					扩展自定义的 HandlerMethodReturnValueHandler 用于处理方法返回值。
+			
+			
+					extendViewResolvers(List<ViewResolver> viewResolvers)
+					List<ViewResolver> viewResolvers
+					扩展视图解析器
+			
+	
 
 关联类
 WebMvcConfigurationSupport

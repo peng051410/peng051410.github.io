@@ -9,7 +9,7 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.161.1</generator>
+    <generator>Hugo -- 0.162.1</generator>
     <language>en</language>
     <lastBuildDate>Fri, 18 Apr 2025 11:18:32 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/exception/index.xml" rel="self" type="application/rss+xml" />
@@ -39,49 +39,49 @@
 
 &lt;h4 id=&#34;经典的interface-abstract方式的实现类&#34;&gt;经典的Interface-Abstract方式的实现类&lt;/h4&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Resolver&lt;/th&gt;
-          &lt;th&gt;Desc&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;SimpleMappingExceptionResolver&lt;/td&gt;
-          &lt;td&gt;提供exception class name到view的映射&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;DefaultHandlerExceptionResolver&lt;/td&gt;
-          &lt;td&gt;默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;ResponseStatusExceptionResolver&lt;/td&gt;
-          &lt;td&gt;基于 @ResponseStatus 注解来映射异常与Http状态码&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;ExceptionHandlerExceptionResolver&lt;/td&gt;
-          &lt;td&gt;基于 @ExceptionHalder 注解来解析处理异常信息&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Resolver&lt;/th&gt;
+					&lt;th&gt;Desc&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;SimpleMappingExceptionResolver&lt;/td&gt;
+					&lt;td&gt;提供exception class name到view的映射&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;DefaultHandlerExceptionResolver&lt;/td&gt;
+					&lt;td&gt;默认Resolver实现，用于解析标准的SpringMVC异常并转换成对应的Http状态码&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;ResponseStatusExceptionResolver&lt;/td&gt;
+					&lt;td&gt;基于 @ResponseStatus 注解来映射异常与Http状态码&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;ExceptionHandlerExceptionResolver&lt;/td&gt;
+					&lt;td&gt;基于 @ExceptionHalder 注解来解析处理异常信息&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;直接实现handlerexceptionresolver的类&#34;&gt;直接实现HandlerExceptionResolver的类&lt;/h4&gt;
 &lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Resolver&lt;/th&gt;
-          &lt;th&gt;Desc&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;DefaultErrorAttributes&lt;/td&gt;
-          &lt;td&gt;默认错误属性实现&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;HandlerExceptionResolverComposite&lt;/td&gt;
-          &lt;td&gt;代理其它Resolver集合的ExceptionResolver&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Resolver&lt;/th&gt;
+					&lt;th&gt;Desc&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;DefaultErrorAttributes&lt;/td&gt;
+					&lt;td&gt;默认错误属性实现&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;HandlerExceptionResolverComposite&lt;/td&gt;
+					&lt;td&gt;代理其它Resolver集合的ExceptionResolver&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;code&gt;HandlerExceptionResolverComposite&lt;/code&gt; 中包含了一个解析列表，可以判断是会排序后顺序调用，以找到第一个可以处理的Resolver&lt;/p&gt;
 &lt;h2 id=&#34;具体异常处理流程&#34;&gt;具体异常处理流程&lt;/h2&gt;
