@@ -11,8 +11,23 @@
     </image>
     <generator>Hugo -- 0.162.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 15:59:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 17:24:03 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W22</title>
+      <link>http://blog.imcompany.cn/post/2026-week22/</link>
+      <pubDate>Fri, 29 May 2026 17:52:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week22/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;极端的年代-1914-1991&#34;&gt;极端的年代：1914—1991&lt;/h3&gt;
+&lt;p&gt;读到了 第六章　1914—1945年的艺术，还没有读完，了解到了达达主义、超现实主义、芭蕾、电影与爵士音乐的兴起&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;lum1104-understand-anything-graphs-that-teach-graphs-that-impress-dot-turn-any-code-into-an-interactive-knowledge-graph-you-can-explore-search-and-ask-questions-about-dot-works-with-claude-code-codex-cursor-copilot-gemini-cli-and-more-dot&#34;&gt;&lt;a href=&#34;https://github.com/Lum1104/Understand-Anything?__readwiseLocation=&#34;&gt;Lum1104/Understand-Anything: Graphs that teach &amp;gt; graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;给陌生代码库做&amp;quot;知识图可视化&amp;quot;的 Claude Code Plugin&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;andyyyy64-whichllm-find-the-local-llm-that-actually-runs-and-performs-best-on-your-hardware-dot-ranked-by-real-recency-aware-benchmarks-not-parameter-count-dot-one-command-run-it-instantly-dot&#34;&gt;&lt;a href=&#34;https://github.com/Andyyyy64/whichllm&#34;&gt;Andyyyy64/whichllm: Find the local LLM that actually runs and performs best on your hardware. Ranked by real, recency-aware benchmarks, not parameter count. One command, run it instantly.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;找出最适合本地机器运行的AI大模型&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W21</title>
       <link>http://blog.imcompany.cn/post/2026-week21/</link>
