@@ -11,12 +11,12 @@
     </image>
     <generator>Hugo -- 0.162.1</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2026 10:51:21 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 16:40:28 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些被推荐的Video</title>
       <link>http://blog.imcompany.cn/posts/na-xie-videos/</link>
-      <pubDate>Tue, 02 Jun 2026 10:51:21 +0800</pubDate>
+      <pubDate>Tue, 09 Jun 2026 11:03:43 +0800</pubDate>
       <guid>http://blog.imcompany.cn/posts/na-xie-videos/</guid>
       <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -53,6 +53,27 @@
 &lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;一共有10季&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anki常用插件集合</title>
+      <link>http://blog.imcompany.cn/posts/anki-plugins/</link>
+      <pubDate>Tue, 09 Jun 2026 11:03:38 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/anki-plugins/</guid>
+      <description>&lt;h2 id=&#34;ankiconnect-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/2055492159&#34;&gt;AnkiConnect - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:20]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki&lt;/p&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;p&gt;2055492159&lt;/p&gt;
+&lt;h2 id=&#34;aglish-youglish-widget-for-anki-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/38866997&#34;&gt;Aglish - YouGlish Widget for Anki - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:16]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+直接在anki中配合 &lt;strong&gt;YouGlish&lt;/strong&gt; 学习英语单词真实场景发音&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这位作者还开发了一些其它功能的anki插件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;p&gt;38866997&lt;/p&gt;
+&lt;h2 id=&#34;kelciour-movies2anki-convert-movies-with-subtitles-to-watch-them-with-anki-dot-inspired-by-subs2srs&#34;&gt;&lt;a href=&#34;https://github.com/kelciour/movies2anki&#34;&gt;kelciour/movies2anki: Convert movies with subtitles to watch them with Anki. Inspired by subs2srs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;拆分视频语句为anki卡片&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W18</title>

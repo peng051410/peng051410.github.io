@@ -11,8 +11,35 @@
     </image>
     <generator>Hugo -- 0.162.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Jun 2026 17:41:21 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 10:05:18 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W23</title>
+      <link>http://blog.imcompany.cn/post/2026-week23/</link>
+      <pubDate>Fri, 05 Jun 2026 16:37:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week23/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;恶臭的赢学&#34;&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/fd5q2rJeIq6lqfrqOtrONw&#34;&gt;恶臭的赢学&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;曹大对当前自媒体上过度吹捧近期火热的DeepSeek、张雪机车、华为τ定律赢学现象的一种批判，这些企业在相关的领域方向只是在牌桌上，遥遥领先还是说的有些过早，需要决策者理性看待评论。最后总结：人生不是爽文，征程漫漫，道阻且长。先留在牌桌上，才会有后续的机会&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;charmbracelet-freeze-generate-images-of-code-and-terminal-output&#34;&gt;&lt;a href=&#34;https://github.com/charmbracelet/freeze&#34;&gt;charmbracelet/freeze: Generate images of code and terminal output 📸&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;终端生成代码图片并输出，支持配置字体与主题颜色&lt;/p&gt;
+&lt;h3 id=&#34;refining-org-mode-deadlines-wai-hon-s-blog&#34;&gt;&lt;a href=&#34;https://whhone.com/posts/refining-org-mode-deadlines/&#34;&gt;Refining Org-mode Deadlines - Wai Hon&amp;rsquo;s Blog&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Org-mode Deadline 增强，在Org-Agenda 中有更明显的显示，作者还扩展了过期的提醒时间区间到37天&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/3OnQ8B.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;和健身一样，真正的学习是痛苦的&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;from-1099&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Form_1099?useskin=vector&#34;&gt;From 1099&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;1099 表格是美国国税局用来报税的一种表格，用来报告工资、薪水、小费以外的各种收入。Go&lt;/p&gt;
+&lt;p&gt;该表格用于向税务专业人员报告向独立承包商的付款、租赁财产收入、利息和股息收入、销售收入及其他杂项收入接收者。&lt;/p&gt;
+&lt;p&gt;1917年《战争收入法》要求每个实体报告向另一个实体支付的某些款项，此表格应运而生. 2015年后，1099表格又出现很多变体，如：1099-A，1099-B，1099-C&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W22</title>
       <link>http://blog.imcompany.cn/post/2026-week22/</link>
