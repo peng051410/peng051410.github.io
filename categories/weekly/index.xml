@@ -9,10 +9,36 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.162.1</generator>
+    <generator>Hugo -- 0.163.3</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Jun 2026 10:05:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 16:14:16 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W24</title>
+      <link>http://blog.imcompany.cn/post/2026-week24/</link>
+      <pubDate>Mon, 08 Jun 2026 18:16:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week24/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;纸短情长&#34;&gt;&lt;a href=&#34;https://www.gtdstudy.com/&#34;&gt;纸短情长&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;又发现的一个好Blog，最近的内容以来信的方式进行输出，最新的这篇文章叫 &amp;ldquo;在等待AI的时候，干些什么好？&amp;quot;，里面谈到AI工作的过程中人要做些什么，这也是困扰我很久的问题，文章引用罗素的话给出了答案：技术的进步应该为人类创造闲暇，甚至颁发闲暇，让不同的社会阶层均有享受闲暇的权力。这也应该是创建AI的先知们初心的一部分吧&lt;/p&gt;
+&lt;h3 id=&#34;最好的关系是相互滋养-黄杰敏的博客&#34;&gt;&lt;a href=&#34;https://www.jiemin.com/archives/1752.html&#34;&gt;最好的关系是相互滋养 | 黄杰敏的博客&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;又一个非常好的Blog，一篇生活感悟，学到了：被人滋养，是最大的幸福；滋养他人，是顶级的修养！&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;mattpocock-skills-skills-for-real-engineers-dot-straight-from-my-dot-claude-directory-dot&#34;&gt;&lt;a href=&#34;https://github.com/mattpocock/skills&#34;&gt;mattpocock/skills: Skills for Real Engineers. Straight from my .claude directory.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;号称应对真实开发场景的Skills，此Skill对真正开发场景进行了强力的约束，目前安装了 /codebase-design, /diagnosing-bugs, /tdd ，后续看看效果&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;epiral-bb-browser-your-browser-is-the-api-dot-cli-plus-mcp-server-for-ai-agents-to-control-chrome-with-your-login-state-dot&#34;&gt;&lt;a href=&#34;https://github.com/epiral/bb-browser&#34;&gt;epiral/bb-browser: Your browser is the API. CLI + MCP server for AI agents to control Chrome with your login state.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;坏男孩的浏览器，直接在命令行获取常用网站的数据来给AI使用，需要浏览器进行登录，目前看reddit在工具启动的brave浏览器中不能使用，应该是加了检测&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;yuanw-nix-home-my-nix-dotfiles-on-macos-nixos&#34;&gt;&lt;a href=&#34;https://github.com/yuanw/nix-home&#34;&gt;yuanw/nix-home: My Nix dotfiles on MacOS/NixOS&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;又开始收集Nix配置，这个是基于Macos系统的Nix配置，与我当前使用的系统一样&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;openkeyring-oak-keyring-a-privacy-first-local-first-password-manager-with-cross-platform-synchronization-dot&#34;&gt;&lt;a href=&#34;https://github.com/OpenKeyring/oak-keyring&#34;&gt;OpenKeyring/oak-keyring: A privacy-first, local-first password manager with cross-platform synchronization.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mac上本地优先的密码管理系统，又一个TUI实现&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;leaperone-smctl-the-missing-control-knob-for-your-mac-s-smc-fan-curves-battery-charge-limits-power-policy-dot-open-source-cli-first-dot&#34;&gt;&lt;a href=&#34;https://github.com/leaperone/smctl&#34;&gt;leaperone/smctl: The missing control knob for your Mac&amp;rsquo;s SMC — fan curves, battery charge limits, power policy. Open-source, CLI-first.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一行命令解锁MAC不开放的控制能力，包括电池充电限制与温度遥测&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W23</title>
       <link>http://blog.imcompany.cn/post/2026-week23/</link>
