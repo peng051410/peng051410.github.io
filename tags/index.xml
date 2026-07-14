@@ -9,22 +9,29 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.163.3</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2026 17:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 19:45:34 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tool</title>
       <link>http://blog.imcompany.cn/tags/tool/</link>
-      <pubDate>Fri, 03 Jul 2026 17:25:57 +0800</pubDate>
+      <pubDate>Tue, 14 Jul 2026 10:33:18 +0800</pubDate>
       <guid>http://blog.imcompany.cn/tags/tool/</guid>
       <description></description>
     </item>
     <item>
       <title>Util</title>
       <link>http://blog.imcompany.cn/tags/util/</link>
-      <pubDate>Fri, 03 Jul 2026 17:25:57 +0800</pubDate>
+      <pubDate>Tue, 14 Jul 2026 10:33:18 +0800</pubDate>
       <guid>http://blog.imcompany.cn/tags/util/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weekly</title>
+      <link>http://blog.imcompany.cn/tags/weekly/</link>
+      <pubDate>Wed, 01 Jul 2026 18:47:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/tags/weekly/</guid>
       <description></description>
     </item>
     <item>
@@ -39,13 +46,6 @@
       <link>http://blog.imcompany.cn/tags/video/</link>
       <pubDate>Wed, 01 Jul 2026 11:27:59 +0800</pubDate>
       <guid>http://blog.imcompany.cn/tags/video/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Weekly</title>
-      <link>http://blog.imcompany.cn/tags/weekly/</link>
-      <pubDate>Wed, 24 Jun 2026 16:24:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/tags/weekly/</guid>
       <description></description>
     </item>
     <item>

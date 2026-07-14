@@ -9,10 +9,37 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.163.3</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jul 2026 17:26:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 19:45:34 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W27</title>
+      <link>http://blog.imcompany.cn/post/2026-week27/</link>
+      <pubDate>Wed, 01 Jul 2026 18:47:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week27/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;为什么说-anthropic-是邪恶的-虹线&#34;&gt;&lt;a href=&#34;https://1q43.blog/post/12498/&#34;&gt;为什么说 Anthropic 是邪恶的？ | 虹线&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;关于近期Anthropic追踪中国大陆用户事件的评论，里面的有一些观点值得深思：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Anthropic不是在收集你的数据，而是在定义你的身份&lt;/li&gt;
+&lt;li&gt;定义权就是暴力权&lt;/li&gt;
+&lt;li&gt;隐藏分类的真正威力: 这里的伤害不在被标记的那一刻，而是发生在被标记之后每一个看似中立的“正常流程”里&lt;/li&gt;
+&lt;li&gt;“安全”是目前为止，人类发明出来的最好用、最廉价外衣&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;makerspet-oomwoo-open-source-vacuum-robot-cleaner&#34;&gt;&lt;a href=&#34;https://github.com/makerspet/oomwoo/&#34;&gt;makerspet/oomwoo: Open-source vacuum robot cleaner&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开源扫地机器人项目，真想哪天自己动手搞一个&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;huangchihhungleo-claude-real-video-let-claude--or-any-llm--actually-watch-a-video-scene-aware-deduplicated-frames-plus-transcript-from-a-url-or-local-file-dot-runs-locally-mit-dot&#34;&gt;&lt;a href=&#34;https://github.com/HUANGCHIHHUNGLeo/claude-real-video&#34;&gt;HUANGCHIHHUNGLeo/claude-real-video: Let Claude (or any LLM) actually watch a video — scene-aware, deduplicated frames + transcript, from a URL or local file. Runs locally, MIT.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;让Claude看视频，输出核心内容，也可以使用其它大模型&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;ctxrs-ctx-search-the-coding-agent-history-already-on-your-machine&#34;&gt;&lt;a href=&#34;https://github.com/ctxrs/ctx&#34;&gt;ctxrs/ctx: Search the coding agent history already on your machine&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;本地搜索AI Session历史内容的工具，支持市面上大部分Agent&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;xiaoleiy-podpull-download-any-podcast-episode-straight-to-your-shell-apple-podcasts-rss-or-xiaoyuzhou-dot-interactive-picker-live-progress-resumable-dot&#34;&gt;&lt;a href=&#34;https://github.com/xiaoleiy/podpull&#34;&gt;xiaoleiy/podpull: Download any podcast episode straight to your shell — Apple Podcasts, RSS, or xiaoyuzhou. Interactive picker, live progress, resumable.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;命令下载podcast，还提供了AI Skill&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W26</title>
       <link>http://blog.imcompany.cn/post/2026-week26/</link>
@@ -22,6 +49,7 @@
 &lt;h3 id=&#34;闲鱼-千问-支付宝-平台信任-赋能-诈骗-老冯云数&#34;&gt;&lt;a href=&#34;https://vonng.com/cloud/ali-scam/?__readwiseLocation=&#34;&gt;闲鱼，千问，支付宝：平台信任“赋能”诈骗 · 老冯云数&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;完全符合所有信任流程的新型诈骗，大平台的自己人默认信任机制让骗子给充分利用了，推荐阅读&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;中国历朝代视频讲解--useful-tools-dot-md&#34;&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/useful-tools/#中国历朝代视频讲解&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;chronas-interactive-historical-map&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;Chronas - Interactive Historical Map&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;站在上帝视角看历史，把世界历史做在了Google Map上，做的很精美，对于历史爱好者是大福利&lt;/p&gt;
 &lt;h3 id=&#34;schollz-croc-easily-and-securely-send-things-from-one-computer-to-another-package&#34;&gt;&lt;a href=&#34;https://github.com/schollz/croc&#34;&gt;schollz/croc: Easily and securely send things from one computer to another :package:&lt;/a&gt;&lt;/h3&gt;
@@ -44,8 +72,7 @@
 &lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
 &lt;h3 id=&#34;long-island-rail-road-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Long_Island_Rail_Road?useskin=vector&#34;&gt;Long Island Rail Road - Wikipedia&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;长岛铁路，美国纽约州东南部的一条铁路。该铁路目前经营公共通勤铁路服务，到2025年，它的平均工作日客流量为33万人次，是北美最繁忙的通勤铁路。它也是世界上为数不多的全年24小时运行的通勤系统(类似还有Metro-North Railroad)&lt;/p&gt;
-&lt;p&gt;它有126个车站，超过1200公里的轨道&lt;/p&gt;
-&lt;p&gt;长岛铁道公司于1834年获取特许每天在纽约市和波士顿之间提供服务。是少数败家完好无损的铁路公司之一&lt;/p&gt;</description>
+&lt;p&gt;它有126个车站，超过1200公里的轨道&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W25</title>
