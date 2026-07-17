@@ -11,8 +11,39 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jul 2026 19:45:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 18:44:25 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W28</title>
+      <link>http://blog.imcompany.cn/post/2026-week28/</link>
+      <pubDate>Fri, 10 Jul 2026 09:42:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week28/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;读完了 第七章 帝国告终，英国的殖民统治土崩瓦解，帝国不是被打败的，而是被战争+大萧条+民族主义+冷战格局变化联合掏空的，战争与大萧条是其统治25年后消失的主要原因&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;pranshuparmar-witr-why-is-this-running&#34;&gt;&lt;a href=&#34;https://github.com/pranshuparmar/witr&#34;&gt;pranshuparmar/witr: Why is this running?&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;可视化系统正在运行的东西的全链路内容，解决系统级命令如ps、top只暴露元数据而需要用户进行推断根源的问题&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;local-cpu-friendly-high-quality-tts--text-to-speech--with-kokoro-ariya-dot-io&#34;&gt;&lt;a href=&#34;https://ariya.io/2026/03/local-cpu-friendly-high-quality-tts-text-to-speech-with-kokoro/&#34;&gt;Local, CPU-Friendly, High-Quality TTS (Text-to-Speech) with Kokoro · ariya.io&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;本地运行的文本转语音工具，体积很小，一条Docker命令即可安装&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Traditional_Chinese_ink_wash_p_2026-07-17T09-23-24.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;朝三暮四，同样的东西换了一种说法，给人的感觉就大不相同&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#阅读使人丰富-写作使人精确-讨论使人完备&#34;&gt;阅读使人丰富，写作使人精确，讨论使人完备&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;ferrari-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Ferrari?useskin=vector&#34;&gt;Ferrari - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;法拉力，意大利豪华跑车制造商，总部位于意大利的马拉内洛。公司由恩佐·法拉利于1939年创立，1940年制造出它的第一辆车，1945年正式使用当前的名称，1947年开始生产跑车系列。&lt;/p&gt;
+&lt;p&gt;1960年，法拉利成为一家上市公司，从1963年到2014年，它都是菲亚特的子公司。2016年从中独立出来。&lt;/p&gt;
+&lt;p&gt;许多早期的法拉利跑车可以追溯到20世纪50年代和60年代，在拍卖中曾经是世界上最昂贵的汽车之一。&lt;/p&gt;
+&lt;p&gt;法拉利在赛车领域十分活跃，获得过多个比赛的大奖。截止2023年5月，它的市值约为855 亿美元。&lt;/p&gt;
+&lt;p&gt;2025年10月，法拉利推出了首款全电动汽车。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W27</title>
       <link>http://blog.imcompany.cn/post/2026-week27/</link>
@@ -145,7 +176,7 @@
       <pubDate>Fri, 29 May 2026 17:52:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/2026-week22/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;极端的年代-1914-1991&#34;&gt;极端的年代：1914—1991&lt;/h3&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;读到了 第六章　1914—1945年的艺术，还没有读完，了解到了达达主义、超现实主义、芭蕾、电影与爵士音乐的兴起&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;lum1104-understand-anything-graphs-that-teach-graphs-that-impress-dot-turn-any-code-into-an-interactive-knowledge-graph-you-can-explore-search-and-ask-questions-about-dot-works-with-claude-code-codex-cursor-copilot-gemini-cli-and-more-dot&#34;&gt;&lt;a href=&#34;https://github.com/Lum1104/Understand-Anything?__readwiseLocation=&#34;&gt;Lum1104/Understand-Anything: Graphs that teach &amp;gt; graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.&lt;/a&gt;&lt;/h3&gt;
@@ -160,7 +191,7 @@
       <pubDate>Fri, 22 May 2026 15:38:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/2026-week21/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;极端的年代-1914-1991&#34;&gt;极端的年代：1914—1991&lt;/h3&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;读到了 第五章　共御强敌，统一战线的形成真的是太多因素才可促成，不到万不得已，没人想打仗&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;aicodemirror官方共享平台-中国用户专属ai编程助手&#34;&gt;&lt;a href=&#34;https://www.aicodemirror.com/&#34;&gt;AICodeMirror官方共享平台 - 中国用户专属AI编程助手&lt;/a&gt;&lt;/h3&gt;
@@ -396,10 +427,11 @@
       <pubDate>Wed, 15 Apr 2026 09:36:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/2026-week15/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;继续读-极端的年代-1914-1991&#34;&gt;继续读 极端的年代：1914—1991&lt;/h3&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;最近工作忙，只看了几小段&lt;/p&gt;
 &lt;h3 id=&#34;study-claude-code-tips&#34;&gt;Study claude-code-tips&lt;/h3&gt;
 &lt;p&gt;认真学习了一下 &lt;a href=&#34;https://github.com/ykdojo/claude-code-tips&#34;&gt;claude-code-tips&lt;/a&gt; ，作者使用CC的心得，其中 Tip5、6、8、9、13、17、33 收获挺大，对于工具作者也提示还是要多用，在用的过程完善与进步&lt;/p&gt;
+&lt;p&gt;((96c3c7eb-360e-49a8-9856-a7302b96c674))&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;安装cctui&#34;&gt;安装cctui&lt;/h3&gt;
 &lt;p&gt;安装了 lazycat 大佬开发的 &lt;a href=&#34;https://github.com/manateelazycat/cctui&#34;&gt;cctui&lt;/a&gt; ，用着很舒服，真正做到的Hack操作，先前安装的 cc-client 只能说是命令的 CC UI，操作没有一气呵成的感觉。还Vibe了一下&lt;a href=&#34;https://github.com/manateelazycat/cctui/pull/1&#34;&gt;增加了对OpenCode的支持&lt;/a&gt;&lt;/p&gt;
@@ -618,7 +650,7 @@
       <guid>http://blog.imcompany.cn/post/2026-week9/</guid>
       <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
 &lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991&#34;&gt;开始阅读 《极端的年代：1914—1991》&lt;/h3&gt;
+&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;一部大作&lt;/p&gt;
 &lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;

@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Jul 2026 10:33:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 18:45:25 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
@@ -129,6 +129,36 @@
 &lt;p&gt;监控AI Agent的运行信息，包括Session、Tokens和Context Window信息、使用的端口信息&lt;/p&gt;</description>
     </item>
     <item>
+      <title>众乐乐-weekly 2026-W15</title>
+      <link>http://blog.imcompany.cn/posts/2026-week15/</link>
+      <pubDate>Wed, 15 Apr 2026 09:36:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/2026-week15/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;最近工作忙，只看了几小段&lt;/p&gt;
+&lt;h3 id=&#34;study-claude-code-tips&#34;&gt;Study claude-code-tips&lt;/h3&gt;
+&lt;p&gt;认真学习了一下 &lt;a href=&#34;https://github.com/ykdojo/claude-code-tips&#34;&gt;claude-code-tips&lt;/a&gt; ，作者使用CC的心得，其中 Tip5、6、8、9、13、17、33 收获挺大，对于工具作者也提示还是要多用，在用的过程完善与进步&lt;/p&gt;
+&lt;p&gt;((96c3c7eb-360e-49a8-9856-a7302b96c674))&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;安装cctui&#34;&gt;安装cctui&lt;/h3&gt;
+&lt;p&gt;安装了 lazycat 大佬开发的 &lt;a href=&#34;https://github.com/manateelazycat/cctui&#34;&gt;cctui&lt;/a&gt; ，用着很舒服，真正做到的Hack操作，先前安装的 cc-client 只能说是命令的 CC UI，操作没有一气呵成的感觉。还Vibe了一下&lt;a href=&#34;https://github.com/manateelazycat/cctui/pull/1&#34;&gt;增加了对OpenCode的支持&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装-claude-island&#34;&gt;安装 Claude Island&lt;/h3&gt;
+&lt;p&gt;近期这种在Mac刘海屏显示 CC 操作的应用开始多了起来，试着安装了 &lt;a href=&#34;https://github.com/engels74/claude-island&#34;&gt;claude-island&lt;/a&gt; 发现还是没能实现直接在刘海里面来授权CC操作&lt;/p&gt;
+&lt;h3 id=&#34;logseq启动变慢&#34;&gt;Logseq启动变慢&lt;/h3&gt;
+&lt;p&gt;Logseq提示好几个插件拖慢了启动，先是给禁用了，后来发现被加载的插件的结构被破坏，猜测还是Mac的磁盘问题，重新下载插件后问题解决&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/POdEMX.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;热锅上的蚂蚁&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;超越自我，理解他者&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;reuters&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Reuters?useskin=vector&#34;&gt;Reuters&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;路透社，国际知名新闻机构，世界最大的新闻组织，其有2500名新闻工作者遍布200个地区和165个国家，其新闻使用16种语言编写。在1851年由德国人 &lt;strong&gt;保罗路透&lt;/strong&gt; 在伦敦建立，2008年被汤姆森集团收购&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>众乐乐-weekly 2026-W10</title>
       <link>http://blog.imcompany.cn/posts/2026-week10/</link>
       <pubDate>Fri, 06 Mar 2026 19:44:00 +0800</pubDate>
@@ -155,6 +185,58 @@
 &lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
 &lt;h3 id=&#34;bayer-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Bayer?useskin=vector&#34;&gt;Bayer - Wikipedia&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;拜耳，德国跨国制药公司和生物技术公司，总部位于勒沃库森，业务竟然还有农用化学品，近期因为除草剂Roundup产品引发淋巴瘤而支付30亿美元的法律和解费用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W09</title>
+      <link>http://blog.imcompany.cn/posts/2026-week9/</link>
+      <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/2026-week9/</guid>
+      <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
+&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一部大作&lt;/p&gt;
+&lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;监视&lt;/li&gt;
+&lt;li&gt;阅读官方文档&lt;/li&gt;
+&lt;li&gt;做实验验证&lt;/li&gt;
+&lt;li&gt;动手实现一个terrible版本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;altserver签名报错了-找了几个替换品都比较麻烦-想了一下使用频率也不高-不折腾了&#34;&gt;AltServer签名报错了，找了几个替换品都比较麻烦，想了一下使用频率也不高，不折腾了&lt;/h3&gt;
+&lt;h3 id=&#34;尝试了一下-supercmd&#34;&gt;尝试了一下&lt;a href=&#34;https://github.com/SuperCmdLabs/SuperCmd&#34;&gt;SuperCmd&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;说是Raycast的开源平替，支持语音，使用下来发现不能连接Ollama，后续看看有没有迭代&lt;/p&gt;
+&lt;h3 id=&#34;org-logseq-命令时好时坏&#34;&gt;&lt;a href=&#34;https://github.com/llcc/org-logseq&#34;&gt;org-logseq&lt;/a&gt;命令时好时坏&lt;/h3&gt;
+&lt;p&gt;底层使用grep命令行实现的&lt;/p&gt;
+&lt;h3 id=&#34;在本机通过docker安装了openclaw&#34;&gt;在本机通过Docker安装了OpenClaw&lt;/h3&gt;
+&lt;p&gt;参考的 &lt;a href=&#34;https://til.simonwillison.net/llms/openclaw-docker&#34;&gt;Simon Willison&amp;rsquo;s Blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;snippetslab从setapp版切到applestore版本&#34;&gt;SnippetsLab从Setapp版切到AppleStore版本&lt;/h3&gt;
+&lt;p&gt;SnippetsLab 竟然在2024年底就免费了，切换比较顺畅，Setapp版本导出库，AppleStore版本导入即可&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZD7oUS.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;人生就是一场马拉松，使用Google的 Nano Banana 2 模型&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;交易就是做对时要敢于多拿一会儿，做错时要能迅速止损，而不是死扛或频繁反悔&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;hunter-hess&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hunter_Hess?useskin=vector&#34;&gt;Hunter_Hess&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;一位美国滑雪运动员，在2026年的米兰冬运会上的发言引来川普的反击&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大鹏慢读-tomyli的读书2026</title>
+      <link>http://blog.imcompany.cn/posts/peng-read-2026/</link>
+      <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/peng-read-2026/</guid>
+      <description>&lt;h2 id=&#34;20世纪简史--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;丝绸之路--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/26853835/&#34;&gt;丝绸之路 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;极端的年代19141991-豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;STARTED&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/27031979/&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;资治通鉴--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;STARTED&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/6790302/&#34;&gt;资治通鉴 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;别闹了-费曼先生&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 别闹了，费曼先生！&lt;/h2&gt;
+&lt;h2 id=&#34;超越感觉&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 超越感觉&lt;/h2&gt;
+&lt;h2 id=&#34;练习的心态&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 练习的心态&lt;/h2&gt;</description>
     </item>
     <item>
       <title>收集的一些Podcast</title>
