@@ -11,13 +11,13 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Jul 2026 18:45:25 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 19:54:23 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/posts/useful-tools/</link>
-      <pubDate>Tue, 14 Jul 2026 10:33:18 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/useful-tools/</guid>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Wed, 22 Jul 2026 19:54:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
       <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
@@ -44,6 +44,97 @@
 &lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
 &lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anki常用插件集合</title>
+      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
+      <pubDate>Wed, 22 Jul 2026 19:53:44 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
+      <description>&lt;h2 id=&#34;ankiconnect-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/2055492159&#34;&gt;AnkiConnect - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:20]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki&lt;/p&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;p&gt;2055492159&lt;/p&gt;
+&lt;h2 id=&#34;aglish-youglish-widget-for-anki-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/38866997&#34;&gt;Aglish - YouGlish Widget for Anki - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:16]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
+直接在anki中配合 &lt;strong&gt;YouGlish&lt;/strong&gt; 学习英语单词真实场景发音&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这位作者还开发了一些其它功能的anki插件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;p&gt;38866997&lt;/p&gt;
+&lt;h2 id=&#34;kelciour-movies2anki-convert-movies-with-subtitles-to-watch-them-with-anki-dot-inspired-by-subs2srs&#34;&gt;&lt;a href=&#34;https://github.com/kelciour/movies2anki&#34;&gt;kelciour/movies2anki: Convert movies with subtitles to watch them with Anki. Inspired by subs2srs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;拆分视频语句为anki卡片&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些被推荐的Video</title>
+      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
+      <pubDate>Wed, 22 Jul 2026 19:52:49 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
+      <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;生活多美好--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1293749/&#34;&gt;生活多美好 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;大明王朝1566--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2210001/&#34;&gt;大明王朝1566 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;流人-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34890017/&#34;&gt;流人 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;冰血暴-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/24297912/&#34;&gt;冰血暴 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;咒术回战--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34895145/&#34;&gt;咒术回战 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;狗神--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35736202/&#34;&gt;狗神 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;love-death-plus-robots-love-death-and-robots-wiki-fandom&#34;&gt;&lt;a href=&#34;https://lovedeathrobots.fandom.com/wiki/LOVE_DEATH_%2B_ROBOTS&#34;&gt;LOVE DEATH + ROBOTS | Love, Death &amp;amp; Robots Wiki | Fandom&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;断网假期--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35151492/&#34;&gt;断网假期 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;过往人生--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34963356/&#34;&gt;过往人生 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;熊家餐馆-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35900652/&#34;&gt;熊家餐馆 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;大空头--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26303622/&#34;&gt;大空头 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;d-dot-p-逃兵追缉令--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35028876/&#34;&gt;D.P：逃兵追缉令 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;涉过愤怒的海--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/33456512/&#34;&gt;涉过愤怒的海 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;青春--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27042464/&#34;&gt;青春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;万箭穿心--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/10537853/&#34;&gt;万箭穿心 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;首尔之春--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://movie.douban.com/subject/35712804/&#34;&gt;首尔之春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;河边的错误--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35256092/&#34;&gt;河边的错误 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;为全人类-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27663962/&#34;&gt;为全人类 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;杀手--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2998451/&#34;&gt;杀手 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;化学课--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35339377/&#34;&gt;化学课 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;午夜亚洲-美食-舞蹈-梦想--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35717235/&#34;&gt;午夜亚洲：美食·舞蹈·梦想 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;经济机器是如何运行的--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/30458820/&#34;&gt;经济机器是如何运行的 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;涉足荒野--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/21345845/&#34;&gt;涉足荒野 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;tinder诈骗王--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35732660/&#34;&gt;Tinder诈骗王 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;羊毛战记-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35468745/&#34;&gt;羊毛战记 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;劫机七小时--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36137261/&#34;&gt;劫机七小时 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;足球教练-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34843220/&#34;&gt;足球教练 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;华尔街之狼--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2997076/&#34;&gt;华尔街之狼 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;黑镜-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/7054120/&#34;&gt;黑镜 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一共有10季&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W29</title>
+      <link>http://blog.imcompany.cn/post/2026-week29/</link>
+      <pubDate>Fri, 17 Jul 2026 09:43:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week29/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读 《资质通鉴》&lt;/h3&gt;
+&lt;p&gt;读完 唐太宗的 贞观之治，整体篇幅很长，占了第五卷的将近一半的内容，一个盛世的造就离不开贤明的君主和一大批实干的大臣&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;cabeen-zen-mode&#34;&gt;&lt;a href=&#34;https://github.com/cabeen/zen-mode&#34;&gt;cabeen/zen-mode&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;Mac上聚焦应用窗口的配置，基于 Hammerspoon，可实现隐藏MAC屏幕上所有内容，只展示一个聚焦的APP，类似付费应用有 HazeOver&lt;/p&gt;
+&lt;h3 id=&#34;github-spec-kit-toolkit-to-help-you-get-started-with-spec-driven-development&#34;&gt;&lt;a href=&#34;https://github.com/github/spec-kit#-get-started&#34;&gt;github/spec-kit: 💫 Toolkit to help you get started with Spec-Driven Development&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;Github出品的AI元编程，给AI分阶段，要进行SDD编程了&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Traditional_Chinese_ink_wash_p_2026-07-22T11-24-39.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;抛砖引玉，我写上联，下联位置留给高手&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#ai-出现以后-教育重点将不再是-教-而是怎样保证学会&#34;&gt;AI 出现以后，教育重点将不再是&amp;quot;教&amp;quot;，而是怎样保证学会&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;low-earth-orbit-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Low_Earth_orbit?useskin=vector&#34;&gt;Low Earth orbit - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;低地球轨道是指绕地球运行的轨道，周期不超过128分钟（每天至少完成11.25圈），其偏心率小于0.25。外太空中的大多数人造物体都处于LEO轨道上，数量最多的区域高度约为800公里，而处于LEO轨道上最远处的物体，在进入中地球轨道（MEO）之前，其高度可达2000公里，大约相当于地球半径的三分之一，且靠近内范艾伦辐射带的起点。&lt;/p&gt;
+&lt;p&gt;截止2026年，人类所有超越近地轨道的太空飞行只有1968年至1972年的阿波罗计划中的登月任务，以及2026年阿尔忒弥斯二号登月飞越任务。到了2026年，所有空间站都在近地轨道内的地心轨道上运行。&lt;/p&gt;
+&lt;p&gt;低地球轨道旋转卫星需要的能量最少。它提供很高的带宽和很低的通信延迟。在低地球轨道上的卫星和空间站，对乘员和维修人员来说更容易接近。&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W28</title>
@@ -104,47 +195,6 @@
 &lt;p&gt;命令下载podcast，还提供了AI Skill&lt;/p&gt;</description>
     </item>
     <item>
-      <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/posts/na-xie-videos/</link>
-      <pubDate>Wed, 01 Jul 2026 11:27:59 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/na-xie-videos/</guid>
-      <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;生活多美好--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1293749/&#34;&gt;生活多美好 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大明王朝1566--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2210001/&#34;&gt;大明王朝1566 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;流人-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34890017/&#34;&gt;流人 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;冰血暴-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/24297912/&#34;&gt;冰血暴 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;咒术回战--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34895145/&#34;&gt;咒术回战 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;狗神--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35736202/&#34;&gt;狗神 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;love-death-plus-robots-love-death-and-robots-wiki-fandom&#34;&gt;&lt;a href=&#34;https://lovedeathrobots.fandom.com/wiki/LOVE_DEATH_%2B_ROBOTS&#34;&gt;LOVE DEATH + ROBOTS | Love, Death &amp;amp; Robots Wiki | Fandom&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;断网假期--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35151492/&#34;&gt;断网假期 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;过往人生--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34963356/&#34;&gt;过往人生 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;熊家餐馆-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35900652/&#34;&gt;熊家餐馆 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大空头--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26303622/&#34;&gt;大空头 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;d-dot-p-逃兵追缉令--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35028876/&#34;&gt;D.P：逃兵追缉令 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉过愤怒的海--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/33456512/&#34;&gt;涉过愤怒的海 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;青春--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27042464/&#34;&gt;青春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;万箭穿心--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/10537853/&#34;&gt;万箭穿心 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;首尔之春--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://movie.douban.com/subject/35712804/&#34;&gt;首尔之春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;河边的错误--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35256092/&#34;&gt;河边的错误 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;为全人类-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27663962/&#34;&gt;为全人类 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;杀手--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2998451/&#34;&gt;杀手 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;化学课--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35339377/&#34;&gt;化学课 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;午夜亚洲-美食-舞蹈-梦想--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35717235/&#34;&gt;午夜亚洲：美食·舞蹈·梦想 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;经济机器是如何运行的--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/30458820/&#34;&gt;经济机器是如何运行的 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉足荒野--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/21345845/&#34;&gt;涉足荒野 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;tinder诈骗王--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35732660/&#34;&gt;Tinder诈骗王 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;羊毛战记-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35468745/&#34;&gt;羊毛战记 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;劫机七小时--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36137261/&#34;&gt;劫机七小时 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;足球教练-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34843220/&#34;&gt;足球教练 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;华尔街之狼--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2997076/&#34;&gt;华尔街之狼 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;黑镜-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/7054120/&#34;&gt;黑镜 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一共有10季&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>众乐乐-weekly 2026-W26</title>
       <link>http://blog.imcompany.cn/post/2026-week26/</link>
       <pubDate>Wed, 24 Jun 2026 16:24:00 +0800</pubDate>
@@ -189,27 +239,6 @@
 &lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
 &lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
 &lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Anki常用插件集合</title>
-      <link>http://blog.imcompany.cn/posts/anki-plugins/</link>
-      <pubDate>Tue, 09 Jun 2026 11:03:38 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/anki-plugins/</guid>
-      <description>&lt;h2 id=&#34;ankiconnect-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/2055492159&#34;&gt;AnkiConnect - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:20]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki&lt;/p&gt;
-&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
-&lt;p&gt;2055492159&lt;/p&gt;
-&lt;h2 id=&#34;aglish-youglish-widget-for-anki-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/38866997&#34;&gt;Aglish - YouGlish Widget for Anki - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:16]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-直接在anki中配合 &lt;strong&gt;YouGlish&lt;/strong&gt; 学习英语单词真实场景发音&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这位作者还开发了一些其它功能的anki插件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
-&lt;p&gt;38866997&lt;/p&gt;
-&lt;h2 id=&#34;kelciour-movies2anki-convert-movies-with-subtitles-to-watch-them-with-anki-dot-inspired-by-subs2srs&#34;&gt;&lt;a href=&#34;https://github.com/kelciour/movies2anki&#34;&gt;kelciour/movies2anki: Convert movies with subtitles to watch them with Anki. Inspired by subs2srs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;拆分视频语句为anki卡片&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W24</title>
@@ -370,47 +399,6 @@
 &lt;p&gt;本地MTP解码加速工具，号称输出快2倍以上，使用仓库的Model实测试在M2Max上没有什么大的速度提升，还是20t/s的样子，再使用使用看看&lt;/p&gt;</description>
     </item>
     <item>
-      <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Thu, 07 May 2026 09:45:38 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
-      <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;生活多美好--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1293749/&#34;&gt;生活多美好 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大明王朝1566--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2210001/&#34;&gt;大明王朝1566 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;流人-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34890017/&#34;&gt;流人 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;冰血暴-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/24297912/&#34;&gt;冰血暴 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;咒术回战--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34895145/&#34;&gt;咒术回战 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;狗神--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35736202/&#34;&gt;狗神 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;love-death-plus-robots-love-death-and-robots-wiki-fandom&#34;&gt;&lt;a href=&#34;https://lovedeathrobots.fandom.com/wiki/LOVE_DEATH_%2B_ROBOTS&#34;&gt;LOVE DEATH + ROBOTS | Love, Death &amp;amp; Robots Wiki | Fandom&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;断网假期--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35151492/&#34;&gt;断网假期 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;过往人生--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34963356/&#34;&gt;过往人生 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;熊家餐馆-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35900652/&#34;&gt;熊家餐馆 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大空头--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26303622/&#34;&gt;大空头 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;d-dot-p-逃兵追缉令--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35028876/&#34;&gt;D.P：逃兵追缉令 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉过愤怒的海--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/33456512/&#34;&gt;涉过愤怒的海 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;青春--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27042464/&#34;&gt;青春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;万箭穿心--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/10537853/&#34;&gt;万箭穿心 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;首尔之春--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://movie.douban.com/subject/35712804/&#34;&gt;首尔之春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;河边的错误--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35256092/&#34;&gt;河边的错误 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;为全人类-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27663962/&#34;&gt;为全人类 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;杀手--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2998451/&#34;&gt;杀手 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;化学课--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35339377/&#34;&gt;化学课 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;午夜亚洲-美食-舞蹈-梦想--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35717235/&#34;&gt;午夜亚洲：美食·舞蹈·梦想 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;经济机器是如何运行的--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/30458820/&#34;&gt;经济机器是如何运行的 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉足荒野--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/21345845/&#34;&gt;涉足荒野 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;tinder诈骗王--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35732660/&#34;&gt;Tinder诈骗王 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;羊毛战记-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35468745/&#34;&gt;羊毛战记 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;劫机七小时--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36137261/&#34;&gt;劫机七小时 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;足球教练-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34843220/&#34;&gt;足球教练 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;华尔街之狼--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2997076/&#34;&gt;华尔街之狼 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;黑镜-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/7054120/&#34;&gt;黑镜 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一共有10季&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>众乐乐-weekly 2026-W18</title>
       <link>http://blog.imcompany.cn/post/2026-week18/</link>
       <pubDate>Thu, 30 Apr 2026 09:48:00 +0800</pubDate>
@@ -423,28 +411,7 @@
 &lt;p&gt;AI工具，以Session组织Agents协同工作，给Agent工具带上了状态，可以细粒度跟踪&lt;/p&gt;
 &lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
 &lt;h3 id=&#34;garrytan-gstack-use-garry-tan-s-exact-claude-code-setup-23-opinionated-tools-that-serve-as-ceo-designer-eng-manager-release-manager-doc-engineer-and-qa&#34;&gt;&lt;a href=&#34;https://github.com/garrytan/gstack&#34;&gt;garrytan/gstack: Use Garry Tan&amp;rsquo;s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;YC创始人的23个固执己见的AI工具，支持CC、Codex等工具，可以直接在Conductor的Playground中体验使用&lt;/p&gt;
-&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
-&lt;h3 id=&#34;dohooo-helmor-open-source-local-workbench-for-multi-agent-software-development-dot&#34;&gt;&lt;a href=&#34;https://github.com/dohooo/helmor&#34;&gt;dohooo/helmor: Open-source local workbench for multi-agent software development.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Conductor开源平替，都是支持组织AI任务状态流转的工具&lt;/p&gt;
-&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
-&lt;h3 id=&#34;graykode-abtop-like-htop-but-for-ai-coding-agents-dot-monitor-claude-code-and-codex-cli-sessions-tokens-context-window-rate-limits-and-ports-in-real-time-dot&#34;&gt;&lt;a href=&#34;https://github.com/graykode/abtop&#34;&gt;graykode/abtop: Like htop, but for AI coding agents. Monitor Claude Code &amp;amp; Codex CLI sessions, tokens, context window, rate limits, and ports in real-time.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;监控AI Agent的运行信息，包括Session、Tokens和Context Window信息、使用的端口信息&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>众乐乐-weekly 2026-W18</title>
-      <link>http://blog.imcompany.cn/posts/2026-week18/</link>
-      <pubDate>Thu, 30 Apr 2026 09:48:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week18/</guid>
-      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;ai-也该有护照了-虹线&#34;&gt;&lt;a href=&#34;https://1q43.blog/post/12323/&#34;&gt;AI 也该有护照了 | 虹线&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;作者对当前Menus收购热议提出的AI所属问题，讨论了AI产生的问题由谁来负责&lt;/p&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;lukilabs-craft-agents-oss&#34;&gt;&lt;a href=&#34;https://github.com/lukilabs/craft-agents-oss&#34;&gt;lukilabs/craft-agents-oss&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;AI工具，以Session组织Agents协同工作，给Agent工具带上了状态，可以细粒度跟踪&lt;/p&gt;
-&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
-&lt;h3 id=&#34;garrytan-gstack-use-garry-tan-s-exact-claude-code-setup-23-opinionated-tools-that-serve-as-ceo-designer-eng-manager-release-manager-doc-engineer-and-qa&#34;&gt;&lt;a href=&#34;https://github.com/garrytan/gstack&#34;&gt;garrytan/gstack: Use Garry Tan&amp;rsquo;s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;YC创始人的23个固执己见的AI工具，支持CC、Codex等工具，可以直接在Conductor的Playground中体验使用&lt;/p&gt;
+&lt;p&gt;YC创始人的23个固执己见的AI工具，支持CC、Codex等工具，可以直接在Conductor的Playground中体验使用，默认支持的是Web前端栈&lt;/p&gt;
 &lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
 &lt;h3 id=&#34;dohooo-helmor-open-source-local-workbench-for-multi-agent-software-development-dot&#34;&gt;&lt;a href=&#34;https://github.com/dohooo/helmor&#34;&gt;dohooo/helmor: Open-source local workbench for multi-agent software development.&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Conductor开源平替，都是支持组织AI任务状态流转的工具&lt;/p&gt;
@@ -478,45 +445,6 @@
 &lt;p&gt;科罗拉多河，美国西南部和墨西哥北部主要河流之一。长2330公里，是美国第五长的河，涵盖美国七个洲和墨西哥两个洲。科罗拉多河及其支流以其壮观的峡谷、急流和11个美国国家公园而闻名，是4000万人的重要水源。建立在此的最大的胡佛水坝于1935年竣工&lt;/p&gt;</description>
     </item>
     <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Mon, 27 Apr 2026 09:51:55 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
-&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Emoji搜索&lt;/p&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;
-&lt;h2 id=&#34;照片&#34;&gt;照片&lt;/h2&gt;
-&lt;h3 id=&#34;sref-2007748773&#34;&gt;&amp;ndash;sref  2007748773&lt;/h3&gt;
-&lt;p&gt;在Twitter搜索时加入&lt;/p&gt;
-&lt;h3 id=&#34;证件照&#34;&gt;证件照&lt;/h3&gt;
-&lt;h4 id=&#34;证件照生成器&#34;&gt;&lt;a href=&#34;https://tz.zhufushipinzhizuo.com/zhenjian/&#34;&gt;证件照生成器&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id=&#34;zeyi-lin-hivisionidphotos-️hivisionidphotos-a-lightweight-and-efficient-ai-id-photos-tools-dot-一个轻量级的ai证件照制作算法&#34;&gt;&lt;a href=&#34;https://github.com/Zeyi-Lin/HivisionIDPhotos&#34;&gt;Zeyi-Lin/HivisionIDPhotos: ⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。&lt;/a&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;github&#34;&gt;Github&lt;/h2&gt;
-&lt;h3 id=&#34;download-directory-download-directory-dot-github-dot-io-web-app-download-just-a-sub-directory-from-a-github-repo-dot&#34;&gt;&lt;a href=&#34;https://github.com/download-directory/download-directory.github.io?__readwiseLocation=&#34;&gt;download-directory/download-directory.github.io: Web App: Download just a sub directory from a GitHub repo.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;下载单个github文件&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>众乐乐-weekly 2026-W16</title>
       <link>http://blog.imcompany.cn/post/2026-week16/</link>
       <pubDate>Fri, 17 Apr 2026 16:22:00 +0800</pubDate>
@@ -546,37 +474,6 @@
 &lt;p&gt;最近工作忙，只看了几小段&lt;/p&gt;
 &lt;h3 id=&#34;study-claude-code-tips&#34;&gt;Study claude-code-tips&lt;/h3&gt;
 &lt;p&gt;认真学习了一下 &lt;a href=&#34;https://github.com/ykdojo/claude-code-tips&#34;&gt;claude-code-tips&lt;/a&gt; ，作者使用CC的心得，其中 Tip5、6、8、9、13、17、33 收获挺大，对于工具作者也提示还是要多用，在用的过程完善与进步&lt;/p&gt;
-&lt;p&gt;((96c3c7eb-360e-49a8-9856-a7302b96c674))&lt;/p&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;安装cctui&#34;&gt;安装cctui&lt;/h3&gt;
-&lt;p&gt;安装了 lazycat 大佬开发的 &lt;a href=&#34;https://github.com/manateelazycat/cctui&#34;&gt;cctui&lt;/a&gt; ，用着很舒服，真正做到的Hack操作，先前安装的 cc-client 只能说是命令的 CC UI，操作没有一气呵成的感觉。还Vibe了一下&lt;a href=&#34;https://github.com/manateelazycat/cctui/pull/1&#34;&gt;增加了对OpenCode的支持&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装-claude-island&#34;&gt;安装 Claude Island&lt;/h3&gt;
-&lt;p&gt;近期这种在Mac刘海屏显示 CC 操作的应用开始多了起来，试着安装了 &lt;a href=&#34;https://github.com/engels74/claude-island&#34;&gt;claude-island&lt;/a&gt; 发现还是没能实现直接在刘海里面来授权CC操作&lt;/p&gt;
-&lt;h3 id=&#34;logseq启动变慢&#34;&gt;Logseq启动变慢&lt;/h3&gt;
-&lt;p&gt;Logseq提示好几个插件拖慢了启动，先是给禁用了，后来发现被加载的插件的结构被破坏，猜测还是Mac的磁盘问题，重新下载插件后问题解决&lt;/p&gt;
-&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/POdEMX.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;热锅上的蚂蚁&lt;/p&gt;
-&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
-&lt;p&gt;超越自我，理解他者&lt;/p&gt;
-&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
-&lt;h3 id=&#34;reuters&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Reuters?useskin=vector&#34;&gt;Reuters&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;路透社，国际知名新闻机构，世界最大的新闻组织，其有2500名新闻工作者遍布200个地区和165个国家，其新闻使用16种语言编写。在1851年由德国人 &lt;strong&gt;保罗路透&lt;/strong&gt; 在伦敦建立，2008年被汤姆森集团收购&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>众乐乐-weekly 2026-W15</title>
-      <link>http://blog.imcompany.cn/posts/2026-week15/</link>
-      <pubDate>Wed, 15 Apr 2026 09:36:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week15/</guid>
-      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;最近工作忙，只看了几小段&lt;/p&gt;
-&lt;h3 id=&#34;study-claude-code-tips&#34;&gt;Study claude-code-tips&lt;/h3&gt;
-&lt;p&gt;认真学习了一下 &lt;a href=&#34;https://github.com/ykdojo/claude-code-tips&#34;&gt;claude-code-tips&lt;/a&gt; ，作者使用CC的心得，其中 Tip5、6、8、9、13、17、33 收获挺大，对于工具作者也提示还是要多用，在用的过程完善与进步&lt;/p&gt;
-&lt;p&gt;((96c3c7eb-360e-49a8-9856-a7302b96c674))&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;安装cctui&#34;&gt;安装cctui&lt;/h3&gt;
 &lt;p&gt;安装了 lazycat 大佬开发的 &lt;a href=&#34;https://github.com/manateelazycat/cctui&#34;&gt;cctui&lt;/a&gt; ，用着很舒服，真正做到的Hack操作，先前安装的 cc-client 只能说是命令的 CC UI，操作没有一气呵成的感觉。还Vibe了一下&lt;a href=&#34;https://github.com/manateelazycat/cctui/pull/1&#34;&gt;增加了对OpenCode的支持&lt;/a&gt;&lt;/p&gt;
@@ -789,34 +686,6 @@
 &lt;p&gt;拜耳，德国跨国制药公司和生物技术公司，总部位于勒沃库森，业务竟然还有农用化学品，近期因为除草剂Roundup产品引发淋巴瘤而支付30亿美元的法律和解费用&lt;/p&gt;</description>
     </item>
     <item>
-      <title>众乐乐-weekly 2026-W10</title>
-      <link>http://blog.imcompany.cn/posts/2026-week10/</link>
-      <pubDate>Fri, 06 Mar 2026 19:44:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week10/</guid>
-      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;开始读-我在北京送快递--豆瓣&#34;&gt;开始读 &lt;a href=&#34;https://book.douban.com/subject/36150423/&#34;&gt;我在北京送快递 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;主要是等公车时读&lt;/p&gt;
-&lt;h3 id=&#34;马年快乐-读者朋友们-余晟以为&#34;&gt;&lt;a href=&#34;https://quaily.com/yurii-says/p/happy-year-of-the-horse-readers-friends&#34;&gt;马年快乐，读者朋友们 | 余晟以为&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;像作者文章所说的：努力过好自己的生活，同时保持着对他人的理解和同情&lt;/p&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;开始使用claude-code&#34;&gt;开始使用Claude Code&lt;/h3&gt;
-&lt;p&gt;使用 &lt;a href=&#34;https://github.com/farion1231/cc-switch&#34;&gt;cc-switch&lt;/a&gt; 配置使用本地的Ollama模型，免费保障隐私&lt;/p&gt;
-&lt;h3 id=&#34;obsidian-升级到最新版本-有了-obsidian-cli&#34;&gt;Obsidian 升级到最新版本，有了 &lt;a href=&#34;https://help.obsidian.md/cli&#34;&gt;Obsidian Cli&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;自从ide加了ai窗口后-发现屏幕宽度不够了&#34;&gt;自从IDE加了AI窗口后，发现屏幕宽度不够了&lt;/h3&gt;
-&lt;p&gt;感觉40寸的屏幕会非常的爽&lt;/p&gt;
-&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/pw1aXT.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;我的编程小助手们&lt;/p&gt;
-&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
-&lt;p&gt;AI时代代码免费了，但判断力没有&lt;/p&gt;
-&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
-&lt;h3 id=&#34;bayer-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Bayer?useskin=vector&#34;&gt;Bayer - Wikipedia&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;拜耳，德国跨国制药公司和生物技术公司，总部位于勒沃库森，业务竟然还有农用化学品，近期因为除草剂Roundup产品引发淋巴瘤而支付30亿美元的法律和解费用&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>众乐乐-weekly 2026-W09</title>
       <link>http://blog.imcompany.cn/post/2026-week9/</link>
       <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
@@ -824,45 +693,6 @@
       <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
 &lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
 &lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;一部大作&lt;/p&gt;
-&lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;监视&lt;/li&gt;
-&lt;li&gt;阅读官方文档&lt;/li&gt;
-&lt;li&gt;做实验验证&lt;/li&gt;
-&lt;li&gt;动手实现一个terrible版本&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;altserver签名报错了-找了几个替换品都比较麻烦-想了一下使用频率也不高-不折腾了&#34;&gt;AltServer签名报错了，找了几个替换品都比较麻烦，想了一下使用频率也不高，不折腾了&lt;/h3&gt;
-&lt;h3 id=&#34;尝试了一下-supercmd&#34;&gt;尝试了一下&lt;a href=&#34;https://github.com/SuperCmdLabs/SuperCmd&#34;&gt;SuperCmd&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;说是Raycast的开源平替，支持语音，使用下来发现不能连接Ollama，后续看看有没有迭代&lt;/p&gt;
-&lt;h3 id=&#34;org-logseq-命令时好时坏&#34;&gt;&lt;a href=&#34;https://github.com/llcc/org-logseq&#34;&gt;org-logseq&lt;/a&gt;命令时好时坏&lt;/h3&gt;
-&lt;p&gt;底层使用grep命令行实现的&lt;/p&gt;
-&lt;h3 id=&#34;在本机通过docker安装了openclaw&#34;&gt;在本机通过Docker安装了OpenClaw&lt;/h3&gt;
-&lt;p&gt;参考的 &lt;a href=&#34;https://til.simonwillison.net/llms/openclaw-docker&#34;&gt;Simon Willison&amp;rsquo;s Blog&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;snippetslab从setapp版切到applestore版本&#34;&gt;SnippetsLab从Setapp版切到AppleStore版本&lt;/h3&gt;
-&lt;p&gt;SnippetsLab 竟然在2024年底就免费了，切换比较顺畅，Setapp版本导出库，AppleStore版本导入即可&lt;/p&gt;
-&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/ZD7oUS.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;人生就是一场马拉松，使用Google的 Nano Banana 2 模型&lt;/p&gt;
-&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
-&lt;p&gt;交易就是做对时要敢于多拿一会儿，做错时要能迅速止损，而不是死扛或频繁反悔&lt;/p&gt;
-&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
-&lt;h3 id=&#34;hunter-hess&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Hunter_Hess?useskin=vector&#34;&gt;Hunter_Hess&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;一位美国滑雪运动员，在2026年的米兰冬运会上的发言引来川普的反击&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>众乐乐-weekly 2026-W09</title>
-      <link>http://blog.imcompany.cn/posts/2026-week9/</link>
-      <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week9/</guid>
-      <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
-&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;一部大作&lt;/p&gt;
 &lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;
@@ -1167,18 +997,6 @@
       <link>http://blog.imcompany.cn/post/peng-read-2026/</link>
       <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/peng-read-2026/</guid>
-      <description>&lt;h2 id=&#34;20世纪简史--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;丝绸之路--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/26853835/&#34;&gt;丝绸之路 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;极端的年代-1914-1991--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/27031979/&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;别闹了-费曼先生&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 别闹了，费曼先生！&lt;/h2&gt;
-&lt;h2 id=&#34;超越感觉&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 超越感觉&lt;/h2&gt;
-&lt;h2 id=&#34;练习的心态&#34;&gt;&lt;!-- raw HTML omitted --&gt;TODO&lt;!-- raw HTML omitted --&gt; 练习的心态&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>大鹏慢读-tomyli的读书2026</title>
-      <link>http://blog.imcompany.cn/posts/peng-read-2026/</link>
-      <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/peng-read-2026/</guid>
       <description>&lt;h2 id=&#34;20世纪简史--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;丝绸之路--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/26853835/&#34;&gt;丝绸之路 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;极端的年代19141991-豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;STARTED&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/27031979/&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -2941,27 +2759,6 @@
 &lt;p&gt;Your role is to be an English guru, an expert in authentic American English, who assists users in expressing their thoughts clearly and fluently. You are not just translating words; you are delving into the essence of the user&amp;rsquo;s message and reconstructing it in a way that maintains logical clarity and coherence. You&amp;rsquo;ll prioritize the use of plain English, short phrasal verbs, and common idioms. It&amp;rsquo;s important to craft sentences with varied lengths to create a natural rhythm and flow, making the language sound smooth and engaging. Avoid regional expressions or idioms that are too unique or restricted to specific areas. Your goal is to make American English accessible and appealing to a broad audience, helping users communicate effectively in a style that resonates with a wide range of English speakers.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Anki常用插件集合</title>
-      <link>http://blog.imcompany.cn/post/anki-plugins/</link>
-      <pubDate>Thu, 17 Oct 2024 09:54:06 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/anki-plugins/</guid>
-      <description>&lt;h2 id=&#34;ankiconnect-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/2055492159&#34;&gt;AnkiConnect - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:20]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki&lt;/p&gt;
-&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
-&lt;p&gt;2055492159&lt;/p&gt;
-&lt;h2 id=&#34;aglish-youglish-widget-for-anki-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/38866997&#34;&gt;Aglish - YouGlish Widget for Anki - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:16]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;直接在anki中配合 &lt;strong&gt;YouGlish&lt;/strong&gt; 学习英语单词真实场景发音&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这位作者还开发了一些其它功能的anki插件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
-&lt;p&gt;38866997&lt;/p&gt;
-&lt;h2 id=&#34;kelciour-movies2anki-convert-movies-with-subtitles-to-watch-them-with-anki-dot-inspired-by-subs2srs&#34;&gt;&lt;a href=&#34;https://github.com/kelciour/movies2anki&#34;&gt;kelciour/movies2anki: Convert movies with subtitles to watch them with Anki. Inspired by subs2srs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;拆分视频语句为anki卡片&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>基于Spring initializr实现自己的项目模板</title>
       <link>http://blog.imcompany.cn/post/spring-initializr/</link>
       <pubDate>Tue, 15 Oct 2024 17:44:29 +0800</pubDate>
@@ -3646,34 +3443,6 @@
 &lt;h2 id=&#34;半拿铁-商业沉浮录-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/62382c1103bea1ebfffa1c00&#34;&gt;半拿铁 | 商业沉浮录 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;talk三联-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/61e7b5314675a08411f51319&#34;&gt;Talk三联 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;硅谷101-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc&#34;&gt;硅谷101 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;e106-真正造星舰的人来了-与spacex前高管聊聊马斯克的火星计划-硅谷101-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/643f8096a2fb59c2a1adaa8b&#34;&gt;E106｜真正造星舰的人来了，与SpaceX前高管聊聊马斯克的火星计划 - 硅谷101 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;科技乱炖-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e4243cd418a84a0469573fb&#34;&gt;科技乱炖 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;晚点聊-latetalk-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/61933ace1b4320461e91fd55&#34;&gt;晚点聊 LateTalk | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;张小珺jùn-商业访谈录-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/626b46ea9cbbf0451cf5a962&#34;&gt;张小珺Jùn｜商业访谈录 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;95-dot-对manus创始人肖弘的3小时访谈-世界不是线性外推-做博弈中的重要变量-张小珺jùn-商业访谈录-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/67c3d80fb0167b8db9e3ec0f&#34;&gt;95. 对Manus创始人肖弘的3小时访谈：世界不是线性外推，做博弈中的重要变量 - 张小珺Jùn｜商业访谈录 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id=&#34;clearerthinking-dot-org-podcast-home&#34;&gt;&lt;a href=&#34;https://podcast.clearerthinking.org/&#34;&gt;ClearerThinking.org Podcast | Home&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;异见房间-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/6628e91c67c973e1383b968a&#34;&gt;异见房间 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;由三位总发出异见的女性媒体人发起的播客.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>收集的一些Podcast</title>
-      <link>http://blog.imcompany.cn/posts/podcasts/</link>
-      <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/podcasts/</guid>
-      <description>&lt;h2 id=&#34;42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/648b0b641c48983391a63f98&#34;&gt;42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;cursor-刷屏背后-复盘-ai-coding-的现状与发展-对谈-gru-dot-ai-创始人张海龙-42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/671c9a42eb46cd6655da1e6f&#34;&gt;Cursor 刷屏背后，复盘 AI Coding 的现状与发展｜对谈 Gru.ai 创始人张海龙 - 42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;世界好像变难了-我们该如何应对-对谈绿洲资本张津剑之-ai-人-与-生命力-42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/6651b7a4c59d1e575797a520&#34;&gt;世界好像变难了，我们该如何应对？| 对谈绿洲资本张津剑之 AI、人 与 生命力 - 42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id=&#34;代表作-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/657993952db47db3599a38ca&#34;&gt;代表作 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;vol-dot-026-时代红利消失-这届年轻人的赚钱出路在哪-代表作-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/67090a5a81cdab3a935216ff&#34;&gt;Vol.026：时代红利消失，这届年轻人的赚钱出路在哪？ - 代表作 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id=&#34;枫言枫语-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e2864f5418a84a04628e249&#34;&gt;枫言枫语 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;科技类播客&lt;/p&gt;
-&lt;h2 id=&#34;忽左忽右-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e4ee557418a84a0466737b7&#34;&gt;忽左忽右 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;知行小酒馆-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/6013f9f58e2f7ee375cf4216&#34;&gt;知行小酒馆 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&#34;对话曹丰泽-只要不饿死-人生没有必修课-google-search&#34;&gt;&lt;a href=&#34;https://www.google.com/search?q=%E5%AF%B9%E8%AF%9D%E6%9B%B9%E4%B8%B0%E6%B3%BD%EF%BC%9A%E5%8F%AA%E8%A6%81%E4%B8%8D%E9%A5%BF%E6%AD%BB%EF%BC%8C%E4%BA%BA%E7%94%9F%E6%B2%A1%E6%9C%89%E5%BF%85%E4%BF%AE%E8%AF%BE&#34;&gt;对话曹丰泽：只要不饿死，人生没有必修课 - Google Search&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id=&#34;117--e227-疲惫经济学-为什么技术进步了-我们却更累了-youtube&#34;&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=B0vgnWmJRdU&#34;&gt;(117) E227 疲惫经济学：为什么技术进步了，我们却更累了？ - YouTube&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id=&#34;半拿铁-商业沉浮录-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/62382c1103bea1ebfffa1c00&#34;&gt;半拿铁 | 商业沉浮录 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;talk三联-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/61e7b5314675a08411f51319&#34;&gt;Talk三联 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;硅谷101-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc&#34;&gt;硅谷101 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;146--e236-99-的作业都是ai写的-当代名校生眼里-大学还剩下什么-youtube&#34;&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=sFfMyVm6dOg&#34;&gt;(146) E236｜99%的作业都是AI写的：当代名校生眼里，大学还剩下什么？ - YouTube&lt;/a&gt;&lt;/h3&gt;
 &lt;h2 id=&#34;e106-真正造星舰的人来了-与spacex前高管聊聊马斯克的火星计划-硅谷101-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/643f8096a2fb59c2a1adaa8b&#34;&gt;E106｜真正造星舰的人来了，与SpaceX前高管聊聊马斯克的火星计划 - 硅谷101 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;科技乱炖-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/5e4243cd418a84a0469573fb&#34;&gt;科技乱炖 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
@@ -3689,67 +3458,6 @@
       <link>http://blog.imcompany.cn/post/speech/</link>
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/speech/</guid>
-      <description>&lt;h2 id=&#34;一切的学习最终都是自学&#34;&gt;一切的学习最终都是自学&lt;/h2&gt;
-&lt;h2 id=&#34;如果你没有时间集中精力学习新知识-那么就花时间复习已经学过的内容&#34;&gt;如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。&lt;/h2&gt;
-&lt;h2 id=&#34;作为一个普通人-一个小人物-不要给自己使命感-你来这个世界上的核心目的-就是为了体验美好&#34;&gt;作为一个普通人，一个小人物，不要给自己使命感，你来这个世界上的核心目的，就是为了体验美好。&lt;/h2&gt;
-&lt;h2 id=&#34;所谓好运-并不是你躺在那里好事就砸到了你-而是你的努力付出-得到了应有的回报&#34;&gt;所谓好运，并不是你躺在那里好事就砸到了你，而是你的努力付出，得到了应有的回报&lt;/h2&gt;
-&lt;h2 id=&#34;学习技术最需要是耐心而不是智商&#34;&gt;学习技术最需要是耐心而不是智商&lt;/h2&gt;
-&lt;h2 id=&#34;阅读无法由ai替代&#34;&gt;阅读无法由AI替代&lt;/h2&gt;
-&lt;h2 id=&#34;如果你没见过什么是好的-你将永远无法成长&#34;&gt;如果你没见过什么是好的，你将永远无法成长&lt;/h2&gt;
-&lt;h2 id=&#34;ai要当作-知识注入-和-向量数据库-去用-所以当ai半天写不对代码的时候-往往不是他笨-而是缺乏线索&#34;&gt;AI要当作 “知识注入” 和 “向量数据库” 去用， 所以当AI半天写不对代码的时候， 往往不是他笨， 而是缺乏线索&lt;/h2&gt;
-&lt;h2 id=&#34;早段限时饮食--早点吃晚餐或不吃晚餐--有助于改善代谢健康&#34;&gt;早段限时饮食(早点吃晚餐或不吃晚餐)有助于改善代谢健康&lt;/h2&gt;
-&lt;h2 id=&#34;大多数哲学的目的-都是强化你的身心-让你学会-对于那些自己无法控制的事情要漠不关心&#34;&gt;大多数哲学的目的，都是强化你的身心，让你学会，对于那些自己无法控制的事情要漠不关心&lt;/h2&gt;
-&lt;h2 id=&#34;金融投资必须用闲钱-非金融投资对普通人更重要-例如教育-运动-健康生活这些&#34;&gt;金融投资必须用闲钱，非金融投资对普通人更重要，例如教育、运动、健康生活这些&lt;/h2&gt;
-&lt;h2 id=&#34;一个人能力的大小-其实很多时候就是你想不想到-源头-去的欲望&#34;&gt;一个人能力的大小，其实很多时候就是你想不想到“源头”去的欲望！&lt;/h2&gt;
-&lt;h2 id=&#34;ai要当作-知识注入-与-向量数据库-去用-多提供线索&#34;&gt;AI要当作“知识注入”与”向量数据库”去用，多提供线索&lt;/h2&gt;
-&lt;h2 id=&#34;用户调研不是去问他们要什么-而是要看他们为什么而花钱&#34;&gt;用户调研不是去问他们要什么，而是要看他们为什么而花钱&lt;/h2&gt;
-&lt;h2 id=&#34;只要一件事本质是有益的-就值得全心投入&#34;&gt;只要一件事本质是有益的，就值得全心投入&lt;/h2&gt;
-&lt;h2 id=&#34;如果你没见过什么是好的-你将无法成长&#34;&gt;如果你没见过什么是好的，你将无法成长&lt;/h2&gt;
-&lt;h2 id=&#34;学习语言不仅仅只是沟通-更大的目的是为了了解文化-无论母语还是外语&#34;&gt;学习语言不仅仅只是沟通，更大的目的是为了了解文化，无论母语还是外语&lt;/h2&gt;
-&lt;h2 id=&#34;聪明的大脑-勤奋的双手-才是创造一切的根本&#34;&gt;聪明的大脑，勤奋的双手，才是创造一切的根本&lt;/h2&gt;
-&lt;h2 id=&#34;语言的编程速度因人而异-符合程序员的个人经历和思维习惯的语言-写起来最快&#34;&gt;语言的编程速度因人而异，符合程序员的个人经历和思维习惯的语言，写起来最快。&lt;/h2&gt;
-&lt;h2 id=&#34;如何缓解焦虑&#34;&gt;如何缓解焦虑&lt;/h2&gt;
-&lt;p&gt;努力提高自己的下限&lt;/p&gt;
-&lt;h2 id=&#34;高兴的时候不做承诺-生气的时候不做决定&#34;&gt;高兴的时候不做承诺，生气的时候不做决定&lt;/h2&gt;
-&lt;h2 id=&#34;聪明的人不仅更擅长思考-他们似乎也更常选择去思考-这里的-思考-指的是那种需要努力的思考-而不是快速的判断或直觉&#34;&gt;聪明的人不仅更擅长思考，他们似乎也更常选择去思考。这里的「思考」指的是那种需要努力的思考，而不是快速的判断或直觉。&lt;/h2&gt;
-&lt;h2 id=&#34;普通人更要心力内敛-磨练技能-让自己的人生走向一个更为开阔的世界&#34;&gt;普通人更要心力内敛，磨练技能，让自己的人生走向一个更为开阔的世界&lt;/h2&gt;
-&lt;h2 id=&#34;人类所有的问题-都源于人无法独自安静地坐在房间里&#34;&gt;人类所有的问题，都源于人无法独自安静地坐在房间里。&lt;/h2&gt;
-&lt;h2 id=&#34;笔记工具只是帮你记录更多信息-并不能自动帮你学习&#34;&gt;笔记工具只是帮你记录更多信息，并不能自动帮你学习&lt;/h2&gt;
-&lt;h2 id=&#34;提高认知最便宜-最直接-最快能入手的一项-教育-不是自学-而是反思性写作reflective-writing&#34;&gt;提高认知最便宜，最直接，最快能入手的一项“教育”不是自学，而是反思性写作Reflective Writing&lt;/h2&gt;
-&lt;h2 id=&#34;要复盘-要迭代-要深度思考-努力才有效率&#34;&gt;要复盘，要迭代，要深度思考，努力才有效率&lt;/h2&gt;
-&lt;h2 id=&#34;编程-meta-skills-很重要-一切技术都有过时的一天-唯有思想才能永恒&#34;&gt;编程 meta-skills 很重要；一切技术都有过时的一天，唯有思想才能永恒。&lt;/h2&gt;
-&lt;h2 id=&#34;凡事做得到-自己做得到的叫知道-自己还没有做到的-一律不叫知道&#34;&gt;凡事做得到，自己做得到的叫知道，自己还没有做到的，一律不叫知道。&lt;/h2&gt;
-&lt;p&gt;不是你做到过的，一律不是你的&lt;/p&gt;
-&lt;h2 id=&#34;你盯着这些极小概率事件-没有意义的-人要盘算的-谋划的-是自己生命中够得着的东西&#34;&gt;你盯着这些极小概率事件，没有意义的，人要盘算的，谋划的，是自己生命中够得着的东西。&lt;/h2&gt;
-&lt;h2 id=&#34;未来属于那些有想法-还能动手去做的人&#34;&gt;未来属于那些有想法、还能动手去做的人。&lt;/h2&gt;
-&lt;h2 id=&#34;避免偏见的最好方法-是保持好奇心和谦逊&#34;&gt;避免偏见的最好方法，是保持好奇心和谦逊&lt;/h2&gt;
-&lt;h2 id=&#34;投资基础思维-不纠结-莫强求-拿得起-放得下&#34;&gt;投资基础思维: 不纠结，莫强求，拿得起，放得下&lt;/h2&gt;
-&lt;h2 id=&#34;大模型的本质-它们是概率系统-而非确定性系统&#34;&gt;大模型的本质：它们是概率系统，而非确定性系统&lt;/h2&gt;
-&lt;h2 id=&#34;学习是50-的术语和50-的实际学习&#34;&gt;学习是50%的术语和50%的实际学习&lt;/h2&gt;
-&lt;h2 id=&#34;要学好东西-除了教材-书本-视频以外-一个良好的反馈环境太重要了&#34;&gt;要学好东西，除了教材、书本、视频以外，一个良好的反馈环境太重要了&lt;/h2&gt;
-&lt;h2 id=&#34;任何时候-都不要放弃自己的思考&#34;&gt;任何时候，都不要放弃自己的思考&lt;/h2&gt;
-&lt;h2 id=&#34;理想的人生-应该是随时死去-都不留遗憾&#34;&gt;理想的人生，应该是随时死去，都不留遗憾。&lt;/h2&gt;
-&lt;h2 id=&#34;与-ai-交谈不像在与一个人交谈-而像在与人类的集体思维交谈-ai-不应该让你减少思考-而应该帮助你增加思考-ai-是你的杠杆-可以让你拓展自己&#34;&gt;与 AI 交谈不像在与一个人交谈，而像在与人类的集体思维交谈。AI 不应该让你减少思考，而应该帮助你增加思考，AI 是你的杠杆，可以让你拓展自己。&lt;/h2&gt;
-&lt;h2 id=&#34;做任何事情之前我们都会先去找一下有没有现成的-锤子&#34;&gt;做任何事情之前我们都会先去找一下有没有现成的“锤子”&lt;/h2&gt;
-&lt;h2 id=&#34;如果一件事情中相对的双方都对现状非常不满意-那通常就存在一个非常满意的第三方&#34;&gt;如果一件事情中相对的双方都对现状非常不满意，那通常就存在一个非常满意的第三方&lt;/h2&gt;
-&lt;h2 id=&#34;软件工程里面-实践和人品最重要-学历不重要&#34;&gt;软件工程里面，实践和人品最重要，学历不重要&lt;/h2&gt;
-&lt;h2 id=&#34;读书的目的是启发自己-而不要追求知识的多寡&#34;&gt;读书的目的是启发自己，而不要追求知识的多寡&lt;/h2&gt;
-&lt;h2 id=&#34;无论什么事情-如果你发现你持续处于被动的状态下-那么你一定要停下来想一想如何把被动变为主动&#34;&gt;无论什么事情，如果你发现你持续处于被动的状态下，那么你一定要停下来想一想如何把被动变为主动。&lt;/h2&gt;
-&lt;h2 id=&#34;能用钱解决的事情-就马上解决它-你会发现世界真美好&#34;&gt;能用钱解决的事情，就马上解决它。你会发现世界真美好&lt;/h2&gt;
-&lt;h2 id=&#34;不要把职业-career-当成某一件具体的事情-这是人类发明的最危险-最令人窒息的概念之一-也是大多数梦想和直觉的敌人&#34;&gt;不要把职业（career）当成某一件具体的事情，这是人类发明的最危险、最令人窒息的概念之一，也是大多数梦想和直觉的敌人。&lt;/h2&gt;
-&lt;p&gt;职业应该是一个抽象的概念，指的是一个人在日常的工作和生活中，不断探索、培训、实践、逐步进步的过程。&lt;/p&gt;
-&lt;h2 id=&#34;让团队更顺利地运行不是你的工作-你的真正工作是执行公司领导层的使命&#34;&gt;让团队更顺利地运行不是你的工作，你的真正工作是执行公司领导层的使命。&lt;/h2&gt;
-&lt;h2 id=&#34;我们已经到了这个地步-学习哪种编程语言无关紧要-现在真正的技能是系统设计-架构-devops-云计算-那些在-ai-之上快速构建系统的技能&#34;&gt;我们已经到了这个地步：学习哪种编程语言无关紧要。现在真正的技能是系统设计、架构、DevOps、云计算&amp;mdash;-那些在 AI 之上快速构建系统的技能。&lt;/h2&gt;
-&lt;h2 id=&#34;构建强大且可靠的ai智能体-正逐渐不再是寻找魔法般的提示词或依赖模型更新-而变为如何高效地进行上下文工程&#34;&gt;构建强大且可靠的AI智能体，正逐渐不再是寻找魔法般的提示词或依赖模型更新，而变为如何高效地进行上下文工程。&lt;/h2&gt;
-&lt;h2 id=&#34;ai-是第二大脑-系统才是第一生产力&#34;&gt;AI 是第二大脑，系统才是第一生产力。&lt;/h2&gt;
-&lt;h2 id=&#34;高效学习&#34;&gt;高效学习&lt;/h2&gt;
-&lt;p&gt;大量重试→大量犯错→注意自己犯的错误→改正错误，激活神经系统里的奖赏回路 →休息，放空，让大脑自己巩固&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>那些名人名言</title>
-      <link>http://blog.imcompany.cn/posts/speech/</link>
-      <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/speech/</guid>
       <description>&lt;h2 id=&#34;一切的学习最终都是自学&#34;&gt;一切的学习最终都是自学&lt;/h2&gt;
 &lt;h2 id=&#34;如果你没有时间集中精力学习新知识-那么就花时间复习已经学过的内容&#34;&gt;如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。&lt;/h2&gt;
 &lt;h2 id=&#34;作为一个普通人-一个小人物-不要给自己使命感-你来这个世界上的核心目的-就是为了体验美好&#34;&gt;作为一个普通人，一个小人物，不要给自己使命感，你来这个世界上的核心目的，就是为了体验美好。&lt;/h2&gt;
@@ -6819,36 +6527,6 @@ Installed commands in /Users/tomyli/github/go/bin&lt;/p&gt;
       <link>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
-      <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
-&lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
-&lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;
-&lt;p&gt;无敌翻译软件，支持网页、PDF、本地文件翻译&lt;/p&gt;
-&lt;h2 id=&#34;tampermonkey&#34;&gt;&lt;a href=&#34;https://github.com/Tampermonkey/tampermonkey&#34;&gt;Tampermonkey&lt;/a&gt; 👍&lt;/h2&gt;
-&lt;p&gt;用户自定义脚本管理器&lt;/p&gt;
-&lt;h2 id=&#34;enhanced-github&#34;&gt;Enhanced GitHub&lt;/h2&gt;
-&lt;p&gt;Github加强版，显示仓库大小，下载单个文件等好用功能。&lt;a href=&#34;https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd&#34;&gt;插件地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;眺览-tillglance&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/%E7%9C%BA%E8%A7%88-tillglance/aomnlmcemihejgfkeplljkcelfpneakg&#34;&gt;眺览 TillGlance&lt;/a&gt; 👍&lt;/h2&gt;
-&lt;p&gt;一目十行的阅读方式&lt;/p&gt;
-&lt;h2 id=&#34;elmo-your-ai-companion-to-create-summaries-and-insights&#34;&gt;&lt;a href=&#34;https://www.elmo.chat/&#34;&gt;Elmo - Your AI companion to create summaries and insights&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;最大优点是生成的摘要最接近原文&lt;/p&gt;
-&lt;h2 id=&#34;language-reactor&#34;&gt;&lt;a href=&#34;https://www.languagereactor.com/&#34;&gt;Language Reactor&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;探索、理解并从母语材料中学习的完美助手&lt;/p&gt;
-&lt;h2 id=&#34;peeklink-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/peeklink/hdaniddaeomoofbnoagkncfofebaablc&#34;&gt;PeekLink - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;浏览体验大升级&lt;/p&gt;
-&lt;h2 id=&#34;iorate-ublacklist-blocks-specific-sites-from-appearing-in-google-search-results&#34;&gt;&lt;a href=&#34;https://github.com/iorate/ublacklist?tab=readme-ov-file&#34;&gt;iorate/ublacklist: Blocks specific sites from appearing in Google search results&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;podstation-podstation-podstation-is-a-web-podcast-aggregator-for-chrome-dot&#34;&gt;&lt;a href=&#34;https://github.com/podStation/podStation&#34;&gt;podStation/podStation: podStation is a web podcast aggregator for Chrome.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
-&lt;h2 id=&#34;dukeluo-wai-一款可以预防颈椎病的新标签页扩展&#34;&gt;&lt;a href=&#34;https://github.com/dukeluo/wai&#34;&gt;dukeluo/wai: 一款可以预防颈椎病的新标签页扩展。&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;浏览信息，锻炼脖子&lt;/p&gt;
-&lt;h2 id=&#34;extension-manager-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco&#34;&gt;Extension Manager - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;应用扩展管理，支持url匹配，最多支持10个规则&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>那些高效的Chrome插件</title>
-      <link>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</link>
-      <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</guid>
       <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
 &lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
 &lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;

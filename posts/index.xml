@@ -2,54 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on I&#39;m company</title>
-    <link>http://blog.imcompany.cn/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on I&#39;m company</description>
     <image>
       <title>I&#39;m company</title>
-      <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Jul 2026 18:45:25 +0800</lastBuildDate>
-    <atom:link href="http://blog.imcompany.cn/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/posts/useful-tools/</link>
-      <pubDate>Tue, 14 Jul 2026 10:33:18 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
-&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
-&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Emoji搜索&lt;/p&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Wed, 22 Jul 2026 19:42:43 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/posts/na-xie-videos/</link>
-      <pubDate>Wed, 01 Jul 2026 11:27:59 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/na-xie-videos/</guid>
+      <link>http://localhost:1313/posts/na-xie-videos/</link>
+      <pubDate>Wed, 22 Jul 2026 19:42:43 +0800</pubDate>
+      <guid>http://localhost:1313/posts/na-xie-videos/</guid>
       <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -87,10 +55,42 @@
 &lt;p&gt;一共有10季&lt;/p&gt;</description>
     </item>
     <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://localhost:1313/posts/useful-tools/</link>
+      <pubDate>Tue, 14 Jul 2026 10:33:18 +0800</pubDate>
+      <guid>http://localhost:1313/posts/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
+&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
+&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Emoji搜索&lt;/p&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Anki常用插件集合</title>
-      <link>http://blog.imcompany.cn/posts/anki-plugins/</link>
+      <link>http://localhost:1313/posts/anki-plugins/</link>
       <pubDate>Tue, 09 Jun 2026 11:03:38 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/anki-plugins/</guid>
+      <guid>http://localhost:1313/posts/anki-plugins/</guid>
       <description>&lt;h2 id=&#34;ankiconnect-ankiweb&#34;&gt;&lt;a href=&#34;https://ankiweb.net/shared/info/2055492159&#34;&gt;AnkiConnect - AnkiWeb&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Captured On: &lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;[2023-12-05 Tue 11:20]&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
 扩展三方应用与Anki进行API操作，目前主要使用在org-anki和loseq-anki&lt;/p&gt;
@@ -109,9 +109,9 @@
     </item>
     <item>
       <title>众乐乐-weekly 2026-W18</title>
-      <link>http://blog.imcompany.cn/posts/2026-week18/</link>
+      <link>http://localhost:1313/posts/2026-week18/</link>
       <pubDate>Thu, 30 Apr 2026 09:48:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week18/</guid>
+      <guid>http://localhost:1313/posts/2026-week18/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
 &lt;h3 id=&#34;ai-也该有护照了-虹线&#34;&gt;&lt;a href=&#34;https://1q43.blog/post/12323/&#34;&gt;AI 也该有护照了 | 虹线&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;作者对当前Menus收购热议提出的AI所属问题，讨论了AI产生的问题由谁来负责&lt;/p&gt;
@@ -130,11 +130,11 @@
     </item>
     <item>
       <title>众乐乐-weekly 2026-W15</title>
-      <link>http://blog.imcompany.cn/posts/2026-week15/</link>
+      <link>http://localhost:1313/posts/2026-week15/</link>
       <pubDate>Wed, 15 Apr 2026 09:36:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week15/</guid>
+      <guid>http://localhost:1313/posts/2026-week15/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://localhost:1313/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;最近工作忙，只看了几小段&lt;/p&gt;
 &lt;h3 id=&#34;study-claude-code-tips&#34;&gt;Study claude-code-tips&lt;/h3&gt;
 &lt;p&gt;认真学习了一下 &lt;a href=&#34;https://github.com/ykdojo/claude-code-tips&#34;&gt;claude-code-tips&lt;/a&gt; ，作者使用CC的心得，其中 Tip5、6、8、9、13、17、33 收获挺大，对于工具作者也提示还是要多用，在用的过程完善与进步&lt;/p&gt;
@@ -160,9 +160,9 @@
     </item>
     <item>
       <title>众乐乐-weekly 2026-W10</title>
-      <link>http://blog.imcompany.cn/posts/2026-week10/</link>
+      <link>http://localhost:1313/posts/2026-week10/</link>
       <pubDate>Fri, 06 Mar 2026 19:44:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week10/</guid>
+      <guid>http://localhost:1313/posts/2026-week10/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
 &lt;h3 id=&#34;开始读-我在北京送快递--豆瓣&#34;&gt;开始读 &lt;a href=&#34;https://book.douban.com/subject/36150423/&#34;&gt;我在北京送快递 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;主要是等公车时读&lt;/p&gt;
@@ -188,12 +188,12 @@
     </item>
     <item>
       <title>众乐乐-weekly 2026-W09</title>
-      <link>http://blog.imcompany.cn/posts/2026-week9/</link>
+      <link>http://localhost:1313/posts/2026-week9/</link>
       <pubDate>Sat, 28 Feb 2026 18:19:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/2026-week9/</guid>
+      <guid>http://localhost:1313/posts/2026-week9/</guid>
       <description>&lt;p&gt;春节三周休整，直接到第9周了&lt;/p&gt;
 &lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://blog.imcompany.cn/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;开始阅读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;开始阅读 &lt;a href=&#34;http://localhost:1313/posts/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;一部大作&lt;/p&gt;
 &lt;h3 id=&#34;new-talk-learning-dns-in-10-years&#34;&gt;&lt;a href=&#34;https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/&#34;&gt;New talk: Learning DNS in 10 years&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;通过学习DNS协议来讨论如何学习技术&lt;/p&gt;
@@ -227,9 +227,9 @@
     </item>
     <item>
       <title>大鹏慢读-tomyli的读书2026</title>
-      <link>http://blog.imcompany.cn/posts/peng-read-2026/</link>
+      <link>http://localhost:1313/posts/peng-read-2026/</link>
       <pubDate>Tue, 06 Jan 2026 11:30:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/peng-read-2026/</guid>
+      <guid>http://localhost:1313/posts/peng-read-2026/</guid>
       <description>&lt;h2 id=&#34;20世纪简史--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/30262204/&#34;&gt;20世纪简史 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;丝绸之路--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/26853835/&#34;&gt;丝绸之路 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;极端的年代19141991-豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;STARTED&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://book.douban.com/subject/27031979/&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -240,9 +240,9 @@
     </item>
     <item>
       <title>收集的一些Podcast</title>
-      <link>http://blog.imcompany.cn/posts/podcasts/</link>
+      <link>http://localhost:1313/posts/podcasts/</link>
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/podcasts/</guid>
+      <guid>http://localhost:1313/posts/podcasts/</guid>
       <description>&lt;h2 id=&#34;42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/podcast/648b0b641c48983391a63f98&#34;&gt;42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;cursor-刷屏背后-复盘-ai-coding-的现状与发展-对谈-gru-dot-ai-创始人张海龙-42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/671c9a42eb46cd6655da1e6f&#34;&gt;Cursor 刷屏背后，复盘 AI Coding 的现状与发展｜对谈 Gru.ai 创始人张海龙 - 42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
 &lt;h3 id=&#34;世界好像变难了-我们该如何应对-对谈绿洲资本张津剑之-ai-人-与-生命力-42章经-小宇宙-听播客-上小宇宙&#34;&gt;&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/6651b7a4c59d1e575797a520&#34;&gt;世界好像变难了，我们该如何应对？| 对谈绿洲资本张津剑之 AI、人 与 生命力 - 42章经 | 小宇宙 - 听播客，上小宇宙&lt;/a&gt;&lt;/h3&gt;
@@ -269,9 +269,9 @@
     </item>
     <item>
       <title>那些名人名言</title>
-      <link>http://blog.imcompany.cn/posts/speech/</link>
+      <link>http://localhost:1313/posts/speech/</link>
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/speech/</guid>
+      <guid>http://localhost:1313/posts/speech/</guid>
       <description>&lt;h2 id=&#34;一切的学习最终都是自学&#34;&gt;一切的学习最终都是自学&lt;/h2&gt;
 &lt;h2 id=&#34;如果你没有时间集中精力学习新知识-那么就花时间复习已经学过的内容&#34;&gt;如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。&lt;/h2&gt;
 &lt;h2 id=&#34;作为一个普通人-一个小人物-不要给自己使命感-你来这个世界上的核心目的-就是为了体验美好&#34;&gt;作为一个普通人，一个小人物，不要给自己使命感，你来这个世界上的核心目的，就是为了体验美好。&lt;/h2&gt;
@@ -330,9 +330,9 @@
     </item>
     <item>
       <title>那些高效的Chrome插件</title>
-      <link>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</link>
+      <link>http://localhost:1313/posts/na-xie-gao-xiao-de-chromecha-jian/</link>
       <pubDate>Fri, 08 Mar 2019 07:48:34 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/posts/na-xie-gao-xiao-de-chromecha-jian/</guid>
+      <guid>http://localhost:1313/posts/na-xie-gao-xiao-de-chromecha-jian/</guid>
       <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
 &lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
 &lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;
