@@ -11,15 +11,39 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2026 19:53:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 16:59:37 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W30</title>
+      <link>http://blog.imcompany.cn/post/2026-week30/</link>
+      <pubDate>Tue, 21 Jul 2026 19:12:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week30/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;读到了 第八章 冷战时代，美苏冷战让全世界都笼罩在核阴影下，当然两国的决策者不会让第核战爆发，因为那将是毁灭性的，他们只是把运用核武器常挂在嘴边&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;nativ-run-ai-locally-on-your-mac&#34;&gt;&lt;a href=&#34;https://blaizzy.github.io/nativ/&#34;&gt;Nativ — Run AI locally on your Mac&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;又一个本地运行AI大模型的工具，mlx-vlm作者出品，需要MacOS 26版本以上，期待后续支持 MacOS低版本安装&lt;/p&gt;
+&lt;h3 id=&#34;ostracon-让-marginnote-与-obsidian-双向实时联动-插件与自动化-marginnote-中文社区&#34;&gt;&lt;a href=&#34;https://bbs.marginnote.com.cn/t/topic/68159&#34;&gt;Ostracon——让 MarginNote 与 Obsidian 双向实时联动 - 插件与自动化 - MarginNote 中文社区&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;实现MarginNote与Obsidain联动&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;alljavi-material-gruvbox-obsidian-basic-theme-inspired-on-the-material-gruvbox-palette&#34;&gt;&lt;a href=&#34;https://github.com/AllJavi/material_gruvbox_obsidian&#34;&gt;AllJavi/material_gruvbox_obsidian: Basic theme inspired on the Material gruvbox palette&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;找到一款护眼主题Gruvbox，给Logseq和Emacs也都安装上了相应的主题&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;kenn-io-agentsview-local-first-session-search-analytics-insights-and-token-use-statistics-for-coding-agents-supporting-claude-code-codex-and-more-than-20-other-agents-dot&#34;&gt;&lt;a href=&#34;https://github.com/kenn-io/agentsview&#34;&gt;kenn-io/agentsview: Local-first session search, analytics, insights, and token use statistics for coding agents, supporting Claude Code, Codex, and more than 20 other agents.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;大模型对话统一管理、搜索、分析，支持主流大模型工具&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;stablyai-orca-orca-is-the-ade-for-working-with-a-fleet-of-parallel-agents-dot-run-any-coding-agent-with-your-own-subscription-dot-available-on-desktop-mobile-and-vps-dot&#34;&gt;&lt;a href=&#34;https://github.com/stablyai/orca&#34;&gt;stablyai/orca: Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Agent执行工具，可替代ChatGPT&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W29</title>
       <link>http://blog.imcompany.cn/post/2026-week29/</link>
       <pubDate>Fri, 17 Jul 2026 09:43:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/2026-week29/</guid>
       <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;继续读-资质通鉴&#34;&gt;继续读 《资质通鉴》&lt;/h3&gt;
+&lt;h3 id=&#34;继续读-资治通鉴--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#资治通鉴-豆瓣&#34;&gt;资治通鉴 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;读完 唐太宗的 贞观之治，整体篇幅很长，占了第五卷的将近一半的内容，一个盛世的造就离不开贤明的君主和一大批实干的大臣&lt;/p&gt;
 &lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
 &lt;h3 id=&#34;cabeen-zen-mode&#34;&gt;&lt;a href=&#34;https://github.com/cabeen/zen-mode&#34;&gt;cabeen/zen-mode&lt;/a&gt;&lt;/h3&gt;
