@@ -11,8 +11,39 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2026 16:59:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 18:09:08 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W31</title>
+      <link>http://blog.imcompany.cn/post/2026-week31/</link>
+      <pubDate>Thu, 30 Jul 2026 10:41:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/2026-week31/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资治通鉴--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#资治通鉴-豆瓣&#34;&gt;资治通鉴 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;读完了 女皇武则天 部分，武则天抓住了王皇后皇宫争斗被利用的机会(其实也是高宗夺回皇权的一部分)，翻身当上皇后，又一步步的建立起二圣听政的局面，最后彻底掌控皇权登顶权力之巅&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;exelban-stats-macos-system-monitor-in-your-menu-bar&#34;&gt;&lt;a href=&#34;https://github.com/exelban/stats&#34;&gt;exelban/stats: macOS system monitor in your menu bar&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;MAC菜单栏系统信息监控应用，iStat Menus 占用的空间太大了&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;twalichiewicz-hnewhere-a-lightweight-userscript-that-adds-hacker-news-discussions-to-any-article-dot&#34;&gt;&lt;a href=&#34;https://github.com/twalichiewicz/HNewhere&#34;&gt;twalichiewicz/HNewhere: A lightweight userscript that adds Hacker News discussions to any article.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;油猴脚本，在当前页面显示Hacker News上对应的讨论&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;iamcorey-birth-一目了然地管理你的电脑启动项-开源-macos-启动项管理器&#34;&gt;&lt;a href=&#34;https://github.com/iAmCorey/birth&#34;&gt;iAmCorey/birth: 一目了然地管理你的电脑启动项 | 开源 macOS 启动项管理器&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;管理电脑启动项的MAC应用，安装后清理一些不必要的启动项，还删除了一些根本不用的应用，系统清爽了许多&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Traditional_Chinese_ink_wash_p_2026-07-31T09-59-49.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;曲突徙薪，防患于未然，社会倾向赞美救火英雄，而忘记提醒你多关注火灾隐患的人&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#好的评论不是给出答案-而是打开问题&#34;&gt;好的评论不是给出答案，而是打开问题&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;flamingo-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Flamingo?useskin=vector&#34;&gt;Flamingo - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;火烈鸟, 是一种涉禽，属于腓鸟科，是腓鸟科唯一现存的家族。有四种火烈鸟分布在整个美洲，两种原产于非洲-欧亚大陆&lt;/p&gt;
+&lt;p&gt;“火烈鸟”这个名字来源于葡萄牙语或西班牙语的“flamengo”，意思是“火红色的”&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W30</title>
       <link>http://blog.imcompany.cn/post/2026-week30/</link>
