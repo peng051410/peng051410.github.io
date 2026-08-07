@@ -11,8 +11,38 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 31 Jul 2026 18:09:08 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 17:58:27 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W32</title>
+      <link>http://blog.imcompany.cn/post/peng-week32/</link>
+      <pubDate>Fri, 07 Aug 2026 17:05:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week32/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读  &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开始读-&amp;gt; 极端的年代：1914—1991/第九章 黄金年代&lt;/p&gt;
+&lt;p&gt;二战后的30年是资本主义国家的黄金红利期，人口增加，粮食生产过剩，以至于外销的粮食价格比本国的还要便宜。爆炸性增长的背后是人类对地球环境的污染，以及生态系统平衡的破坏，石油、煤碳及天然气的惊人消耗是最大的祸源，但是人们的醒悟总是来的晚很多&lt;/p&gt;
+&lt;h3 id=&#34;他来过-也为普通人点过灯-怀念孤勇者张雪峰-林海草原&#34;&gt;&lt;a href=&#34;https://lhcy.org/archives/ta-lai-guo-ye-wei-pu-tong-ren-dian-guo-deng-huai-nian-gu.html&#34;&gt;他来过，也为普通人点过灯——怀念孤勇者张雪峰 - 林海草原&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;怀念一下，为数不多的孤勇者&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;l0ng-ai-tty7-a-terminal-workbench-in-pure-rust-shells-persistent-sessions-ssh-coding-agents-dot-gpu-rendered-on-zed-s-gpui-vt-core-from-alacritty-dot&#34;&gt;&lt;a href=&#34;https://github.com/l0ng-ai/tty7&#34;&gt;l0ng-ai/tty7: A terminal workbench in pure Rust: shells, persistent sessions, SSH, coding agents. GPU-rendered on Zed&amp;rsquo;s gpui, VT core from Alacritty.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;纯Rust实现的终端工作台，对于远程操作支持很给力&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;trycua-cua-scale-computer-use-2-dot-0-with-open-source-drivers-cross-os-fleets-and-benchmarks-for-training-evaluation-and-data-generation-dot&#34;&gt;&lt;a href=&#34;https://github.com/trycua/cua&#34;&gt;trycua/cua: Scale computer-use 2.0 with open-source drivers, cross-OS fleets, and benchmarks for training, evaluation, and data generation.&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;p&gt;类似ChatGPT Computer Use的自动操作工具，跨平台&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/Traditional_Chinese_ink_wash_p_2026-08-07T09-34-52.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;相辅相成&lt;/strong&gt; ，做到1+1&amp;gt;2或者N&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#最有效的助眠神器是今日事今日毕&#34;&gt;最有效的助眠神器是今日事今日毕&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;serena-williams-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Serena_Williams?useskin=vector&#34;&gt;Serena Williams - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;塞雷娜·贾梅卡·威廉姆斯（小威），美国职业网球运动员。在女子网球协会的女子单打排名中连续319周排名世界第一。赢得了73个WTA巡回赛级别的单打冠军，其中包括23个女子单打冠军（公开时代最多，历史第二多）。她是唯一一位在单打和双打中都获得职业生涯大满贯的选手，也是唯一一位同时拥有奥运会金牌和所有四项单打、双打满贯头衔的选手&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W31</title>
       <link>http://blog.imcompany.cn/post/2026-week31/</link>
