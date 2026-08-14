@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Aug 2025 17:20:42 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 16:57:16 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>重拾Android的快乐-Handler</title>
@@ -180,6 +180,24 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;listView&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;adapter&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;adapter&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;主要关注创建 ArrayAdapter 的代码，创建时需要的参数：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>收集的Android Apps</title>
+      <link>http://blog.imcompany.cn/posts/android-apps/</link>
+      <pubDate>Thu, 24 Jul 2025 08:12:23 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/posts/android-apps/</guid>
+      <description>&lt;h2 id=&#34;orgzly-orgzly-android-outliner-for-taking-notes-and-managing-to-do-lists&#34;&gt;&lt;a href=&#34;https://github.com/orgzly/orgzly-android?__readwiseLocation=&#34;&gt;orgzly/orgzly-android: Outliner for taking notes and managing to-do lists&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Android上日记与TODO应用，基于Org mode&lt;/p&gt;
+&lt;h2 id=&#34;xlucn-oh-my-foss-android-个人收集的实用-良心开源安卓软件&#34;&gt;&lt;a href=&#34;https://github.com/xlucn/oh-my-foss-android&#34;&gt;xlucn/oh-my-foss-android: 个人收集的实用、良心开源安卓软件&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Android软件集&lt;/p&gt;
+&lt;h2 id=&#34;lihenggui-blocker-utilize-an-integrated-firewall-to-manage-application-components-dot&#34;&gt;&lt;a href=&#34;https://github.com/lihenggui/blocker/tree/main&#34;&gt;lihenggui/blocker: Utilize an integrated firewall to manage application components.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Blocker 是一款操作Android应用程序四大组件的程序, 禁用无用功能(禁用一些广告 SDK 组件)，节约应用运行资源的功能&lt;/p&gt;
+&lt;h2 id=&#34;gkd-kit-gkd-基于无障碍-高级选择器-订阅规则的自定义屏幕点击-android-应用-an-android-app-with-custom-screen-tapping-based-on-accessibility-advanced-selectors-and-subscription-rules&#34;&gt;&lt;a href=&#34;https://github.com/gkd-kit/gkd&#34;&gt;gkd-kit/gkd: 基于无障碍，高级选择器，订阅规则的自定义屏幕点击 Android 应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;跳过开屏广告&lt;/p&gt;
+&lt;h2 id=&#34;adaway-adaway-adaway-is-a-free-and-open-source-ad-blocker-for-android-dot&#34;&gt;&lt;a href=&#34;https://github.com/AdAway/AdAway&#34;&gt;AdAway/AdAway: AdAway is a free and open source ad blocker for Android.&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;广告拦截APP，通过 hosts 或者 vpn 模式阻止广告请求&lt;/p&gt;
+&lt;h2 id=&#34;yuliskov-smarttube-browse-media-content-with-your-own-rules-on-android-tv&#34;&gt;&lt;a href=&#34;https://github.com/yuliskov/SmartTube&#34;&gt;yuliskov/SmartTube: Browse media content with your own rules on Android TV&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Android上无广告看Youtube&lt;/p&gt;</description>
     </item>
     <item>
       <title>重拾Android的快乐-TableLayout布局</title>
