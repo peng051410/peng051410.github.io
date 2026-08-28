@@ -9,10 +9,31 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.164.0</generator>
+    <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2026 17:43:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 16:39:50 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W34</title>
+      <link>http://blog.imcompany.cn/post/peng-week34/</link>
+      <pubDate>Fri, 21 Aug 2026 15:41:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week34/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资治通鉴--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#资治通鉴-豆瓣&#34;&gt;资治通鉴 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;读到了 神龙政变部分，女皇在立接班人的问题上犯难，想立武家人，武家人在对外征战上毫无建树，还伤了民心。后又担心死后的香火问题，女皇只能选择还政给李唐，在她执政后期把李显立为太子，继续扶持二张把持朝政，直到恢复李唐的大臣们在使用正规渠道铲除二张无果后，发动神龙政变，最终唐高宗李显即位，大赏政变功臣，然后就是皇权的重新聚拢下的政治博弈&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;abue-ammar-tinycast-tinycast-a-tiny-fully-native-macos-launcher-hotkeys-and-clipboard-history&#34;&gt;&lt;a href=&#34;https://github.com/abue-ammar/tinycast&#34;&gt;abue-ammar/tinycast: Tinycast — a tiny, fully native macOS launcher, hotkeys, and clipboard history&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mac快捷启动工程Raycast的开源版本，可以安装Raycast的插件&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;pls-1q43-dibao-local-first-super-low-cost-ai-powered-personal-rss-reader-dot-0-dot-6b-模型可驱动的低成本-ai-个人-rss-阅读器&#34;&gt;&lt;a href=&#34;https://github.com/Pls-1q43/Dibao#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85&#34;&gt;Pls-1q43/Dibao: Local first, super low cost AI-powered personal RSS reader. / 0.6B 模型可驱动的低成本 AI 个人 RSS 阅读器。&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;基于本地AI驱动个人可控的RSS阅读器，可以直接配置Ollama使用&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;starcat-app-starcat-a-native-macos-app-that-turns-github-stars-into-a-searchable-organized-ai-powered-personal-knowledge-base-dot&#34;&gt;&lt;a href=&#34;https://github.com/starcat-app/Starcat&#34;&gt;starcat-app/Starcat: A native macOS app that turns GitHub Stars into a searchable, organized, AI-powered personal knowledge base.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Github Star管理APP，集成了AI功能，把gtihub仓库直接变成语料库，不过AI功能需要购买license&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;paulsp94-omacosy-pre-1-dot-0-dot-an-omarchy-style-desktop-environment-for-macos-tiling-with-a-real-super-key-dwindle-layout-a-themed-status-bar-written-for-it-focus-follows-mouse-trackpad-workspace-swipes-and-a-live-workspace-overview-157mb-six-self-built-swift-binaries-one-repo-dot-built-and-tested-on-macos-26-apple-silicon-dot&#34;&gt;&lt;a href=&#34;https://github.com/paulsp94/omacosy&#34;&gt;paulsp94/omacosy: Pre-1.0. An omarchy-style desktop environment for macOS: tiling with a real Super key, dwindle layout, a themed status bar written for it, focus-follows-mouse, trackpad workspace swipes and a live workspace overview — ~157MB, six self-built Swift binaries, one repo. Built and tested on macOS 26 / Apple Silicon.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;为Mac配置类似omachy样式的桌面，带常用APP快速打开，窗口管理和状态栏，占用的空间不大，新电脑可以直接配置使用，MacOS 26最佳&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W33</title>
       <link>http://blog.imcompany.cn/post/peng-week33/</link>

@@ -9,10 +9,104 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.164.0</generator>
+    <generator>Hugo -- 0.165.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Aug 2026 17:43:39 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 16:39:50 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W34</title>
+      <link>http://blog.imcompany.cn/post/peng-week34/</link>
+      <pubDate>Fri, 21 Aug 2026 15:41:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week34/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-资治通鉴--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#资治通鉴-豆瓣&#34;&gt;资治通鉴 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;读到了 神龙政变部分，女皇在立接班人的问题上犯难，想立武家人，武家人在对外征战上毫无建树，还伤了民心。后又担心死后的香火问题，女皇只能选择还政给李唐，在她执政后期把李显立为太子，继续扶持二张把持朝政，直到恢复李唐的大臣们在使用正规渠道铲除二张无果后，发动神龙政变，最终唐高宗李显即位，大赏政变功臣，然后就是皇权的重新聚拢下的政治博弈&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;abue-ammar-tinycast-tinycast-a-tiny-fully-native-macos-launcher-hotkeys-and-clipboard-history&#34;&gt;&lt;a href=&#34;https://github.com/abue-ammar/tinycast&#34;&gt;abue-ammar/tinycast: Tinycast — a tiny, fully native macOS launcher, hotkeys, and clipboard history&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Mac快捷启动工程Raycast的开源版本，可以安装Raycast的插件&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;pls-1q43-dibao-local-first-super-low-cost-ai-powered-personal-rss-reader-dot-0-dot-6b-模型可驱动的低成本-ai-个人-rss-阅读器&#34;&gt;&lt;a href=&#34;https://github.com/Pls-1q43/Dibao#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85&#34;&gt;Pls-1q43/Dibao: Local first, super low cost AI-powered personal RSS reader. / 0.6B 模型可驱动的低成本 AI 个人 RSS 阅读器。&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;基于本地AI驱动个人可控的RSS阅读器，可以直接配置Ollama使用&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;starcat-app-starcat-a-native-macos-app-that-turns-github-stars-into-a-searchable-organized-ai-powered-personal-knowledge-base-dot&#34;&gt;&lt;a href=&#34;https://github.com/starcat-app/Starcat&#34;&gt;starcat-app/Starcat: A native macOS app that turns GitHub Stars into a searchable, organized, AI-powered personal knowledge base.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Github Star管理APP，集成了AI功能，把gtihub仓库直接变成语料库，不过AI功能需要购买license&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;paulsp94-omacosy-pre-1-dot-0-dot-an-omarchy-style-desktop-environment-for-macos-tiling-with-a-real-super-key-dwindle-layout-a-themed-status-bar-written-for-it-focus-follows-mouse-trackpad-workspace-swipes-and-a-live-workspace-overview-157mb-six-self-built-swift-binaries-one-repo-dot-built-and-tested-on-macos-26-apple-silicon-dot&#34;&gt;&lt;a href=&#34;https://github.com/paulsp94/omacosy&#34;&gt;paulsp94/omacosy: Pre-1.0. An omarchy-style desktop environment for macOS: tiling with a real Super key, dwindle layout, a themed status bar written for it, focus-follows-mouse, trackpad workspace swipes and a live workspace overview — ~157MB, six self-built Swift binaries, one repo. Built and tested on macOS 26 / Apple Silicon.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;为Mac配置类似omachy样式的桌面，带常用APP快速打开，窗口管理和状态栏，占用的空间不大，新电脑可以直接配置使用，MacOS 26最佳&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Fri, 21 Aug 2026 11:36:37 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
+&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
+&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Emoji搜索&lt;/p&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>那些被推荐的Video</title>
+      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
+      <pubDate>Wed, 19 Aug 2026 17:30:08 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
+      <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;生活多美好--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1293749/&#34;&gt;生活多美好 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;大明王朝1566--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2210001/&#34;&gt;大明王朝1566 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;流人-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34890017/&#34;&gt;流人 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;冰血暴-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/24297912/&#34;&gt;冰血暴 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;咒术回战--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34895145/&#34;&gt;咒术回战 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;狗神--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35736202/&#34;&gt;狗神 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;love-death-plus-robots-love-death-and-robots-wiki-fandom&#34;&gt;&lt;a href=&#34;https://lovedeathrobots.fandom.com/wiki/LOVE_DEATH_%2B_ROBOTS&#34;&gt;LOVE DEATH + ROBOTS | Love, Death &amp;amp; Robots Wiki | Fandom&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;断网假期--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35151492/&#34;&gt;断网假期 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;过往人生--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34963356/&#34;&gt;过往人生 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;熊家餐馆-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35900652/&#34;&gt;熊家餐馆 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;大空头--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26303622/&#34;&gt;大空头 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;d-dot-p-逃兵追缉令--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35028876/&#34;&gt;D.P：逃兵追缉令 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;涉过愤怒的海--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/33456512/&#34;&gt;涉过愤怒的海 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;青春--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27042464/&#34;&gt;青春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;万箭穿心--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/10537853/&#34;&gt;万箭穿心 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;首尔之春--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://movie.douban.com/subject/35712804/&#34;&gt;首尔之春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;河边的错误--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35256092/&#34;&gt;河边的错误 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;为全人类-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27663962/&#34;&gt;为全人类 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;杀手--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2998451/&#34;&gt;杀手 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;化学课--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35339377/&#34;&gt;化学课 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;午夜亚洲-美食-舞蹈-梦想--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35717235/&#34;&gt;午夜亚洲：美食·舞蹈·梦想 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;经济机器是如何运行的--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/30458820/&#34;&gt;经济机器是如何运行的 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;涉足荒野--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/21345845/&#34;&gt;涉足荒野 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;tinder诈骗王--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35732660/&#34;&gt;Tinder诈骗王 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;羊毛战记-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35468745/&#34;&gt;羊毛战记 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;劫机七小时--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36137261/&#34;&gt;劫机七小时 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;足球教练-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34843220/&#34;&gt;足球教练 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;华尔街之狼--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2997076/&#34;&gt;华尔街之狼 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;黑镜-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/7054120/&#34;&gt;黑镜 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一共有10季&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W33</title>
       <link>http://blog.imcompany.cn/post/peng-week33/</link>
@@ -73,47 +167,6 @@
 &lt;p&gt;塞雷娜·贾梅卡·威廉姆斯（小威），美国职业网球运动员。在女子网球协会的女子单打排名中连续319周排名世界第一。赢得了73个WTA巡回赛级别的单打冠军，其中包括23个女子单打冠军（公开时代最多，历史第二多）。她是唯一一位在单打和双打中都获得职业生涯大满贯的选手，也是唯一一位同时拥有奥运会金牌和所有四项单打、双打满贯头衔的选手&lt;/p&gt;</description>
     </item>
     <item>
-      <title>那些被推荐的Video</title>
-      <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Tue, 04 Aug 2026 10:24:34 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
-      <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;第二次世界大战-前线视角--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36529829/&#34;&gt;第二次世界大战：前线视角 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;生活多美好--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1293749/&#34;&gt;生活多美好 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大明王朝1566--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2210001/&#34;&gt;大明王朝1566 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;流人-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34890017/&#34;&gt;流人 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;冰血暴-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/24297912/&#34;&gt;冰血暴 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;咒术回战--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34895145/&#34;&gt;咒术回战 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;狗神--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35736202/&#34;&gt;狗神 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;love-death-plus-robots-love-death-and-robots-wiki-fandom&#34;&gt;&lt;a href=&#34;https://lovedeathrobots.fandom.com/wiki/LOVE_DEATH_%2B_ROBOTS&#34;&gt;LOVE DEATH + ROBOTS | Love, Death &amp;amp; Robots Wiki | Fandom&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;断网假期--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35151492/&#34;&gt;断网假期 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;过往人生--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34963356/&#34;&gt;过往人生 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;熊家餐馆-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35900652/&#34;&gt;熊家餐馆 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;大空头--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26303622/&#34;&gt;大空头 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;d-dot-p-逃兵追缉令--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35028876/&#34;&gt;D.P：逃兵追缉令 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉过愤怒的海--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/33456512/&#34;&gt;涉过愤怒的海 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;青春--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27042464/&#34;&gt;青春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;万箭穿心--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/10537853/&#34;&gt;万箭穿心 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;首尔之春--豆瓣&#34;&gt;&lt;!-- raw HTML omitted --&gt;DONE&lt;!-- raw HTML omitted --&gt; &lt;a href=&#34;https://movie.douban.com/subject/35712804/&#34;&gt;首尔之春 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;河边的错误--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35256092/&#34;&gt;河边的错误 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;为全人类-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/27663962/&#34;&gt;为全人类 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;杀手--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2998451/&#34;&gt;杀手 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;化学课--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35339377/&#34;&gt;化学课 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;午夜亚洲-美食-舞蹈-梦想--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35717235/&#34;&gt;午夜亚洲：美食·舞蹈·梦想 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;经济机器是如何运行的--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/30458820/&#34;&gt;经济机器是如何运行的 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;涉足荒野--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/21345845/&#34;&gt;涉足荒野 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;tinder诈骗王--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35732660/&#34;&gt;Tinder诈骗王 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;羊毛战记-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/35468745/&#34;&gt;羊毛战记 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;劫机七小时--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/36137261/&#34;&gt;劫机七小时 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;足球教练-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/34843220/&#34;&gt;足球教练 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;华尔街之狼--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/2997076/&#34;&gt;华尔街之狼 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;黑镜-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/7054120/&#34;&gt;黑镜 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一共有10季&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>众乐乐-weekly 2026-W31</title>
       <link>http://blog.imcompany.cn/post/2026-week31/</link>
       <pubDate>Thu, 30 Jul 2026 10:41:00 +0800</pubDate>
@@ -143,38 +196,6 @@
 &lt;h3 id=&#34;flamingo-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Flamingo?useskin=vector&#34;&gt;Flamingo - Wikipedia&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;火烈鸟, 是一种涉禽，属于腓鸟科，是腓鸟科唯一现存的家族。有四种火烈鸟分布在整个美洲，两种原产于非洲-欧亚大陆&lt;/p&gt;
 &lt;p&gt;“火烈鸟”这个名字来源于葡萄牙语或西班牙语的“flamengo”，意思是“火红色的”&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Wed, 22 Jul 2026 19:54:23 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
-&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
-&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Emoji搜索&lt;/p&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
     </item>
     <item>
       <title>Anki常用插件集合</title>
