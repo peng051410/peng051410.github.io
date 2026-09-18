@@ -11,20 +11,20 @@
     </image>
     <generator>Hugo -- 0.166.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Sep 2026 17:20:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 17:30:43 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Weekly</title>
+      <link>http://blog.imcompany.cn/categories/weekly/</link>
+      <pubDate>Fri, 11 Sep 2026 15:24:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/categories/weekly/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Movie</title>
       <link>http://blog.imcompany.cn/categories/movie/</link>
       <pubDate>Thu, 10 Sep 2026 11:28:06 +0800</pubDate>
       <guid>http://blog.imcompany.cn/categories/movie/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Weekly</title>
-      <link>http://blog.imcompany.cn/categories/weekly/</link>
-      <pubDate>Thu, 03 Sep 2026 15:23:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/categories/weekly/</guid>
       <description></description>
     </item>
     <item>
