@@ -9,7 +9,7 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.166.0</generator>
+    <generator>Hugo -- 0.167.0</generator>
     <language>en</language>
     <lastBuildDate>Mon, 26 Jan 2026 15:45:16 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -769,7 +769,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;Alias&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;getty@tty1.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;</description>
+&lt;p&gt;在getty.target.wants目录做一下软链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重启，Done!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

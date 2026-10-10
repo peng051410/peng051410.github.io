@@ -20,6 +20,7 @@ Centos自动登录 安装后每次启动VM都要输入密码，这个对于自�
 rm /etc/systemd/system/getty.target.wants/getty@tty1.service 拷贝getty@.service file 并且命名为 getty@tty1.service
 cp /lib/systemd/system/getty@.service /etc/systemd/system/getty@tty1.service 编辑新拷贝的getty@tty1.service，修改以下内容，最后一行必须加上
 [Service] ... ExecStart=-/sbin/agetty --autologin root --noclear %I ... [Install] ... ;Alias=getty@tty1.service 在getty.target.wants目录做一下软链接
+ln -s /etc/systemd/system/getty@tty1.service /etc/systemd/system/getty.target.wants/getty@tty1.service 重启，Done!
 ...</p></div><footer class=entry-footer><span title='Created: 2019-05-06 13:00:55 +0800 CST'>2019-05-06</span>&nbsp;·&nbsp;<span title='Modified: 2019-06-26 10:31:28 +0800 CST'> (🌟Updated: 2019-06-26)</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>85 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to Centos7 install issue collect" href=http://blog.imcompany.cn/post/centos7-install-issue-collect/></a></article></main><footer class=footer><span>&copy; 2026 <a href=http://blog.imcompany.cn/>I'm company</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

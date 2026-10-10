@@ -9,10 +9,31 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.166.0</generator>
+    <generator>Hugo -- 0.167.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2026 17:30:43 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 18:25:15 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W38</title>
+      <link>http://blog.imcompany.cn/post/peng-week38/</link>
+      <pubDate>Fri, 18 Sep 2026 16:26:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week38/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;ai的说服-靠的不是懂你-是把你淹没-扯氮集&#34;&gt;&lt;a href=&#34;http://weiwuhui.com/11101.html?__readwiseLocation=&#34;&gt;AI的说服 靠的不是懂你 是把你淹没 – 扯氮集&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;看完之后有点感觉，AI输出的过多，让人有种窒息感，直接少了思考，认为它说的对。作者最后的话值得思考，平台在AI统一了各个环节的入口后的话语权是惊人的&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;brycewg-bibi-keyboard-说点啥-bibi-keyboard-一个基于-kotlin-的-android-平台的-llm-与-asr-语音输入法键盘应用-an-llm-asr-voice-input-method-keyboard-application-for-the-android-platform-based-on-kotlin&#34;&gt;&lt;a href=&#34;https://github.com/BryceWG/BiBi-Keyboard&#34;&gt;BryceWG/BiBi-Keyboard: 说点啥（BiBi Keyboard）:一个基于 Kotlin 的 Android 平台的 LLM 与 ASR 语音输入法键盘应用 An LLM ASR voice input method keyboard application for the Android platform based on Kotlin&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Android上的AI语音工具，首次可以免费使用20小时的硅基流动的语音服务&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;ganeshmshetty-openclip-programmable-text-utility-that-mac-needs&#34;&gt;&lt;a href=&#34;https://github.com/ganeshmshetty/openclip&#34;&gt;ganeshmshetty/openclip: Programmable text utility that mac needs&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;MAC上Popclip的开源平替，已经用上了，很喜欢编程可扩展功能&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;philocalyst-infat-a-command-line-tool-to-set-default-openers-for-file-formats-and-url-schemes-on-macos&#34;&gt;&lt;a href=&#34;https://github.com/philocalyst/infat&#34;&gt;philocalyst/infat: A command line tool to set default openers for file formats and url schemes on macos&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;给Mac设置默认打开文件格式的应用，类似的duti已经好久不更新了&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;lingyired-status-trio-status-trio-a-native-macos-app-that-combines-wi-fi-battery-and-volume-into-one-compact-configurable-status-icon-for-the-menu-bar-the-dock-or-both-inspired-by-the-iphone-duo-combined-status-bar-dot&#34;&gt;&lt;a href=&#34;https://github.com/lingyired/status-trio&#34;&gt;lingyired/status-trio: Status Trio — a native macOS app that combines Wi-Fi, battery, and volume into one compact, configurable status icon for the menu bar, the Dock, or both, inspired by the iPhone Duo combined status bar.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;MAC菜单栏工具，把WIFI、电池与音量用一个图标展现出来，太厉害了&lt;/p&gt;</description>
+    </item>
     <item>
       <title>众乐乐-weekly 2026-W37</title>
       <link>http://blog.imcompany.cn/post/peng-week37/</link>
