@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.168.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 16 Oct 2026 17:49:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 16:53:27 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/weekly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>众乐乐-weekly 2026-W42</title>
@@ -39,6 +39,36 @@
 &lt;p&gt;巨无霸指数由帕姆·伍德尔于1986年9月在《经济学人》上提出，作为购买力平价的一种半幽默例证，此后该杂志每年发布这一指数。尽管巨无霸指数最初并非旨在成为汇率评估的正式工具，但如今它已获得全球认可，并出现在许多学术教科书和报告中。该指数还催生了“汉堡经济学”一词&lt;/p&gt;
 &lt;p&gt;巨无霸指数的目的是计算两种货币之间的隐含汇率。为了计算巨无霸指数，将外国巨无霸的价格（以外国货币计算）除以基准国巨无霸的价格（以基准国货币计算）。通常，所使用的基准国是美国&lt;/p&gt;
 &lt;p&gt;与购买力平价经济理论一致，巨无霸指数还提供了一种分析货币相对于基准货币被低估或高估程度的方法。为了计算一种货币是否被低估或高估，必须将隐含汇率（由巨无霸指数定义）与实际汇率进行比较。如果隐含汇率大于实际汇率，则所分析的货币相对于基准货币被高估，反之则是被低估。2026年查到中国大陆的巨无霸指数为-37.1%，即人民币被低估了37%&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W39</title>
+      <link>http://blog.imcompany.cn/post/peng-week39/</link>
+      <pubDate>Fri, 25 Sep 2026 16:13:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week39/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开始读 极端的年代：1914—1991___第十二章 第三世界&lt;/p&gt;
+&lt;p&gt;主要关注第三世界的人口与现代化压力，权力真空导致军人主政，国家缺少完成现代化所需的稳定&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;skillsynchq-txcript-pandoc-for-ai-chats-dot-move-ai-chats-across-harnesses-claude-code-codex-opencode-cursor-and-more-dot-rust-library-cli-and-wasm-dot&#34;&gt;&lt;a href=&#34;https://github.com/skillsynchq/txcript&#34;&gt;skillsynchq/txcript: Pandoc for AI chats. Move ai chats across harnesses: Claude Code, Codex, OpenCode, Cursor, and more. Rust library, CLI, and WASM.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;支持多个AI Agent会话迁移的命令，可在Codex上继续执行 CC 的会话&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;tommy0103-obelisk-every-past-session-subagent-and-workflow-queryable-by-your-agent-browsable-by-you&#34;&gt;&lt;a href=&#34;https://github.com/tommy0103/obelisk&#34;&gt;tommy0103/obelisk: Every past session, subagent, and workflow &amp;ndash; queryable by your agent, browsable by you&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;查询AI Agent的信息，包括Session、子Agent和工作流&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%B0%B4%E5%A2%A8%E7%94%BB_%E7%AB%96%E5%B9%85%E7%AB%8B%E8%BD%B4%E6%9E%84%E5%9B%BE_%E6%88%90%E8%AF%AD_%E4%B8%80%E9%92%88%E8%A7%81%E8%A1%80_%E7%9A%84%E6%84%8F%E5%A2%83_%E7%94%BB%E9%9D%A2%E6%9E%81_2026-10-22T08-28-56.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;一针见血，在充分观察之后，穿过细节找到真正牵动结果的结构&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#阅读无法由ai替代&#34;&gt;阅读无法由AI替代&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;national-retail-federation-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/National_Retail_Federation?useskin=vector&#34;&gt;National Retail Federation - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;美国全国零售联合会（NRF）是全球最大的零售行业协会。其成员包括百货商店、目录邮购、互联网及独立零售商、餐厅、杂货店、多层次营销公司和供应商&lt;/p&gt;
+&lt;p&gt;NRF代表着美国最大的私营部门行业，该行业拥有超过380万家零售机构，支持超过5200万名员工&lt;/p&gt;
+&lt;p&gt;NRF始于1911年，当时名为全国零售干货协会（NRDGA），同年举行了首次年会。1958年, NRDGA更名为全国零售商人协会。1990年，该协会与美国零售联合会合并，组建为全国零售联合会。它还是一个伞形结构，代表着100多个州级、全国性和国际性零售商协会&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W38</title>

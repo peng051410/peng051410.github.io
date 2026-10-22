@@ -11,39 +11,44 @@
     </image>
     <generator>Hugo -- 0.168.0</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 16 Oct 2026 17:49:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 16:53:27 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>众乐乐-weekly 2026-W42</title>
-      <link>http://blog.imcompany.cn/post/peng-week42/</link>
-      <pubDate>Tue, 13 Oct 2026 19:18:00 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/peng-week42/</guid>
-      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
-&lt;h3 id=&#34;我在远东种大豆-by-汉洋-masterpa-汉洋滔天&#34;&gt;&lt;a href=&#34;https://hanyang.wtf/p/817?__readwiseLocation=&#34;&gt;我在远东种大豆 - by 汉洋 MasterPa - 汉洋滔天&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;作者在俄罗斯种大豆的见闻，很有意思，想起小时候家里也种过大豆，动手打豆子的场景，现在都是机械化了&lt;/p&gt;
-&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
-&lt;h3 id=&#34;saffsanity-sill-any-window-from-your-mac-live-on-your-iphone-or-ipad-dot-touch-apple-pencil-trackpad-and-keys-dot-free-open-source-no-servers-dot&#34;&gt;&lt;a href=&#34;https://github.com/Saffsanity/sill&#34;&gt;Saffsanity/sill: Any window from your Mac, live on your iPhone or iPad. Touch, Apple Pencil, trackpad and keys. Free, open source, no servers.&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;使用iphone操作Mac电脑的小工具，无中间服务器，可通过数据线或同一网络环境连接&lt;/p&gt;
-&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
-&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
-&lt;figure&gt;
-    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%B0%B4%E5%A2%A8%E7%94%BB_%E7%AB%96%E5%B9%85%E7%AB%8B%E8%BD%B4%E6%9E%84%E5%9B%BE_%E6%88%90%E8%AF%AD_%E4%B8%BE%E8%B6%B3%E8%BD%BB%E9%87%8D_%E7%9A%84%E6%84%8F%E5%A2%83_%E4%B8%80%E6%9D%86%E6%A8%AA_2026-10-16T08-48-54.png&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;p&gt;举足轻重，关键人物一个轻微举动可能影响事情全局的走势&lt;/p&gt;
-&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#信息的堆积不是知识-信息的-关联-才是知识&#34;&gt;信息的堆积不是知识，信息的“关联”才是知识&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
-&lt;h3 id=&#34;big-mac-index-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Big_Mac_Index?useskin=vector&#34;&gt;Big Mac Index - Wikipedia&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;巨无霸指数是由《经济学人》自1986年起发布的一种价格指数，作为衡量两种货币之间购买力平价(purchasing power parity)的非正式方法，并检验市场汇率在多大程度上导致不同国家的商品成本相同。它“旨在使汇率理论更易于理解”。该指数比较了全球购买巨无霸的相对价格，巨无霸是麦当劳餐厅销售的旗舰汉堡&lt;/p&gt;
-&lt;p&gt;巨无霸指数由帕姆·伍德尔于1986年9月在《经济学人》上提出，作为购买力平价的一种半幽默例证，此后该杂志每年发布这一指数。尽管巨无霸指数最初并非旨在成为汇率评估的正式工具，但如今它已获得全球认可，并出现在许多学术教科书和报告中。该指数还催生了“汉堡经济学”一词&lt;/p&gt;
-&lt;p&gt;巨无霸指数的目的是计算两种货币之间的隐含汇率。为了计算巨无霸指数，将外国巨无霸的价格（以外国货币计算）除以基准国巨无霸的价格（以基准国货币计算）。通常，所使用的基准国是美国&lt;/p&gt;
-&lt;p&gt;与购买力平价经济理论一致，巨无霸指数还提供了一种分析货币相对于基准货币被低估或高估程度的方法。为了计算一种货币是否被低估或高估，必须将隐含汇率（由巨无霸指数定义）与实际汇率进行比较。如果隐含汇率大于实际汇率，则所分析的货币相对于基准货币被高估，反之则是被低估。2026年查到中国大陆的巨无霸指数为-37.1%，即人民币被低估了37%&lt;/p&gt;</description>
+      <title>那些日常使用的工具们</title>
+      <link>http://blog.imcompany.cn/post/useful-tools/</link>
+      <pubDate>Wed, 21 Oct 2026 10:25:17 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
+      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
+&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
+&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Emoji搜索&lt;/p&gt;
+&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;字幕文件转换&lt;/p&gt;
+&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
+&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;解锁medium&lt;/p&gt;
+&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在线工具集合网站&lt;/p&gt;
+&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;离线下载&lt;/p&gt;
+&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
+&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些被推荐的Video</title>
       <link>http://blog.imcompany.cn/post/na-xie-videos/</link>
-      <pubDate>Sat, 10 Oct 2026 10:39:29 +0800</pubDate>
+      <pubDate>Mon, 19 Oct 2026 10:37:58 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/na-xie-videos/</guid>
       <description>&lt;h2 id=&#34;继承之战-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26813224/&#34;&gt;继承之战 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;燃烧--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/26842702/&#34;&gt;燃烧 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
@@ -80,6 +85,63 @@
 &lt;h2 id=&#34;项塔兰--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/1765017/&#34;&gt;项塔兰 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;夏威夷特勤组-第一季--豆瓣&#34;&gt;&lt;a href=&#34;https://movie.douban.com/subject/4317594/&#34;&gt;夏威夷特勤组 第一季 (豆瓣)&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;一共有10季&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W42</title>
+      <link>http://blog.imcompany.cn/post/peng-week42/</link>
+      <pubDate>Tue, 13 Oct 2026 19:18:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week42/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;我在远东种大豆-by-汉洋-masterpa-汉洋滔天&#34;&gt;&lt;a href=&#34;https://hanyang.wtf/p/817?__readwiseLocation=&#34;&gt;我在远东种大豆 - by 汉洋 MasterPa - 汉洋滔天&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;作者在俄罗斯种大豆的见闻，很有意思，想起小时候家里也种过大豆，动手打豆子的场景，现在都是机械化了&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;saffsanity-sill-any-window-from-your-mac-live-on-your-iphone-or-ipad-dot-touch-apple-pencil-trackpad-and-keys-dot-free-open-source-no-servers-dot&#34;&gt;&lt;a href=&#34;https://github.com/Saffsanity/sill&#34;&gt;Saffsanity/sill: Any window from your Mac, live on your iPhone or iPad. Touch, Apple Pencil, trackpad and keys. Free, open source, no servers.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;使用iphone操作Mac电脑的小工具，无中间服务器，可通过数据线或同一网络环境连接&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%B0%B4%E5%A2%A8%E7%94%BB_%E7%AB%96%E5%B9%85%E7%AB%8B%E8%BD%B4%E6%9E%84%E5%9B%BE_%E6%88%90%E8%AF%AD_%E4%B8%BE%E8%B6%B3%E8%BD%BB%E9%87%8D_%E7%9A%84%E6%84%8F%E5%A2%83_%E4%B8%80%E6%9D%86%E6%A8%AA_2026-10-16T08-48-54.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;举足轻重，关键人物一个轻微举动可能影响事情全局的走势&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#信息的堆积不是知识-信息的-关联-才是知识&#34;&gt;信息的堆积不是知识，信息的“关联”才是知识&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;big-mac-index-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Big_Mac_Index?useskin=vector&#34;&gt;Big Mac Index - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;巨无霸指数是由《经济学人》自1986年起发布的一种价格指数，作为衡量两种货币之间购买力平价(purchasing power parity)的非正式方法，并检验市场汇率在多大程度上导致不同国家的商品成本相同。它“旨在使汇率理论更易于理解”。该指数比较了全球购买巨无霸的相对价格，巨无霸是麦当劳餐厅销售的旗舰汉堡&lt;/p&gt;
+&lt;p&gt;巨无霸指数由帕姆·伍德尔于1986年9月在《经济学人》上提出，作为购买力平价的一种半幽默例证，此后该杂志每年发布这一指数。尽管巨无霸指数最初并非旨在成为汇率评估的正式工具，但如今它已获得全球认可，并出现在许多学术教科书和报告中。该指数还催生了“汉堡经济学”一词&lt;/p&gt;
+&lt;p&gt;巨无霸指数的目的是计算两种货币之间的隐含汇率。为了计算巨无霸指数，将外国巨无霸的价格（以外国货币计算）除以基准国巨无霸的价格（以基准国货币计算）。通常，所使用的基准国是美国&lt;/p&gt;
+&lt;p&gt;与购买力平价经济理论一致，巨无霸指数还提供了一种分析货币相对于基准货币被低估或高估程度的方法。为了计算一种货币是否被低估或高估，必须将隐含汇率（由巨无霸指数定义）与实际汇率进行比较。如果隐含汇率大于实际汇率，则所分析的货币相对于基准货币被高估，反之则是被低估。2026年查到中国大陆的巨无霸指数为-37.1%，即人民币被低估了37%&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>众乐乐-weekly 2026-W39</title>
+      <link>http://blog.imcompany.cn/post/peng-week39/</link>
+      <pubDate>Fri, 25 Sep 2026 16:13:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week39/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;继续读-极端的年代-1914-1991--豆瓣----peng-read-2026-dot-md&#34;&gt;继续读 &lt;a href=&#34;http://blog.imcompany.cn/post/peng-read-2026/#极端的年代19141991-豆瓣&#34;&gt;极端的年代：1914—1991 (豆瓣)&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;开始读 极端的年代：1914—1991___第十二章 第三世界&lt;/p&gt;
+&lt;p&gt;主要关注第三世界的人口与现代化压力，权力真空导致军人主政，国家缺少完成现代化所需的稳定&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;skillsynchq-txcript-pandoc-for-ai-chats-dot-move-ai-chats-across-harnesses-claude-code-codex-opencode-cursor-and-more-dot-rust-library-cli-and-wasm-dot&#34;&gt;&lt;a href=&#34;https://github.com/skillsynchq/txcript&#34;&gt;skillsynchq/txcript: Pandoc for AI chats. Move ai chats across harnesses: Claude Code, Codex, OpenCode, Cursor, and more. Rust library, CLI, and WASM.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;支持多个AI Agent会话迁移的命令，可在Codex上继续执行 CC 的会话&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;tommy0103-obelisk-every-past-session-subagent-and-workflow-queryable-by-your-agent-browsable-by-you&#34;&gt;&lt;a href=&#34;https://github.com/tommy0103/obelisk&#34;&gt;tommy0103/obelisk: Every past session, subagent, and workflow &amp;ndash; queryable by your agent, browsable by you&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;查询AI Agent的信息，包括Session、子Agent和工作流&lt;/p&gt;
+&lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%B0%B4%E5%A2%A8%E7%94%BB_%E7%AB%96%E5%B9%85%E7%AB%8B%E8%BD%B4%E6%9E%84%E5%9B%BE_%E6%88%90%E8%AF%AD_%E4%B8%80%E9%92%88%E8%A7%81%E8%A1%80_%E7%9A%84%E6%84%8F%E5%A2%83_%E7%94%BB%E9%9D%A2%E6%9E%81_2026-10-22T08-28-56.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;一针见血，在充分观察之后，穿过细节找到真正牵动结果的结构&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#阅读无法由ai替代&#34;&gt;阅读无法由AI替代&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;national-retail-federation-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/National_Retail_Federation?useskin=vector&#34;&gt;National Retail Federation - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;美国全国零售联合会（NRF）是全球最大的零售行业协会。其成员包括百货商店、目录邮购、互联网及独立零售商、餐厅、杂货店、多层次营销公司和供应商&lt;/p&gt;
+&lt;p&gt;NRF代表着美国最大的私营部门行业，该行业拥有超过380万家零售机构，支持超过5200万名员工&lt;/p&gt;
+&lt;p&gt;NRF始于1911年，当时名为全国零售干货协会（NRDGA），同年举行了首次年会。1958年, NRDGA更名为全国零售商人协会。1990年，该协会与美国零售联合会合并，组建为全国零售联合会。它还是一个伞形结构，代表着100多个州级、全国性和国际性零售商协会&lt;/p&gt;</description>
     </item>
     <item>
       <title>众乐乐-weekly 2026-W38</title>
@@ -216,38 +278,6 @@
 &lt;h4 id=&#34;d41d8c&#34;&gt;&lt;/h4&gt;
 &lt;h3 id=&#34;paulsp94-omacosy-pre-1-dot-0-dot-an-omarchy-style-desktop-environment-for-macos-tiling-with-a-real-super-key-dwindle-layout-a-themed-status-bar-written-for-it-focus-follows-mouse-trackpad-workspace-swipes-and-a-live-workspace-overview-157mb-six-self-built-swift-binaries-one-repo-dot-built-and-tested-on-macos-26-apple-silicon-dot&#34;&gt;&lt;a href=&#34;https://github.com/paulsp94/omacosy&#34;&gt;paulsp94/omacosy: Pre-1.0. An omarchy-style desktop environment for macOS: tiling with a real Super key, dwindle layout, a themed status bar written for it, focus-follows-mouse, trackpad workspace swipes and a live workspace overview — ~157MB, six self-built Swift binaries, one repo. Built and tested on macOS 26 / Apple Silicon.&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;为Mac配置类似omachy样式的桌面，带常用APP快速打开，窗口管理和状态栏，占用的空间不大，新电脑可以直接配置使用，MacOS 26最佳&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>那些日常使用的工具们</title>
-      <link>http://blog.imcompany.cn/post/useful-tools/</link>
-      <pubDate>Fri, 21 Aug 2026 11:36:37 +0800</pubDate>
-      <guid>http://blog.imcompany.cn/post/useful-tools/</guid>
-      <description>&lt;h2 id=&#34;古籍文献知识图谱网&#34;&gt;&lt;a href=&#34;https://cnkgraph.com/&#34;&gt;古籍文献知识图谱网&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;中国历朝代视频讲解&#34;&gt;&lt;a href=&#34;https://historyline.19921014.xyz/&#34;&gt;中国历朝代视频讲解&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;history-as-context-chronas&#34;&gt;&lt;a href=&#34;https://chronas.org/?year=1000&#34;&gt;🌍 History As Context: chronas&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;让你用上帝视角看人类历史：它把整个人类历史，做成了一张可以随手拖拽的【Google 地图版时间线】&lt;/p&gt;
-&lt;h2 id=&#34;读通鉴&#34;&gt;&lt;a href=&#34;https://www.dutongjian.com/&#34;&gt;读通鉴&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;free-public-apis&#34;&gt;&lt;a href=&#34;https://www.freepublicapis.com/&#34;&gt;Free Public APIs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;免费公共API，实时检测可用性&lt;/p&gt;
-&lt;h2 id=&#34;最佳平替-用更低价的搜索词购物&#34;&gt;&lt;a href=&#34;https://pingti.app/&#34;&gt;最佳平替 - 用更低价的搜索词购物&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;searchemoji-支持-30-个语言的-emoji-搜索引擎-一词搜索-️一键复制&#34;&gt;&lt;a href=&#34;https://searchemoji.app/zh-hans&#34;&gt;SearchEmoji - 支持 30 个语言的 Emoji 搜索引擎。🔍一词搜索，🖱️一键复制！&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Emoji搜索&lt;/p&gt;
-&lt;h2 id=&#34;subtitle-converter-happyscribe&#34;&gt;&lt;a href=&#34;https://www.happyscribe.com/tools/subtitle-converter&#34;&gt;Subtitle Converter | HappyScribe&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;字幕文件转换&lt;/p&gt;
-&lt;h2 id=&#34;puter&#34;&gt;&lt;a href=&#34;https://puter.com/&#34;&gt;Puter&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;一个有趣的开源项目，可撸，开源的webOS，可当图床用&lt;/p&gt;
-&lt;h2 id=&#34;breaking-medium-paywall-freedium&#34;&gt;&lt;a href=&#34;https://freedium.cfd/&#34;&gt;Breaking Medium paywall! - Freedium&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;解锁medium&lt;/p&gt;
-&lt;h2 id=&#34;即时工具-致力打造即用即走型在线工具箱&#34;&gt;&lt;a href=&#34;https://www.67tool.com/&#34;&gt;即时工具-致力打造即用即走型在线工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;在线工具集合网站&lt;/p&gt;
-&lt;h2 id=&#34;html-to-markdown-转换工具-url-to-markdown-转换器-开发者工具箱&#34;&gt;&lt;a href=&#34;https://devtool.tech/html-md&#34;&gt;HTML To Markdown 转换工具 | URL To Markdown 转换器 | 开发者工具箱&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;pdf-to-markdown&#34;&gt;&lt;a href=&#34;https://pdf2md.morethan.io/&#34;&gt;PDF to Markdown&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;seedr-download-anything-quick-and-easy&#34;&gt;&lt;a href=&#34;https://www.seedr.cc/?r=5575434&#34;&gt;Seedr: Download Anything Quick &amp;amp; Easy&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;离线下载&lt;/p&gt;
-&lt;h2 id=&#34;nlab&#34;&gt;&lt;a href=&#34;https://ncatlab.org/nlab/show/HomePage&#34;&gt;nLab&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;nLab 这个 Wiki 网站对数学、物理学、哲学领域有着清晰、深刻的整理&lt;/p&gt;
-&lt;h2 id=&#34;首页-明日故乡&#34;&gt;&lt;a href=&#34;https://guxiang.app/&#34;&gt;首页 | 明日故乡&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;中国城市数据查询&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些日常使用的工具们</title>
@@ -4025,8 +4055,8 @@
       <pubDate>Wed, 28 Feb 2024 09:55:00 +0800</pubDate>
       <guid>http://blog.imcompany.cn/post/speech/</guid>
       <description>&lt;h2 id=&#34;一切的学习最终都是自学&#34;&gt;一切的学习最终都是自学&lt;/h2&gt;
-&lt;h2 id=&#34;如果你没有时间集中精力学习新知识-那么就花时间复习已经学过的内容&#34;&gt;如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容。&lt;/h2&gt;
-&lt;h2 id=&#34;作为一个普通人-一个小人物-不要给自己使命感-你来这个世界上的核心目的-就是为了体验美好&#34;&gt;作为一个普通人，一个小人物，不要给自己使命感，你来这个世界上的核心目的，就是为了体验美好。&lt;/h2&gt;
+&lt;h2 id=&#34;如果你没有时间集中精力学习新知识-那么就花时间复习已经学过的内容&#34;&gt;如果你没有时间集中精力学习新知识，那么就花时间复习已经学过的内容&lt;/h2&gt;
+&lt;h2 id=&#34;作为一个普通人-一个小人物-不要给自己使命感-你来这个世界上的核心目的-就是为了体验美好&#34;&gt;作为一个普通人，一个小人物，不要给自己使命感，你来这个世界上的核心目的，就是为了体验美好&lt;/h2&gt;
 &lt;h2 id=&#34;所谓好运-并不是你躺在那里好事就砸到了你-而是你的努力付出-得到了应有的回报&#34;&gt;所谓好运，并不是你躺在那里好事就砸到了你，而是你的努力付出，得到了应有的回报&lt;/h2&gt;
 &lt;h2 id=&#34;学习技术最需要是耐心而不是智商&#34;&gt;学习技术最需要是耐心而不是智商&lt;/h2&gt;
 &lt;h2 id=&#34;阅读无法由ai替代&#34;&gt;阅读无法由AI替代&lt;/h2&gt;
