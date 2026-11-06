@@ -9,7 +9,7 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.168.0</generator>
+    <generator>Hugo -- 0.169.0</generator>
     <language>en</language>
     <lastBuildDate>Fri, 30 Jan 2026 10:48:47 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/spring/index.xml" rel="self" type="application/rss+xml" />
@@ -80,7 +80,9 @@
 &lt;li&gt;
 &lt;p&gt;originParser&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/njPqHL.png&#34;&gt;
-请求来源处理器，针对请求的来源进行处理，在配置资源的规则的可以使用此解析的origin细粒度控制，例如可以解析ip、用户做为请求 origin&lt;/p&gt;</description>
+请求来源处理器，针对请求的来源进行处理，在配置资源的规则的可以使用此解析的origin细粒度控制，例如可以解析ip、用户做为请求 origin&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Spring学习之@Conditional</title>
@@ -615,7 +617,9 @@
 &lt;li&gt;
 &lt;p&gt;originParser&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/njPqHL.png&#34;&gt;
-请求来源处理器，针对请求的来源进行处理，在配置资源的规则的可以使用此解析的origin细粒度控制，例如可以解析ip、用户做为请求 origin&lt;/p&gt;</description>
+请求来源处理器，针对请求的来源进行处理，在配置资源的规则的可以使用此解析的origin细粒度控制，例如可以解析ip、用户做为请求 origin&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>SpringMVC学习之HandlerMapping</title>

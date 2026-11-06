@@ -9,7 +9,7 @@
       <url>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>http://blog.imcompany.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.168.0</generator>
+    <generator>Hugo -- 0.169.0</generator>
     <language>en</language>
     <lastBuildDate>Fri, 02 Aug 2024 11:34:59 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/tags/gpt/index.xml" rel="self" type="application/rss+xml" />
@@ -137,7 +137,26 @@
 &lt;/ul&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;增强版本的emoji风格&lt;/p&gt;</description>
+&lt;p&gt;增强版本的emoji风格&lt;/p&gt;
+&lt;p&gt;对提交类型进行详细的分类，支持emoji&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Using the diff provided below, create a concise commit message following the Conventional Commits format (e.g., &amp;#34; fix(types): corrected imports in types&amp;#34;). Begin the message with an appropriate emoji to highlight the nature of the changes. Use the past tense and first person for articulation. Ensure the line does not exceed 74 characters. Write in {locale}. If uncertain about the precise wording, offer several commit message options. Your response should consist solely of the commit message, without additional descriptions. If the diff does not provide enough information to determine the commit&amp;#39;s purpose, focus on the specific changes made rather than attempting to guess the intent. Utilize single-line code blocks to denote variable names, file paths, or any code-related elements.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Emoji Usage Guide:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  fix: For bug fixes.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- ✨ feat: For new features.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  docs: For documentation changes.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  refactor: For code refactoring without changing functionality.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  perf: For performance improvements.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  security: For security-related fixes.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  chore: For maintenance tasks.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-  test: for test related chagnes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{Author&amp;#39;s notes: &amp;#34;$hint&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Avoid verbosity, here is an output of `git diff --staged` command:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{diff}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>这些年使用过的AI工具们</title>

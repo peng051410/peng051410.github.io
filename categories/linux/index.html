@@ -13,6 +13,9 @@ IPC跑到3.79
 IPC只跑到了0.11
 测试nop指令跑两份各自绑定到同一物理核 如何判断HT？通过查看/proc/cpuinfo信息， 如果physical id和core id都一样的话，说明这两个core实际是一个物理core，其中一个是HT
 执行测试 taskset -c 0 perf stat ./nop taskset -c 24 perf stat ./nop 现象
+绑定在0号CPU上的IPC为2.42，绑定到24号CPU上的IPC为1.48，这两个CPU同属于一个物理核
+第一次测试时两个程序都运行在同一物理核上，IPC减半了
+(2.42+1.48)/(3.79*2)=0.51
 ...</p></div><footer class=entry-footer><span title='Created: 2023-05-25 15:42:00 +0800 CST'>2023-05-25</span>&nbsp;·&nbsp;<span title='Modified: 2023-05-25 19:32:04 +0800 CST'> (🌟Updated: 2023-05-25)</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>152 words</span>&nbsp;·&nbsp;<span>tomyli</span></footer><a class=entry-link aria-label="post link to 性能的本质IPC之动手验证" href=http://blog.imcompany.cn/post/system-ipc/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Linux命令学习之wc</h2></header><div class=entry-content><p>前言 在日常应用中，统计文件内容是一种常见的需求，可以通过 wc 命令来实现
 Wc wc file 统计文件，显示行数、单词数、字节数，带文件名 wc -c file 统计文件，只显示字节数 wc -w file 统计文件，只显示单词数 wc -l file 统计文件，只显示文件行数 wc file1 file2 统计多个文件，显示汇总信息 wc &lt; file 统计文件，显示行数、单词数、字节数，不带文件，便于shell脚本后续处理 wc -L file 打印出文件行最长的节数 疑惑 wc -c 与 wc -w 是如何统计的 在统计 hello.txt 时， wc -c 的结果为 55 ， wc -m 的结果为 45 ，为什么统计的结果不一样？这个文本中包含了中文内容，猜测和这个有关
 验证是否与中文有关 这个好办，建一个不带中文的文件，验证如下 可以看到统计的结果是一样的
