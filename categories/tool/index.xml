@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.169.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Nov 2026 10:31:24 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 18:58:51 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些日常使用的工具们</title>
@@ -451,8 +451,8 @@
       <guid>http://blog.imcompany.cn/post/na-xie-gao-xiao-de-chromecha-jian/</guid>
       <description>&lt;h2 id=&#34;surfingkeys&#34;&gt;&lt;a href=&#34;https://github.com/brookhong/Surfingkeys&#34;&gt;Surfingkeys&lt;/a&gt; 👍&lt;/h2&gt;
 &lt;p&gt;严重推荐，VIM键盘模拟，自定义程度非常高&lt;/p&gt;
-&lt;h2 id=&#34;immersive-translate&#34;&gt;&lt;a href=&#34;https://immersivetranslate.com/en/docs/installation/&#34;&gt;Immersive Translate&lt;/a&gt; 👍&lt;/h2&gt;
-&lt;p&gt;无敌翻译软件，支持网页、PDF、本地文件翻译&lt;/p&gt;
+&lt;h2 id=&#34;fishjar-kiss-translator-a-simple-open-source-bilingual-translation-extension-and-greasemonkey-script--一个简约-开源的-双语对照翻译扩展-and-油猴脚本&#34;&gt;&lt;a href=&#34;https://github.com/fishjar/kiss-translator&#34;&gt;fishjar/kiss-translator: A simple, open source bilingual translation extension &amp;amp; Greasemonkey script (一个简约、开源的 双语对照翻译扩展 &amp;amp; 油猴脚本)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;开源无敌翻译软件，支持网页、PDF、本地文件翻译&lt;/p&gt;
 &lt;h2 id=&#34;tampermonkey&#34;&gt;&lt;a href=&#34;https://github.com/Tampermonkey/tampermonkey&#34;&gt;Tampermonkey&lt;/a&gt; 👍&lt;/h2&gt;
 &lt;p&gt;用户自定义脚本管理器&lt;/p&gt;
 &lt;h2 id=&#34;enhanced-github&#34;&gt;Enhanced GitHub&lt;/h2&gt;
@@ -468,9 +468,7 @@
 &lt;h2 id=&#34;iorate-ublacklist-blocks-specific-sites-from-appearing-in-google-search-results&#34;&gt;&lt;a href=&#34;https://github.com/iorate/ublacklist?tab=readme-ov-file&#34;&gt;iorate/ublacklist: Blocks specific sites from appearing in Google search results&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;weread-to-readwise-sync-微信读书笔记同步到readwise-chrome-web-store&#34;&gt;&lt;a href=&#34;https://chromewebstore.google.com/detail/weread-to-readwise-sync-%E5%BE%AE/nmdgmoganjdiofngeapmjcfichpbbbed&#34;&gt;WeRead to Readwise Sync, 微信读书笔记同步到Readwise - Chrome Web Store&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;podstation-podstation-podstation-is-a-web-podcast-aggregator-for-chrome-dot&#34;&gt;&lt;a href=&#34;https://github.com/podStation/podStation&#34;&gt;podStation/podStation: podStation is a web podcast aggregator for Chrome.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;
-&lt;h2 id=&#34;justineo-github-hovercard-neat-hovercards-for-github-dot&#34;&gt;&lt;a href=&#34;https://github.com/Justineo/github-hovercard&#34;&gt;Justineo/github-hovercard: Neat hovercards for GitHub.&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Github hover增强&lt;/p&gt;</description>
+&lt;p&gt;浏览器中播放播客，支持下载&lt;/p&gt;</description>
     </item>
     <item>
       <title>那些高效的Chrome插件</title>
