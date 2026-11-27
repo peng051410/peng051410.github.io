@@ -11,8 +11,33 @@
     </image>
     <generator>Hugo -- 0.170.1</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 17:31:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 17:57:26 +0800</lastBuildDate>
     <atom:link href="http://blog.imcompany.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>众乐乐-weekly 2026-W48</title>
+      <link>http://blog.imcompany.cn/post/peng-week48/</link>
+      <pubDate>Fri, 27 Nov 2026 16:30:00 +0800</pubDate>
+      <guid>http://blog.imcompany.cn/post/peng-week48/</guid>
+      <description>&lt;h2 id=&#34;read&#34;&gt;Read 📖&lt;/h2&gt;
+&lt;h3 id=&#34;用好ai的第一步-停止和ai聊天-computing-life&#34;&gt;&lt;a href=&#34;https://yage.ai/stop-using-chatgpt.html&#34;&gt;用好AI的第一步：停止和AI聊天 | Computing Life&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;很早之前收藏的文章,最近重新读了一遍,ChatGPT也早已经推出了Codex,文章值得学习的是后面的总结部分: 无论AI工具变成什么样,反馈闭环,上下文管理和记忆是底层的范式,要在这三个方面多下功夫&lt;/p&gt;
+&lt;h2 id=&#34;tools&#34;&gt;Tools 🧰&lt;/h2&gt;
+&lt;h3 id=&#34;runkids-skillshare-sync-skills-agents-mcp-plugins-to-all-ai-cli-tools-with-one-command-and-simplify-team-sharing-dot&#34;&gt;&lt;a href=&#34;https://github.com/runkids/skillshare&#34;&gt;runkids/skillshare: 📚 Sync skills, agents, MCP, plugins to all AI CLI tools with one command and simplify team sharing.&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;管理skill的工具,统一管理安装的skill,不用为一个工具改skill后换用另一个工具时skill没有同步的问题担心了&lt;/p&gt;
+&lt;h2 id=&#34;image-️&#34;&gt;Image 🖼️&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;https://cdn.jsdelivr.net/gh/peng051410/bucket@main/img/%E4%B8%AD%E5%9B%BD%E4%BC%A0%E7%BB%9F%E6%B0%B4%E5%A2%A8%E7%94%BB_%E7%AB%96%E5%B9%85%E7%AB%8B%E8%BD%B4%E6%9E%84%E5%9B%BE_%E6%88%90%E8%AF%AD_%E5%85%A5%E6%9C%A8%E4%B8%89%E5%88%86_%E7%9A%84%E6%84%8F%E5%A2%83_%E7%94%BB%E9%9D%A2%E4%B8%BB_2026-11-27T09-36-17.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;入木三分&lt;/strong&gt; , 看问题透彻&lt;/p&gt;
+&lt;h2 id=&#34;speech&#34;&gt;Speech 💬&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.imcompany.cn/post/speech/#知识库应该只保留经过思考和筛选的信息&#34;&gt;知识库应该只保留经过思考和筛选的信息&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;wiki一下&#34;&gt;Wiki一下&lt;/h2&gt;
+&lt;h3 id=&#34;mira-murati-wikipedia&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Mira_Murati?useskin=vector&#34;&gt;Mira Murati - Wikipedia&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;埃尔米拉&amp;quot;米拉&amp;quot;穆拉蒂, 1988年12月16日出生, 阿尔巴尼亚裔美国企业高管. 她是Thinking Machines Lab的联合创始人兼CEO, 这是一家她于2025年2月创建的人工智能公司. 她于2022年5月至2024年9月担任OpenAI首席技术官, 并在2023年11月短暂罢免Sam Altman期间担任公司临时CEO三天. 她此前曾在特斯拉担任产品经理, 并在Leap Motion领导产品与工程部门&lt;/p&gt;
+&lt;p&gt;穆拉蒂精通英语与意大利语, 16岁时,她参加戴维斯联合世界大学学者项目, 在加拿大温哥华岛的皮尔逊学院UWC就读高中, 并于2007年获得国际文凭毕业&lt;/p&gt;
+&lt;p&gt;高中毕业后, 穆拉蒂进入双学位本科项目学习, 2011年获得科尔比学院文学学士学位, 2012年获得达特芧斯学院机械工程学士学位&lt;/p&gt;</description>
+    </item>
     <item>
       <title>那些日常使用的工具们</title>
       <link>http://blog.imcompany.cn/post/useful-tools/</link>
